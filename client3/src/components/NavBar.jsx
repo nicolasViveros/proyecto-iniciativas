@@ -6,20 +6,20 @@ function NavBar() {
 
     return (
 
-        <nav className="my-3 flex justify-between py-5 px-10 rounded-lg">
-            <header className="bg-white  w-full">
+        <nav className="my-3 flex justify-between border-b border-gray-300 py- px-10">
+            <footer className="bg-white  w-full">
                 <div className="px-4 py-3 flex items-center justify-between">
                     <div className="flex items-center space-x-12">
                         <Link to={
                             "/"
                             }>
         
-                        <img src="/Header.png" alt="Global Gateway" className="h-18 " />
+                        <img src="/Header.png" alt="Global Gateway" className="h-25 " />
                         </Link>
                     </div>
 
                 </div>
-            </header>
+            </footer>
 
             {/* <Link to={
                 isAuthenticated ? "/tasks" : "/"

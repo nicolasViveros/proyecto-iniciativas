@@ -1,0 +1,126 @@
+import mongoose from 'mongoose';
+
+const fichaSchema = new mongoose.Schema({
+    organizationName: {
+        type: String,
+        required: true,
+    },
+    organizationType: {
+        type: String,
+        required: true,
+    },
+    country: {
+        type: String,
+        required: true,
+    },
+    legalRepName: {
+        type: String,
+        required: true,
+    },
+    legalRepPosition: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+    },
+    registrationId: {
+        type: String,
+        required: true,
+    },
+    team: [{
+        name: {
+            type: String,
+            required: true,
+        },
+        position: {
+            type: String,
+            required: true,
+        }
+    }],
+    associations: [String],
+    name: {
+        type: String,
+        required: true,
+    },
+    city: {
+        type: String,
+        required: true,
+    },
+    startDate: {
+        type: Date,
+        required: true,
+
+    },
+    isActive: {
+        type: Boolean,
+        default: true,
+    },
+    reasonInactive: {
+        type: String,
+    },
+    need: {
+        type: String,
+        required: true,
+    },
+    objectives: {
+        type: String,
+        required: true,
+    },
+    targetAudience: {
+        type: String,
+        required: true,
+    },
+    activities: {
+        type: String,
+        required: true,
+    },
+    category: {
+        type: String,
+        required: true,
+    },
+    innovation: {
+        type: String,
+    },
+    impact: {
+        type: String,
+    },
+    methodology: {
+        type: String,
+    },
+    outcomes: {
+        type: String,
+    },
+    transferability: {
+        type: String,
+        required: true,
+    },
+    sustainability: {
+        type: String,
+        required: true,
+
+    },
+    links: [String],
+    files: [{
+        type: Buffer, // Assuming files are stored as binary data; adjust as needed
+    }],
+    video: {
+        type: String,
+    },
+    recognition: {
+        type: String,
+    },
+    accepted: {
+        type: Boolean,
+        default: false,
+    },
+}, {
+    timestamps: true
+});
+
+export default mongoose.model("Ficha", fichaSchema);

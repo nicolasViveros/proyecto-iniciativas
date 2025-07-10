@@ -13,34 +13,35 @@ import FormWizard from "./pages/FormStepByStep";
 import ProtectedRoute from "./ProtectedRoute";
 import { TaskProvider } from "./context/TasksContext";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export function App() {
   return (
     <AuthProvider>
       <TaskProvider>
         <BrowserRouter>
-        <main className="container mx-auto px-10 ">
-        <NavBar/> 
-          <Routes>
-            <Route path='/' element={<HomePage/>} />
-            <Route path='/login' element={<LoginPage/>} />
-            <Route path='/register' element={<RegisterPage/>} />
-            <Route path='/new-task' element={<ProjectForm/>} />
+          <NavBar />
+          <main className=" mx-auto px-1 ">
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/register' element={<RegisterPage />} />
+              <Route path='/new-task' element={<ProjectForm />} />
+              <Route path='/nueva-ficha' element={<FormWizard />} />
+              <Route path='/add-task' element={<TaskFormPage />} />
+              <Route path='/tasks' element={<TasksPage />} />
 
-            <Route path='/nueva-ficha' element={<FormWizard/>} />
 
+              <Route element={<ProtectedRoute />}>
+                <Route path='/tasks/:id' element={<TaskFormPage />} />
+                <Route path='/profile' element={<ProfilePage />} />
+              </Route>
+            </Routes>
+          </main>
+          <Footer />
 
-            <Route element={<ProtectedRoute />}>
-              <Route path='/tasks' element={<TasksPage/>} />
-              <Route path='/add-task' element={<TaskFormPage/>} />
-
-              <Route path='/tasks/:id' element={<TaskFormPage/>} />
-              <Route path='/profile' element={<ProfilePage/>} />
-            </Route>
-          </Routes>
-        </main>
         </BrowserRouter>
-      </TaskProvider>
+      </TaskProvider> 
     </AuthProvider>
   );
 };
