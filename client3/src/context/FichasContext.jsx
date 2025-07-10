@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import {createFichaRequest} from "../api/fichas";
+import { createFichaRequest, getFichasRequest , getFichaRequest} from "../api/fichas";
 
 const FichaContext = createContext();
 
@@ -14,59 +14,83 @@ export const useFichas = () => {
 }
 
 export function FichaProvider({ children }) {
-    const [fichas, setFichas] = useState([]);
+    const [fichas, setFichas] = useState([])
 
-    const getTasks = async () => {
+    const getFichas = async () => {
         try {
-            const res = await getTasksRequest();
-            setTasks(res.data);
+            const res = await getFichasRequest();
+            setFichas(res.data);
         } catch (error) {
             console.log(error)
         }
     }
 
     const createFicha = async (ficha) => {
+        console.log("Datos antes de enviar:", ficha);
 
-        const res = await createFichaRequest(ficha)
-        console.log(res)
+        try {
+            const res = await createFichaRequest(ficha)
+
+            console.log('Ficha creada:', res.data);
+        } catch (error) {
+            console.error('Error al crear la ficha:', error);
+        }
+
+        // try {
+        //     // Clona y limpia el objeto, si es necesario
+        //     const cleanedData = {
+        //         ...ficha,
+        //         // asegúrate de que no haya propiedades que apunten a elementos no serializables
+        //     };
+
+        // const res = await createFichaRequest(cleanedData)
+        // console.log(res)
+        //     // Revisar los datos antes de enviar
+        //     console.log(cleanedData);
+
+        //     // const response = await axios.post('your-api-endpoint-url', cleanedData);
+        //     // console.log('Ficha creada:', response.data);
+        // } catch (error) {
+        //     console.error('Error al crear la ficha:', error);
+        // }
     }
 
-    const deleteTask = async (id) => {
-        try {
-            const res = await deleteTasksRequest(id);
-            console.log(res);
-            if (res.status === 204) setTasks(tasks.filter(task => task._id != id))
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    //     const deleteTask = async (id) => {
+    //         try {
+    //             const res = await deleteTasksRequest(id);
+    //             console.log(res);
+    //             if (res.status === 204) setTasks(tasks.filter(task => task._id != id))
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     };
 
-    const getTask = async (id) => {
-        try {
-            const res = await getTaskRequest(id);
-        return (res.data)
-        } catch (error) {
-            console.log(error)
-        } 
-    };
+        const getFicha = async (id) => {
+            try {
+                const res = await getFichaRequest(id);
+            return (res.data)
+            } catch (error) {
+                console.log(error)
+            } 
+        };
 
-const updateTask = async (id, task) => {
- try {
-    await updateTasksRequest(id,task);
- } catch (error) {
-    console.log(error);
- }
-}
+    // const updateTask = async (id, task) => {
+    //  try {
+    //     await updateTasksRequest(id,task);
+    //  } catch (error) {
+    //     console.log(error);
+    //  }
+    // }
 
     return (
         <FichaContext.Provider
             value={{
-                tasks,
+                fichas,
                 createFicha,
-                getTasks,
-                deleteTask,
-                getTask,
-                updateTask,
+                getFichas,
+                // deleteTask,
+                getFicha,
+                // updateTask,
             }}
         >
             {children}

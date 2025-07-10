@@ -1,83 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
 
-const ProjectForm = () => {
-    const [form, setForm] = useState({
-        methodology: '',
-        outcomes: '',
-        transferability: '',
-        sustainability: ''
+const FileUpload = () => {
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!file) return alert("Selecciona un archivo");
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      await axios.post("http://localhost:4000/uploads", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(form); // replace with your API call or data handling logic
-      };
-    
-      return (
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-          <h2 className="text-xl font-semibold mb-4 text-center">ONG/Academia</h2>
-    
-          <label className="block mb-1">
-            ¿Qué enfoque, herramienta o metodología nueva han desarrollado o adaptado? ¿En qué se diferencia de lo ya existente?
-          </label>
-          <textarea
-            name="methodology"
-            value={form.methodology}
-            onChange={handleChange}
-            className="w-full p-2 mb-4 border rounded"
-            rows="4"
-            maxLength={300 * 6}
-          />
-    
-          <label className="block mb-1">
-            ¿Qué resultados o cambios ha generado la iniciativa en actores, políticas, conocimiento o prácticas sociales? Incluya datos si los tiene.
-          </label>
-          <textarea
-            name="outcomes"
-            value={form.outcomes}
-            onChange={handleChange}
-            className="w-full p-2 mb-4 border rounded"
-            rows="4"
-            maxLength={300 * 6}
-          />
-    
-          <label className="block mb-1">
-            ¿Puede aplicarse la propuesta en otros contextos? ¿Han transferido o compartido su trabajo con otras organizaciones o instituciones?
-          </label>
-          <textarea
-            name="transferability"
-            value={form.transferability}
-            onChange={handleChange}
-            className="w-full p-2 mb-4 border rounded"
-            rows="4"
-            maxLength={250 * 6}
-          />
-    
-          <label className="block mb-1">
-            ¿Qué continuidad ha tenido o tendrá la iniciativa tras su primera fase? ¿Existen redes, recursos o estructuras que la sostienen?
-          </label>
-          <textarea
-            name="sustainability"
-            value={form.sustainability}
-            onChange={handleChange}
-            className="w-full p-2 mb-6 border rounded"
-            rows="4"
-            maxLength={250 * 6}
-          />
-    
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-purple-600 text-white rounded hover:bg-purple-700"
-          >
-            Continuar →
-          </button>
-        </form>
-      );
+      alert("Archivo subido con éxito");
+    } catch (error) {
+      console.error("Error al subir archivo", error);
+    }
+  };
+
+  return (
+    <div className="max-w-md mx-auto p-4 bg-white shadow rounded-lg mt-10">
+      <form onSubmit={handleSubmit}>
+        <label className="block mb-2 font-medium text-gray-700">
+          Subir archivo (.pdf o .doc):
+        </label>
+        <input
+          type="file"
+          accept=".pdf,.doc,.docx"
+          onChange={handleFileChange}
+          className="mb-4 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4
+            file:rounded file:border-0 file:text-sm file:font-semibold
+            file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200"
+        />
+        <button
+          type="submit"
+          className="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800"
+        >
+          Subir
+        </button>
+      </form>
+    </div>
+  );
 };
 
-export default ProjectForm;
+export default FileUpload;

@@ -7,18 +7,20 @@ import TasksPage from "./pages/TasksPage";
 import TaskFormPage from "./pages/TaskFormPage";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
-import ProjectForm from "./pages/Form1";
+import FileUpload from "./pages/Form1";
 import FormWizard from "./pages/FormStepByStep";
+import FichasPage from "./pages/FichasPage";
+import FichaPage from "./pages/FichaPage";
 
 import ProtectedRoute from "./ProtectedRoute";
-import { TaskProvider } from "./context/TasksContext";
+import { FichaProvider } from "./context/FichasContext";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 export function App() {
   return (
     <AuthProvider>
-      <TaskProvider>
+      <FichaProvider>
         <BrowserRouter>
           <NavBar />
           <main className=" mx-auto px-1 ">
@@ -26,10 +28,13 @@ export function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='/login' element={<LoginPage />} />
               <Route path='/register' element={<RegisterPage />} />
-              <Route path='/new-task' element={<ProjectForm />} />
+              <Route path='/new-task' element={<FileUpload />} />
               <Route path='/nueva-ficha' element={<FormWizard />} />
               <Route path='/add-task' element={<TaskFormPage />} />
               <Route path='/tasks' element={<TasksPage />} />
+              <Route path='/fichas' element={<FichasPage />} />
+              <Route path='/ficha' element={<FichaPage />} />
+
 
 
               <Route element={<ProtectedRoute />}>
@@ -41,7 +46,7 @@ export function App() {
           <Footer />
 
         </BrowserRouter>
-      </TaskProvider> 
+      </FichaProvider> 
     </AuthProvider>
   );
 };

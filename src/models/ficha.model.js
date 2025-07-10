@@ -36,11 +36,9 @@ const fichaSchema = new mongoose.Schema({
     team: [{
         name: {
             type: String,
-            required: true,
         },
         position: {
             type: String,
-            required: true,
         }
     }],
     associations: [String],
@@ -107,7 +105,18 @@ const fichaSchema = new mongoose.Schema({
     },
     links: [String],
     files: [{
-        type: Buffer, // Assuming files are stored as binary data; adjust as needed
+        name: {
+            type: String,
+            required: true
+        },
+        type: {
+            type: String,
+            required: true
+        },
+        content: {
+            type: String, // Assuming content is stored as base64 string
+            required: true
+        }
     }],
     video: {
         type: String,

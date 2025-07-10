@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
+import { useFichas } from '../context/FichasContext';
 
 function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeamMember, handleAssociationChange }) {
-    const {register} = useForm();
     return (
         <div>
             <h1 className="text-3xl text-center font-bold mb-4">Datos de la organización postulante</h1>
@@ -13,20 +13,18 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 name="organizationName"
                 value={form.organizationName}
                 onChange={handleChange}
-                {...register("organizationName")}
                 className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
                 autoFocus
                 required />
 
             <label htmlFor="organizationType" className='text-xl'>Tipo de organización *</label><br />
             <div className="mt-2 grid grid-cols-1">
-                <select 
-                id="organizationType" 
-                name="organizationType" 
-                value={form.organizationType} 
-                onChange={handleChange} 
-                {...register("organizationType")}
-                className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600">
+                <select
+                    id="organizationType"
+                    name="organizationType"
+                    value={form.organizationType}
+                    onChange={handleChange}
+                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600">
                     <option value="">Selecciona un tipo</option>
                     <option value="Publica">Pública</option>
                     <option value="Privada">Privada</option>
@@ -38,27 +36,29 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
 
             <label htmlFor="country" className='text-xl'>País</label><br />
             <div className="mt-2 grid grid-cols-1">
-                <select 
-                id="country" 
-                name="country" 
-                value={form.country} 
-                onChange={handleChange} 
-                {...register("country")}
-                className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600">
+                <select
+                    id="country"
+                    name="country"
+                    value={form.country}
+                    onChange={handleChange}
+                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600">
                     <option value="">Selecciona un país</option>
-                    <option value="ar">Argentina</option>
-                    <option value="bo">Bolivia</option>
-                    <option value="br">Brasil</option>
-                    <option value="cl">Chile</option>
-                    <option value="co">Colombia</option>
-                    <option value="ec">Ecuador</option>
-                    <option value="gu">Guyana</option>
-                    <option value="mx">México</option>
-                    <option value="py">Paraguay</option>
-                    <option value="pe">Perú</option>
-                    <option value="su">Surinam</option>
-                    <option value="uy">Uruguay</option>
-                    <option value="ve">Venezuela</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Internacional">Internacional</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="México">México</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Perú">Perú</option>
+                    <option value="Surinam">Surinam</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Venezuela">Venezuela</option>
                 </select>
             </div>
 
@@ -66,7 +66,6 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
             <input name="legalRepName"
                 value={form.legalRepName}
                 onChange={handleChange}
-                {...register("legalRepName")}
                 className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
                 required
             />
@@ -75,38 +74,34 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
             <input name="legalRepPosition"
                 value={form.legalRepPosition}
                 onChange={handleChange}
-                {...register("legalRepPosition")}
                 className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
                 required
             />
 
             <label htmlFor="email" className='text-xl'>Correo electrónico *</label><br />
-            <input 
-            name="email" 
-            value={form.email} 
-            onChange={handleChange} 
-            type="email" 
-            {...register("email")}
-            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" 
-            required />
+            <input
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                type="email"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                required />
 
             <label htmlFor="phone" className='text-xl'>Teléfono de contacto *</label><br />
-            <input 
-            name="phone" 
-            value={form.phone} 
-            onChange={handleChange} 
-            {...register("phone")}
-            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" 
-            required />
+            <input
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                required />
 
             <label htmlFor="registrationId" className='text-xl'>RUT/NIT/CNPJ/Registro legal *</label><br />
-            <input 
-            name="registrationId" 
-            value={form.registrationId} 
-            onChange={handleChange} 
-            {...register("registrationId")}
-            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" 
-            required 
+            <input
+                name="registrationId"
+                value={form.registrationId}
+                onChange={handleChange}
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                required
             />
 
             <h3 className="text-2xl font-semibold my-5 underline">Equipo responsable</h3>
@@ -458,6 +453,13 @@ function Step5({ form, handleInputChange, handleAddLink, handleLinkChange, handl
                 onChange={handleFileChange}
                 className="mb-4 w-full border p-2 rounded"
             />
+            <div>
+                {form.files.map((file, index) => (
+                    <div key={index} className="mt-2 p-2 border border-gray-300 rounded-md">
+                        <p>{file.name} ({file.type})</p>
+                    </div>
+                ))}
+            </div>
 
             <label className="block mb-1">¿Desea compartir un video corto (máx. 2 minutos)?</label>
             <input
@@ -499,7 +501,8 @@ function Step5({ form, handleInputChange, handleAddLink, handleLinkChange, handl
 
 export default function FormWizard() {
     const navigate = useNavigate();
-    const { register } = useForm();
+    const { createFicha } = useFichas();
+
     const [errors, setErrors] = useState([]);
     const [currentStep, setCurrentStep] = useState(0);
     const [form, setForm] = useState({
@@ -536,13 +539,10 @@ export default function FormWizard() {
         accepted: false,
     });
 
-
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
-
 
     const validateStep = () => {
         const newErrors = [];
@@ -619,6 +619,7 @@ export default function FormWizard() {
         });
     };
 
+
     const nextStep = () => {
         if (validateStep()) {
             setCurrentStep((prevStep) => Math.min(prevStep + 1, steps.length - 1));
@@ -631,13 +632,19 @@ export default function FormWizard() {
     const [successMessage, setSuccessMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-
-    const handleSubmit = (data) => {
-        data.preventDefault();
-        console.log(form); // Aquí puedes incluir la lógica de envío real
-        createFicha(data);
-        setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente.');
-        setIsSubmitted(true);
+    const handleSubmit = (form) => {
+        console.log(form)
+        const ficha = {
+            ...form,
+            // asegúrate de que no haya propiedades que apunten a elementos no serializables
+        };
+        console.log(ficha)
+        ficha.preventDefault();
+        createFicha(ficha).then(res => {
+            console.log(res)
+            setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente.');
+            setIsSubmitted(true);
+        })
 
         // Configura el timeout para redireccionar después de 5 segundos
         const timeoutId = setTimeout(() => {
@@ -648,6 +655,23 @@ export default function FormWizard() {
         return () => clearTimeout(timeoutId);
     };
 
+    const onSubmit = () => {
+        // Asegúrate de que `form` tiene todos los datos antes de llamar a `createFicha`
+        createFicha(form).then(() => {
+            setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente.');
+            setIsSubmitted(true);
+
+            // Configura el timeout para redireccionar después de 5 segundos
+            const timeoutId = setTimeout(() => {
+                navigate('/'); // Asegúrate de que '/' sea la ruta al home
+            }, 5000);
+
+            // Limpia el timeout si es necesario
+            return () => clearTimeout(timeoutId);
+        }).catch(error => {
+            console.error('Error al crear la ficha:', error);
+        });
+    };
     const handleBack = () => {
         if (isSubmitted) {
             navigate('/'); // Asume que '/' es la ruta del home
@@ -675,8 +699,32 @@ export default function FormWizard() {
     };
 
     const handleFileChange = (e) => {
-        setForm({ ...form, files: Array.from(e.target.files) });
+        const filesArray = Array.from(e.target.files);
+
+        filesArray.forEach(file => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                const base64Data = reader.result;
+                const fileInfo = {
+                    name: file.name,
+                    type: file.type,
+                    content: base64Data
+                };
+
+                // Agregar el archivo al estado
+                setForm(prevForm => ({
+                    ...prevForm,
+                    files: [...prevForm.files, fileInfo]
+                }));
+            };
+            reader.onerror = error => {
+                console.error('Error al leer el archivo:', error);
+            };
+        });
     };
+
+
     const steps = [
         <Step1
             form={form}
@@ -736,64 +784,64 @@ export default function FormWizard() {
                 </div>
 
 
-                <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
+                <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }} className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
                     {steps[currentStep]}
 
                     {successMessage && (
-                    <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                        {successMessage}
-                    </div>
-                )}
-                {errors.length > 0 && (
-                    <div className="my-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
-                        <ul>
-                            {errors.map((error, index) => (
-                                <li key={index}>{error}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                        <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                            {successMessage}
+                        </div>
+                    )}
+                    {errors.length > 0 && (
+                        <div className="my-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                            <ul>
+                                {errors.map((error, index) => (
+                                    <li key={index}>{error}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
-                {currentStep === 0 && (
-                    <div className="flex justify-end mt-10">
-                        <button
-                            type="button"
-                            onClick={nextStep}
-                            className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
-                            Siguiente
-                        </button>
-                    </div>
-                )}
-
-                {currentStep > 0 && (
-                    <div className="flex justify-between mt-6">
-                        <button
-                            type="button"
-                            onClick={prevStep}
-                            className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
-                            {isSubmitted ? 'Volver' : 'Anterior'}
-                        </button>
-                        {currentStep < steps.length - 1 ? (
+                    {currentStep === 0 && (
+                        <div className="flex justify-end mt-10">
                             <button
                                 type="button"
                                 onClick={nextStep}
                                 className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
                                 Siguiente
                             </button>
-                        ) : (
+                        </div>
+                    )}
+
+                    {currentStep > 0 && (
+                        <div className="flex justify-between mt-6">
                             <button
-                                type="submit"
-                                className={` text-white px-4 py-2 rounded ${form.accepted ? "bg-[#5d5593] hover:bg-[#a49fc4]" : 'bg-purple-300'
-                                    }`}
-                                disabled={!form.accepted || isSubmitted}
-                            >
-                                Enviar Postulación →
+                                type="button"
+                                onClick={prevStep}
+                                className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
+                                {isSubmitted ? 'Volver' : 'Anterior'}
                             </button>
-                        )}
-                    </div>
-                )}
+                            {currentStep < steps.length - 1 ? (
+                                <button
+                                    type="button"
+                                    onClick={nextStep}
+                                    className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
+                                    Siguiente
+                                </button>
+                            ) : (
+                                <button
+                                    type="submit"
+                                    className={` text-white px-4 py-2 rounded ${form.accepted ? "bg-[#5d5593] hover:bg-[#a49fc4]" : 'bg-purple-300'
+                                        }`}
+                                    disabled={!form.accepted || isSubmitted}
+                                >
+                                    Enviar Postulación →
+                                </button>
+                            )}
+                        </div>
+                    )}
                 </form>
-                
+
             </div>
         </div>
     );
