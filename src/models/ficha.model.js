@@ -124,6 +124,20 @@ const fichaSchema = new mongoose.Schema({
     recognition: {
         type: String,
     },
+    acceptanceLetter: [{
+        name: {
+            type: String,
+            required: true
+        },
+        type: {
+            type: String,
+            required: true
+        },
+        content: {
+            type: String, // Assuming content is stored as base64 string
+            required: true
+        }
+    }],
     accepted: {
         type: Boolean,
         default: false,

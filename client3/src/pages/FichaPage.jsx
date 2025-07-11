@@ -1,26 +1,132 @@
+// import { useParams } from 'react-router-dom';
+// import { useFichas } from '../context/FichasContext';
+// import { useForm } from "react-hook-form"
+// import { useEffect } from "react";
+// function FichaPage() {
+//   const params = useParams();
+//     const { fichas , getFicha } = useFichas();
+//     q
+//     const ficha = getFicha(id);
+
+//     if (!ficha) return <p>Ficha no encontrada</p>;
+
+//     useEffect(() => {
+//       async function loadFicha() {
+//         if (params.id) {
+//           const ficha = await getFicha(params.id);
+//           console.log(ficha);
+//           setFicha(ficha);
+//           setLoading(false);
+//         }
+//       }
+
+//     }, [])
+//     loadFicha()
+//     return (
+//       <div className="container mx-auto p-6">
+//         <h1 className="text-3xl font-bold mb-6">{ficha.projectName}</h1>
+//         <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
+//         <p><strong>País:</strong> {ficha.country}</p>
+//         <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
+//         <p><strong>Email:</strong> {ficha.email}</p>
+//         <p><strong>Teléfono:</strong> {ficha.phone}</p>
+//         <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
+//         <p>{/* Mostrar aquí el resumen completo de la ficha */}</p>
+//       </div>
+//     );
+// }
+
+// export default FichaPage;
+
+import React, { use, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
 
-function FichaPage() {
-    const { id } = useParams();
-    const { fichas , getFicha } = useFichas();
-    q
-    const ficha = getFicha(id);
 
-    if (!ficha) return <p>Ficha no encontrada</p>;
+const FichaPage = () => {
+  const { id } = useParams();
+  const [ficha, setFicha] = useState(null);
+  const { fichas, getFicha } = useFichas();
 
-    return (
-      <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6">{ficha.projectName}</h1>
-        <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
-        <p><strong>País:</strong> {ficha.country}</p>
-        <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
-        <p><strong>Email:</strong> {ficha.email}</p>
-        <p><strong>Teléfono:</strong> {ficha.phone}</p>
-        <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
-        <p>{/* Mostrar aquí el resumen completo de la ficha */}</p>
+  useEffect(() => {
+    // Función para cargar datos de la ficha
+    const cargarFicha = async () => {
+      try {
+        const ficha = await getFicha(id);
+        console.log(ficha.projectName);
+        setFicha(ficha);
+        console.log(ficha);
+
+      } catch (error) {
+        console.error('Error al cargar la ficha:', error);
+      }
+    };
+
+    if (id) {
+      cargarFicha();
+    }
+  }, [id]);
+
+  if (!ficha) {
+    return <div>Cargando...</div>;
+  }
+
+  return (
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">{ficha.name}</h1>
+      <p><strong>Organización:</strong> {ficha.organizationName}</p>
+      <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
+      <p><strong>País:</strong> {ficha.country}</p>
+      <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
+      <p><strong>Cargo del Representante Legal:</strong> {ficha.legalRepPosition}</p>
+      <p><strong>Email:</strong> {ficha.email}</p>
+      <p><strong>Teléfono:</strong> {ficha.phone}</p>
+      <p><strong>Registro Legal:</strong> {ficha.registrationId}</p>
+      <p><strong>Ciudad de Implementación:</strong> {ficha.city}</p>
+      <p><strong>Fecha de Inicio:</strong> {new Date(ficha.startDate).toLocaleDateString()}</p>
+      <p><strong>¿Está Vigente?:</strong> {ficha.isActive ? "Sí" : "No"}</p>
+      {!ficha.isActive && <p><strong>Razón Inactiva:</strong> {ficha.reasonInactive}</p>}
+      <p><strong>Asociaciones:</strong> {ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
+      <div>
+        <p><strong>Equipo Responsable:</strong></p>
+        {ficha.team.map((member, index) => (
+          <p key={index}>- {member.name}: {member.position}</p>
+        ))}
       </div>
-    );
-}
+      <p><strong>Necesidad/Problemática:</strong> {ficha.need}</p>
+      <p><strong>Objetivos del Proyecto:</strong> {ficha.objectives}</p>
+      <p><strong>Público Objetivo:</strong> {ficha.targetAudience}</p>
+      <p><strong>Actividades Principales:</strong> {ficha.activities}</p>
+      {ficha.category === 'Operador/Regulador' && (
+        <>
+          <p><strong>Innovación:</strong> {ficha.innovation}</p>
+          <p><strong>Impacto:</strong> {ficha.impact}</p>
+        </>
+      )}
+      {ficha.category === 'ONG/Academia' && (
+        <>
+          <p><strong>Metodología:</strong> {ficha.methodology}</p>
+          <p><strong>Resultados:</strong> {ficha.outcomes}</p>
+        </>
+      )}
+      <p><strong>Transferibilidad:</strong> {ficha.transferability}</p>
+      <p><strong>Sostenibilidad:</strong> {ficha.sustainability}</p>
+      <p><strong>Material de Respaldo:</strong></p>
+      <ul>
+        {ficha.links.map((link, index) => (
+          <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
+        ))}
+      </ul>
+      {ficha.video && (
+        <p><strong>Video:</strong> <a href={ficha.video} target="_blank" rel="noopener noreferrer">{ficha.video}</a></p>
+      )}
+      {ficha.recognition && (
+        <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
+      )}
+      {/* Aquí puedes agregar un resumen completo en un formato que prefieras */}
+     
+    </div>
+  );
+};
 
 export default FichaPage;

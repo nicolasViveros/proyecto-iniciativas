@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import { useFichas } from '../context/FichasContext';
+import { FaArrowCircleLeft } from "react-icons/fa";
+
 
 function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeamMember, handleAssociationChange }) {
     return (
@@ -13,7 +15,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 name="organizationName"
                 value={form.organizationName}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 autoFocus
                 required />
 
@@ -24,7 +26,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                     name="organizationType"
                     value={form.organizationType}
                     onChange={handleChange}
-                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600">
+                    className="col-start-1 row-start-1 w-full input-focused appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]">
                     <option value="">Selecciona un tipo</option>
                     <option value="Publica">Pública</option>
                     <option value="Privada">Privada</option>
@@ -41,7 +43,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                     name="country"
                     value={form.country}
                     onChange={handleChange}
-                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600">
+                    className="col-start-1 row-start-1 w-full appearance-none input-focused rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]">
                     <option value="">Selecciona un país</option>
                     <option value="Argentina">Argentina</option>
                     <option value="Bolivia">Bolivia</option>
@@ -66,7 +68,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
             <input name="legalRepName"
                 value={form.legalRepName}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required
             />
 
@@ -74,7 +76,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
             <input name="legalRepPosition"
                 value={form.legalRepPosition}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required
             />
 
@@ -84,7 +86,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 value={form.email}
                 onChange={handleChange}
                 type="email"
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required />
 
             <label htmlFor="phone" className='text-xl'>Teléfono de contacto *</label><br />
@@ -92,7 +94,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required />
 
             <label htmlFor="registrationId" className='text-xl'>RUT/NIT/CNPJ/Registro legal *</label><br />
@@ -100,12 +102,12 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 name="registrationId"
                 value={form.registrationId}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required
             />
 
-            <h3 className="text-2xl font-semibold my-5 underline">Equipo responsable</h3>
-            <h3 className="text-xl font-semibold my-5">Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa * </h3>
+            <h3 className="text-2xl font-semibold my-5 ">Equipo responsable</h3>
+            <h3 className="text-xl my-5">Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa * </h3>
             <div className="grid grid-cols-5 gap-2">
                 <div className='col-span-2'><label>Nombre</label> </div>
                 <div className='col-span-2'><label>Cargo</label> </div>
@@ -117,26 +119,26 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                         <input name="name"
                             value={member.name}
                             onChange={(e) => handleTeamChange(index, e)}
-                            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" />
+                            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused" />
                     </div>
                     <div className='col-span-2'>
                         <input name="position"
                             value={member.position}
                             onChange={(e) => handleTeamChange(index, e)}
-                            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" />
+                            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused   " />
                     </div>
                     <div>
-                        <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-4 hover:text-gray-400">
+                        <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-4 hover:underline">
                             Eliminar
                         </button>
                     </div>
                 </div>
             ))}
 
-            <button type="button" onClick={addTeamMember} className="hover:text-green-400 underline"> + Agregar responsable</button>
+            <button type="button" onClick={addTeamMember} className=" hover:underline"> + Agregar responsable</button>
 
             <h3 className="text-xl font-semibold my-5">¿Hubo asociaciones para el desarrollo? En caso afirmativo, indique los sectores asociados * </h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2 ">
                 {["No", "Otras Secretarías", "ONGs y Sociedad Civil", "Instituciones educativas y de investigación", "Empresas", "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)", "Organizaciones Internacionales", "Otras organizaciones"].map((option) => (
                     <label key={option} className="flex items-center space-x-2">
                         <input
@@ -144,6 +146,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                             value={option}
                             checked={form.associations.includes(option)}
                             onChange={handleAssociationChange}
+                            className='input-focused   accent-[#5d5593]'
                         />
                         <span>{option}</span>
                     </label>
@@ -162,7 +165,7 @@ function Step2({ form, handleChange }) {
     };
 
     return (
-        <div className="max-w-md mx-auto p-6 bg-white rounded-lg">
+        <div >
             <h2 className="text-3xl text-center font-bold mb-4">Información del proyecto postulado</h2>
 
             <label className='text-xl'>Nombre del proyecto o iniciativa:</label>
@@ -171,7 +174,7 @@ function Step2({ form, handleChange }) {
                 type="text"
                 value={form.name}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required
             />
 
@@ -181,7 +184,7 @@ function Step2({ form, handleChange }) {
                 type="text"
                 value={form.city}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required
             />
 
@@ -191,7 +194,7 @@ function Step2({ form, handleChange }) {
                 type="date"
                 value={form.startDate}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused "
                 required
             />
 
@@ -204,7 +207,7 @@ function Step2({ form, handleChange }) {
                         value="true"
                         checked={form.isActive === true}
                         onChange={handleRadioChange}
-                        className="mr-2"
+                        className="mr-2 accent-[#5d5593]"
                     />
                     Sí
                 </label>
@@ -215,7 +218,7 @@ function Step2({ form, handleChange }) {
                         value="false"
                         checked={form.isActive === false}
                         onChange={handleRadioChange}
-                        className="mr-2"
+                        className="mr-2 accent-[#5d5593] "
                     />
                     No
                 </label>
@@ -223,12 +226,12 @@ function Step2({ form, handleChange }) {
 
             {!form.isActive && (
                 <div className="mb-4">
-                    <label className="block mb-2">En caso de no estar vigente, explique brevemente por qué:</label>
+                    <label className="block text-xl">En caso de no estar vigente, explique brevemente por qué:</label>
                     <textarea
                         name="reasonInactive"
                         value={form.reasonInactive}
                         onChange={handleChange}
-                        className="w-full p-2 border rounded"
+                        className="w-full p-2 border border-gray-300 rounded input-focused "
                         rows="3"
                     ></textarea>
                 </div>
@@ -238,47 +241,56 @@ function Step2({ form, handleChange }) {
 }
 
 function Step3({ form, handleChange }) {
+   
     return (
         <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
             <h2 className="text-3xl text-center font-bold mb-4">Descripción del proyecto</h2>
 
-            <label className='text-xl'>Describa la necesidad o problemática detectada *</label>
+            <label className='text-xl'>Describa la necesidad o problemática detectada. *</label>
+            <label className='block text-sm'>(máx 3000 carácteres)</label>
+
             <textarea
                 name="need"
                 maxLength="3000"
                 value={form.need}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                 required
             />
 
-            <label className='text-xl'>Objetivos del proyecto *</label>
+            <label className='text-xl'>Objetivos del proyecto. *</label>
+            <label className='block text-sm'>(máx 3000 carácteres)</label>
+
             <textarea
                 name="objectives"
                 maxLength="3000"
                 value={form.objectives}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                 required
             />
 
-            <label className='text-xl'>Público objetivo y población beneficiaria *</label>
+            <label className='text-xl'>Público objetivo y población beneficiaria. *</label>
+            <label className='block text-sm'>(máx 3000 carácteres)</label>
+
             <textarea
                 name="targetAudience"
                 maxLength="3000"
                 value={form.targetAudience}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                 required
             />
 
-            <label className='text-xl'>Principales actividades realizadas *</label>
+            <label className='text-xl'>Principales actividades realizadas. *</label>
+            <label className='block text-sm'>(máx 3000 carácteres)</label>
+
             <textarea
                 name="activities"
                 maxLength="3000"
                 value={form.activities}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                 required
             />
 
@@ -287,8 +299,8 @@ function Step3({ form, handleChange }) {
                 name="category"
                 value={form.category}
                 onChange={handleChange}
-                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2"            >
-                <option value="Operador/Regulador">Operador/Regulador</option>
+                className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"            >
+                <option className='accent-[#5d5593]' value="Operador/Regulador">Operador/Regulador</option>
                 <option value="ONG/Academia">ONG/Academia</option>
             </select>
         </div>
@@ -298,17 +310,19 @@ function Step3({ form, handleChange }) {
 function Step4({ form, handleChange }) {
     if (form.category === 'Operador/Regulador') {
         return (
-            <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
+            <div className="">
                 <h2 className="text-3xl text-center font-bold mb-4">Criterios Operador/Regulador</h2>
 
                 <label className='text-xl'>
                     Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *
                 </label>
+                <label className='block text-sm'>(máx 300 carácteres)</label>
+
                 <textarea
                     name="innovation"
                     value={form.innovation}
                     onChange={handleChange}
-                    className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                    className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                     maxLength={300 * 6} // Approx 300 words
 
                 />
@@ -316,11 +330,13 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     ¿Qué cambios concretos ha generado la iniciativa en la empleabilidad, participación, seguridad o inclusión de mujeres? Incluya indicadores si es posible *
                 </label>
+                <label className='block text-sm'>(máx 300 carácteres)</label>
+
                 <textarea
                     name="impact"
                     value={form.impact}
                     onChange={handleChange}
-                    className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                    className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                     maxLength={300 * 6}
 
                 />
@@ -328,11 +344,13 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     ¿Puede aplicarse la iniciativa en otras ciudades o instituciones? ¿Existen herramientas, protocolos o aprendizajes transferibles? *
                 </label>
+                <label className='block text-sm'>(máx 250 carácteres)</label>
+
                 <textarea
                     name="transferability"
                     value={form.transferability}
                     onChange={handleChange}
-                    className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                    className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                     maxLength={250 * 6}
                     required
                 />
@@ -340,11 +358,13 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     ¿Qué mecanismos aseguran la continuidad de la iniciativa en el tiempo (ej. financiamiento, institucionalización, alianzas)? *
                 </label>
+                <label className='block text-sm'>(máx 250 carácteres)</label>
+
                 <textarea
                     name="sustainability"
                     value={form.sustainability}
                     onChange={handleChange}
-                    className="w-full border border-gray-300  px-4 py-2 rounded-md my-2" rows="4"
+                    className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2" rows="4"
                     maxLength={250 * 6}
                     required
                 />
@@ -354,53 +374,61 @@ function Step4({ form, handleChange }) {
 
     if (form.category === 'ONG/Academia') {
         return (
-            <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
+            <div>
                 <h2 className="text-3xl text-center font-bold mb-4">ONG / Academia</h2>
 
-                <label className="block mb-1">
-                    ¿Qué enfoque, herramienta o metodología nueva han desarrollado o adaptado? ¿En qué se diferencia de lo ya existente?
+                <label className="text-xl">
+                    ¿Qué enfoque, herramienta o metodología nueva han desarrollado o adaptado? ¿En qué se diferencia de lo ya existente? *
                 </label>
+                <label className='block text-sm'>(máx 300 carácteres)</label>
+
                 <textarea
                     name="methodology"
                     value={form.methodology}
                     onChange={handleChange}
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border rounded input-focused"
                     rows="4"
                     maxLength={300 * 6}
                 />
 
-                <label className="block mb-1">
-                    ¿Qué resultados o cambios ha generado la iniciativa en actores, políticas, conocimiento o prácticas sociales? Incluya datos si los tiene.
+                <label className="text-xl">
+                    ¿Qué resultados o cambios ha generado la iniciativa en actores, políticas, conocimiento o prácticas sociales? Incluya datos si los tiene *
                 </label>
+                <label className='block text-sm'>(máx 300 carácteres)</label>
+
                 <textarea
                     name="outcomes"
                     value={form.outcomes}
                     onChange={handleChange}
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border input-focused rounded"
                     rows="4"
                     maxLength={300 * 6}
                 />
 
-                <label className="block mb-1">
-                    ¿Puede aplicarse la propuesta en otros contextos? ¿Han transferido o compartido su trabajo con otras organizaciones o instituciones?
+                <label className="text-xl">
+                    ¿Puede aplicarse la propuesta en otros contextos? ¿Han transferido o compartido su trabajo con otras organizaciones o instituciones? *
                 </label>
+                <label className='block text-sm'>(máx 250 carácteres)</label>
+
                 <textarea
                     name="transferability"
                     value={form.transferability}
                     onChange={handleChange}
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border rounded input-focused"
                     rows="4"
                     maxLength={250 * 6}
                 />
 
-                <label className="block mb-1">
-                    ¿Qué continuidad ha tenido o tendrá la iniciativa tras su primera fase? ¿Existen redes, recursos o estructuras que la sostienen?
+                <label className="text-xl">
+                    ¿Qué continuidad ha tenido o tendrá la iniciativa tras su primera fase? ¿Existen redes, recursos o estructuras que la sostienen? *
                 </label>
+                <label className='block text-sm'>(máx 250 carácteres)</label>
+
                 <textarea
                     name="sustainability"
                     value={form.sustainability}
                     onChange={handleChange}
-                    className="w-full p-2 mb-6 border rounded"
+                    className="w-full p-2 mb-6 border rounded input-focused"
                     rows="4"
                     maxLength={250 * 6}
                 />
@@ -412,14 +440,13 @@ function Step4({ form, handleChange }) {
 }
 
 
-function Step5({ form, handleInputChange, handleAddLink, handleLinkChange, handleFileChange, handleRemoveLink }) {
+function Step5({ form, handleInputChange, handleAddLink, handleLetterChange , handleLinkChange, handleFileChange, handleRemoveLink }) {
     return (
-        <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-            <h2 className="text-xl font-semibold mb-4">Material de respaldo</h2>
+        <div>
+            <h2 className="text-3xl text-center font-bold mb-4">Material de respaldo</h2>
 
-            <label className="block mb-1">
-                Link de informes, fotografías, evaluaciones, artículos u otro material que respalde los resultados:
-            </label>
+            <label className="text-xl">
+                Link a publicaciones, evaluaciones, informes, materiales metodológicos o registros de impacto.            </label>
             {form.links.map((link, index) => (
                 <div key={index} className="mb-3 flex items-center">
                     <input
@@ -427,31 +454,21 @@ function Step5({ form, handleInputChange, handleAddLink, handleLinkChange, handl
                         value={link}
                         placeholder='https://'
                         onChange={(e) => handleLinkChange(index, e.target.value)}
-                        className="w-full p-2 border rounded mr-2"
+                        className="w-full p-2 border rounded my-2 input-focused"
                     />
-                    <button
-                        type="button"
-                        onClick={() => handleRemoveLink(index)}
-                        className="text-red-600 hover:text-gray-400"
-                    >
-                        Eliminar
-                    </button>
+
                 </div>
             ))}
-            <button
-                type="button"
-                onClick={handleAddLink}
-                className="text-sm text-purple-700 hover:underline mb-4"
-            >
-                Agregar link
-            </button>
 
-            <label className="block mb-1">Adjunte publicaciones, evaluaciones, informes, materiales metodológicos o registros de impacto:</label>
+
+            <label className="block text-xl">
+                Adjunte publicaciones, evaluaciones, informes, materiales metodológicos o registros de impacto.
+            </label>
             <input
                 type="file"
                 multiple
                 onChange={handleFileChange}
-                className="mb-4 w-full border p-2 rounded"
+                className="my-4 w-full border py-7 rounded input-focused "
             />
             <div>
                 {form.files.map((file, index) => (
@@ -461,25 +478,47 @@ function Step5({ form, handleInputChange, handleAddLink, handleLinkChange, handl
                 ))}
             </div>
 
-            <label className="block mb-1">¿Desea compartir un video corto (máx. 2 minutos)?</label>
+            <label className="block text-xl">¿Desea compartir un video corto (máx. 2 minutos) que muestre la
+                experiencia o testimonios relevantes? (opcional)</label>
+            <label className="block text-sm">(Enlace a YouTube, Vimeo o archivo compartido)</label>
             <input
                 type="url"
                 name="video"
                 value={form.video}
                 onChange={handleInputChange}
-                placeholder="Enlace a YouTube, Vimeo o archivo compartido"
-                className="w-full p-2 mb-4 border rounded"
+
+                className="w-full p-2 mb-2 border rounded input-focused"
             />
 
-            <label className="block mb-1">¿La iniciativa cuenta con algún reconocimiento o premio previo?</label>
+            <label className="block text-xl">
+                ¿La iniciativa cuenta con algún reconocimiento o premio previo? (opcional)
+            </label>
+            <label className="block text-sm">(Indicar cuál y en qué año, si aplica)</label>
+
             <input
                 type="text"
                 name="recognition"
                 value={form.recognition}
                 onChange={handleInputChange}
-                placeholder="Indicar cuál y en qué año, si aplica"
-                className="w-full p-2 mb-4 border rounded"
+                className="w-full p-2 mb-4 border rounded input-focused"
             />
+
+            <label className="block text-xl">
+                Adjunte carta de autorización del/de la representante legal
+            </label>
+            <input
+                type="file"
+                multiple
+                onChange={handleLetterChange}
+                className="my-4 w-full border py-7 rounded input-focused "
+            />
+            <div>
+                {form.acceptanceLetter.map((file, index) => (
+                    <div key={index} className="mt-2 p-2 border border-gray-300 rounded-md">
+                        <p>{file.name} ({file.type})</p>
+                    </div>
+                ))}
+            </div>
 
             <div className="flex items-start mb-6">
                 <label className="flex items-start text-sm cursor-pointer">
@@ -488,7 +527,7 @@ function Step5({ form, handleInputChange, handleAddLink, handleLinkChange, handl
                         name="accepted"
                         checked={form.accepted}
                         onChange={handleInputChange}
-                        className="mr-2 mt-1"
+                        className="mr-2 mt-1 accent-[#5d5593]"
                     />
                     Declaro que la información entregada en este formulario es veraz y autorizo el uso de los antecedentes y material gráfico entregado para fines de difusión del concurso SoMoS LAC.
                 </label>
@@ -536,6 +575,7 @@ export default function FormWizard() {
         files: [],
         video: '',
         recognition: '',
+        acceptanceLetter:[],
         accepted: false,
     });
 
@@ -724,6 +764,32 @@ export default function FormWizard() {
         });
     };
 
+    const handleLetterChange = (e) => {
+        const filesArray = Array.from(e.target.files);
+    
+        filesArray.forEach(file => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                const base64Data = reader.result;
+                const fileInfo = {
+                    name: file.name,
+                    type: file.type,
+                    content: base64Data
+                };
+    
+                // Agrega el archivo al estado 'acceptanceLetter'
+                setForm(prevForm => ({
+                    ...prevForm,
+                    acceptanceLetter: [...prevForm.acceptanceLetter, fileInfo]
+                }));
+            };
+            reader.onerror = error => {
+                console.error('Error al leer el archivo:', error);
+            };
+        });
+    };
+
 
     const steps = [
         <Step1
@@ -752,6 +818,7 @@ export default function FormWizard() {
             handleAddLink={handleAddLink}
             handleLinkChange={handleLinkChange}
             handleFileChange={handleFileChange}
+            handleLetterChange={handleLetterChange}
             handleRemoveLink={handleRemoveLink} // Aquí pasamos la función
         />,
     ];
@@ -761,14 +828,12 @@ export default function FormWizard() {
     return (
         <div className="relative flex items-center justify-center min-h-screen">
             {/* Back Button */}
-            <button onClick={handleBack} className="absolute top-4 left-4 hover:text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 inline">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-                <span className=" ml-2">Volver</span>
+            <button onClick={handleBack} className="absolute top-4 left-4    hover:text-[#a49fc4] rounded-md">
+            <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
+                <span className=" ml-1">Volver</span>
             </button>
 
-            <div className="shadow-md max-w-3xl w-full p-10 rounded-md">
+            <div className="max-w-3xl w-full p-10 rounded-md">
 
                 {/* Progress Indicator and Bar */}
                 <div className="mb-6">
@@ -784,7 +849,7 @@ export default function FormWizard() {
                 </div>
 
 
-                <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }} className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
+                <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }} className="max-w-2xl mx-auto p-6 bg-white  rounded-lg">
                     {steps[currentStep]}
 
                     {successMessage && (
@@ -793,7 +858,7 @@ export default function FormWizard() {
                         </div>
                     )}
                     {errors.length > 0 && (
-                        <div className="my-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                        <div className="my-4 p-4  border border-red-400 text-red-700 rounded">
                             <ul>
                                 {errors.map((error, index) => (
                                     <li key={index}>{error}</li>

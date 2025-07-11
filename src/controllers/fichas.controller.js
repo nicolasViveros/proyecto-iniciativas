@@ -33,6 +33,7 @@ export const createFicha = async (req, res) => {
             files, // Handle or convert as needed
             video,
             recognition,
+            acceptanceLetter,
             accepted
         } = req.body;
 
@@ -67,6 +68,7 @@ export const createFicha = async (req, res) => {
             files,
             video,
             recognition,
+            acceptanceLetter,
             accepted
         });
 
