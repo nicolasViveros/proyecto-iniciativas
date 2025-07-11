@@ -83,20 +83,19 @@ export const createFicha = async (req, res) => {
 
 export const getFichas = async (req, res) => {
     try {
-        const fichas = await Ficha.find()
-        res.json(fichas)
+        const fichas = await Ficha.find().select('-files -acceptanceLetter');
+        res.json(fichas);
     } catch (error) {
         return res.status(500).json({ message: "algo va mal" });
-
     }
 };
 
-export const getFicha = async (req, res) =>  {
+export const getFicha = async (req, res) => {
     try {
-     const ficha = await Ficha.findById(req.params.id)
-     if (!ficha) return res.status(404).json ({message: "ficha not found"})
-     res.json(ficha)
+        const ficha = await Ficha.findById(req.params.id)
+        if (!ficha) return res.status(404).json({ message: "ficha not found" })
+        res.json(ficha)
     } catch (error) {
-     return res.status(404).json ({message: "ficha not found"})
+        return res.status(404).json({ message: "ficha not found" })
     }
- };
+};
