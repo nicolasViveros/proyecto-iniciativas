@@ -11,29 +11,8 @@ export default defineConfig({
     },
   },
   server: {
-    host: "0.0.0.0", // para aceptar conexiones externas
-    port: 80, // si sigues usando el puerto 80
-    allowedHosts: ["rumboalaequidad.org"],
+    host: "0.0.0.0",
+    port: 80,
+    allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"], // Added www.rumboalaequidad.org
   },
 });
-
-// // https://vite.dev/config/
-// export default defineConfig({
-//   plugins: [react()],
-// })
-
-// import { defineConfig } from 'vite'
-// import tailwindcss from '@tailwindcss/vite'
-// export default defineConfig({
-//   plugins: [
-//     tailwindcss(),
-//   ],
-// })
-
-// import { defineConfig } from "vite";
-// import tailwindcss from "@tailwindcss/vite";
-// export default defineConfig({
-//   plugins: [
-//     tailwindcss(),
-//   ],
-// });
