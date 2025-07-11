@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: "0.0.0.0",
+    host: "*",
     port: 80,
     allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"], // Added www.rumboalaequidad.org
   },
