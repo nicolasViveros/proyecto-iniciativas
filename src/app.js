@@ -12,9 +12,9 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "http://rumboalaequidad.org",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    //credentials: true,
+    credentials: true, // Esto debe ser verdadero para permitir cookies
   })
 );
 app.use(morgan("dev"));
