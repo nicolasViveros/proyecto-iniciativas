@@ -30,7 +30,7 @@ function FichasPage() {
       console.log(fichas); // Para verificar los datos
     }, []);
     
-    if (fichas.length == 0) return (<h1> No Fichas </h1>);
+    if (fichas.length == 0) return (<h1> Cargando...</h1>);
 
     return (
         <div className="container mx-auto p-6">
