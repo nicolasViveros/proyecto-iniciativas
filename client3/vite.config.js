@@ -11,7 +11,7 @@ export default defineConfig({
     basicSsl({
       name: "mi_solicitud.csr",
       domains: ["*.rumboalaequidad.org"],
-      certDir: "/root/proyecto-iniciativas",
+      //certDir: "/root/proyecto-iniciativas",
     }),
   ],
   css: {
@@ -24,7 +24,7 @@ export default defineConfig({
     port: 443,
     allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"],
     https: true,
-    key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
-    cert: "/root/proyecto-iniciativas/mi_solicitud.csr",
+    key: "/../../mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
+    cert: "../../mi_solicitud.csr",
   },
 });
