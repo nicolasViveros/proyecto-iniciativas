@@ -16,8 +16,8 @@ function Footer() {
     {/* Fondo restante con imagen de footer */}
 <div className="flex-grow relative overflow-hidden">
   <img
-    src="/Footer.png"
-    alt="Footer background"
+    src="/Footer2.png"
+    alt="Footer"
     className="absolute inset-0 w-full h-full object-cover"
   />
 </div>
