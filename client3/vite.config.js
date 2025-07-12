@@ -23,8 +23,9 @@ export default defineConfig({
     host: "*",
     port: 443,
     allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"],
-    https: true,
-    // key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
-    // cert: "/root/proyecto-iniciativas/mi_solicitud.csr",
+    https: {
+      key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Path to your private key
+      cert: "/root/proyecto-iniciativas/tu_certificado.crt", // Path to your issued SSL certificate
+    },
   },
 });
