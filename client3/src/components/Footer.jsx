@@ -13,13 +13,14 @@ function Footer() {
     </div>
 
     {/* Fondo restante con imagen de footer */}
-    <div className="flex-grow relative">
-      <img
-        src="/Footer.png"
-        alt="Footer background"
-        className="absolute inset-0 w-full h-full object-left"
-      />
-    </div>
+    {/* Fondo restante con imagen de footer */}
+<div className="flex-grow relative overflow-hidden">
+  <img
+    src="/Footer.png"
+    alt="Footer background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+</div>
   </footer>
   );
 }
