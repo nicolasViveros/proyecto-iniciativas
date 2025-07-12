@@ -21,10 +21,10 @@ export default defineConfig({
   },
   server: {
     host: "*",
-    port: 443,
+    port: 8080,
     allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"],
     https: true,
-    key: "/../../../../mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
-    cert: "../../../../mi_solicitud.csr",
+    key: "/../../mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
+    cert: "../../mi_solicitud.csr",
   },
 });
