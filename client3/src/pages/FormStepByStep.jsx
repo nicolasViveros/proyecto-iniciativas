@@ -6,6 +6,45 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 
 
 function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeamMember, handleAssociationChange }) {
+    
+    const [organizationType, setOrganizationType] = useState(form.organizationType);
+    const [otherOrganizationType, setOtherOrganizationType] = useState('');
+    const [country, setCountry] = useState(form.country);
+    const [otherCountry, setOtherCountry] = useState('');
+
+    const handleOrganizationTypeChange = (e) => {
+        const { value } = e.target;
+        setOrganizationType(value);
+        handleChange(e); // Mantiene la lógica existente
+
+        if (value !== "Otra") {
+            setOtherOrganizationType('');
+        }
+    };
+
+    const handleCountryChange = (e) => {
+        const { value } = e.target;
+        setCountry(value);
+        handleChange(e); // Actualiza país en el formulario principal
+
+        if (value !== "Otro") {
+            setOtherCountry('');
+        }
+    };
+
+    useEffect(() => {
+        if (organizationType === "Otra") {
+            handleChange({ target: { name: "organizationType", value: otherOrganizationType } });
+        }
+    }, [otherOrganizationType]);
+
+    useEffect(() => {
+        if (country === "Otro") {
+            handleChange({ target: { name: "country", value: otherCountry } });
+        }
+    }, [otherCountry]);
+
+
     return (
         <div>
             <h1 className="text-3xl text-center font-bold mb-4">Datos de la organización postulante</h1>
@@ -24,8 +63,8 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 <select
                     id="organizationType"
                     name="organizationType"
-                    value={form.organizationType}
-                    onChange={handleChange}
+                    value={organizationType}
+                    onChange={handleOrganizationTypeChange}
                     className="col-start-1 row-start-1 w-full input-focused appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]">
                     <option value="">Selecciona un tipo</option>
                     <option value="Publica">Pública</option>
@@ -33,22 +72,34 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                     <option value="ONG">ONG</option>
                     <option value="Multilateral">Multilateral</option>
                     <option value="Privada y ONG">Privada y ONG</option>
+                    <option value="Otra">Otra...</option>
                 </select>
             </div>
+
+            {organizationType === "Otra" && (
+                <input
+                    name="otherOrganizationType"
+                    value={otherOrganizationType}
+                    onChange={(e) => setOtherOrganizationType(e.target.value)}
+                    className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
+                    placeholder="Especifica el tipo de organización"
+                    required
+                />
+            )}
 
             <label htmlFor="country" className='text-xl'>País</label><br />
             <div className="mt-2 grid grid-cols-1">
                 <select
                     id="country"
                     name="country"
-                    value={form.country}
-                    onChange={handleChange}
+                    value={country}
+                    onChange={handleCountryChange}
                     className="col-start-1 row-start-1 w-full appearance-none input-focused rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]">
                     <option value="">Selecciona un país</option>
+                    <option value="Internacional">Internacional</option>
                     <option value="Argentina">Argentina</option>
                     <option value="Bolivia">Bolivia</option>
                     <option value="Brasil">Brasil</option>
-                    <option value="Internacional">Internacional</option>
                     <option value="El Salvador">El Salvador</option>
                     <option value="Costa Rica">Costa Rica</option>
                     <option value="Chile">Chile</option>
@@ -61,10 +112,22 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                     <option value="Surinam">Surinam</option>
                     <option value="Uruguay">Uruguay</option>
                     <option value="Venezuela">Venezuela</option>
+                    <option value="Otro">Otro...</option>
                 </select>
             </div>
 
-            <label htmlFor="legalRepName" className='text-xl'>Nombre del/la representante legal *</label><br />
+            {country === "Otro" && (
+                <input
+                    name="otherCountry"
+                    value={otherCountry}
+                    onChange={(e) => setOtherCountry(e.target.value)}
+                    className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
+                    placeholder="Especifica el país"
+                    required
+                />
+            )}
+
+            <label htmlFor="legalRepName" className='text-xl'>Nombre de el/la representante legal o responsable*</label><br />
             <input name="legalRepName"
                 value={form.legalRepName}
                 onChange={handleChange}
@@ -97,7 +160,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
                 className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
                 required />
 
-            <label htmlFor="registrationId" className='text-xl'>RUT/NIT/CNPJ/Registro legal *</label><br />
+            <label htmlFor="registrationId" className='text-xl'>RUT/NIT/CNPJ/Registro legal</label><br />
             <input
                 name="registrationId"
                 value={form.registrationId}
@@ -107,31 +170,48 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
             />
 
             <h3 className="text-2xl font-semibold my-5 ">Equipo responsable</h3>
-            <h3 className="text-xl my-5">Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa * </h3>
-            <div className="grid grid-cols-5 gap-2">
-                <div className='col-span-2'><label>Nombre</label> </div>
-                <div className='col-span-2'><label>Cargo</label> </div>
-            </div>
+            <h3 className="text-xl">Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa </h3>
+            <label className='block text-sm my-2'>(puede ingresar más de una persona)</label>
+
+        
 
             {form.team.map((member, index) => (
-                <div key={index} className="grid grid-cols-5 gap-1">
+                <div key={index} className="grid grid-cols-5 gap-1 my-1">
+                    <div className='col-span-2 '><label>Nombre*</label> </div>
+                    <div className='col-span-2'><label>Cargo*</label> </div>
                     <div className='col-span-2'>
-                        <input name="name"
+                        <input
+                            name="name"
                             value={member.name}
                             onChange={(e) => handleTeamChange(index, e)}
-                            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused" />
+                            className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                        />
                     </div>
                     <div className='col-span-2'>
-                        <input name="position"
+                        <input
+                            name="position"
                             value={member.position}
                             onChange={(e) => handleTeamChange(index, e)}
-                            className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused   " />
+                            className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                        />
                     </div>
                     <div>
-                        <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-4 hover:underline">
+                        <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-1 hover:underline">
                             Eliminar
                         </button>
                     </div>
+                    <div className='col-span-4'>
+                        <div className='col-span-2'><label>Email*</label> </div>
+
+                        <input
+                            name="email"
+                            type="email"
+                            value={member.email}
+                            onChange={(e) => handleTeamChange(index, e)}
+                            className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                        />
+                    </div>
+
                 </div>
             ))}
 
@@ -241,13 +321,13 @@ function Step2({ form, handleChange }) {
 }
 
 function Step3({ form, handleChange }) {
-   
+
     return (
         <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
             <h2 className="text-3xl text-center font-bold mb-4">Descripción del proyecto</h2>
 
             <label className='text-xl'>Describa la necesidad o problemática detectada. *</label>
-            <label className='block text-sm'>(máx 3000 carácteres)</label>
+            <label className='block text-sm'>(máx 500 palabras)</label>
 
             <textarea
                 name="need"
@@ -259,7 +339,7 @@ function Step3({ form, handleChange }) {
             />
 
             <label className='text-xl'>Objetivos del proyecto. *</label>
-            <label className='block text-sm'>(máx 3000 carácteres)</label>
+            <label className='block text-sm'>(máx 500 palabras)</label>
 
             <textarea
                 name="objectives"
@@ -271,7 +351,7 @@ function Step3({ form, handleChange }) {
             />
 
             <label className='text-xl'>Público objetivo y población beneficiaria. *</label>
-            <label className='block text-sm'>(máx 3000 carácteres)</label>
+            <label className='block text-sm'>(máx 500 palabras)</label>
 
             <textarea
                 name="targetAudience"
@@ -283,7 +363,7 @@ function Step3({ form, handleChange }) {
             />
 
             <label className='text-xl'>Principales actividades realizadas. *</label>
-            <label className='block text-sm'>(máx 3000 carácteres)</label>
+            <label className='block text-sm'>(máx 500 palabras)</label>
 
             <textarea
                 name="activities"
@@ -316,7 +396,7 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *
                 </label>
-                <label className='block text-sm'>(máx 300 carácteres)</label>
+                <label className='block text-sm'>(máx 300 palabras)</label>
 
                 <textarea
                     name="innovation"
@@ -330,7 +410,7 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     ¿Qué cambios concretos ha generado la iniciativa en la empleabilidad, participación, seguridad o inclusión de mujeres? Incluya indicadores si es posible *
                 </label>
-                <label className='block text-sm'>(máx 300 carácteres)</label>
+                <label className='block text-sm'>(máx 300 palabras)</label>
 
                 <textarea
                     name="impact"
@@ -344,7 +424,7 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     ¿Puede aplicarse la iniciativa en otras ciudades o instituciones? ¿Existen herramientas, protocolos o aprendizajes transferibles? *
                 </label>
-                <label className='block text-sm'>(máx 250 carácteres)</label>
+                <label className='block text-sm'>(máx 250 palabras)</label>
 
                 <textarea
                     name="transferability"
@@ -358,7 +438,7 @@ function Step4({ form, handleChange }) {
                 <label className='text-xl'>
                     ¿Qué mecanismos aseguran la continuidad de la iniciativa en el tiempo (ej. financiamiento, institucionalización, alianzas)? *
                 </label>
-                <label className='block text-sm'>(máx 250 carácteres)</label>
+                <label className='block text-sm'>(máx 250 palabras)</label>
 
                 <textarea
                     name="sustainability"
@@ -440,7 +520,7 @@ function Step4({ form, handleChange }) {
 }
 
 
-function Step5({ form, handleInputChange, handleAddLink, handleLetterChange , handleLinkChange, handleFileChange, handleRemoveLink }) {
+function Step5({ form, handleInputChange, handleAddLink, handleLetterChange, handleLinkChange, handleFileChange, handleRemoveLink }) {
     return (
         <div>
             <h2 className="text-3xl text-center font-bold mb-4">Material de respaldo</h2>
@@ -553,7 +633,7 @@ export default function FormWizard() {
         email: '',
         phone: '',
         registrationId: '',
-        team: [{ name: '', position: '' }],
+        team: [{ name: '', position: '', email: '' }],
         associations: [],
         name: '',
         city: '',
@@ -575,15 +655,16 @@ export default function FormWizard() {
         files: [],
         video: '',
         recognition: '',
-        acceptanceLetter:[],
+        acceptanceLetter: [],
         accepted: false,
     });
-
+   
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
 
+   
     const validateStep = () => {
         const newErrors = [];
 
@@ -596,7 +677,11 @@ export default function FormWizard() {
             if (!form.legalRepPosition) newErrors.push('El cargo del representante legal es requerido.');
             if (!form.email) newErrors.push('El correo electrónico es requerido.');
             if (!form.phone) newErrors.push('El teléfono de contacto es requerido.');
-            if (!form.registrationId) newErrors.push('RUT/NIT/CNPJ/Registro legal es requerido.');
+            form.team.forEach((member, index) => {
+                if (!member.name) newErrors.push(`El nombre del miembro ${index + 1} del equipo es requerido.`);
+                if (!member.position) newErrors.push(`El cargo del miembro ${index + 1}  del equipo es requerido.`);
+                if (!member.email) newErrors.push(`El correo electrónico del miembro ${index + 1}  del equipo es requerido.`);
+            });
         }
         // Validaciones para Step 2
         if (currentStep === 1) {
@@ -618,6 +703,7 @@ export default function FormWizard() {
             if (!form.transferability) newErrors.push('La información sobre transferibilidad es requerida.');
             if (!form.sustainability) newErrors.push('La información sobre sostenibilidad es requerida.');
         }
+        // Validaciones para Step 4
         if (currentStep === 3 && form.category === 'ONG/Academia') {
             if (!form.methodology) newErrors.push('El enfoque, herramienta o metodología es requerida.');
             if (!form.outcomes) newErrors.push('Los resultados o cambios generados son requeridos.');
@@ -625,6 +711,31 @@ export default function FormWizard() {
             if (!form.sustainability) newErrors.push('La información sobre sostenibilidad es requerida.');
         }
 
+        // Validaciones para Step 5
+        if (currentStep === 4) {
+            // Validar enlaces
+            form.links.forEach((link, index) => {
+                if (!link) {
+                    newErrors.push(`El campo link no debe estar vacío.`);
+                } else {
+                    try {
+                        new URL(link); // Verifica si la URL es válida
+                    } catch (_) {
+                        newErrors.push(`El link ${index + 1} es inválido.`);
+                    }
+                }
+            });
+
+            // Validar archivos
+            if (form.files.length === 0) {
+                newErrors.push('Debe adjuntar al menos un archivo.');
+            }
+
+            // Validar carta de aceptación
+            if (form.acceptanceLetter.length === 0) {
+                newErrors.push('Debe adjuntar la carta de autorización.');
+            }
+        }
         setErrors(newErrors);
         return newErrors.length === 0;
     };
@@ -696,21 +807,25 @@ export default function FormWizard() {
     };
 
     const onSubmit = () => {
-        // Asegúrate de que `form` tiene todos los datos antes de llamar a `createFicha`
-        createFicha(form).then(() => {
-            setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente.');
-            setIsSubmitted(true);
 
-            // Configura el timeout para redireccionar después de 5 segundos
-            const timeoutId = setTimeout(() => {
-                navigate('/'); // Asegúrate de que '/' sea la ruta al home
-            }, 5000);
+        if (validateStep()) {
 
-            // Limpia el timeout si es necesario
-            return () => clearTimeout(timeoutId);
-        }).catch(error => {
-            console.error('Error al crear la ficha:', error);
-        });
+            // Asegúrate de que `form` tiene todos los datos antes de llamar a `createFicha`
+            createFicha(form).then(() => {
+                setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio');
+                setIsSubmitted(true);
+
+                // Configura el timeout para redireccionar después de 5 segundos
+                const timeoutId = setTimeout(() => {
+                    navigate('/'); // Asegúrate de que '/' sea la ruta al home
+                }, 5000);
+
+                // Limpia el timeout si es necesario
+                return () => clearTimeout(timeoutId);
+            }).catch(error => {
+                console.error('Error al crear la ficha:', error);
+            });
+        }
     };
     const handleBack = () => {
         if (isSubmitted) {
@@ -766,7 +881,7 @@ export default function FormWizard() {
 
     const handleLetterChange = (e) => {
         const filesArray = Array.from(e.target.files);
-    
+
         filesArray.forEach(file => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
@@ -777,7 +892,7 @@ export default function FormWizard() {
                     type: file.type,
                     content: base64Data
                 };
-    
+
                 // Agrega el archivo al estado 'acceptanceLetter'
                 setForm(prevForm => ({
                     ...prevForm,
@@ -829,7 +944,7 @@ export default function FormWizard() {
         <div className="relative flex items-center justify-center min-h-screen">
             {/* Back Button */}
             <button onClick={handleBack} className="absolute top-4 left-4    hover:text-[#a49fc4] rounded-md">
-            <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
+                <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
                 <span className=" ml-1">Volver</span>
             </button>
 

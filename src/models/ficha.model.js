@@ -31,7 +31,6 @@ const fichaSchema = new mongoose.Schema({
     },
     registrationId: {
         type: String,
-        required: true,
     },
     team: [{
         name: {
@@ -39,7 +38,10 @@ const fichaSchema = new mongoose.Schema({
         },
         position: {
             type: String,
-        }
+        },
+        email: {
+            type: String,
+        },
     }],
     associations: [String],
     name: {

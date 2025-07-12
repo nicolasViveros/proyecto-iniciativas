@@ -90,7 +90,12 @@ const FichaPage = () => {
       <div>
         <p><strong>Equipo Responsable:</strong></p>
         {ficha.team.map((member, index) => (
-          <p key={index}>- {member.name}: {member.position}</p>
+          <div key={index}>
+            <p>Miembro {index + 1} del equipo:</p>
+            <p>nombre - {member.name}</p>
+            <p>cargo - {member.position}</p>
+            <p>correo - {member.email}</p>
+          </div>
         ))}
       </div>
       <p><strong>Necesidad/Problemática:</strong> {ficha.need}</p>
@@ -124,7 +129,7 @@ const FichaPage = () => {
         <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
       )}
       {/* Aquí puedes agregar un resumen completo en un formato que prefieras */}
-     
+
     </div>
   );
 };
