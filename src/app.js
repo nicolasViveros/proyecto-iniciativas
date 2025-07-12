@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://rumboalaequidad.org",
+    origin: "https://rumboalaequidad.org",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // Esto debe ser verdadero para permitir cookies
   })
