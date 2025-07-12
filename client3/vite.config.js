@@ -27,7 +27,7 @@ export default defineConfig({
     //https: true,
     https: {
       key: "./root/proyecto-iniciativas/mi_clave_privada.key", // Path to your private key
-      cert: "./root/proyecto-iniciativas/mi_solicitud.csr", // Path to your issued SSL certificate
+      cert: "./root/proyecto-iniciativas/_cert.pem", // Path to your issued SSL certificate
     },
   },
 });
