@@ -78,7 +78,7 @@ function HomePage() {
           alt="Banner principal"
           className="w-full h-auto object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start pl-35 pt-25 z-10 space-y-2">
+        {/* <div className="absolute inset-0 flex flex-col items-start pl-35 pt-25 z-10 space-y-2">
           <p className="text-xs md:text-sm font-medium text-[#5A478D]">concurso</p>
           <div className="bg-[#F8991D] text-white inline-block px-2 py-1 text-xs md:text-sm font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
@@ -91,7 +91,7 @@ function HomePage() {
             Reconociendo iniciativas innovadoras en favor de la <br />
             equidad de género en movilidad urbana
           </p>
-        </div>
+        </div> */}
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
           <img
             src="/fecha.svg"
