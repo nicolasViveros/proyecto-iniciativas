@@ -8,11 +8,11 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // basicSsl({
-    //   name: "mi_solicitud.csr",
-    //   domains: ["*.rumboalaequidad.org"],
-    //   //certDir: "/root/proyecto-iniciativas",
-    // }),
+    basicSsl({
+      name: "mi_solicitud.csr",
+      domains: ["*.rumboalaequidad.org"],
+      certDir: "/root/proyecto-iniciativas",
+    }),
   ],
   css: {
     postcss: {
@@ -24,7 +24,7 @@ export default defineConfig({
     port: 443,
     allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"],
     https: true,
-    key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
-    cert: "/root/proyecto-iniciativas/mi_solicitud.csr",
+    // key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
+    // cert: "/root/proyecto-iniciativas/mi_solicitud.csr",
   },
 });
