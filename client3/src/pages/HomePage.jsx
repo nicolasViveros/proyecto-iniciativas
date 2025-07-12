@@ -73,37 +73,32 @@ function HomePage() {
     <div className="w-full min-h-screen bg-white font-sans">
       {/* ENCABEZADO VISUAL */}
       <div className="relative w-full">
-  <img
-    src="/micro.svg"
-    alt="Banner principal"
-    className="w-full h-auto object-cover"
-  />
-  <div className="absolute inset-0 flex items-center justify-between px-4 md:px-8 z-10">
-    {/* Texto del banner */}
-    <div className="flex flex-col items-start">
-      <p className="text-sm font-medium text-[#5A478D]">concurso</p>
-      <div className="bg-[#F8991D] text-white inline-block px-2 py-1 font-bold rounded-sm mb-2">
-        ¡Postula tu Iniciativa!
-      </div>
+        <img
+          src="/micro.svg"
+          alt="Banner principal"
+          className="w-full h-auto object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col items-start p-4 z-10">
+          <p className="text-sm font-medium text-[#5A478D]">concurso</p>
+          <div className="bg-[#F8991D] text-white inline-block px-2 py-1 font-bold rounded-sm mb-2">
+            ¡Postula tu Iniciativa!
+          </div>
 
-      <h2 className="text-lg md:text-xl font-extrabold text-[#3C3270] mb-1">
-        RUMBO A LA EQUIDAD:
-      </h2>
-      <p className="text-sm md:text-base text-[#5A478D] leading-tight">
-        Reconociendo iniciativas innovadoras en favor de la <br />
-        equidad de género en movilidad urbana
-      </p>
-    </div>
-    {/* Imagen fecha.svg */}
-    <div className="w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center">
-      <img
-        src="/fecha.svg"
-        alt="Fecha"
-        className="w-full h-auto"
-      />
-    </div>
-  </div>
-</div>
+          <h2 className="text-lg md:text-xl font-extrabold text-[#3C3270] mb-1">
+            RUMBO A LA EQUIDAD:
+          </h2>
+          <p className="text-sm md:text-base text-[#5A478D] leading-tight">
+            Reconociendo iniciativas innovadoras en favor de la <br />
+            equidad de género en movilidad urbana
+          </p>
+        </div>
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
+          <img
+            src="/fecha.svg"
+            className="w-full h-auto"
+          />
+        </div>
+      </div>
 
       <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         {/* Menú lateral */}
