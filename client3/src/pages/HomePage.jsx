@@ -72,35 +72,34 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       {/* ENCABEZADO VISUAL */}
-      <div
-      className="relative w-full bg-cover bg-center h-[300px] flex items-center justify-between px-10"
-      style={{ backgroundImage: "url('/images/bus-banner.jpg')" }} // Ruta a tu imagen fondo
-    >
-      {/* Círculo participa */}
-      <img
-        src="/images/participa.png" // Ruta a tu círculo participa
-        alt="Participa"
-        className="absolute top-6 left-1/2 transform -translate-x-1/2 w-24 h-24 z-20"
-      />
-
-      {/* Texto izquierdo */}
+      <div className="relative w-full">
       <div className="max-w-lg text-left text-white z-10">
-        <p className="text-sm font-medium text-[#5A478D]">concurso</p>
-        <div className="bg-[#F8991D] text-white inline-block px-2 py-1 font-bold rounded-sm mb-2">
-          ¡Postula tu Iniciativa!
+          <p className="text-sm font-medium text-[#5A478D]">concurso</p>
+          <div className="bg-[#F8991D] text-white inline-block px-2 py-1 font-bold rounded-sm mb-2">
+            ¡Postula tu Iniciativa!
+          </div>
+
+          <h2 className="text-lg md:text-xl font-extrabold text-[#3C3270] mb-1">
+            RUMBO A LA EQUIDAD:
+          </h2>
+          <p className="text-sm md:text-base text-[#5A478D] leading-tight">
+            Reconociendo iniciativas innovadoras en favor de la <br />
+            equidad de género en movilidad urbana
+          </p>
         </div>
-
-        <h2 className="text-lg md:text-xl font-extrabold text-[#3C3270] mb-1">
-          RUMBO A LA EQUIDAD:
-        </h2>
-        <p className="text-sm md:text-base text-[#5A478D] leading-tight">
-          Reconociendo iniciativas innovadoras en favor de la <br />
-          equidad de género en movilidad urbana
-        </p>
+        <img
+          src="/micro.svg"
+          alt="Banner principal"
+          className="w-full h-auto object-cover"
+        />
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center">
+          <img
+            src="/fecha.svg"
+            className="w-full h-auto"
+          />
+        </div>
+       
       </div>
-
-      {/* Imagen derecha: ya está en el fondo */}
-    </div>
 
       <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         {/* Menú lateral */}
