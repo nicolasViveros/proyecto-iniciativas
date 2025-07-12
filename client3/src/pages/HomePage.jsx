@@ -78,16 +78,16 @@ function HomePage() {
           alt="Banner principal"
           className="w-full h-auto object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start p-4 z-10">
-          <p className="text-sm font-medium text-[#5A478D]">concurso</p>
-          <div className="bg-[#F8991D] text-white inline-block px-2 py-1 font-bold rounded-sm mb-2">
+        <div className="absolute inset-0 flex flex-col items-start p-4 z-10 space-y-2">
+          <p className="text-xs md:text-sm font-medium text-[#5A478D]">concurso</p>
+          <div className="bg-[#F8991D] text-white inline-block px-2 py-1 text-xs md:text-sm font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
           </div>
 
-          <h2 className="text-lg md:text-xl font-extrabold text-[#3C3270] mb-1">
+          <h2 className="text-base md:text-lg lg:text-xl font-extrabold text-[#3C3270] mb-1">
             RUMBO A LA EQUIDAD:
           </h2>
-          <p className="text-sm md:text-base text-[#5A478D] leading-tight">
+          <p className="text-xs md:text-sm lg:text-base text-[#5A478D] leading-tight">
             Reconociendo iniciativas innovadoras en favor de la <br />
             equidad de género en movilidad urbana
           </p>
