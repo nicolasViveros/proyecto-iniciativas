@@ -2,9 +2,18 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcsspost from "@tailwindcss/postcss";
 import tailwindcss from "@tailwindcss/vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    basicSsl({
+      name: "rumboalaequidad-cert",
+      domains: ["*.rumboalaequidad.org"],
+      //certDir: "./cert",
+    }),
+  ],
   css: {
     postcss: {
       plugins: [tailwindcsspost()],
