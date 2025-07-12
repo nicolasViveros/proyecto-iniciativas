@@ -9,9 +9,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
     basicSsl({
-      name: "rumboalaequidad-cert",
+      name: "mi_solicitud.csr",
       domains: ["*.rumboalaequidad.org"],
-      //certDir: "./cert",
+      certDir: "/root/proyecto-iniciativas",
     }),
   ],
   css: {
@@ -24,5 +24,7 @@ export default defineConfig({
     port: 443,
     allowedHosts: ["rumboalaequidad.org", "www.rumboalaequidad.org"],
     https: true,
+    key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Reemplaza con la ruta a tu clave privada
+    cert: "/root/proyecto-iniciativas/mi_solicitud.csr",
   },
 });
