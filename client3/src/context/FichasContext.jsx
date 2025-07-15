@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { createFichaRequest, getFichasRequest , getFichaRequest} from "../api/fichas";
+import { createFichaRequest, getFichasRequest, getFichaRequest, deleteFichaRequest, updateFichaRequest } from "../api/fichas";
 
 const FichaContext = createContext();
 
@@ -55,32 +55,32 @@ export function FichaProvider({ children }) {
         // }
     }
 
-    //     const deleteTask = async (id) => {
-    //         try {
-    //             const res = await deleteTasksRequest(id);
-    //             console.log(res);
-    //             if (res.status === 204) setTasks(tasks.filter(task => task._id != id))
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
+    const deleteFicha = async (id) => {
+        try {
+            const res = await deleteFichaRequest(id);
+            console.log(res);
+            if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
-        const getFicha = async (id) => {
-            try {
-                const res = await getFichaRequest(id);
+    const getFicha = async (id) => {
+        try {
+            const res = await getFichaRequest(id);
             return (res.data)
-            } catch (error) {
-                console.log(error)
-            } 
-        };
+        } catch (error) {
+            console.log(error)
+        }
+    };
 
-    // const updateTask = async (id, task) => {
-    //  try {
-    //     await updateTasksRequest(id,task);
-    //  } catch (error) {
-    //     console.log(error);
-    //  }
-    // }
+    const updateFicha = async (id, ficha) => {
+        try {
+            await updateFichaRequest(id, ficha);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <FichaContext.Provider
@@ -88,9 +88,9 @@ export function FichaProvider({ children }) {
                 fichas,
                 createFicha,
                 getFichas,
-                // deleteTask,
+                deleteFicha,
                 getFicha,
-                // updateTask,
+                updateFicha,
             }}
         >
             {children}
