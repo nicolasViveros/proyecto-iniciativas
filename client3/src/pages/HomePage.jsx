@@ -13,9 +13,32 @@ function HomePage() {
   const secciones = [
     {
       titulo: "Sobre la entidad organizadora",
-      contenido: `El concurso SoMoS LAC 2025 es impulsado por Euroclima, un programa de cooperación internacional financiado por la Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ) en marco de la Agenda Global Gateway (GGA). Su objetivo es apoyar a los países de América Latina y el Caribe en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región. Desde 2023, Euroclima abarca a 33 países.
-      En el sector de movilidad urbana, Euroclima trabaja desde 2016 a través de la GIZ (Cooperación Alemana para el Desarrollo) y la AFD (Agencia Francesa de Desarrollo), apoyando numerosos proyectos en países latinoamericanos. Estos proyectos promueven una movilidad sostenible con un enfoque integral, inclusivo y climático.
-      En este sentido, Euroclima impulsa la Comunidad de Práctica SoMoS LAC Movilidad Sostenible, cuya misión es conectar a una red de actores públicos, privados y de la sociedad civil, facilitando el diálogo y la colaboración para impulsar liderazgos, políticas y acciones orientadas a mejorar los sistemas de movilidad en la región de forma sostenible. SoMoS LAC se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar aprendizajes y acciones colaborativas, siendo uno de ellos el grupo temático de Género, Equidad e Inclusión en los Sistemas de Movilidad, liderado por el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.`,
+      contenido: (
+        <>
+        <h1>El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional 
+        financiado por la <strong>Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ) 
+        en marco de la Agenda Global Gateway (GGA)</strong>. Su objetivo es apoyar a los países de América Latina y el Caribe 
+        en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región. 
+        Desde 2023, Euroclima abarca a 33 países.
+        </h1>
+      <div className="my-4">
+        <h2>En el sector de <strong>movilidad urbana</strong>, Euroclima trabaja desde 2016 a través de la <strong>GIZ (Cooperación Alemana para el Desarrollo)</strong> 
+      y la <strong>AFD (Agencia Francesa de Desarrollo)</strong>, apoyando numerosos proyectos en países latinoamericanos. 
+      Estos proyectos promueven una movilidad sostenible con un enfoque integral, inclusivo y climático.
+      </h2>
+      </div>
+      <div className="my-4">
+      <h2>En este sentido, Euroclima impulsa la Comunidad de Práctica <strong>SoMoS LAC Movilidad Sostenible</strong>, cuya misión es conectar a una
+      En este sentido, Euroclima impulsa la Comunidad de Práctica SoMoS LAC Movilidad Sostenible, cuya misión es conectar a una 
+      red de actores públicos, privados y de la sociedad civil, facilitando el diálogo y la colaboración para impulsar liderazgos, 
+      políticas y acciones orientadas a mejorar los sistemas de movilidad en la región de forma sostenible. 
+      SoMoS LAC se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar aprendizajes y acciones colaborativas, 
+      siendo uno de ellos el grupo temático de <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>, liderado por el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.
+      el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.
+      </h2>
+      </div>
+    </>
+    )
     },
     {
       titulo: "Propósito del Reconocimiento SoMoS LAC",
@@ -26,7 +49,7 @@ function HomePage() {
       titulo: "Categoría de postulación",
       contenido: (
         <>
-          <h1>El concurso contempla dos categorías:</h1>
+          <h1 className="mb-4">El concurso contempla dos categorías:</h1>
           <div>
             <strong>Instituciones públicas y Empresas privadas:</strong>
             <h2>
