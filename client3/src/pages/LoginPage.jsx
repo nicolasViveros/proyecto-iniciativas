@@ -16,7 +16,7 @@ function LoginPage() {
   })
 
   useEffect(() => {
-    if (isAuthenticated) navigate('/tasks');
+    if (isAuthenticated) navigate('/fichas');
 },[isAuthenticated]); 
 
   return (
@@ -64,9 +64,7 @@ function LoginPage() {
           </button>
         </form>
 
-        <p className="flex gap-x-2 justify-between">
-          No tienes cuenta? <Link to="/register" className="text-sky-500">Registrate</Link>
-        </p>
+      
       </div>
     </div>
 

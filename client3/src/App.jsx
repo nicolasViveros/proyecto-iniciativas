@@ -27,21 +27,14 @@ export function App() {
             <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/login' element={<LoginPage />} />
-              <Route path='/register' element={<RegisterPage />} />
-              <Route path='/new-task' element={<FileUpload />} />
               <Route path='/nueva-ficha' element={<FormWizard />} />
-              <Route path='/add-task' element={<TaskFormPage />} />
-              <Route path='/tasks' element={<TasksPage />} />
-              <Route path='/fichas' element={<FichasPage />} />
-              <Route path='/fichas/:id' element={<FichasPage />} />
-
-              <Route path='/ficha/:id' element={<FichaPage />} />
-              <Route path='/tasks/:id' element={<TaskFormPage />} />
-
 
 
               <Route element={<ProtectedRoute />}>
-                <Route path='/profile' element={<ProfilePage />} />
+              <Route path='/fichas' element={<FichasPage />} />
+              <Route path='/fichas/:id' element={<FichasPage />} />
+              <Route path='/ficha/:id' element={<FichaPage />} />
+
               </Route>
             </Routes>
           </main>
