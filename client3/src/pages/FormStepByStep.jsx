@@ -841,7 +841,6 @@ export default function FormWizard() {
                 // Asegúrate de que `form` tiene todos los datos antes de llamar a `createFicha`
                 createFicha(form).then(() => {
                     setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio');
-                    setSuccessMessage('Ahora será redireccionado al Inicio');
 
                     setIsSubmitted(true);
     
