@@ -803,6 +803,8 @@ export default function FormWizard() {
     const prevStep = () => {
         setCurrentStep((prevStep) => Math.max(prevStep - 1, 0));
     };
+    
+
     const [successMessage, setSuccessMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -970,38 +972,32 @@ export default function FormWizard() {
 
     return (
         <div className="relative flex items-center justify-center min-h-screen">
-            {/* Back Button */}
-            <button onClick={handleBack} className="absolute top-4 left-4    hover:text-[#a49fc4] rounded-md">
+            <button onClick={handleBack} className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md">
                 <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
-                <span className=" ml-1">Volver</span>
+                <span className="ml-1">Volver</span>
             </button>
-
+    
             <div className="max-w-3xl w-full p-10 rounded-md">
-
                 {/* Progress Indicator and Bar */}
                 <div className="mb-6">
-                    <div className="text-center text-sm  mb-1">
+                    <div className="text-center text-sm mb-1">
                         {currentStep + 1} de {steps.length}
                     </div>
                     <div className="w-full bg-[#a49fc4] rounded-full h-2.5 overflow-hidden">
-                        <div
-                            className="bg-[#5d5593] h-2.5"
-                            style={{ width: `${progressPercentage}%` }}
-                        />
+                        <div className="bg-[#5d5593] h-2.5" style={{ width: `${progressPercentage}%` }} />
                     </div>
                 </div>
-
-
-                <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }} className="max-w-2xl mx-auto p-6 bg-white  rounded-lg">
+    
+                <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }} className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
                     {steps[currentStep]}
-
+    
                     {successMessage && (
                         <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
                             {successMessage}
                         </div>
                     )}
                     {errors.length > 0 && (
-                        <div className="my-4 p-4  border border-red-400 text-red-700 rounded">
+                        <div className="my-4 p-4 border border-red-400 text-red-700 rounded">
                             <ul>
                                 {errors.map((error, index) => (
                                     <li key={index}>{error}</li>
@@ -1009,7 +1005,8 @@ export default function FormWizard() {
                             </ul>
                         </div>
                     )}
-
+    
+                    {/* Controla que el botón "Siguiente" no envíe el formulario en Step4 */}
                     {currentStep === 0 && (
                         <div className="flex justify-end mt-10">
                             <button
@@ -1020,8 +1017,8 @@ export default function FormWizard() {
                             </button>
                         </div>
                     )}
-
-                    {currentStep > 0 && (
+    
+                    {currentStep > 0 && currentStep < steps.length - 1 && (
                         <div className="flex justify-between mt-6">
                             <button
                                 type="button"
@@ -1029,27 +1026,33 @@ export default function FormWizard() {
                                 className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
                                 {isSubmitted ? 'Volver' : 'Anterior'}
                             </button>
-                            {currentStep < steps.length - 1 ? (
-                                <button
-                                    type="button"
-                                    onClick={nextStep}
-                                    className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
-                                    Siguiente
-                                </button>
-                            ) : (
-                                <button
-                                    type="submit"
-                                    className={` text-white px-4 py-2 rounded ${form.accepted ? "bg-[#5d5593] hover:bg-[#a49fc4]" : 'bg-purple-300'
-                                        }`}
-                                    disabled={!form.accepted || isSubmitted}
-                                >
-                                    Enviar Postulación →
-                                </button>
-                            )}
+                            <button
+                                type="button"
+                                onClick={nextStep}
+                                className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
+                                Siguiente
+                            </button>
+                        </div>
+                    )}
+    
+                    {currentStep === steps.length - 1 && (
+                        <div className="flex justify-between mt-6">
+                            <button
+                                type="button"
+                                onClick={prevStep}
+                                className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
+                                {isSubmitted ? 'Volver' : 'Anterior'}
+                            </button>
+                            <button
+                                type="submit"
+                                className={`text-white px-4 py-2 rounded ${form.accepted ? "bg-[#5d5593] hover:bg-[#a49fc4]" : 'bg-purple-300'}`}
+                                disabled={!form.accepted || isSubmitted}
+                            >
+                                Enviar Postulación →
+                            </button>
                         </div>
                     )}
                 </form>
-
             </div>
         </div>
     );
