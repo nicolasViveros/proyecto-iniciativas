@@ -136,7 +136,7 @@ function HomePage() {
             <div>
               <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
 
-              <div className=" text-sm space-y-2 pl-6">
+              <div className=" space-y-2 pl-6">
                 <div className="flex gap-2">
                   <span className="font-bold text-lg w-12">30%</span>
                   <div>
@@ -185,7 +185,8 @@ function HomePage() {
             </div>
 
             <div className="mt-4">
-              <strong className="my-4">Categoría Organizaciones de la sociedad civil y Entidades académicas</strong>
+              <h3 className="font-bold text-base mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
+
               <div className="text-sm space-y-3 pl-6">
                 <div className="flex gap-4">
                   <span className="font-bold text-lg w-12">30%</span>
