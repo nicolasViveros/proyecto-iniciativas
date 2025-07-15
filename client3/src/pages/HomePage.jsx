@@ -15,14 +15,15 @@ function HomePage() {
       titulo: "Sobre la entidad organizadora",
       contenido: (
         <>
-          <p>
-            <h1>El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional
+          <h1>
+            <p>El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional
               financiado por la <strong>Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ)
                 en marco de la Agenda Global Gateway (GGA)</strong>. Su objetivo es apoyar a los países de América Latina y el Caribe
               en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región.
               Desde 2023, Euroclima abarca a 33 países.
-            </h1>
-          </p>
+            </p>
+          </h1>
+
           <div className="my-4">
             <h2>En el sector de <strong>movilidad urbana</strong>, Euroclima trabaja desde 2016 a través de la <strong>GIZ (Cooperación Alemana para el Desarrollo)</strong>
               y la <strong>AFD (Agencia Francesa de Desarrollo)</strong>, apoyando numerosos proyectos en países latinoamericanos.
