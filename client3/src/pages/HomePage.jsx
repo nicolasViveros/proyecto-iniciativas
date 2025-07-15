@@ -15,31 +15,31 @@ function HomePage() {
       titulo: "Sobre la entidad organizadora",
       contenido: (
         <>
-          
-            El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional
-              financiado por la <strong>Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ)
-                en marco de la Agenda Global Gateway (GGA)</strong>. Su objetivo es apoyar a los países de América Latina y el Caribe
-              en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región.
-              Desde 2023, Euroclima abarca a 33 países.
-            
+
+          El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional
+          financiado por la <strong>Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ)
+            en marco de la Agenda Global Gateway (GGA)</strong>. Su objetivo es apoyar a los países de América Latina y el Caribe
+          en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región.
+          Desde 2023, Euroclima abarca a 33 países.
+
 
           <div className="my-4">
             En el sector de <strong>movilidad urbana</strong>, Euroclima trabaja desde 2016 a través de la <strong>GIZ (Cooperación Alemana para el Desarrollo)</strong>
-              y la <strong>AFD (Agencia Francesa de Desarrollo)</strong>, apoyando numerosos proyectos en países latinoamericanos.
-              Estos proyectos promueven una movilidad sostenible con un enfoque integral, inclusivo y climático.
-          
+            y la <strong>AFD (Agencia Francesa de Desarrollo)</strong>, apoyando numerosos proyectos en países latinoamericanos.
+            Estos proyectos promueven una movilidad sostenible con un enfoque integral, inclusivo y climático.
+
           </div>
           <div className="my-4">
             En este sentido, Euroclima impulsa la Comunidad de Práctica <strong>SoMoS LAC Movilidad Sostenible</strong>, cuya misión es conectar a una
-              En este sentido, Euroclima impulsa la Comunidad de Práctica SoMoS LAC Movilidad Sostenible, cuya misión es conectar a una
-              red de actores públicos, privados y de la sociedad civil, facilitando el diálogo y la colaboración para impulsar liderazgos,
-              políticas y acciones orientadas a mejorar los sistemas de movilidad en la región de forma sostenible.
-              SoMoS LAC se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar aprendizajes y acciones colaborativas,
-              siendo uno de ellos el grupo temático de <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>, liderado por el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.
-              el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.
-          
+            En este sentido, Euroclima impulsa la Comunidad de Práctica SoMoS LAC Movilidad Sostenible, cuya misión es conectar a una
+            red de actores públicos, privados y de la sociedad civil, facilitando el diálogo y la colaboración para impulsar liderazgos,
+            políticas y acciones orientadas a mejorar los sistemas de movilidad en la región de forma sostenible.
+            SoMoS LAC se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar aprendizajes y acciones colaborativas,
+            siendo uno de ellos el grupo temático de <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>, liderado por el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.
+            el Ministerio de Transporte, quien promueve el presente concurso como parte de su plan de acción.
+
           </div>
-          </>
+        </>
       )
     },
     {
@@ -47,11 +47,11 @@ function HomePage() {
       contenido: (
         <>
           <div>
-            
-              El propósito del concurso es: Reconocer, visibilizar y promover iniciativas innovadoras en favor de la equidad e inclusión de género
-              en la movilidad urbana, en América Latina y El Caribe. Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad
-              e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo.
-          
+
+            El propósito del concurso es: Reconocer, visibilizar y promover iniciativas innovadoras en favor de la equidad e inclusión de género
+            en la movilidad urbana, en América Latina y El Caribe. Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad
+            e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo.
+
             <h1 className="my-4">
               Este concurso está dirigido a instituciones públicas, empresas privadas, organizaciones de la sociedad civil y entidades académicas
               que lideren este tipo de iniciativas.
@@ -67,17 +67,17 @@ function HomePage() {
           <div className="mb-4">El concurso contempla dos categorías:</div>
           <div>
             <h3><strong>Instituciones públicas y Empresas privadas:</strong></h3>
-            
-              Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
-            
+
+            Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
+
           </div>
           <div className="my-4">
           </div>
           <div>
-            <strong>Organizaciones de la sociedad civil y Entidades académicas:</strong>
-            
-              Dirigida a organizaciones de la sociedad civil y entidades académicas que hayan desarrollado investigaciones, proyectos piloto, campañas, metodologías o programas de formación que promuevan la equidad de género en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas que hayan generado aprendizajes valiosos, incidencia en políticas públicas, articulación intersectorial o que tengan potencial de escalabilidad y réplica en otros contextos urbanos.
-            
+            <h3><strong>Organizaciones de la sociedad civil y Entidades académicas:</strong></h3>
+
+            Dirigida a organizaciones de la sociedad civil y entidades académicas que hayan desarrollado investigaciones, proyectos piloto, campañas, metodologías o programas de formación que promuevan la equidad de género en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas que hayan generado aprendizajes valiosos, incidencia en políticas públicas, articulación intersectorial o que tengan potencial de escalabilidad y réplica en otros contextos urbanos.
+
           </div>
         </>
       ),
@@ -85,7 +85,7 @@ function HomePage() {
     {
       titulo: "Requisitos de postulación y exclusiones",
       contenido: (<>
-        <div className=" text-sm space-y-6 p-4">
+        <div className=" text-sm space-y-3 p-2">
           <div>
             <h3 ><strong>Categoría Instituciones públicas y Empresas privadas</strong></h3>
             <ul className="list-disc list-inside">
@@ -115,13 +115,102 @@ function HomePage() {
     },
     {
       titulo: "Postulación",
-      contenido: `SoMoS LAC llevará a cabo un llamado público que se difundirá por distintos medios además de contactar a los responsables de las más de ochenta iniciativas que ya han sido identificadas en el marco del trabajo sobre “Mapeo de iniciativas de género e inclusión” de Somos LAC.
-          Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea.
-          Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información y de su logo..`,
+      contenido: (
+        <>
+          <ul>
+            <li>SoMoS LAC llevará a cabo un llamado público que se difundirá por distintos medios además de contactar a los responsables de las más de ochenta iniciativas que ya han sido identificadas en el marco del trabajo sobre “Mapeo de iniciativas de género e inclusión” de Somos LAC.</li>
+            <li>Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea.</li>
+            <li>Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información y de su logo.</li>
+          </ul>
+        </>
+      ),
     },
     {
       titulo: "Evaluación y Jurado",
-      contenido: `Un jurado multidisciplinario evaluará las propuestas con base en...`,
+      contenido: (
+        <>
+          <div class=" text-sm space-y-3 p-2">
+
+            <h1 class="text-2xl font-bold mb-4">Evaluación y Jurado</h1>
+
+            <div>
+              <h3 class="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
+              <div class="space-y-2">
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">30%</span>
+                  <div>
+                    <h3 class="font-bold">Innovación</h3>
+                    <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">30%</span>
+                  <div>
+                    <h3 class="font-bold">Impacto</h3>
+                    <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">10%</span>
+                  <div>
+                    <h3 class="font-bold">Replicabilidad</h3>
+                    <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">10%</span>
+                  <div>
+                    <h3 class="font-bold">Sostenibilidad</h3>
+                    <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3> 
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">20%</span>
+                  <div>
+                    <h3 class="font-bold">Evidencia</h3>
+                    <h3>Existencia de datos, documentación o resultados concretos</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-base mt-4 mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
+              <div class="space-y-2">
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">30%</span>
+                  <div>
+                    <h3 class="font-bold">Innovación</h3>
+                    <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">30%</span>
+                  <div>
+                    <h3 class="font-bold">Impacto</h3>
+                    <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">10%</span>
+                  <div>
+                    <h3 class="font-bold">Replicabilidad</h3>
+                    <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="font-bold text-lg w-12">10%</span>
+                  <div>
+                    <h3 class="font-bold">Sostenibilidad</h3>
+                    <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </>
+      )
     },
     {
       titulo: "Fechas del concurso",
