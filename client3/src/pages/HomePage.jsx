@@ -117,7 +117,7 @@ function HomePage() {
       titulo: "Postulación",
       contenido: (
         <>
-          <ul>
+          <ul className="list-disc list-inside">
             <li>SoMoS LAC llevará a cabo un llamado público que se difundirá por distintos medios además de contactar a los responsables de las más de ochenta iniciativas que ya han sido identificadas en el marco del trabajo sobre “Mapeo de iniciativas de género e inclusión” de Somos LAC.</li>
             <li>Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea.</li>
             <li>Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información y de su logo.</li>
