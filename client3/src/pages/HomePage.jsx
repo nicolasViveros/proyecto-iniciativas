@@ -64,7 +64,7 @@ function HomePage() {
       titulo: "Categoría de postulación",
       contenido: (
         <>
-          <h1 className="mb-4">El concurso contempla dos categorías:</h1>
+          <div className="mb-4">El concurso contempla dos categorías:</div>
           <div>
             <strong>Instituciones públicas y Empresas privadas:</strong>
             
