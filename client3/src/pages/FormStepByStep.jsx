@@ -749,10 +749,10 @@ export default function FormWizard() {
                 }
             });
 
-            // Validar archivos
-            if (form.files.length === 0) {
-                newErrors.push('Debe adjuntar al menos un archivo.');
-            }
+            // // Validar archivos
+            // if (form.files.length === 0) {
+            //     newErrors.push('Debe adjuntar al menos un archivo.');
+            // }
 
             // Validar carta de aceptación
             if (form.acceptanceLetter.length === 0) {
