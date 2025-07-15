@@ -353,8 +353,19 @@ function HomePage() {
           className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]">
           Comenzar postulación
         </button>
+
         <button
-          className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center">
+          className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center"
+          onClick={() => {
+            // Crea un enlace temporal para descargar el archivo y simula un clic en él
+            const link = document.createElement("a");
+            link.href = "/Bases_del_concurso-Genero.pdf"; // Asegúrate de que la ruta al archivo sea correcta
+            link.download = "Bases del concurso-Genero.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+        >
           Descargar bases
           <MdOutlineFileDownload className="text-2xl m-1 mb-1 ml-2 inline" />
         </button>
