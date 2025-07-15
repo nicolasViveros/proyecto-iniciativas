@@ -129,80 +129,99 @@ function HomePage() {
       titulo: "Evaluación y Jurado",
       contenido: (
         <>
-          <div class=" text-sm space-y-3 p-2">
+          <div className=" text-sm space-y-3 p-2">
 
-            <h1 class="text-2xl font-bold mb-4">Evaluación y Jurado</h1>
+            <h1>Se evaluarán las postulaciones considerando los siguientes criterios:</h1>
 
             <div>
-              <h3 class="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
-              <div class="space-y-2">
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">30%</span>
+              <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
+              <hr/>
+
+              <div className="space-y-2">
+                <div classname="flex gap-4">
+                  <span className="font-bold text-lg w-12">30%</span>
                   <div>
-                    <h3 class="font-bold">Innovación</h3>
+                    <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
+                    <hr/>
+
                   </div>
                 </div>
                 <div class="flex gap-4">
                   <span class="font-bold text-lg w-12">30%</span>
                   <div>
-                    <h3 class="font-bold">Impacto</h3>
+                    <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
+                    <hr/>
+
                   </div>
                 </div>
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">10%</span>
                   <div>
-                    <h3 class="font-bold">Replicabilidad</h3>
+                    <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
+                    <hr/>
+
                   </div>
                 </div>
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">10%</span>
                   <div>
-                    <h3 class="font-bold">Sostenibilidad</h3>
+                    <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3> 
+                    <hr/>
+
                   </div>
                 </div>
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">20%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">20%</span>
                   <div>
-                    <h3 class="font-bold">Evidencia</h3>
+                    <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
+                    <hr/>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 class="font-bold text-base mt-4 mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
-              <div class="space-y-2">
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">30%</span>
+              <strong >Categoría Organizaciones de la sociedad civil y Entidades académicas</strong>
+              <div className="space-y-2">
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">30%</span>
                   <div>
-                    <h3 class="font-bold">Innovación</h3>
+                    <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
+                    <hr/>
+
                   </div>
                 </div>
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">30%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">30%</span>
                   <div>
-                    <h3 class="font-bold">Impacto</h3>
+                    <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
+                    <hr/>
+
                   </div>
                 </div>
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">10%</span>
                   <div>
-                    <h3 class="font-bold">Replicabilidad</h3>
+                    <strong>Replicabilidad</strong>
                     <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
+                    <hr/>
+
                   </div>
                 </div>
-                <div class="flex gap-4">
-                  <span class="font-bold text-lg w-12">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12">10%</span>
                   <div>
-                    <h3 class="font-bold">Sostenibilidad</h3>
+                    <strong>Sostenibilidad</strong>
                     <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
+                    <hr/>
+
                   </div>
                 </div>
               </div>
