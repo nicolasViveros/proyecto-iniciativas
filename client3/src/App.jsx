@@ -33,6 +33,8 @@ export function App() {
               <Route path='/add-task' element={<TaskFormPage />} />
               <Route path='/tasks' element={<TasksPage />} />
               <Route path='/fichas' element={<FichasPage />} />
+              <Route path='/fichas/:id' element={<FichasPage />} />
+
               <Route path='/ficha/:id' element={<FichaPage />} />
               <Route path='/tasks/:id' element={<TaskFormPage />} />
 
