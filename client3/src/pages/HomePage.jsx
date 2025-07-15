@@ -137,8 +137,8 @@ function HomePage() {
               <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
 
               <div className="text-sm pl-6">
-                <div className="flex gap-2">
-                  <span className="font-bold text-lg w-12 p-2">30%</span>
+                <div className="flex-col gap-2">
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
