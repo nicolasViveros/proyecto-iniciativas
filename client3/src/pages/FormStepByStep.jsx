@@ -6,7 +6,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 
 
 function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeamMember, handleAssociationChange }) {
-    
+
     const [organizationType, setOrganizationType] = useState(form.organizationType);
     const [otherOrganizationType, setOtherOrganizationType] = useState('');
     const [country, setCountry] = useState(form.country);
@@ -173,7 +173,7 @@ function Step1({ form, handleChange, handleTeamChange, addTeamMember, removeTeam
             <h3 className="text-xl">Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa </h3>
             <label className='block text-sm my-2'>(puede ingresar más de una persona)</label>
 
-        
+
 
             {form.team.map((member, index) => (
                 <div key={index} className="grid grid-cols-5 gap-1 my-1">
@@ -658,13 +658,24 @@ export default function FormWizard() {
         acceptanceLetter: [],
         accepted: false,
     });
-   
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
 
-   
+    // Helper function to validate phone format
+    const isValidPhone = (phone) => {
+      const phoneRegex = /^\+?\d{7,15}$/;
+      return phoneRegex.test(phone);
+    };
+
+    // Helper function to validate email format
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const validateStep = () => {
         const newErrors = [];
 
@@ -675,12 +686,24 @@ export default function FormWizard() {
             if (!form.country) newErrors.push('El país es requerido.');
             if (!form.legalRepName) newErrors.push('El nombre del representante legal es requerido.');
             if (!form.legalRepPosition) newErrors.push('El cargo del representante legal es requerido.');
-            if (!form.email) newErrors.push('El correo electrónico es requerido.');
-            if (!form.phone) newErrors.push('El teléfono de contacto es requerido.');
+            if (!form.email) {
+                newErrors.push('El correo electrónico es requerido.');
+            } else if (!isValidEmail(form.email)) {
+                newErrors.push('El correo electrónico tiene un formato inválido.');
+            }
+            if (!form.phone) {
+                newErrors.push('El teléfono de contacto es requerido.');
+            } else if (!isValidPhone(form.phone)) {
+                newErrors.push('El teléfono de contacto tiene un formato inválido.');
+            }
             form.team.forEach((member, index) => {
                 if (!member.name) newErrors.push(`El nombre del miembro ${index + 1} del equipo es requerido.`);
-                if (!member.position) newErrors.push(`El cargo del miembro ${index + 1}  del equipo es requerido.`);
-                if (!member.email) newErrors.push(`El correo electrónico del miembro ${index + 1}  del equipo es requerido.`);
+                if (!member.position) newErrors.push(`El cargo del miembro ${index + 1} del equipo es requerido.`);
+                if (!member.email) {
+                    newErrors.push(`El correo electrónico del miembro ${index + 1} del equipo es requerido.`);
+                } else if (!isValidEmail(member.email)) {
+                    newErrors.push(`El correo electrónico del miembro ${index + 1} tiene un formato inválido.`);
+                }
             });
         }
         // Validaciones para Step 2
