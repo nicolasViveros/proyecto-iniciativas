@@ -83,10 +83,10 @@ function HomePage() {
     {
       titulo: "Requisitos de postulación y exclusiones",
       contenido: (<>
-        <div>
+        <div className=" text-sm space-y-6 p-4">
           <div>
             <h3 ><strong>Categoría Instituciones públicas y Empresas privadas</strong></h3>
-            <ul class="list-disc list-inside">
+            <ul className="list-disc list-inside">
               <li>La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña.</li>
               <li>La organización postulante puede ser una institución pública y/o privada.</li>
               <li>La iniciativa debe haber comenzado su implementación entre el 1 de enero de 2021 y hasta un año antes de la fecha de postulación.</li>
@@ -96,9 +96,9 @@ function HomePage() {
             </ul>
           </div>
 
-          <div>
-            <h3> <strong>Categoría Organizaciones de la sociedad civil y Entidades académicas</strong></h3>
-            <ul class="list-disc list-inside">
+          <div className="my-4">
+            <h3><strong>Categoría Organizaciones de la sociedad civil y Entidades académicas</strong></h3>
+            <ul className="list-disc list-inside">
               <li>La iniciativa debe referirse a experiencias o análisis aplicados a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.</li>
               <li>La organización postulante puede ser académica o de la sociedad civil.</li>
               <li>La iniciativa debe haber sido publicada entre el 1 de enero de 2021 y hasta la fecha de postulación.</li>
