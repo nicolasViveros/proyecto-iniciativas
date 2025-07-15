@@ -254,7 +254,7 @@ function HomePage() {
               </div>
             </div>
 
-            <h3 class="text-sm">
+            <h3 className="text-sm">
               Las fechas serán publicadas vía mailing SoMoS LAC, sitio web del OBGeM y en las redes de GIZ.
               Las convocatorias se realizarán vía correo electrónico y se divulgarán por RRSS de las iniciativas aliadas.
             </h3>
