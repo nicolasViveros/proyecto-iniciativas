@@ -137,7 +137,7 @@ function HomePage() {
               <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
 
               <div className="text-sm pl-6">
-                <div className="flex gap-2">
+                <div className="flex gap-4">
                   <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
@@ -147,7 +147,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">30%</span>
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
@@ -156,7 +156,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">10%</span>
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
@@ -165,7 +165,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">10%</span>
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3>
@@ -174,7 +174,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">20%</span>
+                  <span className="font-bold text-lg w-12 p-3">20%</span>
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
