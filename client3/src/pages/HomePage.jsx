@@ -359,8 +359,8 @@ function HomePage() {
           onClick={() => {
             // Crea un enlace temporal para descargar el archivo y simula un clic en él
             const link = document.createElement("a");
-            link.href = "/Bases_del_concurso-Genero.pdf"; // Asegúrate de que la ruta al archivo sea correcta
-            link.download = "Bases del concurso-Genero.pdf";
+            link.href = "/Bases.pdf"; // Asegúrate de que la ruta al archivo sea correcta
+            link.download = "Bases.pdf";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
