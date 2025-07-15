@@ -20,45 +20,46 @@ function FichaCard({ ficha }) {
       <p><strong>Teléfono:</strong> {ficha.phone}</p>
       <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       <>
-                            <button
-                                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md"
-                                onClick={() => {
-                                    deleteFicha(ficha._id);
-                                }}
-                            >
-                                eliminar
-                            </button>
+        <button
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md"
+          onClick={() => {
+            console.log(ficha._id)
+            deleteFicha(ficha._id);
+          }}
+        >
+          eliminar
+        </button>
 
-                            <Link
-                                to={`/ficha/${ficha._id}`} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
-                            >
-                                editar
-                            </Link>
-                        </>
+        <Link
+          to={`/ficha/${ficha._id}`} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+        >
+          editar
+        </Link>
+      </>
     </div>
   );
 }
 
 function FichasPage() {
-    const { getFichas, fichas } = useFichas();
+  const { getFichas, fichas } = useFichas();
 
-    useEffect(() => {
-      getFichas();
-      console.log(fichas); // Para verificar los datos
-    }, []);
-    
-    if (fichas.length == 0) return (<h1> Cargando...</h1>);
+  useEffect(() => {
+    getFichas();
+    console.log(fichas); // Para verificar los datos
+  }, []);
 
-    return (
-        <div className="container mx-auto p-6">
-          <h1 className="text-3xl font-bold mb-6">Listado de Fichas</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {fichas.map((ficha, index) => (
-              <FichaCard key={index} ficha={ficha} />
-            ))}
-          </div>
-        </div>
-      );
+  if (fichas.length == 0) return (<h1> Cargando...</h1>);
+
+  return (
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">Listado de Fichas</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {fichas.map((ficha, index) => (
+          <FichaCard key={index} ficha={ficha} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default FichasPage
