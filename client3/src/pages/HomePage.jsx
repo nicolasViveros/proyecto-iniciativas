@@ -142,7 +142,7 @@ function HomePage() {
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
-                    <hr className="w-sm"/>
+                    <hr className="w-screen"/>
 
                   </div>
                 </div>
@@ -189,7 +189,7 @@ function HomePage() {
 
               <div className="text-sm space-y-3 pl-6">
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">30%</span>
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
@@ -198,7 +198,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">30%</span>
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
@@ -207,7 +207,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">10%</span>
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
@@ -216,7 +216,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">10%</span>
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
@@ -225,7 +225,7 @@ function HomePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-bold text-lg w-12">20%</span>
+                  <span className="font-bold text-lg w-12 p-3">20%</span>
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Documentación, publicaciones o datos que respalden los resultados obtenidos</h3>
