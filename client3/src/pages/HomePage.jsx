@@ -47,11 +47,11 @@ function HomePage() {
       contenido: (
         <>
           <div>
-            <h1>
+            
               El propósito del concurso es: Reconocer, visibilizar y promover iniciativas innovadoras en favor de la equidad e inclusión de género
               en la movilidad urbana, en América Latina y El Caribe. Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad
               e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo.
-            </h1>
+          
             <h1 className="my-4">
               Este concurso está dirigido a instituciones públicas, empresas privadas, organizaciones de la sociedad civil y entidades académicas
               que lideren este tipo de iniciativas.
@@ -67,17 +67,17 @@ function HomePage() {
           <h1 className="mb-4">El concurso contempla dos categorías:</h1>
           <div>
             <strong>Instituciones públicas y Empresas privadas:</strong>
-            <h2>
+            
               Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
-            </h2>
+            
           </div>
           <div className="my-4">
           </div>
           <div>
             <strong>Organizaciones de la sociedad civil y Entidades académicas:</strong>
-            <h3>
+            
               Dirigida a organizaciones de la sociedad civil y entidades académicas que hayan desarrollado investigaciones, proyectos piloto, campañas, metodologías o programas de formación que promuevan la equidad de género en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas que hayan generado aprendizajes valiosos, incidencia en políticas públicas, articulación intersectorial o que tengan potencial de escalabilidad y réplica en otros contextos urbanos.
-            </h3>
+            
           </div>
         </>
       ),
@@ -186,7 +186,7 @@ function HomePage() {
         {/* Contenido de la sección */}
         <div className="w-full md:w-2/3 bg-white px-6 rounded  ">
           <h2 className="text-2xl font-bold mb-4">{secciones[activo].titulo}</h2>
-          <p className="text-sm whitespace-pre-line">{secciones[activo].contenido}</p>
+          <h2 className="text-sm whitespace-pre-line">{secciones[activo].contenido}</h2>
         </div>
       </div>
 
