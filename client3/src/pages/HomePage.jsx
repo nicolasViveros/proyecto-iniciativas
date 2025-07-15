@@ -136,13 +136,13 @@ function HomePage() {
             <div>
               <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
 
-              <div className=" text-sm space-y-2 px-6">
+              <div className=" text-sm space-y-2 pl-6">
                 <div className="flex gap-2">
                   <span className="font-bold text-lg w-12">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
@@ -151,7 +151,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
@@ -160,7 +160,7 @@ function HomePage() {
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm" />
 
                   </div>
                 </div>
@@ -169,7 +169,7 @@ function HomePage() {
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
@@ -178,21 +178,21 @@ function HomePage() {
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="mt-4">
-              <h3 className="font-bold text-base mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
-              <div className="text-sm space-y-3 px-6">
+              <strong className="my-4">Categoría Organizaciones de la sociedad civil y Entidades académicas</strong>
+              <div className="text-sm space-y-3 pl-6">
                 <div className="flex gap-4">
                   <span className="font-bold text-lg w-12">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
@@ -201,7 +201,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm" />
 
                   </div>
                 </div>
@@ -210,7 +210,7 @@ function HomePage() {
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
@@ -219,7 +219,7 @@ function HomePage() {
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
@@ -228,7 +228,7 @@ function HomePage() {
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Documentación, publicaciones o datos que respalden los resultados obtenidos</h3>
-                    <hr className="w-md" />
+                    <hr className="w-sm"/>
 
                   </div>
                 </div>
