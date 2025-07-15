@@ -82,20 +82,34 @@ function HomePage() {
     },
     {
       titulo: "Requisitos de postulación y exclusiones",
-      contenido: `Categoría Instituciones públicas y Empresas privadas
-      La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña.
-      La organización postulante puede ser una institución pública y/o privada
-      La iniciativa debe haber comenzado su implementación entre el 1 de enero de 2021 y hasta un año antes de la fecha de postulación.
-      La organización debe estar legalmente constituida y operativa.
-      No podrán postular iniciativas que estén participando en el concurso Mujeres en Ruta 2025, en cualquiera de sus ciudades.
-      No podrán participar instituciones que hayan participado directamente en la preparación o ejecución de este concurso.
-      Categoría Organizaciones de la sociedad civil y Entidades académicas
-      La iniciativa debe referirse a experiencias o análisis aplicadas a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
-      La organización postulante puede ser académica o de la sociedad civil.
-      La iniciativa debe haber sido publicada entre el 1 de enero de 2021 y hasta la fecha de postulación.
-      La organización debe estar legalmente constituida y operativa.
-      No podrán postular iniciativas que estén participando en el concurso Mujeres en Ruta 2025, en cualquiera de sus ciudades.
-      No podrán participar instituciones que hayan participado directamente en la preparación o ejecución de este concurso.`,
+      contenido: (<>
+        <div class="text-[#5A478D] text-sm space-y-6 p-4">
+          <div>
+            <h3 class="font-bold text-base">Categoría Instituciones públicas y Empresas privadas</h3>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li>La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña.</li>
+              <li>La organización postulante puede ser una institución pública y/o privada.</li>
+              <li>La iniciativa debe haber comenzado su implementación entre el 1 de enero de 2021 y hasta un año antes de la fecha de postulación.</li>
+              <li>La organización debe estar legalmente constituida y operativa.</li>
+              <li>No podrán postular iniciativas que estén participando en el concurso Mujeres en Ruta 2025, en cualquiera de sus ciudades.</li>
+              <li>No podrán participar instituciones que hayan participado directamente en la preparación o ejecución de este concurso.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-base">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li>La iniciativa debe referirse a experiencias o análisis aplicados a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.</li>
+              <li>La organización postulante puede ser académica o de la sociedad civil.</li>
+              <li>La iniciativa debe haber sido publicada entre el 1 de enero de 2021 y hasta la fecha de postulación.</li>
+              <li>La organización debe estar legalmente constituida y operativa.</li>
+              <li>No podrán postular iniciativas que estén participando en el concurso Mujeres en Ruta 2025, en cualquiera de sus ciudades.</li>
+              <li>No podrán participar instituciones que hayan participado directamente en la preparación o ejecución de este concurso.</li>
+            </ul>
+          </div>
+        </div>
+
+      </>)
     },
     {
       titulo: "Postulación",
