@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { createFicha, getFichas, getFicha } from '../controllers/fichas.controller.js';
+import { createFicha, getFichas, getFicha, deleteFicha, updateFicha } from '../controllers/fichas.controller.js';
 
 
 const router = Router();
@@ -10,5 +10,8 @@ router.get('/fichas', getFichas);
 
 router.get('/ficha/:id', getFicha);
 
+router.delete('/fichas/:id',deleteFicha);
+
+router.put('/fichas/:id',updateFicha);
 
 export default router

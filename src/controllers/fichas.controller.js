@@ -99,3 +99,23 @@ export const getFicha = async (req, res) => {
         return res.status(404).json({ message: "ficha not found" })
     }
 };
+
+export const deleteFicha = async (req, res) =>  {
+    try {
+        const ficha = await Ficha.findByIdAndDelete(req.params.id)
+    if (!ficha) return res.status(404).json ({message: "ficha not found"})
+    return res.sendStatus(204);
+    } catch (error) {
+        return res.status(404).json ({message: "ficha not found"})
+    }
+};
+
+export const updateFicha = async (req, res) =>  {
+   try {
+    const ficha = await Ficha.findByIdAndUpdate(req.params.id, req.body,{new:true})
+    if (!ficha) return res.status(404).json ({message: "ficha not found"})
+    res.json(ficha)
+   } catch (error) {
+    return res.status(404).json ({message: "ficha not found"})
+   }
+};
