@@ -15,12 +15,14 @@ function HomePage() {
       titulo: "Sobre la entidad organizadora",
       contenido: (
         <>
-          <h1>El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional
-            financiado por la <strong>Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ)
-              en marco de la Agenda Global Gateway (GGA)</strong>. Su objetivo es apoyar a los países de América Latina y el Caribe
-            en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región.
-            Desde 2023, Euroclima abarca a 33 países.
-          </h1>
+          <p>
+            <h1>El concurso SoMoS LAC 2025 es impulsado por <strong> Euroclima </strong>, un programa de cooperación internacional
+              financiado por la <strong>Unión Europea (UE) y el Ministerio Federal de Cooperación Económica y Desarrollo de Alemania (BMZ)
+                en marco de la Agenda Global Gateway (GGA)</strong>. Su objetivo es apoyar a los países de América Latina y el Caribe
+              en la lucha contra el cambio climático, promoviendo la mitigación, adaptación, resiliencia e inversión climática en la región.
+              Desde 2023, Euroclima abarca a 33 países.
+            </h1>
+          </p>
           <div className="my-4">
             <h2>En el sector de <strong>movilidad urbana</strong>, Euroclima trabaja desde 2016 a través de la <strong>GIZ (Cooperación Alemana para el Desarrollo)</strong>
               y la <strong>AFD (Agencia Francesa de Desarrollo)</strong>, apoyando numerosos proyectos en países latinoamericanos.
@@ -114,8 +116,8 @@ function HomePage() {
     {
       titulo: "Postulación",
       contenido: `SoMoS LAC llevará a cabo un llamado público que se difundirá por distintos medios además de contactar a los responsables de las más de ochenta iniciativas que ya han sido identificadas en el marco del trabajo sobre “Mapeo de iniciativas de género e inclusión” de Somos LAC.
-      Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea.
-      Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información y de su logo..`,
+          Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea.
+          Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información y de su logo..`,
     },
     {
       titulo: "Evaluación y Jurado",
@@ -128,8 +130,8 @@ function HomePage() {
     {
       titulo: "Premiación",
       contenido: `Las tres iniciativas mejor evaluadas de cada categoría serán reconocidas con primer, segundo y mención honrosa.
-      La ceremonia de premiación se realizará en un evento internacional en Bogotá que tendrá lugar en septiembre de 2025 y que será coproducido con junto el Observatorio Latinoamericano de Género y Movilidad y en cuya oportunidad se premiará a los ganadores del concurso Mujeres en Ruta organizado por dicha institución. Durante el evento se desarrollarán además actividades técnicas, visitas, y espacios de intercambio entre las organizaciones seleccionadas.
-      SoMoS LAC cubrirá los gastos de viaje y estadía de un representante de cada una de las instituciones ganadoras de los primero y segundo lugar de las dos categorías.`,
+          La ceremonia de premiación se realizará en un evento internacional en Bogotá que tendrá lugar en septiembre de 2025 y que será coproducido con junto el Observatorio Latinoamericano de Género y Movilidad y en cuya oportunidad se premiará a los ganadores del concurso Mujeres en Ruta organizado por dicha institución. Durante el evento se desarrollarán además actividades técnicas, visitas, y espacios de intercambio entre las organizaciones seleccionadas.
+          SoMoS LAC cubrirá los gastos de viaje y estadía de un representante de cada una de las instituciones ganadoras de los primero y segundo lugar de las dos categorías.`,
     },
   ];
 
@@ -205,7 +207,7 @@ function HomePage() {
   );
 
 
-  // const { getTasks, tasks } = useTask();
+  // const {getTasks, tasks} = useTask();
 
 
   // useEffect(() => {
