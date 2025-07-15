@@ -83,9 +83,9 @@ function HomePage() {
     {
       titulo: "Requisitos de postulación y exclusiones",
       contenido: (<>
-        <div class="text-[#5A478D] text-sm space-y-6 p-4">
+        <div class=" text-sm space-y-6 p-4">
           <div>
-            <h3 class="font-bold text-base">Categoría Instituciones públicas y Empresas privadas</h3>
+            <h3 ><strong>Categoría Instituciones públicas y Empresas privadas</strong></h3>
             <ul class="list-disc list-inside mt-2 space-y-1">
               <li>La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña.</li>
               <li>La organización postulante puede ser una institución pública y/o privada.</li>
