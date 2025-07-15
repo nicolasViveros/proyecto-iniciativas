@@ -137,48 +137,43 @@ function HomePage() {
               <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
 
               <div className="text-sm pl-6">
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">20%</span>
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
-                    <hr />
                   </div>
                 </div>
               </div>
@@ -188,39 +183,35 @@ function HomePage() {
               <h3 className="font-bold text-base mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
 
               <div className="text-sm pl-6">
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
-                    <hr />
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1] ">
                   <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
-                    <hr />
 
                   </div>
                 </div>
@@ -229,7 +220,6 @@ function HomePage() {
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Documentación, publicaciones o datos que respalden los resultados obtenidos</h3>
-                    <hr />
 
                   </div>
                 </div>
@@ -257,7 +247,7 @@ function HomePage() {
               <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                 <span className="w-1/2">15 de septiembre</span>
                 <span className="w-1/2 font-medium">Selección de ganadores</span>
-              </div>              
+              </div>
               <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                 <span className="w-1/2">13 y 14 de octubre</span>
                 <span className="w-1/2 font-medium">Entrega de reconocimientos</span>
@@ -275,9 +265,29 @@ function HomePage() {
     },
     {
       titulo: "Premiación",
-      contenido: `Las tres iniciativas mejor evaluadas de cada categoría serán reconocidas con primer, segundo y mención honrosa.
-          La ceremonia de premiación se realizará en un evento internacional en Bogotá que tendrá lugar en septiembre de 2025 y que será coproducido con junto el Observatorio Latinoamericano de Género y Movilidad y en cuya oportunidad se premiará a los ganadores del concurso Mujeres en Ruta organizado por dicha institución. Durante el evento se desarrollarán además actividades técnicas, visitas, y espacios de intercambio entre las organizaciones seleccionadas.
-          SoMoS LAC cubrirá los gastos de viaje y estadía de un representante de cada una de las instituciones ganadoras de los primero y segundo lugar de las dos categorías.`,
+      contenido: (
+        <>  <div class=" text-sm space-y-4">
+          <h3>
+            Las tres iniciativas mejor evaluadas de cada categoría serán reconocidas con
+            primer, segundo y mención honrosa.
+          </h3>
+          <h3>
+            La ceremonia de premiación se realizará en un evento internacional en Bogotá
+            que tendrá lugar en septiembre de 2025 y que será coproducido con junto el
+            Observatorio Latinoamericano de Género y Movilidad y en cuya oportunidad se
+            premiará a los ganadores del concurso Mujeres en Ruta organizado por dicha
+            institución. Durante el evento se desarrollarán además actividades técnicas,
+            visitas, y espacios de intercambio entre las organizaciones seleccionadas.
+          </h3>
+          <h3>
+            SoMoS LAC cubrirá los gastos de viaje y estadía de un representante de cada
+            una de las instituciones ganadoras de los primero y segundo lugar de las dos
+            categorías.
+          </h3>
+        </div>
+
+        </>
+      )
     },
   ];
 
