@@ -58,14 +58,10 @@ export function FichaProvider({ children }) {
     const deleteFicha = async (id) => {
         try {
             const res = await deleteFichaRequest(id);
-            if (res.status === 204) {
-                setFichas(fichas.filter(ficha => ficha._id !== id));
-                console.log(`Ficha with id ${id} successfully deleted.`);
-            } else {
-                console.warn(`Unexpected response status: ${res.status} for delete request with id ${id}.`);
-            }
+            console.log(res);
+            if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
         } catch (error) {
-            console.error(`Error deleting ficha with id ${id}:`, error);
+            console.log(error);
         }
     };
 
