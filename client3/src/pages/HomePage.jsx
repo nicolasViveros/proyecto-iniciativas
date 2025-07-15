@@ -151,7 +151,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
-                    <hr className="w-fit"/>
+                    <hr className="w-full"/>
 
                   </div>
                 </div>
@@ -160,7 +160,7 @@ function HomePage() {
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
-                    <hr className="w-auto" />
+                    <hr className="w-full" />
 
                   </div>
                 </div>
@@ -169,7 +169,7 @@ function HomePage() {
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3>
-                    <hr className="w-sm"/>
+                    <hr className="w-full"/>
 
                   </div>
                 </div>
@@ -178,7 +178,7 @@ function HomePage() {
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
-                    <hr className="w-sm"/>
+                    <hr className="w-full"/>
                   </div>
                 </div>
               </div>
@@ -193,7 +193,7 @@ function HomePage() {
                   <div>
                     <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
-                    <hr className="w-sm"/>
+                    <hr className="w-full"/>
 
                   </div>
                 </div>
