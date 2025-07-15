@@ -102,6 +102,7 @@ export const getFicha = async (req, res) => {
 
 export const deleteFicha = async (req, res) =>  {
     try {
+        console.log(req.params.id)
         const ficha = await Ficha.findByIdAndDelete(req.params.id)
     if (!ficha) return res.status(404).json ({message: "ficha not found"})
     return res.sendStatus(204);
