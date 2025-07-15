@@ -142,7 +142,7 @@ function HomePage() {
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
-                    <hr className="w-screen"/>
+                    <hr className="w-full"/>
 
                   </div>
                 </div>
@@ -151,7 +151,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
-                    <hr className="w-sm"/>
+                    <hr className="w-fit"/>
 
                   </div>
                 </div>
@@ -160,7 +160,7 @@ function HomePage() {
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
-                    <hr className="w-sm" />
+                    <hr className="w-auto" />
 
                   </div>
                 </div>
