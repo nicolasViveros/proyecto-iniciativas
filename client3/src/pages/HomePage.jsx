@@ -33,7 +33,9 @@ function HomePage() {
               Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
             </p>
           </div>
-          <hr className="my-4" />
+          <div className="my-4">
+            <hr />
+          </div>
           <div>
             <strong>Organizaciones de la sociedad civil y Entidades académicas:</strong>
             <p>
