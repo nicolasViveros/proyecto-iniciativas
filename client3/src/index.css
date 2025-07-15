@@ -9,8 +9,3 @@ body{
   border-color: #5D5594;
   box-shadow: 0 0 0 2px rgba(93, 85, 148, 0.5); /* Optional shadow for better focus visibility */
 }
-
-.hr-width{
-
-  width: sm;
-}

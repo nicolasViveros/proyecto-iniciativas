@@ -12,7 +12,7 @@ function HomePage() {
 
   const secciones = [
     {
-      titulo: "Sobre la entidad organizadora",
+      titulo: "Sobre la entidad organizadoraaaaa",
       contenido: (
         <>
 
