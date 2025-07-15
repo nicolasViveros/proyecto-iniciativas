@@ -24,11 +24,18 @@ function HomePage() {
     },
     {
       titulo: "Categoría de postulación",
-      contenido: `El concurso contempla dos categorías:
-      **Instituciones públicas y Empresas privadas:**
-      Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
-      **Organizaciones de la sociedad civil y Entidades académicas**
-      Dirigida a organizaciones de la sociedad civil y entidades académicas que hayan desarrollado investigaciones, proyectos piloto, campañas, metodologías o programas de formación que promuevan la equidad de género en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas que hayan generado aprendizajes valiosos, incidencia en políticas públicas, articulación intersectorial o que tengan potencial de escalabilidad y réplica en otros contextos urbanos.`,
+      contenido: (
+        <div>
+          <p>El concurso contempla dos categorías:</p>
+          <p>
+            <strong>Instituciones públicas y Empresas privadas:</strong> Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
+          </p>
+          <hr className="my-4" />
+          <p>
+            <strong>Organizaciones de la sociedad civil y Entidades académicas:</strong> Dirigida a organizaciones de la sociedad civil y entidades académicas que hayan desarrollado investigaciones, proyectos piloto, campañas, metodologías o programas de formación que promuevan la equidad de género en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas que hayan generado aprendizajes valiosos, incidencia en políticas públicas, articulación intersectorial o que tengan potencial de escalabilidad y réplica en otros contextos urbanos.
+          </p>
+        </div>
+      ),
     },
     {
       titulo: "Requisitos de postulación y exclusiones",
