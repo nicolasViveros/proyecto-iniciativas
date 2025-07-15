@@ -224,7 +224,7 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 border-b border-[#D9D6E1]">
                   <span className="font-bold text-lg w-12 p-3">20%</span>
                   <div>
                     <strong>Evidencia</strong>
