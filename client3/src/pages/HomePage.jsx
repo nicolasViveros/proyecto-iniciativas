@@ -142,7 +142,7 @@ function HomePage() {
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
@@ -151,7 +151,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
@@ -160,7 +160,7 @@ function HomePage() {
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
-                    <hr className="w-lg" />
+                    <hr />
 
                   </div>
                 </div>
@@ -169,7 +169,7 @@ function HomePage() {
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
@@ -178,7 +178,7 @@ function HomePage() {
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
-                    <hr className="w-lg"/>
+                    <hr />
                   </div>
                 </div>
               </div>
@@ -193,7 +193,7 @@ function HomePage() {
                   <div>
                     <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
@@ -202,7 +202,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
-                    <hr className="w-lg" />
+                    <hr  />
 
                   </div>
                 </div>
@@ -211,7 +211,7 @@ function HomePage() {
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
@@ -220,7 +220,7 @@ function HomePage() {
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
@@ -229,7 +229,7 @@ function HomePage() {
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Documentación, publicaciones o datos que respalden los resultados obtenidos</h3>
-                    <hr className="w-lg"/>
+                    <hr />
 
                   </div>
                 </div>
