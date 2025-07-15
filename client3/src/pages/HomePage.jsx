@@ -202,7 +202,7 @@ function HomePage() {
                   <div>
                     <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
-                    <hr  />
+                    <hr />
 
                   </div>
                 </div>
@@ -242,7 +242,36 @@ function HomePage() {
     },
     {
       titulo: "Fechas del concurso",
-      contenido: `La convocatoria se abre el 15 de julio y cierra el 15 de agosto...`,
+      contenido: (
+        <>
+          <div class="text-[#5A478D] text-sm space-y-4 p-4">
+            <div class="space-y-2">
+              <div class="flex justify-between border-b border-[#D9D6E1] pb-1">
+                <span class="w-1/2">15 de julio</span>
+                <span class="w-1/2 font-medium">Lanzamiento y apertura de postulaciones</span>
+              </div>
+              <div class="flex justify-between border-b border-[#D9D6E1] pb-1">
+                <span class="w-1/2">15 de agosto</span>
+                <span class="w-1/2 font-medium">Cierre de postulaciones</span>
+              </div>
+              <div class="flex justify-between border-b border-[#D9D6E1] pb-1">
+                <span class="w-1/2">15 de septiembre</span>
+                <span class="w-1/2 font-medium">Selección de ganadores</span>
+              </div>
+              <div class="flex justify-between border-b border-[#D9D6E1] pb-1">
+                <span class="w-1/2">13 y 14 de octubre</span>
+                <span class="w-1/2 font-medium">Entrega de reconocimientos</span>
+              </div>
+            </div>
+
+            <h3 class="text-sm">
+              Las fechas serán publicadas vía mailing SoMoS LAC, sitio web del OBGeM y en las redes de GIZ.
+              Las convocatorias se realizarán vía correo electrónico y se divulgarán por RRSS de las iniciativas aliadas.
+            </h3>
+          </div>
+
+        </>
+      )
     },
     {
       titulo: "Premiación",
