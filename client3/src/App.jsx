@@ -34,11 +34,11 @@ export function App() {
               <Route path='/tasks' element={<TasksPage />} />
               <Route path='/fichas' element={<FichasPage />} />
               <Route path='/ficha/:id' element={<FichaPage />} />
+              <Route path='/tasks/:id' element={<TaskFormPage />} />
 
 
 
               <Route element={<ProtectedRoute />}>
-                <Route path='/tasks/:id' element={<TaskFormPage />} />
                 <Route path='/profile' element={<ProfilePage />} />
               </Route>
             </Routes>

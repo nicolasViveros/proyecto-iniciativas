@@ -57,6 +57,7 @@ export function FichaProvider({ children }) {
 
     const deleteFicha = async (id) => {
         try {
+            console.log(id)
             const res = await deleteFichaRequest(id);
             console.log(res);
             if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
