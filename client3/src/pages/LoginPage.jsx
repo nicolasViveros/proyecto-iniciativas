@@ -22,7 +22,7 @@ function LoginPage() {
   return (
 
     <div className="flex h-[calc(100vh-100px)] items-center justify-center">
-      <div className="bg-zinc-800 max-w-md w-full p-10  rounded-md">
+      <div className=" max-w-md w-full p-10  rounded-md">
 
         {
           singinErrors.map((error, i) => (
@@ -32,11 +32,11 @@ function LoginPage() {
           ))
         }
 
-        <h1 className="text-2xl font-bold">Accede a tu cuenta</h1>
+        <h1 className="text-3xl text-center font-bold mb-4">Accede a tu cuenta</h1>
         <form onSubmit={onSubmit}>
           <p>
             <input type="email" {...register('email', { required: true })}
-              className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
+              className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
               placeholder="email" />
           </p>
           {
@@ -48,7 +48,7 @@ function LoginPage() {
           }
           <p>
             <input type="password" {...register('password', { required: true })}
-              className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
+              className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
               placeholder="password" />
           </p>
           {
@@ -59,7 +59,7 @@ function LoginPage() {
             )
           }
           <button type="submit"
-          className="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md my-2">
+          className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]">
             Ingresa
           </button>
         </form>
