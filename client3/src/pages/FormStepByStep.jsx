@@ -830,26 +830,31 @@ export default function FormWizard() {
     };
 
     const onSubmit = () => {
-
         if (validateStep()) {
-
-            // Asegúrate de que `form` tiene todos los datos antes de llamar a `createFicha`
-            createFicha(form).then(() => {
-                setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio');
-                setIsSubmitted(true);
-
-                // Configura el timeout para redireccionar después de 5 segundos
-                const timeoutId = setTimeout(() => {
-                    navigate('/'); // Asegúrate de que '/' sea la ruta al home
-                }, 5000);
-
-                // Limpia el timeout si es necesario
-                return () => clearTimeout(timeoutId);
-            }).catch(error => {
-                console.error('Error al crear la ficha:', error);
-            });
+            const userConfirmed = window.confirm(
+                "¿Has revisado todos los datos ingresados? Una vez enviado, no podrás editar la postulación. ¿Deseas continuar?"
+            );
+    
+            if (userConfirmed) {
+                // Asegúrate de que `form` tiene todos los datos antes de llamar a `createFicha`
+                createFicha(form).then(() => {
+                    setSuccessMessage('Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio');
+                    setIsSubmitted(true);
+    
+                    // Configura el timeout para redireccionar después de 5 segundos
+                    const timeoutId = setTimeout(() => {
+                        navigate('/'); // Asegúrate de que '/' sea la ruta al home
+                    }, 5000);
+    
+                    // Limpia el timeout si es necesario
+                    return () => clearTimeout(timeoutId);
+                }).catch(error => {
+                    console.error('Error al crear la ficha:', error);
+                });
+            }
         }
     };
+
     const handleBack = () => {
         if (isSubmitted) {
             navigate('/'); // Asume que '/' es la ruta del home
