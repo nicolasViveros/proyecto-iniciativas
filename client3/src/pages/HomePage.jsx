@@ -23,13 +23,13 @@ function HomePage() {
           Desde 2023, Euroclima abarca a 33 países.
 
 
-          <div classNameName="my-4">
+          <div className="my-4">
             En el sector de <strong>movilidad urbana</strong>, Euroclima trabaja desde 2016 a través de la <strong>GIZ (Cooperación Alemana para el Desarrollo)</strong>
             y la <strong>AFD (Agencia Francesa de Desarrollo)</strong>, apoyando numerosos proyectos en países latinoamericanos.
             Estos proyectos promueven una movilidad sostenible con un enfoque integral, inclusivo y climático.
 
           </div>
-          <div classNameName="my-4">
+          <div className="my-4">
             En este sentido, Euroclima impulsa la Comunidad de Práctica <strong>SoMoS LAC Movilidad Sostenible</strong>, cuya misión es conectar a una
             En este sentido, Euroclima impulsa la Comunidad de Práctica SoMoS LAC Movilidad Sostenible, cuya misión es conectar a una
             red de actores públicos, privados y de la sociedad civil, facilitando el diálogo y la colaboración para impulsar liderazgos,
@@ -52,7 +52,7 @@ function HomePage() {
             en la movilidad urbana, en América Latina y El Caribe. Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad
             e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo.
 
-            <h1 classNameName="my-4">
+            <h1 className="my-4">
               Este concurso está dirigido a instituciones públicas, empresas privadas, organizaciones de la sociedad civil y entidades académicas
               que lideren este tipo de iniciativas.
             </h1>
@@ -64,14 +64,14 @@ function HomePage() {
       titulo: "Categoría de postulación",
       contenido: (
         <>
-          <div classNameName="mb-4">El concurso contempla dos categorías:</div>
+          <div className="mb-4">El concurso contempla dos categorías:</div>
           <div>
             <h3><strong>Instituciones públicas y Empresas privadas:</strong></h3>
 
             Orientada a instituciones públicas, privadas y/o sociedades de capital mixto responsables de la regulación del transporte urbano, así como a operadores de transporte, que hayan implementado iniciativas concretas para superar brechas de género en la movilidad urbana. Se valorarán acciones que promuevan la igualdad de oportunidades, la participación de las mujeres en el sector, la mejora de condiciones laborales con enfoque de género, o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
 
           </div>
-          <div classNameName="my-4">
+          <div className="my-4">
           </div>
           <div>
             <h3><strong>Organizaciones de la sociedad civil y Entidades académicas:</strong></h3>
@@ -85,10 +85,10 @@ function HomePage() {
     {
       titulo: "Requisitos de postulación y exclusiones",
       contenido: (<>
-        <div classNameName=" text-sm space-y-3 p-2">
+        <div className=" text-sm space-y-3 p-2">
           <div>
             <h3 ><strong>Categoría Instituciones públicas y Empresas privadas</strong></h3>
-            <ul classNameName="list-disc list-inside">
+            <ul className="list-disc list-inside">
               <li>La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña.</li>
               <li>La organización postulante puede ser una institución pública y/o privada.</li>
               <li>La iniciativa debe haber comenzado su implementación entre el 1 de enero de 2021 y hasta un año antes de la fecha de postulación.</li>
@@ -98,9 +98,9 @@ function HomePage() {
             </ul>
           </div>
 
-          <div classNameName="my-4">
+          <div className="my-4">
             <h3><strong>Categoría Organizaciones de la sociedad civil y Entidades académicas</strong></h3>
-            <ul classNameName="list-disc list-inside">
+            <ul className="list-disc list-inside">
               <li>La iniciativa debe referirse a experiencias o análisis aplicados a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.</li>
               <li>La organización postulante puede ser académica o de la sociedad civil.</li>
               <li>La iniciativa debe haber sido publicada entre el 1 de enero de 2021 y hasta la fecha de postulación.</li>
@@ -134,11 +134,11 @@ function HomePage() {
             <h1>Se evaluarán las postulaciones considerando los siguientes criterios:</h1>
 
             <div>
-              <h3 classNameName="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
+              <h3 className="font-bold text-base mb-2">Categoría Instituciones públicas y Empresas privadas</h3>
 
-              <div classNameName="text-sm pl-6">
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">30%</span>
+              <div className="text-sm pl-6">
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Soluciones creativas frente a barreras de género en la operación o gestión del transporte</h3>
@@ -146,8 +146,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">30%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Impacto</strong>
                     <h3>Cambios positivos en inclusión, seguridad, participación o empleabilidad de mujeres</h3>
@@ -155,8 +155,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para ser aplicada en otras ciudades o empresas del sector</h3>
@@ -164,8 +164,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Capacidad de mantenerse en el tiempo dentro de la estructura organizacional</h3>
@@ -173,8 +173,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">20%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">20%</span>
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Existencia de datos, documentación o resultados concretos</h3>
@@ -184,12 +184,12 @@ function HomePage() {
               </div>
             </div>
 
-            <div classNameName="mt-4">
-              <h3 classNameName="font-bold text-base mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
+            <div className="mt-4">
+              <h3 className="font-bold text-base mb-2">Categoría Organizaciones de la sociedad civil y Entidades académicas</h3>
 
-              <div classNameName="text-sm pl-6">
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">30%</span>
+              <div className="text-sm pl-6">
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Innovación</strong>
                     <h3>Nuevos enfoques, herramientas o investigaciones que aborden desigualdades de género</h3>
@@ -197,8 +197,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">30%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">30%</span>
                   <div>
                     <strong>Impacto</strong>
                     <h3>Resultados generados en sensibilización, incidencia o generación de conocimiento aplicado</h3>
@@ -206,8 +206,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Replicabilidad</strong>
                     <h3>Potencial para escalar o transferir el conocimiento o metodología</h3>
@@ -215,8 +215,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">10%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">10%</span>
                   <div>
                     <strong>Sostenibilidad</strong>
                     <h3>Continuidad del trabajo en el tiempo más allá del proyecto específico</h3>
@@ -224,8 +224,8 @@ function HomePage() {
 
                   </div>
                 </div>
-                <div classNameName="flex gap-4">
-                  <span classNameName="font-bold text-lg w-12 p-3">20%</span>
+                <div className="flex gap-4">
+                  <span className="font-bold text-lg w-12 p-3">20%</span>
                   <div>
                     <strong>Evidencia</strong>
                     <h3>Documentación, publicaciones o datos que respalden los resultados obtenidos</h3>
@@ -257,14 +257,14 @@ function HomePage() {
               <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                 <span className="w-1/2">15 de septiembre</span>
                 <span className="w-1/2 font-medium">Selección de ganadores</span>
-              </div>
+              </div>              
               <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                 <span className="w-1/2">13 y 14 de octubre</span>
                 <span className="w-1/2 font-medium">Entrega de reconocimientos</span>
               </div>
             </div>
 
-            <h3 className="text-sm">
+            <h3 class="text-sm">
               Las fechas serán publicadas vía mailing SoMoS LAC, sitio web del OBGeM y en las redes de GIZ.
               Las convocatorias se realizarán vía correo electrónico y se divulgarán por RRSS de las iniciativas aliadas.
             </h3>
@@ -282,43 +282,43 @@ function HomePage() {
   ];
 
   return (
-    <div classNameName="w-full min-h-screen bg-white font-sans">
+    <div className="w-full min-h-screen bg-white font-sans">
       {/* ENCABEZADO VISUAL */}
-      <div classNameName="relative w-full">
+      <div className="relative w-full">
         <img
           src="/micro.svg"
           alt="Banner principal"
-          classNameName="w-full h-auto object-cover"
+          className="w-full h-auto object-cover"
         />
-        {/* <div classNameName="absolute inset-0 flex flex-col items-start pl-35 pt-25 z-10 space-y-2">
-          <p classNameName="text-xs md:text-sm font-medium text-[#5A478D]">concurso</p>
-          <div classNameName="bg-[#F8991D] text-white inline-block px-2 py-1 text-xs md:text-sm font-bold rounded-sm mb-2">
+        {/* <div className="absolute inset-0 flex flex-col items-start pl-35 pt-25 z-10 space-y-2">
+          <p className="text-xs md:text-sm font-medium text-[#5A478D]">concurso</p>
+          <div className="bg-[#F8991D] text-white inline-block px-2 py-1 text-xs md:text-sm font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
           </div>
 
-          <h2 classNameName="text-base md:text-lg lg:text-xl font-extrabold text-[#3C3270] mb-1">
+          <h2 className="text-base md:text-lg lg:text-xl font-extrabold text-[#3C3270] mb-1">
             RUMBO A LA EQUIDAD:
           </h2>
-          <p classNameName="text-xs md:text-sm lg:text-base text-[#5A478D] leading-tight">
+          <p className="text-xs md:text-sm lg:text-base text-[#5A478D] leading-tight">
             Reconociendo iniciativas innovadoras en favor de la <br />
             equidad de género en movilidad urbana
           </p>
         </div> */}
-        <div classNameName="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
           <img
             src="/fecha.svg"
-            classNameName="w-full h-auto"
+            className="w-full h-auto"
           />
         </div>
       </div>
 
-      <div classNameName="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
+      <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         {/* Menú lateral */}
-        <div classNameName="w-full md:w-1/3">
+        <div className="w-full md:w-1/3">
           {secciones.map((sec, i) => (
             <button
               key={i}
-              classNameName={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${activo === i
+              className={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${activo === i
                 ? "bg-white border border-[#a49fc4] text-[#5d5593] hover:bg-gray-100"
                 : "bg-transparent  hover:bg-gray-100 "
                 }`}
@@ -330,23 +330,23 @@ function HomePage() {
         </div>
 
         {/* Contenido de la sección */}
-        <div classNameName="w-full md:w-2/3 bg-white px-6 rounded  ">
-          <h2 classNameName="text-2xl font-bold mb-4">{secciones[activo].titulo}</h2>
-          <h2 classNameName="text-sm whitespace-pre-line">{secciones[activo].contenido}</h2>
+        <div className="w-full md:w-2/3 bg-white px-6 rounded  ">
+          <h2 className="text-2xl font-bold mb-4">{secciones[activo].titulo}</h2>
+          <h2 className="text-sm whitespace-pre-line">{secciones[activo].contenido}</h2>
         </div>
       </div>
 
       {/* BOTONES DE ACCIÓN */}
-      <div classNameName="container flex flex-col md:flex-row justify-end-safe gap-4 py-10">
+      <div className="container flex flex-col md:flex-row justify-end-safe gap-4 py-10">
         <button
           onClick={() => navigate('/nueva-ficha')}
-          classNameName="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]">
+          className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]">
           Comenzar postulación
         </button>
         <button
-          classNameName="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center">
+          className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center">
           Descargar bases
-          <MdOutlineFileDownload classNameName="text-2xl m-1 mb-1 ml-2 inline" />
+          <MdOutlineFileDownload className="text-2xl m-1 mb-1 ml-2 inline" />
         </button>
       </div>
     </div>
@@ -364,7 +364,7 @@ function HomePage() {
 
   // return (
 
-  //   <div classNameName="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+  //   <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
   //     {tasks.map((task) => (
   //       <TaskCard task={task} key={task._id} />
   //     ))}
