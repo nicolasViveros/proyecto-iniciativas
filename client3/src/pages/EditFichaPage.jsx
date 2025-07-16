@@ -6,6 +6,7 @@ import FichaPage from './FichaPage';
 function EditFichaPage() {
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
+    
     const { fichas, getFicha } = useFichas();
 
     useEffect(() => {
@@ -75,16 +76,16 @@ function EditFichaPage() {
     const handleTeamChange = (index, e) => {
         const updatedTeam = [...ficha.team];
         updatedTeam[index][e.target.name] = e.target.value;
-        setForm({ ...ficha, team: updatedTeam });
+        setFicha({ ...ficha, team: updatedTeam });
     };
 
     const addTeamMember = () => {
-        setForm({ ...ficha, team: [...ficha.team, { name: '', position: '', email: '' }] });
+        setFicha({ ...ficha, team: [...ficha.team, { name: '', position: '', email: '' }] });
     };
 
     const removeTeamMember = (index) => {
         const updatedTeam = ficha.team.filter((_, i) => i !== index);
-        setForm({ ...ficha, team: updatedTeam });
+        setFicha({ ...ficha, team: updatedTeam });
     };
 
     const handleSave = () => {
@@ -262,7 +263,7 @@ function EditFichaPage() {
                     />
                 </div>
 
-                <div>
+                <div col-span="2">
                     <p><strong>Equipo Responsable:</strong></p>
                     {ficha.team.map((member, index) => (
                         <div key={index}>
@@ -276,7 +277,7 @@ function EditFichaPage() {
 
 
                 {ficha.team.map((member, index) => (
-                    <div key={index} className="grid grid-cols-5 gap-1 my-1">
+                    <div><div key={index} className="grid grid-cols-5 gap-1 my-1">
                         <div className='col-span-2 '><label>Nombre*</label> </div>
                         <div className='col-span-2'><label>Cargo*</label> </div>
                         <div className='col-span-2'>
@@ -312,6 +313,7 @@ function EditFichaPage() {
                             />
                         </div>
 
+                    </div>
                     </div>
                 ))}
 
