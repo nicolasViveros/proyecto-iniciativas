@@ -238,7 +238,7 @@ function EditFichaPage() {
 
                 <div>Asociaciones:</div>
                 <div>
-                <input
+                    <input
                         type="text"
                         name="associations"
                         value={ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}
@@ -258,6 +258,51 @@ function EditFichaPage() {
                         </div>
                     ))}
                 </div>
+
+
+                {ficha.team.map((member, index) => (
+                    <div key={index} className="grid grid-cols-5 gap-1 my-1">
+                        <div className='col-span-2 '><label>Nombre*</label> </div>
+                        <div className='col-span-2'><label>Cargo*</label> </div>
+                        <div className='col-span-2'>
+                            <input
+                                name="name"
+                                value={member.name}
+                                onChange={(e) => handleTeamChange(index, e)}
+                                className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                            />
+                        </div>
+                        <div className='col-span-2'>
+                            <input
+                                name="position"
+                                value={member.position}
+                                onChange={(e) => handleTeamChange(index, e)}
+                                className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                            />
+                        </div>
+                        <div>
+                            <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-1 hover:underline">
+                                Eliminar
+                            </button>
+                        </div>
+                        <div className='col-span-4'>
+                            <div className='col-span-2'><label>Email*</label> </div>
+
+                            <input
+                                name="email"
+                                type="email"
+                                value={member.email}
+                                onChange={(e) => handleTeamChange(index, e)}
+                                className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                            />
+                        </div>
+
+                    </div>
+                ))}
+
+                <button type="button" onClick={addTeamMember} className=" hover:underline"> + Agregar responsable</button>
+
+
                 <p><strong>Necesidad/Problemática:</strong> {ficha.need}</p>
                 <p><strong>Objetivos del Proyecto:</strong> {ficha.objectives}</p>
                 <p><strong>Público Objetivo:</strong> {ficha.targetAudience}</p>
