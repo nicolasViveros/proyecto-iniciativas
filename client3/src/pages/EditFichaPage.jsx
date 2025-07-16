@@ -198,43 +198,43 @@ function EditFichaPage() {
                 </div>
 
                 <div className="block mb-2">¿Se encuentra vigente?</div>
-            <div className="flex gap-4 mb-4">
-                <label className="flex items-center">
-                    <input
-                        type="radio"
-                        name="isActive"
-                        value="true"
-                        checked={FichaPage.isActive === true}
-                        onChange={handleRadioChange}
-                        className="mr-2 accent-[#5d5593]"
-                    />
-                    Sí
-                </label>
-                <label className="flex items-center">
-                    <input
-                        type="radio"
-                        name="isActive"
-                        value="false"
-                        checked={ficha.isActive === false}
-                        onChange={handleRadioChange}
-                        className="mr-2 accent-[#5d5593] "
-                    />
-                    No
-                </label>
-            </div>
-
-            {!ficha.isActive && (
-                <div className="mb-4">
-                    <label className="block text-xl">En caso de no estar vigente, explique brevemente por qué:</label>
-                    <textarea
-                        name="reasonInactive"
-                        value={ficha.reasonInactive}
-                        onChange={handleInputChange}
-                        className="w-full p-2 border border-gray-300 rounded input-focused "
-                        rows="3"
-                    ></textarea>
+                <div className="flex gap-4 mb-4">
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="isActive"
+                            value="true"
+                            checked={ficha.isActive === true}
+                            onChange={handleRadioChange}
+                            className="mr-2 accent-[#5d5593]"
+                        />
+                        Sí
+                    </label>
+                    <label className="flex items-center">
+                        <input
+                            type="radio"
+                            name="isActive"
+                            value="false"
+                            checked={ficha.isActive === false}
+                            onChange={handleRadioChange}
+                            className="mr-2 accent-[#5d5593] "
+                        />
+                        No
+                    </label>
                 </div>
-            )}
+
+                {!ficha.isActive && (
+                    <div>
+                        <label>En caso de no estar vigente, explique brevemente por qué:</label>
+                        <textarea
+                            name="reasonInactive"
+                            value={ficha.reasonInactive}
+                            onChange={handleInputChange}
+                            className="w-full p-2 border border-gray-300 rounded input-focused "
+                            rows="3"
+                        ></textarea>
+                    </div>
+                )}
 
 
 
