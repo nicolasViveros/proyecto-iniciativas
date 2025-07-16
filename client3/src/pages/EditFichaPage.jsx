@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowCircleLeft } from "react-icons/fa";
+
 
 function EditFichaPage() {
     const navigate = useNavigate();
