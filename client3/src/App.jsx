@@ -11,6 +11,7 @@ import FileUpload from "./pages/Form1";
 import FormWizard from "./pages/FormStepByStep";
 import FichasPage from "./pages/FichasPage";
 import FichaPage from "./pages/FichaPage";
+import EditFichaPage from "./pages/EditFichaPage";
 
 import ProtectedRoute from "./ProtectedRoute";
 import { FichaProvider } from "./context/FichasContext";
@@ -29,11 +30,12 @@ export function App() {
               <Route path='/login' element={<LoginPage />} />
               <Route path='/nueva-ficha' element={<FormWizard />} />
 
-
               <Route element={<ProtectedRoute />}>
-              <Route path='/fichas' element={<FichasPage />} />
-              <Route path='/fichas/:id' element={<FichasPage />} />
-              <Route path='/ficha/:id' element={<FichaPage />} />
+                <Route path='/fichas' element={<FichasPage />} />
+                <Route path='/fichas/:id' element={<FichasPage />} />
+                <Route path='/ficha/:id' element={<FichaPage />} />
+                <Route path='/ficha/:id/editar' element={<EditFichaPage />} />
+
 
               </Route>
             </Routes>
@@ -41,7 +43,7 @@ export function App() {
           <Footer />
 
         </BrowserRouter>
-      </FichaProvider> 
+      </FichaProvider>
     </AuthProvider>
   );
 };
