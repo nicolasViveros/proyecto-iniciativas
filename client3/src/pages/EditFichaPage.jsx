@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
+import { useNavigate } from 'react-router-dom';
 
 function EditFichaPage() {
+    const navigate = useNavigate();
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
 
@@ -97,12 +99,24 @@ function EditFichaPage() {
         console.log('Ficha Saved:', ficha);
     };
 
+    const handleBack = () => {
+
+        navigate('/fichas'); // vuelve al listado de fichas
+
+    };
+
     if (!ficha) {
         return <div>Cargando...</div>;
     }
 
     return (
+
         <div >
+            <button onClick={handleBack} className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md">
+                <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
+                <span className="ml-1">Volver</span>
+            </button>
+
             <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
             <div className="container grid grid-cols-2 mx-auto p-2">
                 <div>Organización:</div>
@@ -309,13 +323,57 @@ function EditFichaPage() {
                     </div>
                 ))}
 
-                <button type="button" onClick={addTeamMember} className=" hover:underline"> + Agregar responsable</button>
+                <button
+                    type="button"
+                    onClick={addTeamMember}
+                    className=" hover:underline col-span-2"> + Agregar responsable
+                </button>
 
+                <div>Necesidad/Problemática:</div>
+                <div>
+                    <textarea
+                        name="need"
+                        value={ficha.need}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></textarea>
+                </div>
 
-                <p><strong>Necesidad/Problemática:</strong> {ficha.need}</p>
-                <p><strong>Objetivos del Proyecto:</strong> {ficha.objectives}</p>
-                <p><strong>Público Objetivo:</strong> {ficha.targetAudience}</p>
-                <p><strong>Actividades Principales:</strong> {ficha.activities}</p>
+                <div>Objetivos del Proyecto:</div>
+                <div>
+                    <textarea
+                        name="objectives"
+                        value={ficha.objectives}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <div>Público Objetivo:</div>
+                <div>
+                    <textarea
+                        name="targetAudience"
+                        value={ficha.targetAudience}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <div>Actividades Principales:</div>
+                <div>
+                    <textarea
+                        name="activities"
+                        value={ficha.activities}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+            
                 {ficha.category === 'Operador/Regulador' && (
                     <>
                         <p><strong>Innovación:</strong> {ficha.innovation}</p>
