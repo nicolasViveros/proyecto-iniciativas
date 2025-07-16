@@ -71,7 +71,7 @@ function EditFichaPage() {
         const booleanValue = value === "true";
         handleChange({ target: { name, value: booleanValue } });
     };
-    
+
     const handleSave = () => {
         const validationError = validateFields();
         if (validationError) {
@@ -223,7 +223,7 @@ function EditFichaPage() {
                 </label>
             </div>
 
-            {!form.isActive && (
+            {!ficha.isActive && (
                 <div className="mb-4">
                     <label className="block text-xl">En caso de no estar vigente, explique brevemente por qué:</label>
                     <textarea
