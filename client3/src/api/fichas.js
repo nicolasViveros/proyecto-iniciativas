@@ -8,5 +8,4 @@ export const getFichaRequest = (id) => axios.get(`/ficha/${id}`);
 
 export const updateFichaRequest = (id, ficha) => axios.put(`/fichas/${id}`, ficha);
 
-console.log(id)
 export const deleteFichaRequest = (id) => axios.delete(`/fichas/${id}`);
