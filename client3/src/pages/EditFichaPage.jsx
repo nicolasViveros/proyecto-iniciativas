@@ -77,7 +77,7 @@ function EditFichaPage() {
     return (
         <div >
             <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
-            <div className="container grid-cols-2 mx-auto p-6">
+            <div className="container grid grid-cols-2 gap-4 mx-auto p-6">
                 <div>Organización:</div>
                 <div><input
                     type="text"
