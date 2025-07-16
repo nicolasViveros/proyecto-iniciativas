@@ -263,18 +263,7 @@ function EditFichaPage() {
                     />
                 </div>
 
-                <div className="col-span=2">
-                    {ficha.team.map((member, index) => (
-                        <div key={index}>
-                            <p>Miembro {index + 1} del equipo:</p>
-                            <p>nombre - {member.name}</p>
-                            <p>cargo - {member.position}</p>
-                            <p>correo - {member.email}</p>
-                        </div>
-                    ))}
-                </div>
-
-                <div className='col-span-2'>Equipo Responsable:</div>
+                <div className='col-span-2 font-bold'>Equipo Responsable:</div>
 
                 {ficha.team.map((member, index) => (
                     <div className="col-span-2">
