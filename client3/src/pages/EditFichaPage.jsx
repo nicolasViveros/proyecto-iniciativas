@@ -224,7 +224,7 @@ function EditFichaPage() {
                 </div>
 
                 {!ficha.isActive && (
-                    <div>
+                    <div className='col-span-2'>
                         <label>En caso de no estar vigente, explique brevemente por qué:</label>
                         <textarea
                             name="reasonInactive"
