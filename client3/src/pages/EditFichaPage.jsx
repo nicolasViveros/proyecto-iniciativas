@@ -72,6 +72,21 @@ function EditFichaPage() {
         handleInputChange({ target: { name, value: booleanValue } });
     };
 
+    const handleTeamChange = (index, e) => {
+        const updatedTeam = [...ficha.team];
+        updatedTeam[index][e.target.name] = e.target.value;
+        setForm({ ...ficha, team: updatedTeam });
+    };
+
+    const addTeamMember = () => {
+        setForm({ ...ficha, team: [...ficha.team, { name: '', position: '', email: '' }] });
+    };
+
+    const removeTeamMember = (index) => {
+        const updatedTeam = ficha.team.filter((_, i) => i !== index);
+        setForm({ ...ficha, team: updatedTeam });
+    };
+
     const handleSave = () => {
         const validationError = validateFields();
         if (validationError) {
