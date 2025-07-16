@@ -65,6 +65,13 @@ function EditFichaPage() {
         return '';
     };
 
+    const handleRadioChange = (e) => {
+        const { name, value } = e.target;
+        // Convert the value to a boolean
+        const booleanValue = value === "true";
+        handleChange({ target: { name, value: booleanValue } });
+    };
+    
     const handleSave = () => {
         const validationError = validateFields();
         if (validationError) {
