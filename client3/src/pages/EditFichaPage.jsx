@@ -69,7 +69,7 @@ function EditFichaPage() {
         const { name, value } = e.target;
         // Convert the value to a boolean
         const booleanValue = value === "true";
-        handleChange({ target: { name, value: booleanValue } });
+        handleInputChange({ target: { name, value: booleanValue } });
     };
 
     const handleSave = () => {
