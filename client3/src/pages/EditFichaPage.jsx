@@ -76,15 +76,16 @@ function EditFichaPage() {
 
     return (
         <div className="container grid-cols-2 mx-auto p-6">
-            <h1 className="text xl mb-6">{ficha.name}</h1>
-            <p><h3 className='text-3xl text-center font-bold mb-4'>Organización:</h3> 
+            
+            <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
+            <h3>Organización:</h3> 
             <input 
             type="text" 
             name="organizationName" 
             value={ficha.organizationName} 
             onChange={handleInputChange} 
             className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused" />
-            </p>
+            
             <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
             <p><strong>País:</strong> {ficha.country}</p>
             <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
