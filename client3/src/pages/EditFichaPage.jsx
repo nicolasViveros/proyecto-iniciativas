@@ -236,9 +236,17 @@ function EditFichaPage() {
                     </div>
                 )}
 
+                <div>Asociaciones:</div>
+                <div>
+                <input
+                        type="text"
+                        name="associations"
+                        value={ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
 
-
-                <p><strong>Asociaciones:</strong> {ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
                 <div>
                     <p><strong>Equipo Responsable:</strong></p>
                     {ficha.team.map((member, index) => (
