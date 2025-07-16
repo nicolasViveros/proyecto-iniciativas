@@ -45,7 +45,6 @@ function FichasPage() {
 
   useEffect(() => {
     getFichas();
-    console.log(fichas); // Para verificar los datos
   }, []);
 
   if (fichas.length == 0) return (<h1> Cargando...</h1>);

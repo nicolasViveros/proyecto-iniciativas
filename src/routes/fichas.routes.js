@@ -8,10 +8,10 @@ router.post('/fichas', createFicha);
 
 router.get('/fichas',authRequired, getFichas);
 
-router.get('/ficha/:id', getFicha);
+router.get('/ficha/:id',authRequired, getFicha);
 
-router.delete('/fichas/:id',deleteFicha);
+router.delete('/fichas/:id', authRequired, deleteFicha);
 
-router.put('/fichas/:id',updateFicha);
+router.put('/fichas/:id', authRequired, updateFicha);
 
 export default router
