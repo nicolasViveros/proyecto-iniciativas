@@ -177,6 +177,7 @@ function EditFichaPage() {
                         className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                     />
                 </div>
+                <div>Fecha de Inicio:</div>
                 <div>
                     <input
                         type="date"
