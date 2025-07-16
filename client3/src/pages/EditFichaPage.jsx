@@ -264,7 +264,6 @@ function EditFichaPage() {
                 </div>
 
                 <div className="col-span=2">
-                    <p><strong>Equipo Responsable:</strong></p>
                     {ficha.team.map((member, index) => (
                         <div key={index}>
                             <p>Miembro {index + 1} del equipo:</p>
@@ -275,9 +274,12 @@ function EditFichaPage() {
                     ))}
                 </div>
 
+                <div className='col-span-2'>Equipo Responsable:</div>
 
                 {ficha.team.map((member, index) => (
                     <div className="col-span-2">
+                        <p className='col-span-2'>Miembro {index + 1} del equipo:</p>
+
                         <div key={index} className="grid grid-cols-5 gap-1 my-1">
                             <div className='col-span-2 '><label>Nombre*</label> </div>
                             <div className='col-span-2'><label>Cargo*</label> </div>
