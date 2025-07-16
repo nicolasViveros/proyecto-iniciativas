@@ -54,6 +54,9 @@ function EditFichaPage() {
         if (ficha.category === 'ONG/Academia' && !ficha.outcomes) return "Los resultados son requeridos";
         if (!ficha.transferability) return "La transferibilidad es requerida";
         if (!ficha.sustainability) return "La sostenibilidad es requerida";
+        if (!ficha.links) return "Los enlaces son requeridos";
+        if (!ficha.files) return "Los archivos son requeridos";
+
         // Email format check
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(ficha.email)) return "El email no es válido";
@@ -86,14 +89,94 @@ function EditFichaPage() {
                     onChange={handleInputChange}
                     className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused" />
                 </div>
-                <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
-                <p><strong>País:</strong> {ficha.country}</p>
-                <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
-                <p><strong>Cargo del Representante Legal:</strong> {ficha.legalRepPosition}</p>
-                <p><strong>Email:</strong> {ficha.email}</p>
-                <p><strong>Teléfono:</strong> {ficha.phone}</p>
-                <p><strong>Registro Legal:</strong> {ficha.registrationId}</p>
-                <p><strong>Ciudad de Implementación:</strong> {ficha.city}</p>
+
+                <div>Tipo de Organización:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="organizationType"
+                        value={ficha.organizationType}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>País:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="country"
+                        value={ficha.country}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>Representante Legal:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="legalRepName"
+                        value={ficha.legalRepName}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>Cargo del Representante Legal:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="legalRepPosition"
+                        value={ficha.legalRepPosition}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>Email:</div>
+                <div>
+                    <input
+                        type="email"
+                        name="email"
+                        value={ficha.email}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>Teléfono:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="phone"
+                        value={ficha.phone}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>Registro Legal:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="registrationId"
+                        value={ficha.registrationId}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+
+                <div>Ciudad de Implementación:</div>
+                <div>
+                    <input
+                        type="text"
+                        name="city"
+                        value={ficha.city}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
                 <p><strong>Fecha de Inicio:</strong> {new Date(ficha.startDate).toLocaleDateString()}</p>
                 <p><strong>¿Está Vigente?:</strong> {ficha.isActive ? "Sí" : "No"}</p>
                 {!ficha.isActive && <p><strong>Razón Inactiva:</strong> {ficha.reasonInactive}</p>}
@@ -140,10 +223,16 @@ function EditFichaPage() {
                     <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
                 )}
                 {/* Aquí puedes agregar un resumen completo en un formato que prefieras */}
-
+                <button
+                    type="button"
+                    onClick={handleSave}
+                    className="mt-4 p-2 bg-blue-500 text-white rounded"
+                >
+                    Guardar Ficha
+                </button>
             </div>
-            </div>
-            );
+        </div>
+    );
 }
 
-            export default EditFichaPage
+export default EditFichaPage
