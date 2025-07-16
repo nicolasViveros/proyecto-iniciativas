@@ -59,7 +59,7 @@ export function FichaProvider({ children }) {
         try {
             console.log(id)
             const res = await deleteFichaRequest(id);
-            console.log(res);
+            console.log(id);
             if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
         } catch (error) {
             console.log(error);
