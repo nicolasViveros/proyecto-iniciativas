@@ -177,7 +177,16 @@ function EditFichaPage() {
                         className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                     />
                 </div>
-                <p><strong>Fecha de Inicio:</strong> {new Date(ficha.startDate).toLocaleDateString()}</p>
+                <div>
+                    <input
+                        type="date"
+                        name="startDate"
+                        value={ficha.startDate ? new Date(ficha.startDate).toISOString().split('T')[0] : ''}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                    />
+                </div>
+                
                 <p><strong>¿Está Vigente?:</strong> {ficha.isActive ? "Sí" : "No"}</p>
                 {!ficha.isActive && <p><strong>Razón Inactiva:</strong> {ficha.reasonInactive}</p>}
                 <p><strong>Asociaciones:</strong> {ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
