@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
+import FichaPage from './FichaPage';
 
 function EditFichaPage() {
     const { id } = useParams();
@@ -196,7 +197,7 @@ function EditFichaPage() {
                         type="radio"
                         name="isActive"
                         value="true"
-                        checked={form.isActive === true}
+                        checked={FichaPage.isActive === true}
                         onChange={handleRadioChange}
                         className="mr-2 accent-[#5d5593]"
                     />
@@ -207,7 +208,7 @@ function EditFichaPage() {
                         type="radio"
                         name="isActive"
                         value="false"
-                        checked={form.isActive === false}
+                        checked={ficha.isActive === false}
                         onChange={handleRadioChange}
                         className="mr-2 accent-[#5d5593] "
                     />
@@ -220,8 +221,8 @@ function EditFichaPage() {
                     <label className="block text-xl">En caso de no estar vigente, explique brevemente por qué:</label>
                     <textarea
                         name="reasonInactive"
-                        value={form.reasonInactive}
-                        onChange={handleChange}
+                        value={ficha.reasonInactive}
+                        onChange={handleInputChange}
                         className="w-full p-2 border border-gray-300 rounded input-focused "
                         rows="3"
                     ></textarea>
