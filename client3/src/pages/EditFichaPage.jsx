@@ -177,6 +177,7 @@ function EditFichaPage() {
                         className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                     />
                 </div>
+
                 <div>Fecha de Inicio:</div>
                 <div>
                     <input
@@ -187,9 +188,39 @@ function EditFichaPage() {
                         className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                     />
                 </div>
-                
-                <p><strong>¿Está Vigente?:</strong> {ficha.isActive ? "Sí" : "No"}</p>
-                {!ficha.isActive && <p><strong>Razón Inactiva:</strong> {ficha.reasonInactive}</p>}
+
+                <div>¿Está Vigente?:</div>
+                <div>
+                    <input
+                        type="radio"
+                        name="isActive"
+                        value="true"
+                        checked={ficha.isActive}
+                        onChange={handleInputChange}
+                        className="mr-2 accent-[#5d5593] px-4 py-2 rounded-md mb-1 input-focused" />
+                    <span>Sí</span>
+                    <input
+                        type="radio"
+                        name="isActive"
+                        value="false"
+                        checked={!ficha.isActive}
+                        onChange={handleInputChange}
+                        className="mr-2 accent-[#5d5593] px-4 py-2 rounded-md mb-1 input-focused" />
+                    <span>No</span>
+                </div>
+
+                <div>Razón Inactiva:</div>
+                <div>
+                    <input
+                        type='text'
+                        name='reasonInactive'
+                        onChange={handleInputChange}
+                        value={ficha.reasonInactive}
+                        className="mr-2 accent-[#5d5593] px-4 py-2 rounded-md mb-1 input-focused" />
+                </div>
+
+
+
                 <p><strong>Asociaciones:</strong> {ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
                 <div>
                     <p><strong>Equipo Responsable:</strong></p>
@@ -241,7 +272,7 @@ function EditFichaPage() {
                     Guardar Ficha
                 </button>
             </div>
-        </div>
+        </div >
     );
 }
 
