@@ -1376,16 +1376,30 @@ function HomePage() {
         </div>
       </div>
 
+      <div className="absolute inset-0 flex flex-col items-start pl-35 pt-25 z-10 space-y-2">
+        <p className="text-xs md:text-sm font-medium text-[#5A478D]">concurso</p>
+        <div className="bg-[#F8991D] text-white inline-block px-2 py-1 text-xs md:text-sm font-bold rounded-sm mb-2">
+          ¡Postula tu Iniciativa!
+        </div>
+
+        <h2 className="text-base md:text-lg lg:text-xl font-extrabold text-[#3C3270] mb-1">
+          RUMBO A LA EQUIDAD:
+        </h2>
+        <p className="text-xs md:text-sm lg:text-base text-[#5A478D] leading-tight">
+          Reconociendo iniciativas innovadoras en favor de la <br />
+          equidad de género en movilidad urbana
+        </p>
+      </div>
+
       <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         <div className="w-full md:w-1/3">
           {secciones.map((sec, i) => (
             <button
               key={i}
-              className={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${
-                activo === i
-                  ? "bg-white border border-[#a49fc4] text-[#5d5593] hover:bg-gray-100"
-                  : "bg-transparent  hover:bg-gray-100 "
-              }`}
+              className={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${activo === i
+                ? "bg-white border border-[#a49fc4] text-[#5d5593] hover:bg-gray-100"
+                : "bg-transparent  hover:bg-gray-100 "
+                }`}
               onClick={() => setActivo(i)}
             >
               {sec.titulo[language]}
