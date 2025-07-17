@@ -6,16 +6,14 @@ const mailerSend = new MailerSend({
     "mlsn.82a3b51957de8d49d047203e52e0ab3a90f93b0663bd133413d0f7acc1900ba3",
 });
 
-export const sendEmail = async (req, res) => {
+export const sendEmail = async ({
+  recipientEmail,
+  recipientName,
+  emailSubject,
+  htmlContent,
+  textContent,
+}) => {
   try {
-    const {
-      recipientEmail,
-      recipientName,
-      emailSubject,
-      htmlContent,
-      textContent,
-    } = req.body;
-
     const sentFrom = new Sender(
       "concurso@rumboalaequidad.org",
       "Rumbo a la Equidad"
@@ -31,11 +29,9 @@ export const sendEmail = async (req, res) => {
       .setText(textContent);
 
     await mailerSend.email.send(emailParams);
-    return res.json({ message: "Email sent successfully" });
+    return { message: "Email sent successfully" };
   } catch (error) {
     console.error("Error sending email:", error);
-    return res
-      .status(500)
-      .json({ message: "Error sending email", error: error.message });
+    throw new Error(`Error sending email: ${error.message}`);
   }
 };

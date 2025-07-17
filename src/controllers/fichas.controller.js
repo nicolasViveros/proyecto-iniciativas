@@ -74,7 +74,7 @@ export const createFicha = async (req, res) => {
     });
 
     const savedFicha = await newFicha.save();
-    sendEmail({
+    await sendEmail({
       recipientEmail: email,
       recipientName: name,
       emailSubject: "Gracias por participar. Rumbo a la Equidad",
