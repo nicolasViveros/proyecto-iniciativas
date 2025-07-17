@@ -20,14 +20,14 @@ export const sendEmail = async ({
     );
     const recipients = [new Recipient(recipientEmail, recipientName)];
 
-    const cc = [
-      new Recipient("concurso@rumboalaequidad.org", "Rumbo a la Equidad"),
-    ];
+    // const cc = [
+    //   new Recipient("concurso@rumboalaequidad.org", "Rumbo a la Equidad"),
+    // ];
 
     const emailParams = new EmailParams()
       .setFrom(sentFrom)
       .setTo(recipients)
-      .setCc(cc)
+      //.setCc(cc)
       .setReplyTo(sentFrom)
       .setSubject(emailSubject)
       .setHtml(htmlContent)
