@@ -18,9 +18,9 @@ export const sendEmail = async ({
       //   user: 'your_smtp_username',
       //   pass: 'your_smtp_password'
       // },
-      tls: { // <--- Add this block
-        rejectUnauthorized: false // <--- This is the key line to ignore self-signed certs
-      }
+      // tls: { // <--- Add this block
+      //  rejectUnauthorized: false // <--- This is the key line to ignore self-signed certs
+      // }
     });
 
     let info = await transporter.sendMail({
