@@ -1,5 +1,5 @@
 import Ficha from "../models/ficha.model.js";
-import sendEmail from "../controllers/email.controller.js";
+import { sendEmail } from "../controllers/email.controller.js";
 
 export const createFicha = async (req, res) => {
   try {
