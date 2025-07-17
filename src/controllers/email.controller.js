@@ -1,43 +1,41 @@
 import "dotenv/config";
-import nodemailer from 'nodemailer';
+import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
+
+const mailerSend = new MailerSend({
+  apiKey: process.env.MAILERSEND_API_KEY,
+});
 
 export const sendEmail = async ({
-  recipientEmail,
-  recipientName,
-  emailSubject,
-  htmlContent,
-  textContent,
+  recipientEmail,
+  recipientName,
+  emailSubject,
+  htmlContent,
+  textContent,
 }) => {
-  try {
-    let transporter = nodemailer.createTransport({
-      host: 'localhost',
-      port: 25,
-      secure: false, // For port 25, usually false, but STARTTLS might be attempted
-      ignoreTLS: false,
-      // If your local SMTP server requires authentication, uncomment and fill this:
-       auth: {
-         user: 'concurso',
-         pass: 'Plan2025'
-       },
-      tls: { // <--- Add this block
-        rejectUnauthorized: false // <--- This is the key line to ignore self-signed certs
-      }
-    });
+  try {
+    const sentFrom = new Sender(
+      "concurso@rumboalaequidad.org",
+      "Rumbo a la Equidad"
+    );
+    const recipients = [new Recipient(recipientEmail, recipientName)];
 
-    let info = await transporter.sendMail({
-      from: '"Rumbo a la Equidad" <concurso@rumboalaequidad.org>',
-      to: `${recipientName} <${recipientEmail}>`,
-      subject: emailSubject,
-      text: textContent,
-      html: htmlContent,
-    });
+    // const cc = [
+    //   new Recipient("concurso@rumboalaequidad.org", "Rumbo a la Equidad"),
+    // ];
 
-    console.log("transporter: ", info);
-    console.log("Message sent: %s", info.messageId);
+    const emailParams = new EmailParams()
+      .setFrom(sentFrom)
+      .setTo(recipients)
+      //.setCc(cc)
+      .setReplyTo(sentFrom)
+      .setSubject(emailSubject)
+      .setHtml(htmlContent)
+      .setText(textContent);
 
-    return { message: `Email sent successfully with message ID: ${info.messageId}` };
-  } catch (error) {
-    console.error("Error sending email:", error);
-    throw new Error(`Error sending email: ${error.message}`);
-  }
+    await mailerSend.email.send(emailParams);
+    return { message: "Email sent successfully" };
+  } catch (error) {
+    console.error("Error sending email:", error);
+    throw new Error(`Error sending email: ${error.message}`);
+  }
 };
