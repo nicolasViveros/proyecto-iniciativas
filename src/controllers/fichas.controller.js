@@ -89,10 +89,7 @@ export const createFicha = async (req, res) => {
             <li><strong>Representante Legal:</strong> ${legalRepName}</li>
             <li><strong>Posición del Representante:</strong> ${legalRepPosition}</li>
             <li><strong>Email:</strong> ${email}</li>
-            <li><strong>Teléfono:</strong> ${phone}</li>
-            <li><strong>ID de Registro:</strong> ${registrationId}</li>
-            <li><strong>Equipo:</strong> ${team.join(", ")}</li>
-            <li><strong>Asociaciones:</strong> ${associations}</li>
+            <li><strong>Teléfono:</strong> ${phone}</li>            
             <li><strong>Nombre del Proyecto:</strong> ${name}</li>
             <li><strong>Ciudad:</strong> ${city}</li>
           </ul>
