@@ -12,7 +12,8 @@ export const sendEmail = async ({
     let transporter = nodemailer.createTransport({
       host: 'localhost',
       port: 25,
-      secure: true, // For port 25, usually false, but STARTTLS might be attempted
+      secure: false, // For port 25, usually false, but STARTTLS might be attempted
+      ignoreTLS: false,
       // If your local SMTP server requires authentication, uncomment and fill this:
        auth: {
          user: 'concurso',
