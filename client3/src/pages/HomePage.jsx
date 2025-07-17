@@ -1369,23 +1369,16 @@ function HomePage() {
         <img
           src="/micro.svg"
           alt="Banner principal"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover hidden sm:block"
         />
-        <div className="absolute top-2/8 left-2/12 transform -traslate-x-3/12">
-          <p className="text-2xl md:text-xl sm:text-lg font-medium text-[#5A478D]">concurso</p>
-          <div className="bg-[#e79953] text-3xl md:text-2xl sm:text-xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
-            ¡Postula tu Iniciativa!
-          </div>
-
-          <h2 className="text-2xl md:text-xl sm:text-lg font-extrabold text-[#3C3270] mb-1">
-            RUMBO A LA EQUIDAD:
-          </h2>
-          <p className="text-xl md:text-lg sm:text-base text-[#5A478D] leading-tight">
-            Reconociendo iniciativas innovadoras en favor de la <br />
-            equidad de género en movilidad urbana
-          </p>
-        </div>
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
+        <img
+          src="/ilustracion.png"
+          alt="Banner mobile"
+          className="w-full h-auto object-cover block sm:hidden"
+        />
+        
+        {/* Ocultamos el círculo participa en móviles */}
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20 hidden sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
       </div>
