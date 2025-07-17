@@ -2,8 +2,7 @@ import "dotenv/config";
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 
 const mailerSend = new MailerSend({
-  apiKey:
-    "mlsn.82a3b51957de8d49d047203e52e0ab3a90f93b0663bd133413d0f7acc1900ba3",
+  apiKey: process.env.MAILERSEND_API_KEY,
 });
 
 export const sendEmail = async ({
