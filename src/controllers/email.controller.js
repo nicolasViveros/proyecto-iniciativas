@@ -14,10 +14,10 @@ export const sendEmail = async ({
       port: 25,
       secure: false, // For port 25, usually false, but STARTTLS might be attempted
       // If your local SMTP server requires authentication, uncomment and fill this:
-      // auth: {
-      //   user: 'your_smtp_username',
-      //   pass: 'your_smtp_password'
-      // },
+       auth: {
+         user: 'concurso',
+         pass: 'Plan2025'
+       },
       tls: { // <--- Add this block
         rejectUnauthorized: false // <--- This is the key line to ignore self-signed certs
       }
