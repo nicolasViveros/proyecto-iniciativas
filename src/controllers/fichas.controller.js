@@ -73,16 +73,8 @@ export const createFicha = async (req, res) => {
       acceptanceLetter,
       accepted,
     });
-
     savedFicha = await newFicha.save();
-  } catch (error) {
-    console.error("Error during the save operation:", error);
-    return res
-      .status(500)
-      .json({ message: "Algo salió mal", error: error.message });
-  }
-
-  // Separate email sending logic
+    // Separate email sending logic
   try {
     await sendEmail({
       recipientEmail: email,
@@ -113,7 +105,12 @@ export const createFicha = async (req, res) => {
     console.error("Error sending email:", emailError);
     // Optionally handle email sending errors, e.g., notification or retry logic
   }
-
+  } catch (error) {
+    console.error("Error during the save operation:", error);
+    return res
+      .status(500)
+      .json({ message: "Algo salió mal", error: error.message });
+  }
   // Respond with the saved Ficha
   return res.json(savedFicha);
 };
