@@ -1050,6 +1050,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFichas } from "../context/FichasContext";
+import { useLanguage } from "../context/LanguageContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 
 function Step1({
@@ -1860,8 +1861,7 @@ function Step5({
 export default function FormWizard() {
   const navigate = useNavigate();
   const { createFicha } = useFichas();
-
-  const [language, setLanguage] = useState("es");
+  const { language, toggleLanguage } = useLanguage();
   const [errors, setErrors] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [form, setForm] = useState({
@@ -2426,10 +2426,6 @@ export default function FormWizard() {
         console.error("Error al leer el archivo:", error);
       };
     });
-  };
-
-  const toggleLanguage = () => {
-    setLanguage((currentLang) => (currentLang === "es" ? "en" : "es"));
   };
 
   const steps = [

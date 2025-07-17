@@ -526,11 +526,12 @@ import { useState } from "react";
 import TaskCard from "../components/TaskCard";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { useLanguage } from "../context/LanguageContext";
 
 function HomePage() {
   const navigate = useNavigate();
   const [activo, setActivo] = useState(0);
-  const [language, setLanguage] = useState("es");
+  const { language, toggleLanguage } = useLanguage();
 
   const secciones = [
     {
@@ -1352,10 +1353,6 @@ function HomePage() {
       },
     },
   ];
-
-  const toggleLanguage = () => {
-    setLanguage((currentLang) => (currentLang === "es" ? "en" : "es"));
-  };
 
   return (
     <div className="w-full min-h-screen bg-white font-sans">
