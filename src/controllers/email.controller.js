@@ -10,7 +10,7 @@ export const sendEmail = async ({
 }) => {
   try {
     let transporter = nodemailer.createTransport({
-      host: 'localhost',
+      host: 'rumboalaequidad.org',
       port: 25,
       secure: false, // For port 25, usually false, but STARTTLS might be attempted
       // If your local SMTP server requires authentication, uncomment and fill this:
@@ -31,6 +31,7 @@ export const sendEmail = async ({
       html: htmlContent,
     });
 
+    console.log("transporter: ", info);
     console.log("Message sent: %s", info.messageId);
 
     return { message: `Email sent successfully with message ID: ${info.messageId}` };
