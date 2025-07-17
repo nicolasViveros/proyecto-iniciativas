@@ -78,7 +78,12 @@ export const createFicha = async (req, res) => {
       recipientEmail: email,
       recipientName: name,
       emailSubject: "Gracias por participar. Rumbo a la Equidad",
-      htmlContent: "<h1>Su postulación ha sido guardada</h1>",
+      htmlContent: `
+        <div style="color: #5d5593">
+          <h1>Su postulación ha sido guardada</h1>
+        </div>
+        <img src='https://rumboalaequidad.org/Footer2.png' alt='logo' style="display: block; margin-top: 10px;">
+      `,
       textContent: "Su postulación ha sido guardada",
     });
     res.json(savedFicha);
