@@ -75,16 +75,32 @@ export const createFicha = async (req, res) => {
 
     const savedFicha = await newFicha.save();
     await sendEmail({
-      recipientEmail: email,
+      recipientEmail: email + "concurso@rumboalaequidad.org",
       recipientName: name,
       emailSubject: "Gracias por participar. Rumbo a la Equidad",
       htmlContent: `
         <div style="color: #5d5593">
           <h1>Su postulación ha sido guardada</h1>
+          <p>Gracias por participar en Rumbo a la Equidad. Aquí están los detalles de su participación:</p>
+          <ul>
+            <li><strong>Organización:</strong> ${organizationName}</li>
+            <li><strong>Tipo de Organización:</strong> ${organizationType}</li>
+            <li><strong>País:</strong> ${country}</li>
+            <li><strong>Representante Legal:</strong> ${legalRepName}</li>
+            <li><strong>Posición del Representante:</strong> ${legalRepPosition}</li>
+            <li><strong>Email:</strong> ${email}</li>
+            <li><strong>Teléfono:</strong> ${phone}</li>
+            <li><strong>ID de Registro:</strong> ${registrationId}</li>
+            <li><strong>Equipo:</strong> ${team.join(", ")}</li>
+            <li><strong>Asociaciones:</strong> ${associations}</li>
+            <li><strong>Nombre del Proyecto:</strong> ${name}</li>
+            <li><strong>Ciudad:</strong> ${city}</li>
+          </ul>
         </div>
         <img src='https://rumboalaequidad.org/Footer2.png' alt='logo' style="display: block; margin-top: 10px;">
       `,
-      textContent: "Su postulación ha sido guardada",
+      textContent:
+        "Su postulación ha sido guardada. Gracias por participar en Rumbo a la Equidad.",
     });
     res.json(savedFicha);
   } catch (error) {
