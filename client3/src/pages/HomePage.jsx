@@ -1371,7 +1371,7 @@ function HomePage() {
           alt="Banner principal"
           className="w-full h-auto object-cover"
         />
-        <div className="absolute top-4 left-2/12 transform -traslate-x-3/12">
+        <div className="absolute top-5 left-2/12 transform -traslate-x-3/12">
         <p className="text-xs md:text-sm font-medium text-[#5A478D]">concurso</p>
         <div className="bg-[#e79953] text-white inline-block px-2 py-1 text-xs md:text-sm font-bold rounded-sm mb-2">
           ¡Postula tu Iniciativa!
