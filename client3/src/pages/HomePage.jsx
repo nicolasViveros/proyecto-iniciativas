@@ -1357,7 +1357,11 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4">
+        <span
+          onClick={toggleLanguage}
+          class="fi fi-gb">
 
+        </span>
         <button
           onClick={toggleLanguage}
           className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]"
