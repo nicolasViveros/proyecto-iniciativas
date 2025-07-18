@@ -1435,7 +1435,7 @@ export default function FormWizard() {
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
-      <div className="flex justify-end p-4 space-x-2">
+      <div className="flex justify-end p-4 space-x-2 inline">
         <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
         <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
       </div>
