@@ -1367,15 +1367,7 @@ function HomePage() {
     </button>
   </div>
 
-  
-    Dropdown menu, show/hide based on menu state.
 
-    Entering: "transition ease-out duration-100"
-      From: "transform opacity-0 scale-95"
-      To: "transform opacity-100 scale-100"
-    Leaving: "transition ease-in duration-75"
-      From: "transform opacity-100 scale-100"
-      To: "transform opacity-0 scale-95"
   <div role="menu" tabindex="-1" aria-labelledby="menu-button" aria-orientation="vertical" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden">
     <div role="none" class="py-1">
 
