@@ -239,19 +239,15 @@ function Step1({
         required
       />
 
-      <h3 className="text-2xl font-semibold my-5 ">
+      <h3 className="text-xl font-semibold my-5 ">
         {translateText[language].team}
       </h3>
-      <h3 className="text-xl">
+      <h3 className="text-sm">
         {language === "es"
-          ? "Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa"
-          : "Enter here the names, positions, and contact emails of the main people involved in the project or initiative"}{" "}
+          ? "Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa*"
+          : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
       </h3>
-      <label className="block text-sm my-2">
-        {language === "es"
-          ? "(puede ingresar más de una persona)"
-          : "(you can enter more than one person)"}
-      </label>
+  
 
       {form.team.map((member, index) => (
         <div key={index} className="grid grid-cols-5 gap-1 my-1">
@@ -311,7 +307,7 @@ function Step1({
         {language === "es" ? "+ Agregar responsable" : "+ Add responsible"}
       </button>
 
-      <h3 className="text-xl font-semibold my-5">
+      <h3 className="text-xl my-5">
         {translateText[language].associations}{" "}
       </h3>
       <div className="grid grid-cols-2 gap-2 ">
