@@ -832,20 +832,19 @@ function HomePage() {
     },
   ];
 
+  const switchToSpanish = () => {
+    if (language !== "es") toggleLanguage();
+  };
+
+  const switchToEnglish = () => {
+    if (language !== "en") toggleLanguage();
+  };
+
   return (
     <div className="w-full min-h-screen bg-white font-sans">
-      <div className="flex justify-end p-4">
-        <span
-          onClick={toggleLanguage}
-          class="fi fi-gb">
-        </span>
-
-        {/* <button
-          onClick={toggleLanguage}
-          className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]"
-        >
-          {language === "es" ? "Switch to English" : "Cambiar a Español"}
-        </button> */}
+      <div className="flex justify-end p-4 space-x-2">
+        <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
+        <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
       </div>
 
       <div className="relative w-full">
