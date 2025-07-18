@@ -43,18 +43,18 @@ function Step1({
   };
 
   useEffect(() => {
-    if (organizationType === "Otra") {
+    if (organizationType === "Otra" && otherOrganizationType !== form.organizationType) { 
       handleChange({
-        target: { name: "organizationType", value: otherOrganizationType },
+        target: { name: "organizationType", value: otherOrganizationType }, 
       });
     }
-  }, [otherOrganizationType, handleChange, organizationType]);
-
-  useEffect(() => {
-    if (country === "Otro") {
+  }, [organizationType, otherOrganizationType, handleChange, form.organizationType]);
+  
+  useEffect(() => { 
+    if (country === "Otro" && otherCountry !== form.country) { 
       handleChange({ target: { name: "country", value: otherCountry } });
     }
-  }, [otherCountry, handleChange, country]);
+  }, [country, otherCountry, handleChange, form.country]);
 
   return (
 
