@@ -1357,29 +1357,7 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4">
-        <div class="relative inline-block text-left">
-  <div>
-    <button id="menu-button" type="button" aria-expanded="true" aria-haspopup="true" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50">
-      Options
-      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="-mr-1 size-5 text-gray-400">
-        <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-      </svg>
-    </button>
-  </div>
-
-
-  <div role="menu" tabindex="-1" aria-labelledby="menu-button" aria-orientation="vertical" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden">
-    <div role="none" class="py-1">
-
-      <a id="menu-item-0" role="menuitem" href="#" tabindex="-1" class="block px-4 py-2 text-sm text-gray-700">Account settings</a>
-      <a id="menu-item-1" role="menuitem" href="#" tabindex="-1" class="block px-4 py-2 text-sm text-gray-700">Support</a>
-      <a id="menu-item-2" role="menuitem" href="#" tabindex="-1" class="block px-4 py-2 text-sm text-gray-700">License</a>
-      <form role="none" action="#" method="POST">
-        <button id="menu-item-3" type="submit" role="menuitem" tabindex="-1" class="block w-full px-4 py-2 text-left text-sm text-gray-700">Sign out</button>
-      </form>
-    </div>
-  </div>
-</div>
+        
         <button
           onClick={toggleLanguage}
           className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]"
