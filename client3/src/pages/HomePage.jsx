@@ -1393,7 +1393,7 @@ function HomePage() {
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20 hidden sm:flex">
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20  sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
       </div>
