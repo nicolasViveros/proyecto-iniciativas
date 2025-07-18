@@ -43,15 +43,15 @@ function Step1({
   };
 
   useEffect(() => {
-    if (organizationType === "Otra" && otherOrganizationType !== form.organizationType) { 
+    if (organizationType === "Otra" && otherOrganizationType !== form.organizationType) {
       handleChange({
-        target: { name: "organizationType", value: otherOrganizationType }, 
+        target: { name: "organizationType", value: otherOrganizationType },
       });
     }
   }, [organizationType, otherOrganizationType, handleChange, form.organizationType]);
-  
-  useEffect(() => { 
-    if (country === "Otro" && otherCountry !== form.country) { 
+
+  useEffect(() => {
+    if (country === "Otro" && otherCountry !== form.country) {
       handleChange({ target: { name: "country", value: otherCountry } });
     }
   }, [country, otherCountry, handleChange, form.country]);
@@ -247,52 +247,47 @@ function Step1({
           ? "Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa*"
           : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
       </h3>
-  
+
 
       {form.team.map((member, index) => (
         <div key={index} className="grid grid-cols-5 gap-1 my-1">
-          <div className="col-span-2 ">
-            <label>{language === "es" ? "Nombre*" : "Name*"}</label>{" "}
-          </div>
           <div className="col-span-2">
-            <label>{language === "es" ? "Cargo*" : "Position*"}</label>{" "}
-          </div>
-          <div className="col-span-2">
+            <label>{language === "es" ? "Nombre*" : "Name*"}</label>
             <input
               name="name"
               value={member.name}
               onChange={(e) => handleTeamChange(index, e)}
-              className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
             />
           </div>
           <div className="col-span-2">
+            <label>{language === "es" ? "Cargo*" : "Position*"}</label>
             <input
               name="position"
               value={member.position}
               onChange={(e) => handleTeamChange(index, e)}
-              className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
             />
           </div>
-          <div>
-            <button
-              type="button"
-              onClick={() => removeTeamMember(index)}
-              className="text-red-600 w-full py-1 hover:underline"
-            >
-              {language === "es" ? "Eliminar" : "Delete"}
-            </button>
-          </div>
-          <div className="col-span-4">
-            <div className="col-span-2">
-              <label>{language === "es" ? "Email*" : "Email*"}</label>{" "}
+          {index > 0 && (
+            <div>
+              <button
+                type="button"
+                onClick={() => removeTeamMember(index)}
+                className="text-red-600 w-full py-1 hover:underline"
+              >
+                {language === "es" ? "Eliminar" : "Delete"}
+              </button>
             </div>
-
+          )}
+          <div className="col-span-4">
+            <label>{language === "es" ? "Email*" : "Email*"}</label>
             <input
               name="email"
               type="email"
               value={member.email}
               onChange={(e) => handleTeamChange(index, e)}
-              className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
             />
           </div>
         </div>
