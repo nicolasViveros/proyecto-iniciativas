@@ -1386,7 +1386,7 @@ function HomePage() {
             RUMBO A LA EQUIDAD:
           </h2>
           <p className="text-xs md:text-lg sm:text-xl text-[#5A478D] leading-tight ">
-            Reconociendo iniciativas innovadoras en favor de la <br />
+            Reconociendo iniciativas<br/> innovadoras en favor de la <br />
             equidad de género en movilidad urbana
           </p>
         </div>
