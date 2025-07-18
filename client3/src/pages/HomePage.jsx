@@ -1357,7 +1357,7 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4">
-        
+
         <button
           onClick={toggleLanguage}
           className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]"
@@ -1378,20 +1378,23 @@ function HomePage() {
           className="w-full h-auto object-cover  sm:hidden"
         />
         <div className="absolute sm:top-1/8 sm:left-2/12 transform -traslate-x-3/12 top-14 left-2">
-          <p className="text-lg md:text-2xl sm:text-xl font-medium text-[#5A478D]">concurso</p>
-          <div className="bg-[#e79953] text-lg md:text-xl sm:text-lg text-white inline-block px-1 py-1  font-bold rounded-sm">
-            ¡Postula tu Iniciativa!
+          <p className="text-lg md:text-2xl sm:text-xl font-medium text-[#5A478D]">
+            {language === "es" ? "concurso" : "contest"}
+          </p>
+          <div className="bg-[#e79953] text-lg md:text-xl sm:text-lg text-white inline-block px-1 py-1 font-bold rounded-sm">
+            {language === "es" ? "¡Postula tu Iniciativa!" : "Submit Your Initiative!"}
           </div>
 
           <h2 className="text-lg md:text-2xl sm:text-xl font-extrabold text-[#3C3270]">
-            RUMBO A LA EQUIDAD:
+            {language === "es" ? "RUMBO A LA EQUIDAD:" : "TOWARDS EQUITY:"}
           </h2>
           <p className="text-xs md:text-lg sm:text-xl text-[#5A478D] leading-tight w-50 sm:w-100">
-            Reconociendo iniciativas innovadoras en favor de la
-            equidad de género en movilidad urbana
+            {language === "es"
+              ? "Reconociendo iniciativas innovadoras en favor de la equidad de género en movilidad urbana"
+              : "Recognizing innovative initiatives for gender equity in urban mobility"}
           </p>
         </div>
-       
+
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white  items-center justify-center z-20 hidden sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
