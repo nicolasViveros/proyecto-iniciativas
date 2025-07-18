@@ -1385,7 +1385,7 @@ function HomePage() {
           <h2 className="text-lg md:text-2xl sm:text-xl font-extrabold text-[#3C3270] mb-1">
             RUMBO A LA EQUIDAD:
           </h2>
-          <p className="text-xs md:text-lg sm:text-xl text-[#5A478D] leading-tight w-50 ">
+          <p className="text-xs md:text-lg sm:text-xl text-[#5A478D] leading-tight w-60 sm:w-80">
             Reconociendo iniciativas innovadoras en favor de la <br />
             equidad de género en movilidad urbana
           </p>
