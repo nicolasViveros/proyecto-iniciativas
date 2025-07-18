@@ -1366,7 +1366,7 @@ function HomePage() {
       </div>
 
       <div className="relative w-full">
-      <img
+        <img
           src="/micro.svg"
           alt="Banner principal"
           className="w-full h-auto object-cover hidden sm:block"
@@ -1377,12 +1377,12 @@ function HomePage() {
           className="w-full h-auto object-cover block sm:hidden"
         />
         <div className="absolute top-2/8 left-2/12 transform -traslate-x-3/12">
-          <p className="text-2xl md:text-xl sm:text-lg font-medium text-[#5A478D]">concurso</p>
-          <div className="bg-[#e79953] text-3xl md:text-2xl sm:text-xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
+          <p className="text-2xl md:text-xl sm:text-base font-medium text-[#5A478D]">concurso</p>
+          <div className="bg-[#e79953] text-3xl md:text-2xl sm:text-lg text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
           </div>
 
-          <h2 className="text-2xl md:text-xl sm:text-lg font-extrabold text-[#3C3270] mb-1">
+          <h2 className="text-2xl md:text-xl sm:text-base font-extrabold text-[#3C3270] mb-1">
             RUMBO A LA EQUIDAD:
           </h2>
           <p className="text-xl md:text-lg sm:text-base text-[#5A478D] leading-tight">
