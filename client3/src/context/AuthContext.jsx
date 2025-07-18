@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             setUser(res.data);
         } catch (error) {
-         //   console.log(error)
+            //   console.log(error)
             if (Array.isArray(error.response.data)) {
                 return setErrors(error.response.data);
             }
@@ -65,27 +65,29 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         async function checkLogin() {
             const cookies = Cookies.get();
-            if (!cookies.token ){
+            if (!cookies.token) {
                 setIsAuthenticated(false);
-                setLoading(false); 
-                return setUser(null); 
+                setLoading(false);
+                return setUser(null);
             }
 
             if (cookies.token) {
                 try {
-                    const res = await verifyTokenRequest(cookies.token) 
-//                     console.log(res.data)
+                    const res = await verifyTokenRequest(cookies.token)
+                    console.log(res.data)
                     if (!res.data) {
+                        Cookies.remove('token');
                         setIsAuthenticated(false);
                         setLoading(false);
-                        return setUser(null); 
-                    } 
-                 
+                        return setUser(null);
+                    }
+
                     setIsAuthenticated(true);
                     setUser(res.data);
                     setLoading(false);
 
                 } catch (error) {
+                    Cookies.remove('token');
                     setIsAuthenticated(false);
                     setUser(null);
                     setLoading(false);
