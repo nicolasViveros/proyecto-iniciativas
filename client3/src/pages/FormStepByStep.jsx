@@ -1523,7 +1523,7 @@ export default function FormWizard() {
                 type="submit"
                 className={`text-white px-4 py-2 rounded ${form.accepted
                   ? "bg-[#5d5593] hover:bg-[#a49fc4]"
-                  : "bg-silver-300"
+                  : "bg-transparent"
                   }`}
                 disabled={!form.accepted || isSubmitted}
               >
