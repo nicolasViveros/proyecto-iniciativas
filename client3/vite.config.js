@@ -29,5 +29,8 @@ export default defineConfig({
       key: "/root/proyecto-iniciativas/mi_clave_privada.key", // Path to your private key
       cert: "/root/proyecto-iniciativas/certificado.crt", // Path to your issued SSL certificate
     },
+    hmr: {
+      overlay: false, // Disable error overlay
+    },
   },
 });
