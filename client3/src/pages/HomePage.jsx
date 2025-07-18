@@ -1376,13 +1376,13 @@ function HomePage() {
           alt="Banner mobile"
           className="w-full h-auto object-cover block sm:hidden"
         />
-        <div className="absolute sm:top-2/8 sm:left-2/12 transform -traslate-x-3/12 top-11 left-2">
-          <p className="text-base md:text-xl sm:text-2xl font-medium text-[#5A478D]">concurso</p>
-          <div className="bg-[#e79953] text-lg md:text-xl sm:text-2xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
+        <div className="absolute sm:top-2/8 sm:left-2/12 transform -traslate-x-3/12 top-14 left-2">
+          <p className="text-base md:text-2xl sm:text-2xl font-medium text-[#5A478D]">concurso</p>
+          <div className="bg-[#e79953] text-lg md:text-2xl sm:text-2xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
           </div>
 
-          <h2 className="text-lg md:text-xl sm:text-4xl font-extrabold text-[#3C3270] mb-1">
+          <h2 className="text-lg md:text-4xl sm:text-4xl font-extrabold text-[#3C3270] mb-1">
             RUMBO A LA EQUIDAD:
           </h2>
           <p className="text-sm md:text-lg sm:text-4xl text-[#5A478D] leading-tight">
