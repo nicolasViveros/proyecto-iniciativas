@@ -1360,14 +1360,14 @@ function HomePage() {
         <span
           onClick={toggleLanguage}
           class="fi fi-gb">
-
         </span>
-        <button
+
+        {/* <button
           onClick={toggleLanguage}
           className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]"
         >
           {language === "es" ? "Switch to English" : "Cambiar a Español"}
-        </button>
+        </button> */}
       </div>
 
       <div className="relative w-full">
