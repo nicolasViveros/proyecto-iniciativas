@@ -1378,7 +1378,7 @@ function HomePage() {
         />
         <div className="absolute sm:top-2/8 sm:left-2/12 transform -traslate-x-3/12 top-6 left-4">
           <p className="text-2xl md:text-xl sm:text-base font-medium text-[#5A478D]">concurso</p>
-          <div className="bg-[#e79953] text-lg md:text-2xl sm:text-2xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
+          <div className="bg-[#e79953] text-lg md:text-xl sm:text-2xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
           </div>
 
