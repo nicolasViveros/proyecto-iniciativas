@@ -1376,7 +1376,7 @@ function HomePage() {
           alt="Banner mobile"
           className="w-full h-auto object-cover block sm:hidden"
         />
-        <div className="absolute sm:top-2/8 sm:left-2/12 transform -traslate-x-3/12 top-8 left-2">
+        <div className="absolute sm:top-2/8 sm:left-2/12 transform -traslate-x-3/12 top-11 left-2">
           <p className="text-base md:text-xl sm:text-2xl font-medium text-[#5A478D]">concurso</p>
           <div className="bg-[#e79953] text-lg md:text-xl sm:text-2xl text-white inline-block px-2 py-1  font-bold rounded-sm mb-2">
             ¡Postula tu Iniciativa!
