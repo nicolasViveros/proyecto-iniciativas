@@ -446,7 +446,7 @@ function Step2({ form, handleChange, translateText, language }) {
 
 function Step3({ form, handleChange, translateText, language }) {
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg">
+    <div className="max-w-2xl mx-auto bg-white rounded-lg">
       <h2 className="text-3xl text-center font-bold mb-4">
         {translateText[language].projectDescription}
       </h2>
