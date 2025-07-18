@@ -1434,11 +1434,11 @@ export default function FormWizard() {
   return (
 
     <div className="relative flex items-center justify-center min-h-screen">
-      <div>
-
+      
+      <div className="flex justify-between items-center w-full px-4 py-2">
         <button
           onClick={handleBack}
-          className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
+          className="hover:text-[#a49fc4] rounded-md"
         >
           <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
           <span className="ml-1">
@@ -1448,8 +1448,10 @@ export default function FormWizard() {
           </span>
         </button>
 
-        <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
-        <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
+        <div className="flex space-x-2">
+          <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
+          <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
+        </div>
       </div>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
