@@ -18,6 +18,8 @@ import { FichaProvider } from "./context/FichasContext";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { LanguageProvider } from "./context/LanguageContext";
+import "flag-icons/css/flag-icons.min.css";
+
 
 export function App() {
   return (
