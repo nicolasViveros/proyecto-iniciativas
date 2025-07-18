@@ -1424,16 +1424,21 @@ export default function FormWizard() {
     />,
   ];
 
+  const switchToSpanish = () => {
+    if (language !== "es") toggleLanguage();
+  };
+
+  const switchToEnglish = () => {
+    if (language !== "en") toggleLanguage();
+  };
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
-      <button
-        onClick={toggleLanguage}
-        className="bg-[#5d5593] text-white absolute px-2 py-1 rounded-xl top-4 right-4 text-[#5d5593] hover:text-[#a49fc4] rounded-md"
-      >
-        {language === "es" ? "Switch to English" : "Cambiar a Español"}
-      </button>
+      <div className="flex justify-end p-4 space-x-2">
+        <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
+        <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
+      </div>
       <button
         onClick={handleBack}
         className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
