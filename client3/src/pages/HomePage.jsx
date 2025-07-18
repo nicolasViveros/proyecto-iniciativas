@@ -113,11 +113,11 @@ function HomePage() {
             mejor aquellas iniciativas con mayor impacto sobre la equidad e
             inclusión y potencial de replicabilidad y sostenibilidad en el
             tiempo.
-            <h1 className="my-4">
+            <div className="my-4">
               Este concurso está dirigido a instituciones públicas, empresas
               privadas, organizaciones de la sociedad civil y entidades
               académicas que lideren este tipo de iniciativas.
-            </h1>
+            </div>
           </>
         ),
         en: (
@@ -128,11 +128,11 @@ function HomePage() {
             Initiatives with a greater impact on equity and inclusion and
             potential for replicability and sustainability over time will be
             better evaluated.
-            <h1 className="my-4">
+            <div className="my-4">
               This contest is aimed at public institutions, private companies,
               civil society organizations, and academic entities that lead such
               initiatives.
-            </h1>
+            </div>
           </>
         ),
       },
