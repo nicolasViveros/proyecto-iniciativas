@@ -20,7 +20,7 @@ function FichaCard({ ficha }) {
       
       <div className="flex gap-x-2 place-content-end-safe ">
         <button
-          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md"
+          className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
             deleteFicha(ficha._id);
           }}
@@ -29,7 +29,7 @@ function FichaCard({ ficha }) {
         </button>
 
         <Link
-          to={`/ficha/${ficha._id}/editar`} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+          to={`/ficha/${ficha._id}/editar`} className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
         >
           editar
         </Link>
