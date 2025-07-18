@@ -1391,7 +1391,7 @@ function HomePage() {
           </p>
         </div>
        
-        <div className="absolute top-0 left-1/2 transform w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20">
+        <div className="absolute top-0 left-1/2 transform w-16 h-16 md:w-24 md:h-24 text-white  items-center justify-center z-20 hidden sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
       </div>
