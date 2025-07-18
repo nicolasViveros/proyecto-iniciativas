@@ -239,7 +239,7 @@ function Step1({
         required
       />
 
-      <h3 className="text-xl font-semibold my-5 ">
+      <h3 className="text-xl my-5 ">
         {translateText[language].team}
       </h3>
       <h3 className="text-sm">
