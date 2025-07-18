@@ -1432,25 +1432,26 @@ export default function FormWizard() {
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;
 
   return (
+
     <div className="relative flex items-center justify-center min-h-screen">
+      <div>
 
-      <button
-        onClick={handleBack}
-        className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
-      >
-        <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
-        <span className="ml-1">
-          {currentStep === 0
-            ? translateText[language].return
-            : translateText[language].previous}
-        </span>
-      </button>
+        <button
+          onClick={handleBack}
+          className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
+        >
+          <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
+          <span className="ml-1">
+            {currentStep === 0
+              ? translateText[language].return
+              : translateText[language].previous}
+          </span>
+        </button>
 
-      <div className="flex justify-end p-4 space-x-2">
         <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
         <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
       </div>
-      
+
       <div className="max-w-3xl w-full p-10 rounded-md">
         <div className="mb-6">
           <div className="text-center text-sm mb-1">
@@ -1531,8 +1532,8 @@ export default function FormWizard() {
               <button
                 type="submit"
                 className={`text-white px-4 py-2 rounded ${form.accepted
-                    ? "bg-[#5d5593] hover:bg-[#a49fc4]"
-                    : "bg-purple-300"
+                  ? "bg-[#5d5593] hover:bg-[#a49fc4]"
+                  : "bg-purple-300"
                   }`}
                 disabled={!form.accepted || isSubmitted}
               >
@@ -1542,6 +1543,6 @@ export default function FormWizard() {
           )}
         </form>
       </div>
-    </div>
+    </div >
   );
 }
