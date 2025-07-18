@@ -59,7 +59,7 @@ function Step1({
   return (
 
     <div>
-
+      
       <h1 className="text-3xl text-center font-bold mb-4">
         {translateText[language].organizationDetails}
       </h1>
@@ -1089,15 +1089,17 @@ export default function FormWizard() {
         if (!member.email) {
           newErrors.push(
             language === "es"
-              ? `El correo electrónico del miembro ${index + 1
-              } del equipo es requerido.`
+              ? `El correo electrónico del miembro ${
+                  index + 1
+                } del equipo es requerido.`
               : `Team member ${index + 1} email is required.`
           );
         } else if (!isValidEmail(member.email)) {
           newErrors.push(
             language === "es"
-              ? `El correo electrónico del miembro ${index + 1
-              } tiene un formato inválido.`
+              ? `El correo electrónico del miembro ${
+                  index + 1
+                } tiene un formato inválido.`
               : `Team member ${index + 1} email has an invalid format.`
           );
         }
@@ -1426,10 +1428,12 @@ export default function FormWizard() {
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
-      <div className="flex justify-end p-4 space-x-2">
-        <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
-        <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
-      </div>
+      <button
+        onClick={toggleLanguage}
+        className="bg-[#5d5593] text-white absolute px-2 py-1 rounded-xl top-4 right-4 text-[#5d5593] hover:text-[#a49fc4] rounded-md"
+      >
+        {language === "es" ? "Switch to English" : "Cambiar a Español"}
+      </button>
       <button
         onClick={handleBack}
         className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
@@ -1521,10 +1525,11 @@ export default function FormWizard() {
               </button>
               <button
                 type="submit"
-                className={`text-white px-4 py-2 rounded ${form.accepted
+                className={`text-white px-4 py-2 rounded ${
+                  form.accepted
                     ? "bg-[#5d5593] hover:bg-[#a49fc4]"
                     : "bg-purple-300"
-                  }`}
+                }`}
                 disabled={!form.accepted || isSubmitted}
               >
                 {translateText[language].submit}
