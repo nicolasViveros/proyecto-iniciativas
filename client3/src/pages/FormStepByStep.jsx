@@ -103,9 +103,6 @@ function Step1({
           <option value="Multilateral">
             {language === "es" ? "Multilateral" : "Multilateral"}
           </option>
-          <option value="Privada y ONG">
-            {language === "es" ? "Privada y ONG" : "Private and NGO"}
-          </option>
           <option value="Otra">
             {language === "es" ? "Otra..." : "Other..."}
           </option>
@@ -224,8 +221,11 @@ function Step1({
         name="phone"
         value={form.phone}
         onChange={handleChange}
-        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
+        className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
         required
+        maxLength="13" // Limit to 13 characters
+        pattern="^\+?[0-9]*$" // Regex pattern to allow only numbers and the '+' symbol
+        title={language === "es" ? "Solo se permiten números y el símbolo '+'" : "Only numbers and the '+' symbol are allowed"}
       />
 
       <label htmlFor="registrationId" className="text-xl">
@@ -851,7 +851,7 @@ export default function FormWizard() {
       organizationName: "Nombre de la organización *",
       organizationType: "Tipo de organización *",
       country: "País",
-      legalRepName: "Nombre de el/la representante legal o responsable*",
+      legalRepName: "Nombre de el/la representante legal o Lider de la iniciativa*",
       legalRepPosition: "Cargo *",
       email: "Correo electrónico *",
       phone: "Teléfono de contacto *",
@@ -924,7 +924,7 @@ export default function FormWizard() {
       organizationName: "Organization Name *",
       organizationType: "Organization Type *",
       country: "Country",
-      legalRepName: "Legal Representative Name *",
+      legalRepName: "Legal Representative Name or Initiative Leader *",
       legalRepPosition: "Position *",
       email: "Email *",
       phone: "Contact Phone *",
