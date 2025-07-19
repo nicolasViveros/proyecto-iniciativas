@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <nav className=" flex justify-between border-b border-gray-300 ">
             <footer className="bg-white w-full">
-                <div className=" inset-0 flex items-center justify-between w-fit ">
+                <div className=" inset-0 flex items-center justify-between ">
                     {/* Logo izquierda (GIZ) */}
                     <img
                         src="/global_gateway.png"
