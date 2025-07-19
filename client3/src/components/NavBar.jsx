@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <nav className="my-3 border-b border-gray-300">
             <footer className="bg-white w-full">
-                <div className="flex justify-between items-center px-4 md:px-10">
+                <div className="flex justify-between items-center my-4 md:px-10 h-full">
                     <Link to="/" className="flex-grow">
                         <img
                             src="/Header1.svg"
