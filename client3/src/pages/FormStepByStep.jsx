@@ -1194,25 +1194,25 @@ export default function FormWizard() {
     }
 
     if (currentStep === 4) {
-      form.links.forEach((link, index) => {
-        if (!link) {
-          newErrors.push(
-            language === "es"
-              ? `El campo link no debe estar vacío.`
-              : `The link field cannot be empty.`
-          );
-        } else {
-          try {
-            new URL(link);
-          } catch (_) {
-            newErrors.push(
-              language === "es"
-                ? `El link ${index + 1} es inválido.`
-                : `Link ${index + 1} is invalid.`
-            );
-          }
-        }
-      });
+      // form.links.forEach((link, index) => {
+      //   if (!link) {
+      //     newErrors.push(
+      //       language === "es"
+      //         ? `El campo link no debe estar vacío.`
+      //         : `The link field cannot be empty.`
+      //     );
+      //   } else {
+      //     try {
+      //       new URL(link);
+      //     } catch (_) {
+      //       newErrors.push(
+      //         language === "es"
+      //           ? `El link ${index + 1} es inválido.`
+      //           : `Link ${index + 1} is invalid.`
+      //       );
+      //     }
+      //   }
+      // });
 
       if (form.acceptanceLetter.length === 0) {
         newErrors.push(
@@ -1438,8 +1438,9 @@ export default function FormWizard() {
       </button>
 
       <div className="absolute top-4 right-4 space-x-2">
-        <span className="fi fi-es cursor-pointer" onClick={switchToSpanish}></span>
-        <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
+        <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
+        <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
+        <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button>
       </div>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
