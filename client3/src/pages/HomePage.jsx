@@ -843,8 +843,8 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4 space-x-2">
-        <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>English</button>
-        <span className="fi fi-gb cursor-pointer" onClick={switchToEnglish}></span>
+        <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
+        <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
       </div>
 
       <div className="relative w-full">
