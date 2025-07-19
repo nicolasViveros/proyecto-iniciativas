@@ -12,7 +12,7 @@ function NavBar() {
                         <img
                             src="/Header1.svg"
                             alt="Global Gateway"
-                            className="w-full inset-0 h-full"
+                            className="w-full inset-0 h-50 object-contain"
                         />
                     </Link>
                 </div>
