@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <nav className=" flex justify-between border-b border-gray-300 ">
             <footer className="bg-white w-full">
-                <div className=" inset-0 flex items-center justify-between ">
+                <div className=" inset-0 flex items-center justify-between w-fit ">
                     {/* Logo izquierda (GIZ) */}
                     <img
                         src="/global_gateway.png"
@@ -19,7 +19,7 @@ function NavBar() {
                     <img
                         src="/eu_germany.png"
                         alt="Somos LAC Logo"
-                        className="pb-3 h-25 md:h-35 lg:h-40"
+                        className="pb-4 h-25 md:h-35 lg:h-45"
                     />
                 </div>
                 {/* <div className="px-4 py-3 flex items-between justify-between">
