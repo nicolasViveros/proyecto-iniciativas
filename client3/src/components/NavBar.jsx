@@ -10,7 +10,7 @@ function NavBar() {
                 <div className="px-4 py-3 flex items-center justify-center">
                     <div className="flex items-center ">
                         <Link to="/">
-                            <img src="/Header_new.png" alt="Global Gateway" className="h-16 md:h-25" />
+                            <img src="/Header_new.png" alt="Global Gateway" className="h-16 md:h-45" />
                         </Link>
                     </div>
                    
