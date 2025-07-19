@@ -5,7 +5,7 @@ function NavBar() {
 
 
     return (
-        <nav className="my-3 flex justify-between border-b border-gray-300 px-4 md:px-4">
+        <nav className="my-3 flex justify-between border-b border-gray-300 px-4 py-4 md:px-4">
             <footer className="bg-white w-full">
                 <div className=" inset-0 flex items-center justify-between py-3 px-4 md:px-4">
                     {/* Logo izquierda (GIZ) */}
