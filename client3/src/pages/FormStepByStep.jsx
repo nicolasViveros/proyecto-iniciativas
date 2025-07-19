@@ -1441,7 +1441,7 @@ export default function FormWizard() {
       <div className="absolute top-4 right-4 space-x-2">
         <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
         <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
-        <button className="rounded-full bg-white p-2 border" onClick="">Pt</button>
+        <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button>
       </div>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
