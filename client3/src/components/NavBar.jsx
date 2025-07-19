@@ -12,7 +12,7 @@ function NavBar() {
                     <img
                         src="/global_gateway.png"
                         alt="GIZ Logo"
-                        className="h-10 md:h-26 lg:h-20"
+                        className="h-25 md:h-35 lg:h-40"
                     />
 
                     {/* Logo derecha (Somos LAC) */}
