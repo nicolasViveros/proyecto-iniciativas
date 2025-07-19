@@ -10,7 +10,7 @@ function NavBar() {
                 <div className="flex justify-between object-contain  items-center my-4 md:px-10 h-16 md:h-25">
                     <Link to="/" className="flex-grow">
                         <img
-                            src="/Header1.svg"
+                            src="/Header_1.png"
                             alt="Global Gateway"
                             className="w-full inset-0 h-50 object-contain"
                         />
