@@ -10,7 +10,7 @@ function NavBar() {
             <div className="h-16 md:h-25">
               <Link to="/" className="flex-grow block w-full h-full">
                 <img
-                  src="/Header_1.png"
+                  src="/Header_new.png"
                   alt="Global Gateway"
                   className="object-cover w-full h-full"
                 />
