@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFichas } from "../context/FichasContext";
 import { useLanguage } from "../context/LanguageContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
+import ConfirmationDialog from "../components/ConfirmationDialog";
 
 function Step1({
   form,
@@ -991,6 +992,26 @@ export default function FormWizard() {
     },
   };
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+
+
+  const handleDialogClose = () => {
+    setIsDialogOpen(false); // Close dialog without submitting
+  };
+
+  const handleDialogConfirm = () => {
+    setIsDialogOpen(false); // Close dialog and proceed to submission
+    createFicha(form)
+      .then(() => {
+        // ... success logic goes here
+      })
+      .catch((error) => {
+        console.error("Error al crear la ficha:", error);
+      });
+  };
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -1274,6 +1295,7 @@ export default function FormWizard() {
 
   const onSubmit = () => {
     if (validateStep()) {
+
       const userConfirmed = window.confirm(translateText[language].confirm);
 
       if (userConfirmed) {
@@ -1528,7 +1550,12 @@ export default function FormWizard() {
                   }`}
                 disabled={!form.accepted || isSubmitted}
               >
-                {translateText[language].submit}
+                {<ConfirmationDialog
+                  isOpen={isDialogOpen}
+                  onConfirm={handleDialogConfirm}
+                  onClose={handleDialogClose}
+                  message={translateText[language].submit}
+                />}
               </button>
             </div>
           )}
