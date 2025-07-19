@@ -6,19 +6,20 @@ function NavBar() {
 
     return (
         <nav className="my-3 border-b border-gray-300">
-          <footer className="bg-white w-full">
-            <div className="h-16 md:h-25">
-              <Link to="/" className="flex-grow block w-full h-full">
-                <img
-                  src="/Header_new.png"
-                  alt="Global Gateway"
-                  className="object-cover w-full h-full"
-                />
-              </Link>
-            </div>
-          </footer>
+            <footer className="bg-white w-full">
+                <div className="flex justify-between object-contain  items-center my-4 md:px-10 h-16 md:h-25">
+                    <Link to="/" className="flex-grow">
+                        <img
+                            src="/Header_1.png"
+                            alt="Global Gateway"
+                            className="w-full inset-0 h-50 object-contain"
+                        />
+                    </Link>
+                </div>
+            </footer>
         </nav>
-      );
+    );
+}
 
 {/* <Link to={
                 isAuthenticated ? "/tasks" : "/"
