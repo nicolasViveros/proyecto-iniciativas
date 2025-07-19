@@ -10,7 +10,8 @@ function NavBar() {
                 <div className="px-4 py-3 flex items-between justify-between">
                     <div className="flex items-center ">
                         <Link to="/">
-                            <img src="/global_gateway.png" alt="Global Gateway" className="h-16 md:h-25" />
+                            <img src="/global_gateway.png" alt="Global Gateway" className="h-16 md:h-35" />
+                            <img src="/eu_germany.png" alt="Global Gateway" className="h-16 md:h-35" />
                         </Link>
                     </div>
                    
