@@ -326,7 +326,7 @@ function EditFichaPage() {
                         </div>
                     )}
 
-                    <div className='col-span-2'>Asociaciones:</div>
+                    <div >Asociaciones:</div>
                         <div>
                             <input
                                 type="text"
