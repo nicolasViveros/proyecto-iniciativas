@@ -276,7 +276,7 @@ function Step1({
               <button
                 type="button"
                 onClick={() => removeTeamMember(index)}
-                className="text-red-600 w-full py-1 hover:underline"
+                className="text-red-600 text-xs w-full py-1 hover:underline"
               >
                 {language === "es" ? "Eliminar" : "Delete"}
               </button>
@@ -771,7 +771,7 @@ function Step5({
               <button
                 type="button"
                 onClick={() => handleRemoveLink(index)}
-                className="text-red-600 px-2 hover:underline ml-2"
+                className="text-red-600  text-xs px-2 hover:underline ml-2"
               >
                 {language === "es" ? "Eliminar" : "Delete"}
               </button>
@@ -787,7 +787,7 @@ function Step5({
         {language === "es" ? "+ Agregar enlace" : "+ Add link"}
       </button>
 
-      <label className="block text-xl">
+      <label className="block text-xl pt-2">
         {translateText[language].attachFiles}
       </label>
       <input
@@ -822,7 +822,7 @@ function Step5({
         ))}
       </div>
 
-      <label className="block text-xl">
+      <label className="block text-xl pt-2">
         {translateText[language].videoPrompt}
       </label>
       <label className="block text-sm">
