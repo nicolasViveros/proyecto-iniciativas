@@ -350,7 +350,7 @@ function EditFichaPage() {
                             </div>
                         </div>
                     ))}
-                    <div className='col-span-2 items-start justify-start flex border-b border-[#D9D6E1]  '>
+                    <div className='col-span-2 items-start justify-start flex'>
                         <button
                             type="button"
                             onClick={addTeamMember}
@@ -358,187 +358,185 @@ function EditFichaPage() {
                         </button>
                     </div>
 
-                    <div className='mt-2 col-span-2'>
-                        <div>Necesidad/Problemática:</div>
+                    <div>Necesidad/Problemática:</div>
+                    <div>
+                        <textarea
+                            name="need"
+                            value={ficha.need}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <div>Objetivos del Proyecto:</div>
+                    <div>
+                        <textarea
+                            name="objectives"
+                            value={ficha.objectives}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <div>Público Objetivo:</div>
+                    <div>
+                        <textarea
+                            name="targetAudience"
+                            value={ficha.targetAudience}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <div>Actividades Principales:</div>
+                    <div>
+                        <textarea
+                            name="activities"
+                            value={ficha.activities}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    {ficha.category === 'Operador/Regulador' && (
+                        <>
+                            <div>Innovación:</div>
                             <div>
                                 <textarea
-                                    name="need"
-                                    value={ficha.need}
+                                    name="innovation"
+                                    value={ficha.innovation}
                                     onChange={handleInputChange}
                                     className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                                     rows="3"
                                 ></textarea>
                             </div>
-                        </div>
 
-                        <div>Objetivos del Proyecto:</div>
-                        <div>
-                            <textarea
-                                name="objectives"
-                                value={ficha.objectives}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></textarea>
-                        </div>
-
-                        <div>Público Objetivo:</div>
-                        <div>
-                            <textarea
-                                name="targetAudience"
-                                value={ficha.targetAudience}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></textarea>
-                        </div>
-
-                        <div>Actividades Principales:</div>
-                        <div>
-                            <textarea
-                                name="activities"
-                                value={ficha.activities}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></textarea>
-                        </div>
-
-                        {ficha.category === 'Operador/Regulador' && (
-                            <>
-                                <div>Innovación:</div>
-                                <div>
-                                    <textarea
-                                        name="innovation"
-                                        value={ficha.innovation}
-                                        onChange={handleInputChange}
-                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                        rows="3"
-                                    ></textarea>
-                                </div>
-
-                                <div>Impacto:</div>
-                                <div>
-                                    <textarea
-                                        name="impact"
-                                        value={ficha.impact}
-                                        onChange={handleInputChange}
-                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                        rows="3"
-                                    ></textarea>
-                                </div>
-                            </>
-                        )}
-                        {ficha.category === 'ONG/Academia' && (
-                            <>
-                                <div>Metodología:</div>
-                                <div>
-                                    <textarea
-                                        name="methodology"
-                                        value={ficha.methodology}
-                                        onChange={handleInputChange}
-                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                        rows="3"
-                                    ></textarea>
-                                </div>
-
-                                <div>Resultados:</div>
-                                <div>
-                                    <textarea
-                                        name="outcomes"
-                                        value={ficha.outcomes}
-                                        onChange={handleInputChange}
-                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                        rows="3"
-                                    ></textarea>
-                                </div>
-                            </>
-                        )}
-                        <div>Transferibilidad:</div>
-                        <div>
-                            <textarea
-                                name="transferability"
-                                value={ficha.transferability}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></textarea>
-                        </div>
-
-                        <div>Sostenibilidad:</div>
-                        <div>
-                            <textarea
-                                name="sustainability"
-                                value={ficha.sustainability}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></textarea>
-                        </div>
-
-                        <div className='col-span-2 font-bold'>Material de Respaldo:</div>
-
-                        <div className='col-span-2'>Links:</div>
-                        {ficha.links.map((link, index) => (
-                            <div key={index} className='col-span-2'>
-                                <div className="flex items-center">
-                                    <input
-                                        type="url"
-                                        value={link}
-                                        onChange={(e) => handleLinkChange(index, e.target.value)}
-                                        className="w-full p-2 border rounded my-2 input-focused"
-                                    />
-                                    {index > 0 && (
-                                        <button
-                                            type="button"
-                                            onClick={() => handleRemoveLink(index)}
-                                            className="text-red-600  text-xs px-2 hover:underline ml-2"
-                                        >
-                                            Eliminar
-                                        </button>
-                                    )}
-                                </div>
+                            <div>Impacto:</div>
+                            <div>
+                                <textarea
+                                    name="impact"
+                                    value={ficha.impact}
+                                    onChange={handleInputChange}
+                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                    rows="3"
+                                ></textarea>
                             </div>
-                        ))}
+                        </>
+                    )}
+                    {ficha.category === 'ONG/Academia' && (
+                        <>
+                            <div>Metodología:</div>
+                            <div>
+                                <textarea
+                                    name="methodology"
+                                    value={ficha.methodology}
+                                    onChange={handleInputChange}
+                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                    rows="3"
+                                ></textarea>
+                            </div>
 
-                        <div className='col-span-2'>Video:</div>
-                        <div className='col-span-2'>
-                            <input
-                                name="video"
-                                value={ficha.video}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></input>
-                        </div>
-
-                        <div className='col-span-2'>Reconocimiento:</div>
-                        <div className='col-span-2'>
-                            <input
-                                name="video"
-                                value={ficha.recognition}
-                                onChange={handleInputChange}
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                rows="3"
-                            ></input>
-                        </div>
-
-
-
-                        <div className="flex col-span-2 justify-end">
-                            <button
-                                type="button"
-                                onClick={handleSave}
-                                className="bg-[#5d5593] text-white px-2 my-8 py-2 rounded hover:bg-[#a49fc4] justify-end"
-                            >
-                                Guardar Ficha
-                            </button>
-                        </div>
-
+                            <div>Resultados:</div>
+                            <div>
+                                <textarea
+                                    name="outcomes"
+                                    value={ficha.outcomes}
+                                    onChange={handleInputChange}
+                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                    rows="3"
+                                ></textarea>
+                            </div>
+                        </>
+                    )}
+                    <div>Transferibilidad:</div>
+                    <div>
+                        <textarea
+                            name="transferability"
+                            value={ficha.transferability}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
                     </div>
-                </div >
-            </div>
-            );
+
+                    <div>Sostenibilidad:</div>
+                    <div>
+                        <textarea
+                            name="sustainability"
+                            value={ficha.sustainability}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <div className='col-span-2 font-bold'>Material de Respaldo:</div>
+
+                    <div className='col-span-2'>Links:</div>
+                    {ficha.links.map((link, index) => (
+                        <div key={index} className='col-span-2'>
+                            <div className="flex items-center">
+                                <input
+                                    type="url"
+                                    value={link}
+                                    onChange={(e) => handleLinkChange(index, e.target.value)}
+                                    className="w-full p-2 border rounded my-2 input-focused"
+                                />
+                                {index > 0 && (
+                                    <button
+                                        type="button"
+                                        onClick={() => handleRemoveLink(index)}
+                                        className="text-red-600  text-xs px-2 hover:underline ml-2"
+                                    >
+                                        Eliminar
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+
+                    <div className='col-span-2'>Video:</div>
+                    <div className='col-span-2'>
+                        <input
+                            name="video"
+                            value={ficha.video}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></input>
+                    </div>
+
+                    <div className='col-span-2'>Reconocimiento:</div>
+                    <div className='col-span-2'>
+                        <input
+                            name="video"
+                            value={ficha.recognition}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></input>
+                    </div>
+
+
+
+                    <div className="flex col-span-2 justify-end">
+                        <button
+                            type="button"
+                            onClick={handleSave}
+                            className="bg-[#5d5593] text-white px-2 my-8 py-2 rounded hover:bg-[#a49fc4] justify-end"
+                        >
+                            Guardar Ficha
+                        </button>
+                    </div>
+
+                </div>
+            </div >
+        </div>
+    );
 }
 
-            export default EditFichaPage
+export default EditFichaPage
