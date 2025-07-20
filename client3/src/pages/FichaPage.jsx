@@ -91,33 +91,41 @@ const FichaPage = () => {
           </div>
             <p><strong>Necesidad/Problemática:</strong> </p>
             <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.need}</p>
+
           <p><strong>Objetivos del Proyecto:</strong> </p>
           <p className="border-b border-[#D9D6E1] pb-1">{ficha.objectives}</p>
+
           <p><strong>Público Objetivo:</strong> </p>
-          <p>{ficha.targetAudience}</p>
+          <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.targetAudience}</p>
+
           <p><strong>Actividades Principales:</strong> </p>
-          <p>{ficha.activities}</p>
+          <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.activities}</p>
+
           {ficha.category === 'Operador/Regulador' && (
             <>
               <p><strong>Innovación:</strong> </p>
-              <p>{ficha.innovation}</p>
+              <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.innovation}</p>
+
               <p><strong>Impacto:</strong> </p>
-              <p>{ficha.impact}</p>
+              <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.impact}</p>
             </>
           )}
           {ficha.category === 'ONG/Academia' && (
             <>
               <p><strong>Metodología:</strong> </p>
-              <p>{ficha.methodology}</p>
+              <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.methodology}</p>
+
               <p><strong>Resultados:</strong> </p>
-              <p>{ficha.outcomes}</p>
+              <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.outcomes}</p>
             </>
           )}
           <p><strong>Transferibilidad:</strong> </p>
-          <p>{ficha.transferability}</p>
+          <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.transferability}</p>
+
           <p><strong>Sostenibilidad:</strong> </p>
-          <p>{ficha.sustainability}</p>
-          <p className='col-span-2 underline mb-3'><strong>Material de Respaldo:</strong></p>
+          <p >{ficha.sustainability}</p>
+
+          <p className='col-span-2 underline mb-3 className="col-span-2 border-t border-[#D9D6E1] pb-1"'><strong>Material de Respaldo:</strong></p>
           <ul>
 
             {ficha.links.map((link, index) => (
