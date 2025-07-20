@@ -866,16 +866,18 @@ function Step5({
             key={index}
             className="mt-2 p-2 border border-gray-300 rounded-md"
           >
-            <p>
-              {file.name} ({file.type})
-            </p>
-            <button
+            <div className="flex items-center justify-between">
+              <p>
+                {file.name} ({file.type})
+              </p>
+              <button
                 type="button"
                 onClick={() => handleRemoveAcceptanceLetter(index)}
                 className="text-red-600 text-xs px-2 hover:underline ml-2 "
               >
                 {language === "es" ? "Eliminar" : "Delete"}
               </button>
+            </div>
           </div>
         ))}
       </div>
@@ -1092,7 +1094,7 @@ export default function FormWizard() {
   };
 
   const isValidPhone = (phone) => {
-    const phoneRegex = /^\+?\d{7,15}$/;
+    const phoneRegex = /^\+?\d{7, 15}$/;
     return phoneRegex.test(phone);
   };
 
