@@ -41,12 +41,12 @@ function EditFichaPage() {
         const newLinks = [...form.links];
         newLinks[index] = value;
         setForm({ ...form, links: newLinks });
-      };
+    };
 
-      const handleRemoveLink = (index) => {
+    const handleRemoveLink = (index) => {
         const newLinks = form.links.filter((_, i) => i !== index);
         setForm({ ...form, links: newLinks });
-      };
+    };
 
     const validateFields = () => {
         if (!ficha.name) return "El nombre es requerido";
@@ -459,6 +459,7 @@ function EditFichaPage() {
                 </div>
 
                 <div className='col-span-2 font-bold'>Material de Respaldo:</div>
+
                 <div className='col-span-2'>Links:</div>
                 {ficha.links.map((link, index) => (
                     <div key={index} className='col-span-2'>
@@ -482,28 +483,19 @@ function EditFichaPage() {
                     </div>
                 ))}
 
-                <div>
-                    <ul>
-                        {ficha.links.map((link, index) => (
-                            <li key={index}>
-                                <input
-                                    type="text"
-                                    value={link}
-                                    onChange={(e) => {
-                                        const newLinks = [...ficha.links];
-                                        newLinks[index] = e.target.value;
-                                        setFicha({ ...ficha, links: newLinks });
-                                    }}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                if (ficha.video) (
+                    <div className='col-span-2'>Video:</div>
+                    <input
+                        name="video"
+                        value={ficha.video}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></input>
+                
+                )
 
 
-                {ficha.video && (
-                    <p><strong>Video:</strong> <a href={ficha.video} target="_blank" rel="noopener noreferrer">{ficha.video}</a></p>
-                )}
                 {ficha.recognition && (
                     <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
                 )}
