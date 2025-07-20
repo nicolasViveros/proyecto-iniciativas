@@ -52,19 +52,31 @@ const FichaPage = () => {
         <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
         <div className="container grid grid-cols-2 mx-auto p-2">
 
-          <p><strong>Organización:</strong> {ficha.organizationName}</p>
-          <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
-          <p><strong>País:</strong> {ficha.country}</p>
-          <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
-          <p><strong>Cargo del Representante Legal:</strong> {ficha.legalRepPosition}</p>
-          <p><strong>Email:</strong> {ficha.email}</p>
-          <p><strong>Teléfono:</strong> {ficha.phone}</p>
-          <p><strong>Registro Legal:</strong> {ficha.registrationId}</p>
-          <p><strong>Ciudad de Implementación:</strong> {ficha.city}</p>
-          <p><strong>Fecha de Inicio:</strong> {new Date(ficha.startDate).toLocaleDateString()}</p>
-          <p><strong>¿Está Vigente?:</strong> {ficha.isActive ? "Sí" : "No"}</p>
+          <p><strong>Organización:</strong> </p>
+          <p>{ficha.organizationName}</p> 
+          <p><strong>Tipo de Organización:</strong> </p>
+          <p>{ficha.organizationType}</p>
+          <p><strong>País:</strong> </p>
+          <p>{ficha.country}</p>
+          <p><strong>Representante Legal:</strong> </p>
+          <p>{ficha.legalRepName}</p>
+          <p><strong>Cargo del Representante Legal:</strong> </p>
+          <p>{ficha.legalRepPosition}</p>
+          <p><strong>Email:</strong> </p>
+          <p>{ficha.email}</p>
+          <p><strong>Teléfono:</strong> </p>
+          <p>{ficha.phone}</p>
+          <p><strong>Registro Legal:</strong> </p>
+          <p>{ficha.registrationId}</p>
+          <p><strong>Ciudad de Implementación:</strong> </p>
+          <p>{ficha.city}</p>          
+          <p><strong>Fecha de Inicio:</strong> </p>
+          <p>{new Date(ficha.startDate).toLocaleDateString()}</p>
+          <p><strong>¿Está Vigente?:</strong> </p>
+          <p>{ficha.isActive ? "Sí" : "No"}</p>
           {!ficha.isActive && <p><strong>Razón Inactiva:</strong> {ficha.reasonInactive}</p>}
-          <p><strong>Asociaciones:</strong> {ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
+          <p><strong>Asociaciones:</strong> </p>
+          <p>{ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
           <div>
             <p><strong>Equipo Responsable:</strong></p>
             {ficha.team.map((member, index) => (
@@ -76,25 +88,35 @@ const FichaPage = () => {
               </div>
             ))}
           </div>
-          <p><strong>Necesidad/Problemática:</strong> {ficha.need}</p>
-          <p><strong>Objetivos del Proyecto:</strong> {ficha.objectives}</p>
-          <p><strong>Público Objetivo:</strong> {ficha.targetAudience}</p>
-          <p><strong>Actividades Principales:</strong> {ficha.activities}</p>
+          <p><strong>Necesidad/Problemática:</strong> </p>
+          <p>{ficha.need}</p>
+          <p><strong>Objetivos del Proyecto:</strong> </p>
+          <p>{ficha.objectives}</p>
+          <p><strong>Público Objetivo:</strong> </p>
+          <p>{ficha.targetAudience}</p>
+          <p><strong>Actividades Principales:</strong> </p>
+          <p>{ficha.activities}</p>
           {ficha.category === 'Operador/Regulador' && (
             <>
-              <p><strong>Innovación:</strong> {ficha.innovation}</p>
-              <p><strong>Impacto:</strong> {ficha.impact}</p>
+              <p><strong>Innovación:</strong> </p>
+              <p>{ficha.innovation}</p>
+              <p><strong>Impacto:</strong> </p>
+              <p>{ficha.impact}</p>
             </>
           )}
           {ficha.category === 'ONG/Academia' && (
             <>
-              <p><strong>Metodología:</strong> {ficha.methodology}</p>
-              <p><strong>Resultados:</strong> {ficha.outcomes}</p>
+              <p><strong>Metodología:</strong> </p>
+              <p>{ficha.methodology}</p>
+              <p><strong>Resultados:</strong> </p>
+              <p>{ficha.outcomes}</p>
             </>
           )}
-          <p><strong>Transferibilidad:</strong> {ficha.transferability}</p>
-          <p><strong>Sostenibilidad:</strong> {ficha.sustainability}</p>
-          <p><strong>Material de Respaldo:</strong></p>
+          <p><strong>Transferibilidad:</strong> </p>
+          <p>{ficha.transferability}</p>
+          <p><strong>Sostenibilidad:</strong> </p>
+          <p>{ficha.sustainability}</p>
+          <p><strong>Material de Respaldo:</strong> </p>
           <ul>
             {ficha.links.map((link, index) => (
               <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
@@ -105,8 +127,7 @@ const FichaPage = () => {
           )}
           {ficha.recognition && (
             <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
-          )}
-
+          )}  
         </div>
       </div>
     </div>
