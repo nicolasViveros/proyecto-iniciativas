@@ -114,7 +114,7 @@ function EditFichaPage() {
     if (!emailRegex.test(ficha.email)) return "El email no es válido";
     // Add more specific validation as needed
     return '';
-};
+};       
 
 const handleRadioChange = (e) => {
     const { name, value } = e.target;
