@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import { createFichaRequest, getFichasRequest, getFichaRequest, deleteFichaRequest, updateFichaRequest } from "../api/fichas";
+import { createFichaRequest, getFichasRequest, getFichaRequest, deleteFichaRequest, updateFichaRequest } from "../api/fichas";  
+import { useNavigate } from "react-router-dom";
 
 const FichaContext = createContext();
 
@@ -15,6 +16,7 @@ export const useFichas = () => {
 
 export function FichaProvider({ children }) {
     const [fichas, setFichas] = useState([])
+    const navigate = useNavigate();
 
     const getFichas = async () => {
         try {
@@ -80,6 +82,8 @@ export function FichaProvider({ children }) {
             await updateFichaRequest(id, ficha);
             console.log('Ficha actualizada:', ficha);
             window.alert("Ficha actualizada")
+            navigate('/fichas');
+
         } catch (error) {
             console.log(error);
             window.alert("Error al actualizar ficha")
