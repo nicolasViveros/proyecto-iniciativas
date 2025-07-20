@@ -58,7 +58,7 @@ export function FichaProvider({ children }) {
     const deleteFicha = async (id) => {
         try {
             const res = await deleteFichaRequest(id);
-            console.log('Ficha eliminada:',id);
+            console.log('Ficha eliminada:', id);
             window.alert("Ficha eliminada con éxito");
             if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
         } catch (error) {
@@ -78,10 +78,11 @@ export function FichaProvider({ children }) {
     const updateFicha = async (id, ficha) => {
         try {
             await updateFichaRequest(id, ficha);
-            console.log('Ficha actualizada:',ficha);
-
+            console.log('Ficha actualizada:', ficha);
+            window.alert("Ficha actualizada")
         } catch (error) {
             console.log(error);
+            window.alert("Error al actualizar ficha")
         }
     }
 

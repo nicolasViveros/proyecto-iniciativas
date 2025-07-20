@@ -10,6 +10,7 @@ function EditFichaPage() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
+    const {updateFicha} = useFichas();
 
     const { fichas, getFicha } = useFichas();
 
@@ -109,6 +110,7 @@ function EditFichaPage() {
             alert(validationError);
             return;
         }
+        updateFicha(params.id, ficha);
         console.log('Ficha Saved:', ficha);
     };
 
@@ -483,8 +485,8 @@ function EditFichaPage() {
                     </div>
                 ))}
 
-                if (ficha.video) (
                     <div className='col-span-2'>Video:</div>
+                    <div className='col-span-2'>
                     <input
                         name="video"
                         value={ficha.video}
@@ -492,14 +494,22 @@ function EditFichaPage() {
                         className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         rows="3"
                     ></input>
-                
-                )
+                </div>
+
+                <div className='col-span-2'>Reconocimiento:</div>
+                    <div className='col-span-2'>
+                    <input
+                        name="video"
+                        value={ficha.recognition}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></input>
+                </div>
+
+             
 
 
-                {ficha.recognition && (
-                    <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
-                )}
-                {/* Aquí puedes agregar un resumen completo en un formato que prefieras */}
                 <button
                     type="button"
                     onClick={handleSave}
