@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
-    <div>
+    
 
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
         {/* Logo izquierda (GIZ) con fondo blanco */}
@@ -24,7 +24,7 @@ function Footer() {
         </div>
 
       </footer>
-    </div>
+    
   );
 }
 
