@@ -358,7 +358,7 @@ function EditFichaPage() {
                         </button>
                     </div>
 
-                    <div className='mt-2'>
+                    <div className='mt-2 col-span-2'>
                         <div>Necesidad/Problemática:</div>
                             <div>
                                 <textarea
