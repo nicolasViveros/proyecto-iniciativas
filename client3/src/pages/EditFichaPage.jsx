@@ -4,7 +4,6 @@ import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
-import { useLanguage } from "../context/LanguageContext";
 function translateAssociation(option) {
     switch (option) {
         case "No":
@@ -29,8 +28,7 @@ function translateAssociation(option) {
 }
 
 function EditFichaPage() {
-    const { language } = useLanguage();
-    language = 'es'
+
     const navigate = useNavigate();
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
@@ -342,270 +340,254 @@ function EditFichaPage() {
                                     className="input-focused   accent-[#5d5593]"
                                 />
                                 <span>
-                                    {language === "es" ? option : translateAssociation(option)}
+                                    ficha.associations.includes(option)
                                 </span>
                             </label>
                         ))
                         }
 
-                        {associations.map((option) => (
-                            <label key={option} className="flex items-center space-x-2">
-                                <input
-                                    type="checkbox"
-                                    value={option}
-                                    checked={ficha.associations.includes(option)}
-                                    onChange={handleAssociationChange}
-                                    className="input-focused   accent-[#5d5593]"
-                                />
-                                <span>
-                                    {language === "es" ? option : translateAssociation(option)}
-                                </span>
-                            </label>
+                        <div>
+                            <input
+                                type="text"
+                                name="associations"
+                                value={ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            />
+                        </div>
+
+                        <div className='col-span-2 font-bold'>Equipo Responsable:</div>
+
+                        {ficha.team.map((member, index) => (
+                            <div className="col-span-2">
+                                <div className='col-span-2'>Miembro {index + 1} del equipo:</div>
+
+                                <div key={index} className="grid grid-cols-5 gap-1 my-1">
+                                    <div className='col-span-2 '><label>Nombre*</label> </div>
+                                    <div className='col-span-2'><label>Cargo*</label> </div>
+                                    <div className='col-span-2'>
+                                        <input
+                                            name="name"
+                                            value={member.name}
+                                            onChange={(e) => handleTeamChange(index, e)}
+                                            className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                                        />
+                                    </div>
+                                    <div className='col-span-2'>
+                                        <input
+                                            name="position"
+                                            value={member.position}
+                                            onChange={(e) => handleTeamChange(index, e)}
+                                            className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                                        />
+                                    </div>
+                                    <div>
+                                        <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-1 hover:underline">
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                    <div className='col-span-4'>
+                                        <div className='col-span-2'><label>Email*</label> </div>
+
+                                        <input
+                                            name="email"
+                                            type="email"
+                                            value={member.email}
+                                            onChange={(e) => handleTeamChange(index, e)}
+                                            className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                                        />
+                                    </div>
+
+                                </div>
+                            </div>
                         ))}
-                    </div>
+                        <div className='col-span-2 items-start justify-start flex'>
+                            <button
+                                type="button"
+                                onClick={addTeamMember}
+                                className=" hover:underline mb-5"> + Agregar responsable
+                            </button>
+                        </div>
 
-                    <div>
-                        <input
-                            type="text"
-                            name="associations"
-                            value={ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                        />
-                    </div>
+                        <div>Necesidad/Problemática:</div>
+                        <div>
+                            <textarea
+                                name="need"
+                                value={ficha.need}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
 
-                    <div className='col-span-2 font-bold'>Equipo Responsable:</div>
+                        <div>Objetivos del Proyecto:</div>
+                        <div>
+                            <textarea
+                                name="objectives"
+                                value={ficha.objectives}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
 
-                    {ficha.team.map((member, index) => (
-                        <div className="col-span-2">
-                            <div className='col-span-2'>Miembro {index + 1} del equipo:</div>
+                        <div>Público Objetivo:</div>
+                        <div>
+                            <textarea
+                                name="targetAudience"
+                                value={ficha.targetAudience}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
 
-                            <div key={index} className="grid grid-cols-5 gap-1 my-1">
-                                <div className='col-span-2 '><label>Nombre*</label> </div>
-                                <div className='col-span-2'><label>Cargo*</label> </div>
-                                <div className='col-span-2'>
-                                    <input
-                                        name="name"
-                                        value={member.name}
-                                        onChange={(e) => handleTeamChange(index, e)}
-                                        className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
-                                    />
-                                </div>
-                                <div className='col-span-2'>
-                                    <input
-                                        name="position"
-                                        value={member.position}
-                                        onChange={(e) => handleTeamChange(index, e)}
-                                        className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
-                                    />
-                                </div>
+                        <div>Actividades Principales:</div>
+                        <div>
+                            <textarea
+                                name="activities"
+                                value={ficha.activities}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        {ficha.category === 'Operador/Regulador' && (
+                            <>
+                                <div>Innovación:</div>
                                 <div>
-                                    <button type="button" onClick={() => removeTeamMember(index)} className="text-red-600 w-full py-1 hover:underline">
-                                        Eliminar
-                                    </button>
+                                    <textarea
+                                        name="innovation"
+                                        value={ficha.innovation}
+                                        onChange={handleInputChange}
+                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                        rows="3"
+                                    ></textarea>
                                 </div>
-                                <div className='col-span-4'>
-                                    <div className='col-span-2'><label>Email*</label> </div>
 
+                                <div>Impacto:</div>
+                                <div>
+                                    <textarea
+                                        name="impact"
+                                        value={ficha.impact}
+                                        onChange={handleInputChange}
+                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                            </>
+                        )}
+                        {ficha.category === 'ONG/Academia' && (
+                            <>
+                                <div>Metodología:</div>
+                                <div>
+                                    <textarea
+                                        name="methodology"
+                                        value={ficha.methodology}
+                                        onChange={handleInputChange}
+                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+
+                                <div>Resultados:</div>
+                                <div>
+                                    <textarea
+                                        name="outcomes"
+                                        value={ficha.outcomes}
+                                        onChange={handleInputChange}
+                                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                            </>
+                        )}
+                        <div>Transferibilidad:</div>
+                        <div>
+                            <textarea
+                                name="transferability"
+                                value={ficha.transferability}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div>Sostenibilidad:</div>
+                        <div>
+                            <textarea
+                                name="sustainability"
+                                value={ficha.sustainability}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div className='col-span-2 font-bold'>Material de Respaldo:</div>
+
+                        <div className='col-span-2'>Links:</div>
+                        {ficha.links.map((link, index) => (
+                            <div key={index} className='col-span-2'>
+                                <div className="flex items-center">
                                     <input
-                                        name="email"
-                                        type="email"
-                                        value={member.email}
-                                        onChange={(e) => handleTeamChange(index, e)}
-                                        className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused"
+                                        type="url"
+                                        value={link}
+                                        onChange={(e) => handleLinkChange(index, e.target.value)}
+                                        className="w-full p-2 border rounded my-2 input-focused"
                                     />
+                                    {index > 0 && (
+                                        <button
+                                            type="button"
+                                            onClick={() => handleRemoveLink(index)}
+                                            className="text-red-600  text-xs px-2 hover:underline ml-2"
+                                        >
+                                            Eliminar
+                                        </button>
+                                    )}
                                 </div>
-
                             </div>
+                        ))}
+
+                        <div className='col-span-2'>Video:</div>
+                        <div className='col-span-2'>
+                            <input
+                                name="video"
+                                value={ficha.video}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></input>
                         </div>
-                    ))}
-                    <div className='col-span-2 items-start justify-start flex'>
-                        <button
-                            type="button"
-                            onClick={addTeamMember}
-                            className=" hover:underline mb-5"> + Agregar responsable
-                        </button>
-                    </div>
 
-                    <div>Necesidad/Problemática:</div>
-                    <div>
-                        <textarea
-                            name="need"
-                            value={ficha.need}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    <div>Objetivos del Proyecto:</div>
-                    <div>
-                        <textarea
-                            name="objectives"
-                            value={ficha.objectives}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    <div>Público Objetivo:</div>
-                    <div>
-                        <textarea
-                            name="targetAudience"
-                            value={ficha.targetAudience}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    <div>Actividades Principales:</div>
-                    <div>
-                        <textarea
-                            name="activities"
-                            value={ficha.activities}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    {ficha.category === 'Operador/Regulador' && (
-                        <>
-                            <div>Innovación:</div>
-                            <div>
-                                <textarea
-                                    name="innovation"
-                                    value={ficha.innovation}
-                                    onChange={handleInputChange}
-                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                    rows="3"
-                                ></textarea>
-                            </div>
-
-                            <div>Impacto:</div>
-                            <div>
-                                <textarea
-                                    name="impact"
-                                    value={ficha.impact}
-                                    onChange={handleInputChange}
-                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                    rows="3"
-                                ></textarea>
-                            </div>
-                        </>
-                    )}
-                    {ficha.category === 'ONG/Academia' && (
-                        <>
-                            <div>Metodología:</div>
-                            <div>
-                                <textarea
-                                    name="methodology"
-                                    value={ficha.methodology}
-                                    onChange={handleInputChange}
-                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                    rows="3"
-                                ></textarea>
-                            </div>
-
-                            <div>Resultados:</div>
-                            <div>
-                                <textarea
-                                    name="outcomes"
-                                    value={ficha.outcomes}
-                                    onChange={handleInputChange}
-                                    className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                                    rows="3"
-                                ></textarea>
-                            </div>
-                        </>
-                    )}
-                    <div>Transferibilidad:</div>
-                    <div>
-                        <textarea
-                            name="transferability"
-                            value={ficha.transferability}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    <div>Sostenibilidad:</div>
-                    <div>
-                        <textarea
-                            name="sustainability"
-                            value={ficha.sustainability}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></textarea>
-                    </div>
-
-                    <div className='col-span-2 font-bold'>Material de Respaldo:</div>
-
-                    <div className='col-span-2'>Links:</div>
-                    {ficha.links.map((link, index) => (
-                        <div key={index} className='col-span-2'>
-                            <div className="flex items-center">
-                                <input
-                                    type="url"
-                                    value={link}
-                                    onChange={(e) => handleLinkChange(index, e.target.value)}
-                                    className="w-full p-2 border rounded my-2 input-focused"
-                                />
-                                {index > 0 && (
-                                    <button
-                                        type="button"
-                                        onClick={() => handleRemoveLink(index)}
-                                        className="text-red-600  text-xs px-2 hover:underline ml-2"
-                                    >
-                                        Eliminar
-                                    </button>
-                                )}
-                            </div>
+                        <div className='col-span-2'>Reconocimiento:</div>
+                        <div className='col-span-2'>
+                            <input
+                                name="video"
+                                value={ficha.recognition}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></input>
                         </div>
-                    ))}
 
-                    <div className='col-span-2'>Video:</div>
-                    <div className='col-span-2'>
-                        <input
-                            name="video"
-                            value={ficha.video}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></input>
+
+
+                        <div className="flex col-span-2 justify-end">
+                            <button
+                                type="button"
+                                onClick={handleSave}
+                                className="bg-[#5d5593] text-white px-2 my-8 py-2 rounded hover:bg-[#a49fc4] justify-end"
+                            >
+                                Guardar Ficha
+                            </button>
+                        </div>
+
                     </div>
-
-                    <div className='col-span-2'>Reconocimiento:</div>
-                    <div className='col-span-2'>
-                        <input
-                            name="video"
-                            value={ficha.recognition}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></input>
-                    </div>
-
-
-
-                    <div className="flex col-span-2 justify-end">
-                        <button
-                            type="button"
-                            onClick={handleSave}
-                            className="bg-[#5d5593] text-white px-2 my-8 py-2 rounded hover:bg-[#a49fc4] justify-end"
-                        >
-                            Guardar Ficha
-                        </button>
-                    </div>
-
-                </div>
-            </div >
-        </div>
-    );
+                </div >
+            </div>
+            );
 }
 
-export default EditFichaPage
+            export default EditFichaPage
