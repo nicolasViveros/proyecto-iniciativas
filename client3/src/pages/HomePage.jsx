@@ -849,7 +849,7 @@ function HomePage() {
 
       </div>
 
-      <div className="relative w-full">
+      <div className="relative">
         <img
           src="/micro.svg"
           alt="Banner principal"
@@ -881,8 +881,8 @@ function HomePage() {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white  items-center justify-center z-20 hidden sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
-        <div className="absolute  sm:bottom-1 md:bottom-3 left-1/2 transform -translate-x-1/2  text-white  items-center justify-center">
-          <span className=" h-auto text-white text-2xl sm:text-3xl md:text-4xl"> ¡Participa! 15/07 al 15/08</span>
+        <div className="absolute  sm:bottom-1 md:bottom-3 left-1/2 transform -translate-x-1/2  text-white  items-center justify-between">
+          <span className="  text-white text-2xl sm:text-3xl md:text-4xl"> ¡Participa! 15/07 al 15/08</span>
         </div>
       </div>
 
