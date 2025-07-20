@@ -358,7 +358,7 @@ function EditFichaPage() {
                         </button>
                     </div>
 
-                    <div>Necesidad/Problemática:</div>
+                    <div className='mt-2'>Necesidad/Problemática:</div>
                     <div>
                         <textarea
                             name="need"
