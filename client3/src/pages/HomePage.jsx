@@ -882,7 +882,7 @@ function HomePage() {
         {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white  items-center justify-center z-20 hidden sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div> */}
-        <div className="absolute w-full sm:bottom-1 md:bottom-3 transform  text-white  items-center justify-between">
+        <div className=" w-full sm:bottom-1 md:bottom-3  ">
           <span className=" text-white text-2xl sm:text-3xl md:text-4xl items-center justify-center">
           {language === "es"
               ? "¡Participa! 25/07 al 25/08"
