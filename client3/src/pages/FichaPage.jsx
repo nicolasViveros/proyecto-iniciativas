@@ -94,7 +94,7 @@ const FichaPage = () => {
             <p>{ficha.need}</p>
           </div>
           <p><strong>Objetivos del Proyecto:</strong> </p>
-          <p>{ficha.objectives}</p>
+          <p className="border-b border-[#D9D6E1] pb-1">{ficha.objectives}</p>
           <p><strong>Público Objetivo:</strong> </p>
           <p>{ficha.targetAudience}</p>
           <p><strong>Actividades Principales:</strong> </p>
