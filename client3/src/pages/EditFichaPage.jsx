@@ -340,14 +340,14 @@ function EditFichaPage() {
                     <div className='col-span-2 font-bold'>Equipo Responsable:</div>
 
                     {ficha.team.map((member, index) => (
-                        <div className="col-span-2">
+                        <div key={`member-${index}`} className="col-span-2">
                             <div className='col-span-2'>Miembro {index + 1} del equipo:</div>
-
-                            <div key={`member-${index}`} className="grid grid-cols-5 gap-1 my-1">
+                            <div className="grid grid-cols-5 gap-1 my-1">
                                 <div className='col-span-2 '><label>Nombre*</label> </div>
                                 <div className='col-span-2'><label>Cargo*</label> </div>
                                 <div className='col-span-2'>
                                     <input
+                                        type='text'
                                         name="name"
                                         value={member.name}
                                         onChange={(e) => handleTeamChange(index, e)}
@@ -356,6 +356,7 @@ function EditFichaPage() {
                                 </div>
                                 <div className='col-span-2'>
                                     <input
+                                        type='text'
                                         name="position"
                                         value={member.position}
                                         onChange={(e) => handleTeamChange(index, e)}
