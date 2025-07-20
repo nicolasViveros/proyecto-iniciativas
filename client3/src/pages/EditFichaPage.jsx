@@ -359,7 +359,7 @@ function EditFichaPage() {
                     </div>
 
                     <div className='mt-2'>
-                        <div>Necesidad/Problemática:
+                        <div>Necesidad/Problemática:</div>
                             <div>
                                 <textarea
                                     name="need"
