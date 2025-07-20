@@ -47,7 +47,11 @@ function FichasPage() {
     getFichas();
   }, []);
 
-  if (fichas.length == 0) return (<h1> Cargando...</h1>);
+  if (fichas.length == 0) return ( <div className="  items-center justify-center min-h-screen">
+  <div className="max-w-3xl w-full rounded-md justify-center items-center">
+    Cargando ficha...
+  </div>
+</div>);
 
   return (
     <div className="container mx-auto p-6">
