@@ -97,7 +97,7 @@ function EditFichaPage() {
         if (ficha.category === 'ONG/Academia' && !ficha.outcomes) return "Los resultados son requeridos";
         if (!ficha.transferability) return "La transferibilidad es requerida";
         if (!ficha.sustainability) return "La sostenibilidad es requerida";
-        ficha.team.forEach((member, index) => {
+        ficha.team.map((member, index) => {
             if (!member.name)
                 return `El nombre del miembro ${index + 1} del equipo es requerido.`;
             if (!member.position)
