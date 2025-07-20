@@ -1,46 +1,9 @@
-// import { useParams } from 'react-router-dom';
-// import { useFichas } from '../context/FichasContext';
-// import { useForm } from "react-hook-form"
-// import { useEffect } from "react";
-// function FichaPage() {
-//   const params = useParams();
-//     const { fichas , getFicha } = useFichas();
-//     q
-//     const ficha = getFicha(id);
 
-//     if (!ficha) return <p>Ficha no encontrada</p>;
-
-//     useEffect(() => {
-//       async function loadFicha() {
-//         if (params.id) {
-//           const ficha = await getFicha(params.id);
-//           console.log(ficha);
-//           setFicha(ficha);
-//           setLoading(false);
-//         }
-//       }
-
-//     }, [])
-//     loadFicha()
-//     return (
-//       <div className="container mx-auto p-6">
-//         <h1 className="text-3xl font-bold mb-6">{ficha.projectName}</h1>
-//         <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
-//         <p><strong>País:</strong> {ficha.country}</p>
-//         <p><strong>Representante Legal:</strong> {ficha.legalRepName}</p>
-//         <p><strong>Email:</strong> {ficha.email}</p>
-//         <p><strong>Teléfono:</strong> {ficha.phone}</p>
-//         <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
-//         <p>{/* Mostrar aquí el resumen completo de la ficha */}</p>
-//       </div>
-//     );
-// }
-
-// export default FichaPage;
 
 import React, { use, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 
 const FichaPage = () => {
