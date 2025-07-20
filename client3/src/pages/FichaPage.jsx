@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const FichaPage = () => {
   const { id } = useParams();
