@@ -18,9 +18,9 @@ function FichaCard({ ficha }) {
       <p><strong>Teléfono:</strong> {ficha.phone}</p>
       <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       
-      <div className=" flex gap-x-2 bottom-1 items-end justify-end">
+      <div className=" flex gap-x-2 items-end justify-end">
       <button
-          className="bg-[#5d5593] text-white px-4 pb-2 rounded hover:bg-[#a49fc4]"
+          className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
             if (window.confirm("¿Está seguro de que desea eliminar esta ficha? Esta acción no se puede deshacer.")) {
               deleteFicha(ficha._id);
