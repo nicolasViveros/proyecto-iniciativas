@@ -450,14 +450,25 @@ function EditFichaPage() {
                 <div className='col-span-2 font-bold'>Material de Respaldo:</div>
                 <div>Links:</div>
                 <div>
-                <ul>
-                    {ficha.links.map((link, index) => (
-                        <li key={index}><input href={link} target="_blank" rel="noopener noreferrer">{link}</input></li>
-                    ))}
-                </ul>
+                    <ul>
+                        {ficha.links.map((link, index) => (
+                            <li key={index}>
+                                <input
+                                    type="text"
+                                    value={link}
+                                    onChange={(e) => {
+                                        const newLinks = [...ficha.links];
+                                        newLinks[index] = e.target.value;
+                                        setFicha({ ...ficha, links: newLinks });
+                                    }}
+                                />
+                                <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-               
+
                 {ficha.video && (
                     <p><strong>Video:</strong> <a href={ficha.video} target="_blank" rel="noopener noreferrer">{ficha.video}</a></p>
                 )}
