@@ -740,6 +740,7 @@ function Step4({ form, handleChange, translateText, language }) {
 function Step5({
   form,
   handleRemoveFile2,
+  handleRemoveAcceptanceLetter,
   handleInputChange,
   handleAddLink,
   handleLetterChange,
@@ -868,6 +869,13 @@ function Step5({
             <p>
               {file.name} ({file.type})
             </p>
+            <button
+                type="button"
+                onClick={() => handleRemoveAcceptanceLetter(index)}
+                className="text-red-600 text-xs px-2 hover:underline ml-2 "
+              >
+                {language === "es" ? "Eliminar" : "Delete"}
+              </button>
           </div>
         ))}
       </div>
@@ -1437,6 +1445,10 @@ export default function FormWizard() {
     setForm({ ...form, files: updatedFiles });
   };
 
+  const handleRemoveAcceptanceLetter = (index) => {
+    const updatedFiles = form.acceptanceLetter.filter((_, i) => i !== index);
+    setForm({ ...form, acceptanceLetter: updatedFiles });
+  };
   const handleLetterChange = (e) => {
     const filesArray = Array.from(e.target.files);
 
@@ -1498,6 +1510,7 @@ export default function FormWizard() {
       handleFileChange={handleFileChange}
       handleLetterChange={handleLetterChange}
       handleRemoveFile2={handleRemoveFile2}
+      handleRemoveAcceptanceLetter={handleRemoveAcceptanceLetter}
       handleRemoveLink={handleRemoveLink}
       translateText={translateText}
       language={language}
@@ -1529,8 +1542,8 @@ export default function FormWizard() {
       </button>
 
       <div className="absolute top-4 right-4 space-x-2">
-        <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
-        <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
+        <button className="rounded-full bg-white p-1 border" onClick={switchToEnglish}>En</button>
+        <button className="rounded-full bg-white p-1 border" onClick={switchToSpanish}>Es</button>
         {/* <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button> */}
       </div>
 
