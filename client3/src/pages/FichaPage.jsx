@@ -46,13 +46,15 @@ const FichaPage = () => {
         <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
         <span className="ml-1">Volver</span>
       </button>
-      <div className="flex justify-end p-4 space-x-2">
+
+      <div className="absolute top-4 right-4 space-x-2">
         <Link
           to={`/ficha/${ficha._id}/editar`} className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
         >
           editar
         </Link>
       </div>
+
       <div className="max-w-3xl w-full p-10 rounded-md">
 
         <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
