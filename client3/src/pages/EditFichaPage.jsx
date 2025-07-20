@@ -160,7 +160,11 @@ const handleBack = () => {
 };
 
 if (!ficha) {
-    return <div>Cargando ficha...</div>;
+    return  <div className="  items-center justify-center min-h-screen">
+    <div className="max-w-3xl w-full rounded-md justify-center items-center">
+      Cargando ficha...
+    </div>
+  </div>;
 }
 
 return (
