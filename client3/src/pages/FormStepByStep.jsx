@@ -804,7 +804,7 @@ function Step5({
             <p>
               {file.name} ({file.type})
             </p>
-            {index > 0 && (
+            
               <button
                 type="button"
                 onClick={() => handleRemoveFile(index)}
@@ -812,7 +812,7 @@ function Step5({
               >
                 {language === "es" ? "Eliminar" : "Delete"}
               </button>
-            )}
+            
           </div>
 
         ))}
@@ -1427,6 +1427,11 @@ export default function FormWizard() {
         console.error("Error al leer el archivo:", error);
       };
     });
+  };
+  
+  const handleRemoveFile = (index) => {
+    const updatedFiles = form.files.filter((_, i) => i !== index);
+    setForm({ ...form, files: updatedFiles });
   };
 
   const handleLetterChange = (e) => {
