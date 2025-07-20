@@ -20,7 +20,7 @@ function FichaCard({ ficha }) {
         <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       </div>
 
-      <div className=" grid grid-cols-2 gap-x-2 mt-auto items-end justify-beetween space-beetween min-h-[250px]">
+      <div className=" grid grid-cols-2 gap-x-2 mt-auto  space-beetween min-h-[250px]">
         <button
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
