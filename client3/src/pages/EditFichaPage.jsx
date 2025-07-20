@@ -341,7 +341,7 @@ function EditFichaPage() {
                         <label key={option} className="flex items-center space-x-2">
                             <input
                                 type="checkbox"
-                                value={option}
+                                value={ficha.associations.includes(option)}
                                 checked={ficha.associations.includes(option)}
                                 onChange={handleAssociationChange}
                                 className="input-focused   accent-[#5d5593]"
