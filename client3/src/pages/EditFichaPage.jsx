@@ -475,7 +475,7 @@ function EditFichaPage() {
                                     onClick={() => handleRemoveLink(index)}
                                     className="text-red-600  text-xs px-2 hover:underline ml-2"
                                 >
-                                    {language === "es" ? "Eliminar" : "Delete"}
+                                    Eliminar
                                 </button>
                             )}
                         </div>
