@@ -882,7 +882,7 @@ function HomePage() {
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
         <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2  text-white  items-center justify-center">
-          <span className="w-full h-auto text-white text-2xl sm:text-3xl md:text-5xl"> ¡Participa! 15/07 al 15/08</span>
+          <span className="w-full h-auto text-white text-4xl sm:text-3xl md:text-5xl"> ¡Participa! 15/07 al 15/08</span>
         </div>
       </div>
 
