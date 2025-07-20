@@ -26,14 +26,18 @@ function NavBar() {
                             alt="Somos LAC Logo"
                             className="mb-6 h-25 md:h-35 lg:h-45"
                         />
-                        <li>
-                            <Link to='/' onClick={() => {
-                                logout();
-                            }}
-                                className="hover:text-red-400">
-                                Cerrar sesión
-                            </Link>
-                        </li>
+
+                        <Link to='/fichas'
+                            className="hover:text-red-400 absolute top-4 left-4 text-xs">
+                            Fichas
+                        </Link>
+                        <Link to='/' onClick={() => {
+                            logout();
+                        }}
+                            className="hover:text-red-400 absolute top-4 left-4 text-xs">
+                            Cerrar sesión
+                        </Link>
+
                     </div>
 
 
