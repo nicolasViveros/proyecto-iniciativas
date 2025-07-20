@@ -340,7 +340,7 @@ function EditFichaPage() {
                         <div className='col-span-2 font-bold'>Equipo Responsable:</div>
 
                         {ficha.team.map((member, index) => (
-                            <div className="col-span-2">
+                            <div >
                                 <div className='col-span-2'>Miembro {index + 1} del equipo:</div>
 
                                 <div key={index} className="grid grid-cols-5 gap-1 my-1">
@@ -382,6 +382,8 @@ function EditFichaPage() {
                                 </div>
                             </div>
                         ))}
+
+
                         <div className='col-span-2 items-start justify-start flex'>
                             <button
                                 type="button"
