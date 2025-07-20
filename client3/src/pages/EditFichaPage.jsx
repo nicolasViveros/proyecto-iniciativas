@@ -10,7 +10,7 @@ function EditFichaPage() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
-    const {updateFicha} = useFichas();
+    const { updateFicha } = useFichas();
 
     const { fichas, getFicha } = useFichas();
 
@@ -486,8 +486,8 @@ function EditFichaPage() {
                     </div>
                 ))}
 
-                    <div className='col-span-2'>Video:</div>
-                    <div className='col-span-2'>
+                <div className='col-span-2'>Video:</div>
+                <div className='col-span-2'>
                     <input
                         name="video"
                         value={ficha.video}
@@ -498,7 +498,7 @@ function EditFichaPage() {
                 </div>
 
                 <div className='col-span-2'>Reconocimiento:</div>
-                    <div className='col-span-2'>
+                <div className='col-span-2'>
                     <input
                         name="video"
                         value={ficha.recognition}
@@ -508,16 +508,18 @@ function EditFichaPage() {
                     ></input>
                 </div>
 
-             
 
 
-                <button
-                    type="button"
-                    onClick={handleSave}
-                    className="bg-[#5d5593] text-white px-6 py-2 rounded hover:bg-[#a49fc4] justify-end"
-                >
-                    Guardar Ficha
-                </button>
+                <div className="flex justify-center">
+                    <button
+                        type="button"
+                        onClick={handleSave}
+                        className="bg-[#5d5593] text-white px-2 my-6 py-2 rounded hover:bg-[#a49fc4] justify-end"
+                    >
+                        Guardar Ficha
+                    </button>
+                </div>
+
             </div>
         </div >
     );
