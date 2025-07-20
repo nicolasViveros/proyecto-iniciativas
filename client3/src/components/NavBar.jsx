@@ -7,13 +7,15 @@ function NavBar() {
     return (
         <nav className=" flex justify-between border-b border-gray-300 ">
             <footer className="bg-white w-full">
-                <div className=" inset-0 flex items-center justify-between px-6">
+                <div className=" inset-0 flex items-center justify-between px-10">
                     {/* Logo izquierda (GIZ) */}
+                    <Link to="/">
                     <img
                         src="/global_gateway.png"
                         alt="GIZ Logo"
                         className="h-25 md:h-30 lg:h-30"
                     />
+                    </Link>
 
                     {/* Logo derecha (Somos LAC) */}
                     <img
