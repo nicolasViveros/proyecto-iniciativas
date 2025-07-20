@@ -739,12 +739,12 @@ function Step4({ form, handleChange, translateText, language }) {
 
 function Step5({
   form,
+  handleRemoveFile2,
   handleInputChange,
   handleAddLink,
   handleLetterChange,
   handleRemoveLink,
   handleLinkChange,
-  handleRemoveFile,
   handleFileChange,
   translateText,
   language,
@@ -804,15 +804,15 @@ function Step5({
             <p>
               {file.name} ({file.type})
             </p>
-            
-              <button
-                type="button"
-                onClick={() => handleRemoveFile(index)}
-                className="text-red-600 px-2 hover:underline ml-2"
-              >
-                {language === "es" ? "Eliminar" : "Delete"}
-              </button>
-            
+
+            <button
+              type="button"
+              onClick={() => handleRemoveFile2(index)}
+              className="text-red-600 px-2 hover:underline ml-2"
+            >
+              {language === "es" ? "Eliminar" : "Delete"}
+            </button>
+
           </div>
 
         ))}
@@ -1428,8 +1428,8 @@ export default function FormWizard() {
       };
     });
   };
-  
-  const handleRemoveFile = (index) => {
+
+  const handleRemoveFile2 = (index) => {
     const updatedFiles = form.files.filter((_, i) => i !== index);
     setForm({ ...form, files: updatedFiles });
   };
@@ -1494,6 +1494,7 @@ export default function FormWizard() {
       handleLinkChange={handleLinkChange}
       handleFileChange={handleFileChange}
       handleLetterChange={handleLetterChange}
+      handleRemoveFile2={handleRemoveFile2}
       handleRemoveLink={handleRemoveLink}
       translateText={translateText}
       language={language}
