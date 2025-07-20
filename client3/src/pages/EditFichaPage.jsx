@@ -450,24 +450,14 @@ function EditFichaPage() {
                 <div>Material de Respaldo:</div>
                 <div>Links:</div>
                 <div>
-                    {ficha.links.map((link, index) => (
-                        key = { index } > 
-                        <input
-                            name="links"
-                            value={link} 
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                            rows="3"
-                        ></input>
-                        
-                    ))}
-                </div>
-
                 <ul>
                     {ficha.links.map((link, index) => (
                         <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
                     ))}
                 </ul>
+                </div>
+
+               
                 {ficha.video && (
                     <p><strong>Video:</strong> <a href={ficha.video} target="_blank" rel="noopener noreferrer">{ficha.video}</a></p>
                 )}
