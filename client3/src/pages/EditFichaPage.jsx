@@ -108,7 +108,9 @@ function EditFichaPage() {
             return;
         }
         updateFicha(id, ficha);
-        console.log('Ficha Saved:', ficha);
+        window.alert("Ficha actualizada")
+
+        console.log('Ficha actualizada:', ficha);
         navigate('/fichas');
     };
 

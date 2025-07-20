@@ -80,9 +80,7 @@ export function FichaProvider({ children }) {
     const updateFicha = async (id, ficha) => {
         try {
             await updateFichaRequest(id, ficha);
-            console.log('Ficha actualizada:', ficha);
-            window.alert("Ficha actualizada")
-            navigate('/fichas');
+      
 
         } catch (error) {
             console.log(error);
