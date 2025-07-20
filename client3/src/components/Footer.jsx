@@ -9,11 +9,13 @@ function Footer() {
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
         {/* Logo izquierda (GIZ) con fondo blanco */}
         <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
+        <Link to="/">
           <img
             src="/LogoGiz.svg"
             alt="GIZ Logo"
             className="h-12 md:h-16 lg:h-20"
           />
+          </Link>
         </div>
 
         {/* Fondo restante con imagen de footer */}
