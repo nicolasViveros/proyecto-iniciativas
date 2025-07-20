@@ -375,22 +375,92 @@ function EditFichaPage() {
                     ></textarea>
                 </div>
 
-            
                 {ficha.category === 'Operador/Regulador' && (
                     <>
-                        <p><strong>Innovación:</strong> {ficha.innovation}</p>
-                        <p><strong>Impacto:</strong> {ficha.impact}</p>
+                        <div>Innovación:</div>
+                        <div>
+                            <textarea
+                                name="innovation"
+                                value={ficha.innovation}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div>Impacto:</div>
+                        <div>
+                            <textarea
+                                name="impact"
+                                value={ficha.impact}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
                     </>
                 )}
                 {ficha.category === 'ONG/Academia' && (
                     <>
-                        <p><strong>Metodología:</strong> {ficha.methodology}</p>
-                        <p><strong>Resultados:</strong> {ficha.outcomes}</p>
+                        <div>Metodología:</div>
+                        <div>
+                            <textarea
+                                name="methodology"
+                                value={ficha.methodology}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div>Resultados:</div>
+                        <div>
+                            <textarea
+                                name="outcomes"
+                                value={ficha.outcomes}
+                                onChange={handleInputChange}
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                                rows="3"
+                            ></textarea>
+                        </div>
                     </>
                 )}
-                <p><strong>Transferibilidad:</strong> {ficha.transferability}</p>
-                <p><strong>Sostenibilidad:</strong> {ficha.sustainability}</p>
-                <p><strong>Material de Respaldo:</strong></p>
+                <div>Transferibilidad:</div>
+                <div>
+                    <textarea
+                        name="transferability"
+                        value={ficha.transferability}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <div>Sostenibilidad:</div>
+                <div>
+                    <textarea
+                        name="sustainability"
+                        value={ficha.sustainability}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <div>Material de Respaldo:</div>
+                <div>Links:</div>
+                <div>
+                    <input
+                        name="links"
+                        value={ficha.links.map((link, index) => (
+                            <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
+                        ))}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        rows="3"
+                    ></input>
+                </div>
+
                 <ul>
                     {ficha.links.map((link, index) => (
                         <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
