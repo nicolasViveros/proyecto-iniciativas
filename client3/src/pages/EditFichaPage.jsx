@@ -58,7 +58,6 @@ function EditFichaPage() {
         if (!ficha.legalRepPosition) return "El cargo del representante legal es requerido";
         if (!ficha.email) return "El email es requerido";
         if (!ficha.phone) return "El teléfono es requerido";
-        if (!ficha.registrationId) return "El registro legal es requerido";
         if (!ficha.city) return "La ciudad de implementación es requerida";
         if (!ficha.startDate) return "La fecha de inicio es requerida";
         if (ficha.isActive === undefined) return "El estado de vigencia es requerido";
@@ -72,8 +71,6 @@ function EditFichaPage() {
         if (ficha.category === 'ONG/Academia' && !ficha.outcomes) return "Los resultados son requeridos";
         if (!ficha.transferability) return "La transferibilidad es requerida";
         if (!ficha.sustainability) return "La sostenibilidad es requerida";
-        if (!ficha.links) return "Los enlaces son requeridos";
-        if (!ficha.files) return "Los archivos son requeridos";
 
         // Email format check
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
