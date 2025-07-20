@@ -59,6 +59,7 @@ export function FichaProvider({ children }) {
         try {
             const res = await deleteFichaRequest(id);
             console.log('Ficha eliminada:',id);
+            window.alert("Ficha eliminada con éxito");
             if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
         } catch (error) {
             console.log(error);
