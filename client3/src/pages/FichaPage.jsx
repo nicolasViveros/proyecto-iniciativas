@@ -119,6 +119,7 @@ const FichaPage = () => {
           <p>{ficha.sustainability}</p>
           <p className='col-span-2'><strong>Material de Respaldo:</strong></p>  
           <ul>
+            <p><strong>Video:</strong> </p>
             {ficha.links.map((link, index) => (
               <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
             ))}
