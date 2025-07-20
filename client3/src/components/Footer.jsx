@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
     <div>
-      <div className="justify-center flex flex-col items-center sm:justify-start">
+      <div className="justify-center flex flex-col items-center sm:justify-start sm:items-start">
               <span className=" text-xxs ">Implementado por:</span>
       </div>
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
