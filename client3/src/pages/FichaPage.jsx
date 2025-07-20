@@ -32,7 +32,7 @@ const FichaPage = () => {
 
   if (!ficha) {
     return <div className="relative flex items-center justify-center min-h-screen">
-      <div className="max-w-3xl w-full p-10 rounded-md">
+      <div className="max-w-3xl w-full p-10 rounded-md justify-center items-center">
         Cargando ficha...</div>
     </div>;
   }
