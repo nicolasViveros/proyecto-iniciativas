@@ -860,7 +860,7 @@ function HomePage() {
           alt="Banner mobile"
           className="w-full h-auto object-cover  sm:hidden"
         />
-        <div className="absolute sm:top-1/8 sm:left-2/12 transform -traslate-x-3/12 top-14 left-2">
+        <div className="absolute sm:top-1/8 sm:left-2/12 transform -traslate-x-3/12 top-14 left-1.5">
           <p className="text-lg md:text-2xl sm:text-xl font-medium text-[#5A478D]">
             {language === "es" ? "concurso" : "contest"}
           </p>
@@ -871,7 +871,7 @@ function HomePage() {
           <h2 className="text-lg md:text-2xl sm:text-xl font-extrabold text-[#3C3270]">
             {language === "es" ? "RUMBO A LA EQUIDAD:" : "TOWARDS EQUITY:"}
           </h2>
-          <p className="text-xs md:text-lg sm:text-lg text-[#5A478D] leading-tight w-48 sm:w-100">
+          <p className="text-xs md:text-lg sm:text-lg text-[#5A478D] leading-tight w-47 sm:w-100">
             {language === "es"
               ? "Reconociendo iniciativas innovadoras en favor de la equidad de género en movilidad urbana"
               : "Recognizing innovative initiatives for gender equity in urban mobility"}
