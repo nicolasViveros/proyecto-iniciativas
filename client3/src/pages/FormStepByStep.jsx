@@ -742,6 +742,7 @@ function Step5({
   handleInputChange,
   handleAddLink,
   handleLetterChange,
+  handleRemoveLink,
   handleLinkChange,
   handleFileChange,
   translateText,
