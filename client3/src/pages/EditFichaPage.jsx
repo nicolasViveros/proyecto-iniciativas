@@ -137,6 +137,16 @@ function EditFichaPage() {
 
                 <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
                 <div className="container grid grid-cols-2 mx-auto p-2">
+                    
+                    <div>Nombre del proyecto:</div>
+                    <div><input
+                        type="text"
+                        name="name"
+                        value={ficha.name}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused" />
+                    </div>
+
                     <div>Organización:</div>
                     <div><input
                         type="text"
