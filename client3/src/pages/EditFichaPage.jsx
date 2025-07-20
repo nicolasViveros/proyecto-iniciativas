@@ -354,7 +354,7 @@ function EditFichaPage() {
                         <button
                             type="button"
                             onClick={addTeamMember}
-                            className=" hover:underline mb-4"> + Agregar responsable
+                            className=" hover:underline mb-5"> + Agregar responsable
                         </button>
                     </div>
 
