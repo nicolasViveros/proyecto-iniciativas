@@ -29,13 +29,13 @@ function NavBar() {
                         <div className="absolute cols-2 gap-2 top-4 right-4">
                             <Link to='/fichas'
                                 className="hover:text-red-400 text-xs">
-                                Fichas
+                                Fichas | 
                             </Link>
                             <Link to='/' onClick={() => {
                                 logout();
                             }}
                                 className="hover:text-red-400 text-xs">
-                                Cerrar sesión
+                                 Cerrar sesión
                             </Link>
                         </div>
                     </div>
