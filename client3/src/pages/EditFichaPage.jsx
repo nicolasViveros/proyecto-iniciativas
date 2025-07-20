@@ -451,14 +451,15 @@ function EditFichaPage() {
                 <div>Links:</div>
                 <div>
                     {ficha.links.map((link, index) => (
+                        {key = { index } > 
                         <input
                             name="links"
-                            value={key = { index } > <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>}
+                            value={link} 
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="3"
                         ></input>
-
+                        }
                     ))}
                 </div>
 
