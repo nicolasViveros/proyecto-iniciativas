@@ -343,7 +343,7 @@ function EditFichaPage() {
                         <div className="col-span-2">
                             <div className='col-span-2'>Miembro {index + 1} del equipo:</div>
 
-                            <div key={index} className="grid grid-cols-5 gap-1 my-1">
+                            <div key={`member-${index}`} className="grid grid-cols-5 gap-1 my-1">
                                 <div className='col-span-2 '><label>Nombre*</label> </div>
                                 <div className='col-span-2'><label>Cargo*</label> </div>
                                 <div className='col-span-2'>
