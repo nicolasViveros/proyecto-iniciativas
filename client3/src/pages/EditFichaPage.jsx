@@ -160,7 +160,7 @@ const handleBack = () => {
 };
 
 if (!ficha) {
-    return <div>Cargando...</div>;
+    return <div>Cargando ficha...</div>;
 }
 
 return (
