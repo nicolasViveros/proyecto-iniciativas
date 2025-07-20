@@ -6,7 +6,7 @@ function NavBar() {
 
     return (
         <nav className=" flex justify-between border-b border-gray-300 ">
-            <footer className="bg-white w-full">
+            <header className="bg-white w-full">
                 <div className=" inset-0 flex items-center justify-between px-2 sm:px-10">
                     {/* Logo izquierda (GIZ) */}
                     <Link to="/">
@@ -33,7 +33,7 @@ function NavBar() {
                     </div>
 
                 </div> */}
-            </footer>
+            </header>
         </nav>
     );
 }
