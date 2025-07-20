@@ -21,7 +21,7 @@ function NavBar() {
                     <img
                         src="/eu_germany.png"
                         alt="Somos LAC Logo"
-                        className="pb-6 h-25 md:h-35 lg:h-45"
+                        className="mb-6 h-25 md:h-35 lg:h-45"
                     />
                 </div>
                 {/* <div className="px-4 py-3 flex items-between justify-between">
