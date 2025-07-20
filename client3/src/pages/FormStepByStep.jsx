@@ -478,7 +478,7 @@ function Step3({ form, handleChange, translateText, language }) {
         rows="4"
         required
       />
-       <div className="text-xs text-right text-gray-500">
+      <div className="text-xs text-right text-gray-500">
         {wordCount.need} / 500 {language === "es" ? "palabras" : "words"}
       </div>
 
@@ -556,6 +556,18 @@ function Step3({ form, handleChange, translateText, language }) {
 }
 
 function Step4({ form, handleChange, translateText, language }) {
+  const [wordCount, setWordCount] = useState({ need: 0 });
+
+  const handleTextAreaChange = (e) => {
+    const { name, value } = e.target;
+    const words = value.split(/\s+/g).filter((word) => word.length > 0);
+
+    if (words.length <= 500) {
+      setWordCount((prev) => ({ ...prev, [name]: words.length }));
+      handleChange(e); // Update the form state
+    }
+  };
+
   if (form.category === "Operador/Regulador") {
     return (
       <div className="">
@@ -571,11 +583,14 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="innovation"
           value={form.innovation}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
           rows="4"
           maxLength={300 * 6}
         />
+        <div className="text-xs text-right text-gray-500">
+          {wordCount.innovation} / 300 {language === "es" ? "palabras" : "words"}
+        </div>
 
         <label className="text-xl">{translateText[language].impact}</label>
         <label className="block text-sm">
@@ -585,12 +600,14 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="impact"
           value={form.impact}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
           rows="4"
           maxLength={300 * 6}
         />
-
+        <div className="text-xs text-right text-gray-500">
+          {wordCount.impact} / 300 {language === "es" ? "palabras" : "words"}
+        </div>
         <label className="text-xl">
           {translateText[language].transferability}
         </label>
@@ -601,12 +618,15 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="transferability"
           value={form.transferability}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
           rows="4"
           maxLength={250 * 6}
           required
         />
+        <div className="text-xs text-right text-gray-500">
+          {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
+        </div>
 
         <label className="text-xl">
           {translateText[language].sustainability}
@@ -618,12 +638,16 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="sustainability"
           value={form.sustainability}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
           rows="4"
           maxLength={250 * 6}
           required
         />
+        <div className="text-xs text-right text-gray-500">
+          {wordCount.sustainability} / 250 {language === "es" ? "palabras" : "words"}
+        </div>
+
       </div>
     );
   }
@@ -643,11 +667,15 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="methodology"
           value={form.methodology}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full p-2 mb-4 border rounded input-focused"
           rows="4"
           maxLength={300 * 6}
         />
+        <div className="text-xs text-right text-gray-500">
+          {wordCount.methodology} / 300 {language === "es" ? "palabras" : "words"}
+        </div>
+
 
         <label className="text-xl">{translateText[language].outcomes}</label>
         <label className="block text-sm">
@@ -657,11 +685,14 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="outcomes"
           value={form.outcomes}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full p-2 mb-4 border input-focused rounded"
           rows="4"
           maxLength={300 * 6}
         />
+         <div className="text-xs text-right text-gray-500">
+          {wordCount.outcomes} / 300 {language === "es" ? "palabras" : "words"}
+        </div>
 
         <label className="text-xl">
           {translateText[language].transferabilityOng}
@@ -673,11 +704,14 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="transferability"
           value={form.transferability}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full p-2 mb-4 border rounded input-focused"
           rows="4"
           maxLength={250 * 6}
         />
+         <div className="text-xs text-right text-gray-500">
+          {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
+        </div>
 
         <label className="text-xl">
           {translateText[language].sustainabilityOng}
@@ -689,11 +723,15 @@ function Step4({ form, handleChange, translateText, language }) {
         <textarea
           name="sustainability"
           value={form.sustainability}
-          onChange={handleChange}
+          onChange={handleTextAreaChange}
           className="w-full p-2 mb-6 border rounded input-focused"
           rows="4"
           maxLength={250 * 6}
         />
+         <div className="text-xs text-right text-gray-500">
+          {wordCount.sustainability} / 250 {language === "es" ? "palabras" : "words"}
+        </div>
+
       </div>
     );
   }
