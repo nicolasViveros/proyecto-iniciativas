@@ -857,7 +857,7 @@ function HomePage() {
           className="w-full h-auto object-cover hidden sm:block"
         />
         <img
-          src="/ilustracion.png"
+          src="/ilustracion_new.png"
           alt="Banner mobile"
           className="w-full h-auto object-cover  sm:hidden"
         />
