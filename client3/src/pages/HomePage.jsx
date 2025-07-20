@@ -845,7 +845,7 @@ function HomePage() {
       <div className="flex justify-end p-4 space-x-2">
         <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
         <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
-        <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button>
+        {/* <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button> */}
 
       </div>
 

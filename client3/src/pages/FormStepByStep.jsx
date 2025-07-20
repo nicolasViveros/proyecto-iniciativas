@@ -447,6 +447,17 @@ function Step2({ form, handleChange, translateText, language }) {
 }
 
 function Step3({ form, handleChange, translateText, language }) {
+  const [wordCount, setWordCount] = useState({ need: 0 });
+
+  const handleTextAreaChange = (e) => {
+    const { name, value } = e.target;
+    const words = value.split(/\s+/g).filter((word) => word.length > 0);
+
+    if (words.length <= 500) {
+      setWordCount((prev) => ({ ...prev, [name]: words.length }));
+      handleChange(e); // Update the form state
+    }
+  };
   return (
     <div className="max-w-2xl mx-auto bg-white rounded-lg">
       <h2 className="text-3xl text-center font-bold mb-4">
@@ -467,6 +478,9 @@ function Step3({ form, handleChange, translateText, language }) {
         rows="4"
         required
       />
+       <div className="text-xs text-right text-gray-500">
+        {wordCount.need} / 500 {language === "es" ? "palabras" : "words"}
+      </div>
 
       <label className="text-xl">{translateText[language].objectives}</label>
       <label className="block text-sm">
@@ -811,6 +825,8 @@ export default function FormWizard() {
   const { language, toggleLanguage } = useLanguage();
   const [errors, setErrors] = useState([]);
   const [currentStep, setCurrentStep] = useState(0);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({
     organizationName: "",
     organizationType: "",
@@ -1271,9 +1287,6 @@ export default function FormWizard() {
     setCurrentStep((prevStep) => Math.max(prevStep - 1, 0));
   };
 
-  const [successMessage, setSuccessMessage] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const onSubmit = () => {
     if (validateStep()) {
       const userConfirmed = window.confirm(translateText[language].confirm);
@@ -1442,7 +1455,7 @@ export default function FormWizard() {
       <div className="absolute top-4 right-4 space-x-2">
         <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
         <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
-        <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button>
+        {/* <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button> */}
       </div>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
