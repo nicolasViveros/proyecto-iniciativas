@@ -801,20 +801,23 @@ function Step5({
             key={index}
             className="mt-2 p-2 border border-gray-300 rounded-md"
           >
-            <p>
-              {file.name} ({file.type})
-            </p>
+            <div className="flex items-center">
 
-            <button
-              type="button"
-              onClick={() => handleRemoveFile2(index)}
-              className="text-red-600 px-2 hover:underline ml-2"
-            >
-              {language === "es" ? "Eliminar" : "Delete"}
-            </button>
+              <p>
+                {file.name} ({file.type})
+              </p>
+
+              <button
+                type="button"
+                onClick={() => handleRemoveFile2(index)}
+                className="text-red-600 px-2 hover:underline ml-2"
+              >
+                {language === "es" ? "Eliminar" : "Delete"}
+              </button>
+
+            </div>
 
           </div>
-
         ))}
       </div>
 
