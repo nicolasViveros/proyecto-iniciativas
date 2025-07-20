@@ -38,7 +38,7 @@ const FichaPage = () => {
 
     navigate('/fichas'); // vuelve al listado de fichas
 
-};
+  };
   return (
     <div className="relative flex items-center justify-center min-h-screen" >
 
@@ -53,7 +53,7 @@ const FichaPage = () => {
         <div className="container grid grid-cols-2 mx-auto p-2">
 
           <p><strong>Organización:</strong> </p>
-          <p>{ficha.organizationName}</p> 
+          <p>{ficha.organizationName}</p>
           <p><strong>Tipo de Organización:</strong> </p>
           <p>{ficha.organizationType}</p>
           <p><strong>País:</strong> </p>
@@ -69,7 +69,7 @@ const FichaPage = () => {
           <p><strong>Registro Legal:</strong> </p>
           <p>{ficha.registrationId}</p>
           <p><strong>Ciudad de Implementación:</strong> </p>
-          <p>{ficha.city}</p>          
+          <p>{ficha.city}</p>
           <p><strong>Fecha de Inicio:</strong> </p>
           <p>{new Date(ficha.startDate).toLocaleDateString()}</p>
           <p><strong>¿Está Vigente?:</strong> </p>
@@ -78,19 +78,21 @@ const FichaPage = () => {
           <p><strong>Asociaciones:</strong> </p>
           <p>{ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
           <div className='col-span-2'>
-            <p><strong>Equipo Responsable:</strong></p>
+            <p className='border-b border-[#D9D6E1] pb-1'><strong>Equipo Responsable:</strong></p>
             {ficha.team.map((member, index) => (
               <div key={index}>
                 <p className='col-span-2'>Miembro {index + 1} del equipo:</p>
                 <p className='col-span-2'>nombre - {member.name}</p>
                 <p className='col-span-2'>cargo - {member.position}</p>
                 <p className='col-span-2 border-b border-[#D9D6E1] pb-1'>correo - {member.email}</p>
-                
+
               </div>
             ))}
           </div>
-          <p><strong>Necesidad/Problemática:</strong> </p>
-          <p>{ficha.need}</p>
+          <div className="col-span-2 border-b border-[#D9D6E1] pb-1">
+            <p><strong>Necesidad/Problemática:</strong> </p>
+            <p>{ficha.need}</p>
+          </div>
           <p><strong>Objetivos del Proyecto:</strong> </p>
           <p>{ficha.objectives}</p>
           <p><strong>Público Objetivo:</strong> </p>
@@ -119,9 +121,9 @@ const FichaPage = () => {
           <p>{ficha.sustainability}</p>
           <p className='col-span-2 underline mb-3'><strong>Material de Respaldo:</strong></p>
           <ul>
-             
+
             {ficha.links.map((link, index) => (
-              <p  key={index} className='col-span-2'><strong>Link:</strong><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
+              <p key={index} className='col-span-2'><strong>Link:</strong><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
             ))}
           </ul>
           {ficha.video && (
@@ -129,7 +131,7 @@ const FichaPage = () => {
           )}
           {ficha.recognition && (
             <p className='col-span-2'><strong>Reconocimientos:</strong> {ficha.recognition}</p>
-          )}  
+          )}
         </div>
       </div>
     </div>
