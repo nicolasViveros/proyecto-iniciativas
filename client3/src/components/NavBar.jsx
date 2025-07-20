@@ -8,6 +8,7 @@ function NavBar() {
         <nav className=" flex justify-between border-b border-gray-300 ">
             <header className="bg-white w-full">
                 <div className=" inset-0 flex items-center justify-between px-2 sm:px-10">
+                    
                     {/* Logo izquierda (GIZ) */}
                     <Link to="/">
                     <img
@@ -24,15 +25,22 @@ function NavBar() {
                         className="mb-6 h-25 md:h-35 lg:h-45"
                     />
                 </div>
-                {/* <div className="px-4 py-3 flex items-between justify-between">
-                    <div className="flex items-center ">
-                        <Link to="/">
-                            <img src="/global_gateway.png" alt="Global Gateway" className="h-16 md:h-35" />
-                            <img src="/eu_germany.png" alt="Global Gateway" className="h-16 md:h-35" />
-                        </Link>
-                    </div>
+                {isAuthenticated ? (
+                    <>
+                        <li>
+                            <Link to='/' onClick={() => {
+                                logout();
+                            }}
+                                className="hover:text-red-400">
+                                Cerrar sesión
+                            </Link>
+                        </li>
+                    </>
+                ) : (
+                   
 
-                </div> */}
+
+                )}
             </header>
         </nav>
     );
