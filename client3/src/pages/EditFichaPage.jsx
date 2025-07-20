@@ -137,7 +137,7 @@ function EditFichaPage() {
 
                 <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
                 <div className="container grid grid-cols-2 mx-auto p-2">
-                    
+
                     <div>Nombre del proyecto:</div>
                     <div><input
                         type="text"
@@ -350,12 +350,13 @@ function EditFichaPage() {
                             </div>
                         </div>
                     ))}
-
-                    <button
-                        type="button"
-                        onClick={addTeamMember}
-                        className=" hover:underline col-span-2 justify-start mb-4"> + Agregar responsable
-                    </button>
+                    <div className='col-span-2 items-start justify-start flex'>
+                        <button
+                            type="button"
+                            onClick={addTeamMember}
+                            className=" hover:underline mb-4"> + Agregar responsable
+                        </button>
+                    </div>
 
                     <div>Necesidad/Problemática:</div>
                     <div>
