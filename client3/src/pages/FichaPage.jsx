@@ -33,8 +33,8 @@ const FichaPage = () => {
   }, [id]);
 
   if (!ficha) {
-    return <div className="relative flex items-center justify-center min-h-screen">
-      <div className="max-w-3xl w-full left-1/2 rounded-md justify-center items-center">
+    return <div className="  items-center justify-center min-h-screen">
+      <div className="max-w-3xl w-full rounded-md justify-center items-center">
         Cargando ficha...</div>
     </div>;
   }
