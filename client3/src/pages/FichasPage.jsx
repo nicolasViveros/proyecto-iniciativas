@@ -18,7 +18,7 @@ function FichaCard({ ficha }) {
       <p><strong>Teléfono:</strong> {ficha.phone}</p>
       <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       
-      <div className="flex bottom-0 gap-x-2 place-content-end-safe ">
+      <div className="  gap-x-2 bottom-1 place-content-end-safe ">
       <button
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
@@ -49,7 +49,7 @@ function FichasPage() {
 
   if (fichas.length == 0) return ( <div className="  items-center justify-center min-h-screen">
   <div className="max-w-3xl w-full rounded-md justify-center items-center">
-    Cargando ficha...
+    Cargando fichas...
   </div>
 </div>);
 
