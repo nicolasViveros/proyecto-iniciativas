@@ -70,10 +70,10 @@ function EditFichaPage() {
         const newLinks = form.links.filter((_, i) => i !== index);
         setForm({ ...form, links: newLinks });
     };
-    const isValidEmail = (email) => {
+    function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
-    };
+      }
 
     const validateFields = () => {
         if (!ficha.name) return "El nombre es requerido";
@@ -98,21 +98,13 @@ function EditFichaPage() {
         if (!ficha.transferability) return "La transferibilidad es requerida";
         if (!ficha.sustainability) return "La sostenibilidad es requerida";
         ficha.team.map((member, index) => {
-            if (!member.name)
-                return `El nombre del miembro ${index + 1} del equipo es requerido.`;
-            if (!member.position)
-                return `El cargo del miembro ${index + 1} del equipo es requerido.`;
+            if (!member.name) return `El nombre del miembro ${index + 1} del equipo es requerido.`;
+            if (!member.position) return `El cargo del miembro ${index + 1} del equipo es requerido.`;
             if (!member.email) {
-                return `El correo electrónico del miembro ${index + 1} del equipo es requerido.`;
-            } else if (!isValidEmail(member.email)) {
-                return `El correo electrónico del miembro ${index + 1} tiene un formato inválido.`;
-            }
+              return `El correo electrónico del miembro ${index + 1} del equipo es requerido.`;
+            } else if (!isValidEmail(member.email)) return `El correo electrónico del miembro ${index + 1} tiene un formato inválido.`;
         });
 
-            // Email format check
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(ficha.email)) return "El email no es válido";
-    // Add more specific validation as needed
     return '';
 };       
 
