@@ -744,6 +744,7 @@ function Step5({
   handleLetterChange,
   handleRemoveLink,
   handleLinkChange,
+  handleRemoveFile,
   handleFileChange,
   translateText,
   language,
@@ -803,6 +804,15 @@ function Step5({
             <p>
               {file.name} ({file.type})
             </p>
+            {index > 0 && (
+              <button
+                type="button"
+                onClick={() => handleRemoveFile(index)}
+                className="text-red-600 px-2 hover:underline ml-2"
+              >
+                {language === "es" ? "Eliminar" : "Delete"}
+              </button>
+            )}
           </div>
 
         ))}
