@@ -690,7 +690,7 @@ function Step4({ form, handleChange, translateText, language }) {
           rows="4"
           maxLength={300 * 6}
         />
-         <div className="text-xs text-right text-gray-500">
+        <div className="text-xs text-right text-gray-500">
           {wordCount.outcomes} / 300 {language === "es" ? "palabras" : "words"}
         </div>
 
@@ -709,7 +709,7 @@ function Step4({ form, handleChange, translateText, language }) {
           rows="4"
           maxLength={250 * 6}
         />
-         <div className="text-xs text-right text-gray-500">
+        <div className="text-xs text-right text-gray-500">
           {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
         </div>
 
@@ -728,7 +728,7 @@ function Step4({ form, handleChange, translateText, language }) {
           rows="4"
           maxLength={250 * 6}
         />
-         <div className="text-xs text-right text-gray-500">
+        <div className="text-xs text-right text-gray-500">
           {wordCount.sustainability} / 250 {language === "es" ? "palabras" : "words"}
         </div>
 
@@ -755,22 +755,32 @@ function Step5({
 
       <label className="text-xl">{translateText[language].links}</label>
       {form.links.map((link, index) => (
-        <div key={index} className="mb-3 flex items-center">
-          <input
-            type="url"
-            value={link}
-            placeholder="https://"
-            onChange={(e) => handleLinkChange(index, e.target.value)}
-            className="w-full p-2 border rounded my-2 input-focused"
-          />
+        <div key={index} className="mb-3">
+          <div className="flex items-center">
+            <input
+              type="url"
+              value={link}
+              placeholder="https://"
+              onChange={(e) => handleLinkChange(index, e.target.value)}
+              className="w-full p-2 border rounded my-2 input-focused"
+            />
+            {index > 0 && (
+              <button
+                type="button"
+                onClick={() => handleRemoveLink(index)}
+                className="text-red-600 px-2 hover:underline ml-2"
+              >
+                {language === "es" ? "Eliminar" : "Delete"}
+              </button>
+            )}
+          </div>
         </div>
       ))}
       <button
         type="button"
         onClick={handleAddLink}
-        className=" hover:underline"
+        className="underline hover:text-[#a49fc4]"
       >
-        {" "}
         {language === "es" ? "+ Agregar enlace" : "+ Add link"}
       </button>
 
@@ -793,6 +803,7 @@ function Step5({
               {file.name} ({file.type})
             </p>
           </div>
+
         ))}
       </div>
 
@@ -1310,6 +1321,7 @@ export default function FormWizard() {
     const updatedTeam = form.team.filter((_, i) => i !== index);
     setForm({ ...form, team: updatedTeam });
   };
+
 
   const handleAssociationChange = (e) => {
     const { value, checked } = e.target;
