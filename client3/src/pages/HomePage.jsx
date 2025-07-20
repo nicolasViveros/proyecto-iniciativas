@@ -883,7 +883,7 @@ function HomePage() {
           <img src="/fecha.svg" className="w-full h-auto" />
         </div> */}
         <div className="absolute w-full sm:bottom-1 md:bottom-3 left-1/2 transform -translate-x-1/2  text-white  items-center">
-          <span className="  justify-center text-white text-2xl sm:text-3xl md:text-4xl"> 
+          <span className="  left-1/2 text-white text-2xl sm:text-3xl md:text-4xl"> 
           {language === "es"
               ? "¡Participa! 25/07 al 25/08"
               : "Participate! July 25th to August 25th"}</span>
