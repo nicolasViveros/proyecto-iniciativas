@@ -488,13 +488,15 @@ function Step3({ form, handleChange, translateText, language }) {
 
       <textarea
         name="objectives"
-        maxLength="3000"
         value={form.objectives}
-        onChange={handleChange}
+        onChange={handleTextAreaChange}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
+      <div className="text-xs text-right text-gray-500">
+        {wordCount.need} / 500 {language === "es" ? "palabras" : "words"}
+      </div>
 
       <label className="text-xl">
         {translateText[language].targetAudience}
@@ -505,13 +507,15 @@ function Step3({ form, handleChange, translateText, language }) {
 
       <textarea
         name="targetAudience"
-        maxLength="3000"
+        onChange={handleTextAreaChange}
         value={form.targetAudience}
-        onChange={handleChange}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
+      <div className="text-xs text-right text-gray-500">
+        {wordCount.need} / 500 {language === "es" ? "palabras" : "words"}
+      </div>
 
       <label className="text-xl">{translateText[language].activities}</label>
       <label className="block text-sm">
@@ -520,13 +524,15 @@ function Step3({ form, handleChange, translateText, language }) {
 
       <textarea
         name="activities"
-        maxLength="3000"
         value={form.activities}
-        onChange={handleChange}
+        onChange={handleTextAreaChange}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
+      <div className="text-xs text-right text-gray-500">
+        {wordCount.need} / 500 {language === "es" ? "palabras" : "words"}
+      </div>
 
       <label className="text-xl">
         {translateText[language].projectCategory}
