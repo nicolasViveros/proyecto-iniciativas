@@ -117,11 +117,11 @@ const FichaPage = () => {
           <p>{ficha.transferability}</p>
           <p><strong>Sostenibilidad:</strong> </p>
           <p>{ficha.sustainability}</p>
-          <p className='col-span-2'><strong>Material de Respaldo:</strong></p>  
+          <p className='col-span-2 underline'><strong>Material de Respaldo:</strong></p>
           <ul>
              
             {ficha.links.map((link, index) => (
-              <p className='col-span-2'><strong>Link:</strong><li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li></p>
+              <p  key={index} className='col-span-2'><strong>Link:</strong><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
             ))}
           </ul>
           {ficha.video && (
