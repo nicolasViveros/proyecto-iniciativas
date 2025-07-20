@@ -48,9 +48,10 @@ const FichaPage = () => {
       </button>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
-        <div className="container mx-auto p-6">
 
-          <h1 className="text-3xl font-bold mb-6">{ficha.name}</h1>
+        <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
+        <div className="container grid grid-cols-2 mx-auto p-2">
+
           <p><strong>Organización:</strong> {ficha.organizationName}</p>
           <p><strong>Tipo de Organización:</strong> {ficha.organizationType}</p>
           <p><strong>País:</strong> {ficha.country}</p>
