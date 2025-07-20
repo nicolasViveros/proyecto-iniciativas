@@ -5,6 +5,28 @@ import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
 
+function translateAssociation(option) {
+    switch (option) {
+        case "No":
+            return "No";
+        case "Otras Secretarías":
+            return "Other Secretariats";
+        case "ONGs y Sociedad Civil":
+            return "NGOs and Civil Society";
+        case "Instituciones educativas y de investigación":
+            return "Educational and Research Institutions";
+        case "Empresas":
+            return "Companies";
+        case "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)":
+            return "Multilateral Organizations (such as IDB, World Bank, and UN)";
+        case "Organizaciones Internacionales":
+            return "International Organizations";
+        case "Otras organizaciones":
+            return "Other organizations";
+        default:
+            return option;
+    }
+}
 
 function EditFichaPage() {
     const navigate = useNavigate();
@@ -100,7 +122,17 @@ function EditFichaPage() {
         const updatedTeam = ficha.team.filter((_, i) => i !== index);
         setFicha({ ...ficha, team: updatedTeam });
     };
-
+    
+    const handleAssociationChange = (e) => {
+        const { value, checked } = e.target;
+        setForm({
+            ...form,
+            associations: checked
+                ? [...form.associations, value]
+                : form.associations.filter((item) => item !== value),
+        });
+    };
+    
     const handleSave = () => {
         const validationError = validateFields();
         if (validationError) {
@@ -294,7 +326,32 @@ function EditFichaPage() {
                         </div>
                     )}
 
-                    <div>Asociaciones:</div>
+                    <div className='col-span-2'>Asociaciones:</div>
+                    <div className="grid grid-cols-2 gap-2 ">
+                        {[
+                            "No",
+                            "Otras Secretarías",
+                            "ONGs y Sociedad Civil",
+                            "Instituciones educativas y de investigación",
+                            "Empresas",
+                            "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
+                            "Organizaciones Internacionales",
+                            "Otras organizaciones",
+                        ].map((option) => (
+                            <label key={option} className="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    value={option}
+                                    checked={ficha.associations.includes(option)}
+                                    onChange={handleAssociationChange}
+                                    className="input-focused   accent-[#5d5593]"
+                                />
+                                <span>
+                                    {language === "es" ? option : translateAssociation(option)}
+                                </span>
+                            </label>
+                        ))}
+                    </div>
                     <div>
                         <input
                             type="text"
