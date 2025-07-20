@@ -71,6 +71,11 @@ const FichaPage = () => {
     return <div>Cargando...</div>;
   }
 
+  const handleBack = () => {
+
+    navigate('/fichas'); // vuelve al listado de fichas
+
+};
   return (
     <div className="relative flex items-center justify-center min-h-screen" >
 
