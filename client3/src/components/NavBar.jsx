@@ -13,7 +13,7 @@ function NavBar() {
                     <img
                         src="/global_gateway.png"
                         alt="GIZ Logo"
-                        className="m-6 h-25 md:h-30 lg:h-40"
+                        className="mb-6 h-25 md:h-30 lg:h-40"
                     />
                     </Link>
 
@@ -21,7 +21,7 @@ function NavBar() {
                     <img
                         src="/eu_germany.png"
                         alt="Somos LAC Logo"
-                        className="m-6 h-25 md:h-35 lg:h-45"
+                        className="mb-6 h-25 md:h-35 lg:h-45"
                     />
                 </div>
                 {/* <div className="px-4 py-3 flex items-between justify-between">
