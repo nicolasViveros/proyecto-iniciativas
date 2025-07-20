@@ -1094,7 +1094,7 @@ export default function FormWizard() {
   };
 
   const isValidPhone = (phone) => {
-    const phoneRegex = /^\+?\d{7, 15}$/;
+    const phoneRegex = /^\+?\d{7,15}$/;
     return phoneRegex.test(phone);
   };
 
