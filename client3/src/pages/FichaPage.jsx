@@ -123,7 +123,7 @@ const FichaPage = () => {
           <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.transferability}</p>
 
           <p><strong>Sostenibilidad:</strong> </p>
-          <p className='col-span-2 '>{ficha.sustainability}</p>
+          <p className='col-span-2 pb-1 '>{ficha.sustainability}</p>
 
           <p className='col-span-2 underline mb-3 className="col-span-2 border-t border-[#D9D6E1] pb-1"'><strong>Material de Respaldo:</strong></p>
           <ul>
