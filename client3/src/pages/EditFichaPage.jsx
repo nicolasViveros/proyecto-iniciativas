@@ -452,7 +452,7 @@ function EditFichaPage() {
                 <div>
                 <ul>
                     {ficha.links.map((link, index) => (
-                        <input key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></input>
+                        <li key={index}><input href={link} target="_blank" rel="noopener noreferrer">{link}</input></li>
                     ))}
                 </ul>
                 </div>
