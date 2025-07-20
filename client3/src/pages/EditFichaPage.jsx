@@ -29,6 +29,8 @@ function translateAssociation(option) {
 }
 
 function EditFichaPage() {
+    const { language } = useLanguage();
+    language = 'es'
     const navigate = useNavigate();
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
@@ -331,21 +333,21 @@ function EditFichaPage() {
 
 
                         {ficha.associations.map((option) => (
-                        <label key={option} className="flex items-center space-x-2">
-                            <input
-                                type="checkbox"
-                                value={ficha.associations.includes(option)}
-                                checked={ficha.associations.includes(option)}
-                                onChange={handleAssociationChange}
-                                className="input-focused   accent-[#5d5593]"
-                            />
-                            <span>
-                                {language === "es" ? option : translateAssociation(option)}
-                            </span>
-                        </label>
+                            <label key={option} className="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    value={ficha.associations.includes(option)}
+                                    checked={ficha.associations.includes(option)}
+                                    onChange={handleAssociationChange}
+                                    className="input-focused   accent-[#5d5593]"
+                                />
+                                <span>
+                                    {language === "es" ? option : translateAssociation(option)}
+                                </span>
+                            </label>
                         ))
                         }
-                        
+
                         {associations.map((option) => (
                             <label key={option} className="flex items-center space-x-2">
                                 <input
