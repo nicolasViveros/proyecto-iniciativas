@@ -122,7 +122,7 @@ function EditFichaPage() {
         const updatedTeam = ficha.team.filter((_, i) => i !== index);
         setFicha({ ...ficha, team: updatedTeam });
     };
-    
+
     const handleAssociationChange = (e) => {
         const { value, checked } = e.target;
         setForm({
@@ -132,7 +132,7 @@ function EditFichaPage() {
                 : form.associations.filter((item) => item !== value),
         });
     };
-    
+
     const handleSave = () => {
         const validationError = validateFields();
         if (validationError) {
@@ -328,16 +328,31 @@ function EditFichaPage() {
 
                     <div className='col-span-2'>Asociaciones:</div>
                     <div className="grid grid-cols-2 gap-2 ">
-                        {[
-                            "No",
-                            "Otras Secretarías",
-                            "ONGs y Sociedad Civil",
-                            "Instituciones educativas y de investigación",
-                            "Empresas",
-                            "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
-                            "Organizaciones Internacionales",
-                            "Otras organizaciones",
-                        ].map((option) => (
+                        [
+                        "No",
+                        "Otras Secretarías",
+                        "ONGs y Sociedad Civil",
+                        "Instituciones educativas y de investigación",
+                        "Empresas",
+                        "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
+                        "Organizaciones Internacionales",
+                        "Otras organizaciones",
+                        ].map((option) && (
+                        <label key={option} className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                value={option}
+                                checked={ficha.associations.includes(option)}
+                                onChange={handleAssociationChange}
+                                className="input-focused   accent-[#5d5593]"
+                            />
+                            <span>
+                                {language === "es" ? option : translateAssociation(option)}
+                            </span>
+                        </label>
+                        ))
+                        
+                        {associations.map((option) => (
                             <label key={option} className="flex items-center space-x-2">
                                 <input
                                     type="checkbox"
@@ -352,6 +367,7 @@ function EditFichaPage() {
                             </label>
                         ))}
                     </div>
+
                     <div>
                         <input
                             type="text"
