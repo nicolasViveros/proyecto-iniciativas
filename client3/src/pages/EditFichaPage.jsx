@@ -110,7 +110,7 @@ function EditFichaPage() {
             alert(validationError);
             return;
         }
-        updateFicha(params.id, ficha);
+        updateFicha(id, ficha);
         console.log('Ficha Saved:', ficha);
     };
 
