@@ -37,6 +37,17 @@ function EditFichaPage() {
         }));
     };
 
+    const handleLinkChange = (index, value) => {
+        const newLinks = [...form.links];
+        newLinks[index] = value;
+        setForm({ ...form, links: newLinks });
+      };
+
+      const handleRemoveLink = (index) => {
+        const newLinks = form.links.filter((_, i) => i !== index);
+        setForm({ ...form, links: newLinks });
+      };
+
     const validateFields = () => {
         if (!ficha.name) return "El nombre es requerido";
         if (!ficha.organizationName) return "El nombre de la organización es requerido";
@@ -449,6 +460,28 @@ function EditFichaPage() {
 
                 <div className='col-span-2 font-bold'>Material de Respaldo:</div>
                 <div>Links:</div>
+                {ficha.links.map((link, index) => (
+                    <div key={index} >
+                        <div className="flex items-center">
+                            <input
+                                type="url"
+                                value={link}
+                                onChange={(e) => handleLinkChange(index, e.target.value)}
+                                className="w-full p-2 border rounded my-2 input-focused"
+                            />
+                            {index > 0 && (
+                                <button
+                                    type="button"
+                                    onClick={() => handleRemoveLink(index)}
+                                    className="text-red-600  text-xs px-2 hover:underline ml-2"
+                                >
+                                    {language === "es" ? "Eliminar" : "Delete"}
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                ))}
+
                 <div>
                     <ul>
                         {ficha.links.map((link, index) => (
