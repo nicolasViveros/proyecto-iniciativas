@@ -459,10 +459,10 @@ function EditFichaPage() {
                 </div>
 
                 <div className='col-span-2 font-bold'>Material de Respaldo:</div>
-                <div>Links:</div>
+                <div className='col-span-2'></div>
                 {ficha.links.map((link, index) => (
                     <div key={index} >
-                        <div className="flex items-center">
+                        <div className="flex items-center col-span-2">
                             <input
                                 type="url"
                                 value={link}
