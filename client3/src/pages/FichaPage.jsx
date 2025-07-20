@@ -89,10 +89,8 @@ const FichaPage = () => {
               </div>
             ))}
           </div>
-          <div className="col-span-2 border-b border-[#D9D6E1] pb-1">
             <p><strong>Necesidad/Problemática:</strong> </p>
-            <p>{ficha.need}</p>
-          </div>
+            <p className="col-span-2 border-b border-[#D9D6E1] pb-1">{ficha.need}</p>
           <p><strong>Objetivos del Proyecto:</strong> </p>
           <p className="border-b border-[#D9D6E1] pb-1">{ficha.objectives}</p>
           <p><strong>Público Objetivo:</strong> </p>
