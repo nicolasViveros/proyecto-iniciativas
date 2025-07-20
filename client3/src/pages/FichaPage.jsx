@@ -84,7 +84,7 @@ const FichaPage = () => {
                 <p className='col-span-2'>Miembro {index + 1} del equipo:</p>
                 <p className='col-span-2'>nombre - {member.name}</p>
                 <p className='col-span-2'>cargo - {member.position}</p>
-                <p className='col-span-2'>correo - {member.email}</p>
+                <p className='col-span-2 border-b border-[#D9D6E1] pb-1'>correo - {member.email}</p>
                 
               </div>
             ))}
