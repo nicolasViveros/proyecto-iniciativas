@@ -510,7 +510,7 @@ function EditFichaPage() {
 
 
 
-                <div className="flex justify-center">
+                <div className="flex col-span-2 justify-end">
                     <button
                         type="button"
                         onClick={handleSave}
