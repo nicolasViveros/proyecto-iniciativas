@@ -326,26 +326,7 @@ function EditFichaPage() {
                         </div>
                     )}
 
-                    <div className='col-span-2'>Asociaciones:</div>
-                    <div className="grid grid-cols-2 gap-2 ">
-
-
-                        {ficha.associations.map((option) => (
-                            <label key={option} className="flex items-center space-x-2">
-                                <input
-                                    type="checkbox"
-                                    value={ficha.associations.includes(option)}
-                                    checked={ficha.associations.includes(option)}
-                                    onChange={handleAssociationChange}
-                                    className="input-focused   accent-[#5d5593]"
-                                />
-                                <span>
-                                    ficha.associations.includes(option)
-                                </span>
-                            </label>
-                        ))
-                        }
-
+                    <div>Asociaciones:</div>
                         <div>
                             <input
                                 type="text"
