@@ -447,12 +447,12 @@ function EditFichaPage() {
                     ></textarea>
                 </div>
 
-                <div>Material de Respaldo:</div>
+                <div className='col-span-2 font-bold'>Material de Respaldo:</div>
                 <div>Links:</div>
                 <div>
                 <ul>
                     {ficha.links.map((link, index) => (
-                        <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
+                        <input key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></input>
                     ))}
                 </ul>
                 </div>
