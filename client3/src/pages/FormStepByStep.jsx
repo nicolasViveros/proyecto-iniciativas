@@ -472,6 +472,7 @@ function Step3({ form, handleChange, translateText, language }) {
       <textarea
         name="need"
         value={form.need}
+        maxLength={500}
         onChange={handleTextAreaChange}
         className="w-full border border-gray-300 px-4 py-2 input-focused rounded-md my-2"
         rows="4"
