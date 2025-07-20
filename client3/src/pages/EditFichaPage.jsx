@@ -112,6 +112,7 @@ function EditFichaPage() {
         }
         updateFicha(id, ficha);
         console.log('Ficha Saved:', ficha);
+        navigate('/fichas');
     };
 
     const handleBack = () => {
@@ -513,7 +514,7 @@ function EditFichaPage() {
                 <button
                     type="button"
                     onClick={handleSave}
-                    className="mt-4 p-2 bg-blue-500 text-white rounded"
+                    className="bg-[#5d5593] text-white px-6 py-2 rounded hover:bg-[#a49fc4] justify-end"
                 >
                     Guardar Ficha
                 </button>
