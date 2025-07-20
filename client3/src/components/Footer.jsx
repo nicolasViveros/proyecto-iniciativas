@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
     <footer className="relative w-full flex flex-col md:flex-row h-auto">
-      <div>
+
 
       {/* Logo izquierda (GIZ) con fondo blanco */}
       <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
@@ -22,7 +22,7 @@ function Footer() {
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
-      </div>
+     
     </footer>
   );
 }
