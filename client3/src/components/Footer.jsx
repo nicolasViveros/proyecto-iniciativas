@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
     <div>
-      <span className=" justify-center sm:text-xs sm:top-0 sm:left-4 w-full h-full ">Implementado por</span>
+      <span className=" justify-between sm:text-xs sm:top-0 sm:left-4 w-full h-full ">Implementado por</span>
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
         {/* Logo izquierda (GIZ) con fondo blanco */}
         <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
