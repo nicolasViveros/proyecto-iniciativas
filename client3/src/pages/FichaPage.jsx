@@ -77,14 +77,15 @@ const FichaPage = () => {
           {!ficha.isActive && <p><strong>Razón Inactiva:</strong> {ficha.reasonInactive}</p>}
           <p><strong>Asociaciones:</strong> </p>
           <p>{ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}</p>
-          <div>
+          <div className='col-span-2'>
             <p><strong>Equipo Responsable:</strong></p>
             {ficha.team.map((member, index) => (
               <div key={index}>
-                <p>Miembro {index + 1} del equipo:</p>
-                <p>nombre - {member.name}</p>
-                <p>cargo - {member.position}</p>
-                <p>correo - {member.email}</p>
+                <p className='col-span-2'>Miembro {index + 1} del equipo:</p>
+                <p className='col-span-2'>nombre - {member.name}</p>
+                <p className='col-span-2'>cargo - {member.position}</p>
+                <p className='col-span-2'>correo - {member.email}</p>
+                
               </div>
             ))}
           </div>
