@@ -514,6 +514,7 @@ function EditFichaPage() {
                         <div key={`link-${index}`} className='col-span-2'>
                             <div className="flex items-center">
                                 <input
+                                    name='link'
                                     type="url"
                                     value={link}
                                     onChange={(e) => handleLinkChange(index, e.target.value)}
@@ -546,7 +547,7 @@ function EditFichaPage() {
                     <div className='col-span-2'>Reconocimiento:</div>
                     <div className='col-span-2'>
                         <input
-                            name="video"
+                            name="recognition"
                             value={ficha.recognition}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
