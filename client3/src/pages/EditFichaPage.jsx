@@ -328,16 +328,9 @@ function EditFichaPage() {
 
                     <div className='col-span-2'>Asociaciones:</div>
                     <div className="grid grid-cols-2 gap-2 ">
-                        [
-                        "No",
-                        "Otras Secretarías",
-                        "ONGs y Sociedad Civil",
-                        "Instituciones educativas y de investigación",
-                        "Empresas",
-                        "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
-                        "Organizaciones Internacionales",
-                        "Otras organizaciones",
-                        ].map((option) && (
+
+
+                        {ficha.associations.map((option) => (
                         <label key={option} className="flex items-center space-x-2">
                             <input
                                 type="checkbox"
@@ -351,6 +344,7 @@ function EditFichaPage() {
                             </span>
                         </label>
                         ))
+                        }
                         
                         {associations.map((option) => (
                             <label key={option} className="flex items-center space-x-2">
