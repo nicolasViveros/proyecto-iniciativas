@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
     <div>
-      <span className="text-[#5D5593] text-xs ml-4 justify-start">Implementado por:</span>
+      <span className="text-[#5D5593] text-xs ml-4 hiden sm:flex justify-start">Implementado por:</span>
 
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
         {/* Logo izquierda (GIZ) con fondo blanco */}
@@ -16,7 +16,7 @@ function Footer() {
         </div>
 
         {/* Fondo restante con imagen de footer */}
-        <div className="flex-grow relative h-auto md:h-auto">
+        <div className="flex-grow relative overflow-hidden h-auto md:h-auto">
           <img
             src="/Footer2.png"
             alt="Footer"
