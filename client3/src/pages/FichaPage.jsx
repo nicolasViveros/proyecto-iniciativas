@@ -119,16 +119,16 @@ const FichaPage = () => {
           <p>{ficha.sustainability}</p>
           <p className='col-span-2'><strong>Material de Respaldo:</strong></p>  
           <ul>
-            <p><strong>Video:</strong> </p>
+             
             {ficha.links.map((link, index) => (
-              <li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
+              <p className='col-span-2'><strong>Link:</strong><li key={index}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li></p>
             ))}
           </ul>
           {ficha.video && (
-            <p><strong>Video:</strong> <a href={ficha.video} target="_blank" rel="noopener noreferrer">{ficha.video}</a></p>
+            <p className='col-span-2'><strong>Video:</strong> <a href={ficha.video} target="_blank" rel="noopener noreferrer">{ficha.video}</a></p>
           )}
           {ficha.recognition && (
-            <p><strong>Reconocimientos:</strong> {ficha.recognition}</p>
+            <p className='col-span-2'><strong>Reconocimientos:</strong> {ficha.recognition}</p>
           )}  
         </div>
       </div>
