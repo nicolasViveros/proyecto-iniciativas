@@ -843,8 +843,8 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4 space-x-2">
-        <button className="rounded-full bg-white p-2 border" onClick={switchToEnglish}>En</button>
-        <button className="rounded-full bg-white p-2 border" onClick={switchToSpanish}>Es</button>
+        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>En</button>
+        <button className="rounded-full bg-white p-0.5 border" onClick={switchToSpanish}>Es</button>
         {/* <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button> */}
 
       </div>
@@ -882,7 +882,10 @@ function HomePage() {
           <img src="/fecha.svg" className="w-full h-auto" />
         </div> */}
         <div className="absolute sm:bottom-1 md:bottom-3 left-1/2 transform -translate-x-1/2  text-white  items-center justify-between">
-          <span className="  text-white text-2xl sm:text-3xl md:text-4xl"> ¡Participa! 25/07 al 25/08</span>
+          <span className="  text-white text-2xl sm:text-3xl md:text-4xl"> 
+          {language === "es"
+              ? "¡Participa! 25/07 al 25/08"
+              : "Participate! July 25th to August 25th"}</span>
         </div>
       </div>
 
