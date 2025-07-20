@@ -18,7 +18,7 @@ function FichaCard({ ficha }) {
       <p><strong>Teléfono:</strong> {ficha.phone}</p>
       <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       
-      <div className="  gap-x-2 bottom-1 items-end-bottom justify-end-bottom">
+      <div className=" flex gap-x-2 bottom-1 items-end-bottom justify-end-bottom">
       <button
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
