@@ -871,7 +871,7 @@ function HomePage() {
           <h2 className="text-lg md:text-2xl sm:text-xl font-extrabold text-[#3C3270]">
             {language === "es" ? "RUMBO A LA EQUIDAD:" : "TOWARDS EQUITY:"}
           </h2>
-          <p className="text-xs md:text-lg sm:text-xl text-[#5A478D] leading-tight w-50 sm:w-100">
+          <p className="text-xs md:text-lg sm:text-lg text-[#5A478D] leading-tight w-48 sm:w-100">
             {language === "es"
               ? "Reconociendo iniciativas innovadoras en favor de la equidad de género en movilidad urbana"
               : "Recognizing innovative initiatives for gender equity in urban mobility"}
