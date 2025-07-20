@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <div>
-              <span className="justify-center-safe sm:text-xs text-xl w-full h-full ">Implementado por</span>
+              <span className="justify-center sm:text-xs text-xl ">Implementado por:</span>
       </div>
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
         {/* Logo izquierda (GIZ) con fondo blanco */}
