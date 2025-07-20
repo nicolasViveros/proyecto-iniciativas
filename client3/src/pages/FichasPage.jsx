@@ -6,7 +6,7 @@ function FichaCard({ ficha }) {
   const { deleteFicha } = useFichas();
   return (
     <div className=" relative border p-4 rounded mb-4 shadow">
-      <div >
+      <div className='absolute top-0 right-0 gap-x-2 mb-2'>
         <h2 className="font-bold text-lg">
           <Link to={`/ficha/${ficha._id}`} className="text-xl hover:underline flex justify-center">
             Proyecto: {ficha.name}
@@ -20,7 +20,7 @@ function FichaCard({ ficha }) {
         <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       </div>
 
-      <div className="flex bottom-0 gap-x-2 mb-2">
+      <div className="absolute bottom-0 gap-x-2 mb-2">
         <button
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
