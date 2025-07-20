@@ -881,8 +881,8 @@ function HomePage() {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white  items-center justify-center z-20 hidden sm:flex">
           <img src="/fecha.svg" className="w-full h-auto" />
         </div>
-        <div className="absolute botton-7 left-1/2 transform -translate-x-1/2  text-white  items-center justify-center z-20 hidden sm:flex">
-          <span className="w-full h-auto text-white text-xl sm:text-5xl md:text-3xl"> ¡Participa! 15/07 al 15/08</span>
+        <div className="absolute botton-12 left-1/2 transform -translate-x-1/2  text-white  items-center justify-center">
+          <span className="w-full h-auto text-white text-xl sm:text-3xl md:text-5xl"> ¡Participa! 15/07 al 15/08</span>
         </div>
       </div>
 
