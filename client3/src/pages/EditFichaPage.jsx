@@ -451,7 +451,7 @@ function EditFichaPage() {
                 <div>Links:</div>
                 <div>
                     {ficha.links.map((link, index) => (
-                        {key = { index } > 
+                        key = { index } > 
                         <input
                             name="links"
                             value={link} 
@@ -459,7 +459,7 @@ function EditFichaPage() {
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="3"
                         ></input>
-                        }
+                        
                     ))}
                 </div>
 
