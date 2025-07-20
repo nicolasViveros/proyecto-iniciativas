@@ -758,7 +758,7 @@ function Step5({
 
       <label className="text-xl">{translateText[language].links}</label>
       {form.links.map((link, index) => (
-        <div key={index} className="mb-3">
+        <div key={index} >
           <div className="flex items-center">
             <input
               type="url"
@@ -782,7 +782,7 @@ function Step5({
       <button
         type="button"
         onClick={handleAddLink}
-        className="underline hover:text-[#a49fc4]"
+        className="underline hover:text-[#a49fc4] mb-2"
       >
         {language === "es" ? "+ Agregar enlace" : "+ Add link"}
       </button>
