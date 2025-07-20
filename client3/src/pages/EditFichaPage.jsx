@@ -350,7 +350,7 @@ function EditFichaPage() {
                             </div>
                         </div>
                     ))}
-                    <div className='col-span-2 items-start justify-start flex border-b-shadow'>
+                    <div className='col-span-2 items-start justify-start flex border-b-[#D9D6E1] '>
                         <button
                             type="button"
                             onClick={addTeamMember}
