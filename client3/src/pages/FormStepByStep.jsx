@@ -218,6 +218,7 @@ function Step1({
       </label>
       <br />
       <input
+        type="tel"
         name="phone"
         value={form.phone}
         onChange={handleChange}
