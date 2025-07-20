@@ -514,7 +514,7 @@ function EditFichaPage() {
                     <button
                         type="button"
                         onClick={handleSave}
-                        className="bg-[#5d5593] text-white px-2 my-6 py-2 rounded hover:bg-[#a49fc4] justify-end"
+                        className="bg-[#5d5593] text-white px-2 my-8 py-2 rounded hover:bg-[#a49fc4] justify-end"
                     >
                         Guardar Ficha
                     </button>
