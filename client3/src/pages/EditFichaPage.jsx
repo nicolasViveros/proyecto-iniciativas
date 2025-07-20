@@ -462,7 +462,6 @@ function EditFichaPage() {
                                         setFicha({ ...ficha, links: newLinks });
                                     }}
                                 />
-                                <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
                             </li>
                         ))}
                     </ul>
