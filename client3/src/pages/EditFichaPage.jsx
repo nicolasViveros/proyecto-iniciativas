@@ -124,17 +124,14 @@ function EditFichaPage() {
 
     return (
 
-        <div >
-
+        <div className="relative flex items-center justify-center min-h-screen" >
+            <button onClick={handleBack} className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md">
+                <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
+                <span className="ml-1">Volver</span>
+            </button>
 
             <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
             <div className="container grid grid-cols-2 mx-auto p-2">
-
-                <button onClick={handleBack} className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md">
-                    <FaArrowCircleLeft className="text-2xl mr-1 mb-1 inline" />
-                    <span className="ml-1">Volver</span>
-                </button>
-                
                 <div>Organización:</div>
                 <div><input
                     type="text"
