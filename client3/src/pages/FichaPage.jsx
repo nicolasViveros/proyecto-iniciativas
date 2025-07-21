@@ -45,11 +45,7 @@ const FichaPage = () => {
 
   const handleFileDownload = async (file) => {
     try {
-      // Replace 'yourBackendEndpoint' with the actual endpoint to fetch the file blob
-      const response = await fetch(`yourBackendEndpoint/${file.id}`, {
-        headers: { "Content-Type": "application/json" },
-      });
-      const blob = await response.blob();
+      const blob = file.content;
       const url = window.URL.createObjectURL(blob);
 
       const a = document.createElement("a");
