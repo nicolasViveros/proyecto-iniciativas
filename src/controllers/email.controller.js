@@ -1,9 +1,4 @@
-import "dotenv/config";
-import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
-
-const mailerSend = new MailerSend({
-  apiKey: process.env.MAILERSEND_API_KEY,
-});
+import nodemailer from "nodemailer";
 
 export const sendEmail = async ({
   recipientEmail,
@@ -13,26 +8,29 @@ export const sendEmail = async ({
   textContent,
 }) => {
   try {
-    const sentFrom = new Sender(
-      "concurso@rumboalaequidad.org",
-      "Rumbo a la Equidad"
-    );
-    const recipients = [new Recipient(recipientEmail, recipientName)];
+    // Configure the SMTP transport
+    const transporter = nodemailer.createTransport({
+      host: "smtppro.zoho.com",
+      port: 465,
+      secure: true, // Use SSL
+      auth: {
+        user: "concurso@rumboalaequidad.org",
+        pass: "Plan2025$",
+      },
+    });
 
-    // const cc = [
-    //   new Recipient("concurso@rumboalaequidad.org", "Rumbo a la Equidad"),
-    // ];
+    // Set up email options
+    const mailOptions = {
+      from: '"Rumbo a la Equidad" <concurso@rumboalaequidad.org>',
+      to: `${recipientName} <${recipientEmail}>`,
+      subject: emailSubject,
+      text: textContent,
+      html: htmlContent,
+      // cc: 'concurso@rumboalaequidad.org', // Uncomment if you wish to have a cc
+    };
 
-    const emailParams = new EmailParams()
-      .setFrom(sentFrom)
-      .setTo(recipients)
-      //.setCc(cc)
-      .setReplyTo(sentFrom)
-      .setSubject(emailSubject)
-      .setHtml(htmlContent)
-      .setText(textContent);
-
-    await mailerSend.email.send(emailParams);
+    // Send the email
+    await transporter.sendMail(mailOptions);
     return { message: "Email sent successfully" };
   } catch (error) {
     console.error("Error sending email:", error);
