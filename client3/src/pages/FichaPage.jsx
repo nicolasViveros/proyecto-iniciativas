@@ -47,7 +47,7 @@ const FichaPage = () => {
     try {
       // Remove prefix if present and ensure trimming
       let base64Content = file.content.split(",")[1].trim();
-      console.log(base64Content);
+      //console.log(base64Content);
       let byteCharacters = atob(base64Content);
       let byteNumbers = new Array(byteCharacters.length);
       //console.log(byteCharacters);
@@ -59,7 +59,7 @@ const FichaPage = () => {
       let blob = new Blob([byteArray], { type: file.type });
       let url = window.URL.createObjectURL(blob);
 
-      const a = document.createElement("a");
+      let a = document.createElement("a");
       a.href = url;
       a.download = file.name;
       document.body.appendChild(a);
