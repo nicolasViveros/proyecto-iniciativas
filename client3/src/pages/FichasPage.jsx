@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom
 function FichaCard({ ficha }) {
   const { deleteFicha } = useFichas();
   return (
-    <div className=" relative border p-4 space-between items-y-beetween rounded mb-4 shadow">
+    <div className=" flex col border p-4 space-between justify-between mt-auto rounded mb-4 shadow">
       <div className='mb-10'>
         <h2 className="font-bold text-lg">
           <Link to={`/ficha/${ficha._id}`} className="text-xl hover:underline flex justify-center">
