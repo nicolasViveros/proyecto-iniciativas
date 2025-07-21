@@ -67,7 +67,7 @@ function HomePage() {
             mobility systems in the region. SoMoS LAC is structured into thematic 
             groups that offer dynamic spaces to foster learning and collaborative 
             actions. One of these is the thematic group on 
-            <strong>Gender, Equity, and Inclusion in Mobility Systems</strong>,
+            <strong> Gender, Equity, and Inclusion in Mobility Systems</strong>,
             led by the Colombian Ministry of Transportation, which promotes 
             this competition as part of its action plan.
             </div>
