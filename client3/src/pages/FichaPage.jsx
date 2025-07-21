@@ -46,18 +46,18 @@ const FichaPage = () => {
   const handleFileDownload = async (file) => {
     try {
       // Remove prefix if present and ensure trimming
-      const base64Content = file.content.split(",")[1].trim();
+      let base64Content = file.content.split(",")[1].trim();
 
-      const byteCharacters = atob(base64Content);
-      const byteNumbers = new Array(byteCharacters.length);
+      let byteCharacters = atob(base64Content);
+      let byteNumbers = new Array(byteCharacters.length);
 
       for (let i = 0; i < byteCharacters.length; i++) {
         byteNumbers[i] = byteCharacters.charCodeAt(i);
       }
 
-      const byteArray = new Uint8Array(byteNumbers);
-      const blob = new Blob([byteArray], { type: file.type });
-      const url = window.URL.createObjectURL(blob);
+      let byteArray = new Uint8Array(byteNumbers);
+      let blob = new Blob([byteArray], { type: file.type });
+      let url = window.URL.createObjectURL(blob);
 
       const a = document.createElement("a");
       a.href = url;
