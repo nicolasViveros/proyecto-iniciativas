@@ -273,7 +273,7 @@ const FichaPage = () => {
               </p>
               <ul>
                 {ficha.files.map((file, index) => (
-                  <li key={index} className="col-span-2">
+                  <li key={index} className="col-span-0">
                     <button
                       onClick={() => handleFileDownload(file)}
                       className="text-blue-500 underline"
