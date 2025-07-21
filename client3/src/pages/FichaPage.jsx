@@ -45,6 +45,7 @@ const FichaPage = () => {
 
   const handleFileDownload = async (file) => {
     try {
+      console.log(file);
       const blob = file.content;
       const url = window.URL.createObjectURL(blob);
 
