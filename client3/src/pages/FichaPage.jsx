@@ -45,13 +45,12 @@ const FichaPage = () => {
 
   const handleFileDownload = async (file) => {
     try {
-      console.log(file);
       // Remove prefix if present and ensure trimming
       let base64Content = file.content.split(",")[1].trim();
-
+      //console.log(base64Content);
       let byteCharacters = atob(base64Content);
       let byteNumbers = new Array(byteCharacters.length);
-
+      console.log(byteCharacters);
       for (let i = 0; i < byteCharacters.length; i++) {
         byteNumbers[i] = byteCharacters.charCodeAt(i);
       }
