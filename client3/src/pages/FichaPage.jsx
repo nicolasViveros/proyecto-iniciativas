@@ -42,6 +42,29 @@ const FichaPage = () => {
   const handleBack = () => {
     navigate("/fichas"); // vuelve al listado de fichas
   };
+
+  const handleFileDownload = async (file) => {
+    try {
+      // Replace 'yourBackendEndpoint' with the actual endpoint to fetch the file blob
+      const response = await fetch(`yourBackendEndpoint/${file.id}`, {
+        headers: { "Content-Type": "application/json" },
+      });
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = file.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Failed to download file:", error);
+    }
+  };
+
   return (
     <div className="relative flex items-center justify-center min-h-screen">
       <button
@@ -244,18 +267,12 @@ const FichaPage = () => {
               <ul>
                 {ficha.files.map((file, index) => (
                   <li key={index} className="col-span-2">
-                    <a
-                      href={`data:${file.type};base64,${file.content}`}
-                      download={file.name}
-                      onClick={(e) => {
-                        if (!file.content) {
-                          e.preventDefault();
-                          alert("Error: The file content is missing.");
-                        }
-                      }}
+                    <button
+                      onClick={() => handleFileDownload(file)}
+                      className="text-blue-500 underline"
                     >
                       {file.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
