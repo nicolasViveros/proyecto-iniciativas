@@ -39,7 +39,7 @@ function HomePage() {
             orientadas a mejorar los sistemas de movilidad en la región de 
             forma sostenible. SoMoS LAC se estructura en grupos temáticos que
              ofrecen espacios dinámicos para propiciar aprendizajes y acciones 
-             colaborativas, siendo uno de ellos el grupo temático de 
+             colaborativas, siendo uno de ellos el grupo temático de {"  "}
              <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>,
              liderado por el Ministerio de Transporte de Colombia, quien 
              promueve el presente concurso como parte de su plan de acción.
