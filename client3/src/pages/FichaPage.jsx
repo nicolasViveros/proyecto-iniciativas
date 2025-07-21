@@ -244,10 +244,15 @@ const FichaPage = () => {
               <ul>
                 {ficha.files.map((file, index) => (
                   <li key={index} className="col-span-2">
-                    <strong>Archivo:</strong>{" "}
                     <a
                       href={`data:${file.type};base64,${file.content}`}
                       download={file.name}
+                      onClick={(e) => {
+                        if (!file.content) {
+                          e.preventDefault();
+                          alert("Error: The file content is missing.");
+                        }
+                      }}
                     >
                       {file.name}
                     </a>
