@@ -20,18 +20,12 @@ function HomePage() {
       contenido: {
         es: (
           <>
-            El concurso SoMoS LAC 2025 es impulsado por{" "}
-            <strong>Euroclima</strong>, un programa de cooperación internacional
-            financiado por la{" "}
-            <strong>
-              Unión Europea (UE) y el Ministerio Federal de Cooperación
-              Económica y Desarrollo de Alemania (BMZ) en marco de la Agenda
-              Global Gateway (GGA)
-            </strong>
-            . Su objetivo es apoyar a los países de América Latina y el Caribe
-            en la lucha contra el cambio climático, promoviendo la mitigación,
-            adaptación, resiliencia e inversión climática en la región. Desde
-            2023, Euroclima abarca a 33 países.
+            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas
+             innovadoras en favor de la equidad de género en movilidad urbana" 
+             es una iniciativa impulsada por Euroclima, un programa de la Unión 
+             Europea que forma parte de la estrategia Global Gateway. Su objetivo 
+             es fortalecer la cooperación con América Latina y el Caribe para 
+             avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
             <div className="my-4">
               En el sector de <strong>movilidad urbana</strong>, Euroclima
               trabaja desde 2016 a través de la{" "}
@@ -61,17 +55,12 @@ function HomePage() {
         ),
         en: (
           <>
-            The SoMoS LAC 2025 contest is driven by <strong>Euroclima</strong>,
-            an international cooperation program funded by the{" "}
-            <strong>
-              European Union (EU) and the Federal Ministry of Economic
-              Cooperation and Development of Germany (BMZ) under the Global
-              Gateway Agenda (GGA)
-            </strong>
-            . Its objective is to support Latin American and Caribbean countries
-            in fighting climate change by promoting mitigation, adaptation,
-            resilience, and climate investment in the region. Since 2023,
-            Euroclima includes 33 countries.
+            The SoMoS LAC competition "Towards Equity: Recognizing innovative
+             initiatives for gender equity in urban mobility" is an initiative 
+             promoted by Euroclima, a European Union program that is part of 
+             the Global Gateway strategy. Its objective is to strengthen cooperation 
+             with Latin America and the Caribbean to advance toward a green, 
+             fair, and sustainable transition, supporting 33 countries.
             <div className="my-4">
               In the <strong>urban mobility</strong> sector, Euroclima has
               worked since 2016 through{" "}
