@@ -271,9 +271,9 @@ const FichaPage = () => {
               <p className="col-span-2">
                 <strong>Archivos:</strong>
               </p>
-              <ul>
+              <ul className="list-disc pl-8 space-y-2">
                 {ficha.files.map((file, index) => (
-                  <li key={index} className="col-span-0">
+                  <li key={index}>
                     <button
                       onClick={() => handleFileDownload(file)}
                       className="text-blue-500 underline"
