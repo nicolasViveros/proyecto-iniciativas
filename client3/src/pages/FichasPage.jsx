@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom
 function FichaCard({ ficha }) {
   const { deleteFicha } = useFichas();
   return (
-    <div className="  border p-4 space-between items-y-end rounded-md  shadow">
+    <div className="  border p-4 space-between items-y-end rounded-md mb-4 shadow">
       <div >
         <h2 className="font-bold text-lg">
           <Link to={`/ficha/${ficha._id}`} className="text-xl hover:underline flex justify-center">
@@ -20,7 +20,7 @@ function FichaCard({ ficha }) {
         <p><strong>Asociaciones:</strong> {ficha.associations.join(', ')}</p>
       </div>
 
-      <div className=" flex gap-x-2 mb-auto ">
+      <div className=" flex gap-x-2 mb-auto items-end justify-end">
         <button
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
