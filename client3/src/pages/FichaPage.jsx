@@ -276,7 +276,7 @@ const FichaPage = () => {
                   <li key={index}>
                     <button
                       onClick={() => handleFileDownload(file)}
-                      className="text-blue-500 underline"
+                      className="text-blue-500 underline text-align-left"
                     >
                       {file.name}
                     </button>
