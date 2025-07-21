@@ -285,6 +285,25 @@ const FichaPage = () => {
               </ul>
             </div>
           )}
+          {ficha.acceptanceLetter && (
+            <div>
+              <p className="col-span-2">
+                <strong>Carta de Aceptación:</strong>
+              </p>
+              <ul className="list-disc pl-8 space-y-2">
+                {ficha.acceptanceLetter.map((file, index) => (
+                  <li key={index}>
+                    <button
+                      onClick={() => handleFileDownload(file)}
+                      className="text-blue-500 underline text-align-left"
+                    >
+                      {file.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>
