@@ -45,6 +45,7 @@ const FichaPage = () => {
 
   const handleFileDownload = async (file) => {
     try {
+      console.log(file);
       // Remove prefix if present and ensure trimming
       let base64Content = file.content.split(",")[1].trim();
 
