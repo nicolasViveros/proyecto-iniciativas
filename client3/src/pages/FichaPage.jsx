@@ -45,8 +45,10 @@ const FichaPage = () => {
 
   const handleFileDownload = async (file) => {
     try {
-      // This example assumes `file.content` is a base64 encoded string
-      const byteCharacters = atob(file.content);
+      // Remove prefix if present and ensure trimming
+      const base64Content = file.content.split(",")[1].trim();
+
+      const byteCharacters = atob(base64Content);
       const byteNumbers = new Array(byteCharacters.length);
 
       for (let i = 0; i < byteCharacters.length; i++) {
@@ -54,7 +56,7 @@ const FichaPage = () => {
       }
 
       const byteArray = new Uint8Array(byteNumbers);
-      const blob = new Blob([byteArray], { type: file.type }); // Ensure the MIME type is correct
+      const blob = new Blob([byteArray], { type: file.type });
       const url = window.URL.createObjectURL(blob);
 
       const a = document.createElement("a");
