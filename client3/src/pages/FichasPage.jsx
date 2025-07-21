@@ -6,7 +6,7 @@ function FichaCard({ ficha }) {
   const { deleteFicha } = useFichas();
   return (
     <div className="  border p-4 space-between items-y-end rounded-md mb-4 shadow">
-      <div className='mb-auto'>
+      <div className='mb-10'>
         <h2 className="font-bold text-lg">
           <Link to={`/ficha/${ficha._id}`} className="text-xl hover:underline flex justify-center">
             Proyecto: {ficha.name}
