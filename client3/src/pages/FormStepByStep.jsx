@@ -1063,10 +1063,13 @@ export default function FormWizard() {
       innovationLabel: "Innovation",
       innovation:
         "Describe what aspects of your initiative are innovative compared to traditional practices in urban mobility with a gender focus *",
+      impactLabel: "Impact",
       impact:
         "What concrete changes has the initiative generated in the employability, participation, safety, or inclusion of women? Include indicators if possible *",
+      transferabilityLabel: "Replicability",
       transferability:
         "Can the initiative be applied in other cities or institutions? Are there transferable tools, protocols, or learnings? *",
+      sustainabilityLabel: "Sostenibilidad",
       sustainability:
         "What mechanisms ensure the continuity of the initiative over time (e.g., funding, institutionalization, alliances)? *",
       ngoAcademyCriteria: "NGO / Academy",
@@ -1405,18 +1408,18 @@ export default function FormWizard() {
         try {
           await createFicha(form)
           navigate("/");
-            // .then(() => {
-            //   setSuccessMessage(
-            //     language === "es"
-            //       ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
-            //       : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
-            //   );
-              setIsSubmitted(true);
-            //   const timeoutId = setTimeout(() => {
-            //     navigate("/");
-            //   }, 5000);
-            //   return () => clearTimeout(timeoutId);
-            // })
+          // .then(() => {
+          //   setSuccessMessage(
+          //     language === "es"
+          //       ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
+          //       : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
+          //   );
+          setIsSubmitted(true);
+          //   const timeoutId = setTimeout(() => {
+          //     navigate("/");
+          //   }, 5000);
+          //   return () => clearTimeout(timeoutId);
+          // })
         } catch (error) {
           console.error("Error al guardar la ficha:", error);
         } finally {
@@ -1424,7 +1427,7 @@ export default function FormWizard() {
         }
       }
     }
-  } 
+  }
 
   const handleBack = () => {
     if (isSubmitted) {
