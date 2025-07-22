@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <footer className=" w-full md:flex-row ">
-        <div className="grid grid-rows-2 h-fit ">
+        <div className="grid grid-rows-2 h-auto ">
 
           {/* Fondo restante con imagen de footer */}
           <div className="flex relative overflow-hidden h-32">
