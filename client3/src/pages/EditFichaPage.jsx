@@ -147,9 +147,8 @@ const handleSave = () => {
         return;
     }
     updateFicha(id, ficha);
-    window.alert("Ficha actualizada")
+  
 
-    console.log('Ficha actualizada:', ficha);
     navigate('/fichas');
 };
 
