@@ -36,6 +36,8 @@ const FichaPage = () => {
     return (
       <div className="  items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full rounded-md justify-center items-center">
+          Cargando ficha...
+
           <div
             className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
             role="status">
@@ -43,7 +45,6 @@ const FichaPage = () => {
               className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
             >Loading...</span>
           </div>
-          Cargando ficha...
         </div>
       </div>
     );
