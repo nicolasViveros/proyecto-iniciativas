@@ -651,9 +651,6 @@ function Step5({
             {language === "es" ? "Privada" : "Private"}
           </option>
           <option value="ONG">ONG</option>
-          <option value="Multilateral">
-            {language === "es" ? "Multilateral" : "Multilateral"}
-          </option>
           <option value="Otra">
             {language === "es" ? "Otra..." : "Other..."}
           </option>
