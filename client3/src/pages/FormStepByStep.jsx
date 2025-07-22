@@ -67,6 +67,7 @@ function Step1({ form, handleChange, translateText, language }) {
       <input
         name="name"
         type="text"
+        autoFocus
         value={form.name}
         onChange={handleChange}
         className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
@@ -169,6 +170,7 @@ function Step2({ form, handleChange, translateText, language }) {
       <textarea
         name="need"
         value={form.need}
+        autoFocus
         maxLength={500 * 6} // A crude way to limit characters based on a rough word-to-char ratio. Better to use on-the-fly word counting.
         onChange={handleTextAreaChange}
         className="w-full border border-gray-300 px-4 py-2 input-focused rounded-md my-2"
@@ -320,6 +322,7 @@ function Step3({ form, handleChange, translateText, language }) {
           name="innovation"
           value={form.innovation}
           onChange={handleTextAreaChange}
+          autoFocus
           className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
           rows="4"
           maxLength={300 * 6}
@@ -530,6 +533,7 @@ function Step4({
               placeholder="https://"
               onChange={(e) => handleLinkChange(index, e.target.value)}
               className="w-full p-2 border rounded my-2 input-focused"
+              autoFocus
             />
             {index > 0 && (
               <button
