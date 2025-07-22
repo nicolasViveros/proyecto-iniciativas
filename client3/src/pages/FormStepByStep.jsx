@@ -266,7 +266,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </div>
 
         <h2 className="text-xl font-bold ">{translateText[language].impactLabel}</h2>
-        <label className="text-xl">{translateText[language].impact}</label>
+        <label className="text-base">{translateText[language].impact}</label>
         <label className="block text-sm">
           {translateText[language].max300words}
         </label>
@@ -284,7 +284,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </div>
 
         <h2 className="text-xl font-bold ">{translateText[language].transferabilityLabel}</h2>
-        <label className="text-xl">
+        <label className="text-base">
           {translateText[language].transferability}
         </label>
         <label className="block text-sm">
@@ -305,7 +305,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </div>
 
         <h2 className="text-xl font-bold ">{translateText[language].sustainabilityLabel}</h2>
-        <label className="text-xl">
+        <label className="text-base">
           {translateText[language].sustainability}
         </label>
         <label className="block text-sm">
@@ -337,7 +337,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </h2>
 
         <h2 className="text-xl font-bold ">{translateText[language].innovationLabel}</h2>
-        <label className="text-xl">{translateText[language].methodology}</label>
+        <label className="text-base">{translateText[language].methodology}</label>
         <label className="block text-sm">
           {translateText[language].max300characters}
         </label>
@@ -356,7 +356,7 @@ function Step3({ form, handleChange, translateText, language }) {
 
 
         <h2 className="text-xl font-bold ">{translateText[language].impactLabel}</h2>
-        <label className="text-xl">{translateText[language].outcomes}</label>
+        <label className="text-base">{translateText[language].outcomes}</label>
         <label className="block text-sm">
           {translateText[language].max300characters}
         </label>
@@ -374,7 +374,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </div>
 
         <h2 className="text-xl font-bold ">{translateText[language].transferabilityLabel}</h2>
-        <label className="text-xl">
+        <label className="text-base">
           {translateText[language].transferabilityOng}
         </label>
         <label className="block text-sm">
@@ -394,7 +394,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </div>
 
         <h2 className="text-xl font-bold ">{translateText[language].sustainabilityLabel}</h2>
-        <label className="text-xl">
+        <label className="text-base">
           {translateText[language].sustainabilityOng}
         </label>
         <label className="block text-sm">
