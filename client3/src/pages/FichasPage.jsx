@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom
 import LoadingSpinner from "../context/LoadingSpinner";
 
 function FichaCard({ ficha }) {
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const { deleteFicha } = useFichas();
   return (
     <div className=" flex flex-col border p-4 space-between justify-between mx-auto rounded shadow">
@@ -28,16 +28,17 @@ function FichaCard({ ficha }) {
           onClick={() => {
             if (window.confirm("¿Está seguro de que desea eliminar esta ficha? Esta acción no se puede deshacer.")) {
               
-              
-              setIsDeleting(true);
+              setIsSaving(true);
               try {
-                 deleteFicha(ficha._id); 
-                  navigate('/fichas');
+                deleteFicha(ficha._id);
+                navigate('/fichas');
               } catch (error) {
-                  console.error("Error al eliminar la ficha:", error);
+                console.error("Error al guardar la ficha:", error);
               } finally {
-                  setIsDeleting(false);
+                setIsSaving(false);
               }
+
+              
             }
           }}
         >
@@ -69,7 +70,7 @@ function FichasPage() {
     </div>
   </div>);
 
-if (isdeleting) {
+if (isSaving) {
   return <div className="flex items-center justify-center min-h-screen">
     <div className="max-w-3xl w-full rounded-md justify-center items-center">
       Guardando ficha...
