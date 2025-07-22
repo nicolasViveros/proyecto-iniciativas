@@ -4,6 +4,7 @@ import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
+import LoadingSpinner from "../context/LoadingSpinner";
 
 function EditFichaPage() {
 
