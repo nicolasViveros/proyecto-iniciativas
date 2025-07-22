@@ -1318,7 +1318,7 @@ function HomePage() {
             {language === "es"
               ? "¡Postula tu Iniciativa!"
               : language === "en"
-                ? "Submit Your Initiative!"
+                ? "Present Your Initiative!"
                 : "Inscreva a sua Iniciativa! "}
           </div>
 
@@ -1326,14 +1326,14 @@ function HomePage() {
             {language === "es"
               ? "RUMBO A LA EQUIDAD:"
               : language === "en"
-                ? "TOWARDS EQUITY:"
+                ? "TOWARDS GENDER EQUITY:"
                 : "RUMO À EQUIDADE:"}
           </h2>
           <p className="text-xs md:text-lg sm:text-lg text-[#5A478D] leading-tight w-47 sm:w-100">
             {language === "es"
               ? "Reconociendo iniciativas innovadoras en favor de la equidad de género en movilidad urbana"
               : language === "en"
-                ? "Recognizing innovative initiatives for gender equity in urban mobility"
+                ? "Celebrating innovative initiatives that promote gender equity in urban mobility"
                 : "Reconhecimento de iniciativas inovadoras em prol da igualdade de gênero na mobilidade urbana"}
           </p>
         </div>

@@ -35,12 +35,12 @@ function translateAssociation(option, language) {
     },
     pt: {
       No: "Não",
-      "Entidades públicas": "Instituição pública",
+      "Entidades públicas": "Entidades públicas",
       "Empresa privada": "Empresa privada",
-      ONG: "ONG",
-      "Sociedad Civil": "Organizações da Sociedade Civil",
+      ONG: "ONGS",
+      "Sociedad Civil": "Sociedade civil",
       "Instituciones educativas y de investigación":
-        "Instituições de ensino e pesquisa",
+        "Instituições de ensino e pesquis",
       "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
         "Organizações multilaterais (ex: BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
       "Organizaciones Internacionales": "Organizações Internacionais",
@@ -1182,7 +1182,7 @@ export default function FormWizard() {
       otherOptionCountry: "Other...",
       specifyCountry: "Specify country",
       legalRepName:
-        "Name of legal representative (for the category Public Institutions and Private Companies) or the leader of the initiative (for the category Civil Society Organisations and Academic Entities). *",
+        "Name of legal representative or the leader of the initiative. *",
       legalRepPosition: "Position *",
       email: "Email *",
       phone: "Contact Phone *",
@@ -1196,59 +1196,59 @@ export default function FormWizard() {
       addResponsible: "+ Add responsible",
       associations:
         "Partnerships for development? (specify all applicable sectors) *",
-      projectInfo: "Project Information",
-      projectName: "Project or Initiative Name:",
-      projectCity: "Project Implementation City:",
-      startDate: "Start Date of Implementation:",
-      isActive: "Is it currently active?",
+      projectInfo: "Initiative Information",
+      projectName: "Project/initiative name:",
+      projectCity: "City of implementation:",
+      startDate: "Start Date:",
+      isActive: "Is it still active?",
       yes: "Yes",
       no: "No",
       reasonInactive: "If not active, briefly explain why:",
       projectDescription: "Project Description",
-      need: "Describe the identified need or problem. *",
+      need: "Identified need or problem. *",
       objectives: "Project objectives. *",
-      targetAudience: "Target audience and beneficiary population. *",
-      activities: "Main activities carried out. *",
+      targetAudience: "Target audience and beneficiaries. *",
+      activities: "Main activities. *",
       resultsObtained: "Results achieved or expected *",
-      projectCategory: "What type of category does the project correspond to?",
-      operatorRegulatorCriteria: "Operator/Regulator Criteria",
+      projectCategory: "Which category?",
+      operatorRegulatorCriteria: "For Public Institutions and Private Companies category",
       operatorRegulatorOption: "Public Institutions and Private Companies",
       ngoAcademyOption: "Civil Society Organizations and Academic Entities",
       innovationLabel: "Innovation",
       innovation:
-        "Describe what aspects of your initiative are innovative compared to traditional practices in urban mobility with a gender focus *",
+        "Describe what aspects of your initiative are innovative compared to traditional practices in gender-sensitive urban mobility. *",
       impactLabel: "Impact",
       impact:
-        "What concrete changes has the initiative generated in the employability, participation, safety, or inclusion of women? Include indicators if possible *",
+        "What concrete changes has the initiative brought about in terms of women's employability, participation, safety or inclusion? Include indicators if possible. *",
       transferabilityLabel: "Replicability",
       transferability:
-        "Can the initiative be applied in other cities or institutions? Are there transferable tools, protocols, or learnings? *",
+        "Can the initiative be applied in other cities or institutions, and are there transferable tools, protocols or learning? *",
       sustainabilityLabel: "Sustainability",
       sustainability:
         "What mechanisms ensure the continuity of the initiative over time (e.g., funding, institutionalization, alliances)? *",
-      ngoAcademyCriteria: "NGO / Academy",
+      ngoAcademyCriteria: "For Civil Society Organizations and Academic Entities category",
       methodology:
-        "What new approach, tool, or methodology have you developed or adapted? How does it differ from existing ones? *",
+        "What new approach, tool or methodology have you developed or adapted, and how does it differ from what already exists? *",
       outcomes:
-        "What results or changes has the initiative generated in actors, policies, knowledge, or social practices? Include data if available *",
+        "What results or changes has the initiative generated in actors, policies, knowledge or social practices? Include data if available. *",
       transferabilityOng:
         "Can the proposal be applied in other contexts? Have you transferred or shared your work with other organizations or institutions? *",
       sustainabilityOng:
-        "What continuity has the initiative had or will it have after its first phase? Are there networks, resources, or structures that support it? *",
+        "What continuity has there been or will there be after the first phase of the initiative? Are there networks, resources or structures to sustain it? *",
       supportMaterial: "Supporting Material",
       links:
-        "Link to publications, evaluations, reports, methodological materials, or impact records.",
+        "Links to publications, evaluations, reports, or impact records.",
       addLink: "+ Add link",
       attachFiles:
-        "Attach publications, evaluations, reports, methodological materials, or impact records.",
+        "Attach publications, evaluations, reports, methodological materials or impact records.",
       delete: "Delete",
       videoPrompt:
-        "Do you want to share a short video (max. 2 minutes) that shows the experience or relevant testimonies? (optional)",
+        "Would you like to share a short video (max. 2 minutes) showing the experience or relevant testimonials (optional)?",
       videoHint: "(Link to YouTube, Vimeo or shared file)",
       recognitionPrompt:
         "Does the initiative have any previous recognition or award? (optional)",
-      recognitionHint: "(Indicate which and in what year, if applicable)",
-      attachLetter: "Attach authorization letter from the legal representative",
+      recognitionHint: "(Indicate which one and in which year, if applicable)",
+      attachLetter: "Attach a letter of authorisation from the legal representative (for the category Public Institutions and Private Companies) or the leader of the initiative (for the category Civil Society Organisations and Academic Entities).",
       declaration:
         "I declare that the information provided in this form is true and I authorise the use, processing and publication of data, background information and graphic material submitted in the framework of this competition for the purposes of knowledge dissemination of SoMoS LAC or its organisers. No personal data will be published.",
       max500words: "(max 500 words)",
@@ -1298,7 +1298,7 @@ export default function FormWizard() {
       organizationDetails: "DADOS DA ORGANIZAÇÃO CANDIDATA",
       organizationName: "Nome da organização *",
       organizationType: "Tipo de organização *",
-      country: "País",
+      country: "País:",
       selectAType: "Selecione um tipo",
       public: "Pública",
       private: "Privada",
@@ -1308,21 +1308,21 @@ export default function FormWizard() {
       international: "Internacional",
       otherOptionCountry: "Outro...",
       specifyCountry: "Especifique o país",
-      legalRepName: "Nome do(a) representante legal ou Líder da iniciativa*",
+      legalRepName: "Nome do(a) representante legal ou do líder da iniciativa *",
       legalRepPosition: "Cargo *",
-      email: "E-mail *",
-      phone: "Telefone de contato *",
+      email: "Email *",
+      phone: "Número de telefone de contato:*",
       registrationId:
         "RUT/NIT/CNPJ/Registro legal da organização (Se aplicável)",
       team: "Equipe responsável",
       teamInstructions:
-        "Insira aqui os nomes, cargos e e-mails de contato das principais pessoas envolvidas na realização do projeto ou iniciativa. (você pode inserir mais de uma pessoa). *",
+        "Insira aqui os nomes, cargos e emails de contato das principais pessoas envolvidas na realização do projeto ou iniciativa) (mais de uma pessoa pode entrar). *",
       nameLabel: "Nome*",
       positionLabel: "Cargo*",
       emailLabel: "Email*",
-      addResponsible: "+ Adicionar responsável",
+      addResponsible: "+ Adicione responsável",
       associations:
-        "Houve associações para o desenvolvimento? Indique todos os setores associados*",
+        "Houve parcerias para o desenvolvimento? Indique os setores associados *",
       projectInfo: "INFORMAÇÕES SOBRE  A INICITIVA CANDIDATA",
       projectName: "Nome do projeto ou iniciativa:",
       projectCity: "Cidade de implementação do projeto",
@@ -1345,43 +1345,43 @@ export default function FormWizard() {
         "Organizações da sociedade civil e Entidades acadêmicas",
       innovationLabel: "Inovação",
       innovation:
-        "Descreva quais aspectos de sua iniciativa são inovadores em relação às práticas tradicionais em mobilidade urbana com foco de gênero *",
+        "Descreva quais aspectos de sua iniciativa são inovadores em comparação com as práticas tradicionais de mobilidade urbana com abordagem de gênero. *",
       impactLabel: "Impacto",
       impact:
-        "Que mudanças concretas a iniciativa gerou na empregabilidade, participação, segurança ou inclusão de mulheres? Inclua indicadores, se possível *",
+        "Que mudanças concretas a iniciativa gerou na empregabilidade, participação, segurança ou inclusão das mulheres? Inclua indicadores, se possível. *",
       transferabilityLabel: "Replicabilidade",
       transferability:
-        "A iniciativa pode ser aplicada em outras cidades ou instituições? Existem ferramentas, protocolos ou aprendizados transferíveis? *",
+        "A iniciativa pode ser aplicada em outras cidades ou instituições? Existem ferramentas, protocolos ou aprendizado transferíveis? *",
       sustainabilityLabel: "Sustentabilidade",
       sustainability:
-        "Que mecanismos garantem a continuidade da iniciativa ao longo do tempo (ex: financiamento, institucionalização, alianças)? *",
+        "Que mecanismos garantem a continuidade da iniciativa ao longo do tempo (por exemplo, financiamento, institucionalização, parcerias)? *",
       ngoAcademyCriteria:
         "Critérios para a categoria Organizações da sociedade civil e Entidades acadêmicas",
       methodology:
-        "Que abordagem, ferramenta ou metodologia nova vocês desenvolveram ou adaptaram? Como ela se diferencia do que já existe? *",
+        "Que nova abordagem, ferramenta ou metodologia você desenvolveu ou adaptou? Como é diferente do que já existe? *",
       outcomes:
-        "Que resultados ou mudanças a iniciativa gerou em atores, políticas, conhecimento ou práticas sociais? Inclua dados, se tiver *",
+        " Que resultados ou mudanças a iniciativa gerou em atores, políticas, conhecimentos ou práticas sociais? Inclua dados, se você os tiver. *",
       transferabilityOng:
-        "A proposta pode ser aplicada em outros contextos? Vocês transferiram ou compartilharam seu trabalho com outras organizações ou instituições? *",
+        "A proposta pode ser aplicada em outros contextos? Transferiram ou partilharam o seu trabalho com outras organizações ou instituições? *",
       sustainabilityOng:
-        "Que continuidade a iniciativa teve ou terá após sua primeira fase? Existem redes, recursos ou estruturas que a sustentam? *",
+        "Que continuidade teve ou terá a iniciativa após a sua primeira fase? Existem redes, recursos ou estruturas que a apoiem? *",
       supportMaterial: "Material de apoio",
       links:
         "Link para publicações, avaliações, relatórios, materiais metodológicos ou registros de impacto.",
       addLink: "+ Adicionar link",
       attachFiles:
-        "Anexe publicações, avaliações, relatórios, materiais metodológicos ou registros de impacto.",
+        "Anexar publicações, avaliações, relatórios, materiais metodológicos ou registros de impacto.",
       delete: "Excluir",
       videoPrompt:
-        "Deseja compartilhar um vídeo curto (máx. 2 minutos) que mostre a experiência ou depoimentos relevantes? (opcional)",
+        "Deseja compartilhar um pequeno vídeo (máx. 2 minutos) que mostre a experiência ou depoimentos relevantes? (opcional)",
       videoHint: "(Link para YouTube, Vimeo ou arquivo compartilhado)",
       recognitionPrompt:
-        "A iniciativa possui algum reconhecimento ou prêmio prévio? (opcional)",
+        "A iniciativa tem algum reconhecimento ou premiação anterior? (opcional)",
       recognitionHint: "(Indicar qual e em que ano, se aplicável)",
       attachLetter:
-        "Anexe carta de autorização do(a) representante legal (para a categoria Instituições públicas e Empresas privadas) ou do(a) líder da iniciativa (para a categoria Organizações da sociedade civil e Entidades acadêmicas)",
+        "Anexar uma carta de autorização do representante legal (para a categoria Instituições Públicas e Empresas Privadas) ou do líder da iniciativa (para a categoria Organizações da Sociedade Civil e Entidades Acadêmicas).",
       declaration:
-        "Declaro que as informações fornecidas neste formulário são verdadeiras e autorizo o uso, tratamento e publicação de dados, antecedentes e material gráfico entregues no âmbito deste concurso para fins de divulgação da SoMoS LAC ou de seus organizadores. Nenhum dado pessoal será publicado.* ",
+        "Declaro que as informações fornecidas neste arquivo são verdadeiras e autorizo o uso e processamento de dados, informações básicas e material gráfico entregues no âmbito deste concurso para fins de divulgação da SoMoS LAC ou de seus organizadores. Nenhum dado pessoal será publicado.*  ",
       max500words: "(máx 500 palavras)",
       max300words: "(máx 300 palavras)",
       max250words: "(máx 250 palavras)",
