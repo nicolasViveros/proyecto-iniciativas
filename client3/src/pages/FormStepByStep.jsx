@@ -10,15 +10,17 @@ function translateAssociation(option) {
   switch (option) {
     case "No":
       return "No";
-    case "Otras Secretarías":
-      return "Other Secretariats";
-    case "ONGs y Sociedad Civil":
-      return "NGOs and Civil Society";
+    case "Entidades públicas":
+      return "public entities";
+    case "Empresa privada":
+      return "Companies";
+    case "ONG":
+      return "NGO";
+      case "Sociedad Civil":
+        return "Civil Society";
     case "Instituciones educativas y de investigación":
       return "Educational and Research Institutions";
-    case "Empresas":
-      return "Companies";
-    case "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)":
+    case "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
       return "Multilateral Organizations (such as IDB, World Bank, and UN)";
     case "Organizaciones Internacionales":
       return "International Organizations";
@@ -786,7 +788,7 @@ function Step5({
         value={form.registrationId}
         onChange={handleChange}
         className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-        required
+
       />
 
       <h3 className="text-xl mt-5 ">
@@ -794,7 +796,7 @@ function Step5({
       </h3>
       <h3 className="text-sm">
         {language === "es"
-          ? "Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa*"
+          ? "(Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa) (puede ingresar más de una persona) Nombre, Cargo, Email. Agregar responsable *."
           : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
       </h3>
 
@@ -855,7 +857,7 @@ function Step5({
       <h3 className="text-xl my-5">
         {translateText[language].associations}{" "}
       </h3>
-      <div className="grid grid-cols-2 gap-2 ">
+      <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
         {[
           "No",
           "Otras Secretarías",
@@ -881,7 +883,7 @@ function Step5({
         ))}
       </div>
 
-      <div className="flex items-start mb-6">
+      <div className="flex items-start my-6">
         <label className="flex items-start text-sm cursor-pointer">
           <input
             type="checkbox"
@@ -950,10 +952,10 @@ export default function FormWizard() {
       legalRepPosition: "Cargo *",
       email: "Correo electrónico *",
       phone: "Teléfono de contacto *",
-      registrationId: "RUT/NIT/CNPJ/Registro legal",
+      registrationId: "RUT/NIT/CNPJ/Registro legal de la organización",
       team: "Equipo responsable",
       associations:
-        "¿Hubo asociaciones para el desarrollo? En caso afirmativo, indique los sectores asociados *",
+        "¿Hubo asociaciones para el desarrollo? Indique todos los sectores asociados*",
       projectInfo: "Información del proyecto postulado",
       projectName: "Nombre del proyecto o iniciativa:",
       projectCity: "Ciudad de implementación del proyecto:",
