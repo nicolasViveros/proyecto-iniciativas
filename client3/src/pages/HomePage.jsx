@@ -273,7 +273,7 @@ function HomePage() {
                     académicas
                   </strong>
                 </h3>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc list-inside ml-4">
                   <li>
                   La iniciativa debe referirse a experiencias o análisis aplicadas a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
                   </li>
@@ -307,7 +307,7 @@ function HomePage() {
                     Public Institutions and Private Companies
                   </strong>
                 </h3>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc list-inside ml-4">
                   <li>
                   Must have implemented the initiative in at least one city in Latin America or the Caribbean, or have been developed for a country in these regions.   
                   </li>
@@ -335,7 +335,7 @@ function HomePage() {
                     Civil Society Organizations and Academic Entities
                   </strong>
                 </h3>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc list-inside ml-4">
                   <li>
                   The initiative must relate to experiences or research applied in a Latin American or Caribbean city, or have been developed for a country in these regions.  
                   </li>
@@ -364,27 +364,20 @@ function HomePage() {
     {
       titulo: {
         es: "Postulación",
-        en: "Application",
+        en: "Application Process",
       },
       contenido: {
         es: (
           <>
             <ul className="list-disc list-inside">
               <li>
-                SoMoS LAC llevará a cabo un llamado público que se difundirá por
-                distintos medios además de contactar a los responsables de las
-                más de ochenta iniciativas que ya han sido identificadas en el
-                marco del trabajo sobre “Mapeo de iniciativas de género e
-                inclusión” de Somos LAC.
+              Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea en https://rumboalaequidad.org/
               </li>
               <li>
-                Las postulaciones se realizarán exclusivamente a través de un
-                formulario electrónico en línea.
+              Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información sobre la inicitiva y de su logo.
               </li>
               <li>
-                Se deberá adjuntar una carta firmada por una autoridad de alta
-                dirección de la institución, autorizando la postulación y el uso
-                de información y de su logo.
+              La postulación se puede hacer en español (ES), inglés (EN) o portugués (PT).
               </li>
             </ul>
           </>
@@ -393,19 +386,13 @@ function HomePage() {
           <>
             <ul className="list-disc list-inside">
               <li>
-                SoMoS LAC will make a public call that will be disseminated
-                through various media, in addition to contacting the leaders of
-                the more than eighty initiatives already identified as part of
-                the "Mapping of gender and inclusion initiatives" by Somos LAC.
+              Applications must be submitted exclusively through the online form at https://rumboalaequidad.org/
               </li>
               <li>
-                Applications will be made exclusively through an online
-                electronic form.
+              Applicants must include a letter signed by a senior official of the institution, authorizing the submission and use of information and the organization’s logo.
               </li>
               <li>
-                A letter signed by a senior management authority of the
-                institution must be attached, authorizing the application and
-                the use of information and its logo.
+              Applications can be submitted in Spanish (ES), English (EN), or Portuguese (PT).
               </li>
             </ul>
           </>
@@ -545,6 +532,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
+            El jurado estará compuesto por personas expertas en género, movilidad y gestión pública.
           </>
         ),
         en: (
