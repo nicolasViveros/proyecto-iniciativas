@@ -29,8 +29,6 @@ function FichaCard({ ficha, handleDelete }) {
             if (window.confirm("¿Está seguro de que desea eliminar esta ficha? Esta acción no se puede deshacer.")) {
 
              handleDelete(ficha._id);
-
-
             }
           }}
         >

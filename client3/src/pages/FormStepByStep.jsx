@@ -1598,14 +1598,14 @@ export default function FormWizard() {
   if (isSaving) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="max-w-3xl w-full rounded-md justify-center items-center">
-          {language === "es"
+        {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
+          {/* {language === "es"
             ? "Guardando postulación..."
             : language === "en"
               ? "Saving application..."
-              : "Salvando candidatura..."}
+              : "Salvando candidatura..."} */}
           <LoadingSpinner />
-        </div>
+        {/* </div> */}
       </div>
     );
   }
