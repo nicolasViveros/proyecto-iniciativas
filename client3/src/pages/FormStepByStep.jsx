@@ -1022,9 +1022,13 @@ export default function FormWizard() {
     recognition: "",
     acceptanceLetter: [],
     accepted: false,
-    language,
+    language: language,
   });
 
+  useEffect(() => {
+    setForm((prevForm) => ({ ...prevForm, language }));
+  }, [language]);
+  
   const translateText = {
     es: {
       organizationDetails: "DATOS DE LA ORGANIZACIÓN POSTULANTE",
