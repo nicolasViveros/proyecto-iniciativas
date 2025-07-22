@@ -6,7 +6,7 @@ function Footer() {
       <div className="justify-center flex flex-col items-center sm:justify-start sm:items-start">
               <span className="sm:pl-6 text-xs ">Implementado por:</span>
       </div>
-      <footer className="relative w-full flex flex-row md:flex-row h-auto">
+      <footer className="relative w-full flex flex-col md:flex-col h-auto">
         {/* Logo izquierda (GIZ) con fondo blanco */}
         <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
         <Link to="/">
