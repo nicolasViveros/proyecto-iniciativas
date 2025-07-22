@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFichas } from "../context/FichasContext";
@@ -187,7 +186,8 @@ function Step2({ form, handleChange, translateText, language }) {
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.targetAudience} / 500 {language === "es" ? "palabras" : "words"}
+        {wordCount.targetAudience} / 500{" "}
+        {language === "es" ? "palabras" : "words"}
       </div>
 
       <label className="text-xl">{translateText[language].activities}</label>
@@ -207,7 +207,9 @@ function Step2({ form, handleChange, translateText, language }) {
         {wordCount.activities} / 500 {language === "es" ? "palabras" : "words"}
       </div>
 
-      <label className="text-xl">{translateText[language].resultsObtained}</label>
+      <label className="text-xl">
+        {translateText[language].resultsObtained}
+      </label>
       <label className="block text-sm">
         {translateText[language].max500words}
       </label>
@@ -221,7 +223,8 @@ function Step2({ form, handleChange, translateText, language }) {
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.resultsObtained} / 500 {language === "es" ? "palabras" : "words"}
+        {wordCount.resultsObtained} / 500{" "}
+        {language === "es" ? "palabras" : "words"}
       </div>
 
       <label className="text-xl">
@@ -233,11 +236,18 @@ function Step2({ form, handleChange, translateText, language }) {
         onChange={handleChange}
         className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
       >
-        <option className="accent-[#5d5593]" value="Instituciones públicas y Empresas privadas">
-          {language === "es" ? "Instituciones públicas y Empresas privadas" : "Operator/Regulator"}
+        <option
+          className="accent-[#5d5593]"
+          value="Instituciones públicas y Empresas privadas"
+        >
+          {language === "es"
+            ? "Instituciones públicas y Empresas privadas"
+            : "Operator/Regulator"}
         </option>
         <option value="Organizaciones de la sociedad civil y Entidades académicas">
-          {language === "es" ? "Organizaciones de la sociedad civil y Entidades académicas" : "NGO/Academy"}
+          {language === "es"
+            ? "Organizaciones de la sociedad civil y Entidades académicas"
+            : "NGO/Academy"}
         </option>
       </select>
     </div>
@@ -264,8 +274,12 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].operatorRegulatorCriteria}
         </h2>
 
-        <h2 className="text-xl font-bold ">{translateText[language].innovationLabel}</h2>
-        <label className="text-base">{translateText[language].innovation}</label>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].innovationLabel}
+        </h2>
+        <label className="text-base">
+          {translateText[language].innovation}
+        </label>
         <label className="block text-sm">
           {translateText[language].max300words}
         </label>
@@ -279,10 +293,13 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={300 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.innovation} / 300 {language === "es" ? "palabras" : "words"}
+          {wordCount.innovation} / 300{" "}
+          {language === "es" ? "palabras" : "words"}
         </div>
 
-        <h2 className="text-xl font-bold ">{translateText[language].impactLabel}</h2>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].impactLabel}
+        </h2>
         <label className="text-base">{translateText[language].impact}</label>
         <label className="block text-sm">
           {translateText[language].max300words}
@@ -300,7 +317,9 @@ function Step3({ form, handleChange, translateText, language }) {
           {wordCount.impact} / 300 {language === "es" ? "palabras" : "words"}
         </div>
 
-        <h2 className="text-xl font-bold ">{translateText[language].transferabilityLabel}</h2>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].transferabilityLabel}
+        </h2>
         <label className="text-base">
           {translateText[language].transferability}
         </label>
@@ -318,10 +337,13 @@ function Step3({ form, handleChange, translateText, language }) {
           required
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
+          {wordCount.transferability} / 250{" "}
+          {language === "es" ? "palabras" : "words"}
         </div>
 
-        <h2 className="text-xl font-bold ">{translateText[language].sustainabilityLabel}</h2>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].sustainabilityLabel}
+        </h2>
         <label className="text-base">
           {translateText[language].sustainability}
         </label>
@@ -339,22 +361,29 @@ function Step3({ form, handleChange, translateText, language }) {
           required
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.sustainability} / 250 {language === "es" ? "palabras" : "words"}
+          {wordCount.sustainability} / 250{" "}
+          {language === "es" ? "palabras" : "words"}
         </div>
-
       </div>
     );
   }
 
-  if (form.category === "Organizaciones de la sociedad civil y Entidades académicas") {
+  if (
+    form.category ===
+    "Organizaciones de la sociedad civil y Entidades académicas"
+  ) {
     return (
       <div>
         <h2 className="text-3xl text-center font-bold mb-4">
           {translateText[language].ngoAcademyCriteria}
         </h2>
 
-        <h2 className="text-xl font-bold ">{translateText[language].innovationLabel}</h2>
-        <label className="text-base">{translateText[language].methodology}</label>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].innovationLabel}
+        </h2>
+        <label className="text-base">
+          {translateText[language].methodology}
+        </label>
         <label className="block text-sm">
           {translateText[language].max300characters}
         </label>
@@ -368,11 +397,13 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={300 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.methodology} / 300 {language === "es" ? "palabras" : "words"}
+          {wordCount.methodology} / 300{" "}
+          {language === "es" ? "palabras" : "words"}
         </div>
 
-
-        <h2 className="text-xl font-bold ">{translateText[language].impactLabel}</h2>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].impactLabel}
+        </h2>
         <label className="text-base">{translateText[language].outcomes}</label>
         <label className="block text-sm">
           {translateText[language].max300characters}
@@ -390,7 +421,9 @@ function Step3({ form, handleChange, translateText, language }) {
           {wordCount.outcomes} / 300 {language === "es" ? "palabras" : "words"}
         </div>
 
-        <h2 className="text-xl font-bold ">{translateText[language].transferabilityLabel}</h2>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].transferabilityLabel}
+        </h2>
         <label className="text-base">
           {translateText[language].transferabilityOng}
         </label>
@@ -407,10 +440,13 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={250 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
+          {wordCount.transferability} / 250{" "}
+          {language === "es" ? "palabras" : "words"}
         </div>
 
-        <h2 className="text-xl font-bold ">{translateText[language].sustainabilityLabel}</h2>
+        <h2 className="text-xl font-bold ">
+          {translateText[language].sustainabilityLabel}
+        </h2>
         <label className="text-base">
           {translateText[language].sustainabilityOng}
         </label>
@@ -427,9 +463,9 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={250 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.sustainability} / 250 {language === "es" ? "palabras" : "words"}
+          {wordCount.sustainability} / 250{" "}
+          {language === "es" ? "palabras" : "words"}
         </div>
-
       </div>
     );
   }
@@ -456,7 +492,7 @@ function Step4({
 
       <label className="text-xl">{translateText[language].links}</label>
       {form.links.map((link, index) => (
-        <div key={index} >
+        <div key={index}>
           <div className="flex items-center">
             <input
               type="url"
@@ -501,7 +537,6 @@ function Step4({
             className="mt-2 p-2 border border-gray-300 rounded-md"
           >
             <div className="flex items-center justify-between">
-
               <p>
                 {file.name} ({file.type})
               </p>
@@ -513,9 +548,7 @@ function Step4({
               >
                 {language === "es" ? "Eliminar" : "Delete"}
               </button>
-
             </div>
-
           </div>
         ))}
       </div>
@@ -579,7 +612,6 @@ function Step4({
           </div>
         ))}
       </div>
-
     </div>
   );
 }
@@ -623,12 +655,20 @@ function Step5({
   };
 
   useEffect(() => {
-    if (organizationType === "Otra" && otherOrganizationType !== form.organizationType) {
+    if (
+      organizationType === "Otra" &&
+      otherOrganizationType !== form.organizationType
+    ) {
       handleChange({
         target: { name: "organizationType", value: otherOrganizationType },
       });
     }
-  }, [organizationType, otherOrganizationType, handleChange, form.organizationType]);
+  }, [
+    organizationType,
+    otherOrganizationType,
+    handleChange,
+    form.organizationType,
+  ]);
 
   useEffect(() => {
     if (country === "Otro" && otherCountry !== form.country) {
@@ -637,9 +677,7 @@ function Step5({
   }, [country, otherCountry, handleChange, form.country]);
 
   return (
-
     <div>
-
       <h1 className="text-3xl text-center font-bold mb-4">
         {translateText[language].organizationDetails}
       </h1>
@@ -802,7 +840,11 @@ function Step5({
         required
         maxLength="13" // Limit to 13 characters
         pattern="^\+?[0-9]*$" // Regex pattern to allow only numbers and the '+' symbol
-        title={language === "es" ? "Solo se permiten números y el símbolo '+'" : "Only numbers and the '+' symbol are allowed"}
+        title={
+          language === "es"
+            ? "Solo se permiten números y el símbolo '+'"
+            : "Only numbers and the '+' symbol are allowed"
+        }
       />
 
       <label htmlFor="registrationId" className="text-xl">
@@ -814,18 +856,14 @@ function Step5({
         value={form.registrationId}
         onChange={handleChange}
         className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-
       />
 
-      <h3 className="text-xl mt-5 ">
-        {translateText[language].team}
-      </h3>
+      <h3 className="text-xl mt-5 ">{translateText[language].team}</h3>
       <h3 className="text-sm">
         {language === "es"
           ? "Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa. (puede ingresar más de una persona). *"
           : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
       </h3>
-
 
       {form.team.map((member, index) => (
         <div key={index} className="grid grid-cols-5 gap-1 my-1">
@@ -880,9 +918,7 @@ function Step5({
         {language === "es" ? "+ Agregar responsable" : "+ Add responsible"}
       </button>
 
-      <h3 className="text-xl my-5">
-        {translateText[language].associations}{" "}
-      </h3>
+      <h3 className="text-xl my-5">{translateText[language].associations} </h3>
       <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
         {[
           "No",
@@ -978,11 +1014,13 @@ export default function FormWizard() {
       organizationName: "Nombre de la organización *",
       organizationType: "Tipo de organización *",
       country: "País",
-      legalRepName: "Nombre de el/la representante legal o Lider de la iniciativa*",
+      legalRepName:
+        "Nombre de el/la representante legal o Lider de la iniciativa*",
       legalRepPosition: "Cargo *",
       email: "Correo electrónico *",
       phone: "Teléfono de contacto *",
-      registrationId: "RUT/NIT/CNPJ/Registro legal de la organización (Si aplica)",
+      registrationId:
+        "RUT/NIT/CNPJ/Registro legal de la organización (Si aplica)",
       team: "Equipo responsable",
       associations:
         "¿Hubo asociaciones para el desarrollo? Indique todos los sectores asociados*",
@@ -1002,7 +1040,8 @@ export default function FormWizard() {
       activities: "Principales actividades realizadas. *",
       resultsObtained: "Resultados obtenidos o esperados. *",
       projectCategory: "¿A cuál categoría postula el proyecto?",
-      operatorRegulatorCriteria: "Criterios para la categoría Instituciones públicas y Empresas privadas",
+      operatorRegulatorCriteria:
+        "Criterios para la categoría Instituciones públicas y Empresas privadas",
       innovationLabel: "Innovación",
       innovation:
         "Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *",
@@ -1015,7 +1054,8 @@ export default function FormWizard() {
       sustainabilityLabel: "Sostenibilidad",
       sustainability:
         "¿Qué mecanismos aseguran la continuidad de la iniciativa en el tiempo (ej. financiamiento, institucionalización, alianzas)? *",
-      ngoAcademyCriteria: "Criterios para la categoría Organizaciones de la sociedad civil y Entidades académicas",
+      ngoAcademyCriteria:
+        "Criterios para la categoría Organizaciones de la sociedad civil y Entidades académicas",
       methodology:
         "¿Qué enfoque, herramienta o metodología nueva han desarrollado o adaptado? ¿En qué se diferencia de lo ya existente? *",
       outcomes:
@@ -1056,7 +1096,8 @@ export default function FormWizard() {
       organizationName: "Organization Name *",
       organizationType: "Organization Type *",
       country: "Country",
-      legalRepName: "Name of legal representative (for the category Public Institutions and Private Companies) or the leader of the initiative (for the category Civil Society Organisations and Academic Entities). *",
+      legalRepName:
+        "Name of legal representative (for the category Public Institutions and Private Companies) or the leader of the initiative (for the category Civil Society Organisations and Academic Entities). *",
       legalRepPosition: "Position *",
       email: "Email *",
       phone: "Contact Phone *",
@@ -1218,15 +1259,17 @@ export default function FormWizard() {
         if (!member.email) {
           newErrors.push(
             language === "es"
-              ? `El correo electrónico del miembro ${index + 1
-              } del equipo es requerido.`
+              ? `El correo electrónico del miembro ${
+                  index + 1
+                } del equipo es requerido.`
               : `Team member ${index + 1} email is required.`
           );
         } else if (!isValidEmail(member.email)) {
           newErrors.push(
             language === "es"
-              ? `El correo electrónico del miembro ${index + 1
-              } tiene un formato inválido.`
+              ? `El correo electrónico del miembro ${
+                  index + 1
+                } tiene un formato inválido.`
               : `Team member ${index + 1} email has an invalid format.`
           );
         }
@@ -1284,9 +1327,11 @@ export default function FormWizard() {
             : "Results achieved or expected are required."
         );
       }
-
     }
-    if (currentStep === 2 && form.category === "Instituciones públicas y Empresas privadas") {
+    if (
+      currentStep === 2 &&
+      form.category === "Instituciones públicas y Empresas privadas"
+    ) {
       if (!form.innovation)
         newErrors.push(
           language === "es"
@@ -1312,7 +1357,11 @@ export default function FormWizard() {
             : "Sustainability information is required."
         );
     }
-    if (currentStep === 2 && form.category === "Organizaciones de la sociedad civil y Entidades académicas") {
+    if (
+      currentStep === 2 &&
+      form.category ===
+        "Organizaciones de la sociedad civil y Entidades académicas"
+    ) {
       if (!form.methodology)
         newErrors.push(
           language === "es"
@@ -1340,26 +1389,6 @@ export default function FormWizard() {
     }
 
     if (currentStep === 3) {
-      // form.links.forEach((link, index) => {
-      //   if (!link) {
-      //     newErrors.push(
-      //       language === "es"
-      //         ? `El campo link no debe estar vacío.`
-      //         : `The link field cannot be empty.`
-      //     );
-      //   } else {
-      //     try {
-      //       new URL(link);
-      //     } catch (_) {
-      //       newErrors.push(
-      //         language === "es"
-      //           ? `El link ${index + 1} es inválido.`
-      //           : `Link ${index + 1} is invalid.`
-      //       );
-      //     }
-      //   }
-      // });
-
       if (form.acceptanceLetter.length === 0) {
         newErrors.push(
           language === "es"
@@ -1395,7 +1424,6 @@ export default function FormWizard() {
     setForm({ ...form, team: updatedTeam });
   };
 
-
   const handleAssociationChange = (e) => {
     const { value, checked } = e.target;
     setForm({
@@ -1413,12 +1441,14 @@ export default function FormWizard() {
   };
 
   if (isSaving) {
-    return <div className="flex items-center justify-center min-h-screen">
-      <div className="max-w-3xl w-full rounded-md justify-center items-center">
-        Guardando postulación...
-        <LoadingSpinner />
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="max-w-3xl w-full rounded-md justify-center items-center">
+          Guardando postulación...
+          <LoadingSpinner />
+        </div>
       </div>
-    </div>;
+    );
   }
 
   const prevStep = () => {
@@ -1432,22 +1462,10 @@ export default function FormWizard() {
       if (userConfirmed) {
         setIsSaving(true);
 
-
         try {
-          await createFicha(form)
+          await createFicha(form);
           navigate("/");
-          // .then(() => {
-          //   setSuccessMessage(
-          //     language === "es"
-          //       ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
-          //       : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
-          //   );
           setIsSubmitted(true);
-          //   const timeoutId = setTimeout(() => {
-          //     navigate("/");
-          //   }, 5000);
-          //   return () => clearTimeout(timeoutId);
-          // })
         } catch (error) {
           console.error("Error al guardar la ficha:", error);
         } finally {
@@ -1455,7 +1473,7 @@ export default function FormWizard() {
         }
       }
     }
-  }
+  };
 
   const handleBack = () => {
     if (isSubmitted) {
@@ -1541,7 +1559,6 @@ export default function FormWizard() {
   };
 
   const steps = [
-
     <Step1
       form={form}
       handleChange={handleChange}
@@ -1587,17 +1604,20 @@ export default function FormWizard() {
   ];
 
   const switchToSpanish = () => {
-    if (language !== "es") toggleLanguage();
+    toggleLanguage("es"); // Pass 'es' to toggleLanguage
   };
 
   const switchToEnglish = () => {
-    if (language !== "en") toggleLanguage();
+    toggleLanguage("en"); // Pass 'en' to toggleLanguage
+  };
+
+  const switchToPortuguese = () => {
+    toggleLanguage("pt"); // Pass 'pt' to toggleLanguage
   };
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
-
       <button
         onClick={handleBack}
         className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
@@ -1611,16 +1631,31 @@ export default function FormWizard() {
       </button>
 
       <div className="absolute top-4 right-4 space-x-2">
-        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToSpanish}>ES</button>
-        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>EN</button>
-
-        {/* <button className="rounded-full bg-white p-2 border" onClick="/">PT</button> */}
+        {/* <div className="flex justify-end p-4 space-x-2"> */}
+        <button
+          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          onClick={switchToSpanish}
+        >
+          ES
+        </button>
+        <button
+          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          onClick={switchToEnglish}
+        >
+          EN
+        </button>
+        <button
+          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          onClick={switchToPortuguese}
+        >
+          PT
+        </button>
       </div>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
         <div className="mb-6">
           <div className="text-center text-sm mb-1">
-            {currentStep + 1} {language === "es" ? "de" : "of"} {steps.length}
+            {currentStep + 1} {language === "en" ? "of" : "de"} {steps.length}
           </div>
           <div className="w-full bg-[#a49fc4] rounded-full h-2.5 overflow-hidden">
             <div
@@ -1696,10 +1731,11 @@ export default function FormWizard() {
               </button>
               <button
                 type="submit"
-                className={`text-white px-4 py-2 rounded ${form.accepted
-                  ? "bg-[#5d5593] hover:bg-[#a49fc4]"
-                  : "bg-[#6c6a77] hover:bg-[#6c6a77]"
-                  }`}
+                className={`text-white px-4 py-2 rounded ${
+                  form.accepted
+                    ? "bg-[#5d5593] hover:bg-[#a49fc4]"
+                    : "bg-[#6c6a77] hover:bg-[#6c6a77]"
+                }`}
                 disabled={!form.accepted || isSubmitted}
               >
                 {translateText[language].submit}
