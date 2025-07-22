@@ -6,7 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 
 
-function Step1({
+function Step5({
   form,
   handleChange,
   handleTeamChange,
@@ -359,7 +359,7 @@ function translateAssociation(option) {
   }
 }
 
-function Step2({ form, handleChange, translateText, language }) {
+function Step1({ form, handleChange, translateText, language }) {
   const handleRadioChange = (e) => {
     const { name, value } = e.target;
     const booleanValue = value === "true";
@@ -446,7 +446,7 @@ function Step2({ form, handleChange, translateText, language }) {
   );
 }
 
-function Step3({ form, handleChange, translateText, language }) {
+function Step2({ form, handleChange, translateText, language }) {
   const [wordCount, setWordCount] = useState({ need: 0 });
 
   const handleTextAreaChange = (e) => {
@@ -555,7 +555,7 @@ function Step3({ form, handleChange, translateText, language }) {
   );
 }
 
-function Step4({ form, handleChange, translateText, language }) {
+function Step3({ form, handleChange, translateText, language }) {
   const [wordCount, setWordCount] = useState({ need: 0 });
 
   const handleTextAreaChange = (e) => {
@@ -737,7 +737,7 @@ function Step4({ form, handleChange, translateText, language }) {
   }
 }
 
-function Step5({
+function Step4({
   form,
   handleRemoveFile2,
   handleRemoveAcceptanceLetter,
@@ -1544,9 +1544,9 @@ export default function FormWizard() {
       </button>
 
       <div className="absolute top-4 right-4 space-x-2">
-        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToSpanish}>Es</button>
-        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>En</button>
-        {/* <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button> */}
+        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToSpanish}>ES</button>
+        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>EN</button>
+        {/* <button className="rounded-full bg-white p-2 border" onClick="/">PT</button> */}
       </div>
 
       <div className="max-w-3xl w-full p-10 rounded-md">
