@@ -11,6 +11,7 @@ function EditFichaPage() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [ficha, setFicha] = useState(null);
+    const [isSaving, setIsSaving] = useState(false);
     const { updateFicha } = useFichas();
 
     const { fichas, getFicha } = useFichas();
@@ -76,15 +77,16 @@ function EditFichaPage() {
         if (ficha.category === 'ONG/Academia' && !ficha.outcomes) return "Los resultados son requeridos";
         if (!ficha.transferability) return "La transferibilidad es requerida";
         if (!ficha.sustainability) return "La sostenibilidad es requerida";
-        ficha.team.map((member, index) => {
+        const teamErrors = ficha.team.map((member, index) => {
             if (!member.name) return `El nombre del miembro ${index + 1} del equipo es requerido.`;
             if (!member.position) return `El cargo del miembro ${index + 1} del equipo es requerido.`;
             if (!member.email) {
                 return `El correo electrónico del miembro ${index + 1} del equipo es requerido.`;
             } else if (!isValidEmail(member.email)) return `El correo electrónico del miembro ${index + 1} tiene un formato inválido.`;
-        });
+            return null;
+        }).filter(Boolean);
 
-        return '';
+        return teamErrors.length > 0 ? teamErrors[0] : '';
     };
 
     const handleRadioChange = (e) => {
@@ -119,15 +121,21 @@ function EditFichaPage() {
         });
     };
 
-    const handleSave =  () => {
+    const handleSave = async () => {
         const validationError = validateFields();
         if (validationError) {
             alert(validationError);
             return;
         }
-       
-         updateFicha(id, ficha);
-         navigate('/fichas'); // vuelve al listado de fichas
+        setIsSaving(true);
+        try {
+            await updateFicha(id, ficha);
+            navigate('/fichas');
+        } catch (error) {
+            console.error("Error al guardar la ficha:", error);
+        } finally {
+            setIsSaving(false);
+        }
     };
 
     const handleBack = () => {
@@ -144,6 +152,14 @@ function EditFichaPage() {
             </div>
         </div>;
     }
+    if (isSaving) {
+        return <div className="flex items-center justify-center min-h-screen">
+          <div className="max-w-3xl w-full rounded-md justify-center items-center">
+            Guardando ficha...
+            <LoadingSpinner />
+          </div>
+        </div>;
+      }
 
     return (
 

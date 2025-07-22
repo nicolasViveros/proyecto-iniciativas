@@ -60,7 +60,6 @@ export function FichaProvider({ children }) {
         try {
             await updateFichaRequest(id, ficha);
             window.alert("Postulación actualizada con éxito");
-
         } catch (error) {
             console.log(error);
             window.alert("Error al actualizar ficha")

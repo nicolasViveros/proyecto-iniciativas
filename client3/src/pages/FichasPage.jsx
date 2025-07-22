@@ -46,7 +46,6 @@ function FichaCard({ ficha }) {
 function FichasPage() {
   const { getFichas, fichas } = useFichas();
 
-onload = getFichas;
 
   useEffect(() => {
     getFichas();
