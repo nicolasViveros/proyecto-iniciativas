@@ -572,7 +572,8 @@ function Step4({
           >
             <div className="flex items-center justify-between">
               <p>
-                {file.name} ({file.type})
+                {file.name}
+                {/* ({file.type}) */}
               </p>
 
               <button
@@ -633,7 +634,8 @@ function Step4({
           >
             <div className="flex items-center justify-between">
               <p>
-                {file.name} 
+                {file.name}
+                {/* ({file.type}) */}
               </p>
               <button
                 type="button"
@@ -1603,12 +1605,12 @@ export default function FormWizard() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
-          {/* {language === "es"
+        {/* {language === "es"
             ? "Guardando postulación..."
             : language === "en"
               ? "Saving application..."
               : "Salvando candidatura..."} */}
-          <LoadingSpinner />
+        <LoadingSpinner />
         {/* </div> */}
       </div>
     );
@@ -1900,8 +1902,8 @@ export default function FormWizard() {
               <button
                 type="submit"
                 className={`text-white px-4 py-2 rounded ${form.accepted
-                    ? "bg-[#5d5593] hover:bg-[#a49fc4]"
-                    : "bg-[#6c6a77] hover:bg-[#6c6a77]"
+                  ? "bg-[#5d5593] hover:bg-[#a49fc4]"
+                  : "bg-[#6c6a77] hover:bg-[#6c6a77]"
                   }`}
                 disabled={!form.accepted || isSubmitted}
               >
