@@ -4,6 +4,7 @@ import { useFichas } from "../context/FichasContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import loadingSpinner from "../context/FichasContext";
 
 const FichaPage = () => {
   const { id } = useParams();
@@ -32,6 +33,7 @@ const FichaPage = () => {
       <div className="  items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full rounded-md justify-center items-center">
           Cargando ficha...
+          loadingSpinner()
         </div>
       </div>
     );
