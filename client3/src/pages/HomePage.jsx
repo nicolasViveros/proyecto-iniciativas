@@ -15,61 +15,52 @@ function HomePage() {
     {
       titulo: {
         es: "Contexto",
-        en: "About the Organizing Entity",
+        en: "Context",
       },
       contenido: {
         es: (
           <>
-            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas
-             innovadoras en favor de la equidad de género en movilidad urbana" 
-             es una iniciativa impulsada por Euroclima, un programa de la Unión 
-             Europea que forma parte de la estrategia Global Gateway. Su objetivo 
-             es fortalecer la cooperación con América Latina y el Caribe para 
-             avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
+            <strong>Euroclima</strong> es el programa de cooperación regional que promueve una 
+            asociación estratégica entre la Unión Europea y América Latina y el 
+            Caribe, basada en valores compartidos y en el compromiso de afrontar
+            conjuntamente el cambio climático y la pérdida de biodiversidad. Es una
+             plataforma para el intercambio de ideas, conocimientos y experiencias entre ambas regiones.
             <div className="my-4">
-            Desde 2018, el programa Euroclima ha apoyado la creación de la Comunidad 
-            de Práctica SoMoS LAC. En 2023, la comunidad entró en una nueva fase de 
-            implementación, liderada por el componente de Transporte Sostenible, 
-            ejecutado por la Cooperación Alemana para el Desarrollo (GIZ). 
+            El programa es {" "}<strong>cofinanciado por la Unión Europea y el Gobierno Federal Alemán</strong>, 
+            a través del Ministerio Federal de Cooperación Económica y Desarrollo (BMZ). 
+            Su objetivo es contribuir a una transición sostenible, resiliente e inclusiva 
+            mediante acciones de mitigación y adaptación al cambio climático, incluyendo 
+            la protección, restauración y conservación de la biodiversidad, así como la promoción de la economía circular.
             </div>
             <div className="my-4">
-            La misión de SoMoS LAC es conectar a una red de actores públicos, 
-            privados y de la sociedad civil, facilitando el diálogo y la 
-            colaboración para impulsar liderazgos, políticas y acciones 
-            orientadas a mejorar los sistemas de movilidad en la región de 
-            forma sostenible. SoMoS LAC se estructura en grupos temáticos que
-             ofrecen espacios dinámicos para propiciar aprendizajes y acciones 
-             colaborativas, siendo uno de ellos el grupo temático de {"  "}
-             <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>,
-             liderado por el Ministerio de Transporte de Colombia, quien 
-             promueve el presente concurso como parte de su plan de acción.
+            Euroclima apoya a los países socios en la creación de condiciones propicias
+             para atraer inversiones, en particular en el marco de la Global Gateway 
+             Investment Agenda (GGIA) y la cooperación UE-CELAC (Comunidad de Estados
+              Latinoamericanos y Caribeños). Este esfuerzo contribuye a transiciones 
+              sostenibles y justas que promueven la resiliencia, la neutralidad de carbono y la prosperidad inclusiva.
             </div>
           </>
         ),
         en: (
           <>
-            The SoMoS LAC competition "Towards Equity: Recognizing innovative
-             initiatives for gender equity in urban mobility" is an initiative 
-             promoted by Euroclima, a European Union program that is part of 
-             the Global Gateway strategy. Its objective is to strengthen cooperation 
-             with Latin America and the Caribbean to advance toward a green, 
-             fair, and sustainable transition, supporting 33 countries.
+            <strong>Euroclima</strong> is the regional cooperation programme that promotes a strategic 
+            partnership between the European Union and Latin America and the Caribbean,
+             based on shared values and a commitment to jointly address climate change 
+             and biodiversity loss. It is a platform for the exchange of ideas, knowledge 
+             and experiences between the two regions.
             <div className="my-4">
-            Since 2018, the Euroclima program has supported the creation of 
-            the SoMoS LAC Community of Practice. In 2023, the community 
-            entered a new implementation phase, led by the Sustainable Transport 
-            component, implemented by the German Development Cooperation (GIZ).
+            The programme is {" "}<strong>co-financed by the European Union and the German Federal Government </strong>
+            through the Federal Ministry for Economic Cooperation and Development (BMZ). 
+            It aims to contribute to a sustainable, resilient and inclusive transition 
+            through climate change mitigation and adaptation actions, including the protection, 
+            restoration and conservation of biodiversity, as well as the promotion of the circular economy.
             </div>
             <div className="my-4">
-            The mission of SoMoS LAC is to connect a network of public, private, 
-            and civil society actors, facilitating dialogue and collaboration to 
-            promote leadership, policies, and actions aimed at sustainably improving 
-            mobility systems in the region. SoMoS LAC is structured into thematic 
-            groups that offer dynamic spaces to foster learning and collaborative 
-            actions. One of these is the thematic group on {"  "}
-            <strong> Gender, Equity, and Inclusion in Mobility Systems</strong>,
-            led by the Colombian Ministry of Transportation, which promotes 
-            this competition as part of its action plan.
+            Euroclima supports partner countries in creating enabling conditions to attract 
+            investments, in particular in the framework of the Global Gateway Investment 
+            Agenda (GGIA) and the EU-CELAC (Community of Latin American and Caribbean States) 
+            cooperation. This effort contributes to sustainable and just transitions that 
+            promote resilience, carbon neutrality and inclusive prosperity.
             </div>
           </>
         ),
