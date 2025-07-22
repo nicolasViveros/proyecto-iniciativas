@@ -20,7 +20,7 @@ function Footer() {
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
           <div className="flex bg-white w-full md:w-auto px-4 items-start justify-start md:justify-start h-16 md:h-auto">
-            <span className="sm:pl-6 text-xs ">Implementado por:</span>
+            <span className="flex sm:pl-6 text-xs  ">Implementado por:</span>
 
             <Link to="/">
               <img
