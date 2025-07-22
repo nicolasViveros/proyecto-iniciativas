@@ -167,6 +167,7 @@ const FichaPage = () => {
 
           )}
           <p>{ficha.reasonInactive}</p>
+          <div className="border-y border-[#D9D6E1] pb-1" ></div>
           <p>
             <strong>Asociaciones:</strong>{" "}
           </p>
