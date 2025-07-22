@@ -73,13 +73,13 @@ const FichaPage = () => {
     }
   };
   const handleAssociationChange = (e) => {
-    const { value, checked } = e.target;
-    setFicha((prevFicha) => ({
-        ...prevFicha,
-        associations: checked
-            ? [...prevFicha.associations, value]
-            : prevFicha.associations.filter((item) => item !== value),
-    }));
+    // const { value, checked } = e.target;
+    // setFicha((prevFicha) => ({
+    //     ...prevFicha,
+    //     associations: checked
+    //         ? [...prevFicha.associations, value]
+    //         : prevFicha.associations.filter((item) => item !== value),
+    // }));
 };
   const allAssociations = [
     "No",
@@ -179,7 +179,7 @@ const FichaPage = () => {
                   checked={ficha.associations.includes(option)}
                   onChange={handleAssociationChange}
                   className="input-focused accent-[#5d5593]"
-                  disabled
+                  
                 />
                 <span>{option}</span>
               </label>
