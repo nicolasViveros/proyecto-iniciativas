@@ -14,6 +14,69 @@ function HomePage() {
   const secciones = [
     {
       titulo: {
+        es: "Contexto",
+        en: "About the Organizing Entity",
+      },
+      contenido: {
+        es: (
+          <>
+            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas
+             innovadoras en favor de la equidad de género en movilidad urbana" 
+             es una iniciativa impulsada por Euroclima, un programa de la Unión 
+             Europea que forma parte de la estrategia Global Gateway. Su objetivo 
+             es fortalecer la cooperación con América Latina y el Caribe para 
+             avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
+            <div className="my-4">
+            Desde 2018, el programa Euroclima ha apoyado la creación de la Comunidad 
+            de Práctica SoMoS LAC. En 2023, la comunidad entró en una nueva fase de 
+            implementación, liderada por el componente de Transporte Sostenible, 
+            ejecutado por la Cooperación Alemana para el Desarrollo (GIZ). 
+            </div>
+            <div className="my-4">
+            La misión de SoMoS LAC es conectar a una red de actores públicos, 
+            privados y de la sociedad civil, facilitando el diálogo y la 
+            colaboración para impulsar liderazgos, políticas y acciones 
+            orientadas a mejorar los sistemas de movilidad en la región de 
+            forma sostenible. SoMoS LAC se estructura en grupos temáticos que
+             ofrecen espacios dinámicos para propiciar aprendizajes y acciones 
+             colaborativas, siendo uno de ellos el grupo temático de {"  "}
+             <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>,
+             liderado por el Ministerio de Transporte de Colombia, quien 
+             promueve el presente concurso como parte de su plan de acción.
+            </div>
+          </>
+        ),
+        en: (
+          <>
+            The SoMoS LAC competition "Towards Equity: Recognizing innovative
+             initiatives for gender equity in urban mobility" is an initiative 
+             promoted by Euroclima, a European Union program that is part of 
+             the Global Gateway strategy. Its objective is to strengthen cooperation 
+             with Latin America and the Caribbean to advance toward a green, 
+             fair, and sustainable transition, supporting 33 countries.
+            <div className="my-4">
+            Since 2018, the Euroclima program has supported the creation of 
+            the SoMoS LAC Community of Practice. In 2023, the community 
+            entered a new implementation phase, led by the Sustainable Transport 
+            component, implemented by the German Development Cooperation (GIZ).
+            </div>
+            <div className="my-4">
+            The mission of SoMoS LAC is to connect a network of public, private, 
+            and civil society actors, facilitating dialogue and collaboration to 
+            promote leadership, policies, and actions aimed at sustainably improving 
+            mobility systems in the region. SoMoS LAC is structured into thematic 
+            groups that offer dynamic spaces to foster learning and collaborative 
+            actions. One of these is the thematic group on {"  "}
+            <strong> Gender, Equity, and Inclusion in Mobility Systems</strong>,
+            led by the Colombian Ministry of Transportation, which promotes 
+            this competition as part of its action plan.
+            </div>
+          </>
+        ),
+      },
+    },
+    {
+      titulo: {
         es: "Sobre la entidad organizadora",
         en: "About the Organizing Entity",
       },
@@ -854,9 +917,6 @@ function HomePage() {
           </p>
         </div>
 
-        {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white  items-center justify-center z-20 hidden sm:flex">
-          <img src="/fecha.svg" className="w-full h-auto" />
-        </div> */}
         <div className="absolute w-full sm:bottom-1 md:bottom-2 bottom-3 ">
           <span className=" flex flex-col text-white text-2xl sm:text-3xl md:text-4xl  items-center justify-center ">
             {language === "es"
@@ -864,11 +924,7 @@ function HomePage() {
               : "Participate! July 25th to August 25th"}</span>
         </div>
       </div>
-
-      {/* <div className="absolute inset-0 flex flex-col items-start pl-35 pt-25 z-10 space-y-2"> */}
-      {/* <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-24 md:h-24 text-white flex items-center justify-center z-20"> */}
-
-
+     
       <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         <div className="w-full md:w-1/3">
           {secciones.map((sec, i) => (
