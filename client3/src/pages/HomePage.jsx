@@ -239,7 +239,7 @@ function HomePage() {
                     Categoría Instituciones públicas y Empresas privadas
                   </strong>
                 </h3>
-                <ul className="list-disc list-inside">
+                <ul className="list-disc list-inside ml-4">
                   <li>
                   La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
                   </li>
