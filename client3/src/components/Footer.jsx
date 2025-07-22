@@ -7,9 +7,9 @@ function Footer() {
         <span className="sm:pl-6 text-xs ">Implementado por:</span>
       </div>
 
-      <footer className="relative w-full flex flex-col md:flex-row h-auto">
+      <footer className="relative w-full h-auto">
 
-        <div className="grid grid-rows-2 grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 h-auto">
+        <div className="grid grid-rows-2 ">
 
           {/* Fondo restante con imagen de footer */}
           <div className="flex-grow relative overflow-hidden h-32 md:h-auto">
