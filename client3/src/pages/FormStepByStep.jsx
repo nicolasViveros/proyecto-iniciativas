@@ -247,7 +247,8 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].operatorRegulatorCriteria}
         </h2>
 
-        <label className="text-xl">{translateText[language].innovation}</label>
+        <label className="text-xl">{translateText[language].innovationLabel}</label>
+        <label className="text-base">{translateText[language].innovation}</label>
         <label className="block text-sm">
           {translateText[language].max300words}
         </label>
@@ -973,6 +974,7 @@ export default function FormWizard() {
       activities: "Principales actividades realizadas. *",
       projectCategory: "¿Qué tipo de categoría corresponde el proyecto?",
       operatorRegulatorCriteria: "Criterios para la categoría Instituciones públicas y Empresas privadas",
+      innovationLabel: "Innovación",
       innovation:
         "Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *",
       impact:
@@ -1045,6 +1047,7 @@ export default function FormWizard() {
       activities: "Main activities carried out. *",
       projectCategory: "What type of category does the project correspond to?",
       operatorRegulatorCriteria: "Operator/Regulator Criteria",
+      innovationLabel: "Innovation",
       innovation:
         "Describe what aspects of your initiative are innovative compared to traditional practices in urban mobility with a gender focus *",
       impact:
