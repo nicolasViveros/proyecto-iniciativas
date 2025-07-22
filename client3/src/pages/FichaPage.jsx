@@ -167,10 +167,10 @@ const FichaPage = () => {
 
           )}
           <p>{ficha.reasonInactive}</p>
-          <p>
+          <p className="col-span-2">
             <strong>Asociaciones:</strong>{" "}
           </p>
-          <div className="grid grid-cols-3 gap-2  pb-1">
+          <div className="grid grid-cols-3 col-span-2 gap-2  pb-1">
             {allAssociations.map((option) => (
               <label key={option} className="flex items-center space-x-2">
                 <input
