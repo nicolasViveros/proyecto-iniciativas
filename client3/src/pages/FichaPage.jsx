@@ -72,7 +72,15 @@ const FichaPage = () => {
       console.error("Failed to download file:", error);
     }
   };
-
+  const handleAssociationChange = (e) => {
+    const { value, checked } = e.target;
+    setFicha((prevFicha) => ({
+        ...prevFicha,
+        associations: checked
+            ? [...prevFicha.associations, value]
+            : prevFicha.associations.filter((item) => item !== value),
+    }));
+};
   const allAssociations = [
     "No",
     "Entidades públicas",
