@@ -1818,7 +1818,7 @@ export default function FormWizard() {
         </button>
       </div>
 
-      <div className="max-w-3xl w-full p-10 rounded-md">
+      <div className="max-w-3xl w-full py-10 px-2 sm:p-10 rounded-md">
         <div className="mb-6">
           <div className="text-center text-sm mb-1">
             {currentStep + 1}{" "}
