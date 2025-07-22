@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
     <div>
-      <footer className=" w-full">
+      <footer >
         <div className="grid grid-rows-2 ">
 
           {/* Fondo restante con imagen de footer */}
