@@ -7,7 +7,7 @@ function Footer() {
         <span className="sm:pl-6 text-xs ">Implementado por:</span>
       </div>
 
-      <footer className="relative w-full  md:flex-row h-auto">
+      <footer className="relative w-full  md:flex-row ">
 
         <div className="grid grid-rows-2 ">
 
@@ -21,7 +21,7 @@ function Footer() {
           </div>
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
-          <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
+          <div className="flex bg-white w-full md:w-auto px-4 items-start justify-start md:justify-start h-16 md:h-auto">
             <Link to="/">
               <img
                 src="/LogoGiz.svg"
