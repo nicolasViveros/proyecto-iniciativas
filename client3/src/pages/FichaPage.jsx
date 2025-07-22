@@ -16,9 +16,7 @@ const FichaPage = () => {
     const cargarFicha = async () => {
       try {
         const ficha = await getFicha(id);
-        console.log(ficha.projectName);
         setFicha(ficha);
-        console.log(ficha);
       } catch (error) {
         console.error("Error al cargar la ficha:", error);
       }

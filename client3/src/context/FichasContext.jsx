@@ -1,8 +1,21 @@
 import { createContext, useContext, useState } from "react";
-import { createFichaRequest, getFichasRequest, getFichaRequest, deleteFichaRequest, updateFichaRequest } from "../api/fichas";  
+import { createFichaRequest, getFichasRequest, getFichaRequest, deleteFichaRequest, updateFichaRequest } from "../api/fichas";
 
 const FichaContext = createContext();
 
+import React from 'react';
+
+export default function loadingSpinner() {
+    return (
+        <div
+            className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+                className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Loading...</span>
+        </div>
+    );
+}
 
 export const useFichas = () => {
     const context = useContext(FichaContext);
@@ -26,39 +39,23 @@ export function FichaProvider({ children }) {
     }
 
     const createFicha = async (ficha) => {
-        console.log("Datos antes de enviar:", ficha);
+        // console.log("Datos antes de enviar:", ficha);
 
         try {
+            loadingSpinner();
             const res = await createFichaRequest(ficha)
 
-            console.log('Ficha creada:', res.data);
+            window.alert("Postulación enviada con éxito");
+            // console.log('Ficha creada:', res.data);
         } catch (error) {
             console.error('Error al crear la ficha:', error);
         }
-
-        // try {
-        //     // Clona y limpia el objeto, si es necesario
-        //     const cleanedData = {
-        //         ...ficha,
-        //         // asegúrate de que no haya propiedades que apunten a elementos no serializables
-        //     };
-
-        // const res = await createFichaRequest(cleanedData)
-        // console.log(res)
-        //     // Revisar los datos antes de enviar
-        //     console.log(cleanedData);
-
-        //     // const response = await axios.post('your-api-endpoint-url', cleanedData);
-        //     // console.log('Ficha creada:', response.data);
-        // } catch (error) {
-        //     console.error('Error al crear la ficha:', error);
-        // }
     }
 
     const deleteFicha = async (id) => {
         try {
             const res = await deleteFichaRequest(id);
-            console.log('Ficha eliminada:', id);
+            // console.log('Ficha eliminada:', id);
             window.alert("Ficha eliminada con éxito");
             if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
         } catch (error) {
@@ -77,8 +74,9 @@ export function FichaProvider({ children }) {
 
     const updateFicha = async (id, ficha) => {
         try {
+            loadingSpinner();
             await updateFichaRequest(id, ficha);
-      
+            window.alert("Postulación actualizada con éxito");
 
         } catch (error) {
             console.log(error);
