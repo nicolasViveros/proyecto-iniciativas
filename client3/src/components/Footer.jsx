@@ -5,7 +5,7 @@ function Footer() {
     <div>
       
 
-      <footer className=" w-full md:flex-row ">
+      <footer className=" w-fit md:flex-row ">
 
         <div className="grid grid-rows-2 ">
 
