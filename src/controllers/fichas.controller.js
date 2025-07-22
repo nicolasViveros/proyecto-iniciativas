@@ -82,8 +82,8 @@ export const createFicha = async (req, res) => {
     const languageMail = savedFicha.language;
     // Separate email sending logic
     let emailSubject, htmlContent, textContent;
-
-    switch(languageMail) {
+    console.log(languageMail);
+    switch (languageMail) {
       case 'en':
         emailSubject = "Thank you for participating. On the way to Equity";
         htmlContent = `
@@ -150,7 +150,7 @@ export const createFicha = async (req, res) => {
         `;
         textContent = "Su postulación ha sido guardada. Gracias por participar en Rumbo a la Equidad.";
     }
-    
+
     try {
       await sendEmail({
         recipientEmail: email,
