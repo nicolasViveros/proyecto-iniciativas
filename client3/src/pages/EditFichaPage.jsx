@@ -169,7 +169,7 @@ function EditFichaPage() {
                 <span className="ml-1">Volver</span>
             </button>
 
-            <div className="max-w-3xl w-full p-4 sm:p-10 rounded-md">
+            <div className="max-w-3xl w-full px-3 py-10 sm:p-10 rounded-md">
 
 
                 <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
