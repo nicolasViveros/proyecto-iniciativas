@@ -796,7 +796,7 @@ function Step5({
       </h3>
       <h3 className="text-sm">
         {language === "es"
-          ? "(Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa) (puede ingresar más de una persona) Nombre, Cargo, Email. Agregar responsable *."
+          ? "Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa. (puede ingresar más de una persona). *"
           : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
       </h3>
 
@@ -860,11 +860,12 @@ function Step5({
       <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
         {[
           "No",
-          "Otras Secretarías",
-          "ONGs y Sociedad Civil",
+          "Entidades públicas",
+          "Empresa privada",
+          "ONG",
+          "Sociedad Civil",
           "Instituciones educativas y de investigación",
-          "Empresas",
-          "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
+          "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
           "Organizaciones Internacionales",
           "Otras organizaciones",
         ].map((option) => (
@@ -1003,7 +1004,7 @@ export default function FormWizard() {
       attachLetter:
         "Adjunte carta de autorización del/de la representante legal",
       declaration:
-        "Declaro que la información entregada en este formulario es veraz y autorizo el uso de los antecedentes y material gráfico entregado para fines de difusión del concurso SoMoS LAC.",
+        "Declaro que la información entregada en esta ficha es veraz y autorizo el uso, tratamiento y publicación de datos, antecedentes y material gráfico entregado en el marco de este concurso para fines de difusión de SoMoS LAC o de sus organizadores. No se publicarán datos personales.* ",
       max500words: "(máx 500 palabras)",
       max300words: "(máx 300 palabras)",
       max250words: "(máx 250 palabras)",
