@@ -119,12 +119,18 @@ function EditFichaPage() {
         });
     };
 
-    const  handleSave = async () => {
+    const handleSave = async () => {
         const validationError = validateFields();
         if (validationError) {
             alert(validationError);
             return;
         }
+        <div className="  items-center justify-center min-h-screen">
+            <div className="max-w-3xl w-full rounded-md justify-center items-center">
+                Cargando fichas...
+                <LoadingSpinner />
+            </div>
+        </div>        
         await updateFicha(id, ficha);
         navigate('/fichas');
     };
@@ -139,7 +145,7 @@ function EditFichaPage() {
         return <div className="  items-center justify-center min-h-screen">
             <div className="max-w-3xl w-full rounded-md justify-center items-center">
                 Cargando ficha...
-                <LoadingSpinner />  
+                <LoadingSpinner />
             </div>
         </div>;
     }
