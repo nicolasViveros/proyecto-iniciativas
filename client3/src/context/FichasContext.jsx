@@ -35,7 +35,7 @@ export function FichaProvider({ children }) {
         try {
             const res = await createFichaRequest(ficha);
             const language = res.data.language;
-            console.log("Ficha creada:", res);
+            // console.log("Ficha creada:", res);
 
             let successMessage;
 
