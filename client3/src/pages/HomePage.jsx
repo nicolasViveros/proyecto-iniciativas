@@ -1339,7 +1339,7 @@ function HomePage() {
         </div>
 
         <div className="absolute w-full sm:bottom-1 md:bottom-2 bottom-3 ">
-          <span className=" flex flex-col text-white text-2xl sm:text-3xl md:text-4xl  items-center justify-center ">
+          <span className=" flex flex-col text-white text-xl sm:text-3xl md:text-4xl  items-center justify-center ">
             {language === "es"
               ? "¡Participa! 25/07 al 25/08"
               : language === "en"
@@ -1365,7 +1365,7 @@ function HomePage() {
           ))}
         </div>
 
-        <div className="w-full md:w-2/3 bg-white px-6 rounded ">
+        <div className="w-full md:w-2/3 bg-white px-2 sm:px-6 rounded ">
           <h2 className="text-2xl font-bold mb-4">
             {secciones[activo].titulo[language]}
           </h2>
