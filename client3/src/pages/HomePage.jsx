@@ -708,32 +708,32 @@ function HomePage() {
             <div className="text-[#5A478D] text-sm space-y-4 p-4">
               <div className="space-y-2">
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">July 15</span>
                   <span className="w-1/2 font-medium">
-                    Launch and opening of applications
+                    <strong>Stage</strong>
                   </span>
+                  <span className="w-1/2"><strong>Date</strong></span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">August 15</span>
                   <span className="w-1/2 font-medium">
-                    Closing of applications
+                    Launch and call for applications
                   </span>
+                  <span className="w-1/2">July 25th</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
+                  <span className="w-1/2 font-medium">
+                    Application deadline
+                  </span>
+                  <span className="w-1/2">August 25th</span>
+                </div>
+                <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
+                  <span className="w-1/2 font-medium">Winners announcement</span>
                   <span className="w-1/2">September 15</span>
-                  <span className="w-1/2 font-medium">Winner selection</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">October 13 & 14</span>
-                  <span className="w-1/2 font-medium">Awards presentation</span>
+                  <span className="w-1/2 font-medium">Award ceremony</span>
+                  <span className="w-1/2">October 09th – 10th (TBC) </span>
                 </div>
               </div>
-
-              <h3 className="text-sm">
-                The dates will be published via SoMoS LAC mailing, OBGeM
-                website, and GIZ networks. Calls will be sent by email and
-                disseminated through the social networks of allied initiatives.
-              </h3>
             </div>
           </>
         ),
