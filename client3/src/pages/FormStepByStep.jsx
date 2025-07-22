@@ -247,7 +247,7 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].operatorRegulatorCriteria}
         </h2>
 
-        <label className="text-xl">{translateText[language].innovationLabel}</label>
+        <h2 className="text-xl font-bold ">{translateText[language].innovationLabel}</h2>
         <label className="text-base">{translateText[language].innovation}</label>
         <label className="block text-sm">
           {translateText[language].max300words}
