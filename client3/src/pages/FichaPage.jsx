@@ -4,14 +4,13 @@ import { useFichas } from "../context/FichasContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Spinner from "../context/LoadingSpinner";
+import LoadingSpinner from "../context/LoadingSpinner";
 
 const FichaPage = () => {
   const { id } = useParams();
   const [ficha, setFicha] = useState(null);
   const { fichas, getFicha } = useFichas();
   const navigate = useNavigate();
-
 
   useEffect(() => {
     // Función para cargar datos de la ficha
@@ -25,7 +24,6 @@ const FichaPage = () => {
     };
 
     if (id) {
-
       cargarFicha();
     }
   }, [id]);
@@ -34,11 +32,13 @@ const FichaPage = () => {
     return (
       <div className="  items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full rounded-md justify-center items-center">
+          
           Cargando ficha...
+          <LoadingSpinner />
         </div>
       </div>
+      
     );
-    <Spinner/>
   }
 
   const handleBack = () => {
