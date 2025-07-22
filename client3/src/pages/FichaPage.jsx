@@ -234,6 +234,13 @@ const FichaPage = () => {
           <p className="col-span-2 border-b border-[#D9D6E1] pb-1">
             {ficha.activities}
           </p>
+          
+          <p>
+            <strong>Resultados obtenidos o esperados:</strong>{" "}
+          </p>
+          <p className="col-span-2 border-b border-[#D9D6E1] pb-1">
+            {ficha.resultsObtained}
+          </p>
 
           {ficha.category === "Operador/Regulador" && (
             <>

@@ -463,6 +463,17 @@ function EditFichaPage() {
                         ></textarea>
                     </div>
 
+                    <div>Resultados obtenidos o esperados:</div>
+                    <div>
+                        <textarea
+                            name="resultsObtained"
+                            value={ficha.resultsObtained}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
                     {ficha.category === 'Operador/Regulador' && (
                         <>
                             <div>Innovación:</div>
