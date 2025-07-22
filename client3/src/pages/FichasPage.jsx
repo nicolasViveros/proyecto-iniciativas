@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function FichaCard({ ficha, handleDelete }) {
 
   return (
-    <div className=" flex flex-col border p-4 space-between justify-between mx-auto my-full rounded shadow">
+    <div className=" flex flex-col border p-4 space-between justify-between mx-auto w-full rounded shadow">
       <div className='mb-10'>
         <h2 className="font-bold text-lg">
           <Link to={`/ficha/${ficha._id}`} className="text-xl hover:underline flex justify-center">
