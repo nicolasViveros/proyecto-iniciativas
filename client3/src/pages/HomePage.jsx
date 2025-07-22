@@ -68,32 +68,28 @@ function HomePage() {
     },
     {
       titulo: {
-        es: "Sobre la entidad organizadora",
-        en: "About the Organizing Entity",
+        es: "SoMoS LAC – Comunidad de Práctica en Movilidad Sostenible ",
+        en: "SoMoS LAC – Community of Practice in Sustainable Mobility",
       },
       contenido: {
         es: (
           <>
-            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas
-             innovadoras en favor de la equidad de género en movilidad urbana" 
-             es una iniciativa impulsada por Euroclima, un programa de la Unión 
-             Europea que forma parte de la estrategia Global Gateway. Su objetivo 
-             es fortalecer la cooperación con América Latina y el Caribe para 
-             avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
+            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas innovadoras 
+            en favor de la equidad de género en movilidad urbana" es una iniciativa impulsada
+             por Euroclima. Su objetivo es fortalecer la cooperación con América Latina y el 
+             Caribe para avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
             <div className="my-4">
-            Desde 2018, el programa Euroclima ha apoyado la creación de la Comunidad 
-            de Práctica SoMoS LAC. En 2023, la comunidad entró en una nueva fase de 
-            implementación, liderada por el componente de Transporte Sostenible, 
-            ejecutado por la Cooperación Alemana para el Desarrollo (GIZ). 
+            Desde 2018, el programa Euroclima ha apoyado la creación de la Comunidad de 
+            Práctica SoMoS LAC. En 2023, la comunidad entró en una nueva fase de implementación, 
+            liderada por el componente de Transporte Sostenible, ejecutado por la Cooperación Alemana para el Desarrollo (GIZ). 
             </div>
             <div className="my-4">
             La misión de SoMoS LAC es conectar a una red de actores públicos, 
-            privados y de la sociedad civil, facilitando el diálogo y la 
-            colaboración para impulsar liderazgos, políticas y acciones 
-            orientadas a mejorar los sistemas de movilidad en la región de 
-            forma sostenible. SoMoS LAC se estructura en grupos temáticos que
-             ofrecen espacios dinámicos para propiciar aprendizajes y acciones 
-             colaborativas, siendo uno de ellos el grupo temático de {"  "}
+            privados y de la sociedad civil, facilitando el diálogo y la colaboración
+             para impulsar liderazgos, políticas y acciones orientadas a mejorar 
+             los sistemas de movilidad en la región de forma sostenible. SoMoS LAC 
+             se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar 
+             aprendizajes y acciones colaborativas, siendo uno de ellos el grupo temático de  {"  "}
              <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>,
              liderado por el Ministerio de Transporte de Colombia, quien 
              promueve el presente concurso como parte de su plan de acción.
@@ -102,28 +98,17 @@ function HomePage() {
         ),
         en: (
           <>
-            The SoMoS LAC competition "Towards Equity: Recognizing innovative
-             initiatives for gender equity in urban mobility" is an initiative 
-             promoted by Euroclima, a European Union program that is part of 
-             the Global Gateway strategy. Its objective is to strengthen cooperation 
-             with Latin America and the Caribbean to advance toward a green, 
-             fair, and sustainable transition, supporting 33 countries.
+            SoMoS LAC contest, “Towards Equity: Recognizing Innovative Initiatives for Gender Equity in Urban Mobility,” is promoted by Euroclima. Its mission is to strengthen cooperation with Latin America and the Caribbean, fostering a green, fair, and sustainable transition across 33 countries.
             <div className="my-4">
-            Since 2018, the Euroclima program has supported the creation of 
-            the SoMoS LAC Community of Practice. In 2023, the community 
-            entered a new implementation phase, led by the Sustainable Transport 
-            component, implemented by the German Development Cooperation (GIZ).
+            Since 2018, Euroclima has supported the creation of SoMoS LAC - Community of Practice. In 2023, the community entered a new implementation phase, led by the Sustainable Transport component implemented by German Development Cooperation (GIZ).
             </div>
             <div className="my-4">
-            The mission of SoMoS LAC is to connect a network of public, private, 
-            and civil society actors, facilitating dialogue and collaboration to 
-            promote leadership, policies, and actions aimed at sustainably improving 
-            mobility systems in the region. SoMoS LAC is structured into thematic 
-            groups that offer dynamic spaces to foster learning and collaborative 
-            actions. One of these is the thematic group on {"  "}
-            <strong> Gender, Equity, and Inclusion in Mobility Systems</strong>,
-            led by the Colombian Ministry of Transportation, which promotes 
-            this competition as part of its action plan.
+            SoMoS LAC connects public, private, and civil society actors, fostering dialogue 
+            and collaboration to drive leadership, policy development, and initiatives that 
+            improve mobility systems sustainably across the region. The network is structured 
+            into thematic groups, including the 
+            {" "}<strong>Gender, Equity, and Inclusion in Mobility Systems group, </strong>
+            led by the Colombian Ministry of Transport, which is promoting this contest as part of its action plan.
             </div>
           </>
         ),
