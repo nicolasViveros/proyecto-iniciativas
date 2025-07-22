@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useFichas } from '../context/FichasContext'
 import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom instalado
+import LoadingSpinner from "../context/LoadingSpinner";
 
 function FichaCard({ ficha }) {
   const { deleteFicha } = useFichas();
@@ -52,6 +53,7 @@ function FichasPage() {
   if (fichas.length == 0) return (<div className="  items-center justify-center min-h-screen">
     <div className="max-w-3xl w-full rounded-md justify-center items-center">
       Cargando fichas...
+      <LoadingSpinner />
     </div>
   </div>);
 
