@@ -5,17 +5,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function loadingSpinner() {
-  return (
-    <div
-      className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-      role="status">
-      <span
-        className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Loading...</span>
-    </div>
-  );
-}
+
 
 const FichaPage = () => {
   const { id } = useParams();
@@ -37,7 +27,6 @@ const FichaPage = () => {
     };
 
     if (id) {
-      loadingSpinner();
 
       cargarFicha();
     }
@@ -47,6 +36,13 @@ const FichaPage = () => {
     return (
       <div className="  items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full rounded-md justify-center items-center">
+          <div
+            className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+              className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Loading...</span>
+          </div>
           Cargando ficha...
         </div>
       </div>
