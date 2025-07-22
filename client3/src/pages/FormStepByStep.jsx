@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFichas } from "../context/FichasContext";
 import { useLanguage } from "../context/LanguageContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
-
+import LoadingSpinner from "../context/LoadingSpinner";
 
 function translateAssociation(option) {
   switch (option) {
