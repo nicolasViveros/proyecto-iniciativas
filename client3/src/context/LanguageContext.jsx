@@ -6,7 +6,11 @@ export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("es"); // Default language is Spanish
 
   const toggleLanguage = () => {
-    setLanguage((currentLang) => (currentLang === "es" ? "en" : "es"));
+    setLanguage((currentLang) => {
+      if (currentLang === "es") return "en";
+      if (currentLang === "en") return "pt";
+      return "es"; // default back to Spanish
+    });
   };
 
   return (
