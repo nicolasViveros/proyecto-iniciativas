@@ -116,37 +116,47 @@ function HomePage() {
     },
     {
       titulo: {
-        es: "Propósito del Reconocimiento SoMoS LAC",
-        en: "Purpose of the SoMoS LAC Acknowledgment",
+        es: "Delimitación de responsabilidad ",
+        en: "Disclaimer",
       },
       contenido: {
         es: (
           <>
-            El propósito del concurso es: Reconocer, visibilizar y promover
-            iniciativas innovadoras en favor de la equidad e inclusión de género
-            en la movilidad urbana, en América Latina y El Caribe. Se evaluarán
-            mejor aquellas iniciativas con mayor impacto sobre la equidad e
-            inclusión y potencial de replicabilidad y sostenibilidad en el
-            tiempo.
+            Este concurso cuenta con el apoyo financiero de la Unión Europea a través del programa Euroclima, el contenido del mismo es responsabilidad exclusiva de SoMoS LAC y en ningún caso debe considerarse que refleja los puntos de vista de la Unión Europea
+          </>
+        ),
+        en: (
+          <>
+            This competition is financially supported by the European Union through Euroclima programme, the content of the competition is the sole responsibility of SoMoS LAC and can in no way be taken to reflect the views of the European Union.
+          </>
+        ),
+      },
+    },
+    {
+      titulo: {
+        es: "Propósito del Reconocimiento SoMoS LAC",
+        en: "Purpose of the SoMoS LAC Award",
+      },
+      contenido: {
+        es: (
+          <>
+           El propósito del concurso es: reconocer, visibilizar y promover iniciativas innovadoras en favor de la equidad e inclusión de género en la movilidad urbana, en América Latina y El Caribe. Las iniciativas participantes serán difundidas por SoMos LAC a través de un mapa web interactivo que mostrará sus principales características. De esta manera se contribuye al fomento de la movilidad sostenible en mujeres, así como a la promoción de una mejor experiencia urbana, de transporte y de acceso al territorio. 
             <div className="my-4">
-              Este concurso está dirigido a instituciones públicas, empresas
-              privadas, organizaciones de la sociedad civil y entidades
-              académicas que lideren este tipo de iniciativas.
+            Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo. Este concurso está dirigido a instituciones públicas, empresas privadas, organizaciones de la sociedad civil y entidades académicas que lideren este tipo de iniciativas.
+            </div>
+            <div className="my-4">
+            Mediante su postulación, los equipos participantes autorizan a SoMoS LAC a difundir los principales datos de la iniciativa para el cumplimiento del propósito del concurso, resguardando la confidencialidad de la información de carácter personal.
             </div>
           </>
         ),
         en: (
           <>
-            The purpose of the contest is to recognize, make visible, and
-            promote innovative initiatives in favor of gender equity and
-            inclusion in urban mobility in Latin America and the Caribbean.
-            Initiatives with a greater impact on equity and inclusion and
-            potential for replicability and sustainability over time will be
-            better evaluated.
+            The contest seeks to recognize, showcase, and promote innovative initiatives that advance gender equity and inclusion in urban mobility throughout Latin America and the Caribbean. Selected initiatives will be featured on SoMoS LAC’s interactive web map, highlighting their key features. In doing so, the contest aims to encourage sustainable mobility for women and improve their urban travel experience, as well as access to public spaces.
             <div className="my-4">
-              This contest is aimed at public institutions, private companies,
-              civil society organizations, and academic entities that lead such
-              initiatives.
+            Priority will be given to initiatives that have a tangible impact on equity and inclusion, with strong potential for replication and long-term sustainability. The contest is open to public institutions, private companies, civil society organizations, and academic entities leading these efforts.
+            </div>
+            <div className="my-4">
+            By submitting an application, participants authorize SoMoS LAC to share essential information about their initiative for the contest’s objectives, while safeguarding personal data confidentiality.
             </div>
           </>
         ),
@@ -165,15 +175,14 @@ function HomePage() {
               <h3>
                 <strong>Instituciones públicas y Empresas privadas:</strong>
               </h3>
-              Orientada a instituciones públicas, privadas y/o sociedades de
-              capital mixto responsables de la regulación del transporte urbano,
-              así como a operadores de transporte, que hayan implementado
-              iniciativas concretas para superar brechas de género en la
-              movilidad urbana. Se valorarán acciones que promuevan la igualdad
-              de oportunidades, la participación de las mujeres en el sector, la
-              mejora de condiciones laborales con enfoque de género, o el diseño
-              e implementación de servicios más seguros, accesibles e
-              inclusivos.
+              Orientada a instituciones públicas, privadas y/o sociedades de 
+              capital mixto responsables de la regulación y operación del 
+              transporte urbano, así como a operadores de transporte, que 
+              hayan implementado iniciativas concretas para superar brechas 
+              de género en la movilidad urbana. Se valorarán acciones que promuevan 
+              la igualdad de oportunidades, la participación de las mujeres en el 
+              sector, la mejora de condiciones laborales con enfoque de género, 
+              o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
             </div>
             <div className="my-4"></div>
             <div>
@@ -182,14 +191,13 @@ function HomePage() {
                   Organizaciones de la sociedad civil y Entidades académicas:
                 </strong>
               </h3>
-              Dirigida a organizaciones de la sociedad civil y entidades
-              académicas que hayan desarrollado investigaciones, proyectos
-              piloto, campañas, metodologías o programas de formación que
-              promuevan la equidad de género en el ámbito de la movilidad
-              urbana. Se priorizarán aquellas propuestas que hayan generado
-              aprendizajes valiosos, incidencia en políticas públicas,
-              articulación intersectorial o que tengan potencial de
-              escalabilidad y réplica en otros contextos urbanos.
+              Dirigida a organizaciones de la sociedad civil y entidades académicas 
+              que hayan desarrollado investigaciones, proyectos piloto, campañas, 
+              metodologías o programas de formación que promuevan la equidad de género
+               en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas 
+               que hayan generado aprendizajes valiosos, incidencia en políticas públicas, 
+               articulación intersectorial o que tengan potencial de escalabilidad y 
+               réplica en otros contextos urbanos.
             </div>
           </>
         ),
@@ -200,13 +208,7 @@ function HomePage() {
               <h3>
                 <strong>Public Institutions and Private Companies:</strong>
               </h3>
-              Aimed at public, private, and/or mixed-capital companies
-              responsible for urban transport regulation and transport operators
-              that have implemented concrete initiatives to overcome gender gaps
-              in urban mobility. Actions that promote equal opportunities,
-              women's participation in the sector, improved working conditions
-              with a gender focus, or the design and implementation of safer,
-              more accessible, and inclusive services will be valued.
+              This category is intended for public or private entities, as well as joint ventures involved in urban transport regulation and operations, that have implemented concrete measures to address gender gaps in urban mobility. The contest will value initiatives that promote equal opportunities, increase women’s participation in the sector, improve working conditions with a gender lens, or design and implement safer, more inclusive, and accessible services.
             </div>
             <div className="my-4"></div>
             <div>
@@ -215,12 +217,7 @@ function HomePage() {
                   Civil Society Organizations and Academic Entities:
                 </strong>
               </h3>
-              Targeted at civil society organizations and academic entities that
-              have developed research, pilot projects, campaigns, methodologies,
-              or training programs that promote gender equity in urban mobility.
-              Proposals that have generated valuable learning, influenced public
-              policy, intersectoral collaboration, or potential scalability and
-              replication in other urban contexts will be prioritized.
+              This category is aimed at civil society groups and academic institutions that have developed research, pilot projects, campaigns, methodologies, or training programs promoting gender equity in urban mobility. Priority will be given to projects that have generated valuable insights, influenced public policy, fostered cross-sector collaboration, or shown potential for scaling and replication in other urban contexts.
             </div>
           </>
         ),
@@ -229,11 +226,12 @@ function HomePage() {
     {
       titulo: {
         es: "Requisitos de postulación y exclusiones",
-        en: "Application Requirements and Exclusions",
+        en: "Eligibility and Exclusions",
       },
       contenido: {
         es: (
           <>
+          Se entenderá por iniciativa a cualquier acción, programa, proyecto o medida concreta, impulsada por una institución, colectivo o actor, implementada o en fase de implementación que tenga impactos comprobables o previstos en la equidad de género en el ámbito del transporte sostenible. En el contexto de movilidad con enfoque de género, una iniciativa puede adoptar diversas formas: desde una intervención puntual (como una campaña o una mejora en la infraestructura), hasta la implementación de una estrategia integral de largo plazo.
             <div className=" text-sm space-y-3 p-2">
               <div>
                 <h3>
@@ -243,8 +241,7 @@ function HomePage() {
                 </h3>
                 <ul className="list-disc list-inside">
                   <li>
-                    La iniciativa debe haber sido implementada en al menos una
-                    ciudad latinoamericana o caribeña.
+                  La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
                   </li>
                   <li>
                     La organización postulante puede ser una institución pública
@@ -260,9 +257,7 @@ function HomePage() {
                     operativa.
                   </li>
                   <li>
-                    No podrán postular iniciativas que estén participando en el
-                    concurso Mujeres en Ruta 2025, en cualquiera de sus
-                    ciudades.
+                  No podrán postular iniciativas que estén participando actualmente en el concurso Mujeres en Ruta 2025 de OBGEM, en cualquiera de sus ciudades. Sin embargo otras iniciativas del mismo proponente podrán inscribirse en este concurso.
                   </li>
                   <li>
                     No podrán participar instituciones que hayan participado
@@ -280,31 +275,22 @@ function HomePage() {
                 </h3>
                 <ul className="list-disc list-inside">
                   <li>
-                    La iniciativa debe referirse a experiencias o análisis
-                    aplicados a una ciudad latinoamericana o caribeña o haber
-                    sido desarrollada para un país que se encuentre en dichas
-                    regiones.
+                  La iniciativa debe referirse a experiencias o análisis aplicadas a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
                   </li>
                   <li>
-                    La organización postulante puede ser académica o de la
-                    sociedad civil.
+                  La organización postulante puede ser académica o de la sociedad civil. No es requisito obligatorio estar constituido legalmente para esta categoria.
                   </li>
                   <li>
-                    La iniciativa debe haber sido publicada entre el 1 de enero
-                    de 2021 y hasta la fecha de postulación.
+                  La iniciativa debe haber sido implementada entre el 1 de enero de 2021 y hasta la fecha de postulación.
                   </li>
                   <li>
-                    La organización debe estar legalmente constituida y
-                    operativa.
+                  La organización debe estar operativa.
                   </li>
                   <li>
-                    No podrán postular iniciativas que estén participando en el
-                    concurso Mujeres en Ruta 2025, en cualquiera de sus
-                    ciudades.
+                  No podrán postular iniciativas que estén participando actualmente en el concurso Mujeres en Ruta 2025 de OBGEM, en cualquiera de sus ciudades. Sin embargo otras iniciativas del mismo proponente podrán inscribirse en este concurso.
                   </li>
                   <li>
-                    No podrán participar instituciones que hayan participado
-                    directamente en la preparación o ejecución de este concurso.
+                  No podrán participar instituciones que hayan participado directa o indirectamente en la preparación o ejecución de este concurso.
                   </li>
                 </ul>
               </div>
@@ -313,39 +299,32 @@ function HomePage() {
         ),
         en: (
           <>
+          An “initiative” is any concrete action, program, project, or measure—implemented or in progress—that demonstrates or is expected to deliver measurable impacts on gender equity in sustainable transport. Gender-focused initiatives can range from specific interventions (e.g., campaigns or infrastructure upgrades) to comprehensive long-term strategies.
             <div className=" text-sm space-y-3 p-2">
               <div>
                 <h3>
                   <strong>
-                    Category Public Institutions and Private Companies
+                    Public Institutions and Private Companies
                   </strong>
                 </h3>
                 <ul className="list-disc list-inside">
                   <li>
-                    The initiative must have been implemented in at least one
-                    Latin American or Caribbean city.
+                  Must have implemented the initiative in at least one city in Latin America or the Caribbean, or have been developed for a country in these regions.   
                   </li>
                   <li>
-                    The applicant organization can be a public and/or private
-                    institution.
+                  The applicant may be a public or private entity
                   </li>
                   <li>
-                    The initiative must have started implementation between
-                    January 1, 2021, and up to one year before the application
-                    date.
+                  The initiative must have been implemented between January 1, 2021, and no later than one year prior to submission.  
                   </li>
                   <li>
-                    The organization must be legally constituted and
-                    operational.
+                  The organization must be legally registered and operational.  
                   </li>
                   <li>
-                    Initiatives participating in the Mujeres en Ruta 2025
-                    contest, in any of their cities, will not be eligible to
-                    apply.
+                  Initiatives currently participating in the “Mujeres en Ruta 2025” contest by OBGEM are not eligible in any of their cities. Nevertheless, other initiatives from the same applicant may still apply to this contest.  
                   </li>
                   <li>
-                    Institutions directly involved in the preparation or
-                    execution of this contest may not participate.
+                  Organizations directly or indirectly involved in preparing or managing this contest are not eligible.
                   </li>
                 </ul>
               </div>
@@ -353,35 +332,27 @@ function HomePage() {
               <div className="my-4">
                 <h3>
                   <strong>
-                    Category Civil Society Organizations and Academic Entities
+                    Civil Society Organizations and Academic Entities
                   </strong>
                 </h3>
                 <ul className="list-disc list-inside">
                   <li>
-                    The initiative must refer to experiences or analyses applied
-                    to a Latin American or Caribbean city or have been developed
-                    for a country in these regions.
+                  The initiative must relate to experiences or research applied in a Latin American or Caribbean city, or have been developed for a country in these regions.  
                   </li>
                   <li>
-                    The applicant organization can be academic or part of civil
-                    society.
+                  Applicants can be academic or civil society entities. Legal registration is not mandatory for this category.  
                   </li>
                   <li>
-                    The initiative must have been published between January 1,
-                    2021, and the application date.
+                  The initiative must have been implemented between January 1, 2021, and the submission date.  
                   </li>
                   <li>
-                    The organization must be legally constituted and
-                    operational.
+                  The organization must be operational
                   </li>
                   <li>
-                    Initiatives participating in the Mujeres en Ruta 2025
-                    contest, in any of their cities, will not be eligible to
-                    apply.
+                  Initiatives currently participating in the “Mujeres en Ruta 2025” contest by OBGEM are not eligible in any of their cities. Nevertheless, other initiatives from the same applicant may still apply to this contest.  
                   </li>
                   <li>
-                    Institutions directly involved in the preparation or
-                    execution of this contest may not participate.
+                  Organizations directly or indirectly involved in preparing or managing this contest are not eligible.
                   </li>
                 </ul>
               </div>
