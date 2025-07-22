@@ -152,7 +152,7 @@ const FichaPage = () => {
           </p>
           <p>
             {ficha.associations.length > 0
-              ? ficha.associations.join(", <br />")
+              ? ficha.associations.join(", ")
               : "Ninguna"}
           </p>
 
