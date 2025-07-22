@@ -20,47 +20,47 @@ function HomePage() {
       contenido: {
         es: (
           <>
-            <strong>Euroclima</strong> es el programa de cooperación regional que promueve una 
-            asociación estratégica entre la Unión Europea y América Latina y el 
+            <strong>Euroclima</strong> es el programa de cooperación regional que promueve una
+            asociación estratégica entre la Unión Europea y América Latina y el
             Caribe, basada en valores compartidos y en el compromiso de afrontar
             conjuntamente el cambio climático y la pérdida de biodiversidad. Es una
-             plataforma para el intercambio de ideas, conocimientos y experiencias entre ambas regiones.
+            plataforma para el intercambio de ideas, conocimientos y experiencias entre ambas regiones.
             <div className="my-4">
-            El programa es {" "}<strong>cofinanciado por la Unión Europea y el Gobierno Federal Alemán</strong>, 
-            a través del Ministerio Federal de Cooperación Económica y Desarrollo (BMZ). 
-            Su objetivo es contribuir a una transición sostenible, resiliente e inclusiva 
-            mediante acciones de mitigación y adaptación al cambio climático, incluyendo 
-            la protección, restauración y conservación de la biodiversidad, así como la promoción de la economía circular.
+              El programa es {" "}<strong>cofinanciado por la Unión Europea y el Gobierno Federal Alemán</strong>,
+              a través del Ministerio Federal de Cooperación Económica y Desarrollo (BMZ).
+              Su objetivo es contribuir a una transición sostenible, resiliente e inclusiva
+              mediante acciones de mitigación y adaptación al cambio climático, incluyendo
+              la protección, restauración y conservación de la biodiversidad, así como la promoción de la economía circular.
             </div>
             <div className="my-4">
-            Euroclima apoya a los países socios en la creación de condiciones propicias
-             para atraer inversiones, en particular en el marco de la Global Gateway 
-             Investment Agenda (GGIA) y la cooperación UE-CELAC (Comunidad de Estados
-              Latinoamericanos y Caribeños). Este esfuerzo contribuye a transiciones 
+              Euroclima apoya a los países socios en la creación de condiciones propicias
+              para atraer inversiones, en particular en el marco de la Global Gateway
+              Investment Agenda (GGIA) y la cooperación UE-CELAC (Comunidad de Estados
+              Latinoamericanos y Caribeños). Este esfuerzo contribuye a transiciones
               sostenibles y justas que promueven la resiliencia, la neutralidad de carbono y la prosperidad inclusiva.
             </div>
           </>
         ),
         en: (
           <>
-            <strong>Euroclima</strong> is the regional cooperation programme that promotes a strategic 
+            <strong>Euroclima</strong> is the regional cooperation programme that promotes a strategic
             partnership between the European Union and Latin America and the Caribbean,
-             based on shared values and a commitment to jointly address climate change 
-             and biodiversity loss. It is a platform for the exchange of ideas, knowledge 
-             and experiences between the two regions.
+            based on shared values and a commitment to jointly address climate change
+            and biodiversity loss. It is a platform for the exchange of ideas, knowledge
+            and experiences between the two regions.
             <div className="my-4">
-            The programme is {" "}<strong>co-financed by the European Union and the German Federal Government </strong>
-            through the Federal Ministry for Economic Cooperation and Development (BMZ). 
-            It aims to contribute to a sustainable, resilient and inclusive transition 
-            through climate change mitigation and adaptation actions, including the protection, 
-            restoration and conservation of biodiversity, as well as the promotion of the circular economy.
+              The programme is {" "}<strong>co-financed by the European Union and the German Federal Government </strong>
+              through the Federal Ministry for Economic Cooperation and Development (BMZ).
+              It aims to contribute to a sustainable, resilient and inclusive transition
+              through climate change mitigation and adaptation actions, including the protection,
+              restoration and conservation of biodiversity, as well as the promotion of the circular economy.
             </div>
             <div className="my-4">
-            Euroclima supports partner countries in creating enabling conditions to attract 
-            investments, in particular in the framework of the Global Gateway Investment 
-            Agenda (GGIA) and the EU-CELAC (Community of Latin American and Caribbean States) 
-            cooperation. This effort contributes to sustainable and just transitions that 
-            promote resilience, carbon neutrality and inclusive prosperity.
+              Euroclima supports partner countries in creating enabling conditions to attract
+              investments, in particular in the framework of the Global Gateway Investment
+              Agenda (GGIA) and the EU-CELAC (Community of Latin American and Caribbean States)
+              cooperation. This effort contributes to sustainable and just transitions that
+              promote resilience, carbon neutrality and inclusive prosperity.
             </div>
           </>
         ),
@@ -74,25 +74,25 @@ function HomePage() {
       contenido: {
         es: (
           <>
-            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas innovadoras 
+            El concurso SoMoS LAC "Rumbo a la Equidad: Reconociendo iniciativas innovadoras
             en favor de la equidad de género en movilidad urbana" es una iniciativa impulsada
-             por Euroclima. Su objetivo es fortalecer la cooperación con América Latina y el 
-             Caribe para avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
+            por Euroclima. Su objetivo es fortalecer la cooperación con América Latina y el
+            Caribe para avanzar hacia una transición verde, justa y sostenible, apoyando a 33 países.
             <div className="my-4">
-            Desde 2018, el programa Euroclima ha apoyado la creación de la Comunidad de 
-            Práctica SoMoS LAC. En 2023, la comunidad entró en una nueva fase de implementación, 
-            liderada por el componente de Transporte Sostenible, ejecutado por la Cooperación Alemana para el Desarrollo (GIZ). 
+              Desde 2018, el programa Euroclima ha apoyado la creación de la Comunidad de
+              Práctica SoMoS LAC. En 2023, la comunidad entró en una nueva fase de implementación,
+              liderada por el componente de Transporte Sostenible, ejecutado por la Cooperación Alemana para el Desarrollo (GIZ).
             </div>
             <div className="my-4">
-            La misión de SoMoS LAC es conectar a una red de actores públicos, 
-            privados y de la sociedad civil, facilitando el diálogo y la colaboración
-             para impulsar liderazgos, políticas y acciones orientadas a mejorar 
-             los sistemas de movilidad en la región de forma sostenible. SoMoS LAC 
-             se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar 
-             aprendizajes y acciones colaborativas, siendo uno de ellos el grupo temático de  {"  "}
-             <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>,
-             liderado por el Ministerio de Transporte de Colombia, quien 
-             promueve el presente concurso como parte de su plan de acción.
+              La misión de SoMoS LAC es conectar a una red de actores públicos,
+              privados y de la sociedad civil, facilitando el diálogo y la colaboración
+              para impulsar liderazgos, políticas y acciones orientadas a mejorar
+              los sistemas de movilidad en la región de forma sostenible. SoMoS LAC
+              se estructura en grupos temáticos que ofrecen espacios dinámicos para propiciar
+              aprendizajes y acciones colaborativas, siendo uno de ellos el grupo temático de  {"  "}
+              <strong>Género, Equidad e Inclusión en los Sistemas de Movilidad</strong>,
+              liderado por el Ministerio de Transporte de Colombia, quien
+              promueve el presente concurso como parte de su plan de acción.
             </div>
           </>
         ),
@@ -100,15 +100,15 @@ function HomePage() {
           <>
             SoMoS LAC contest, “Towards Equity: Recognizing Innovative Initiatives for Gender Equity in Urban Mobility,” is promoted by Euroclima. Its mission is to strengthen cooperation with Latin America and the Caribbean, fostering a green, fair, and sustainable transition across 33 countries.
             <div className="my-4">
-            Since 2018, Euroclima has supported the creation of SoMoS LAC - Community of Practice. In 2023, the community entered a new implementation phase, led by the Sustainable Transport component implemented by German Development Cooperation (GIZ).
+              Since 2018, Euroclima has supported the creation of SoMoS LAC - Community of Practice. In 2023, the community entered a new implementation phase, led by the Sustainable Transport component implemented by German Development Cooperation (GIZ).
             </div>
             <div className="my-4">
-            SoMoS LAC connects public, private, and civil society actors, fostering dialogue 
-            and collaboration to drive leadership, policy development, and initiatives that 
-            improve mobility systems sustainably across the region. The network is structured 
-            into thematic groups, including the 
-            {" "}<strong>Gender, Equity, and Inclusion in Mobility Systems group, </strong>
-            led by the Colombian Ministry of Transport, which is promoting this contest as part of its action plan.
+              SoMoS LAC connects public, private, and civil society actors, fostering dialogue
+              and collaboration to drive leadership, policy development, and initiatives that
+              improve mobility systems sustainably across the region. The network is structured
+              into thematic groups, including the
+              {" "}<strong>Gender, Equity, and Inclusion in Mobility Systems group, </strong>
+              led by the Colombian Ministry of Transport, which is promoting this contest as part of its action plan.
             </div>
           </>
         ),
@@ -140,12 +140,12 @@ function HomePage() {
       contenido: {
         es: (
           <>
-           El propósito del concurso es: reconocer, visibilizar y promover iniciativas innovadoras en favor de la equidad e inclusión de género en la movilidad urbana, en América Latina y El Caribe. Las iniciativas participantes serán difundidas por SoMos LAC a través de un mapa web interactivo que mostrará sus principales características. De esta manera se contribuye al fomento de la movilidad sostenible en mujeres, así como a la promoción de una mejor experiencia urbana, de transporte y de acceso al territorio. 
+            El propósito del concurso es: reconocer, visibilizar y promover iniciativas innovadoras en favor de la equidad e inclusión de género en la movilidad urbana, en América Latina y El Caribe. Las iniciativas participantes serán difundidas por SoMos LAC a través de un mapa web interactivo que mostrará sus principales características. De esta manera se contribuye al fomento de la movilidad sostenible en mujeres, así como a la promoción de una mejor experiencia urbana, de transporte y de acceso al territorio.
             <div className="my-4">
-            Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo. Este concurso está dirigido a instituciones públicas, empresas privadas, organizaciones de la sociedad civil y entidades académicas que lideren este tipo de iniciativas.
+              Se evaluarán mejor aquellas iniciativas con mayor impacto sobre la equidad e inclusión y potencial de replicabilidad y sostenibilidad en el tiempo. Este concurso está dirigido a instituciones públicas, empresas privadas, organizaciones de la sociedad civil y entidades académicas que lideren este tipo de iniciativas.
             </div>
             <div className="my-4">
-            Mediante su postulación, los equipos participantes autorizan a SoMoS LAC a difundir los principales datos de la iniciativa para el cumplimiento del propósito del concurso, resguardando la confidencialidad de la información de carácter personal.
+              Mediante su postulación, los equipos participantes autorizan a SoMoS LAC a difundir los principales datos de la iniciativa para el cumplimiento del propósito del concurso, resguardando la confidencialidad de la información de carácter personal.
             </div>
           </>
         ),
@@ -153,10 +153,10 @@ function HomePage() {
           <>
             The contest seeks to recognize, showcase, and promote innovative initiatives that advance gender equity and inclusion in urban mobility throughout Latin America and the Caribbean. Selected initiatives will be featured on SoMoS LAC’s interactive web map, highlighting their key features. In doing so, the contest aims to encourage sustainable mobility for women and improve their urban travel experience, as well as access to public spaces.
             <div className="my-4">
-            Priority will be given to initiatives that have a tangible impact on equity and inclusion, with strong potential for replication and long-term sustainability. The contest is open to public institutions, private companies, civil society organizations, and academic entities leading these efforts.
+              Priority will be given to initiatives that have a tangible impact on equity and inclusion, with strong potential for replication and long-term sustainability. The contest is open to public institutions, private companies, civil society organizations, and academic entities leading these efforts.
             </div>
             <div className="my-4">
-            By submitting an application, participants authorize SoMoS LAC to share essential information about their initiative for the contest’s objectives, while safeguarding personal data confidentiality.
+              By submitting an application, participants authorize SoMoS LAC to share essential information about their initiative for the contest’s objectives, while safeguarding personal data confidentiality.
             </div>
           </>
         ),
@@ -175,13 +175,13 @@ function HomePage() {
               <h3>
                 <strong>Instituciones públicas y Empresas privadas:</strong>
               </h3>
-              Orientada a instituciones públicas, privadas y/o sociedades de 
-              capital mixto responsables de la regulación y operación del 
-              transporte urbano, así como a operadores de transporte, que 
-              hayan implementado iniciativas concretas para superar brechas 
-              de género en la movilidad urbana. Se valorarán acciones que promuevan 
-              la igualdad de oportunidades, la participación de las mujeres en el 
-              sector, la mejora de condiciones laborales con enfoque de género, 
+              Orientada a instituciones públicas, privadas y/o sociedades de
+              capital mixto responsables de la regulación y operación del
+              transporte urbano, así como a operadores de transporte, que
+              hayan implementado iniciativas concretas para superar brechas
+              de género en la movilidad urbana. Se valorarán acciones que promuevan
+              la igualdad de oportunidades, la participación de las mujeres en el
+              sector, la mejora de condiciones laborales con enfoque de género,
               o el diseño e implementación de servicios más seguros, accesibles e inclusivos.
             </div>
             <div className="my-4"></div>
@@ -191,13 +191,13 @@ function HomePage() {
                   Organizaciones de la sociedad civil y Entidades académicas:
                 </strong>
               </h3>
-              Dirigida a organizaciones de la sociedad civil y entidades académicas 
-              que hayan desarrollado investigaciones, proyectos piloto, campañas, 
+              Dirigida a organizaciones de la sociedad civil y entidades académicas
+              que hayan desarrollado investigaciones, proyectos piloto, campañas,
               metodologías o programas de formación que promuevan la equidad de género
-               en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas 
-               que hayan generado aprendizajes valiosos, incidencia en políticas públicas, 
-               articulación intersectorial o que tengan potencial de escalabilidad y 
-               réplica en otros contextos urbanos.
+              en el ámbito de la movilidad urbana. Se priorizarán aquellas propuestas
+              que hayan generado aprendizajes valiosos, incidencia en políticas públicas,
+              articulación intersectorial o que tengan potencial de escalabilidad y
+              réplica en otros contextos urbanos.
             </div>
           </>
         ),
@@ -231,7 +231,7 @@ function HomePage() {
       contenido: {
         es: (
           <>
-          Se entenderá por iniciativa a cualquier acción, programa, proyecto o medida concreta, impulsada por una institución, colectivo o actor, implementada o en fase de implementación que tenga impactos comprobables o previstos en la equidad de género en el ámbito del transporte sostenible. En el contexto de movilidad con enfoque de género, una iniciativa puede adoptar diversas formas: desde una intervención puntual (como una campaña o una mejora en la infraestructura), hasta la implementación de una estrategia integral de largo plazo.
+            Se entenderá por iniciativa a cualquier acción, programa, proyecto o medida concreta, impulsada por una institución, colectivo o actor, implementada o en fase de implementación que tenga impactos comprobables o previstos en la equidad de género en el ámbito del transporte sostenible. En el contexto de movilidad con enfoque de género, una iniciativa puede adoptar diversas formas: desde una intervención puntual (como una campaña o una mejora en la infraestructura), hasta la implementación de una estrategia integral de largo plazo.
             <div className=" text-sm space-y-3 p-2">
               <div>
                 <h3>
@@ -241,7 +241,7 @@ function HomePage() {
                 </h3>
                 <ul className="list-disc list-inside ml-4">
                   <li>
-                  La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
+                    La iniciativa debe haber sido implementada en al menos una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
                   </li>
                   <li>
                     La organización postulante puede ser una institución pública
@@ -257,7 +257,7 @@ function HomePage() {
                     operativa.
                   </li>
                   <li>
-                  No podrán postular iniciativas que estén participando actualmente en el concurso Mujeres en Ruta 2025 de OBGEM, en cualquiera de sus ciudades. Sin embargo otras iniciativas del mismo proponente podrán inscribirse en este concurso.
+                    No podrán postular iniciativas que estén participando actualmente en el concurso Mujeres en Ruta 2025 de OBGEM, en cualquiera de sus ciudades. Sin embargo otras iniciativas del mismo proponente podrán inscribirse en este concurso.
                   </li>
                   <li>
                     No podrán participar instituciones que hayan participado
@@ -275,22 +275,22 @@ function HomePage() {
                 </h3>
                 <ul className="list-disc list-inside ml-4">
                   <li>
-                  La iniciativa debe referirse a experiencias o análisis aplicadas a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
+                    La iniciativa debe referirse a experiencias o análisis aplicadas a una ciudad latinoamericana o caribeña o haber sido desarrollada para un país que se encuentre en dichas regiones.
                   </li>
                   <li>
-                  La organización postulante puede ser académica o de la sociedad civil. No es requisito obligatorio estar constituido legalmente para esta categoria.
+                    La organización postulante puede ser académica o de la sociedad civil. No es requisito obligatorio estar constituido legalmente para esta categoria.
                   </li>
                   <li>
-                  La iniciativa debe haber sido implementada entre el 1 de enero de 2021 y hasta la fecha de postulación.
+                    La iniciativa debe haber sido implementada entre el 1 de enero de 2021 y hasta la fecha de postulación.
                   </li>
                   <li>
-                  La organización debe estar operativa.
+                    La organización debe estar operativa.
                   </li>
                   <li>
-                  No podrán postular iniciativas que estén participando actualmente en el concurso Mujeres en Ruta 2025 de OBGEM, en cualquiera de sus ciudades. Sin embargo otras iniciativas del mismo proponente podrán inscribirse en este concurso.
+                    No podrán postular iniciativas que estén participando actualmente en el concurso Mujeres en Ruta 2025 de OBGEM, en cualquiera de sus ciudades. Sin embargo otras iniciativas del mismo proponente podrán inscribirse en este concurso.
                   </li>
                   <li>
-                  No podrán participar instituciones que hayan participado directa o indirectamente en la preparación o ejecución de este concurso.
+                    No podrán participar instituciones que hayan participado directa o indirectamente en la preparación o ejecución de este concurso.
                   </li>
                 </ul>
               </div>
@@ -299,7 +299,7 @@ function HomePage() {
         ),
         en: (
           <>
-          An “initiative” is any concrete action, program, project, or measure—implemented or in progress—that demonstrates or is expected to deliver measurable impacts on gender equity in sustainable transport. Gender-focused initiatives can range from specific interventions (e.g., campaigns or infrastructure upgrades) to comprehensive long-term strategies.
+            An “initiative” is any concrete action, program, project, or measure—implemented or in progress—that demonstrates or is expected to deliver measurable impacts on gender equity in sustainable transport. Gender-focused initiatives can range from specific interventions (e.g., campaigns or infrastructure upgrades) to comprehensive long-term strategies.
             <div className=" text-sm space-y-3 p-2">
               <div>
                 <h3>
@@ -309,22 +309,22 @@ function HomePage() {
                 </h3>
                 <ul className="list-disc list-inside ml-4">
                   <li>
-                  Must have implemented the initiative in at least one city in Latin America or the Caribbean, or have been developed for a country in these regions.   
+                    Must have implemented the initiative in at least one city in Latin America or the Caribbean, or have been developed for a country in these regions.
                   </li>
                   <li>
-                  The applicant may be a public or private entity
+                    The applicant may be a public or private entity
                   </li>
                   <li>
-                  The initiative must have been implemented between January 1, 2021, and no later than one year prior to submission.  
+                    The initiative must have been implemented between January 1, 2021, and no later than one year prior to submission.
                   </li>
                   <li>
-                  The organization must be legally registered and operational.  
+                    The organization must be legally registered and operational.
                   </li>
                   <li>
-                  Initiatives currently participating in the “Mujeres en Ruta 2025” contest by OBGEM are not eligible in any of their cities. Nevertheless, other initiatives from the same applicant may still apply to this contest.  
+                    Initiatives currently participating in the “Mujeres en Ruta 2025” contest by OBGEM are not eligible in any of their cities. Nevertheless, other initiatives from the same applicant may still apply to this contest.
                   </li>
                   <li>
-                  Organizations directly or indirectly involved in preparing or managing this contest are not eligible.
+                    Organizations directly or indirectly involved in preparing or managing this contest are not eligible.
                   </li>
                 </ul>
               </div>
@@ -337,22 +337,22 @@ function HomePage() {
                 </h3>
                 <ul className="list-disc list-inside ml-4">
                   <li>
-                  The initiative must relate to experiences or research applied in a Latin American or Caribbean city, or have been developed for a country in these regions.  
+                    The initiative must relate to experiences or research applied in a Latin American or Caribbean city, or have been developed for a country in these regions.
                   </li>
                   <li>
-                  Applicants can be academic or civil society entities. Legal registration is not mandatory for this category.  
+                    Applicants can be academic or civil society entities. Legal registration is not mandatory for this category.
                   </li>
                   <li>
-                  The initiative must have been implemented between January 1, 2021, and the submission date.  
+                    The initiative must have been implemented between January 1, 2021, and the submission date.
                   </li>
                   <li>
-                  The organization must be operational
+                    The organization must be operational
                   </li>
                   <li>
-                  Initiatives currently participating in the “Mujeres en Ruta 2025” contest by OBGEM are not eligible in any of their cities. Nevertheless, other initiatives from the same applicant may still apply to this contest.  
+                    Initiatives currently participating in the “Mujeres en Ruta 2025” contest by OBGEM are not eligible in any of their cities. Nevertheless, other initiatives from the same applicant may still apply to this contest.
                   </li>
                   <li>
-                  Organizations directly or indirectly involved in preparing or managing this contest are not eligible.
+                    Organizations directly or indirectly involved in preparing or managing this contest are not eligible.
                   </li>
                 </ul>
               </div>
@@ -371,13 +371,13 @@ function HomePage() {
           <>
             <ul className="list-disc list-inside">
               <li>
-              Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea en https://rumboalaequidad.org/
+                Las postulaciones se realizarán exclusivamente a través de un formulario electrónico en línea en https://rumboalaequidad.org/
               </li>
               <li>
-              Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información sobre la inicitiva y de su logo.
+                Se deberá adjuntar una carta firmada por una autoridad de alta dirección de la institución, autorizando la postulación y el uso de información sobre la inicitiva y de su logo.
               </li>
               <li>
-              La postulación se puede hacer en español (ES), inglés (EN) o portugués (PT).
+                La postulación se puede hacer en español (ES), inglés (EN) o portugués (PT).
               </li>
             </ul>
           </>
@@ -386,13 +386,13 @@ function HomePage() {
           <>
             <ul className="list-disc list-inside">
               <li>
-              Applications must be submitted exclusively through the online form at https://rumboalaequidad.org/
+                Applications must be submitted exclusively through the online form at https://rumboalaequidad.org/
               </li>
               <li>
-              Applicants must include a letter signed by a senior official of the institution, authorizing the submission and use of information and the organization’s logo.
+                Applicants must include a letter signed by a senior official of the institution, authorizing the submission and use of information and the organization’s logo.
               </li>
               <li>
-              Applications can be submitted in Spanish (ES), English (EN), or Portuguese (PT).
+                Applications can be submitted in Spanish (ES), English (EN), or Portuguese (PT).
               </li>
             </ul>
           </>
@@ -532,7 +532,9 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            El jurado estará compuesto por personas expertas en género, movilidad y gestión pública.
+            <div className="my-4">
+              * El jurado estará compuesto por personas expertas en género, movilidad y gestión pública. *
+            </div>
           </>
         ),
         en: (
@@ -859,7 +861,7 @@ function HomePage() {
               : "Participate! July 25th to August 25th"}</span>
         </div>
       </div>
-     
+
       <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         <div className="w-full md:w-1/3">
           {secciones.map((sec, i) => (
