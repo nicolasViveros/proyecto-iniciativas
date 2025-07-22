@@ -669,11 +669,11 @@ function HomePage() {
           <>
             <div className="text-[#5A478D] text-sm space-y-4 p-4">
               <div className="space-y-2">
-                <div className="flex justify-between border border-[#D9D6E1] pb-1">
+                <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">
-                    Etapa
+                    <strong>Etapa</strong>
                   </span>
-                  <span className="w-1/2">fecha</span>
+                  <span className="w-1/2"><strong>Fecha</strong></span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">
