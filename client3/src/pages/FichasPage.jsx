@@ -69,7 +69,7 @@ function FichasPage() {
     getFichas();
   }, []);
 
-  if (fichas.length == 0) return (<div className="  items-center justify-center min-h-screen">
+  if (fichas.length == 0) return (<div className=" flex  items-center justify-center min-h-screen">
     <div className="max-w-3xl w-full rounded-md justify-center items-center">
       Cargando fichas...
       <LoadingSpinner />
@@ -79,7 +79,7 @@ function FichasPage() {
   if (isSaving) {
     return <div className="flex items-center justify-center min-h-screen">
       <div className="max-w-3xl w-full rounded-md justify-center items-center">
-        Guardando ficha...
+        Eliminando ficha...
         <LoadingSpinner />
       </div>
     </div>;
