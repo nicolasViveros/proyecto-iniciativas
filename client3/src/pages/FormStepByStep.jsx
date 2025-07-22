@@ -1404,19 +1404,19 @@ export default function FormWizard() {
 
         try {
           await createFicha(form)
-
-            .then(() => {
-              setSuccessMessage(
-                language === "es"
-                  ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
-                  : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
-              );
+          navigate("/");
+            // .then(() => {
+            //   setSuccessMessage(
+            //     language === "es"
+            //       ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
+            //       : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
+            //   );
               setIsSubmitted(true);
-              const timeoutId = setTimeout(() => {
-                navigate("/");
-              }, 5000);
-              return () => clearTimeout(timeoutId);
-            })
+            //   const timeoutId = setTimeout(() => {
+            //     navigate("/");
+            //   }, 5000);
+            //   return () => clearTimeout(timeoutId);
+            // })
         } catch (error) {
           console.error("Error al guardar la ficha:", error);
         } finally {

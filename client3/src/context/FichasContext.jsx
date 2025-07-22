@@ -29,7 +29,7 @@ export function FichaProvider({ children }) {
         try {
             const res = await createFichaRequest(ficha)
 
-            window.alert("Postulación enviada con éxito");
+            window.alert("Postulación enviada con éxito!!!, ahora serás redirigido a la página de inicio");
             // console.log('Ficha creada:', res.data);
         } catch (error) {
             console.error('Error al crear la ficha:', error);
