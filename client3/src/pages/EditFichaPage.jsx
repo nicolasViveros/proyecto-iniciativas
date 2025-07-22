@@ -176,7 +176,7 @@ function EditFichaPage() {
         "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
         "Organizaciones Internacionales",
         "Otras organizaciones",
-      ];
+    ];
     return (
 
         <div className="relative flex items-center justify-center min-h-screen" >
@@ -350,16 +350,28 @@ function EditFichaPage() {
                     <div >Asociaciones:</div>
 
                     <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
-                        {opciones.map((option) => (
+                        {[
+                            "No",
+                            "Entidades públicas",
+                            "Empresa privada",
+                            "ONG",
+                            "Sociedad Civil",
+                            "Instituciones educativas y de investigación",
+                            "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
+                            "Organizaciones Internacionales",
+                            "Otras organizaciones",
+                        ].map((option) => (
                             <label key={option} className="flex items-center space-x-2">
                                 <input
                                     type="checkbox"
                                     value={option}
                                     checked={ficha.associations.includes(option)}
                                     onChange={handleAssociationChange}
-                                    className="input-focused accent-[#5d5593]"
+                                    className="input-focused   accent-[#5d5593]"
                                 />
-                                <span>{option}</span>
+                                <span>
+                                    {option}
+                                </span>
                             </label>
                         ))}
                     </div>
