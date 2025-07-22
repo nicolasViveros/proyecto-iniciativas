@@ -125,14 +125,9 @@ function EditFichaPage() {
             alert(validationError);
             return;
         }
-        <div className="  items-center justify-center min-h-screen">
-            <div className="max-w-3xl w-full rounded-md justify-center items-center">
-                Cargando fichas...
-                <LoadingSpinner />
-            </div>
-        </div>        
-        await updateFicha(id, ficha);
-        navigate('/fichas');
+       
+         updateFicha(id, ficha);
+        await navigate('/fichas'); // vuelve al listado de fichas
     };
 
     const handleBack = () => {
