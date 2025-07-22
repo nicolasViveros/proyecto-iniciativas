@@ -216,11 +216,11 @@ function Step2({ form, handleChange, translateText, language }) {
         onChange={handleChange}
         className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
       >
-        <option className="accent-[#5d5593]" value="Operador/Regulador">
-          {language === "es" ? "Operador/Regulador" : "Operator/Regulator"}
+        <option className="accent-[#5d5593]" value="Instituciones públicas y Empresas privadas">
+          {language === "es" ? "Instituciones públicas y Empresas privadas" : "Operator/Regulator"}
         </option>
-        <option value="ONG/Academia">
-          {language === "es" ? "ONG/Academia" : "NGO/Academy"}
+        <option value="Organizaciones de la sociedad civil y Entidades académicas">
+          {language === "es" ? "Organizaciones de la sociedad civil y Entidades académicas" : "NGO/Academy"}
         </option>
       </select>
     </div>
@@ -240,7 +240,7 @@ function Step3({ form, handleChange, translateText, language }) {
     }
   };
 
-  if (form.category === "Operador/Regulador") {
+  if (form.category === "Instituciones públicas y Empresas privadas") {
     return (
       <div className="">
         <h2 className="text-3xl text-center font-bold mb-4">
@@ -324,7 +324,7 @@ function Step3({ form, handleChange, translateText, language }) {
     );
   }
 
-  if (form.category === "ONG/Academia") {
+  if (form.category === "Organizaciones de la sociedad civil y Entidades académicas") {
     return (
       <div>
         <h2 className="text-3xl text-center font-bold mb-4">
@@ -928,7 +928,7 @@ export default function FormWizard() {
     objectives: "",
     targetAudience: "",
     activities: "",
-    category: "Operador/Regulador",
+    category: "Instituciones públicas y Empresas privadas",
     innovation: "",
     impact: "",
     methodology: "",
@@ -945,7 +945,7 @@ export default function FormWizard() {
 
   const translateText = {
     es: {
-      organizationDetails: "Datos de la organización postulante",
+      organizationDetails: "DATOS DE LA ORGANIZACIÓN POSTULANTE",
       organizationName: "Nombre de la organización *",
       organizationType: "Tipo de organización *",
       country: "País",
@@ -953,7 +953,7 @@ export default function FormWizard() {
       legalRepPosition: "Cargo *",
       email: "Correo electrónico *",
       phone: "Teléfono de contacto *",
-      registrationId: "RUT/NIT/CNPJ/Registro legal de la organización",
+      registrationId: "RUT/NIT/CNPJ/Registro legal de la organización (Si aplica)",
       team: "Equipo responsable",
       associations:
         "¿Hubo asociaciones para el desarrollo? Indique todos los sectores asociados*",
@@ -972,7 +972,7 @@ export default function FormWizard() {
       targetAudience: "Público objetivo y población beneficiaria. *",
       activities: "Principales actividades realizadas. *",
       projectCategory: "¿Qué tipo de categoría corresponde el proyecto?",
-      operatorRegulatorCriteria: "Criterios Operador/Regulador",
+      operatorRegulatorCriteria: "Criterios Instituciones públicas y Empresas privadas",
       innovation:
         "Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *",
       impact:
@@ -1002,7 +1002,7 @@ export default function FormWizard() {
         "¿La iniciativa cuenta con algún reconocimiento o premio previo? (opcional)",
       recognitionHint: "(Indicar cuál y en qué año, si aplica)",
       attachLetter:
-        "Adjunte carta de autorización del/de la representante legal",
+        "Adjunte carta de autorización del/de la representante legal (para la categoría Instituciones públicas y Empresas privadas) o del líder/lideresa de la iniciativa (para la categoría Organizaciones de la sociedad civil y Entidades académicas)",
       declaration:
         "Declaro que la información entregada en esta ficha es veraz y autorizo el uso, tratamiento y publicación de datos, antecedentes y material gráfico entregado en el marco de este concurso para fines de difusión de SoMoS LAC o de sus organizadores. No se publicarán datos personales.* ",
       max500words: "(máx 500 palabras)",
@@ -1239,7 +1239,7 @@ export default function FormWizard() {
             : "Main activities are required."
         );
     }
-    if (currentStep === 2 && form.category === "Operador/Regulador") {
+    if (currentStep === 2 && form.category === "Instituciones públicas y Empresas privadas") {
       if (!form.innovation)
         newErrors.push(
           language === "es"
@@ -1265,7 +1265,7 @@ export default function FormWizard() {
             : "Sustainability information is required."
         );
     }
-    if (currentStep === 2 && form.category === "ONG/Academia") {
+    if (currentStep === 2 && form.category === "Organizaciones de la sociedad civil y Entidades académicas") {
       if (!form.methodology)
         newErrors.push(
           language === "es"
