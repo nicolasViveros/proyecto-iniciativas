@@ -4,10 +4,10 @@ function Footer() {
   return (
     <div>
       <footer >
-        <div className="grid grid-rows-2 h-auto">
+        <div className="grid grid-rows-2">
 
           {/* Fondo restante con imagen de footer */}
-          <div className=" relative overflow-hidden h-32">
+          <div className=" relative overflow-hidden h-33">
             <img
               src="/Footer2.png"
               alt="Footer"
@@ -16,7 +16,7 @@ function Footer() {
           </div>
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
-          <div className=" bg-white w-full md:w-auto px-4 items-start justify-start md:justify-start h-32">
+          <div className="relative bg-white w-full md:w-auto px-4 items-start justify-start md:justify-start h-32">
             <span className="flex text-xs  ">Implementado por:</span>
 
             <Link to="/">
