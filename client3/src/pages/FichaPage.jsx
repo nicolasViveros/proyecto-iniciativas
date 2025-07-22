@@ -83,7 +83,7 @@ const FichaPage = () => {
         <span className="ml-1">Volver</span>
       </button>
 
-      <div className="absolute top-4 right-4 space-x-2">
+      <div className="absolute top-4 right-4 ">
         <Link
           to={`/ficha/${ficha._id}/editar`}
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
@@ -92,7 +92,7 @@ const FichaPage = () => {
         </Link>
       </div>
 
-      <div className="max-w-3xl px-2 py-12 sm:p-10 rounded-md">
+      <div className="max-w-3xl w-full px-2 py-12 sm:p-10 rounded-md">
         <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
         <div className="container grid grid-cols-2 mx-auto p-2">
           <p>
