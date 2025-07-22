@@ -4,15 +4,13 @@ import { useFichas } from "../context/FichasContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { loadingSpinner } from "../context/FichasContext";
-
+import Spinner from "../context/LoadingSpinner";
 
 const FichaPage = () => {
   const { id } = useParams();
   const [ficha, setFicha] = useState(null);
   const { fichas, getFicha } = useFichas();
   const navigate = useNavigate();
-const spinner = loadingSpinner();
 
 
   useEffect(() => {
@@ -37,13 +35,10 @@ const spinner = loadingSpinner();
       <div className="  items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full rounded-md justify-center items-center">
           Cargando ficha...
-
-          
-          
         </div>
       </div>
     );
-    spinner();
+    <Spinner/>
   }
 
   const handleBack = () => {
