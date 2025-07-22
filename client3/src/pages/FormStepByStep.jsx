@@ -917,6 +917,8 @@ export default function FormWizard() {
   const [currentStep, setCurrentStep] = useState(0);
   const [successMessage, setSuccessMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+
   const [form, setForm] = useState({
     organizationName: "",
     organizationType: "",
@@ -1379,34 +1381,50 @@ export default function FormWizard() {
     }
   };
 
+  if (isSaving) {
+    return <div className="flex items-center justify-center min-h-screen">
+      <div className="max-w-3xl w-full rounded-md justify-center items-center">
+        Guardando postulación...
+        <LoadingSpinner />
+      </div>
+    </div>;
+  }
+
   const prevStep = () => {
     setCurrentStep((prevStep) => Math.max(prevStep - 1, 0));
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (validateStep()) {
       const userConfirmed = window.confirm(translateText[language].confirm);
 
       if (userConfirmed) {
-        createFicha(form)
-          .then(() => {
-            setSuccessMessage(
-              language === "es"
-                ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
-                : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
-            );
-            setIsSubmitted(true);
-            const timeoutId = setTimeout(() => {
-              navigate("/");
-            }, 5000);
-            return () => clearTimeout(timeoutId);
-          })
-          .catch((error) => {
-            console.error("Error al crear la ficha:", error);
-          });
+        setIsSaving(true);
+
+
+        try {
+          await createFicha(form)
+
+            .then(() => {
+              setSuccessMessage(
+                language === "es"
+                  ? "Muchas gracias! Su formulario fue ingresado correctamente. Ahora será redireccionado al Inicio"
+                  : "Thank you very much! Your form was successfully submitted. You will now be redirected to the Home page."
+              );
+              setIsSubmitted(true);
+              const timeoutId = setTimeout(() => {
+                navigate("/");
+              }, 5000);
+              return () => clearTimeout(timeoutId);
+            })
+        } catch (error) {
+          console.error("Error al guardar la ficha:", error);
+        } finally {
+          setIsSaving(false);
+        }
       }
     }
-  };
+  } 
 
   const handleBack = () => {
     if (isSubmitted) {
