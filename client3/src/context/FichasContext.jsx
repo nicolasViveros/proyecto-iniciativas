@@ -1,11 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { createFichaRequest, getFichasRequest, getFichaRequest, deleteFichaRequest, updateFichaRequest } from "../api/fichas";
-import LoadingSpinner from "./LoadingSpinner";
 
 const FichaContext = createContext();
-
-
-
 
 export const useFichas = () => {
     const context = useContext(FichaContext);
@@ -32,7 +28,6 @@ export function FichaProvider({ children }) {
         // console.log("Datos antes de enviar:", ficha);
 
         try {
-            <LoadingSpinner />
             const res = await createFichaRequest(ficha)
 
             window.alert("Postulación enviada con éxito");
@@ -65,7 +60,6 @@ export function FichaProvider({ children }) {
     const updateFicha = async (id, ficha) => {
         try {
             await updateFichaRequest(id, ficha);
-            <LoadingSpinner />
 
             window.alert("Postulación actualizada con éxito");
 
