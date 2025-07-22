@@ -142,10 +142,11 @@ const FichaPage = () => {
             {ficha.isActive ? "Sí" : "No"}</p>
           {!ficha.isActive && (
             <p>
-              <strong>Razón Inactiva:</strong> <p>{ficha.reasonInactive}</p>
+              <strong>Razón Inactiva:</strong> 
             </p>
             
           )}
+          <p>{ficha.reasonInactive}</p>
           <p>
             <strong>Asociaciones:</strong>{" "}
           </p>
