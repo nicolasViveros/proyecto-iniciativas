@@ -6,336 +6,6 @@ import { useLanguage } from "../context/LanguageContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 
 
-function Step5({
-  form,
-  handleChange,
-  handleTeamChange,
-  addTeamMember,
-  removeTeamMember,
-  handleAssociationChange,
-  translateText,
-  language,
-}) {
-  const [organizationType, setOrganizationType] = useState(
-    form.organizationType
-  );
-  const [otherOrganizationType, setOtherOrganizationType] = useState("");
-  const [country, setCountry] = useState(form.country);
-  const [otherCountry, setOtherCountry] = useState("");
-
-  const handleOrganizationTypeChange = (e) => {
-    const { value } = e.target;
-    setOrganizationType(value);
-    handleChange(e);
-
-    if (value !== "Otra") {
-      setOtherOrganizationType("");
-    }
-  };
-
-  const handleCountryChange = (e) => {
-    const { value } = e.target;
-    setCountry(value);
-    handleChange(e);
-
-    if (value !== "Otro") {
-      setOtherCountry("");
-    }
-  };
-
-  useEffect(() => {
-    if (organizationType === "Otra" && otherOrganizationType !== form.organizationType) {
-      handleChange({
-        target: { name: "organizationType", value: otherOrganizationType },
-      });
-    }
-  }, [organizationType, otherOrganizationType, handleChange, form.organizationType]);
-
-  useEffect(() => {
-    if (country === "Otro" && otherCountry !== form.country) {
-      handleChange({ target: { name: "country", value: otherCountry } });
-    }
-  }, [country, otherCountry, handleChange, form.country]);
-
-  return (
-
-    <div>
-
-      <h1 className="text-3xl text-center font-bold mb-4">
-        {translateText[language].organizationDetails}
-      </h1>
-
-      <label htmlFor="organizationName" className="text-xl">
-        {translateText[language].organizationName}
-      </label>
-      <br />
-      <input
-        name="organizationName"
-        value={form.organizationName}
-        onChange={handleChange}
-        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-        autoFocus
-        required
-      />
-
-      <label htmlFor="organizationType" className="text-xl">
-        {translateText[language].organizationType}
-      </label>
-      <br />
-      <div className="mt-2 grid grid-cols-1">
-        <select
-          id="organizationType"
-          name="organizationType"
-          value={organizationType}
-          onChange={handleOrganizationTypeChange}
-          className="col-start-1 row-start-1 w-full input-focused appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]"
-        >
-          <option value="">
-            {language === "es" ? "Selecciona un tipo" : "Select a type"}
-          </option>
-          <option value="Publica">
-            {language === "es" ? "Pública" : "Public"}
-          </option>
-          <option value="Privada">
-            {language === "es" ? "Privada" : "Private"}
-          </option>
-          <option value="ONG">ONG</option>
-          <option value="Multilateral">
-            {language === "es" ? "Multilateral" : "Multilateral"}
-          </option>
-          <option value="Otra">
-            {language === "es" ? "Otra..." : "Other..."}
-          </option>
-        </select>
-      </div>
-
-      {organizationType === "Otra" && (
-        <input
-          name="otherOrganizationType"
-          value={otherOrganizationType}
-          onChange={(e) => setOtherOrganizationType(e.target.value)}
-          className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
-          placeholder={
-            language === "es"
-              ? "Especifica el tipo de organización"
-              : "Specify organization type"
-          }
-          required
-        />
-      )}
-
-      <label htmlFor="country" className="text-xl">
-        {translateText[language].country}
-      </label>
-      <br />
-      <div className="mt-2 grid grid-cols-1">
-        <select
-          id="country"
-          name="country"
-          value={country}
-          onChange={handleCountryChange}
-          className="col-start-1 row-start-1 w-full appearance-none input-focused rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]"
-        >
-          <option value="">
-            {language === "es" ? "Selecciona un país" : "Select a country"}
-          </option>
-          <option value="Internacional">
-            {language === "es" ? "Internacional" : "International"}
-          </option>
-          <option value="Argentina">Argentina</option>
-          <option value="Bolivia">Bolivia</option>
-          <option value="Brasil">Brasil</option>
-          <option value="El Salvador">El Salvador</option>
-          <option value="Costa Rica">Costa Rica</option>
-          <option value="Chile">Chile</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="Guyana">Guyana</option>
-          <option value="México">México</option>
-          <option value="Paraguay">Paraguay</option>
-          <option value="Perú">Perú</option>
-          <option value="Surinam">Surinam</option>
-          <option value="Uruguay">Uruguay</option>
-          <option value="Venezuela">Venezuela</option>
-          <option value="Otro">
-            {language === "es" ? "Otro..." : "Other..."}
-          </option>
-        </select>
-      </div>
-
-      {country === "Otro" && (
-        <input
-          name="otherCountry"
-          value={otherCountry}
-          onChange={(e) => setOtherCountry(e.target.value)}
-          className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
-          placeholder={
-            language === "es" ? "Especifica el país" : "Specify country"
-          }
-          required
-        />
-      )}
-
-      <label htmlFor="legalRepName" className="text-xl">
-        {translateText[language].legalRepName}
-      </label>
-      <br />
-      <input
-        name="legalRepName"
-        value={form.legalRepName}
-        onChange={handleChange}
-        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-        required
-      />
-
-      <label htmlFor="legalRepPosition" className="text-xl">
-        {translateText[language].legalRepPosition}
-      </label>
-      <br />
-      <input
-        name="legalRepPosition"
-        value={form.legalRepPosition}
-        onChange={handleChange}
-        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-        required
-      />
-
-      <label htmlFor="email" className="text-xl">
-        {translateText[language].email}
-      </label>
-      <br />
-      <input
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        type="email"
-        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-        required
-      />
-
-      <label htmlFor="phone" className="text-xl">
-        {translateText[language].phone}
-      </label>
-      <br />
-      <input
-        type="tel"
-        name="phone"
-        value={form.phone}
-        onChange={handleChange}
-        className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
-        required
-        maxLength="13" // Limit to 13 characters
-        pattern="^\+?[0-9]*$" // Regex pattern to allow only numbers and the '+' symbol
-        title={language === "es" ? "Solo se permiten números y el símbolo '+'" : "Only numbers and the '+' symbol are allowed"}
-      />
-
-      <label htmlFor="registrationId" className="text-xl">
-        {translateText[language].registrationId}
-      </label>
-      <br />
-      <input
-        name="registrationId"
-        value={form.registrationId}
-        onChange={handleChange}
-        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
-        required
-      />
-
-      <h3 className="text-xl mt-5 ">
-        {translateText[language].team}
-      </h3>
-      <h3 className="text-sm">
-        {language === "es"
-          ? "Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa*"
-          : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
-      </h3>
-
-
-      {form.team.map((member, index) => (
-        <div key={index} className="grid grid-cols-5 gap-1 my-1">
-          <div className="col-span-2">
-            <label>{language === "es" ? "Nombre*" : "Name*"}</label>
-            <input
-              name="name"
-              value={member.name}
-              onChange={(e) => handleTeamChange(index, e)}
-              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-            />
-          </div>
-          <div className="col-span-2">
-            <label>{language === "es" ? "Cargo*" : "Position*"}</label>
-            <input
-              name="position"
-              value={member.position}
-              onChange={(e) => handleTeamChange(index, e)}
-              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-            />
-          </div>
-          {index > 0 && (
-            <div>
-              <button
-                type="button"
-                onClick={() => removeTeamMember(index)}
-                className="text-red-600 text-xs w-full py-1 hover:underline"
-              >
-                {language === "es" ? "Eliminar" : "Delete"}
-              </button>
-            </div>
-          )}
-          <div className="col-span-4">
-            <label>{language === "es" ? "Email*" : "Email*"}</label>
-            <input
-              name="email"
-              type="email"
-              value={member.email}
-              onChange={(e) => handleTeamChange(index, e)}
-              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-            />
-          </div>
-        </div>
-      ))}
-
-      <button
-        type="button"
-        onClick={addTeamMember}
-        className=" hover:underline"
-      >
-        {" "}
-        {language === "es" ? "+ Agregar responsable" : "+ Add responsible"}
-      </button>
-
-      <h3 className="text-xl my-5">
-        {translateText[language].associations}{" "}
-      </h3>
-      <div className="grid grid-cols-2 gap-2 ">
-        {[
-          "No",
-          "Otras Secretarías",
-          "ONGs y Sociedad Civil",
-          "Instituciones educativas y de investigación",
-          "Empresas",
-          "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
-          "Organizaciones Internacionales",
-          "Otras organizaciones",
-        ].map((option) => (
-          <label key={option} className="flex items-center space-x-2">
-            <input
-              type="checkbox"
-              value={option}
-              checked={form.associations.includes(option)}
-              onChange={handleAssociationChange}
-              className="input-focused   accent-[#5d5593]"
-            />
-            <span>
-              {language === "es" ? option : translateAssociation(option)}
-            </span>
-          </label>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function translateAssociation(option) {
   switch (option) {
     case "No":
@@ -741,7 +411,6 @@ function Step4({
   form,
   handleRemoveFile2,
   handleRemoveAcceptanceLetter,
-  handleInputChange,
   handleAddLink,
   handleLetterChange,
   handleRemoveLink,
@@ -879,6 +548,338 @@ function Step4({
               </button>
             </div>
           </div>
+        ))}
+      </div>
+
+    </div>
+  );
+}
+
+function Step5({
+  form,
+  handleChange,
+  handleTeamChange,
+  addTeamMember,
+  handleInputChange,
+  removeTeamMember,
+  handleAssociationChange,
+  translateText,
+  language,
+}) {
+  const [organizationType, setOrganizationType] = useState(
+    form.organizationType
+  );
+  const [otherOrganizationType, setOtherOrganizationType] = useState("");
+  const [country, setCountry] = useState(form.country);
+  const [otherCountry, setOtherCountry] = useState("");
+
+  const handleOrganizationTypeChange = (e) => {
+    const { value } = e.target;
+    setOrganizationType(value);
+    handleChange(e);
+
+    if (value !== "Otra") {
+      setOtherOrganizationType("");
+    }
+  };
+
+  const handleCountryChange = (e) => {
+    const { value } = e.target;
+    setCountry(value);
+    handleChange(e);
+
+    if (value !== "Otro") {
+      setOtherCountry("");
+    }
+  };
+
+  useEffect(() => {
+    if (organizationType === "Otra" && otherOrganizationType !== form.organizationType) {
+      handleChange({
+        target: { name: "organizationType", value: otherOrganizationType },
+      });
+    }
+  }, [organizationType, otherOrganizationType, handleChange, form.organizationType]);
+
+  useEffect(() => {
+    if (country === "Otro" && otherCountry !== form.country) {
+      handleChange({ target: { name: "country", value: otherCountry } });
+    }
+  }, [country, otherCountry, handleChange, form.country]);
+
+  return (
+
+    <div>
+
+      <h1 className="text-3xl text-center font-bold mb-4">
+        {translateText[language].organizationDetails}
+      </h1>
+
+      <label htmlFor="organizationName" className="text-xl">
+        {translateText[language].organizationName}
+      </label>
+      <br />
+      <input
+        name="organizationName"
+        value={form.organizationName}
+        onChange={handleChange}
+        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
+        autoFocus
+        required
+      />
+
+      <label htmlFor="organizationType" className="text-xl">
+        {translateText[language].organizationType}
+      </label>
+      <br />
+      <div className="mt-2 grid grid-cols-1">
+        <select
+          id="organizationType"
+          name="organizationType"
+          value={organizationType}
+          onChange={handleOrganizationTypeChange}
+          className="col-start-1 row-start-1 w-full input-focused appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]"
+        >
+          <option value="">
+            {language === "es" ? "Selecciona un tipo" : "Select a type"}
+          </option>
+          <option value="Publica">
+            {language === "es" ? "Pública" : "Public"}
+          </option>
+          <option value="Privada">
+            {language === "es" ? "Privada" : "Private"}
+          </option>
+          <option value="ONG">ONG</option>
+          <option value="Multilateral">
+            {language === "es" ? "Multilateral" : "Multilateral"}
+          </option>
+          <option value="Otra">
+            {language === "es" ? "Otra..." : "Other..."}
+          </option>
+        </select>
+      </div>
+
+      {organizationType === "Otra" && (
+        <input
+          name="otherOrganizationType"
+          value={otherOrganizationType}
+          onChange={(e) => setOtherOrganizationType(e.target.value)}
+          className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
+          placeholder={
+            language === "es"
+              ? "Especifica el tipo de organización"
+              : "Specify organization type"
+          }
+          required
+        />
+      )}
+
+      <label htmlFor="country" className="text-xl">
+        {translateText[language].country}
+      </label>
+      <br />
+      <div className="mt-2 grid grid-cols-1">
+        <select
+          id="country"
+          name="country"
+          value={country}
+          onChange={handleCountryChange}
+          className="col-start-1 row-start-1 w-full appearance-none input-focused rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]"
+        >
+          <option value="">
+            {language === "es" ? "Selecciona un país" : "Select a country"}
+          </option>
+          <option value="Internacional">
+            {language === "es" ? "Internacional" : "International"}
+          </option>
+          <option value="Argentina">Argentina</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Brasil">Brasil</option>
+          <option value="El Salvador">El Salvador</option>
+          <option value="Costa Rica">Costa Rica</option>
+          <option value="Chile">Chile</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Guyana">Guyana</option>
+          <option value="México">México</option>
+          <option value="Paraguay">Paraguay</option>
+          <option value="Perú">Perú</option>
+          <option value="Surinam">Surinam</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Otro">
+            {language === "es" ? "Otro..." : "Other..."}
+          </option>
+        </select>
+      </div>
+
+      {country === "Otro" && (
+        <input
+          name="otherCountry"
+          value={otherCountry}
+          onChange={(e) => setOtherCountry(e.target.value)}
+          className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
+          placeholder={
+            language === "es" ? "Especifica el país" : "Specify country"
+          }
+          required
+        />
+      )}
+
+      <label htmlFor="legalRepName" className="text-xl">
+        {translateText[language].legalRepName}
+      </label>
+      <br />
+      <input
+        name="legalRepName"
+        value={form.legalRepName}
+        onChange={handleChange}
+        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
+        required
+      />
+
+      <label htmlFor="legalRepPosition" className="text-xl">
+        {translateText[language].legalRepPosition}
+      </label>
+      <br />
+      <input
+        name="legalRepPosition"
+        value={form.legalRepPosition}
+        onChange={handleChange}
+        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
+        required
+      />
+
+      <label htmlFor="email" className="text-xl">
+        {translateText[language].email}
+      </label>
+      <br />
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        type="email"
+        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
+        required
+      />
+
+      <label htmlFor="phone" className="text-xl">
+        {translateText[language].phone}
+      </label>
+      <br />
+      <input
+        type="tel"
+        name="phone"
+        value={form.phone}
+        onChange={handleChange}
+        className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
+        required
+        maxLength="13" // Limit to 13 characters
+        pattern="^\+?[0-9]*$" // Regex pattern to allow only numbers and the '+' symbol
+        title={language === "es" ? "Solo se permiten números y el símbolo '+'" : "Only numbers and the '+' symbol are allowed"}
+      />
+
+      <label htmlFor="registrationId" className="text-xl">
+        {translateText[language].registrationId}
+      </label>
+      <br />
+      <input
+        name="registrationId"
+        value={form.registrationId}
+        onChange={handleChange}
+        className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
+        required
+      />
+
+      <h3 className="text-xl mt-5 ">
+        {translateText[language].team}
+      </h3>
+      <h3 className="text-sm">
+        {language === "es"
+          ? "Enumere los nombres de las principales personas y cargos implicados en la realización del proyecto o iniciativa*"
+          : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
+      </h3>
+
+
+      {form.team.map((member, index) => (
+        <div key={index} className="grid grid-cols-5 gap-1 my-1">
+          <div className="col-span-2">
+            <label>{language === "es" ? "Nombre*" : "Name*"}</label>
+            <input
+              name="name"
+              value={member.name}
+              onChange={(e) => handleTeamChange(index, e)}
+              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+            />
+          </div>
+          <div className="col-span-2">
+            <label>{language === "es" ? "Cargo*" : "Position*"}</label>
+            <input
+              name="position"
+              value={member.position}
+              onChange={(e) => handleTeamChange(index, e)}
+              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+            />
+          </div>
+          {index > 0 && (
+            <div>
+              <button
+                type="button"
+                onClick={() => removeTeamMember(index)}
+                className="text-red-600 text-xs w-full py-1 hover:underline"
+              >
+                {language === "es" ? "Eliminar" : "Delete"}
+              </button>
+            </div>
+          )}
+          <div className="col-span-4">
+            <label>{language === "es" ? "Email*" : "Email*"}</label>
+            <input
+              name="email"
+              type="email"
+              value={member.email}
+              onChange={(e) => handleTeamChange(index, e)}
+              className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+            />
+          </div>
+        </div>
+      ))}
+
+      <button
+        type="button"
+        onClick={addTeamMember}
+        className=" hover:underline"
+      >
+        {" "}
+        {language === "es" ? "+ Agregar responsable" : "+ Add responsible"}
+      </button>
+
+      <h3 className="text-xl my-5">
+        {translateText[language].associations}{" "}
+      </h3>
+      <div className="grid grid-cols-2 gap-2 ">
+        {[
+          "No",
+          "Otras Secretarías",
+          "ONGs y Sociedad Civil",
+          "Instituciones educativas y de investigación",
+          "Empresas",
+          "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)",
+          "Organizaciones Internacionales",
+          "Otras organizaciones",
+        ].map((option) => (
+          <label key={option} className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              value={option}
+              checked={form.associations.includes(option)}
+              onChange={handleAssociationChange}
+              className="input-focused   accent-[#5d5593]"
+            />
+            <span>
+              {language === "es" ? option : translateAssociation(option)}
+            </span>
+          </label>
         ))}
       </div>
 
@@ -1476,13 +1477,10 @@ export default function FormWizard() {
   };
 
   const steps = [
+
     <Step1
       form={form}
       handleChange={handleChange}
-      handleTeamChange={handleTeamChange}
-      addTeamMember={addTeamMember}
-      removeTeamMember={removeTeamMember}
-      handleAssociationChange={handleAssociationChange}
       translateText={translateText}
       language={language}
     />,
@@ -1500,13 +1498,6 @@ export default function FormWizard() {
     />,
     <Step4
       form={form}
-      handleChange={handleChange}
-      translateText={translateText}
-      language={language}
-    />,
-    <Step5
-      form={form}
-      handleInputChange={handleInputChange}
       handleAddLink={handleAddLink}
       handleLinkChange={handleLinkChange}
       handleFileChange={handleFileChange}
@@ -1514,6 +1505,17 @@ export default function FormWizard() {
       handleRemoveFile2={handleRemoveFile2}
       handleRemoveAcceptanceLetter={handleRemoveAcceptanceLetter}
       handleRemoveLink={handleRemoveLink}
+      translateText={translateText}
+      language={language}
+    />,
+    <Step5
+      form={form}
+      handleChange={handleChange}
+      handleTeamChange={handleTeamChange}
+      handleInputChange={handleInputChange}
+      addTeamMember={addTeamMember}
+      removeTeamMember={removeTeamMember}
+      handleAssociationChange={handleAssociationChange}
       translateText={translateText}
       language={language}
     />,
