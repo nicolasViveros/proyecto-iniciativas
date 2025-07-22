@@ -5,14 +5,8 @@ const LanguageContext = createContext();
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("es"); // Default language is Spanish
 
-  const toggleLanguage = () => {
-    setLanguage((currentLang) => {
-      console.log(currentLang);
-
-      if (currentLang === "es") return "es";
-      if (currentLang === "en") return "en";
-      if (currentLang === "pt") return "pt";
-    });
+  const toggleLanguage = (newLang) => {
+    setLanguage(newLang);
   };
 
   return (
