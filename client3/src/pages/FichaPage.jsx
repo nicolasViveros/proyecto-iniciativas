@@ -179,6 +179,7 @@ const FichaPage = () => {
                   checked={ficha.associations.includes(option)}
                   onChange={handleAssociationChange}
                   className="input-focused accent-[#5d5593]"
+                  disabled
                 />
                 <span>{option}</span>
               </label>
