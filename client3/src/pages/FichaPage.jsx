@@ -12,7 +12,7 @@ const FichaPage = () => {
   const [ficha, setFicha] = useState(null);
   const { fichas, getFicha } = useFichas();
   const navigate = useNavigate();
-
+const spinner = loadingSpinner();
 
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const FichaPage = () => {
         </div>
       </div>
     );
-    loadingSpinner();
+    spinner();
   }
 
   const handleBack = () => {
