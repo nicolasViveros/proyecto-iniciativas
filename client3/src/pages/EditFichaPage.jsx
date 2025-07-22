@@ -4,7 +4,7 @@ import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
-
+import  LoadingSpinner from "../context/LoadingSpinner";
 
 function EditFichaPage() {
 
@@ -141,7 +141,7 @@ function EditFichaPage() {
         return <div className="  items-center justify-center min-h-screen">
             <div className="max-w-3xl w-full rounded-md justify-center items-center">
                 Cargando ficha...
-                <LoadingSpinner />
+                <LoadingSpinner />  
             </div>
         </div>;
     }
