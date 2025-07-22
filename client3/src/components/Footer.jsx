@@ -16,7 +16,7 @@ function Footer() {
             <img
               src="/Footer2.png"
               alt="Footer"
-              className="absolute inset-0 w-full h-auto object-cover"
+              className="absolute inset-0 w-full object-cover"
             />
           </div>
 
