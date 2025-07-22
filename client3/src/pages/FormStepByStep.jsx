@@ -972,7 +972,7 @@ export default function FormWizard() {
       targetAudience: "Público objetivo y población beneficiaria. *",
       activities: "Principales actividades realizadas. *",
       projectCategory: "¿Qué tipo de categoría corresponde el proyecto?",
-      operatorRegulatorCriteria: "Criterios Instituciones públicas y Empresas privadas",
+      operatorRegulatorCriteria: "Criterios para la categoría Instituciones públicas y Empresas privadas",
       innovation:
         "Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *",
       impact:
@@ -981,7 +981,7 @@ export default function FormWizard() {
         "¿Puede aplicarse la iniciativa en otras ciudades o instituciones? ¿Existen herramientas, protocolos o aprendizajes transferibles? *",
       sustainability:
         "¿Qué mecanismos aseguran la continuidad de la iniciativa en el tiempo (ej. financiamiento, institucionalización, alianzas)? *",
-      ngoAcademyCriteria: "ONG / Academia",
+      ngoAcademyCriteria: "Criterios para la categoría Organizaciones de la sociedad civil y Entidades académicas",
       methodology:
         "¿Qué enfoque, herramienta o metodología nueva han desarrollado o adaptado? ¿En qué se diferencia de lo ya existente? *",
       outcomes:
