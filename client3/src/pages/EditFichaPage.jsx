@@ -41,15 +41,20 @@ function EditFichaPage() {
     };
 
     const handleLinkChange = (index, value) => {
-        const newLinks = [...form.links];
+        const newLinks = [...ficha.links];
         newLinks[index] = value;
-        setForm({ ...form, links: newLinks });
+        setFicha({ ...ficha, links: newLinks });
     };
 
     const handleRemoveLink = (index) => {
         const newLinks = ficha.links.filter((_, i) => i !== index);
         setFicha({ ...ficha, links: newLinks });
     };
+
+    const handleAddLink = () => {
+        setFicha({ ...ficha, links: [...ficha.links, ""] });
+      };
+
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -154,12 +159,12 @@ function EditFichaPage() {
     }
     if (isSaving) {
         return <div className="flex items-center justify-center min-h-screen">
-          <div className="max-w-3xl w-full rounded-md justify-center items-center">
-            Guardando ficha...
-            <LoadingSpinner />
-          </div>
+            <div className="max-w-3xl w-full rounded-md justify-center items-center">
+                Guardando ficha...
+                <LoadingSpinner />
+            </div>
         </div>;
-      }
+    }
 
     return (
 
@@ -537,6 +542,13 @@ function EditFichaPage() {
                             </div>
                         </div>
                     ))}
+                    <button
+                        type="button"
+                        onClick={handleAddLink}
+                        className="underline hover:text-[#a49fc4] mb-2"
+                    >
+                        {language === "es" ? "+ Agregar enlace" : "+ Add link"}
+                    </button>
 
                     <div className='col-span-2'>Video:</div>
                     <div className='col-span-2'>
