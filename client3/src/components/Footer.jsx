@@ -9,26 +9,28 @@ function Footer() {
 
       <footer className="relative w-full flex flex-col md:flex-row h-auto">
 
-        {/* Fondo restante con imagen de footer */}
-        <div className="flex-grow relative overflow-hidden h-32 md:h-auto">
-          <img
-            src="/Footer2.png"
-            alt="Footer"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </div>
+        <div className="grid grid-rows-2 grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 h-auto">
 
-        {/* Logo izquierda (GIZ) con fondo blanco */}
-        <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
-          <Link to="/">
+          {/* Fondo restante con imagen de footer */}
+          <div className="flex-grow relative overflow-hidden h-32 md:h-auto">
             <img
-              src="/LogoGiz.svg"
-              alt="GIZ Logo"
-              className="h-12 md:h-16 lg:h-20"
+              src="/Footer2.png"
+              alt="Footer"
+              className="absolute inset-0 w-full h-full object-cover"
             />
-          </Link>
-        </div>
+          </div>
 
+          {/* Logo izquierda (GIZ) con fondo blanco */}
+          <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
+            <Link to="/">
+              <img
+                src="/LogoGiz.svg"
+                alt="GIZ Logo"
+                className="h-12 md:h-16 lg:h-20"
+              />
+            </Link>
+          </div>
+        </div>
       </footer>
     </div>
   );
