@@ -5,29 +5,49 @@ import { useLanguage } from "../context/LanguageContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import LoadingSpinner from "../context/LoadingSpinner";
 
-function translateAssociation(option) {
-  switch (option) {
-    case "No":
-      return "No";
-    case "Entidades públicas":
-      return "Public institution";
-    case "Empresa privada":
-      return "Private Companies";
-    case "ONG":
-      return "NGO";
-    case "Sociedad Civil":
-      return "Civil Organizations";
-    case "Instituciones educativas y de investigación":
-      return "Educational and Research Institutions";
-    case "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
-      return "Multilateral organisations (e.g. IDB, World Bank, UN, CAF, GIZ, KfW, etc.)";
-    case "Organizaciones Internacionales":
-      return "International Organisations";
-    case "Otras organizaciones":
-      return "Other organisations";
-    default:
-      return option;
-  }
+function translateAssociation(option, language) {
+  const translations = {
+    es: {
+      No: "No",
+      "Entidades públicas": "Entidades públicas",
+      "Empresa privada": "Empresa privada",
+      ONG: "ONG",
+      "Sociedad Civil": "Sociedad Civil",
+      "Instituciones educativas y de investigación":
+        "Instituciones educativas y de investigación",
+      "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
+        "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
+      "Organizaciones Internacionales": "Organizaciones Internacionales",
+      "Otras organizaciones": "Otras organizaciones",
+    },
+    en: {
+      No: "No",
+      "Entidades públicas": "Public institution",
+      "Empresa privada": "Private Companies",
+      ONG: "NGO",
+      "Sociedad Civil": "Civil Organizations",
+      "Instituciones educativas y de investigación":
+        "Educational and Research Institutions",
+      "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
+        "Multilateral organisations (e.g. IDB, World Bank, UN, CAF, GIZ, KfW, etc.)",
+      "Organizaciones Internacionales": "International Organisations",
+      "Otras organizaciones": "Other organisations",
+    },
+    pt: {
+      No: "Não",
+      "Entidades públicas": "Instituição pública",
+      "Empresa privada": "Empresa privada",
+      ONG: "ONG",
+      "Sociedad Civil": "Organizações da Sociedade Civil",
+      "Instituciones educativas y de investigación":
+        "Instituições de ensino e pesquisa",
+      "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
+        "Organizações multilaterais (ex: BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
+      "Organizaciones Internacionales": "Organizações Internacionais",
+      "Otras organizaciones": "Outras organizações",
+    },
+  };
+  return translations[language][option] || option;
 }
 
 function Step1({ form, handleChange, translateText, language }) {
@@ -118,7 +138,13 @@ function Step1({ form, handleChange, translateText, language }) {
 }
 
 function Step2({ form, handleChange, translateText, language }) {
-  const [wordCount, setWordCount] = useState({ need: 0 });
+  const [wordCount, setWordCount] = useState({
+    need: 0,
+    objectives: 0,
+    targetAudience: 0,
+    activities: 0,
+    resultsObtained: 0,
+  });
 
   const handleTextAreaChange = (e) => {
     const { name, value } = e.target;
@@ -143,14 +169,14 @@ function Step2({ form, handleChange, translateText, language }) {
       <textarea
         name="need"
         value={form.need}
-        maxLength={500 * 6}
+        maxLength={500 * 6} // A crude way to limit characters based on a rough word-to-char ratio. Better to use on-the-fly word counting.
         onChange={handleTextAreaChange}
         className="w-full border border-gray-300 px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.need} / 500 {language === "es" ? "palabras" : "words"}
+        {wordCount.need} / 500 {translateText[language].words}
       </div>
 
       <label className="text-xl">{translateText[language].objectives}</label>
@@ -161,13 +187,14 @@ function Step2({ form, handleChange, translateText, language }) {
       <textarea
         name="objectives"
         value={form.objectives}
+        maxLength={500 * 6}
         onChange={handleTextAreaChange}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.objectives} / 500 {language === "es" ? "palabras" : "words"}
+        {wordCount.objectives} / 500 {translateText[language].words}
       </div>
 
       <label className="text-xl">
@@ -181,13 +208,13 @@ function Step2({ form, handleChange, translateText, language }) {
         name="targetAudience"
         onChange={handleTextAreaChange}
         value={form.targetAudience}
+        maxLength={500 * 6}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.targetAudience} / 500{" "}
-        {language === "es" ? "palabras" : "words"}
+        {wordCount.targetAudience} / 500 {translateText[language].words}
       </div>
 
       <label className="text-xl">{translateText[language].activities}</label>
@@ -198,13 +225,14 @@ function Step2({ form, handleChange, translateText, language }) {
       <textarea
         name="activities"
         value={form.activities}
+        maxLength={500 * 6}
         onChange={handleTextAreaChange}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.activities} / 500 {language === "es" ? "palabras" : "words"}
+        {wordCount.activities} / 500 {translateText[language].words}
       </div>
 
       <label className="text-xl">
@@ -217,14 +245,14 @@ function Step2({ form, handleChange, translateText, language }) {
       <textarea
         name="resultsObtained"
         value={form.resultsObtained}
+        maxLength={500 * 6}
         onChange={handleTextAreaChange}
         className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
         rows="4"
         required
       />
       <div className="text-xs text-right text-gray-500">
-        {wordCount.resultsObtained} / 500{" "}
-        {language === "es" ? "palabras" : "words"}
+        {wordCount.resultsObtained} / 500 {translateText[language].words}
       </div>
 
       <label className="text-xl">
@@ -240,14 +268,10 @@ function Step2({ form, handleChange, translateText, language }) {
           className="accent-[#5d5593]"
           value="Instituciones públicas y Empresas privadas"
         >
-          {language === "es"
-            ? "Instituciones públicas y Empresas privadas"
-            : "Operator/Regulator"}
+          {translateText[language].operatorRegulatorOption}
         </option>
         <option value="Organizaciones de la sociedad civil y Entidades académicas">
-          {language === "es"
-            ? "Organizaciones de la sociedad civil y Entidades académicas"
-            : "NGO/Academy"}
+          {translateText[language].ngoAcademyOption}
         </option>
       </select>
     </div>
@@ -255,13 +279,21 @@ function Step2({ form, handleChange, translateText, language }) {
 }
 
 function Step3({ form, handleChange, translateText, language }) {
-  const [wordCount, setWordCount] = useState({ need: 0 });
+  const [wordCount, setWordCount] = useState({
+    innovation: 0,
+    impact: 0,
+    transferability: 0,
+    sustainability: 0,
+    methodology: 0,
+    outcomes: 0,
+  });
 
   const handleTextAreaChange = (e) => {
     const { name, value } = e.target;
     const words = value.split(/\s+/g).filter((word) => word.length > 0);
 
     if (words.length <= 500) {
+      // Max 500 words for textareas
       setWordCount((prev) => ({ ...prev, [name]: words.length }));
       handleChange(e); // Update the form state
     }
@@ -293,8 +325,7 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={300 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.innovation} / 300{" "}
-          {language === "es" ? "palabras" : "words"}
+          {wordCount.innovation} / 300 {translateText[language].words}
         </div>
 
         <h2 className="text-xl font-bold ">
@@ -314,7 +345,7 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={300 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.impact} / 300 {language === "es" ? "palabras" : "words"}
+          {wordCount.impact} / 300 {translateText[language].words}
         </div>
 
         <h2 className="text-xl font-bold ">
@@ -337,8 +368,7 @@ function Step3({ form, handleChange, translateText, language }) {
           required
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.transferability} / 250{" "}
-          {language === "es" ? "palabras" : "words"}
+          {wordCount.transferability} / 250 {translateText[language].words}
         </div>
 
         <h2 className="text-xl font-bold ">
@@ -361,8 +391,7 @@ function Step3({ form, handleChange, translateText, language }) {
           required
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.sustainability} / 250{" "}
-          {language === "es" ? "palabras" : "words"}
+          {wordCount.sustainability} / 250 {translateText[language].words}
         </div>
       </div>
     );
@@ -385,7 +414,8 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].methodology}
         </label>
         <label className="block text-sm">
-          {translateText[language].max300characters}
+          {translateText[language].max300words}{" "}
+          {/* Changed from characters to words */}
         </label>
 
         <textarea
@@ -397,8 +427,7 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={300 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.methodology} / 300{" "}
-          {language === "es" ? "palabras" : "words"}
+          {wordCount.methodology} / 300 {translateText[language].words}
         </div>
 
         <h2 className="text-xl font-bold ">
@@ -406,7 +435,8 @@ function Step3({ form, handleChange, translateText, language }) {
         </h2>
         <label className="text-base">{translateText[language].outcomes}</label>
         <label className="block text-sm">
-          {translateText[language].max300characters}
+          {translateText[language].max300words}{" "}
+          {/* Changed from characters to words */}
         </label>
 
         <textarea
@@ -418,7 +448,7 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={300 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.outcomes} / 300 {language === "es" ? "palabras" : "words"}
+          {wordCount.outcomes} / 300 {translateText[language].words}
         </div>
 
         <h2 className="text-xl font-bold ">
@@ -428,7 +458,8 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].transferabilityOng}
         </label>
         <label className="block text-sm">
-          {translateText[language].max250characters}
+          {translateText[language].max250words}{" "}
+          {/* Changed from characters to words */}
         </label>
 
         <textarea
@@ -440,8 +471,7 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={250 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.transferability} / 250{" "}
-          {language === "es" ? "palabras" : "words"}
+          {wordCount.transferability} / 250 {translateText[language].words}
         </div>
 
         <h2 className="text-xl font-bold ">
@@ -451,7 +481,8 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].sustainabilityOng}
         </label>
         <label className="block text-sm">
-          {translateText[language].max250characters}
+          {translateText[language].max250words}{" "}
+          {/* Changed from characters to words */}
         </label>
 
         <textarea
@@ -463,8 +494,7 @@ function Step3({ form, handleChange, translateText, language }) {
           maxLength={250 * 6}
         />
         <div className="text-xs text-right text-gray-500">
-          {wordCount.sustainability} / 250{" "}
-          {language === "es" ? "palabras" : "words"}
+          {wordCount.sustainability} / 250 {translateText[language].words}
         </div>
       </div>
     );
@@ -507,7 +537,7 @@ function Step4({
                 onClick={() => handleRemoveLink(index)}
                 className="text-red-600  text-xs px-2 hover:underline ml-2"
               >
-                {language === "es" ? "Eliminar" : "Delete"}
+                {translateText[language].delete}
               </button>
             )}
           </div>
@@ -518,7 +548,7 @@ function Step4({
         onClick={handleAddLink}
         className="underline hover:text-[#a49fc4] mb-2"
       >
-        {language === "es" ? "+ Agregar enlace" : "+ Add link"}
+        {translateText[language].addLink}
       </button>
 
       <label className="block text-xl pt-2">
@@ -546,7 +576,7 @@ function Step4({
                 onClick={() => handleRemoveFile2(index)}
                 className="text-red-600 text-xs px-2 hover:underline ml-2 "
               >
-                {language === "es" ? "Eliminar" : "Delete"}
+                {translateText[language].delete}
               </button>
             </div>
           </div>
@@ -606,7 +636,7 @@ function Step4({
                 onClick={() => handleRemoveAcceptanceLetter(index)}
                 className="text-red-600 text-xs px-2 hover:underline ml-2 "
               >
-                {language === "es" ? "Eliminar" : "Delete"}
+                {translateText[language].delete}
               </button>
             </div>
           </div>
@@ -639,7 +669,8 @@ function Step5({
     setOrganizationType(value);
     handleChange(e);
 
-    if (value !== "Otra") {
+    if (value !== "Otra" && value !== "Outra") {
+      // Added "Outra" for PT
       setOtherOrganizationType("");
     }
   };
@@ -649,14 +680,15 @@ function Step5({
     setCountry(value);
     handleChange(e);
 
-    if (value !== "Otro") {
+    if (value !== "Otro" && value !== "Outro") {
+      // Added "Outro" for PT
       setOtherCountry("");
     }
   };
 
   useEffect(() => {
     if (
-      organizationType === "Otra" &&
+      (organizationType === "Otra" || organizationType === "Outra") && // Added "Outra" for PT
       otherOrganizationType !== form.organizationType
     ) {
       handleChange({
@@ -671,7 +703,11 @@ function Step5({
   ]);
 
   useEffect(() => {
-    if (country === "Otro" && otherCountry !== form.country) {
+    if (
+      (country === "Otro" || country === "Outro") &&
+      otherCountry !== form.country
+    ) {
+      // Added "Outro" for PT
       handleChange({ target: { name: "country", value: otherCountry } });
     }
   }, [country, otherCountry, handleChange, form.country]);
@@ -707,33 +743,21 @@ function Step5({
           onChange={handleOrganizationTypeChange}
           className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
         >
-          <option value="">
-            {language === "es" ? "Selecciona un tipo" : "Select a type"}
-          </option>
-          <option value="Publica">
-            {language === "es" ? "Pública" : "Public"}
-          </option>
-          <option value="Privada">
-            {language === "es" ? "Privada" : "Private"}
-          </option>
+          <option value="">{translateText[language].selectAType}</option>
+          <option value="Publica">{translateText[language].public}</option>
+          <option value="Privada">{translateText[language].private}</option>
           <option value="ONG">ONG</option>
-          <option value="Otra">
-            {language === "es" ? "Otra..." : "Other..."}
-          </option>
+          <option value="Otra">{translateText[language].otherOption}</option>
         </select>
       </div>
 
-      {organizationType === "Otra" && (
+      {(organizationType === "Otra" || organizationType === "Outra") && ( // Added "Outra" for PT
         <input
           name="otherOrganizationType"
           value={otherOrganizationType}
           onChange={(e) => setOtherOrganizationType(e.target.value)}
           className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
-          placeholder={
-            language === "es"
-              ? "Especifica el tipo de organización"
-              : "Specify organization type"
-          }
+          placeholder={translateText[language].specifyOrgType}
           required
         />
       )}
@@ -750,11 +774,9 @@ function Step5({
           onChange={handleCountryChange}
           className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
         >
-          <option value="">
-            {language === "es" ? "Selecciona un país" : "Select a country"}
-          </option>
+          <option value="">{translateText[language].selectACountry}</option>
           <option value="Internacional">
-            {language === "es" ? "Internacional" : "International"}
+            {translateText[language].international}
           </option>
           <option value="Argentina">Argentina</option>
           <option value="Bolivia">Bolivia</option>
@@ -772,20 +794,18 @@ function Step5({
           <option value="Uruguay">Uruguay</option>
           <option value="Venezuela">Venezuela</option>
           <option value="Otro">
-            {language === "es" ? "Otro..." : "Other..."}
+            {translateText[language].otherOptionCountry}
           </option>
         </select>
       </div>
 
-      {country === "Otro" && (
+      {(country === "Otro" || country === "Outro") && ( // Added "Outro" for PT
         <input
           name="otherCountry"
           value={otherCountry}
           onChange={(e) => setOtherCountry(e.target.value)}
           className="w-full border border-gray-300 px-4 py-2 rounded-md my-2 input-focused"
-          placeholder={
-            language === "es" ? "Especifica el país" : "Specify country"
-          }
+          placeholder={translateText[language].specifyCountry}
           required
         />
       )}
@@ -843,7 +863,9 @@ function Step5({
         title={
           language === "es"
             ? "Solo se permiten números y el símbolo '+'"
-            : "Only numbers and the '+' symbol are allowed"
+            : language === "en"
+            ? "Only numbers and the '+' symbol are allowed"
+            : "Apenas números e o símbolo '+' são permitidos"
         }
       />
 
@@ -859,16 +881,12 @@ function Step5({
       />
 
       <h3 className="text-xl mt-5 ">{translateText[language].team}</h3>
-      <h3 className="text-sm">
-        {language === "es"
-          ? "Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa. (puede ingresar más de una persona). *"
-          : "List the names of the main people and positions involved in the implementation of the project or initiative*"}{" "}
-      </h3>
+      <h3 className="text-sm">{translateText[language].teamInstructions}</h3>
 
       {form.team.map((member, index) => (
         <div key={index} className="grid grid-cols-5 gap-1 my-1">
           <div className="col-span-2">
-            <label>{language === "es" ? "Nombre*" : "Name*"}</label>
+            <label>{translateText[language].nameLabel}</label>
             <input
               name="name"
               value={member.name}
@@ -877,7 +895,7 @@ function Step5({
             />
           </div>
           <div className="col-span-2">
-            <label>{language === "es" ? "Cargo*" : "Position*"}</label>
+            <label>{translateText[language].positionLabel}</label>
             <input
               name="position"
               value={member.position}
@@ -892,12 +910,12 @@ function Step5({
                 onClick={() => removeTeamMember(index)}
                 className="text-red-600 text-xs w-full py-1 hover:underline"
               >
-                {language === "es" ? "Eliminar" : "Delete"}
+                {translateText[language].delete}
               </button>
             </div>
           )}
           <div className="col-span-4">
-            <label>{language === "es" ? "Email*" : "Email*"}</label>
+            <label>{translateText[language].emailLabel}</label>
             <input
               name="email"
               type="email"
@@ -915,7 +933,7 @@ function Step5({
         className=" hover:underline"
       >
         {" "}
-        {language === "es" ? "+ Agregar responsable" : "+ Add responsible"}
+        {translateText[language].addResponsible}
       </button>
 
       <h3 className="text-xl my-5">{translateText[language].associations} </h3>
@@ -939,9 +957,7 @@ function Step5({
               onChange={handleAssociationChange}
               className="input-focused   accent-[#5d5593]"
             />
-            <span>
-              {language === "es" ? option : translateAssociation(option)}
-            </span>
+            <span>{translateAssociation(option, language)}</span>
           </label>
         ))}
       </div>
@@ -1014,6 +1030,15 @@ export default function FormWizard() {
       organizationName: "Nombre de la organización *",
       organizationType: "Tipo de organización *",
       country: "País",
+      selectAType: "Selecciona un tipo",
+      public: "Pública",
+      private: "Privada",
+      otherOption: "Otra...",
+      specifyOrgType: "Especifica el tipo de organización",
+      selectACountry: "Selecciona un país",
+      international: "Internacional",
+      otherOptionCountry: "Otro...",
+      specifyCountry: "Especifica el país",
       legalRepName:
         "Nombre de el/la representante legal o Lider de la iniciativa*",
       legalRepPosition: "Cargo *",
@@ -1022,6 +1047,12 @@ export default function FormWizard() {
       registrationId:
         "RUT/NIT/CNPJ/Registro legal de la organización (Si aplica)",
       team: "Equipo responsable",
+      teamInstructions:
+        "Ingrese acá los nombres, cargos y correos de contacto de las principales personas implicados en la realización del proyecto o iniciativa. (puede ingresar más de una persona). *",
+      nameLabel: "Nombre*",
+      positionLabel: "Cargo*",
+      emailLabel: "Email*",
+      addResponsible: "+ Agregar responsable",
       associations:
         "¿Hubo asociaciones para el desarrollo? Indique todos los sectores asociados*",
       projectInfo: "INFORMACIÓN DE LA INICIATIVA POSTULADA",
@@ -1042,6 +1073,9 @@ export default function FormWizard() {
       projectCategory: "¿A cuál categoría postula el proyecto?",
       operatorRegulatorCriteria:
         "Criterios para la categoría Instituciones públicas y Empresas privadas",
+      operatorRegulatorOption: "Instituciones públicas y Empresas privadas",
+      ngoAcademyOption:
+        "Organizaciones de la sociedad civil y Entidades académicas",
       innovationLabel: "Innovación",
       innovation:
         "Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *",
@@ -1067,8 +1101,10 @@ export default function FormWizard() {
       supportMaterial: "Material de respaldo",
       links:
         "Link a publicaciones, evaluaciones, informes, materiales metodológicos o registros de impacto.",
+      addLink: "+ Agregar enlace",
       attachFiles:
         "Adjunte publicaciones, evaluaciones, informes, materiales metodológicos o registros de impacto.",
+      delete: "Eliminar",
       videoPrompt:
         "¿Desea compartir un video corto (máx. 2 minutos) que muestre la experiencia o testimonios relevantes? (opcional)",
       videoHint: "(Enlace a YouTube, Vimeo o archivo compartido)",
@@ -1082,20 +1118,64 @@ export default function FormWizard() {
       max500words: "(máx 500 palabras)",
       max300words: "(máx 300 palabras)",
       max250words: "(máx 250 palabras)",
-      max300characters: "(máx 300 carácteres)",
-      max250characters: "(máx 250 carácteres)",
+      words: "palabras",
       next: "Siguiente",
       previous: "Anterior",
       submit: "Enviar Postulación →",
       return: "Volver",
       confirm:
         "¿Has revisado todos los datos ingresados? Una vez enviado, no podrás editar la postulación. ¿Deseas continuar?",
+      requiredOrgName: "El nombre de la organización es requerido.",
+      requiredOrgType: "El tipo de organización es requerido.",
+      requiredCountry: "El país es requerido.",
+      requiredLegalRepName: "El nombre del representante legal es requerido.",
+      requiredLegalRepPosition:
+        "El cargo del representante legal es requerido.",
+      requiredEmail: "El correo electrónico es requerido.",
+      invalidEmailFormat: "El correo electrónico tiene un formato inválido.",
+      requiredPhone: "El teléfono de contacto es requerido.",
+      invalidPhoneFormat: "El teléfono de contacto tiene un formato inválido.",
+      requiredTeamMemberName: (index) =>
+        `El nombre del miembro ${index} del equipo es requerido.`,
+      requiredTeamMemberPosition: (index) =>
+        `El cargo del miembro ${index} del equipo es requerido.`,
+      requiredTeamMemberEmail: (index) =>
+        `El correo electrónico del miembro ${index} del equipo es requerido.`,
+      invalidTeamMemberEmailFormat: (index) =>
+        `El correo electrónico del miembro ${index} tiene un formato inválido.`,
+      requiredProjectName: "El nombre del proyecto es requerido.",
+      requiredCity: "La ciudad de implementación es requerida.",
+      requiredStartDate: "La fecha de inicio es requerida.",
+      requiredNeed: "La descripción de la necesidad es requerida.",
+      requiredObjectives: "Los objetivos del proyecto son requeridos.",
+      requiredTargetAudience: "El público objetivo es requerido.",
+      requiredActivities: "Las actividades principales son requeridas.",
+      requiredResultsObtained:
+        "Los resultados obtenidos o esperados son requeridos.",
+      requiredInnovation: "La información sobre innovación es requerida.",
+      requiredImpact: "La información sobre impacto es requerida.",
+      requiredTransferability:
+        "La información sobre replicabilidad es requerida.",
+      requiredSustainability:
+        "La información sobre sostenibilidad es requerida.",
+      requiredMethodology: "La información sobre metodología es requerida.",
+      requiredOutcomes: "La información sobre resultados es requerida.",
+      requiredAcceptanceLetter: "Debe adjuntar la carta de autorización.",
     },
     en: {
       organizationDetails: "Applicant Organization Information",
       organizationName: "Organization Name *",
       organizationType: "Organization Type *",
       country: "Country",
+      selectAType: "Select a type",
+      public: "Public",
+      private: "Private",
+      otherOption: "Other...",
+      specifyOrgType: "Specify organization type",
+      selectACountry: "Select a country",
+      international: "International",
+      otherOptionCountry: "Other...",
+      specifyCountry: "Specify country",
       legalRepName:
         "Name of legal representative (for the category Public Institutions and Private Companies) or the leader of the initiative (for the category Civil Society Organisations and Academic Entities). *",
       legalRepPosition: "Position *",
@@ -1103,6 +1183,12 @@ export default function FormWizard() {
       phone: "Contact Phone *",
       registrationId: "RUT/NIT/CNPJ/Legal registration (if applicable):",
       team: "Project team",
+      teamInstructions:
+        "List the names of the main people and positions involved in the implementation of the project or initiative*",
+      nameLabel: "Name*",
+      positionLabel: "Position*",
+      emailLabel: "Email*",
+      addResponsible: "+ Add responsible",
       associations:
         "Partnerships for development? (specify all applicable sectors) *",
       projectInfo: "Project Information",
@@ -1121,6 +1207,8 @@ export default function FormWizard() {
       resultsObtained: "Results achieved or expected *",
       projectCategory: "What type of category does the project correspond to?",
       operatorRegulatorCriteria: "Operator/Regulator Criteria",
+      operatorRegulatorOption: "Public Institutions and Private Companies",
+      ngoAcademyOption: "Civil Society Organizations and Academic Entities",
       innovationLabel: "Innovation",
       innovation:
         "Describe what aspects of your initiative are innovative compared to traditional practices in urban mobility with a gender focus *",
@@ -1130,7 +1218,7 @@ export default function FormWizard() {
       transferabilityLabel: "Replicability",
       transferability:
         "Can the initiative be applied in other cities or institutions? Are there transferable tools, protocols, or learnings? *",
-      sustainabilityLabel: "Sostenibilidad",
+      sustainabilityLabel: "Sustainability",
       sustainability:
         "What mechanisms ensure the continuity of the initiative over time (e.g., funding, institutionalization, alliances)? *",
       ngoAcademyCriteria: "NGO / Academy",
@@ -1145,8 +1233,10 @@ export default function FormWizard() {
       supportMaterial: "Supporting Material",
       links:
         "Link to publications, evaluations, reports, methodological materials, or impact records.",
+      addLink: "+ Add link",
       attachFiles:
         "Attach publications, evaluations, reports, methodological materials, or impact records.",
+      delete: "Delete",
       videoPrompt:
         "Do you want to share a short video (max. 2 minutes) that shows the experience or relevant testimonies? (optional)",
       videoHint: "(Link to YouTube, Vimeo or shared file)",
@@ -1159,14 +1249,179 @@ export default function FormWizard() {
       max500words: "(max 500 words)",
       max300words: "(max 300 words)",
       max250words: "(max 250 words)",
-      max300characters: "(max 300 characters)",
-      max250characters: "(max 250 characters)",
+      words: "words",
       next: "Next",
       previous: "Previous",
       submit: "Submit Application →",
       return: "Return",
       confirm:
         "Have you reviewed all entered data? Once submitted, you cannot edit the application. Do you wish to continue?",
+      requiredOrgName: "Organization name is required.",
+      requiredOrgType: "Organization type is required.",
+      requiredCountry: "Country is required.",
+      requiredLegalRepName: "Legal representative name is required.",
+      requiredLegalRepPosition: "Legal representative position is required.",
+      requiredEmail: "Email is required.",
+      invalidEmailFormat: "Email has an invalid format.",
+      requiredPhone: "Contact phone is required.",
+      invalidPhoneFormat: "Contact phone has an invalid format.",
+      requiredTeamMemberName: (index) =>
+        `Team member ${index} name is required.`,
+      requiredTeamMemberPosition: (index) =>
+        `Team member ${index} position is required.`,
+      requiredTeamMemberEmail: (index) =>
+        `Team member ${index} email is required.`,
+      invalidTeamMemberEmailFormat: (index) =>
+        `Team member ${index} email has an invalid format.`,
+      requiredProjectName: "Project name is required.",
+      requiredCity: "Implementation city is required.",
+      requiredStartDate: "Start date is required.",
+      requiredNeed: "Need description is required.",
+      requiredObjectives: "Project objectives are required.",
+      requiredTargetAudience: "Target audience is required.",
+      requiredActivities: "Main activities are required.",
+      requiredResultsObtained: "Results achieved or expected are required.",
+      requiredInnovation: "Innovation information is required.",
+      requiredImpact: "Impact information is required.",
+      requiredTransferability: "Transferability information is required.",
+      requiredSustainability: "Sustainability information is required.",
+      requiredMethodology: "Methodology information is required.",
+      requiredOutcomes: "Outcomes information is required.",
+      requiredAcceptanceLetter: "You must attach the authorization letter.",
+    },
+    pt: {
+      organizationDetails: "DADOS DA ORGANIZAÇÃO CANDIDATA",
+      organizationName: "Nome da organização *",
+      organizationType: "Tipo de organização *",
+      country: "País",
+      selectAType: "Selecione um tipo",
+      public: "Pública",
+      private: "Privada",
+      otherOption: "Outra...",
+      specifyOrgType: "Especifique o tipo de organização",
+      selectACountry: "Selecione um país",
+      international: "Internacional",
+      otherOptionCountry: "Outro...",
+      specifyCountry: "Especifique o país",
+      legalRepName: "Nome do(a) representante legal ou Líder da iniciativa*",
+      legalRepPosition: "Cargo *",
+      email: "E-mail *",
+      phone: "Telefone de contato *",
+      registrationId:
+        "RUT/NIT/CNPJ/Registro legal da organização (Se aplicável)",
+      team: "Equipe responsável",
+      teamInstructions:
+        "Insira aqui os nomes, cargos e e-mails de contato das principais pessoas envolvidas na realização do projeto ou iniciativa. (você pode inserir mais de uma pessoa). *",
+      nameLabel: "Nome*",
+      positionLabel: "Cargo*",
+      emailLabel: "Email*",
+      addResponsible: "+ Adicionar responsável",
+      associations:
+        "Houve associações para o desenvolvimento? Indique todos os setores associados*",
+      projectInfo: "INFORMAÇÕES DA INICIATIVA CANDIDATA",
+      projectName: "Nome do projeto ou iniciativa:",
+      projectCity: "Cidade de implementação do projeto",
+      startDate: "Data de início da implementação:",
+      isActive: "Está vigente?",
+      yes: "Sim",
+      no: "Não",
+      reasonInactive: "Caso não esteja vigente, explique brevemente o porquê:",
+      projectDescription: "DESCRIÇÃO DO PROJETO",
+      need: "Descreva a necessidade ou problemática detectada. *",
+      objectives: "Objetivos do projeto. *",
+      targetAudience: "Público-alvo e população beneficiária. *",
+      activities: "Principais atividades realizadas. *",
+      resultsObtained: "Resultados obtidos ou esperados. *",
+      projectCategory: "A qual categoria o projeto se candidata?",
+      operatorRegulatorCriteria:
+        "Critérios para a categoria Instituições públicas e Empresas privadas",
+      operatorRegulatorOption: "Instituições públicas e Empresas privadas",
+      ngoAcademyOption:
+        "Organizações da sociedade civil e Entidades acadêmicas",
+      innovationLabel: "Inovação",
+      innovation:
+        "Descreva quais aspectos de sua iniciativa são inovadores em relação às práticas tradicionais em mobilidade urbana com foco de gênero *",
+      impactLabel: "Impacto",
+      impact:
+        "Que mudanças concretas a iniciativa gerou na empregabilidade, participação, segurança ou inclusão de mulheres? Inclua indicadores, se possível *",
+      transferabilityLabel: "Replicabilidade",
+      transferability:
+        "A iniciativa pode ser aplicada em outras cidades ou instituições? Existem ferramentas, protocolos ou aprendizados transferíveis? *",
+      sustainabilityLabel: "Sustentabilidade",
+      sustainability:
+        "Que mecanismos garantem a continuidade da iniciativa ao longo do tempo (ex: financiamento, institucionalização, alianças)? *",
+      ngoAcademyCriteria:
+        "Critérios para a categoria Organizações da sociedade civil e Entidades acadêmicas",
+      methodology:
+        "Que abordagem, ferramenta ou metodologia nova vocês desenvolveram ou adaptaram? Como ela se diferencia do que já existe? *",
+      outcomes:
+        "Que resultados ou mudanças a iniciativa gerou em atores, políticas, conhecimento ou práticas sociais? Inclua dados, se tiver *",
+      transferabilityOng:
+        "A proposta pode ser aplicada em outros contextos? Vocês transferiram ou compartilharam seu trabalho com outras organizações ou instituições? *",
+      sustainabilityOng:
+        "Que continuidade a iniciativa teve ou terá após sua primeira fase? Existem redes, recursos ou estruturas que a sustentam? *",
+      supportMaterial: "Material de apoio",
+      links:
+        "Link para publicações, avaliações, relatórios, materiais metodológicos ou registros de impacto.",
+      addLink: "+ Adicionar link",
+      attachFiles:
+        "Anexe publicações, avaliações, relatórios, materiais metodológicos ou registros de impacto.",
+      delete: "Excluir",
+      videoPrompt:
+        "Deseja compartilhar um vídeo curto (máx. 2 minutos) que mostre a experiência ou depoimentos relevantes? (opcional)",
+      videoHint: "(Link para YouTube, Vimeo ou arquivo compartilhado)",
+      recognitionPrompt:
+        "A iniciativa possui algum reconhecimento ou prêmio prévio? (opcional)",
+      recognitionHint: "(Indicar qual e em que ano, se aplicável)",
+      attachLetter:
+        "Anexe carta de autorização do(a) representante legal (para a categoria Instituições públicas e Empresas privadas) ou do(a) líder da iniciativa (para a categoria Organizações da sociedade civil e Entidades acadêmicas)",
+      declaration:
+        "Declaro que as informações fornecidas neste formulário são verdadeiras e autorizo o uso, tratamento e publicação de dados, antecedentes e material gráfico entregues no âmbito deste concurso para fins de divulgação da SoMoS LAC ou de seus organizadores. Nenhum dado pessoal será publicado.* ",
+      max500words: "(máx 500 palavras)",
+      max300words: "(máx 300 palavras)",
+      max250words: "(máx 250 palavras)",
+      words: "palavras",
+      next: "Próximo",
+      previous: "Anterior",
+      submit: "Enviar Candidatura →",
+      return: "Voltar",
+      confirm:
+        "Você revisou todos os dados inseridos? Uma vez enviado, você não poderá editar a candidatura. Deseja continuar?",
+      requiredOrgName: "O nome da organização é obrigatório.",
+      requiredOrgType: "O tipo de organização é obrigatório.",
+      requiredCountry: "O país é obrigatório.",
+      requiredLegalRepName: "O nome do representante legal é obrigatório.",
+      requiredLegalRepPosition: "O cargo do representante legal é obrigatório.",
+      requiredEmail: "O e-mail é obrigatório.",
+      invalidEmailFormat: "O e-mail possui um formato inválido.",
+      requiredPhone: "O telefone de contato é obrigatório.",
+      invalidPhoneFormat: "O telefone de contato possui um formato inválido.",
+      requiredTeamMemberName: (index) =>
+        `O nome do membro ${index} da equipe é obrigatório.`,
+      requiredTeamMemberPosition: (index) =>
+        `O cargo do membro ${index} da equipe é obrigatório.`,
+      requiredTeamMemberEmail: (index) =>
+        `O e-mail do membro ${index} da equipe é obrigatório.`,
+      invalidTeamMemberEmailFormat: (index) =>
+        `O e-mail do membro ${index} possui um formato inválido.`,
+      requiredProjectName: "O nome do projeto é obrigatório.",
+      requiredCity: "A cidade de implementação é obrigatória.",
+      requiredStartDate: "A data de início é obrigatória.",
+      requiredNeed: "A descrição da necessidade é obrigatória.",
+      requiredObjectives: "Os objetivos do projeto são obrigatórios.",
+      requiredTargetAudience: "O público-alvo é obrigatório.",
+      requiredActivities: "As atividades principais são obrigatórias.",
+      requiredResultsObtained:
+        "Os resultados obtidos ou esperados são obrigatórios.",
+      requiredInnovation: "As informações sobre inovação são obrigatórias.",
+      requiredImpact: "As informações sobre impacto são obrigatórias.",
+      requiredTransferability:
+        "As informações sobre replicabilidade são obrigatórias.",
+      requiredSustainability:
+        "As informações sobre sustentabilidade são obrigatórias.",
+      requiredMethodology: "As informações sobre metodologia são obrigatórias.",
+      requiredOutcomes: "As informações sobre resultados são obrigatórias.",
+      requiredAcceptanceLetter: "Você deve anexar a carta de autorização.",
     },
   };
 
@@ -1176,11 +1431,13 @@ export default function FormWizard() {
   };
 
   const isValidPhone = (phone) => {
-    const phoneRegex = /^\+?\d{7,15}$/;
+    // Basic phone number validation (allows + and numbers, 7 to 15 digits)
+    const phoneRegex = /^\+?[0-9]{7,15}$/;
     return phoneRegex.test(phone);
   };
 
   const isValidEmail = (email) => {
+    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
@@ -1190,142 +1447,72 @@ export default function FormWizard() {
 
     if (currentStep === 4) {
       if (!form.organizationName)
-        newErrors.push(
-          language === "es"
-            ? "El nombre de la organización es requerido."
-            : "Organization name is required."
-        );
-      if (!form.organizationType)
-        newErrors.push(
-          language === "es"
-            ? "El tipo de organización es requerido."
-            : "Organization type is required."
-        );
-      if (!form.country)
-        newErrors.push(
-          language === "es" ? "El país es requerido." : "Country is required."
-        );
+        newErrors.push(translateText[language].requiredOrgName);
+      if (
+        !form.organizationType ||
+        form.organizationType === "Otra" ||
+        (form.organizationType === "Outra" && !form.otherOrganizationType)
+      )
+        // Check for 'Otra' or 'Outra' and its specific input
+        newErrors.push(translateText[language].requiredOrgType);
+      if (
+        !form.country ||
+        form.country === "Otro" ||
+        (form.country === "Outro" && !form.otherCountry)
+      )
+        // Check for 'Otro' or 'Outro' and its specific input
+        newErrors.push(translateText[language].requiredCountry);
       if (!form.legalRepName)
-        newErrors.push(
-          language === "es"
-            ? "El nombre del representante legal es requerido."
-            : "Legal representative name is required."
-        );
+        newErrors.push(translateText[language].requiredLegalRepName);
       if (!form.legalRepPosition)
-        newErrors.push(
-          language === "es"
-            ? "El cargo del representante legal es requerido."
-            : "Legal representative position is required."
-        );
+        newErrors.push(translateText[language].requiredLegalRepPosition);
       if (!form.email) {
-        newErrors.push(
-          language === "es"
-            ? "El correo electrónico es requerido."
-            : "Email is required."
-        );
+        newErrors.push(translateText[language].requiredEmail);
       } else if (!isValidEmail(form.email)) {
-        newErrors.push(
-          language === "es"
-            ? "El correo electrónico tiene un formato inválido."
-            : "Email has an invalid format."
-        );
+        newErrors.push(translateText[language].invalidEmailFormat);
       }
       if (!form.phone) {
-        newErrors.push(
-          language === "es"
-            ? "El teléfono de contacto es requerido."
-            : "Contact phone is required."
-        );
+        newErrors.push(translateText[language].requiredPhone);
       } else if (!isValidPhone(form.phone)) {
-        newErrors.push(
-          language === "es"
-            ? "El teléfono de contacto tiene un formato inválido."
-            : "Contact phone has an invalid format."
-        );
+        newErrors.push(translateText[language].invalidPhoneFormat);
       }
       form.team.forEach((member, index) => {
         if (!member.name)
           newErrors.push(
-            language === "es"
-              ? `El nombre del miembro ${index + 1} del equipo es requerido.`
-              : `Team member ${index + 1} name is required.`
+            translateText[language].requiredTeamMemberName(index + 1)
           );
         if (!member.position)
           newErrors.push(
-            language === "es"
-              ? `El cargo del miembro ${index + 1} del equipo es requerido.`
-              : `Team member ${index + 1} position is required.`
+            translateText[language].requiredTeamMemberPosition(index + 1)
           );
         if (!member.email) {
           newErrors.push(
-            language === "es"
-              ? `El correo electrónico del miembro ${
-                  index + 1
-                } del equipo es requerido.`
-              : `Team member ${index + 1} email is required.`
+            translateText[language].requiredTeamMemberEmail(index + 1)
           );
         } else if (!isValidEmail(member.email)) {
           newErrors.push(
-            language === "es"
-              ? `El correo electrónico del miembro ${
-                  index + 1
-                } tiene un formato inválido.`
-              : `Team member ${index + 1} email has an invalid format.`
+            translateText[language].invalidTeamMemberEmailFormat(index + 1)
           );
         }
       });
     }
     if (currentStep === 0) {
       if (!form.name)
-        newErrors.push(
-          language === "es"
-            ? "El nombre del proyecto es requerido."
-            : "Project name is required."
-        );
-      if (!form.city)
-        newErrors.push(
-          language === "es"
-            ? "La ciudad de implementación es requerida."
-            : "Implementation city is required."
-        );
+        newErrors.push(translateText[language].requiredProjectName);
+      if (!form.city) newErrors.push(translateText[language].requiredCity);
       if (!form.startDate)
-        newErrors.push(
-          language === "es"
-            ? "La fecha de inicio es requerida."
-            : "Start date is required."
-        );
+        newErrors.push(translateText[language].requiredStartDate);
     }
     if (currentStep === 1) {
-      if (!form.need)
-        newErrors.push(
-          language === "es"
-            ? "La descripción de la necesidad es requerida."
-            : "Need description is required."
-        );
+      if (!form.need) newErrors.push(translateText[language].requiredNeed);
       if (!form.objectives)
-        newErrors.push(
-          language === "es"
-            ? "Los objetivos del proyecto son requeridos."
-            : "Project objectives are required."
-        );
+        newErrors.push(translateText[language].requiredObjectives);
       if (!form.targetAudience)
-        newErrors.push(
-          language === "es"
-            ? "El público objetivo es requerido."
-            : "Target audience is required."
-        );
+        newErrors.push(translateText[language].requiredTargetAudience);
       if (!form.activities)
-        newErrors.push(
-          language === "es"
-            ? "Las actividades principales son requeridas."
-            : "Main activities are required."
-        );
+        newErrors.push(translateText[language].requiredActivities);
       if (!form.resultsObtained) {
-        newErrors.push(
-          language === "es"
-            ? "Los resultados obtenidos o esperados son requeridos."
-            : "Results achieved or expected are required."
-        );
+        newErrors.push(translateText[language].requiredResultsObtained);
       }
     }
     if (
@@ -1333,29 +1520,12 @@ export default function FormWizard() {
       form.category === "Instituciones públicas y Empresas privadas"
     ) {
       if (!form.innovation)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre innovación es requerida."
-            : "Innovation information is required."
-        );
-      if (!form.impact)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre impacto es requerida."
-            : "Impact information is required."
-        );
+        newErrors.push(translateText[language].requiredInnovation);
+      if (!form.impact) newErrors.push(translateText[language].requiredImpact);
       if (!form.transferability)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre replicabilidad es requerida."
-            : "Transferability information is required."
-        );
+        newErrors.push(translateText[language].requiredTransferability);
       if (!form.sustainability)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre sostenibilidad es requerida."
-            : "Sustainability information is required."
-        );
+        newErrors.push(translateText[language].requiredSustainability);
     }
     if (
       currentStep === 2 &&
@@ -1363,38 +1533,18 @@ export default function FormWizard() {
         "Organizaciones de la sociedad civil y Entidades académicas"
     ) {
       if (!form.methodology)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre innovación es requerida."
-            : "Innovation information is required."
-        );
+        newErrors.push(translateText[language].requiredMethodology);
       if (!form.outcomes)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre impacto es requerida."
-            : "Impact information is required."
-        );
+        newErrors.push(translateText[language].requiredOutcomes);
       if (!form.transferability)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre replicabilidad es requerida."
-            : "Transferability information is required."
-        );
+        newErrors.push(translateText[language].requiredTransferability); // Replicability for ONG/Academy
       if (!form.sustainability)
-        newErrors.push(
-          language === "es"
-            ? "La información sobre sostenibilidad es requerida."
-            : "Sustainability information is required."
-        );
+        newErrors.push(translateText[language].requiredSustainability); // Sustainability for ONG/Academy
     }
 
     if (currentStep === 3) {
       if (form.acceptanceLetter.length === 0) {
-        newErrors.push(
-          language === "es"
-            ? "Debe adjuntar la carta de autorización."
-            : "You must attach the authorization letter."
-        );
+        newErrors.push(translateText[language].requiredAcceptanceLetter);
       }
     }
     setErrors(newErrors);
@@ -1444,7 +1594,11 @@ export default function FormWizard() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full rounded-md justify-center items-center">
-          Guardando postulación...
+          {language === "es"
+            ? "Guardando postulación..."
+            : language === "en"
+            ? "Saving application..."
+            : "Salvando candidatura..."}
           <LoadingSpinner />
         </div>
       </div>
@@ -1655,7 +1809,9 @@ export default function FormWizard() {
       <div className="max-w-3xl w-full p-10 rounded-md">
         <div className="mb-6">
           <div className="text-center text-sm mb-1">
-            {currentStep + 1} {language === "en" ? "of" : "de"} {steps.length}
+            {currentStep + 1}{" "}
+            {language === "en" ? "of" : language === "es" ? "de" : "de"}{" "}
+            {steps.length}
           </div>
           <div className="w-full bg-[#a49fc4] rounded-full h-2.5 overflow-hidden">
             <div
