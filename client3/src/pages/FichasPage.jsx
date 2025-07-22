@@ -57,7 +57,7 @@ function FichasPage() {
   const handleDelete = async (id) => {
     setIsSaving(true);
     try {
-      deleteFicha(id);
+      await deleteFicha(id);
       navigate('/fichas');
     } catch (error) {
       console.error("Error al eliminar la ficha:", error);
