@@ -32,7 +32,7 @@ export function FichaProvider({ children }) {
         // console.log("Datos antes de enviar:", ficha);
 
         try {
-<LoadingSpinner />
+            <LoadingSpinner />
             const res = await createFichaRequest(ficha)
 
             window.alert("Postulación enviada con éxito");
@@ -64,8 +64,9 @@ export function FichaProvider({ children }) {
 
     const updateFicha = async (id, ficha) => {
         try {
-<LoadingSpinner />
             await updateFichaRequest(id, ficha);
+            <LoadingSpinner />
+
             window.alert("Postulación actualizada con éxito");
 
         } catch (error) {
