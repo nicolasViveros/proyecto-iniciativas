@@ -16,8 +16,8 @@ function translateAssociation(option) {
       return "Companies";
     case "ONG":
       return "NGO";
-      case "Sociedad Civil":
-        return "Civil Society";
+    case "Sociedad Civil":
+      return "Civil Society";
     case "Instituciones educativas y de investigación":
       return "Educational and Research Institutions";
     case "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
@@ -243,7 +243,7 @@ function Step3({ form, handleChange, translateText, language }) {
   if (form.category === "Instituciones públicas y Empresas privadas") {
     return (
       <div className="">
-        <h2 className="text-3xl text-center font-bold mb-4">
+        <h2 className="text-3xl text-center font-bold mb-6">
           {translateText[language].operatorRegulatorCriteria}
         </h2>
 
@@ -265,6 +265,7 @@ function Step3({ form, handleChange, translateText, language }) {
           {wordCount.innovation} / 300 {language === "es" ? "palabras" : "words"}
         </div>
 
+        <h2 className="text-xl font-bold ">{translateText[language].impactLabel}</h2>
         <label className="text-xl">{translateText[language].impact}</label>
         <label className="block text-sm">
           {translateText[language].max300words}
@@ -281,6 +282,8 @@ function Step3({ form, handleChange, translateText, language }) {
         <div className="text-xs text-right text-gray-500">
           {wordCount.impact} / 300 {language === "es" ? "palabras" : "words"}
         </div>
+
+        <h2 className="text-xl font-bold ">{translateText[language].transferabilityLabel}</h2>
         <label className="text-xl">
           {translateText[language].transferability}
         </label>
@@ -301,6 +304,7 @@ function Step3({ form, handleChange, translateText, language }) {
           {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
         </div>
 
+        <h2 className="text-xl font-bold ">{translateText[language].sustainabilityLabel}</h2>
         <label className="text-xl">
           {translateText[language].sustainability}
         </label>
@@ -332,6 +336,7 @@ function Step3({ form, handleChange, translateText, language }) {
           {translateText[language].ngoAcademyCriteria}
         </h2>
 
+        <h2 className="text-xl font-bold ">{translateText[language].innovationLabel}</h2>
         <label className="text-xl">{translateText[language].methodology}</label>
         <label className="block text-sm">
           {translateText[language].max300characters}
@@ -350,6 +355,7 @@ function Step3({ form, handleChange, translateText, language }) {
         </div>
 
 
+        <h2 className="text-xl font-bold ">{translateText[language].impactLabel}</h2>
         <label className="text-xl">{translateText[language].outcomes}</label>
         <label className="block text-sm">
           {translateText[language].max300characters}
@@ -367,6 +373,7 @@ function Step3({ form, handleChange, translateText, language }) {
           {wordCount.outcomes} / 300 {language === "es" ? "palabras" : "words"}
         </div>
 
+        <h2 className="text-xl font-bold ">{translateText[language].transferabilityLabel}</h2>
         <label className="text-xl">
           {translateText[language].transferabilityOng}
         </label>
@@ -386,6 +393,7 @@ function Step3({ form, handleChange, translateText, language }) {
           {wordCount.transferability} / 250 {language === "es" ? "palabras" : "words"}
         </div>
 
+        <h2 className="text-xl font-bold ">{translateText[language].sustainabilityLabel}</h2>
         <label className="text-xl">
           {translateText[language].sustainabilityOng}
         </label>
@@ -977,10 +985,13 @@ export default function FormWizard() {
       innovationLabel: "Innovación",
       innovation:
         "Describa qué aspectos de su iniciativa son innovadores frente a prácticas tradicionales en movilidad urbana con enfoque de género *",
+      impactLabel: "Impacto",
       impact:
         "¿Qué cambios concretos ha generado la iniciativa en la empleabilidad, participación, seguridad o inclusión de mujeres? Incluya indicadores si es posible *",
+      transferabilityLabel: "Replicabilidad",
       transferability:
         "¿Puede aplicarse la iniciativa en otras ciudades o instituciones? ¿Existen herramientas, protocolos o aprendizajes transferibles? *",
+      sustainabilityLabel: "Sostenibilidad",
       sustainability:
         "¿Qué mecanismos aseguran la continuidad de la iniciativa en el tiempo (ej. financiamiento, institucionalización, alianzas)? *",
       ngoAcademyCriteria: "Criterios para la categoría Organizaciones de la sociedad civil y Entidades académicas",
