@@ -63,7 +63,7 @@ export function FichaProvider({ children }) {
 
     const updateFicha = async (id, ficha) => {
         try {
-            loadingSpinner();
+
             await updateFichaRequest(id, ficha);
             window.alert("Postulación actualizada con éxito");
 
