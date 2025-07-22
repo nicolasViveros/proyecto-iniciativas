@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
     const singup = async (user) => {
         try {
             const res = await registerRequest(user);
-            console.log(res.data);
+            // console.log(res.data);
             setUser(res.data);
             setIsAuthenticated(true);
         } catch (error) {
@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
             if (cookies.token) {
                 try {
                     const res = await verifyTokenRequest(cookies.token)
-                    console.log(res.data)
+                    // console.log(res.data)
                     if (!res.data) {
                         Cookies.remove('token');
                         setIsAuthenticated(false);
