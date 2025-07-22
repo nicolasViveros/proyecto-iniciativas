@@ -639,7 +639,7 @@ function Step5({
           name="organizationType"
           value={organizationType}
           onChange={handleOrganizationTypeChange}
-          className="col-start-1 row-start-1 w-full input-focused appearance-none rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]"
+          className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
         >
           <option value="">
             {language === "es" ? "Selecciona un tipo" : "Select a type"}
@@ -682,7 +682,7 @@ function Step5({
           name="country"
           value={country}
           onChange={handleCountryChange}
-          className="col-start-1 row-start-1 w-full appearance-none input-focused rounded-md py-2 px-4 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#5D5594]"
+          className="w-full border border-gray-300  px-4 py-2 rounded-md my-2 input-focused"
         >
           <option value="">
             {language === "es" ? "Selecciona un país" : "Select a country"}
