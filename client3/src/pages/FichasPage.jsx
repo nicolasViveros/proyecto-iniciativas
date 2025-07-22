@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useFichas } from '../context/FichasContext'
 import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom instalado
 import LoadingSpinner from "../context/LoadingSpinner";
-const [isSaving, setIsSaving] = useState(false);
+export const [isSaving, setIsSaving] = useState(false);
 
 function FichaCard({ ficha }) {
   const { deleteFicha } = useFichas();
