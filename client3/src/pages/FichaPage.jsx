@@ -257,7 +257,7 @@ const FichaPage = () => {
           {ficha.video && (
             <p className="col-span-2">
               <strong>Video:</strong>{" "}
-              <a className="w-min" href={ficha.video} target="_blank" rel="noopener noreferrer">
+              <a className="truncate" href={ficha.video} target="_blank" rel="noopener noreferrer">
                 {ficha.video}
               </a>
             </p>
