@@ -1,155 +1,166 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const fichaSchema = new mongoose.Schema({
+const fichaSchema = new mongoose.Schema(
+  {
     organizationName: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     organizationType: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     country: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     legalRepName: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     legalRepPosition: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     email: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     phone: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     registrationId: {
-        type: String,
+      type: String,
     },
-    team: [{
+    team: [
+      {
         name: {
-            type: String,
+          type: String,
         },
         position: {
-            type: String,
+          type: String,
         },
         email: {
-            type: String,
+          type: String,
         },
-    }],
+      },
+    ],
     associations: [String],
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     city: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     startDate: {
-        type: Date,
-        required: true,
-
+      type: Date,
+      required: true,
     },
     isActive: {
-        type: Boolean,
-        default: true,
+      type: Boolean,
+      default: true,
     },
     reasonInactive: {
-        type: String,
+      type: String,
     },
     need: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     objectives: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     targetAudience: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     activities: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     resultsObtained: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     category: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     innovation: {
-        type: String,
+      type: String,
     },
     impact: {
-        type: String,
+      type: String,
     },
     methodology: {
-        type: String,
+      type: String,
     },
     outcomes: {
-        type: String,
+      type: String,
     },
     transferability: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     sustainability: {
-        type: String,
-        required: true,
-
+      type: String,
+      required: true,
     },
     links: [String],
-    files: [{
+    files: [
+      {
         name: {
-            type: String,
-            required: true
+          type: String,
+          required: true,
         },
         type: {
-            type: String,
-            required: true
+          type: String,
+          required: true,
         },
         content: {
-            type: String, // Assuming content is stored as base64 string
-            required: true
-        }
-    }],
+          type: String, // Assuming content is stored as base64 string
+          required: true,
+        },
+      },
+    ],
     video: {
-        type: String,
+      type: String,
     },
     recognition: {
-        type: String,
+      type: String,
     },
-    acceptanceLetter: [{
+    acceptanceLetter: [
+      {
         name: {
-            type: String,
-            required: true
+          type: String,
+          required: true,
         },
         type: {
-            type: String,
-            required: true
+          type: String,
+          required: true,
         },
         content: {
-            type: String, // Assuming content is stored as base64 string
-            required: true
-        }
-    }],
+          type: String, // Assuming content is stored as base64 string
+          required: true,
+        },
+      },
+    ],
     accepted: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
     },
-}, {
-    timestamps: true
-});
+    language: {
+      type: String,
+      default: "es",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 export default mongoose.model("Ficha", fichaSchema);

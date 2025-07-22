@@ -1022,6 +1022,7 @@ export default function FormWizard() {
     recognition: "",
     acceptanceLetter: [],
     accepted: false,
+    language,
   });
 
   const translateText = {
