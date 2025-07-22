@@ -68,18 +68,18 @@ function FichasPage() {
   }, []);
 
   if (fichas.length == 0) return (<div className=" flex  items-center justify-center min-h-screen">
-    <div className="max-w-3xl w-full rounded-md justify-center items-center">
+    {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
       Cargando fichas...
       <LoadingSpinner />
-    </div>
+    {/* </div> */}
   </div>);
 
   if (isSaving) {
     return <div className="flex items-center justify-center min-h-screen">
-      <div className="max-w-3xl w-full rounded-md justify-center items-center">
+      {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
         Eliminando ficha...
         <LoadingSpinner />
-      </div>
+      {/* </div> */}
     </div>;
   }
 
