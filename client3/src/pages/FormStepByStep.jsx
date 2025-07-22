@@ -1870,7 +1870,7 @@ export default function FormWizard() {
           )}
 
           {currentStep > 0 && currentStep < steps.length - 1 && (
-            <div className="flex justify-between px-1 mt-6">
+            <div className="flex justify-between mx-1 mt-6">
               <button
                 type="button"
                 onClick={prevStep}
