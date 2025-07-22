@@ -633,7 +633,7 @@ function Step4({
           >
             <div className="flex items-center justify-between">
               <p>
-                {file.name} ({file.type})
+                {file.name} 
               </p>
               <button
                 type="button"
