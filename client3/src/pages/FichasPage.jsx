@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useFichas } from '../context/FichasContext'
 import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom instalado
 import LoadingSpinner from "../context/LoadingSpinner";
 
 function FichaCard({ ficha }) {
+  const {isdeleting, setIsDeleting} = useState(false);
   const { deleteFicha } = useFichas();
   return (
     <div className=" flex flex-col border p-4 space-between justify-between mx-auto rounded shadow">
@@ -26,7 +27,17 @@ function FichaCard({ ficha }) {
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
             if (window.confirm("¿Está seguro de que desea eliminar esta ficha? Esta acción no se puede deshacer.")) {
-              deleteFicha(ficha._id);
+              
+              
+              setIsDeleting(true);
+              try {
+                 deleteFicha(ficha._id); 
+                  navigate('/fichas');
+              } catch (error) {
+                  console.error("Error al eliminar la ficha:", error);
+              } finally {
+                  setIsSaving(false);
+              }
             }
           }}
         >
@@ -57,6 +68,15 @@ function FichasPage() {
       <LoadingSpinner />
     </div>
   </div>);
+
+if (isdeleting) {
+  return <div className="flex items-center justify-center min-h-screen">
+    <div className="max-w-3xl w-full rounded-md justify-center items-center">
+      Guardando ficha...
+      <LoadingSpinner />
+    </div>
+  </div>;
+}
 
   return (
     <div className="container mx-auto p-6">
