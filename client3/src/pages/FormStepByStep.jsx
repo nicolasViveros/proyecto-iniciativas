@@ -1106,7 +1106,7 @@ export default function FormWizard() {
   const validateStep = () => {
     const newErrors = [];
 
-    if (currentStep === 0) {
+    if (currentStep === 4) {
       if (!form.organizationName)
         newErrors.push(
           language === "es"
@@ -1191,7 +1191,7 @@ export default function FormWizard() {
         }
       });
     }
-    if (currentStep === 1) {
+    if (currentStep === 0) {
       if (!form.name)
         newErrors.push(
           language === "es"
@@ -1211,7 +1211,7 @@ export default function FormWizard() {
             : "Start date is required."
         );
     }
-    if (currentStep === 2) {
+    if (currentStep === 1) {
       if (!form.need)
         newErrors.push(
           language === "es"
@@ -1237,7 +1237,7 @@ export default function FormWizard() {
             : "Main activities are required."
         );
     }
-    if (currentStep === 3 && form.category === "Operador/Regulador") {
+    if (currentStep === 2 && form.category === "Operador/Regulador") {
       if (!form.innovation)
         newErrors.push(
           language === "es"
@@ -1263,7 +1263,7 @@ export default function FormWizard() {
             : "Sustainability information is required."
         );
     }
-    if (currentStep === 3 && form.category === "ONG/Academia") {
+    if (currentStep === 2 && form.category === "ONG/Academia") {
       if (!form.methodology)
         newErrors.push(
           language === "es"
@@ -1290,7 +1290,7 @@ export default function FormWizard() {
         );
     }
 
-    if (currentStep === 4) {
+    if (currentStep === 3) {
       // form.links.forEach((link, index) => {
       //   if (!link) {
       //     newErrors.push(
