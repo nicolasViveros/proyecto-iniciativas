@@ -167,10 +167,10 @@ const FichaPage = () => {
 
           )}
           <p>{ficha.reasonInactive}</p>
-          <p className="col-span-2">
+          <p>
             <strong>Asociaciones:</strong>{" "}
           </p>
-          <div className="grid grid-cols-3 col-span-2 gap-2  pb-1">
+          <div className="grid grid-cols-2 gap-2  pb-1">
             {allAssociations.map((option) => (
               <label key={option} className="flex items-center space-x-2">
                 <input
@@ -192,7 +192,7 @@ const FichaPage = () => {
           </p> */}
 
           <div className="col-span-2">
-            <p className="border-b border-[#D9D6E1] pb-1">
+            <p className="border-y border-[#D9D6E1] pb-1">
               <strong>Equipo Responsable:</strong>
             </p>
             {ficha.team.map((member, index) => (
