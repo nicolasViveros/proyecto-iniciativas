@@ -68,7 +68,7 @@ function EditFichaPage() {
 
     const handleRemoveLink = (index) => {
         const newLinks = ficha.links.filter((_, i) => i !== index);
-        setForm({ ...ficha, links: newLinks });
+        setFicha({ ...ficha, links: newLinks });
     };
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
