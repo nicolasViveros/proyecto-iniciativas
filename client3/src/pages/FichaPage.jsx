@@ -268,8 +268,8 @@ const FichaPage = () => {
             </p>
           )}
           {ficha.files && (
-            <div>
-              <p className="col-span-2">
+            <div className="col-span-2">
+              <p >
                 <strong>Archivos:</strong>
               </p>
               <ul className="list-disc pl-8 space-y-2">
@@ -287,8 +287,8 @@ const FichaPage = () => {
             </div>
           )}
           {ficha.acceptanceLetter && (
-            <div>
-              <p className="col-span-2">
+            <div className="col-span-2">
+              <p >
                 <strong>Carta de Aceptación:</strong>
               </p>
               <ul className="list-disc pl-8 space-y-2">
