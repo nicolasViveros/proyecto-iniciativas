@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <footer >
-        <div className="grid grid-rows-2 ">
+        <div className="grid grid-rows-2 h-auto">
 
           {/* Fondo restante con imagen de footer */}
           <div className=" relative overflow-hidden h-32">
