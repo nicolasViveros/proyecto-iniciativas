@@ -727,7 +727,7 @@ function HomePage() {
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">Winners announcement</span>
-                  <span className="w-1/2">September 15</span>
+                  <span className="w-1/2">September 15th</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">Award ceremony</span>
@@ -742,7 +742,7 @@ function HomePage() {
     {
       titulo: {
         es: "Premiación",
-        en: "Awarding",
+        en: "Awards",
       },
       contenido: {
         es: (
@@ -750,23 +750,13 @@ function HomePage() {
             {" "}
             <div className="text-sm space-y-4">
               <h3>
-                Las tres iniciativas mejor evaluadas de cada categoría serán
-                reconocidas con primer, segundo y mención honrosa.
+              Las tres iniciativas mejor evaluadas de cada categoría serán reconocidas con primer y segundo lugar y mención honrosa.
               </h3>
               <h3>
-                La ceremonia de premiación se realizará en un evento
-                internacional en Bogotá que tendrá lugar en septiembre de 2025 y
-                que será coproducido con junto el Observatorio Latinoamericano
-                de Género y Movilidad y en cuya oportunidad se premiará a los
-                ganadores del concurso Mujeres en Ruta organizado por dicha
-                institución. Durante el evento se desarrollarán además
-                actividades técnicas, visitas, y espacios de intercambio entre
-                las organizaciones seleccionadas.
+              La ceremonia de premiación se realizará en un evento internacional en Bogotá que tendrá lugar en octubre de 2025 y que será coproducido con junto el Observatorio Latinoamericano de Género y Movilidad (OBGEM) y en cuya oportunidad se premiará a los ganadores del concurso Mujeres en Ruta organizado por dicha institución. Durante el evento se desarrollarán además actividades técnicas, visitas, y espacios de intercambio entre las organizaciones seleccionadas.
               </h3>
               <h3>
-                SoMoS LAC cubrirá los gastos de viaje y estadía de un
-                representante de cada una de las instituciones ganadoras de los
-                primero y segundo lugar de las dos categorías.
+              SoMoS LAC cubrirá los gastos de viaje y estadía en Bogotá de un representante de cada una de las instituciones ganadoras de los primero y segundo lugar de las dos categorías.
               </h3>
             </div>
           </>
@@ -776,22 +766,13 @@ function HomePage() {
             {" "}
             <div className="text-sm space-y-4">
               <h3>
-                The top three evaluated initiatives from each category will be
-                recognized with first, second, and honorable mention.
+              The top three initiatives in each category will receive first place, second place, and honorable mention awards.
               </h3>
               <h3>
-                The awarding ceremony will be held at an international event in
-                Bogotá, scheduled for September 2025, coproduced with the Latin
-                American Gender and Mobility Observatory, where winners of the
-                Mujeres en Ruta contest organized by that institution will also
-                be awarded. During the event, technical activities, visits, and
-                exchange opportunities between selected organizations will also
-                be conducted.
+              The awards will be presented during an international event in Bogotá in October 2025, co-organized with the Latin American Gender and Mobility Observatory (OBGEM). During the event, winners of the “Mujeres en Ruta” contest organized by OBGEM will also be honored. The event will include technical sessions, site visits, and networking opportunities among the selected organizations.
               </h3>
               <h3>
-                SoMoS LAC will cover travel and accommodation expenses for one
-                representative from each of the first and second-place winning
-                institutions in both categories.
+              SoMoS LAC will cover travel and accommodation expenses in Bogotá for one representative of each first and second-place winning organization in both categories.
               </h3>
             </div>
           </>
@@ -812,9 +793,9 @@ function HomePage() {
     <div className="w-full min-h-screen bg-white font-sans">
 
       <div className="flex justify-end p-4 space-x-2">
-        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToSpanish}>Es</button>
-        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>En</button>
-        {/* <button className="rounded-full bg-white p-2 border" onClick="/">Pt</button> */}
+        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToSpanish}>ES</button>
+        <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>EN</button>
+        {/* <button className="rounded-full bg-white p-2 border" onClick="/">PT</button> */}
       </div>
 
       <div className="relative w-full">
