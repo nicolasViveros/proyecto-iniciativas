@@ -547,7 +547,7 @@ function EditFichaPage() {
                         onClick={handleAddLink}
                         className="underline hover:text-[#a49fc4] mb-2"
                     >
-                        {language === "es" ? "+ Agregar enlace" : "+ Add link"}
+                        Agregar link +
                     </button>
 
                     <div className='col-span-2'>Video:</div>
