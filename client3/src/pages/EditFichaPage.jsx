@@ -4,29 +4,7 @@ import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
-import loadingSpinner from "../context/FichasContext";
-function translateAssociation(option) {
-    switch (option) {
-        case "No":
-            return "No";
-        case "Otras Secretarías":
-            return "Other Secretariats";
-        case "ONGs y Sociedad Civil":
-            return "NGOs and Civil Society";
-        case "Instituciones educativas y de investigación":
-            return "Educational and Research Institutions";
-        case "Empresas":
-            return "Companies";
-        case "Organizaciones multilaterales (como el BID, el Banco Mundial y la ONU)":
-            return "Multilateral Organizations (such as IDB, World Bank, and UN)";
-        case "Organizaciones Internacionales":
-            return "International Organizations";
-        case "Otras organizaciones":
-            return "Other organizations";
-        default:
-            return option;
-    }
-}
+
 
 function EditFichaPage() {
 
@@ -164,13 +142,7 @@ function EditFichaPage() {
             <div className="max-w-3xl w-full rounded-md justify-center items-center">
                 Cargando ficha...
 
-                <div
-                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                    role="status">
-                    <span
-                        className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-                    >Loading...</span>
-                </div>
+                
 
             </div>
         </div>;
