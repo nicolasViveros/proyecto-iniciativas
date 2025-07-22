@@ -1242,13 +1242,13 @@ function HomePage() {
             {" "}
             <div className="text-sm space-y-4">
               <h3>
-              As três iniciativas com melhor avaliação em cada categoria serão reconhecidas com primeiro e segundo lugar, além de uma menção honrosa.
+                As três iniciativas com melhor avaliação em cada categoria serão reconhecidas com primeiro e segundo lugar, além de uma menção honrosa.
               </h3>
               <h3>
-              A cerimônia de premiação será realizada em um evento internacional em Bogotá que acontecerá em outubro de 2025, que será promovido junto ao Observatório Latino-Americano de Gênero e Mobilidade (OBGEM). Na mesma ocasião serão premiadas as iniciativas vencedoras do concurso “Mujeres en Ruta” organizado pela referida instituição. Durante o evento, também serão desenvolvidas atividades técnicas, visitas e espaços de intercâmbio entre as organizações selecionadas.
+                A cerimônia de premiação será realizada em um evento internacional em Bogotá que acontecerá em outubro de 2025, que será promovido junto ao Observatório Latino-Americano de Gênero e Mobilidade (OBGEM). Na mesma ocasião serão premiadas as iniciativas vencedoras do concurso “Mujeres en Ruta” organizado pela referida instituição. Durante o evento, também serão desenvolvidas atividades técnicas, visitas e espaços de intercâmbio entre as organizações selecionadas.
               </h3>
               <h3>
-              A SoMoS LAC cobrirá as despesas de viagem e hospedagem em Bogotá de um representante de cada uma das instituições vencedoras do primeiro e segundo lugar nas duas categorias.
+                A SoMoS LAC cobrirá as despesas de viagem e hospedagem em Bogotá de um representante de cada uma das instituições vencedoras do primeiro e segundo lugar nas duas categorias.
               </h3>
             </div>
           </>
@@ -1273,19 +1273,22 @@ function HomePage() {
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4 space-x-2">
         <button
-          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          className={`rounded-full p-0.5 border ${language === "es" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+            }`}
           onClick={switchToSpanish}
         >
           ES
         </button>
         <button
-          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          className={`rounded-full p-0.5 border ${language === "en" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+            }`}
           onClick={switchToEnglish}
         >
           EN
         </button>
         <button
-          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          className={`rounded-full p-0.5 border ${language === "pt" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+            }`}
           onClick={switchToPortuguese}
         >
           PT

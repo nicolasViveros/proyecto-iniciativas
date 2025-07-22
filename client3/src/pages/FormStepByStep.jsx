@@ -864,8 +864,8 @@ function Step5({
           language === "es"
             ? "Solo se permiten números y el símbolo '+'"
             : language === "en"
-            ? "Only numbers and the '+' symbol are allowed"
-            : "Apenas números e o símbolo '+' são permitidos"
+              ? "Only numbers and the '+' symbol are allowed"
+              : "Apenas números e o símbolo '+' são permitidos"
         }
       />
 
@@ -1028,7 +1028,7 @@ export default function FormWizard() {
   useEffect(() => {
     setForm((prevForm) => ({ ...prevForm, language }));
   }, [language]);
-  
+
   const translateText = {
     es: {
       organizationDetails: "DATOS DE LA ORGANIZACIÓN POSTULANTE",
@@ -1323,21 +1323,21 @@ export default function FormWizard() {
       addResponsible: "+ Adicionar responsável",
       associations:
         "Houve associações para o desenvolvimento? Indique todos os setores associados*",
-      projectInfo: "INFORMAÇÕES DA INICIATIVA CANDIDATA",
+      projectInfo: "INFORMAÇÕES SOBRE  A INICITIVA CANDIDATA",
       projectName: "Nome do projeto ou iniciativa:",
       projectCity: "Cidade de implementação do projeto",
       startDate: "Data de início da implementação:",
-      isActive: "Está vigente?",
+      isActive: "Está em período de vigência? ",
       yes: "Sim",
       no: "Não",
-      reasonInactive: "Caso não esteja vigente, explique brevemente o porquê:",
+      reasonInactive: "Se não estiver atualizado, explique brevemente o porquê:",
       projectDescription: "DESCRIÇÃO DO PROJETO",
-      need: "Descreva a necessidade ou problemática detectada. *",
+      need: "Descreva a necessidade ou o problema detectado. *",
       objectives: "Objetivos do projeto. *",
       targetAudience: "Público-alvo e população beneficiária. *",
       activities: "Principais atividades realizadas. *",
-      resultsObtained: "Resultados obtidos ou esperados. *",
-      projectCategory: "A qual categoria o projeto se candidata?",
+      resultsObtained: "Resultados alcançados ou esperados. *",
+      projectCategory: "A qual categoria o projeto está se candidatando ",
       operatorRegulatorCriteria:
         "Critérios para a categoria Instituições públicas e Empresas privadas",
       operatorRegulatorOption: "Instituições públicas e Empresas privadas",
@@ -1535,7 +1535,7 @@ export default function FormWizard() {
     if (
       currentStep === 2 &&
       form.category ===
-        "Organizaciones de la sociedad civil y Entidades académicas"
+      "Organizaciones de la sociedad civil y Entidades académicas"
     ) {
       if (!form.methodology)
         newErrors.push(translateText[language].requiredMethodology);
@@ -1602,8 +1602,8 @@ export default function FormWizard() {
           {language === "es"
             ? "Guardando postulación..."
             : language === "en"
-            ? "Saving application..."
-            : "Salvando candidatura..."}
+              ? "Saving application..."
+              : "Salvando candidatura..."}
           <LoadingSpinner />
         </div>
       </div>
@@ -1792,19 +1792,22 @@ export default function FormWizard() {
       <div className="absolute top-4 right-4 space-x-2">
         {/* <div className="flex justify-end p-4 space-x-2"> */}
         <button
-          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          className={`rounded-full p-0.5 border ${language === "es" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+            }`}
           onClick={switchToSpanish}
         >
           ES
         </button>
         <button
-          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          className={`rounded-full p-0.5 border ${language === "en" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+            }`}
           onClick={switchToEnglish}
         >
           EN
         </button>
         <button
-          className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border"
+          className={`rounded-full p-0.5 border ${language === "pt" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+            }`}
           onClick={switchToPortuguese}
         >
           PT
@@ -1892,11 +1895,10 @@ export default function FormWizard() {
               </button>
               <button
                 type="submit"
-                className={`text-white px-4 py-2 rounded ${
-                  form.accepted
+                className={`text-white px-4 py-2 rounded ${form.accepted
                     ? "bg-[#5d5593] hover:bg-[#a49fc4]"
                     : "bg-[#6c6a77] hover:bg-[#6c6a77]"
-                }`}
+                  }`}
                 disabled={!form.accepted || isSubmitted}
               >
                 {translateText[language].submit}
