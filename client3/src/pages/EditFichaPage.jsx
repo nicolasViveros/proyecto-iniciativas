@@ -363,15 +363,7 @@ function EditFichaPage() {
                             </label>
                         ))}
                     </div>
-                    <div>
-                        <input
-                            type="text"
-                            name="associations"
-                            value={ficha.associations.length > 0 ? ficha.associations.join(', ') : 'Ninguna'}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                        />
-                    </div>
+                    
 
                     <div className='col-span-2 font-bold'>Equipo Responsable:</div>
 

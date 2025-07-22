@@ -149,7 +149,7 @@ const FichaPage = () => {
           </p>
           <p>
             {ficha.associations.length > 0
-              ? ficha.associations.join(", ")
+              ? FileList(ficha.associations)
               : "Ninguna"}
           </p>
           <div className="col-span-2">
