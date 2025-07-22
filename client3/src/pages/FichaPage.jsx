@@ -74,7 +74,7 @@ const FichaPage = () => {
   };
 
   return (
-    <div className="relative  items-center justify-center min-h-screen">
+    <div className="relative flex items-center justify-center min-h-screen">
       <button
         onClick={handleBack}
         className="absolute top-4 left-4 hover:text-[#a49fc4] rounded-md"
