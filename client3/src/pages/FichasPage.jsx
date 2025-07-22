@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { useFichas } from '../context/FichasContext'
 import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom instalado
 import LoadingSpinner from "../context/LoadingSpinner";
-export const [isSaving, setIsSaving] = useState(false);
+import { useNavigate } from 'react-router-dom';
 
-function FichaCard({ ficha }) {
-  const { deleteFicha } = useFichas();
+function FichaCard({ ficha, handleDelete }) {
+
   return (
     <div className=" flex flex-col border p-4 space-between justify-between mx-auto rounded shadow">
       <div className='mb-10'>
@@ -27,18 +27,10 @@ function FichaCard({ ficha }) {
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
             if (window.confirm("¿Está seguro de que desea eliminar esta ficha? Esta acción no se puede deshacer.")) {
-              
-              setIsSaving(true);
-              try {
-                deleteFicha(ficha._id);
-                navigate('/fichas');
-              } catch (error) {
-                console.error("Error al guardar la ficha:", error);
-              } finally {
-                setIsSaving(false);
-              }
 
-              
+             handleDelete(ficha._id);
+
+
             }
           }}
         >
@@ -55,10 +47,24 @@ function FichaCard({ ficha }) {
   );
 }
 
+
 function FichasPage() {
   const { getFichas, fichas } = useFichas();
+  const [isSaving, setIsSaving] = useState(false);
+  const navigate = useNavigate();
+  const { deleteFicha } = useFichas();
 
-
+  const handleDelete = async (id) => {
+    setIsSaving(true);
+    try {
+      deleteFicha(id);
+      navigate('/fichas');
+    } catch (error) {
+      console.error("Error al eliminar la ficha:", error);
+    } finally {
+      setIsSaving(false);
+    }
+  }; 
   useEffect(() => {
     getFichas();
   }, []);
@@ -70,21 +76,21 @@ function FichasPage() {
     </div>
   </div>);
 
-if (isSaving) {
-  return <div className="flex items-center justify-center min-h-screen">
-    <div className="max-w-3xl w-full rounded-md justify-center items-center">
-      Guardando ficha...
-      <LoadingSpinner />
-    </div>
-  </div>;
-}
+  if (isSaving) {
+    return <div className="flex items-center justify-center min-h-screen">
+      <div className="max-w-3xl w-full rounded-md justify-center items-center">
+        Guardando ficha...
+        <LoadingSpinner />
+      </div>
+    </div>;
+  }
 
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Listado de Fichas</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {fichas.map((ficha) => (
-          <FichaCard ficha={ficha} key={ficha._id} />
+          <FichaCard ficha={ficha} handleDelete={handleDelete} key={ficha._id} />
         ))}
       </div>
     </div>
