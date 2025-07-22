@@ -4,19 +4,10 @@ function Footer() {
   return (
     <div>
       <div className="justify-center flex flex-col items-center sm:justify-start sm:items-start">
-              <span className="sm:pl-6 text-xs ">Implementado por:</span>
+        <span className="sm:pl-6 text-xs ">Implementado por:</span>
       </div>
-      <footer className="relative w-full flex flex-col md:flex-col h-auto">
-        {/* Logo izquierda (GIZ) con fondo blanco */}
-        <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
-        <Link to="/">
-          <img
-            src="/LogoGiz.svg"
-            alt="GIZ Logo"
-            className="h-12 md:h-16 lg:h-20"
-          />
-          </Link>
-        </div>
+
+      <footer className="relative w-full flex flex-col md:flex-row h-auto">
 
         {/* Fondo restante con imagen de footer */}
         <div className="flex-grow relative overflow-hidden h-32 md:h-auto">
@@ -26,6 +17,18 @@ function Footer() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
+
+        {/* Logo izquierda (GIZ) con fondo blanco */}
+        <div className="flex bg-white w-full md:w-auto px-4 items-center justify-center md:justify-start h-16 md:h-auto">
+          <Link to="/">
+            <img
+              src="/LogoGiz.svg"
+              alt="GIZ Logo"
+              className="h-12 md:h-16 lg:h-20"
+            />
+          </Link>
+        </div>
+
       </footer>
     </div>
   );
