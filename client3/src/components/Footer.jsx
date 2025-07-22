@@ -18,10 +18,8 @@ function Footer() {
             />
           </div>
 
-          <div className="justify-center flex flex-col sm:flex-row items-center sm:justify-start sm:items-start">
             <span className="sm:pl-6 text-xs ">Implementado por:</span>
-          </div>
-          
+
           {/* Logo izquierda (GIZ) con fondo blanco */}
           <div className="flex bg-white w-full md:w-auto px-4 items-start justify-start md:justify-start h-16 md:h-auto">
             <Link to="/">
