@@ -1518,8 +1518,16 @@ function HomePage() {
           className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center"
           onClick={() => {
             const link = document.createElement("a");
-            link.href = "/Bases.pdf";
-            link.download = "Bases.pdf";
+            if (language === "es") {
+              link.href = "/BASESDELCONCURSO-Genero.docx";
+              link.download = "BASESDELCONCURSO-Genero.docx";
+            } else if (language === "en") {
+              link.href = "/TowardsGenderEquity_TdR_ingles.docx";
+              link.download = "TowardsGenderEquity_TdR_ingles.docx";
+            } else if (language === "pt") {
+              link.href = "/Rumbo-Equidade_TdR_portugues.docx";
+              link.download = "Rumbo-Equidade_TdR_portugues.docx";
+            }
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
