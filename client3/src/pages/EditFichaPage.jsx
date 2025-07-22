@@ -53,7 +53,7 @@ function EditFichaPage() {
 
     const handleAddLink = () => {
         setFicha({ ...ficha, links: [...ficha.links, ""] });
-      };
+    };
 
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -118,11 +118,11 @@ function EditFichaPage() {
 
     const handleAssociationChange = (e) => {
         const { value, checked } = e.target;
-        setForm({
-            ...form,
+        setFicha({
+            ...ficha,
             associations: checked
-                ? [...form.associations, value]
-                : form.associations.filter((item) => item !== value),
+                ? [...ficha.associations, value]
+                : ficha.associations.filter((item) => item !== value),
         });
     };
 
@@ -166,6 +166,17 @@ function EditFichaPage() {
         </div>;
     }
 
+    const opciones = [
+        "No",
+        "Entidades públicas",
+        "Empresa privada",
+        "ONG",
+        "Sociedad Civil",
+        "Instituciones educativas y de investigación",
+        "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
+        "Organizaciones Internacionales",
+        "Otras organizaciones",
+      ];
     return (
 
         <div className="relative flex items-center justify-center min-h-screen" >
@@ -337,6 +348,21 @@ function EditFichaPage() {
                     )}
 
                     <div >Asociaciones:</div>
+
+                    <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
+                        {opciones.map((option) => (
+                            <label key={option} className="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    value={option}
+                                    checked={ficha.associations.includes(option)}
+                                    onChange={handleAssociationChange}
+                                    className="input-focused accent-[#5d5593]"
+                                />
+                                <span>{option}</span>
+                            </label>
+                        ))}
+                    </div>
                     <div>
                         <input
                             type="text"
