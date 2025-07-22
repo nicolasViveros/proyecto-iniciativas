@@ -138,11 +138,13 @@ const FichaPage = () => {
           <p>
             <strong>¿Está Vigente?:</strong>{" "}
           </p>
-          <p>{ficha.isActive ? "Sí" : "No"}</p>
+          <p>
+            {ficha.isActive ? "Sí" : "No"}</p>
           {!ficha.isActive && (
             <p>
-              <strong>Razón Inactiva:</strong> {ficha.reasonInactive}
+              <strong>Razón Inactiva:</strong> <p>{ficha.reasonInactive}</p>
             </p>
+            
           )}
           <p>
             <strong>Asociaciones:</strong>{" "}
@@ -152,6 +154,7 @@ const FichaPage = () => {
               ? ficha.associations.join(", ")
               : "Ninguna"}
           </p>
+
           <div className="col-span-2">
             <p className="border-b border-[#D9D6E1] pb-1">
               <strong>Equipo Responsable:</strong>
