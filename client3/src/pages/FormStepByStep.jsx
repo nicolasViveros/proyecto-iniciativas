@@ -1257,19 +1257,19 @@ export default function FormWizard() {
       if (!form.innovation)
         newErrors.push(
           language === "es"
-            ? "La descripción de los aspectos innovadores es requerida."
-            : "Innovative aspects description is required."
+            ? "La información sobre innovación es requerida."
+            : "Innovation information is required."
         );
       if (!form.impact)
         newErrors.push(
           language === "es"
-            ? "La descripción de los cambios concretos es requerida."
-            : "Concrete changes description is required."
+            ? "La información sobre impacto es requerida."
+            : "Impact information is required."
         );
       if (!form.transferability)
         newErrors.push(
           language === "es"
-            ? "La información sobre transferibilidad es requerida."
+            ? "La información sobre replicabilidad es requerida."
             : "Transferability information is required."
         );
       if (!form.sustainability)
@@ -1283,19 +1283,19 @@ export default function FormWizard() {
       if (!form.methodology)
         newErrors.push(
           language === "es"
-            ? "El enfoque, herramienta o metodología es requerida."
-            : "Approach, tool, or methodology is required."
+            ? "La información sobre innovación es requerida."
+            : "Innovation information is required."
         );
       if (!form.outcomes)
         newErrors.push(
           language === "es"
-            ? "Los resultados o cambios generados son requeridos."
-            : "Results or generated changes are required."
+            ? "La información sobre impacto es requerida."
+            : "Impact information is required."
         );
       if (!form.transferability)
         newErrors.push(
           language === "es"
-            ? "La información sobre transferibilidad es requerida."
+            ? "La información sobre replicabilidad es requerida."
             : "Transferability information is required."
         );
       if (!form.sustainability)
