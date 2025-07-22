@@ -207,6 +207,23 @@ function Step2({ form, handleChange, translateText, language }) {
         {wordCount.activities} / 500 {language === "es" ? "palabras" : "words"}
       </div>
 
+      <label className="text-xl">{translateText[language].resultsObtained}</label>
+      <label className="block text-sm">
+        {translateText[language].max500words}
+      </label>
+
+      <textarea
+        name="resultsObtained"
+        value={form.resultsObtained}
+        onChange={handleTextAreaChange}
+        className="w-full border border-gray-300  px-4 py-2 input-focused rounded-md my-2"
+        rows="4"
+        required
+      />
+      <div className="text-xs text-right text-gray-500">
+        {wordCount.resultsObtained} / 500 {language === "es" ? "palabras" : "words"}
+      </div>
+
       <label className="text-xl">
         {translateText[language].projectCategory}
       </label>
@@ -939,6 +956,7 @@ export default function FormWizard() {
     objectives: "",
     targetAudience: "",
     activities: "",
+    resultsObtained: "",
     category: "Instituciones públicas y Empresas privadas",
     innovation: "",
     impact: "",
@@ -982,6 +1000,7 @@ export default function FormWizard() {
       objectives: "Objetivos del proyecto. *",
       targetAudience: "Público objetivo y población beneficiaria. *",
       activities: "Principales actividades realizadas. *",
+      resultsObtained: "Resultados obtenidos o esperados. *",
       projectCategory: "¿A cuál categoría postula el proyecto?",
       operatorRegulatorCriteria: "Criterios para la categoría Instituciones públicas y Empresas privadas",
       innovationLabel: "Innovación",
@@ -1058,6 +1077,7 @@ export default function FormWizard() {
       objectives: "Project objectives. *",
       targetAudience: "Target audience and beneficiary population. *",
       activities: "Main activities carried out. *",
+      resultsObtained: "Results achieved or expected *",
       projectCategory: "What type of category does the project correspond to?",
       operatorRegulatorCriteria: "Operator/Regulator Criteria",
       innovationLabel: "Innovation",
@@ -1257,6 +1277,14 @@ export default function FormWizard() {
             ? "Las actividades principales son requeridas."
             : "Main activities are required."
         );
+      if (!form.resultsObtained) {
+        newErrors.push(
+          language === "es"
+            ? "Los resultados obtenidos o esperados son requeridos."
+            : "Results achieved or expected are required."
+        );
+      }
+
     }
     if (currentStep === 2 && form.category === "Instituciones públicas y Empresas privadas") {
       if (!form.innovation)
@@ -1585,6 +1613,7 @@ export default function FormWizard() {
       <div className="absolute top-4 right-4 space-x-2">
         <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToSpanish}>ES</button>
         <button className="rounded-full bg-white hover:bg-[#a49fc4] p-0.5 border" onClick={switchToEnglish}>EN</button>
+
         {/* <button className="rounded-full bg-white p-2 border" onClick="/">PT</button> */}
       </div>
 

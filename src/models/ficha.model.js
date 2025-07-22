@@ -80,6 +80,10 @@ const fichaSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    resultsObtained: {
+        type: String,
+        required: true,
+    },
     category: {
         type: String,
         required: true,
