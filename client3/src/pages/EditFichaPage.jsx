@@ -119,7 +119,7 @@ function EditFichaPage() {
         });
     };
 
-    const handleSave = async () => {
+    const handleSave =  () => {
         const validationError = validateFields();
         if (validationError) {
             alert(validationError);
@@ -127,7 +127,7 @@ function EditFichaPage() {
         }
        
          updateFicha(id, ficha);
-        await navigate('/fichas'); // vuelve al listado de fichas
+         navigate('/fichas'); // vuelve al listado de fichas
     };
 
     const handleBack = () => {

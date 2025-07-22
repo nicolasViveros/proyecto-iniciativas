@@ -46,6 +46,8 @@ function FichaCard({ ficha }) {
 function FichasPage() {
   const { getFichas, fichas } = useFichas();
 
+onload = getFichas;
+
   useEffect(() => {
     getFichas();
   }, []);
@@ -53,7 +55,7 @@ function FichasPage() {
   if (fichas.length == 0) return (<div className="  items-center justify-center min-h-screen">
     <div className="max-w-3xl w-full rounded-md justify-center items-center">
       Cargando fichas...
-      <LoadingSpinner /> 
+      <LoadingSpinner />
     </div>
   </div>);
 
