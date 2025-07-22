@@ -1387,15 +1387,15 @@ function HomePage() {
   ];
 
   const switchToSpanish = () => {
-    if (language !== "es") toggleLanguage("es"); // Pass 'es' to toggleLanguage
+    toggleLanguage("es"); // Pass 'es' to toggleLanguage
   };
 
   const switchToEnglish = () => {
-    if (language !== "en") toggleLanguage("en"); // Pass 'en' to toggleLanguage
+    toggleLanguage("en"); // Pass 'en' to toggleLanguage
   };
 
   const switchToPortuguese = () => {
-    if (language !== "pt") toggleLanguage("pt"); // Pass 'pt' to toggleLanguage
+    toggleLanguage("pt"); // Pass 'pt' to toggleLanguage
   };
 
   return (
