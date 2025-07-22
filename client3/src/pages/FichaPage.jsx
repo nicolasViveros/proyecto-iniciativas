@@ -170,7 +170,7 @@ const FichaPage = () => {
           <p>
             <strong>Asociaciones:</strong>{" "}
           </p>
-          <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
+          <div className="grid grid-cols-3 gap-2  pb-1">
             {allAssociations.map((option) => (
               <label key={option} className="flex items-center space-x-2">
                 <input
