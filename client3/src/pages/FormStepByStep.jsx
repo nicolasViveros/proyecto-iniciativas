@@ -11,21 +11,21 @@ function translateAssociation(option) {
     case "No":
       return "No";
     case "Entidades públicas":
-      return "public entities";
+      return "Public institution";
     case "Empresa privada":
-      return "Companies";
+      return "Private Companies";
     case "ONG":
       return "NGO";
     case "Sociedad Civil":
-      return "Civil Society";
+      return "Civil Organizations";
     case "Instituciones educativas y de investigación":
       return "Educational and Research Institutions";
     case "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)":
-      return "Multilateral Organizations (such as IDB, World Bank, and UN)";
+      return "Multilateral organisations (e.g. IDB, World Bank, UN, CAF, GIZ, KfW, etc.)";
     case "Organizaciones Internacionales":
-      return "International Organizations";
+      return "International Organisations";
     case "Otras organizaciones":
-      return "Other organizations";
+      return "Other organisations";
     default:
       return option;
   }
@@ -1033,18 +1033,18 @@ export default function FormWizard() {
         "¿Has revisado todos los datos ingresados? Una vez enviado, no podrás editar la postulación. ¿Deseas continuar?",
     },
     en: {
-      organizationDetails: "Applicant Organization Details",
+      organizationDetails: "Applicant Organization Information",
       organizationName: "Organization Name *",
       organizationType: "Organization Type *",
       country: "Country",
-      legalRepName: "Legal Representative Name or Initiative Leader *",
+      legalRepName: "Name of legal representative (for the category Public Institutions and Private Companies) or the leader of the initiative (for the category Civil Society Organisations and Academic Entities). *",
       legalRepPosition: "Position *",
       email: "Email *",
       phone: "Contact Phone *",
-      registrationId: "RUT/NIT/CNPJ/Legal Registration",
-      team: "Responsible Team",
+      registrationId: "RUT/NIT/CNPJ/Legal registration (if applicable):",
+      team: "Project team",
       associations:
-        "Were there associations in the development? If yes, indicate the associated sectors *",
+        "Partnerships for development? (specify all applicable sectors) *",
       projectInfo: "Project Information",
       projectName: "Project or Initiative Name:",
       projectCity: "Project Implementation City:",
@@ -1081,7 +1081,7 @@ export default function FormWizard() {
         "Can the proposal be applied in other contexts? Have you transferred or shared your work with other organizations or institutions? *",
       sustainabilityOng:
         "What continuity has the initiative had or will it have after its first phase? Are there networks, resources, or structures that support it? *",
-      supportMaterial: "Support Material",
+      supportMaterial: "Supporting Material",
       links:
         "Link to publications, evaluations, reports, methodological materials, or impact records.",
       attachFiles:
@@ -1094,7 +1094,7 @@ export default function FormWizard() {
       recognitionHint: "(Indicate which and in what year, if applicable)",
       attachLetter: "Attach authorization letter from the legal representative",
       declaration:
-        "I declare that the information provided in this form is true and I authorize the use of the background and graphic material provided for dissemination purposes of the SoMoS LAC contest.",
+        "I declare that the information provided in this form is true and I authorise the use, processing and publication of data, background information and graphic material submitted in the framework of this competition for the purposes of knowledge dissemination of SoMoS LAC or its organisers. No personal data will be published.",
       max500words: "(max 500 words)",
       max300words: "(max 300 words)",
       max250words: "(max 250 words)",
