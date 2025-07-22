@@ -4,7 +4,6 @@ import { useFichas } from '../context/FichasContext';
 import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
-import LoadingSpinner from "../context/LoadingSpinner";
 
 function EditFichaPage() {
 
@@ -119,14 +118,13 @@ function EditFichaPage() {
         });
     };
 
-    const handleSave = () => {
+    const  handleSave = async () => {
         const validationError = validateFields();
         if (validationError) {
             alert(validationError);
             return;
         }
-        updateFicha(id, ficha);
-<LoadingSpinner />
+        await updateFicha(id, ficha);
         navigate('/fichas');
     };
 

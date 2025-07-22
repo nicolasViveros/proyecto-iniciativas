@@ -26,7 +26,6 @@ export function FichaProvider({ children }) {
 
     const createFicha = async (ficha) => {
         // console.log("Datos antes de enviar:", ficha);
-
         try {
             const res = await createFichaRequest(ficha)
 
@@ -60,7 +59,6 @@ export function FichaProvider({ children }) {
     const updateFicha = async (id, ficha) => {
         try {
             await updateFichaRequest(id, ficha);
-
             window.alert("Postulación actualizada con éxito");
 
         } catch (error) {
