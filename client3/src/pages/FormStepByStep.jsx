@@ -415,6 +415,7 @@ function Step4({
   handleLetterChange,
   handleRemoveLink,
   handleLinkChange,
+  handleInputChange,
   handleFileChange,
   translateText,
   language,
@@ -1505,6 +1506,7 @@ export default function FormWizard() {
       handleRemoveFile2={handleRemoveFile2}
       handleRemoveAcceptanceLetter={handleRemoveAcceptanceLetter}
       handleRemoveLink={handleRemoveLink}
+      handleInputChange={handleInputChange}
       translateText={translateText}
       language={language}
     />,
