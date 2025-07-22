@@ -7,9 +7,11 @@ export function LanguageProvider({ children }) {
 
   const toggleLanguage = () => {
     setLanguage((currentLang) => {
-      if (currentLang === "es") return "en";
-      if (currentLang === "en") return "pt";
-      return "es"; // default back to Spanish
+      console.log(currentLang);
+
+      if (currentLang === "es") return "es";
+      if (currentLang === "en") return "en";
+      if (currentLang === "pt") return "pt";
     });
   };
 
