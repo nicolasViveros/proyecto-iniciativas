@@ -73,6 +73,18 @@ const FichaPage = () => {
     }
   };
 
+  const allAssociations = [
+    "No",
+    "Entidades públicas",
+    "Empresa privada",
+    "ONG",
+    "Sociedad Civil",
+    "Instituciones educativas y de investigación",
+    "Organizaciones multilaterales (como BID, Banco Mundial, ONU, CAF, GIZ, KfW, etc.)",
+    "Organizaciones Internacionales",
+    "Otras organizaciones",
+];
+
   return (
     <div className="relative flex items-center justify-center min-h-screen">
       <button
@@ -142,19 +154,33 @@ const FichaPage = () => {
             {ficha.isActive ? "Sí" : "No"}</p>
           {!ficha.isActive && (
             <p>
-              <strong>Razón Inactiva:</strong> 
+              <strong>Razón Inactiva:</strong>
             </p>
-            
+
           )}
           <p>{ficha.reasonInactive}</p>
           <p>
             <strong>Asociaciones:</strong>{" "}
           </p>
-          <p>
+          <div className="grid grid-cols-2 gap-2 border-b border-[#D9D6E1] pb-1">
+            {allAssociations.map((option) => (
+              <label key={option} className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  value={option}
+                  checked={ficha.associations.includes(option)}
+                  onChange={handleAssociationChange}
+                  className="input-focused accent-[#5d5593]"
+                />
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
+          {/* <p>
             {ficha.associations.length > 0
               ? ficha.associations.join(", ")
               : "Ninguna"}
-          </p>
+          </p> */}
 
           <div className="col-span-2">
             <p className="border-b border-[#D9D6E1] pb-1">
