@@ -23,7 +23,6 @@ const FichaPage = () => {
     );
 
     useEffect(() => {
-      loadingSpinner();
       // Función para cargar datos de la ficha
       const cargarFicha = async () => {
         try {
@@ -35,6 +34,8 @@ const FichaPage = () => {
       };
 
       if (id) {
+        loadingSpinner();
+
         cargarFicha();
       }
     }, [id]);
