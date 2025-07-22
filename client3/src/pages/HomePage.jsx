@@ -80,32 +80,12 @@ function HomePage() {
         ),
         pt: (
           <>
-            <strong>Euroclima</strong> é o programa de cooperação regional que
-            promove uma parceria estratégica entre a União Europeia e a América
-            Latina e o Caribe, baseada em valores compartilhados e no
-            compromisso de enfrentar conjuntamente as mudanças climáticas e a
-            perda de biodiversidade. É uma plataforma para o intercâmbio de
-            ideias, conhecimentos e experiências entre as duas regiões.
+            O {" "}<strong>Euroclima</strong> é um programa de cooperação regional que promove uma parceria estratégica entre a União Europeia e a América Latina e o Caribe, com base em valores compartilhados e no compromisso de enfrentar conjuntamente as mudanças climáticas e a perda de biodiversidade. É uma plataforma para o intercâmbio de ideias, conhecimentos e experiências entre as duas regiões.
             <div className="my-4">
-              O programa é{" "}
-              <strong>
-                cofinanciado pela União Europeia e pelo Governo Federal Alemão
-              </strong>
-              , através do Ministério Federal de Cooperação Econômica e
-              Desenvolvimento (BMZ). Seu objetivo é contribuir para uma
-              transição sustentável, resiliente e inclusiva mediante ações de
-              mitigação e adaptação às mudanças climáticas, incluindo a
-              proteção, restauração e conservação da biodiversidade, bem como a
-              promoção da economia circular.
+              O programa é cofinanciado pela União Europeia e pelo governo federal alemão por meio do Ministério Federal de Cooperação Econômica e Desenvolvimento (BMZ). Seu objetivo é contribuir para uma transição sustentável, resiliente e inclusiva por meio de ações de mitigação e adaptação às mudanças climáticas, incluindo a proteção, a restauração e a conservação da biodiversidade, bem como a promoção da economia circular.
             </div>
             <div className="my-4">
-              Euroclima apoia os países parceiros na criação de condições
-              propícias para atrair investimentos, em particular no âmbito da
-              Global Gateway Investment Agenda (GGIA) e da cooperação UE-CELAC
-              (Comunidade de Estados Latino-Americanos e Caribenhos). Este
-              esforço contribui para transições sustentáveis e justas que
-              promovem a resiliência, a neutralidade de carbono e a prosperidade
-              inclusiva.
+              O Euroclima apoia os países parceiros na criação de condições favoráveis para atrair investimentos, em especial no âmbito da Global Gateway Investment Agenda (GGIA) e da cooperação UE-CELAC (Comunidade de Estados Latino-Americanos e Caribenhos). Esse esforço contribui para transições sustentáveis e justas que promovem a resiliência, a neutralidade de carbono e a prosperidade inclusiva.
             </div>
           </>
         ),
@@ -115,7 +95,7 @@ function HomePage() {
       titulo: {
         es: "SoMoS LAC – Comunidad de Práctica en Movilidad Sostenible ",
         en: "SoMoS LAC – Community of Practice in Sustainable Mobility",
-        pt: "SoMoS LAC – Comunidade de Prática em Mobilidade Sustentável",
+        pt: "SoMoS LAC - Comunidade de Prática em Mobilidade Sustentável",
       },
       contenido: {
         es: (
@@ -177,31 +157,12 @@ function HomePage() {
         ),
         pt: (
           <>
-            O concurso SoMoS LAC "Rumo à Equidade: Reconhecendo iniciativas
-            inovadoras em favor da equidade de gênero na mobilidade urbana" é
-            uma iniciativa impulsionada pela Euroclima. Seu objetivo é
-            fortalecer a cooperação com a América Latina e o Caribe para avançar
-            rumo a uma transição verde, justa e sustentável, apoiando 33 países.
+            O concurso SoMoS LAC "Rumo à Equidade: Reconhecimento de Iniciativas Inovadoras em Prol da Igualdade de Gênero na Mobilidade Urbana" é uma iniciativa promovida pelo Euroclima, um programa da União Europeia que integra a estratégia Global Gateway. Seu objetivo é fortalecer a cooperação com a América Latina e o Caribe para avançar em direção a uma transição verde, justa e sustentável, apoiando 33 países.
             <div className="my-4">
-              Desde 2018, o programa Euroclima tem apoiado a criação da
-              Comunidade de Prática SoMoS LAC. Em 2023, a comunidade entrou em
-              uma nova fase de implementação, liderada pelo componente de
-              Transporte Sustentável, executado pela Cooperação Alemã para o
-              Desenvolvimento (GIZ).
+              Desde 2018, o Programa Euroclima tem apoiado a criação da Comunidade de Prática SoMoS LAC. Em 2023, a comunidade entrou em uma nova fase de implementação, liderada pelo componente de Transporte Sustentável, executado pela Cooperação Alemã para o Desenvolvimento (GIZ).
             </div>
             <div className="my-4">
-              A missão da SoMoS LAC é conectar uma rede de atores públicos,
-              privados e da sociedade civil, facilitando o diálogo e a
-              colaboração para impulsionar lideranças, políticas e ações
-              orientadas a melhorar os sistemas de mobilidade na região de forma
-              sustentável. SoMoS LAC se estrutura em grupos temáticos que
-              oferecem espaços dinâmicos para propiciar aprendizagens e ações
-              colaborativas, sendo um deles o grupo temático de {"  "}
-              <strong>
-                Gênero, Equidade e Inclusão nos Sistemas de Mobilidade
-              </strong>
-              , liderado pelo Ministério dos Transportes da Colômbia, que
-              promove o presente concurso como parte de seu plano de ação.
+              A missão da SoMoS LAC é conectar uma rede de atores públicos, privados e da sociedade civil, facilitando o diálogo e a colaboração para promover lideranças, políticas e ações destinadas a melhorar os sistemas de mobilidade na região de forma sustentável. A SoMoS LAC está estruturada em grupos temáticos que oferecem espaços dinâmicos para promover ações de aprendizagem e colaboração, sendo um deles o grupo temático de Gênero, Equidade e Inclusão em Sistemas de Mobilidade, liderado pelo Ministério dos Transportes da Colômbia, que promove este concurso como parte de seu plano de ação.
             </div>
           </>
         ),
@@ -211,7 +172,7 @@ function HomePage() {
       titulo: {
         es: "Delimitación de responsabilidad ",
         en: "Disclaimer",
-        pt: "Exclusão de Responsabilidade",
+        pt: "Delimitación de responsabilidad ",
       },
       contenido: {
         es: (
@@ -232,10 +193,7 @@ function HomePage() {
         ),
         pt: (
           <>
-            Este concurso conta com o apoio financeiro da União Europeia através
-            do programa Euroclima, o conteúdo do mesmo é responsabilidade
-            exclusiva da SoMoS LAC e em nenhum caso deve ser considerado que
-            reflete os pontos de vista da União Europeia.
+            Este concurso é apoiado financeiramente pela União Europeia por meio do Programa Euroclima. O conteúdo do concurso é de responsabilidade exclusiva da SoMoS LAC e não pode, de forma alguma, ser considerado como um reflexo das opiniões da União Europeia.
           </>
         ),
       },
@@ -244,7 +202,7 @@ function HomePage() {
       titulo: {
         es: "Propósito del Reconocimiento SoMoS LAC",
         en: "Purpose of the SoMoS LAC Award",
-        pt: "Propósito do Reconhecimento SoMoS LAC",
+        pt: "Objetivo do reconhecimento do SoMoS LAC",
       },
       contenido: {
         es: (
@@ -298,26 +256,12 @@ function HomePage() {
         ),
         pt: (
           <>
-            O propósito do concurso é: reconhecer, visibilizar e promover
-            iniciativas inovadoras em favor da equidade e inclusão de gênero na
-            mobilidade urbana, na América Latina e no Caribe. As iniciativas
-            participantes serão difundidas pela SoMos LAC através de um mapa web
-            interativo que mostrará suas principais características. Desta
-            maneira, contribui-se para o fomento da mobilidade sustentável para
-            mulheres, bem como para a promoção de uma melhor experiência urbana,
-            de transporte e de acesso ao território.
+            O objetivo do concurso é reconhecer, visibilizar e promover iniciativas inovadoras em prol da equidade de gênero e da inclusão na mobilidade urbana, na América Latina e no Caribe. As iniciativas participantes serão divulgadas pela SoMos LAC por meio de um mapa interativo online que divulgará suas principais características, contribuindo para a promoção da mobilidade sustentável das mulheres, bem como para a promoção de uma experiência urbana de qualidade, transporte e acesso ao território.
             <div className="my-4">
-              Serão melhor avaliadas aquelas iniciativas com maior impacto sobre
-              a equidade e inclusão e potencial de replicabilidade e
-              sustentabilidade no tempo. Este concurso é dirigido a instituições
-              públicas, empresas privadas, organizações da sociedade civil e
-              entidades acadêmicas que lideram este tipo de iniciativas.
+              As iniciativas com maior impacto na equidade e inclusão, e com potencial de replicabilidade e sustentabilidade de longo prazo terão destaque na avaliação e receberão reconhecimento. Este concurso destina-se a instituições públicas, empresas privadas, organizações da sociedade civil e entidades acadêmicas que liderem as iniciativas inscritas.
             </div>
             <div className="my-4">
-              Mediante sua postulação, as equipes participantes autorizam a
-              SoMoS LAC a difundir os principais dados da iniciativa para o
-              cumprimento do propósito do concurso, resguardando a
-              confidencialidade da informação de caráter pessoal.
+              Ao se inscreverem, as equipes participantes autorizam a SoMoS LAC a divulgar os principais dados da iniciativa, resguardando a confidencialidade das informações pessoais para fins de cumprimento dos objetivos do concurso.
             </div>
           </>
         ),
@@ -327,7 +271,7 @@ function HomePage() {
       titulo: {
         es: "Categoría de postulación",
         en: "Application Category",
-        pt: "Categoria de Candidatura",
+        pt: "Categoria de aplicação",
       },
       contenido: {
         es: (
@@ -403,33 +347,18 @@ function HomePage() {
             <div className="mb-4">O concurso contempla duas categorias:</div>
             <div>
               <h3>
-                <strong>Instituições públicas e Empresas privadas:</strong>
+                <strong>Instituições públicas e empresas privadas:</strong>
               </h3>
-              Orientada a instituições públicas, privadas e/ou sociedades de
-              capital misto responsáveis pela regulamentação e operação do
-              transporte urbano, bem como a operadores de transporte, que tenham
-              implementado iniciativas concretas para superar lacunas de gênero
-              na mobilidade urbana. Serão valorizadas ações que promovam a
-              igualdade de oportunidades, a participação das mulheres no setor,
-              a melhoria das condições de trabalho com enfoque de gênero, ou o
-              desenho e implementação de serviços mais seguros, acessíveis e
-              inclusivos.
+              Destinada a instituições públicas, privadas e/ou de capital misto responsáveis pela regulação ou prestação de serviços de transporte urbano, bem como a operadores de transporte, que implementaram iniciativas concretas para superar as lacunas de gênero na mobilidade urbana. Serão valorizadas ações que promovam a igualdade de oportunidades, a participação das mulheres no setor, a melhoria das condições de trabalho com enfoque de género ou a concepção e implementação de serviços mais seguros, acessíveis e inclusivos.
             </div>
             <div className="my-4"></div>
             <div>
               <h3>
                 <strong>
-                  Organizações da sociedade civil e Entidades acadêmicas:
+                  Organizações da sociedade civil e entidades acadêmicas
                 </strong>
               </h3>
-              Dirigida a organizações da sociedade civil e entidades acadêmicas
-              que tenham desenvolvido pesquisas, projetos piloto, campanhas,
-              metodologias ou programas de formação que promovam a equidade de
-              gênero no âmbito da mobilidade urbana. Serão priorizadas aquelas
-              propostas que tenham gerado aprendizados valiosos, incidência em
-              políticas públicas, articulação intersetorial ou que tenham
-              potencial de escalabilidade e replicação em outros contextos
-              urbanos.
+              Destinado a organizações da sociedade civil e entidades acadêmicas que tenham desenvolvido pesquisas, projetos-piloto, campanhas, metodologias ou programas de formação que promovam a igualdade de género no campo da mobilidade urbana. Serão priorizadas as propostas que tenham gerado aprendizados valiosos, impacto em políticas públicas, articulação intersetorial ou que apresentem potencial de escalabilidade e replicação em outros contextos urbanos.
             </div>
           </>
         ),
@@ -439,7 +368,7 @@ function HomePage() {
       titulo: {
         es: "Requisitos de postulación y exclusiones",
         en: "Eligibility and Exclusions",
-        pt: "Requisitos de Candidatura e Exclusões",
+        pt: "Requisitos e restrições para a inscrição",
       },
       contenido: {
         es: (
@@ -610,50 +539,32 @@ function HomePage() {
         ),
         pt: (
           <>
-            Será entendida por iniciativa qualquer ação, programa, projeto ou
-            medida concreta, impulsionada por uma instituição, coletivo ou ator,
-            implementada ou em fase de implementação que tenha impactos
-            comprováveis ou previstos na equidade de gênero no âmbito do
-            transporte sustentável. No contexto de mobilidade com enfoque de
-            gênero, uma iniciativa pode adotar diversas formas: desde uma
-            intervenção pontual (como uma campanha ou uma melhoria na
-            infraestrutura), até a implementação de uma estratégia integral de
-            longo prazo.
+            Entende-se por iniciativa qualquer ação, programa, projeto ou medida específica, promovida por uma instituição, grupo ou agente, implementada ou em fase de execução, que tenha impactos verificáveis ou previstos na equidade de gênero no setor de transportes sustentáveis. No contexto da mobilidade sensível ao gênero, uma iniciativa pode assumir várias formas: desde uma intervenção pontual (como uma campanha ou uma melhoria em infraestruturas) até a implementação de uma estratégia abrangente a longo prazo.
             <div className=" text-sm space-y-3 p-2">
               <div>
                 <h3>
                   <strong>
-                    Categoria Instituições públicas e Empresas privadas
+                    Categoria: Instituições públicas e Empresas privadas
                   </strong>
                 </h3>
                 <ul className="list-disc list-inside ml-4">
                   <li>
-                    A iniciativa deve ter sido implementada em pelo menos uma
-                    cidade latino-americana ou caribenha ou ter sido
-                    desenvolvida para um país que se encontre em ditas regiões.
+                    A iniciativa deve ter sido implementada em pelo menos uma cidade da América Latina ou do Caribe;
                   </li>
                   <li>
-                    A organização candidata pode ser uma instituição pública
-                    e/ou privada.
+                    A organização candidata pode ser uma instituição pública e/ou privada;
                   </li>
                   <li>
-                    A iniciativa deve ter iniciado sua implementação entre 1º de
-                    janeiro de 2021 e até um ano antes da data de candidatura.
+                    A iniciativa deve ter iniciado sua implementação entre 1º de janeiro de 2021 e até um ano antes da data de inscrição;
                   </li>
                   <li>
-                    A organização deve estar legalmente constituída e
-                    operacional.
+                    A organização deve estar legalmente constituída e em funcionamento;
                   </li>
                   <li>
-                    Não poderão candidatar-se iniciativas que estejam
-                    participando atualmente no concurso Mulheres na Rota 2025 da
-                    OBGEM, em qualquer de suas cidades. No entanto, outras
-                    iniciativas do mesmo proponente poderão inscrever-se neste
-                    concurso.
+                    Iniciativas que estejam participando atualmente da competição Mujeres en Ruta 2025 do OBGEM, em qualquer uma de suas cidades, não podem se candidatar. Entretanto, outras iniciativas do mesmo proponente podem se candidatar a este concurso.
                   </li>
                   <li>
-                    Não poderão participar instituições que tenham participado
-                    diretamente na preparação ou execução deste concurso.
+                    Não poderão participar instituições que tenham participado direta ou indiretamente na preparação ou execução deste concurso.
                   </li>
                 </ul>
               </div>
@@ -661,38 +572,25 @@ function HomePage() {
               <div className="my-4">
                 <h3>
                   <strong>
-                    Categoria Organizações da sociedade civil e Entidades
-                    acadêmicas
+                    Categoria: Organizações da Sociedade Civil e Entidades Acadêmicas
                   </strong>
                 </h3>
                 <ul className="list-disc list-inside ml-4">
                   <li>
-                    A iniciativa deve referir-se a experiências ou análises
-                    aplicadas a uma cidade latino-americana ou caribenha ou ter
-                    sido desenvolvida para um país que se encontre em ditas
-                    regiões.
+                    A iniciativa deve se referir a experiências ou análises aplicadas a uma cidade da América Latina ou do Caribe ou que tenham sido desenvolvidas para um país que esteja localizado nessas regiões;
                   </li>
                   <li>
-                    A organização candidata pode ser acadêmica ou da sociedade
-                    civil. Não é requisito obrigatório estar legalmente
-                    constituído para esta categoria.
+                    A organização candidata pode ser acadêmica ou da sociedade civil. Não é um requisito obrigatório estar legalmente constituído para essa categoria;
                   </li>
                   <li>
-                    A iniciativa deve ter sido implementada entre 1º de janeiro
-                    de 2021 e até a data de candidatura.
+                    A iniciativa deve ter sido implementada entre 1º de janeiro de 2021 até a data de inscrição da iniciativa;
                   </li>
-                  <li>A organização deve estar operacional.</li>
+                  <li>A organização deve estar operacional;</li>
                   <li>
-                    Não poderão candidatar-se iniciativas que estejam
-                    participando atualmente no concurso Mulheres na Rota 2025 da
-                    OBGEM, em qualquer de suas cidades. No entanto, outras
-                    iniciativas do mesmo proponente poderão inscrever-se neste
-                    concurso.
+                    Iniciativas que estejam participando atualmente da competição Mujeres en Ruta 2025 do OBGEM, em qualquer uma de suas cidades, não podem se candidatar. Entretanto, outras iniciativas do mesmo proponente podem se candidatar a este concurso;
                   </li>
                   <li>
-                    Não poderão participar instituições que tenham participado
-                    direta ou indiretamente na preparação ou execução deste
-                    concurso.
+                    Não poderão participar instituições que tenham participado direta ou indiretamente na preparação ou execução deste concurso.
                   </li>
                 </ul>
               </div>
@@ -705,7 +603,7 @@ function HomePage() {
       titulo: {
         es: "Postulación",
         en: "Application Process",
-        pt: "Processo de Candidatura",
+        pt: "Candidatura",
       },
       contenido: {
         es: (
@@ -750,17 +648,13 @@ function HomePage() {
           <>
             <ul className="list-disc list-inside">
               <li>
-                As candidaturas serão realizadas exclusivamente através de um
-                formulário eletrônico online em https://rumboalaequidad.org/
+                As candidaturas serão realizadas exclusivamente por meio de um formulário online em: https://rumboalaequidad.org/;
               </li>
               <li>
-                Deverá ser anexada uma carta assinada por uma autoridade de alta
-                direção da instituição, autorizando a candidatura e o uso de
-                informações sobre a iniciativa e de seu logotipo.
+                Deve ser anexada uma carta assinada por uma autoridade de, no mínimo, nível diretivo da instituição, autorizando a inscrição e uso das informações sobre a inibitiva e de seu logotipo;
               </li>
               <li>
-                A candidatura pode ser feita em espanhol (ES), inglês (EN) ou
-                português (PT).
+                A candidatura pode ser feita em espanhol (ES), inglês (EN) ou português (PT).
               </li>
             </ul>
           </>
@@ -1036,13 +930,12 @@ function HomePage() {
           <>
             <div>
               <h1>
-                As candidaturas serão avaliadas considerando os seguintes
-                critérios:
+                As candidaturas serão avaliadas tendo em conta os seguintes critérios:
               </h1>
 
               <div>
                 <h3 className="font-bold text-base mb-2">
-                  Categoria Instituições públicas e Empresas privadas
+                  Categoria: Instituições públicas e empresas privadas
                 </h3>
 
                 <div className="text-sm pl-6">
@@ -1051,8 +944,7 @@ function HomePage() {
                     <div>
                       <strong>Inovação</strong>
                       <h3>
-                        Soluções criativas frente a barreiras de gênero na
-                        operação ou gestão do transporte
+                        Soluções criativas para a superação de barreiras de gênero na operação ou gestão de transporte
                       </h3>
                     </div>
                   </div>
@@ -1061,8 +953,7 @@ function HomePage() {
                     <div>
                       <strong>Impacto</strong>
                       <h3>
-                        Mudanças positivas na inclusão, segurança, participação
-                        ou empregabilidade de mulheres
+                        Mudanças positivas na inclusão, segurança, participação ou empregabilidade das mulheres
                       </h3>
                     </div>
                   </div>
@@ -1071,8 +962,7 @@ function HomePage() {
                     <div>
                       <strong>Replicabilidade</strong>
                       <h3>
-                        Potencial para ser aplicada em outras cidades ou
-                        empresas do setor
+                        Potencial da iniciativa de aplicação em outras cidades ou empresas do setor
                       </h3>
                     </div>
                   </div>
@@ -1081,8 +971,7 @@ function HomePage() {
                     <div>
                       <strong>Sustentabilidade</strong>
                       <h3>
-                        Capacidade de se manter no tempo dentro da estrutura
-                        organizacional
+                        Capacidade de permanecer dentro da estrutura organizacional ao longo do tempo
                       </h3>
                     </div>
                   </div>
@@ -1091,8 +980,7 @@ function HomePage() {
                     <div>
                       <strong>Evidência</strong>
                       <h3>
-                        Existência de dados, documentação ou resultados
-                        concretos
+                        Existência de dados, documentação ou resultados concretos
                       </h3>
                     </div>
                   </div>
@@ -1101,8 +989,7 @@ function HomePage() {
 
               <div className="mt-4">
                 <h3 className="font-bold text-base mb-2">
-                  Categoria Organizações da sociedade civil e Entidades
-                  acadêmicas
+                  Categoria: Organizações da sociedade civil e entidades acadêmicas
                 </h3>
 
                 <div className="text-sm pl-6">
@@ -1111,8 +998,7 @@ function HomePage() {
                     <div>
                       <strong>Inovação</strong>
                       <h3>
-                        Novas abordagens, ferramentas ou pesquisas que abordem
-                        desigualdades de gênero
+                        Novas abordagens, ferramentas ou pesquisas que abordam as desigualdades de gênero
                       </h3>
                     </div>
                   </div>
@@ -1121,8 +1007,7 @@ function HomePage() {
                     <div>
                       <strong>Impacto</strong>
                       <h3>
-                        Resultados gerados em sensibilização, incidência ou
-                        geração de conhecimento aplicado
+                        Resultados gerados na conscientização, advocacy (incidência) ou geração de conhecimento aplicado
                       </h3>
                     </div>
                   </div>
@@ -1131,8 +1016,7 @@ function HomePage() {
                     <div>
                       <strong>Replicabilidade</strong>
                       <h3>
-                        Potencial para escalar ou transferir o conhecimento ou
-                        metodologia
+                        Potencial para dimensionar ou transferir conhecimento ou metodologia
                       </h3>
                     </div>
                   </div>
@@ -1141,8 +1025,7 @@ function HomePage() {
                     <div>
                       <strong>Sustentabilidade</strong>
                       <h3>
-                        Continuidade do trabalho no tempo além do projeto
-                        específico
+                        Continuidade do trabalho ao longo do tempo para além do projeto específico
                       </h3>
                     </div>
                   </div>
@@ -1151,8 +1034,7 @@ function HomePage() {
                     <div>
                       <strong>Evidência</strong>
                       <h3>
-                        Documentação, publicações ou dados que apoiem os
-                        resultados obtidos
+                        Documentação, publicações ou dados que comprovem os resultados obtidos
                       </h3>
                     </div>
                   </div>
@@ -1160,8 +1042,7 @@ function HomePage() {
               </div>
             </div>
             <div className="my-4">
-              ** O júri será composto por especialistas em gênero, mobilidade e
-              gestão pública. **
+              ** O júri será composto por especialistas em gênero, mobilidade e gestão pública. **
             </div>
           </>
         ),
@@ -1260,7 +1141,7 @@ function HomePage() {
               <div className="space-y-2">
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">
-                    <strong>Etapa</strong>
+                    <strong>Palco</strong>
                   </span>
                   <span className="w-1/2">
                     <strong>Data</strong>
@@ -1274,19 +1155,19 @@ function HomePage() {
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">
-                    Fechamento de candidaturas
+                    Encerramento das candidaturas
                   </span>
                   <span className="w-1/2">25 de agosto</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">
-                    Seleção de vencedores
+                    Seleção dos vencedores
                   </span>
                   <span className="w-1/2">15 de setembro</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
                   <span className="w-1/2 font-medium">
-                    Entrega de reconhecimentos
+                    Entrega dos prêmios
                   </span>
                   <span className="w-1/2">
                     09 e 10 de outubro (a confirmar)
@@ -1302,7 +1183,7 @@ function HomePage() {
       titulo: {
         es: "Premiación",
         en: "Awards",
-        pt: "Premiação",
+        pt: "Prêmios",
       },
       contenido: {
         es: (
@@ -1361,23 +1242,13 @@ function HomePage() {
             {" "}
             <div className="text-sm space-y-4">
               <h3>
-                As três iniciativas melhor avaliadas de cada categoria serão
-                reconhecidas com primeiro e segundo lugar e menção honrosa.
+              As três iniciativas com melhor avaliação em cada categoria serão reconhecidas com primeiro e segundo lugar, além de uma menção honrosa.
               </h3>
               <h3>
-                A cerimônia de premiação será realizada em um evento
-                internacional em Bogotá que acontecerá em outubro de 2025 e que
-                será coproduzido com o Observatório Latino-Americano de Gênero e
-                Mobilidade (OBGEM) e na oportunidade serão premiados os
-                vencedores do concurso Mulheres na Rota organizado por dita
-                instituição. Durante o evento serão desenvolvidas também
-                atividades técnicas, visitas e espaços de intercâmbio entre as
-                organizações selecionadas.
+              A cerimônia de premiação será realizada em um evento internacional em Bogotá que acontecerá em outubro de 2025, que será promovido junto ao Observatório Latino-Americano de Gênero e Mobilidade (OBGEM). Na mesma ocasião serão premiadas as iniciativas vencedoras do concurso “Mujeres en Ruta” organizado pela referida instituição. Durante o evento, também serão desenvolvidas atividades técnicas, visitas e espaços de intercâmbio entre as organizações selecionadas.
               </h3>
               <h3>
-                A SoMoS LAC cobrirá os gastos de viagem e estadia em Bogotá de
-                um representante de cada uma das instituições ganhadoras do
-                primeiro e segundo lugar das duas categorias.
+              A SoMoS LAC cobrirá as despesas de viagem e hospedagem em Bogotá de um representante de cada uma das instituições vencedoras do primeiro e segundo lugar nas duas categorias.
               </h3>
             </div>
           </>
@@ -1437,30 +1308,30 @@ function HomePage() {
             {language === "es"
               ? "concurso"
               : language === "en"
-              ? "contest"
-              : "concurso"}
+                ? "contest"
+                : "concurso"}
           </p>
           <div className="bg-[#e79953] text-lg md:text-xl sm:text-lg text-white inline-block px-1 py-1 font-bold rounded-sm">
             {language === "es"
               ? "¡Postula tu Iniciativa!"
               : language === "en"
-              ? "Submit Your Initiative!"
-              : "Candidate sua Iniciativa!"}
+                ? "Submit Your Initiative!"
+                : "Inscreva a sua Iniciativa! "}
           </div>
 
           <h2 className="text-lg md:text-2xl sm:text-xl font-extrabold text-[#3C3270]">
             {language === "es"
               ? "RUMBO A LA EQUIDAD:"
               : language === "en"
-              ? "TOWARDS EQUITY:"
-              : "RUMO À EQUIDADE:"}
+                ? "TOWARDS EQUITY:"
+                : "RUMO À EQUIDADE:"}
           </h2>
           <p className="text-xs md:text-lg sm:text-lg text-[#5A478D] leading-tight w-47 sm:w-100">
             {language === "es"
               ? "Reconociendo iniciativas innovadoras en favor de la equidad de género en movilidad urbana"
               : language === "en"
-              ? "Recognizing innovative initiatives for gender equity in urban mobility"
-              : "Reconhecendo iniciativas inovadoras em favor da equidade de gênero na mobilidade urbana"}
+                ? "Recognizing innovative initiatives for gender equity in urban mobility"
+                : "Reconhecimento de iniciativas inovadoras em prol da igualdade de gênero na mobilidade urbana"}
           </p>
         </div>
 
@@ -1469,8 +1340,8 @@ function HomePage() {
             {language === "es"
               ? "¡Participa! 25/07 al 25/08"
               : language === "en"
-              ? "Participate! July 25th to August 25th"
-              : "Participe! 25/07 a 25/08"}
+                ? "Participate! July 25th to August 25th"
+                : "Participe! 25/07 a 25/08"}
           </span>
         </div>
       </div>
@@ -1480,11 +1351,10 @@ function HomePage() {
           {secciones.map((sec, i) => (
             <button
               key={i}
-              className={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${
-                activo === i
-                  ? "bg-white border border-[#a49fc4] text-[#5d5593] hover:bg-gray-100"
-                  : "bg-transparent  hover:bg-gray-100 "
-              }`}
+              className={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${activo === i
+                ? "bg-white border border-[#a49fc4] text-[#5d5593] hover:bg-gray-100"
+                : "bg-transparent  hover:bg-gray-100 "
+                }`}
               onClick={() => setActivo(i)}
             >
               {sec.titulo[language]}
@@ -1510,8 +1380,8 @@ function HomePage() {
           {language === "es"
             ? "Comenzar postulación"
             : language === "en"
-            ? "Start Application"
-            : "Iniciar Candidatura"}
+              ? "Start Application"
+              : "Iniciar Candidatura"}
         </button>
 
         <button
@@ -1536,8 +1406,8 @@ function HomePage() {
           {language === "es"
             ? "Descargar bases"
             : language === "en"
-            ? "Download Guidelines"
-            : "Baixar Regulamento"}
+              ? "Download Guidelines"
+              : "Baixar Regulamento"}
           <MdOutlineFileDownload className="text-2xl m-1 mb-1 ml-2 inline" />
         </button>
       </div>
