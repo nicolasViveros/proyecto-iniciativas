@@ -533,7 +533,7 @@ function HomePage() {
               </div>
             </div>
             <div className="my-4">
-              * El jurado estará compuesto por personas expertas en género, movilidad y gestión pública. *
+              ** El jurado estará compuesto por personas expertas en género, movilidad y gestión pública. **
             </div>
           </>
         ),
@@ -541,13 +541,12 @@ function HomePage() {
           <>
             <div>
               <h1>
-                Applications will be evaluated considering the following
-                criteria:
+                Submissions will be evaluated according to the following criteria:
               </h1>
 
               <div>
                 <h3 className="font-bold text-base mb-2">
-                  Category Public Institutions and Private Companies
+                  Category: Public Institutions and Private Companies
                 </h3>
 
                 <div className="text-sm pl-6">
@@ -556,8 +555,7 @@ function HomePage() {
                     <div>
                       <strong>Innovation</strong>
                       <h3>
-                        Creative solutions to gender barriers in the operation
-                        or management of transport
+                        Creative solutions addressing gender barriers in transport operations or management
                       </h3>
                     </div>
                   </div>
@@ -566,8 +564,7 @@ function HomePage() {
                     <div>
                       <strong>Impact</strong>
                       <h3>
-                        Positive changes in inclusion, security, participation,
-                        or employability of women
+                        Positive outcomes in inclusion, safety, participation, or women’s employability
                       </h3>
                     </div>
                   </div>
@@ -576,8 +573,7 @@ function HomePage() {
                     <div>
                       <strong>Replicability</strong>
                       <h3>
-                        Potential to be applied in other cities or sector
-                        companies
+                        Potential to be implemented in other cities or organizations
                       </h3>
                     </div>
                   </div>
@@ -586,8 +582,7 @@ function HomePage() {
                     <div>
                       <strong>Sustainability</strong>
                       <h3>
-                        Capacity to maintain over time within the organizational
-                        structure
+                        Ability to remain effective over time within the organization
                       </h3>
                     </div>
                   </div>
@@ -596,7 +591,7 @@ function HomePage() {
                     <div>
                       <strong>Evidence</strong>
                       <h3>
-                        Existence of data, documentation or concrete results
+                        Availability of data, documentation, or measurable results
                       </h3>
                     </div>
                   </div>
@@ -605,7 +600,7 @@ function HomePage() {
 
               <div className="mt-4">
                 <h3 className="font-bold text-base mb-2">
-                  Category Civil Society Organizations and Academic Entities
+                  Category: Civil Society Organizations and Academic Entities
                 </h3>
 
                 <div className="text-sm pl-6">
@@ -614,8 +609,7 @@ function HomePage() {
                     <div>
                       <strong>Innovation</strong>
                       <h3>
-                        New approaches, tools or research addressing gender
-                        inequalities
+                        New approaches, tools, or research addressing gender inequality
                       </h3>
                     </div>
                   </div>
@@ -624,8 +618,7 @@ function HomePage() {
                     <div>
                       <strong>Impact</strong>
                       <h3>
-                        Results generated in awareness, incidence, or applied
-                        knowledge generation
+                        Demonstrated results in awareness, advocacy, or applied knowledge
                       </h3>
                     </div>
                   </div>
@@ -634,8 +627,7 @@ function HomePage() {
                     <div>
                       <strong>Replicability</strong>
                       <h3>
-                        Potential to scale or transfer the knowledge or
-                        methodology
+                        Potential to scale or transfer methodologies
                       </h3>
                     </div>
                   </div>
@@ -644,8 +636,7 @@ function HomePage() {
                     <div>
                       <strong>Sustainability</strong>
                       <h3>
-                        Continuity of the work over time beyond the specific
-                        project
+                        Ability to continue beyond the project scope
                       </h3>
                     </div>
                   </div>
@@ -654,13 +645,15 @@ function HomePage() {
                     <div>
                       <strong>Evidence</strong>
                       <h3>
-                        Documentation, publications or data supporting the
-                        obtained results
+                        Publications, documentation, or data supporting outcomes
                       </h3>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="my-4">
+              ** The jury will consist of experts in gender, mobility, and public management.**
             </div>
           </>
         ),
@@ -676,38 +669,37 @@ function HomePage() {
           <>
             <div className="text-[#5A478D] text-sm space-y-4 p-4">
               <div className="space-y-2">
+                <div className="flex justify-between border border-[#D9D6E1] pb-1">
+                  <span className="w-1/2 font-medium">
+                    Etapa
+                  </span>
+                  <span className="w-1/2">fecha</span>
+                </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">15 de julio</span>
                   <span className="w-1/2 font-medium">
                     Lanzamiento y apertura de postulaciones
                   </span>
+                  <span className="w-1/2">25 de julio</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">15 de agosto</span>
                   <span className="w-1/2 font-medium">
                     Cierre de postulaciones
                   </span>
+                  <span className="w-1/2">25 de agosto</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">15 de septiembre</span>
                   <span className="w-1/2 font-medium">
                     Selección de ganadores
                   </span>
+                  <span className="w-1/2">15 de septiembre</span>
                 </div>
                 <div className="flex justify-between border-b border-[#D9D6E1] pb-1">
-                  <span className="w-1/2">13 y 14 de octubre</span>
                   <span className="w-1/2 font-medium">
                     Entrega de reconocimientos
                   </span>
+                  <span className="w-1/2">09 y 10 de octubre (por confirmar)</span>
                 </div>
               </div>
-
-              <h3 className="text-sm">
-                Las fechas serán publicadas vía mailing SoMoS LAC, sitio web del
-                OBGeM y en las redes de GIZ. Las convocatorias se realizarán vía
-                correo electrónico y se divulgarán por RRSS de las iniciativas
-                aliadas.
-              </h3>
             </div>
           </>
         ),
