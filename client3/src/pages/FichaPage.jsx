@@ -274,12 +274,12 @@ const FichaPage = () => {
               <ul className="list-disc pl-8 space-y-2">
                 {ficha.files.map((file, index) => (
                   <li key={index}>
-                    <link
+                    <button
                       onClick={() => handleFileDownload(file)}
-                      className="text-blue-500 underline text-align-left"
+                      className="text-blue-500 underline text-align-left cursor-pointer"
                     >
                       {file.name}
-                    </link>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -293,12 +293,12 @@ const FichaPage = () => {
               <ul className="list-disc pl-8 space-y-2">
                 {ficha.acceptanceLetter.map((file, index) => (
                   <li key={index}>
-                    <link
+                    <button
                       onClick={() => handleFileDownload(file)}
-                      className="text-blue-500 underline text-align-left"
+                      className="text-blue-500 underline text-align-left cursor-pointer"
                     >
                       {file.name}
-                    </link>
+                    </button>
                   </li>
                 ))}
               </ul>
