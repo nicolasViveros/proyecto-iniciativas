@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Asegúrate de tener react-router-dom
 import LoadingSpinner from "../context/LoadingSpinner";
 
 function FichaCard({ ficha }) {
-  const {isdeleting, setIsDeleting} = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const { deleteFicha } = useFichas();
   return (
     <div className=" flex flex-col border p-4 space-between justify-between mx-auto rounded shadow">
@@ -36,7 +36,7 @@ function FichaCard({ ficha }) {
               } catch (error) {
                   console.error("Error al eliminar la ficha:", error);
               } finally {
-                  setIsSaving(false);
+                  setIsDeleting(false);
               }
             }
           }}

@@ -14,6 +14,7 @@ export const useFichas = () => {
 
 export function FichaProvider({ children }) {
     const [fichas, setFichas] = useState([])
+const [isDeleting, setIsDeleting] = useState(false);
 
     const getFichas = async () => {
         try {
@@ -37,13 +38,18 @@ export function FichaProvider({ children }) {
     }
 
     const deleteFicha = async (id) => {
+        setIsDeleting(true);
         try {
+
             const res = await deleteFichaRequest(id);
             // console.log('Ficha eliminada:', id);
             window.alert("Ficha eliminada con éxito");
             if (res.status === 204) setFichas(fichas.filter(ficha => ficha._id != id))
+            navigate('/fichas');
         } catch (error) {
-            console.log(error);
+            console.error("Error al eliminar la ficha:", error);
+        } finally {
+            setIsDeleting(false);
         }
     };
 
