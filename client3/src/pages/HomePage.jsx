@@ -1378,7 +1378,7 @@ function HomePage() {
       <div className="container flex flex-col md:flex-row justify-end-safe gap-4 py-10">
         <button
           onClick={() => navigate("/nueva-ficha")}
-          className="bg-[#5d5593] text-white px-4 py-2 rounded-xl hover:bg-[#a49fc4]"
+          className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]"
         >
           {language === "es"
             ? "Comenzar postulación"
