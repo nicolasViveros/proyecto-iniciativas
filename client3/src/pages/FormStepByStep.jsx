@@ -1797,6 +1797,13 @@ export default function FormWizard() {
 
       <div className="absolute top-4 right-4 space-x-2">
         {/* <div className="flex justify-end p-4 space-x-2"> */}
+        <div className="bg-white text-sm   inline-block px-1 pt-3  rounded-sm">
+          {language === "es"
+            ? "Cambiar idioma >"
+            : language === "en"
+              ? "Change language >"
+              : "Alterar idioma >"}
+        </div>
         <button
           className={`rounded-full p-0.5 border ${language === "es" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
             }`}
