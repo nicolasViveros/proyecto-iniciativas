@@ -1297,12 +1297,12 @@ function HomePage() {
 
       <div className="relative w-full">
         <img
-          src="/micro.svg"
+          src="/ilustracion.png"
           alt="Banner principal"
           className="w-full h-auto object-cover hidden sm:block"
         />
         <img
-          src="/ilustracion_new.png"
+          src="/ilustracion2.png"
           alt="Banner mobile"
           className="w-full h-auto object-cover  sm:hidden"
         />
