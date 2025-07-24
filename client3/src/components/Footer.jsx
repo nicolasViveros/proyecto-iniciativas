@@ -56,7 +56,7 @@ function Footer() {
 
             <div className="mx-auto flex justify-between items-center">
 
-              <div className="flex items-center gap-4">
+              <div className="flex ">
                 <Link to="/">
                   <img
                     src="/LogoGiz.svg"
@@ -66,7 +66,7 @@ function Footer() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex">
                 <img src="/Logo_OBGEM.png" alt="Ojo Morado" className="h-10 sm:h-13 md:h-17" />
                 <img src="/LOGO_DTPM.png" alt="DTP" className="h-10 sm:h-13 md:h-17" />
               </div>
