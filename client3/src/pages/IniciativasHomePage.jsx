@@ -17,9 +17,9 @@ function IniciativasHomePage() {
       <div className='bg-amber-200'>1</div>
 
 
-      <div className=' max-w-md w-full p-10  bg-red-200 rounded-md'>
+      {/* <div className=' max-w-md w-full p-10  bg-red-200 rounded-md'>
         <h1 className='text-3xl text-center font-bold mb-4'>Iniciativas</h1>
-      </div>
+      </div> */}
     </div>
   )
 }
