@@ -61,14 +61,14 @@ function Footer() {
                   <img
                     src="/LogoGiz.svg"
                     alt="GIZ Logo"
-                    className="h-10 sm:h-13 md:h-17"
+                    className="h-8 sm:h-10 md:h-10"
                   />
                 </Link>
               </div>
 
               <div className="flex gap-4">
-                <img src="/Logo_OBGEM.png" alt="Ojo Morado" className="h-10 sm:h-13 md:h-17" />
-                <img src="/LOGO_DTPM.png" alt="DTP" className="h-10 sm:h-13 md:h-17" />
+                <img src="/Logo_OBGEM.png" alt="Ojo Morado" className="h-8 sm:h-11 md:h-14" />
+                <img src="/LOGO_DTPM.png" alt="DTP" className="h-8 sm:h-11 md:h-14" />
               </div>
             </div>
           </div>
