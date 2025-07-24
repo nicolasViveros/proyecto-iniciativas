@@ -47,7 +47,7 @@ function Footer() {
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
           {/* <div className="relative bg-white w-full md:w-auto px-4 items-justify justify-justify h-20"> */}
-          <div className="w-full">
+          <div className="absolute bottom-0 left-0 w-full bg-white py-4 px-6">
 
             <div className=" flex justify-between items-center">
               <span className="flex text-xs  ">Implementado por:</span>
