@@ -54,7 +54,7 @@ function Footer() {
               <span className="flex text-xs  ">Apoyado por:</span>
             </div>
 
-            <div className="absolute bottom-0 left-0 w-full bg-white py-4 px-6">
+            <div className="mx-auto flex justify-between items-center">
 
               <div className="flex items-center gap-4">
                 <Link to="/">
