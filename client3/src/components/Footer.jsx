@@ -53,6 +53,14 @@ function Footer() {
                 className="h-10 sm:h-13 md:h-17"
               />
             </Link>
+            <span className="flex text-xs  ">Implementado por:</span>
+            <Link to="/">
+              <img
+                src="/LogoGiz.svg"
+                alt="GIZ Logo"
+                className="h-10 sm:h-13 md:h-17"
+              />
+            </Link>
           </div>
         </div> 
       </footer> 
