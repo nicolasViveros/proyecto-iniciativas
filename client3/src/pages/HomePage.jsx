@@ -1272,7 +1272,7 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4 space-x-2">
-      <div className="bg-white text-lg md:text-2xl sm:text-lg  inline-block px-1 py-1 font-bold rounded-sm">
+      <div className="bg-white text-sm   inline-block px-1 py-1  rounded-sm">
 Cambiar idioma
 </div>
         <button
