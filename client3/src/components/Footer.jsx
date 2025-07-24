@@ -50,7 +50,7 @@ function Footer() {
               <img
                 src="/LogoGiz.svg"
                 alt="GIZ Logo"
-                className="h-10 md:h-16 lg:h-20"
+                className="h-10 sm:h-13 md:h-17"
               />
             </Link>
           </div>
