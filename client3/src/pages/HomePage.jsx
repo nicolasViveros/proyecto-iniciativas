@@ -1375,7 +1375,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 py-10 pr-30">
+      <div className="flex flex-col md:flex-row gap-4 py-10 items-center pr-30">
         <button
           onClick={() => navigate("/nueva-ficha")}
           className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]"
