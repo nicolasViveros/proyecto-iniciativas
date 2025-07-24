@@ -19,6 +19,7 @@ const MapaConFiltro = () => {
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
   return (
+    <div>iniciativas</div>
     // <div className="relative w-full h-screen">
     //   {/* Mapa Interactivo */}
     //   <MapContainer center={[0, -60]} zoom={3} className="w-full h-full z-0">
