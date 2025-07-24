@@ -2,7 +2,7 @@ import React from 'react'
 
 function IniciativasHomePage() {
   return (
-    <div className='flex h-[calc(100vh-100px)] grid-cols-12  bg-red-500 '>
+    <div className='flex h-[calc(100vh-100px)] grid-cols-12 items-center bg-red-500 justify-between'>
       <div className='bg-amber-200'>1</div>
       <div className='bg-amber-200'>1</div>
       <div className='bg-amber-200'>1</div>
