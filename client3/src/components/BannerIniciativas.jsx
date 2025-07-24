@@ -6,7 +6,7 @@ const BannerIniciativas = () => {
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
       {/* Texto */}
       <div className="md:w-1/2 text-left space-y-4">
-        <h2 className="text-2xl md:text-3xl font-semibold ">
+        <h2 className="text-2xl md:text-3xl  ">
           Conoce las <span className=" font-bold">iniciativas de género en el transporte</span> de todo el mundo
         </h2>
         <p>
