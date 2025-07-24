@@ -66,7 +66,7 @@ function Footer() {
                 </Link>
               </div>
 
-              <div className="flex">
+              <div className="flex gap-4">
                 <img src="/Logo_OBGEM.png" alt="Ojo Morado" className="h-10 sm:h-13 md:h-17" />
                 <img src="/LOGO_DTPM.png" alt="DTP" className="h-10 sm:h-13 md:h-17" />
               </div>
