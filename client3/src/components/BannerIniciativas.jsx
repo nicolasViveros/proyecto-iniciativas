@@ -6,10 +6,10 @@ const BannerIniciativas = () => {
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
       {/* Texto */}
       <div className="md:w-1/2 text-left space-y-4">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
-          Conoce las <span className="text-indigo-600 font-bold">iniciativas de género en el transporte</span> de todo el mundo
+        <h2 className="text-2xl md:text-3xl font-semibold ">
+          Conoce las <span className=" font-bold">iniciativas de género en el transporte</span> de todo el mundo
         </h2>
-        <p className="text-gray-600">
+        <p>
           Explora el mapa, filtra por temas y descubre qué pasa en tu región.<br />
           Puedes postular nuevas iniciativas del 30 de junio al 15 de agosto.
         </p>
