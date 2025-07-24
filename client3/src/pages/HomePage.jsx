@@ -1338,7 +1338,7 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="absolute w-full sm:bottom-1 md:bottom-2 bottom-3 ">
+        <div className="absolute w-full bottom-3 sm:bottom-2 md:bottom-3  ">
           <span className=" flex flex-col text-white text-base sm:text-xl md:text-2xl  items-center justify-center ">
             {language === "es"
               ? "¡Participa! 25/07 al 25/08"
