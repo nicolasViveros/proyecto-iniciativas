@@ -36,13 +36,13 @@ function Footer() {
       <footer className="h-full">
         <div className="grid grid-rows-2 ">
           {/* Fondo restante con imagen de footer */}
-          <div className=" relative overflow-hidden h-30">
-            <img
-              src="/Footer2.png"
-              alt="Footer"
-              className="absolute w-full h-full object-cover"
-            />
-          </div>
+          <div className="w-full">
+        <img
+          src="/Footer2.png"
+          alt="Ciudad"
+          className="w-full h-auto"
+        />
+      </div>
 
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
