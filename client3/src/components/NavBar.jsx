@@ -9,26 +9,26 @@ function NavBar() {
             <header className="bg-white w-full">
 
                 {isAuthenticated ? (
-                        <div className="m-6 flex items-center justify-between">
-                            {/* Grupo Izquierdo */}
-                            <div className="flex items-center gap-4">
-                                 <Link to="/">
+                    <div className="m-6 flex items-center justify-between">
+                        {/* Grupo Izquierdo */}
+                        <div className="flex items-center gap-4">
+                            <Link to="/">
                                 <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-10 sm:h-17" />
-                                </Link>
-                                <Link to="/">
-                                <img src="/Logo-UE.svg" alt="UE" className="h-10 sm:h-17" />
-                                </Link>
-                                <Link to="/">
-                                <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-10 sm:h-17" />
-                                </Link>
-                            </div>
+                            </Link>
+                            <Link to="/">
+                                <img src="/Logo-UE.svg" alt="UE" className="h-8 sm:h-14" />
+                            </Link>
+                            <Link to="/">
+                                <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-8 sm:h-14" />
+                            </Link>
+                        </div>
 
-                            {/* Grupo Derecho */}
-                            <div className="flex items-center gap-2">
-                                <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-10 sm:h-17" />
+                        {/* Grupo Derecho */}
+                        <div className="flex items-center gap-2">
+                            <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-10 sm:h-17" />
 
-                            </div>
-                            <div className="absolute cols-2 gap-2 top-1 right-4">
+                        </div>
+                        <div className="absolute cols-2 gap-2 top-1 right-4">
                             <Link to='/fichas'
                                 className="hover:text-red-400 text-xs">
                                 Fichas |
@@ -40,23 +40,23 @@ function NavBar() {
                                 Cerrar sesión
                             </Link>
                         </div>
-                        </div>
-                        
-                    
+                    </div>
+
+
                 ) : (
                     <div className="m-6 flex items-center justify-between">
                         {/* Grupo Izquierdo */}
                         <div className="flex items-center gap-4">
-                                 <Link to="/">
+                            <Link to="/">
                                 <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-10 sm:h-17" />
-                                </Link>
-                                <Link to="/">
+                            </Link>
+                            <Link to="/">
                                 <img src="/Logo-UE.svg" alt="UE" className="h-8 sm:h-14" />
-                                </Link>
-                                <Link to="/">
+                            </Link>
+                            <Link to="/">
                                 <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-8 sm:h-14" />
-                                </Link>
-                            </div>
+                            </Link>
+                        </div>
 
                         {/* Grupo Derecho */}
                         <div className="flex items-center gap-2">
