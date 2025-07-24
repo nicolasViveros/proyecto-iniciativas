@@ -36,11 +36,11 @@ function Footer() {
       <footer>
         <div className="grid grid-rows-2 ">
           {/* Fondo restante con imagen de footer */}
-          <div className="w-fit">
+          <div className="w-full h-auto object-cover">
             <img
               src="/Footer2.png"
               alt="Ciudad"
-              className="w-full h-fullobject-cover"
+              className="w-full h-full object-cover"
             />
           </div>
 
