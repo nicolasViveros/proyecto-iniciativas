@@ -23,19 +23,20 @@ function NavBar() {
                                 <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-10 sm:h-17" />
 
                             </div>
+                            <div className="absolute cols-2 gap-2 top-4 right-4">
+                                <Link to='/fichas'
+                                    className="hover:text-red-400 text-xs">
+                                    Fichas |
+                                </Link>
+                                <Link to='/' onClick={() => {
+                                    logout();
+                                }}
+                                    className="hover:text-red-400 text-xs">
+                                    Cerrar sesión
+                                </Link>
+                            </div>
                         </div>
-                        <div className="absolute cols-2 gap-2 top-4 right-4">
-                            <Link to='/fichas'
-                                className="hover:text-red-400 text-xs">
-                                Fichas |
-                            </Link>
-                            <Link to='/' onClick={() => {
-                                logout();
-                            }}
-                                className="hover:text-red-400 text-xs">
-                                Cerrar sesión
-                            </Link>
-                        </div>
+
                     </div>
                 ) : (
                     <div className="max-w-screen-xl m-6 flex items-center justify-between">
