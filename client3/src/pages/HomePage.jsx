@@ -1273,21 +1273,21 @@ function HomePage() {
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4 space-x-2">
         <button
-          className={`rounded-full p-0.5 border ${language === "es" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+          className={`rounded-full p-1.5 border ${language === "es" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
             }`}
           onClick={switchToSpanish}
         >
           ES
         </button>
         <button
-          className={`rounded-full p-0.5 border ${language === "en" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+          className={`rounded-full p-1.5 border ${language === "en" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
             }`}
           onClick={switchToEnglish}
         >
           EN
         </button>
         <button
-          className={`rounded-full p-0.5 border ${language === "pt" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
+          className={`rounded-full p-1.5 border ${language === "pt" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
             }`}
           onClick={switchToPortuguese}
         >
