@@ -3,8 +3,8 @@ import React from 'react'
 function IniciativasHomePage() {
     return (
         <div className=' h-[calc(100vh-100px)] bg-red-500'>
-            <div className='flex bg-amber-200 grid-cols-12 gap-4'>
-                <div className='flex col-[1-5]  bg-blue-300'>text</div>
+            <div className=' bg-amber-200 grid grid-cols-12 gap-4'>
+                <div className='col-[1-5]  bg-blue-300'>text</div>
                 <div className='col-span-7  bg-blue-500'>img</div>             
             </div>
 
