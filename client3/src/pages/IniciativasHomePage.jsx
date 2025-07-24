@@ -5,7 +5,7 @@ import FichasFilter from '../components/FichasFilter'
 
 function IniciativasHomePage() {
     return (
-        <div className=' h-[calc(100vh-100px)] bg-red-500'>
+        <div className=' bg-red-500'>
             <BannerIniciativas />
             <FichasFilter />
         </div>
