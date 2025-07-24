@@ -2,9 +2,9 @@ import React from 'react'
 
 function IniciativasHomePage() {
   return (
-    <div className='flex h-[calc(100vh-100px)] grid-cols-12 gap-4 items-center bg-red-500 justify-between'>
-      <div className='bg-amber-200'>1</div>
-      <div className='bg-amber-300'>2</div>
+    <div className='flex h-[calc(100vh-100px)] grid-cols-12 gap-4 bg-red-500'>
+      <div className='bg-amber-200 col-span-12'>1</div>
+      <div className='bg-amber-300 col-span-12'>2</div>
      
 
 
