@@ -49,10 +49,7 @@ function NavBar() {
                         {/* Grupo Derecho */}
                         <div className="flex items-center gap-2">
                             <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-10" />
-                            <span className="text-gray-700 font-semibold text-lg">Transporte</span>
-                            <div className="w-4 h-1 bg-yellow-400 mx-0.5"></div>
-                            <div className="w-4 h-1 bg-blue-500 mx-0.5"></div>
-                            <div className="w-4 h-1 bg-red-600 mx-0.5"></div>
+                            
                         </div>
                     </div>
                     // <div className=" inset-0 flex items-center justify-between px-2 sm:px-10">
