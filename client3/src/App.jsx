@@ -33,6 +33,7 @@ export function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/nueva-ficha" element={<FormWizard />} />
+                <Route path="/iniciativas" element={<IniciativasHomePage />} />
 
                 <Route element={<ProtectedRoute />}>
                   <Route path="/fichas" element={<FichasPage />} />
