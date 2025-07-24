@@ -10,7 +10,7 @@ const InitiativeCard = ({ initiative }) => {
     achievements, // "Logros o resultados obtenidos"
     startDate,
     endDate,
-    status, // "Indefinido" en la imagen, podrías usar un enum o string
+    // status,  // "Indefinido" en la imagen, podrías usar un enum o string
     specificData,
     actorsInvolved,
     websiteLink,
