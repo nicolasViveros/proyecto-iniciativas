@@ -3,7 +3,7 @@ import React from 'react';
 
 const BannerIniciativas = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-6">
+    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-4">
       {/* Texto */}
       <div className="md:w-1/2 text-left space-y-4">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
