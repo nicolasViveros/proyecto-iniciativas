@@ -38,7 +38,7 @@ function NavBar() {
                         </div>
                     </div>
                 ) : (
-                    <div className="max-w-screen-xl m-4 flex items-center justify-between">
+                    <div className="max-w-screen-xl m-6 flex items-center justify-between">
                         {/* Grupo Izquierdo */}
                         <div className="flex items-center gap-4">
                             <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-10 sm:h-17" />
