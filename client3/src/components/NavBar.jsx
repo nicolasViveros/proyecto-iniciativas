@@ -5,7 +5,7 @@ function NavBar() {
 
 
     return (
-        <nav className=" flex justify-between border-b border-gray-300 w-full">
+        <nav className=" flex justify-between border-b border-gray-300 ">
             <header className="bg-white w-full">
 
                 {isAuthenticated ? (
