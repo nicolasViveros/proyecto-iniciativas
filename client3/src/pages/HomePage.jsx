@@ -1373,8 +1373,8 @@ function HomePage() {
             {secciones[activo].contenido[language]}
           </h2>
         </div>
-        <div className="flex max-w-6xl justify-end gap-4">
-        <button
+        <div>
+          <button
           onClick={() => navigate("/nueva-ficha")}
           className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]"
         >
