@@ -9,7 +9,7 @@ function Footer() {
           <img
             src="/Footer2.png"
             alt="Footer"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto"
           />
         </div>
 
