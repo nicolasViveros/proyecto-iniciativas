@@ -30,7 +30,7 @@ const MapaConFiltro = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
-      <div className=" w-full h-screen">
+      <div className="relative w-full h-screen">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html"
           className=" container w-auto h-full"
