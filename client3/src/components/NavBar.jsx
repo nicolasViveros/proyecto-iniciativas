@@ -41,18 +41,18 @@ function NavBar() {
                     <div className="max-w-screen-xl mx-4 flex items-center justify-between">
                         {/* Grupo Izquierdo */}
                         <div className="flex items-center gap-4">
-                            <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-32" />
-                            <img src="/Logo-UE.svg" alt="UE" className="h-32" />
-                            <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-32" />
+                            <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-25" />
+                            <img src="/Logo-UE.svg" alt="UE" className="h-25" />
+                            <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-25" />
                         </div>
 
                         {/* Grupo Derecho */}
                         <div className="flex items-center gap-2">
-                            <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-32" />
+                            <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-25" />
                             
                         </div>
                     </div>
-                    // <div className=" inset-0 flex items-center justify-between px-2 sm:px-32">
+                    // <div className=" inset-0 flex items-center justify-between px-2 sm:px-25">
                     //     {/* Logo izquierda (GIZ) */}
                     //     <Link to="/">
                     //         <img
