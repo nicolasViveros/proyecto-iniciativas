@@ -14,10 +14,10 @@ const BannerIniciativas = () => {
           Puedes postular nuevas iniciativas del 30 de junio al 15 de agosto.
         </p>
         <div className="flex space-x-4 pt-2">
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+          <button className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]">
             Postular iniciativa
           </button>
-          <button className="border border-gray-400 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100">
+          <button className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4]">
             Más información
           </button>
         </div>
