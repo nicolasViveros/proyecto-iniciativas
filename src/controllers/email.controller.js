@@ -26,7 +26,7 @@ export const sendEmail = async ({
       subject: emailSubject,
       text: textContent,
       html: htmlContent,
-      // cc: 'concurso@rumboalaequidad.org', // Uncomment if you wish to have a cc
+      cc: 'concurso@rumboalaequidad.org', // Uncomment if you wish to have a cc
     };
 
     // Send the email
