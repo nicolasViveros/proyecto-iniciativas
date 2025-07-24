@@ -5,11 +5,11 @@ function Footer() {
     <div>
       <footer className="relative bg-white">
         {/* Imagen de la ciudad como fondo superior */}
-        <div className=" overflow-hidden h-30">
+        <div className="w-auto h-30">
           <img
             src="/Footer2.png"
             alt="Footer"
-            className=" inset-0 w-full h-full object-cover"
+            className="w-full h-auto object-cover"
           />
         </div>
 
