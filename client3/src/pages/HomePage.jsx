@@ -1307,7 +1307,7 @@ function HomePage() {
           className="w-full h-auto object-cover  sm:hidden"
         />
         <div className="absolute sm:top-1/8 sm:left-2/12 transform -traslate-x-3/12 top-14 left-1.5">
-          <p className="text-lg md:text-2xl sm:text-xl font-medium text-[#5A478D]">
+          <p className="text-lg md:text-3xl sm:text-xl font-medium text-[#5A478D]">
             {language === "es"
               ? "concurso"
               : language === "en"
