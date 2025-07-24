@@ -1216,7 +1216,7 @@ export default function FormWizard() {
       targetAudience: "Target audience and beneficiaries. *",
       activities: "Main activities. *",
       resultsObtained: "Results achieved or expected *",
-      projectCategory: "Which category?",
+      projectCategory: "Which category is the project applying for?",
       operatorRegulatorCriteria: "For Public Institutions and Private Companies category",
       operatorRegulatorOption: "Public Institutions and Private Companies",
       ngoAcademyOption: "Civil Society Organizations and Academic Entities",
