@@ -7,6 +7,7 @@ function IniciativasHomePage() {
     return (
         <div className=' bg-red-500'>
             <BannerIniciativas />
+            <MapaConFiltro />
             <FichasFilter />
         </div>
     )
