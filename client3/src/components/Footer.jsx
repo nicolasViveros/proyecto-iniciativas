@@ -50,8 +50,8 @@ function Footer() {
           <div className="mx-6 sm:mx-7 mb-4">
 
             <div className=" flex justify-between items-center">
-              <span className="flex text-xs  ">Implementado por:</span>
-              <span className="flex text-xs  ">Apoyado por:</span>
+              <span className="flex text-xxs  ">Implementado por:</span>
+              <span className="flex text-xxs  ">Apoyado por:</span>
             </div>
 
             <div className="mx-auto flex justify-between items-center">
