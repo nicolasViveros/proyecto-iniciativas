@@ -37,6 +37,8 @@ export default function FichasFilter() {
     filtro === "Todos" ? fichas : fichas.filter((ficha) => ficha.pais === filtro);
 
   return (
+    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
+
     <div className="p-6 max-w-5xl mx-auto">
       <h2 className="text-2xl font-bold mb-4">Filtrar Fichas por País</h2>
 
@@ -69,6 +71,7 @@ export default function FichasFilter() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
