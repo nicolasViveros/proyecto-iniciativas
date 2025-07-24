@@ -40,22 +40,21 @@ function Footer() {
             <img
               src="/Footer2.png"
               alt="Footer"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute w-full h-full object-cover"
             />
           </div>
 
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
           {/* <div className="relative bg-white w-full md:w-auto px-4 items-justify justify-justify h-20"> */}
-          <div className="absolute bottom-0 left-0 w-full bg-white  px-6">
+          <div className="absolute bottom-0 left-0 w-full bg-white px-6">
+            
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
               <span className="flex text-xs  ">Implementado por:</span>
               <span className="flex text-xs  ">Apoyado por:</span>
-
             </div>
 
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-
               <div className="flex items-center gap-4">
                 <Link to="/">
                   <img
@@ -67,10 +66,8 @@ function Footer() {
               </div>
 
               <div className="flex items-center gap-4">
-
                 <img src="/Logo_OBGEM.png" alt="Ojo Morado" className="h-10 sm:h-13 md:h-17" />
                 <img src="/LOGO_DTPM.png" alt="DTP" className="h-10 sm:h-13 md:h-17" />
-
               </div>
             </div>
           </div>
