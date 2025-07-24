@@ -5,7 +5,7 @@ function Footer() {
     <div>
       <footer className="relative bg-white">
         {/* Imagen de la ciudad como fondo superior */}
-        <div className="w-full">
+        <div className="w-full h-30">
           <img
             src="/Footer2.png"
             alt="Footer"
