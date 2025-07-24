@@ -15,14 +15,14 @@ function NavBar() {
                             <img
                                 src="/global_gateway.png"
                                 alt="GIZ Logo"
-                                className=" h-16 md:h-30 lg:h-40"
+                                className=" h-17 md:h-30 lg:h-40"
                             />
                         </Link>
                         {/* Logo derecha (Somos LAC) */}
                         <img
                             src="/eu_germany.png"
                             alt="Somos LAC Logo"
-                            className="mb-6 h-16 md:h-35 lg:h-45"
+                            className="mb-6 h-17 md:h-35 lg:h-45"
                         />
                         <div className="absolute cols-2 gap-2 top-4 right-4">
                             <Link to='/fichas'
@@ -38,34 +38,34 @@ function NavBar() {
                         </div>
                     </div>
                 ) : (
-                    <div className="max-w-screen-xl m-4 flex items-center justify-between">
+                    <div className="max-w-screen-xl m-5 flex items-center justify-between">
                         {/* Grupo Izquierdo */}
                         <div className="flex items-center gap-4">
-                            <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-16" />
-                            <img src="/Logo-UE.svg" alt="UE" className="h-16" />
-                            <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-16" />
+                            <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-17" />
+                            <img src="/Logo-UE.svg" alt="UE" className="h-17" />
+                            <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-17" />
                         </div>
 
                         {/* Grupo Derecho */}
                         <div className="flex items-center gap-2">
-                            <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-16" />
+                            <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-17" />
                             
                         </div>
                     </div>
-                    // <div className=" inset-0 flex items-center justify-between px-2 sm:px-16">
+                    // <div className=" inset-0 flex items-center justify-between px-2 sm:px-17">
                     //     {/* Logo izquierda (GIZ) */}
                     //     <Link to="/">
                     //         <img
                     //             src="/global_gateway.png"
                     //             alt="GIZ Logo"
-                    //             className=" h-16 md:h-30 lg:h-40"
+                    //             className=" h-17 md:h-30 lg:h-40"
                     //         />
                     //     </Link>
                     //     {/* Logo derecha (Somos LAC) */}
                     //     <img
                     //         src="/eu_germany.png"
                     //         alt="Somos LAC Logo"
-                    //         className="mb-6 h-16 md:h-35 lg:h-45"
+                    //         className="mb-6 h-17 md:h-35 lg:h-45"
                     //     />
                     // </div>
                 )}
