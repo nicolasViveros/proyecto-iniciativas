@@ -1388,7 +1388,7 @@ function HomePage() {
         </button>
 
         <button
-          className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center"
+          className="border border-[#5d5593] text-[#5d5593] px-4 py-3 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center"
           onClick={() => {
             const link = document.createElement("a");
             // if (language === "es") {
