@@ -31,13 +31,10 @@ const MapaConFiltro = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
       <div className="relative w-full h-screen">
-        {/* Mapa Interactivo */}
-        {/* //   <MapContainer center={[0, -60]} zoom={3} className="w-full h-full z-0">
-    //     <TileLayer */}
-        {/* //       attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-    //       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    //     /> */}
-        {/* //   </MapContainer> */}
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html"
+          className=" container w-auto h-full"
+        />
 
         {/* Botón para mostrar filtro */}
         {!mostrarFiltro && !paisSeleccionado && (
