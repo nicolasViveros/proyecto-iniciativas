@@ -67,13 +67,10 @@ function Footer() {
               </div>
 
               <div className="flex items-center gap-4">
-                <Link to="/">
-                  <img
-                    src="/LogoGiz.svg"
-                    alt="GIZ Logo"
-                    className="h-10 sm:h-13 md:h-17"
-                  />
-                </Link>
+
+                <img src="/Logo_OBGEM.png" alt="Ojo Morado" className="h-10 sm:h-13 md:h-17" />
+                <img src="/LOGO_DTPM.png" alt="DTP" className="h-10 sm:h-13 md:h-17" />
+
               </div>
             </div>
           </div>
