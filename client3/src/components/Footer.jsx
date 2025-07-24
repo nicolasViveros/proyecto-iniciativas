@@ -45,17 +45,15 @@ function Footer() {
           </div>
           {/* Logo izquierda (GIZ) con fondo blanco */}
           <div className="relative bg-white w-full md:w-auto px-4 items-justify justify-justify h-20">
-
-            <div className="flex items-center gap-4">
-              <span className="flex text-xs  ">Implementado por:</span>
-              <Link to="/">
-                <img
-                  src="/LogoGiz.svg"
-                  alt="GIZ Logo"
-                  className="h-10 sm:h-13 md:h-17"
-                />
-              </Link>
-            </div>
+            
+            <span className="flex text-xs  ">Implementado por:</span>
+            <Link to="/">
+              <img
+                src="/LogoGiz.svg"
+                alt="GIZ Logo"
+                className="h-10 sm:h-13 md:h-17"
+              />
+            </Link>
             <div className="flex items-center gap-4">
               <span className="flex text-xs  ">Implementado por:</span>
               <Link to="/">
