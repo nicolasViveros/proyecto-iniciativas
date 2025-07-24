@@ -51,10 +51,10 @@ function NavBar() {
                                 <img src="/Logo-GlobalGateway.svg" alt="Global Gateway" className="h-10 sm:h-17" />
                                 </Link>
                                 <Link to="/">
-                                <img src="/Logo-UE.svg" alt="UE" className="h-8 sm:h-14" />
+                                <img src="/Logo-UE.svg" alt="UE" className="h-10 sm:h-17" />
                                 </Link>
                                 <Link to="/">
-                                <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-8 sm:h-14" />
+                                <img src="/Logo-CoperacionAlemana.svg" alt="Cooperación Alemana" className="h-10 sm:h-17" />
                                 </Link>
                             </div>
 
