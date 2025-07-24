@@ -1314,7 +1314,7 @@ function HomePage() {
                 ? "contest"
                 : "concurso"}
           </p>
-          <div className="bg-[#e79953] text-lg md:text-xl sm:text-lg text-white inline-block px-1 py-1 font-bold rounded-sm">
+          <div className="bg-[#e79953] text-lg md:text-2xl sm:text-lg text-white inline-block px-1 py-1 font-bold rounded-sm">
             {language === "es"
               ? "¡Postula tu Iniciativa!"
               : language === "en"
@@ -1322,14 +1322,14 @@ function HomePage() {
                 : "Inscreva a sua Iniciativa! "}
           </div>
 
-          <h2 className="text-lg md:text-2xl sm:text-xl font-extrabold text-[#3C3270]">
+          <h2 className="text-lg md:text-3xl sm:text-xl font-extrabold text-[#3C3270]">
             {language === "es"
               ? "RUMBO A LA EQUIDAD:"
               : language === "en"
                 ? "TOWARDS GENDER EQUITY:"
                 : "RUMO À EQUIDADE:"}
           </h2>
-          <p className="text-xs md:text-lg sm:text-lg text-[#5A478D] leading-tight w-47 sm:w-100">
+          <p className="text-xs md:text-xl sm:text-lg text-[#5A478D] leading-tight w-47 sm:w-100">
             {language === "es"
               ? "Reconociendo iniciativas innovadoras en favor de la equidad de género en movilidad urbana"
               : language === "en"
