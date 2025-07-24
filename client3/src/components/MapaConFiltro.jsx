@@ -11,11 +11,9 @@ const MapaConFiltro = () => {
         <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
 
             <div className="relative w-full h-screen">
-                {/* Mapa base (puedes reemplazar esto con un componente de mapa real como react-leaflet o Mapbox) */}
-                <img
-                    src="/assets/mapa.png" // reemplázalo por la ruta del mapa real o un iframe si usas un mapa dinámico
-                    alt="mapa"
-                    className="w-full h-full object-cover"
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html"
+                    className="w-full h-full"
                 />
 
                 {/* Panel de filtro */}
