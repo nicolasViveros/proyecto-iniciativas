@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 //   "Caribe": ["Cuba", "República Dominicana", "Puerto Rico", "Haití", "Jamaica"]
 // };
 
-// const MapaConFiltro = () => {
+const MapaConFiltro = () => {
 //   const [mostrarFiltro, setMostrarFiltro] = useState(true);
 //   const [regionActiva, setRegionActiva] = useState(null);
 //   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
