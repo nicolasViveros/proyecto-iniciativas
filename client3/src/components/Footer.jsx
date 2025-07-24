@@ -33,7 +33,7 @@ function Footer() {
       {/* // </footer> */}
 
 
-      <footer className="h-full">
+      <footer>
         <div className="grid grid-rows-2 ">
           {/* Fondo restante con imagen de footer */}
           <div className="w-full">
