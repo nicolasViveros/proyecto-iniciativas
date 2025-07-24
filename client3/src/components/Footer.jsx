@@ -37,25 +37,25 @@ function Footer() {
         <div className="grid grid-rows-2 ">
           {/* Fondo restante con imagen de footer */}
           <div className="w-full">
-        <img
-          src="/Footer2.png"
-          alt="Ciudad"
-          className="w-full h-auto"
-        />
-      </div>
+            <img
+              src="/Footer2.png"
+              alt="Ciudad"
+              className="w-full h-auto"
+            />
+          </div>
 
 
           {/* Logo izquierda (GIZ) con fondo blanco */}
           {/* <div className="relative bg-white w-full md:w-auto px-4 items-justify justify-justify h-20"> */}
-          <div className="relative  bg-white px-6">
-            
+          <div className="w-full">
+
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
               <span className="flex text-xs  ">Implementado por:</span>
               <span className="flex text-xs  ">Apoyado por:</span>
             </div>
 
             <div className="mx-auto flex justify-between items-center">
-              
+
               <div className="flex items-center gap-4">
                 <Link to="/">
                   <img
