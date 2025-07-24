@@ -12,6 +12,7 @@ import FormWizard from "./pages/FormStepByStep";
 import FichasPage from "./pages/FichasPage";
 import FichaPage from "./pages/FichaPage";
 import EditFichaPage from "./pages/EditFichaPage";
+import IniciativasHomePage from "./pages/IniciativasHomePage";
 
 import ProtectedRoute from "./ProtectedRoute";
 import { FichaProvider } from "./context/FichasContext";
