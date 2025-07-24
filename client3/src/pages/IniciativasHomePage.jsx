@@ -2,8 +2,8 @@ import React from 'react'
 
 function IniciativasHomePage() {
     return (
-        <div className=' h-[calc(100vh-100px)] grid-cols-12 gap-4 bg-red-500'>
-            <div className='bg-amber-200 grid place-content-center'>
+        <div className=' h-[calc(100vh-100px)] bg-red-500'>
+            <div className='bg-amber-200  place-content-center'>
                 <div className='col-span-5 bg-blue-300'>text</div>
                 <div className='col-span-7 bg-blue-500'>img</div>
                 
