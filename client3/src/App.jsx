@@ -13,6 +13,7 @@ import FichasPage from "./pages/FichasPage";
 import FichaPage from "./pages/FichaPage";
 import EditFichaPage from "./pages/EditFichaPage";
 import IniciativasHomePage from "./pages/IniciativasHomePage";
+import IniciativaPage from "./pages/IniciativaPage";
 
 import ProtectedRoute from "./ProtectedRoute";
 import { FichaProvider } from "./context/FichasContext";
@@ -35,6 +36,7 @@ export function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/nueva-ficha" element={<FormWizard />} />
                 <Route path="/iniciativas" element={<IniciativasHomePage />} />
+                <Route path="/iniciativa/" element={<IniciativaPage />} />
 
                 <Route element={<ProtectedRoute />}>
                   <Route path="/fichas" element={<FichasPage />} />

@@ -1,6 +1,6 @@
 // Requiere instalar: react-leaflet, leaflet
 // npm install react-leaflet leaflet
-
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 // import { MapContainer, TileLayer } from 'react-leaflet';
 // // import 'leaflet/dist/leaflet.css';
@@ -15,7 +15,7 @@ const MapaConFiltro = () => {
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
-
+const navigate = useNavigate();
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
   const handlePaisClick = (pais) => {
@@ -25,7 +25,7 @@ const MapaConFiltro = () => {
 
   const redirigirIniciativa = () => {
     // Implement navigation logic here
-    window.location.href = "/IniciativaPage.jsx"; // Example navigation
+    navigate('/iniciativa');
   };
 
   return (
