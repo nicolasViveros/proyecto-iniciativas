@@ -54,7 +54,6 @@ function Footer() {
                 className="h-10 sm:h-13 md:h-17"
               />
             </Link>
-            <div className="flex items-center gap-4">
               <span className="flex text-xs  ">Implementado por:</span>
               <Link to="/">
                 <img
@@ -63,7 +62,6 @@ function Footer() {
                   className="h-10 sm:h-13 md:h-17"
                 />
               </Link>
-            </div>
           </div>
         </div>
       </footer>
