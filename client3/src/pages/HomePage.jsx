@@ -1272,7 +1272,7 @@ function HomePage() {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       <div className="flex justify-end p-4 space-x-2">
-        <div className="rounded-full border  bg-white ">Cambiar idioma</div>
+        <h1 className="rounded-full border bg-white ">Cambiar idioma</h1>
         <button
           className={`rounded-full p-1.5 border ${language === "es" ? "bg-[#a49fc4]" : "bg-white hover:bg-[#a49fc4]"
             }`}
