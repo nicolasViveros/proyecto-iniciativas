@@ -22,8 +22,7 @@ function NavBar() {
                             <div className="flex items-center gap-2">
                                 <img src="/TRANSPORTE_2.png" alt="Ministerio de Transporte" className="h-10 sm:h-17" />
 
-                            </div>
-                            <div className="absolute cols-2 gap-2 top-4 right-4">
+                                <div className="absolute cols-2 gap-2 top-4 right-4">
                                 <Link to='/fichas'
                                     className="hover:text-red-400 text-xs">
                                     Fichas |
@@ -35,6 +34,8 @@ function NavBar() {
                                     Cerrar sesión
                                 </Link>
                             </div>
+                            </div>
+                           
                         </div>
 
                     </div>
