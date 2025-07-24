@@ -44,7 +44,7 @@ function NavBar() {
                         
                     
                 ) : (
-                    <div className="max-w-screen-xl m-6 flex items-center justify-between">
+                    <div className="m-6 flex items-center justify-between">
                         {/* Grupo Izquierdo */}
                         <div className="flex items-center gap-4">
                                  <Link to="/">
