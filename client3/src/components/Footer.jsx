@@ -36,7 +36,7 @@ function Footer() {
       <footer>
         <div className="grid grid-rows-2 ">
           {/* Fondo restante con imagen de footer */}
-          <div className="w-full">
+          <div className="w-full pb-4">
             <img
               src="/Footer2.png"
               alt="Ciudad"
