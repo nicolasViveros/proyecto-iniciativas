@@ -25,7 +25,7 @@ const BannerIniciativas = () => {
 
       {/* Imagen */}
       <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-        <img src="/micro.svg" alt="Banner transporte género" className="w-full max-w-md" />
+        <img src="/banner.png" alt="Banner transporte género" className="w-full max-w-md" />
       </div>
     </div>
   );
