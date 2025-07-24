@@ -1,7 +1,7 @@
 // Requiere instalar: react-leaflet, leaflet
 // npm install react-leaflet leaflet
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { MapContainer, TileLayer } from 'react-leaflet';
 // // import 'leaflet/dist/leaflet.css';
 
@@ -18,11 +18,20 @@ const MapaConFiltro = () => {
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
+  const handlePaisClick = (pais) => {
+    setPaisSeleccionado(pais);
+    setMostrarFiltro(false);
+  };
+
+  const redirigirIniciativa = () => {
+    // Implement navigation logic here
+    window.location.href = "/IniciativaPage.jsx"; // Example navigation
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
-
       <div className="relative w-full h-screen">
-    //   {/* Mapa Interactivo */}
+        {/* Mapa Interactivo */}
         {/* //   <MapContainer center={[0, -60]} zoom={3} className="w-full h-full z-0">
     //     <TileLayer */}
         {/* //       attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
@@ -30,21 +39,29 @@ const MapaConFiltro = () => {
     //     /> */}
         {/* //   </MapContainer> */}
 
+        {/* Botón para mostrar filtro */}
+        {!mostrarFiltro && !paisSeleccionado && (
+          <button
+            className="absolute top-0 right-0 mt-2 mr-2 text-xs text-indigo-700 underline hover:text-indigo-900 z-10"
+            onClick={toggleFiltro}
+          >
+            Mostrar
+          </button>
+        )}
+
         {/* Filtro lateral */}
-        <div className={`absolute top-0 right-0 h-full bg-white shadow-lg transition-all duration-300 z-10
-        ${mostrarFiltro ? 'w-64' : 'w-12'} overflow-hidden`}>
+        {mostrarFiltro && !paisSeleccionado && (
+          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-64 overflow-hidden z-10">
+            <div className="flex justify-between items-center p-2 border-b">
+              <h2 className="text-sm font-semibold text-indigo-800">Iniciativas</h2>
+              <button
+                onClick={toggleFiltro}
+                className="text-xs text-indigo-700 underline hover:text-indigo-900"
+              >
+                Ocultar
+              </button>
+            </div>
 
-          <div className="flex justify-between items-center p-2 border-b">
-            <h2 className="text-sm font-semibold text-indigo-800">Iniciativas</h2>
-            <button
-              onClick={toggleFiltro}
-              className="text-xs text-indigo-700 underline hover:text-indigo-900"
-            >
-              {mostrarFiltro ? "Ocultar" : "Mostrar"}
-            </button>
-          </div>
-
-          {mostrarFiltro && (
             <div className="p-3 overflow-y-auto h-[calc(100%-40px)]">
               {Object.entries(regiones).map(([region, paises]) => (
                 <div key={region} className="mb-4">
@@ -60,7 +77,7 @@ const MapaConFiltro = () => {
                         <li
                           key={pais}
                           className="cursor-pointer hover:underline"
-                          onClick={() => setPaisSeleccionado(pais)}
+                          onClick={() => handlePaisClick(pais)}
                         >
                           {pais}
                         </li>
@@ -70,18 +87,24 @@ const MapaConFiltro = () => {
                 </div>
               ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* Sección de iniciativas por país */}
+        {/* Sección de iniciativas por país en lugar del filtro */}
         {paisSeleccionado && (
-          <div className="absolute bottom-0 left-0 w-full bg-white border-t shadow-xl z-20 max-h-[40%] overflow-y-auto">
+          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-64 z-20 overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3
+                className="text-lg font-semibold text-gray-800 cursor-pointer hover:underline"
+                onClick={redirigirIniciativa}
+              >
                 Iniciativas en {paisSeleccionado}
               </h3>
               <button
-                onClick={() => setPaisSeleccionado(null)}
+                onClick={() => {
+                  setPaisSeleccionado(null);
+                  setMostrarFiltro(true);
+                }}
                 className="text-sm text-red-600 hover:underline"
               >
                 Cerrar
