@@ -1354,9 +1354,9 @@ function HomePage() {
           {secciones.map((sec, i) => (
             <button
               key={i}
-              className={`w-full text-left  font-semibold text-l px-4 py-3 mb-2 rounded-xl  transition ${activo === i
+              className={`w-full text-left font-semibold text-l px-4 py-3 mb-2 rounded-xl transition ${activo === i
                 ? "bg-white border border-[#a49fc4] text-[#5d5593] hover:bg-gray-100"
-                : "bg-transparent  hover:bg-gray-100 "
+                : "bg-transparent hover:bg-gray-100"
                 }`}
               onClick={() => setActivo(i)}
             >
@@ -1365,54 +1365,56 @@ function HomePage() {
           ))}
         </div>
 
-        <div className="w-full md:w-2/3 bg-white px-2 sm:px-6 rounded ">
-          <h2 className="text-2xl font-bold mb-4">
-            {secciones[activo].titulo[language]}
-          </h2>
-          <h2 className="text-sm whitespace-pre-line">
-            {secciones[activo].contenido[language]}
-          </h2>
+        <div className="w-full md:w-2/3 bg-white px-2 sm:px-6 rounded flex flex-col justify-between">
+          <div>
+            <h2 className="text-2xl font-bold mb-4">
+              {secciones[activo].titulo[language]}
+            </h2>
+            <h2 className="text-sm whitespace-pre-line">
+              {secciones[activo].contenido[language]}
+            </h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 py-10 justify-end mt-auto">
+            <button
+              onClick={() => navigate("/nueva-ficha")}
+              className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]"
+            >
+              {language === "es"
+                ? "Comenzar postulación"
+                : language === "en"
+                  ? "Start Application"
+                  : "Iniciar Candidatura"}
+            </button>
+
+            <button
+              className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center"
+              onClick={() => {
+                const link = document.createElement("a");
+                // if (language === "es") {
+                //   link.href = "/BASESDELCONCURSO-Genero.docx";
+                //   link.download = "BASESDELCONCURSO-Genero.docx";
+                // } else if (language === "en") {
+                //   link.href = "/TowardsGenderEquity_TdR_ingles.docx";
+                //   link.download = "TowardsGenderEquity_TdR_ingles.docx";
+                // } else if (language === "pt") {
+                //   link.href = "/Rumbo-Equidade_TdR_portugues.docx";
+                //   link.download = "Rumbo-Equidade_TdR_portugues.docx";
+                // }
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              {language === "es"
+                ? "Descargar bases"
+                : language === "en"
+                  ? "Download Guidelines"
+                  : "Baixar Regulamento"}
+              <MdOutlineFileDownload className="text-2xl m-1 mb-1 ml-2 inline" />
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-4 py-10 justify-end transform right-3/12">
-        <button
-          onClick={() => navigate("/nueva-ficha")}
-          className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]"
-        >
-          {language === "es"
-            ? "Comenzar postulación"
-            : language === "en"
-              ? "Start Application"
-              : "Iniciar Candidatura"}
-        </button>
-
-        <button
-          className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] flex items-center justify-center"
-          onClick={() => {
-            const link = document.createElement("a");
-            // if (language === "es") {
-            //   link.href = "/BASESDELCONCURSO-Genero.docx";
-            //   link.download = "BASESDELCONCURSO-Genero.docx";
-            // } else if (language === "en") {
-            //   link.href = "/TowardsGenderEquity_TdR_ingles.docx";
-            //   link.download = "TowardsGenderEquity_TdR_ingles.docx";
-            // } else if (language === "pt") {
-            //   link.href = "/Rumbo-Equidade_TdR_portugues.docx";
-            //   link.download = "Rumbo-Equidade_TdR_portugues.docx";
-            // }
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }}
-        >
-          {language === "es"
-            ? "Descargar bases"
-            : language === "en"
-              ? "Download Guidelines"
-              : "Baixar Regulamento"}
-          <MdOutlineFileDownload className="text-2xl m-1 mb-1 ml-2 inline" />
-        </button>
       </div>
     </div>
   );
