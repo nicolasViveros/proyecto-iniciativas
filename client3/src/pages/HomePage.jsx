@@ -1392,13 +1392,13 @@ function HomePage() {
               onClick={() => {
                 const link = document.createElement("a");
                 if (language === "es") {
-                  link.href = "/BASES_DEL_CONCURSO_¡Postula_tu_Iniciativa!";
+                  link.href = "/BASES_DEL_CONCURSO_¡Postula_tu_Iniciativa!.pdf";
                   link.download = "BASES_DEL_CONCURSO_¡Postula_tu_Iniciativa!.pdf";
                 } else if (language === "en") {
-                  link.href = "/CONTEST_GUIDELINES-Present_Your_Initiative!";
+                  link.href = "/CONTEST_GUIDELINES-Present_Your_Initiative!.pdf";
                   link.download = "CONTEST_GUIDELINES-Present_Your_Initiative!.pdf";
                 } else if (language === "pt") {
-                  link.href = "/REGRAS_DO_CONCURSO Inscreva_a_sua_Iniciativa!";
+                  link.href = "/REGRAS_DO_CONCURSO Inscreva_a_sua_Iniciativa!.pdf";
                   link.download = "REGRAS_DO_CONCURSO Inscreva_a_sua_Iniciativa!.pdf";
                 }
                 document.body.appendChild(link);
