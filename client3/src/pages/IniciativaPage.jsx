@@ -43,10 +43,11 @@ const exampleInitiative = {
   };
 
 function IniciativaPage() {
-  <div className="min-h-screen bg-gray-100 p-4">
-  <InitiativeCard initiative={exampleInitiative} />
-  hola mundo
-</div>
+  <div>la mundo</div>
+//   <div className="min-h-screen bg-gray-100 p-4">
+//   <InitiativeCard initiative={exampleInitiative} />
+//   hola mundo
+// </div>
 }
 
 export default IniciativaPage
