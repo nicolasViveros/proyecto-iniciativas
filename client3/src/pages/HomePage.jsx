@@ -1349,7 +1349,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
+      <div className="flex flex-col md:flex-row p-6 gap-6 mx-auto my-4">
         <div className="w-full md:w-1/3">
           {secciones.map((sec, i) => (
             <button
