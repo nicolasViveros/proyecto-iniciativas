@@ -2,21 +2,21 @@
 // npm install react-leaflet leaflet
 
 import React, { useState } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
-// import 'leaflet/dist/leaflet.css';
+// import { MapContainer, TileLayer } from 'react-leaflet';
+// // import 'leaflet/dist/leaflet.css';
 
-const regiones = {
-  "Sur América": ["Argentina", "Brasil", "Bolivia", "Chile", "Colombia", "Ecuador", "Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"],
-  "Centro América": ["Belice", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Nicaragua", "Panamá"],
-  "Caribe": ["Cuba", "República Dominicana", "Puerto Rico", "Haití", "Jamaica"]
-};
+// const regiones = {
+//   "Sur América": ["Argentina", "Brasil", "Bolivia", "Chile", "Colombia", "Ecuador", "Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"],
+//   "Centro América": ["Belice", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Nicaragua", "Panamá"],
+//   "Caribe": ["Cuba", "República Dominicana", "Puerto Rico", "Haití", "Jamaica"]
+// };
 
-const MapaConFiltro = () => {
-  const [mostrarFiltro, setMostrarFiltro] = useState(true);
-  const [regionActiva, setRegionActiva] = useState(null);
-  const [paisSeleccionado, setPaisSeleccionado] = useState(null);
+// const MapaConFiltro = () => {
+//   const [mostrarFiltro, setMostrarFiltro] = useState(true);
+//   const [regionActiva, setRegionActiva] = useState(null);
+//   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
 
-  const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
+//   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
   return (
     <div>iniciativas</div>
