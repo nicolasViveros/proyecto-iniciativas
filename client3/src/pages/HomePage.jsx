@@ -1349,7 +1349,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row p-6 gap-6 mx-auto my-4">
+      <div className="flex flex-col md:flex-row p-6 gap-6 max-w-6xl mx-auto my-4">
         <div className="w-full md:w-1/3">
           {secciones.map((sec, i) => (
             <button
@@ -1375,7 +1375,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="container flex flex-col md:flex-row justify-end gap-4 py-10">
+      <div className=" flex flex-col md:flex-row max-w-6xl justify-end gap-4 py-10">
         <button
           onClick={() => navigate("/nueva-ficha")}
           className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]"
