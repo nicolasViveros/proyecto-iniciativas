@@ -1,4 +1,5 @@
 import React from 'react'
+import InitiativeCard from '../components/InitiativeCard'
 
 const exampleInitiative = {
     title: "Plan de Género y Movilidad de la Ciudad de Buenos Aires",
