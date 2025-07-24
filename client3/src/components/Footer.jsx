@@ -40,7 +40,7 @@ function Footer() {
             <img
               src="/Footer2.png"
               alt="Ciudad"
-              className="w-full h-10 sm:h-13 md:h-17 object-cover"
+              className="w-full h-fullobject-cover"
             />
           </div>
 
