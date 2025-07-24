@@ -13,7 +13,7 @@ const MapaConFiltro = () => {
             <div className="relative w-full h-screen">
                 <iframe
                     src="https://www.openstreetmap.org/export/embed.html"
-                    className=" container w-full h-full"
+                    className=" container w-auto h-full"
                 />
 
                 {/* Panel de filtro */}
