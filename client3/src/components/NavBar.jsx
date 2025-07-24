@@ -9,7 +9,7 @@ function NavBar() {
             <header className="bg-white w-full">
 
                 {isAuthenticated ? (
-                        <div className="m-6 flex items-center justify-between">
+                        <div className="m-6 flex items-center justify-between w-full">
                             {/* Grupo Izquierdo */}
                             <div className="flex items-center gap-4">
                                  <Link to="/">
