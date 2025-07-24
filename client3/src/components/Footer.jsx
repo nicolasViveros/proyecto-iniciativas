@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 function Footer() {
   return (
     <div>
-      <footer className=" bg-white">
+      <footer>
         {/* Imagen de la ciudad como fondo superior */}
         <div className="relative overflow-hidden w-auto h-30">
           <img
