@@ -36,7 +36,7 @@ export function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/nueva-ficha" element={<FormWizard />} />
                 <Route path="/iniciativas" element={<IniciativasHomePage />} />
-                <Route path="/iniciativaa" element={<IniciativaPage />} />
+                <Route path="/iniciativa" element={<IniciativaPage />} />
 
                 <Route element={<ProtectedRoute />}>
                   <Route path="/fichas" element={<FichasPage />} />
