@@ -21,25 +21,25 @@ const InitiativeCard = ({ initiative }) => {
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
       {/* Contenido principal de la iniciativa */}
       <div className="lg:w-2/3 lg:pr-8 mb-6 lg:mb-0">
-        <h4 className="text-sm font-semibold text-gray-600 mb-2">Estrategia y Plan Integral</h4>
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">{title}</h1>
+        <h4 className="text-sm font-semibold  mb-2">Estrategia y Plan Integral</h4>
+        <h1 className="text-3xl font-bold mb-4">{title}</h1>
 
-        <div className="flex items-center text-sm text-gray-600 mb-6">
+        <div className="flex items-center text-sm  mb-6">
           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
           <span className="font-semibold mr-1">Inicio:</span> {startDate}
           <span className="ml-4 font-semibold mr-1">Término:</span> {endDate}
         </div>
 
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">Objetivo</h2>
-        <p className="text-gray-700 text-base leading-relaxed mb-6">{objective}</p>
+        <h2 className="text-xl font-semibold  mb-2">Objetivo</h2>
+        <p className=" text-base leading-relaxed mb-6">{objective}</p>
 
         <h2 className="text-xl font-semibold text-gray-800 mb-2">Descripción de la iniciativa</h2>
-        <p className="text-gray-700 text-base leading-relaxed mb-4">{description}</p>
+        <p className=" text-base leading-relaxed mb-4">{description}</p>
 
         {steps && steps.length > 0 && (
           <div className="mb-6">
             {steps.map((step, index) => (
-              <p key={index} className="text-gray-700 text-base leading-relaxed mb-2">
+              <p key={index} className=" text-base leading-relaxed mb-2">
                 <span className="font-semibold">{step.title}:</span> {step.content}
               </p>
             ))}
@@ -48,9 +48,9 @@ const InitiativeCard = ({ initiative }) => {
 
         {achievements && achievements.length > 0 && (
           <div className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">Logros o resultados obtenidos</h2>
+            <h2 className="text-xl font-semibold mb-2">Logros o resultados obtenidos</h2>
             {achievements.map((achievement, index) => (
-              <p key={index} className="text-gray-700 text-base leading-relaxed mb-2">
+              <p key={index} className=" text-base leading-relaxed mb-2">
                 {achievement}
               </p>
             ))}
@@ -83,8 +83,8 @@ const InitiativeCard = ({ initiative }) => {
 
         {/* Datos específicos */}
         <div className="bg-white rounded-lg shadow-md p-6 w-full mb-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Datos específicos</h2>
-          <ul className="text-gray-700 text-sm space-y-2">
+          <h2 className="text-lg font-semibold  mb-4">Datos específicos</h2>
+          <ul className="text-sm space-y-2">
             <li><span className="font-semibold">País:</span> {specificData.country}</li>
             <li><span className="font-semibold">Alcance:</span> {specificData.scope}</li>
             <li><span className="font-semibold">Ciudad:</span> {specificData.city}</li>
