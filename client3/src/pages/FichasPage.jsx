@@ -27,7 +27,6 @@ function FichaCard({ ficha, handleDelete }) {
           className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
           onClick={() => {
             if (window.confirm("¿Está seguro de que desea eliminar esta ficha? Esta acción no se puede deshacer.")) {
-
              handleDelete(ficha._id);
             }
           }}
