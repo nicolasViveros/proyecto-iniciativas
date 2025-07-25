@@ -33,7 +33,7 @@ const InitiativeCard = ({ initiative }) => {
         <h2 className="text-xl font-semibold  mb-2">Objetivo</h2>
         <p className=" text-base leading-relaxed mb-6">{objective}</p>
 
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">Descripción de la iniciativa</h2>
+        <h2 className="text-xl font-semibold  mb-2">Descripción de la iniciativa</h2>
         <p className=" text-base leading-relaxed mb-4">{description}</p>
 
         {steps && steps.length > 0 && (
@@ -61,7 +61,7 @@ const InitiativeCard = ({ initiative }) => {
         <div className="mt-8">
           <button 
           onClick="/iniciativas"
-          className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-sm transition-colors duration-200">
+          className="flex items-center bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4] font-semibold shadow-sm transition-colors duration-200">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             Volver al mapa
           </button>
