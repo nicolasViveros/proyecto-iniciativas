@@ -1,5 +1,6 @@
 // src/components/InitiativeCard.jsx (o .js)
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const InitiativeCard = ({ initiative }) => {
   const {
@@ -16,6 +17,8 @@ const InitiativeCard = ({ initiative }) => {
     websiteLink,
     imageUrl,
   } = initiative;
+
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
@@ -60,7 +63,7 @@ const InitiativeCard = ({ initiative }) => {
         {/* Botón Volver al mapa */}
         <div className="mt-8">
           <button 
-          onClick="/iniciativas"
+          onClick={() => navigate('/iniciativas')}
           className="flex items-center bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4] font-semibold shadow-sm transition-colors duration-200">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
             Volver al mapa
