@@ -91,7 +91,7 @@ const InitiativeCard = ({ initiative }) => {
             {websiteLink && (
               <li>
                 <span className="font-semibold">Sitio web de la institución:</span>{' '}
-                <a href={websiteLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                <a href="/iniciativas" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                   Ver sitio
                 </a>
               </li>
