@@ -30,7 +30,7 @@ const navigate = useNavigate();
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
-      <div className="relative w-full h-auto">
+      <div className="relative w-full h-full">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html"
           className=" container w-full h-full"
