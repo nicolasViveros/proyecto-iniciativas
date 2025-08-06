@@ -10,13 +10,24 @@ import fichasRoutes from "./routes/fichas.routes.js";
 
 const app = express();
 
+const allowedOrigins = [
+  "https://rumboalaequidad.org",
+  "https://www.rumboalaequidad.org",
+];
+
 app.use(
   cors({
-    origin: "https://rumboalaequidad.org",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // Esto debe ser verdadero para permitir cookies
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
+
 app.use(morgan("dev"));
 //app.use(express.json());
 app.use(cookieParser());
