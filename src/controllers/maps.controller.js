@@ -4,8 +4,10 @@ dotenv.config();
 
 export const getGeocodeData = async (req, res) => {
   const address = req.query.req || "";
-  const apiKey = process.env.HERE_API_KEY;
   console.log("address: ", address);
+  const apiKey = process.env.HERE_API_KEY;
+  console.log("apiKey: ", apiKey);
+
   //console.log(address);
   try {
     const response = await axios.get(
