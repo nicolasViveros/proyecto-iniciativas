@@ -4,18 +4,18 @@ dotenv.config();
 
 export const getGeocodeData = async (req, res) => {
   const address = req.query.req || "";
-  console.log("address: ", address);
+  //   console.log("address: ", address);
   const apiKey = process.env.HERE_API_KEY;
-  console.log("apiKey: ", apiKey);
+  //   console.log("apiKey: ", apiKey);
 
   //console.log(address);
   try {
-    console.log(
-      `https://geocode.search.hereapi.com/v1/geocode?q=` +
-        address +
-        `&apiKey=` +
-        apiKey
-    );
+    // console.log(
+    //   `https://geocode.search.hereapi.com/v1/geocode?q=` +
+    //     address +
+    //     `&apiKey=` +
+    //     apiKey
+    // );
     const response = await axios.get(
       `https://geocode.search.hereapi.com/v1/geocode?q=` +
         address +
@@ -23,7 +23,7 @@ export const getGeocodeData = async (req, res) => {
         apiKey
     );
 
-    console.log("res: mapa", response);
+    // console.log("res: mapa", response);
 
     res.json(response.data);
   } catch (error) {
