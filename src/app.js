@@ -7,6 +7,7 @@ import multer from "multer";
 import authRoutes from "./routes/auth.routes.js";
 import tasksRoutes from "./routes/tasks.routes.js";
 import fichasRoutes from "./routes/fichas.routes.js";
+import mapsRoutes from "./routes/maps.routes.js";
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api", authRoutes);
 app.use("/api", tasksRoutes);
 app.use("/api", fichasRoutes);
+app.use("/api", mapsRoutes);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
