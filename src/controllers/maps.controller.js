@@ -10,21 +10,14 @@ export const getGeocodeData = async (req, res) => {
 
   //console.log(address);
   try {
-    console.log(`https://geocode.search.hereapi.com/v1/geocode`, {
-      params: {
-        q: address,
-        apiKey: apiKey,
-      },
-    });
     const response = await axios.get(
-      `https://geocode.search.hereapi.com/v1/geocode`,
-      {
-        params: {
-          q: address,
-          apiKey: apiKey,
-        },
-      }
+      `https://geocode.search.hereapi.com/v1/geocode?q=` +
+        address +
+        `&apiKey=` +
+        apiKey
     );
+
+    console.log("res: mapa", response);
 
     res.json(response.data);
   } catch (error) {
