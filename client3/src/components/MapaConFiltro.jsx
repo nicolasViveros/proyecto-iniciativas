@@ -31,49 +31,44 @@ const Map = ({ apikey, iniciativas }) => {
   });
 
   useEffect(() => {
-    if (!map.current) {
-      platform.current = new H.service.Platform({ apikey });
-      const defaultLayers = platform.current.createDefaultLayers({
-        pois: true,
-      });
-      const newMap = new H.Map(
-        mapRef.current,
-        defaultLayers.vector.normal.map,
-        {
-          zoom: 4,
-          center: { lat: -20, lng: -50 },
-        }
-      );
+    const locations = iniciativas.map((iniciativa) => {
+      console.log("dibujar iniciativa en el mapa:", iniciativa);
+      return {
+        latitud: iniciativa.location.latitud,
+        longitud: iniciativa.location.longitud,
+        // Add any additional properties if needed
+      };
+    });
+    //if (!map.current) {
+    platform.current = new H.service.Platform({ apikey });
+    const defaultLayers = platform.current.createDefaultLayers({
+      pois: true,
+    });
+    const newMap = new H.Map(mapRef.current, defaultLayers.vector.normal.map, {
+      zoom: 4,
+      center: { lat: -20, lng: -50 },
+    });
 
-      const behavior = new H.mapevents.Behavior(
-        new H.mapevents.MapEvents(newMap)
-      );
-      const ui = H.ui.UI.createDefault(newMap, defaultLayers);
+    // const behavior = new H.mapevents.Behavior(
+    //   new H.mapevents.MapEvents(newMap)
+    // );
+    // const ui = H.ui.UI.createDefault(newMap, defaultLayers);
 
-      map.current = newMap;
+    map.current = newMap;
 
-      // iniciativas.map((iniciativa) => {
-      //   const location = new H.geo.Point(
-      //     iniciativa.location.latitud,
-      //     iniciativa.location.longitud
-      //   );
-      //   const marker = new H.map.Marker(location);
-      //   marker.setData(iniciativa);
-      //   marker.setIcon(new H.map.Icon("img/marker.png"));
-      //   newMap.addObject(marker);
-      // });
+    // iniciativas.map((iniciativa) => {
+    //   const location = new H.geo.Point(
+    //     iniciativa.location.latitud,
+    //     iniciativa.location.longitud
+    //   );
+    //   const marker = new H.map.Marker(location);
+    //   marker.setData(iniciativa);
+    //   marker.setIcon(new H.map.Icon("img/marker.png"));
+    //   newMap.addObject(marker);
+    // });
 
-      const locations = iniciativas.map((iniciativa) => {
-        console.log("dibujar iniciativa en el mapa:", iniciativa);
-        return {
-          latitud: iniciativa.location.latitud,
-          longitud: iniciativa.location.longitud,
-          // Add any additional properties if needed
-        };
-      });
-
-      createResizableCircles(map.current, locations);
-    }
+    createResizableCircles(map.current, locations);
+    //}
   }, [apikey]);
 
   function createResizableCircles(map, locations) {
