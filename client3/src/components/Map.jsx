@@ -99,6 +99,9 @@ const Map = ({ apikey, iniciativas }) => {
           //const center = circle.getCenter();
           //setModalData({ visible: true, lat: center.lat, lng: center.lng });
           console.log("A idIniciativa: ", location.location.idIniciativa);
+          window.open(
+            `https://rumboalaequidad.org/iniciativa/${location.location.idIniciativa}`
+          );
         },
         false
       );
