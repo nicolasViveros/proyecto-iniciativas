@@ -1,15 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
+import { set } from "mongoose";
 
 const Map = ({ apikey, iniciativas }) => {
   const newlocations = [];
-  iniciativas.forEach((iniciativa) => {
+  for (let i = 0; i < iniciativas.length; i++) {
+    const iniciativa = iniciativas[i];
     console.log("iniciativa position: ", iniciativa.position);
     newlocations.push({
       lat: iniciativa?.position?.latitud || 0,
       lng: iniciativa?.position?.longitud || 0,
     });
-  });
+  }
+
+  setTimeout(() => {
+    console.log("newlocations: ", newlocations);
+  }, 3000);
 
   console.log("newlocations: ", newlocations);
   const mapRef = useRef(null);
