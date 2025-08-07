@@ -131,16 +131,16 @@ const Map = ({ apikey, iniciativas }) => {
         function () {
           circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
           document.body.style.cursor = "default";
-          const center = circle.getCenter();
-          setModalData({
-            visible: false,
-            lat: center.lat,
-            lng: center.lng,
-            nombre: location.nombreIniciativa,
-            pais: location.pais || "",
-            ciudad: location.ciudad || "",
-          });
-          console.log("C idIniciativa: ", location.location.idIniciativa);
+          //const center = circle.getCenter();
+          // setModalData({
+          //   visible: false,
+          //   lat: center.lat,
+          //   lng: center.lng,
+          //   nombre: location.nombreIniciativa,
+          //   pais: location.pais || "",
+          //   ciudad: location.ciudad || "",
+          // });
+          // console.log("C idIniciativa: ", location.location.idIniciativa);
         },
         true
       );
@@ -234,11 +234,11 @@ const Map = ({ apikey, iniciativas }) => {
           </p>
           {/* <p>Latitude: {modalData.lat}</p>
           <p>Longitude: {modalData.lng}</p> */}
-          {/* <button
+          <button
             onClick={() => setModalData({ visible: false, lat: 0, lng: 0 })}
           >
-            Close
-          </button> */}
+            Cerrar
+          </button>
         </div>
       )}
     </div>
