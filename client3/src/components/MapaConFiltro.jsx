@@ -38,7 +38,7 @@ const Map = ({ apikey }) => {
   useEffect(() => {
     const locations = iniciativas.map((ini) => {
       console.log("dibujar iniciativa en el mapa:", ini);
-      if (ini.location.latitud) {
+      if (ini?.location?.latitud) {
         return {
           latitud: ini.location.latitud,
           longitud: ini.location.longitud,
