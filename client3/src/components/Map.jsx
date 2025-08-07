@@ -61,7 +61,9 @@ const Map = ({ apikey, iniciativas }) => {
         lng: iniciativa?.position?.longitud || 0,
       }));
 
-      createResizableCircles(map.current, locations);
+      setTimeout(() => {
+        createResizableCircles(map.current, locations);
+      }, 3000);
     }
   }, [apikey]);
 
