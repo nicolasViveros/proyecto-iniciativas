@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
 
 const Map = ({ apikey, iniciativas }) => {
-  const newlocations = iniciativas.map((iniciativa) => {
-    console.log("iniciativa position: ", iniciativa.position); // Log each position
-    return {
+  const newlocations = [];
+  iniciativas.forEach((iniciativa) => {
+    console.log("iniciativa position: ", iniciativa.position);
+    newlocations.push({
       lat: iniciativa?.position?.latitud || 0,
       lng: iniciativa?.position?.longitud || 0,
-    };
+    });
   });
 
   console.log("newlocations: ", newlocations);
