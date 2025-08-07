@@ -31,6 +31,7 @@ const MapaConFiltro = () => {
 
   useEffect(() => {
     getIniciativas().then((data) => {
+      console.log("data: ", data);
       setAllIniciativas(data);
     });
   }, []);
