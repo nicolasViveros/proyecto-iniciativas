@@ -58,19 +58,3 @@ export const updateTask = async (req, res) => {
     }
 };
 
-// export const loadForm1 = async (req, res) =>  {
-// try {
-//         const {nombre_iniciativa, objetivo_iniciativa, institucion_encargada, pais} = req.body;
-
-//     const newTask = new Task({
-//         nombre_iniciativa,
-//         objetivo_iniciativa,
-//         institucion_encargada,
-//         pais,
-//     });
-//     const savedTask = await newTask.save();
-//     res.json(savedTask);
-//     } catch (error) {
-//         return res.status(500).json({message: "algo va mal"});
-//     }
-// };

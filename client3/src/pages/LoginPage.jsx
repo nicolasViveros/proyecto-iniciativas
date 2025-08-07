@@ -16,14 +16,13 @@ function LoginPage() {
   })
 
   useEffect(() => {
-    if (isAuthenticated) navigate('/fichas');
+    if (isAuthenticated) navigate('/menu');
 },[isAuthenticated]); 
 
   return (
 
     <div className="flex h-[calc(100vh-100px)] items-center justify-center">
       <div className=" max-w-md w-full p-10  rounded-md">
-
         {
           singinErrors.map((error, i) => (
             <div className="bg-red-500 p-2 text-white" key={i}>
@@ -31,7 +30,6 @@ function LoginPage() {
             </div>
           ))
         }
-
         <h1 className="text-3xl text-center font-bold mb-4">Accede a tu cuenta</h1>
         <form onSubmit={onSubmit}>
           <p>
@@ -63,8 +61,6 @@ function LoginPage() {
             Ingresa
           </button>
         </form>
-
-      
       </div>
     </div>
 

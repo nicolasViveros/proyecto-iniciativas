@@ -1,4 +1,9 @@
-
+.truncated-text {
+  white-space: nowrap; /* Evita saltos de línea */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos */
+  width: 200px; /* Define un ancho fijo para el contenedor */
+}
 
 /* #root {
   max-width: 1280px;

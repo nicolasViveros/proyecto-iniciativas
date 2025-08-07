@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFichas } from '../context/FichasContext';
-import FichaPage from './FichaPage';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
 import LoadingSpinner from "../context/LoadingSpinner";
@@ -185,7 +184,7 @@ function EditFichaPage() {
                 <span className="ml-1">Volver</span>
             </button>
 
-            <div className="max-w-3xl w-full px-2 py-12 sm:p-10 rounded-md">
+            <div className="max-w-3xl w-full px-2 py-12 sm:py-10 sm:px-4rounded-md">
 
 
                 <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>

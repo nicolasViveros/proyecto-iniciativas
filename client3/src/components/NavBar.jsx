@@ -29,9 +29,13 @@ function NavBar() {
 
                         </div>
                         <div className="absolute cols-2 gap-2 top-1 right-4">
-                            <Link to='/fichas'
+                            <Link to='/iniciativasHome'
                                 className="hover:text-red-400 text-xs">
-                                Fichas |
+                                Home |
+                            </Link>
+                            <Link to='/menu'
+                                className="hover:text-red-400 text-xs">
+                                Menú |
                             </Link>
                             <Link to='/' onClick={() => {
                                 logout();

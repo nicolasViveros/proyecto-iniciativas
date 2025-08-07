@@ -1,75 +1,77 @@
-// Requiere instalar: react-leaflet, leaflet
-// npm install react-leaflet leaflet
-import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-// import { MapContainer, TileLayer } from 'react-leaflet';
-// // import 'leaflet/dist/leaflet.css';
+import { FaAngleLeft, FaAngleRight, FaAngleDown } from "react-icons/fa";
+import { LuCircleArrowLeft } from "react-icons/lu";
+import { Link } from 'react-router-dom';
+import { useIniciativas } from "../context/IniciativasContext";
+import { FaEye } from "react-icons/fa";
 
 const regiones = {
-  "Sur América": ["Argentina", "Brasil", "Bolivia", "Chile", "Colombia", "Ecuador", "Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"],
-  "Centro América": ["Belice", "Costa Rica", "El Salvador", "Guatemala", "Honduras", "Nicaragua", "Panamá"],
-  "Caribe": ["Cuba", "República Dominicana", "Puerto Rico", "Haití", "Jamaica"]
+  "Sur América": ["Argentina", "Brasil", "Bolivia", "Chile", "Colombia", "Ecuador", "Perú"],
+  "Centro América": ["Costa Rica", "El Salvador", "México"],
+  "Internacional": ["Internacional"],
 };
 
 const MapaConFiltro = () => {
+
+  const [iniciativas, setIniciativas] = useState([]);
+  const { getIniciativasPorPais } = useIniciativas();
+
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
-const navigate = useNavigate();
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
   const handlePaisClick = (pais) => {
     setPaisSeleccionado(pais);
-    setMostrarFiltro(false);
-  };
-
-  const redirigirIniciativa = () => {
-    // Implement navigation logic here
-    navigate('/iniciativa');
+    getIniciativasPorPais(pais).then(data => {
+      setIniciativas(data);
+      setMostrarFiltro(false);
+    });
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md max-w-6xl mx-auto">
-      <div className="relative w-full h-screen">
+    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md  mx-auto">
+      <div className="relative w-full h-150">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html"
-          className=" container w-full h-full"
+          className="container w-full h-full"
         />
 
-        {/* Botón para mostrar filtro */}
         {!mostrarFiltro && !paisSeleccionado && (
-          <button
-            className="absolute top-0 right-0 mt-2 mr-2 text-xs text-indigo-700 underline hover:text-indigo-900 z-10"
+          <Link
+            className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
             onClick={toggleFiltro}
           >
-            Mostrar
-          </button>
+            <FaAngleLeft className="text-xl inline" />
+            <span className="ml-1">Mostrar filtro</span>
+          </Link>
         )}
 
-        {/* Filtro lateral */}
         {mostrarFiltro && !paisSeleccionado && (
-          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-64 overflow-hidden z-10">
-            <div className="flex justify-between items-center p-2 border-b">
-              <h2 className="text-sm font-semibold text-indigo-800">Iniciativas</h2>
+          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 overflow-hidden z-10">
+            <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
+              <h2 className="text-xl font-semibold">Iniciativas</h2>
               <button
                 onClick={toggleFiltro}
-                className="text-xs text-indigo-700 underline hover:text-indigo-900"
+                className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
                 Ocultar
+                <FaAngleRight className="text-xl inline" />
               </button>
             </div>
 
             <div className="p-3 overflow-y-auto h-[calc(100%-40px)]">
               {Object.entries(regiones).map(([region, paises]) => (
-                <div key={region} className="mb-4">
+                <div key={region} className="mb-4 border-b border-[#D9D6E1]">
                   <button
-                    className="text-sm font-semibold text-gray-800 hover:underline"
+                    className="flex justify-between items-center w-full text-lg font-semibold hover:underline"
                     onClick={() => setRegionActiva(regionActiva === region ? null : region)}
                   >
-                    {region}
+                    <span>{region}</span>
+                    <FaAngleDown className="text-xl inline" />
                   </button>
                   {regionActiva === region && (
-                    <ul className="pl-3 pt-2 text-sm text-indigo-700 space-y-1">
+                    <ul className="pl-3 pt-2 text-base space-y-1">
                       {paises.map((pais) => (
                         <li
                           key={pais}
@@ -87,31 +89,62 @@ const navigate = useNavigate();
           </div>
         )}
 
-        {/* Sección de iniciativas por país en lugar del filtro */}
         {paisSeleccionado && (
-          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-64 z-20 overflow-y-auto">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3
-                className="text-lg font-semibold text-gray-800 cursor-pointer hover:underline"
-                onClick={redirigirIniciativa}
+          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
+            <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
+              <Link
+                onClick={() => {
+                  setPaisSeleccionado(null);
+                  setMostrarFiltro(true);
+                }}
+                className="text-xl font-semibold cursor-pointer hover:underline"
               >
+                <LuCircleArrowLeft className="text-2xl inline hover:text-[#a49fc4]" />
+              </Link>
+
+              <h3 className="text-xl font-semibold">
                 Iniciativas en {paisSeleccionado}
               </h3>
               <button
                 onClick={() => {
                   setPaisSeleccionado(null);
-                  setMostrarFiltro(true);
+                  setMostrarFiltro(false);
                 }}
-                className="text-sm text-red-600 hover:underline"
+                className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
-                Cerrar
+                Ocultar
+                <FaAngleRight className="text-xl inline" />
               </button>
             </div>
-            <div className="p-4 text-sm text-gray-700 space-y-2">
-              <p>• Programa de transporte seguro para mujeres</p>
-              <p>• Políticas de inclusión de género en movilidad urbana</p>
-              <p>• Campañas de sensibilización en estaciones</p>
-              {/* Aquí puedes mapear resultados dinámicos desde una API o MongoDB */}
+            <div className="p-4 text-sm py-2 space-y-2">
+              {iniciativas.map((iniciativa) => (
+                <div key={iniciativa._id} className="card my-2">
+                  <div className="card-body my-1">
+                    <Link
+                      className="card-title cursor-pointer text-lg hover:underline flex mb-2"
+                      to={`/iniciativa/${iniciativa._id}`}
+                    >
+                      {iniciativa.nombreIniciativa}
+                    </Link>
+                    {iniciativa.ciudad ? (
+                      <p className="text-sm font-bold">{iniciativa.ciudad}</p>
+                    ) : (
+                      <p className="text-sm font-bold">{iniciativa.alcance}</p>
+                    )}
+                    <span className="mt-1 mb-4 text-sm rounded truncated-text">
+                      {iniciativa.descripcionIniciativa}
+                    </span>
+                    <Link
+                      className=" bottom-1 right-1 flex justify-end hover:text-[#a49fc4] rounded-md underline"
+                      to={`/iniciativa/${iniciativa._id}`}
+                    >
+                      <span className="ml-1">Revisar iniciativa</span>
+                      <FaEye className="text-2xl ml-1 mb-1 inline" />
+                    </Link>
+                    <hr className="border-t-2 border-gray-300" />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}

@@ -13,3 +13,10 @@ body{
 footer{
   position: sticky; 
 }
+.truncated-text {
+  white-space: nowrap; /* Evita saltos de línea */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos */
+  width: 100%; /* Define un ancho fijo para el contenedor */
+  display: inline-block;
+}

@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFichas } from "../context/FichasContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
@@ -9,7 +9,7 @@ import LoadingSpinner from "../context/LoadingSpinner";
 const FichaPage = () => {
   const { id } = useParams();
   const [ficha, setFicha] = useState(null);
-  const { fichas, getFicha } = useFichas();
+  const { getFicha } = useFichas();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const FichaPage = () => {
         </Link>
       </div>
 
-      <div className="max-w-3xl w-full px-2 py-12 sm:p-10 rounded-md">
+      <div className="max-w-3xl w-full px-2 py-12 sm:py-10 sm:px-4 rounded-md">
         <h1 className="text-3xl text-center font-bold mb-4">{ficha.name}</h1>
         <div className="container grid grid-cols-2 mx-auto p-2">
           <p>
