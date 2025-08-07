@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight, FaAngleDown } from "react-icons/fa";
 import { LuCircleArrowLeft } from "react-icons/lu";
 import { Link } from "react-router-dom";
@@ -29,9 +29,11 @@ const MapaConFiltro = () => {
 
   const [allIniciativas, setAllIniciativas] = useState([]);
 
-  getIniciativas().then((data) => {
-    setAllIniciativas(data);
-  });
+  useEffect(() => {
+    getIniciativas().then((data) => {
+      setAllIniciativas(data);
+    });
+  }, []);
 
   console.log(allIniciativas);
 
