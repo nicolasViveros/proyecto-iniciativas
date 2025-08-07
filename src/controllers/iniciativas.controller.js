@@ -66,8 +66,8 @@ export const getIniciativasPorPais = async (req, res) => {
 
       if (location) {
         const localizacion = new Localizacion({
-          latitud: location.items[0].position.lat,
-          longitud: location.items[0].position.lng,
+          latitud: location.mapa.items[0].position.lat,
+          longitud: location.mapa.items[0].position.lng,
           pais: iniciativa.pais,
           ciudad: iniciativa.ciudad,
           idIniciativa: iniciativa._id,
