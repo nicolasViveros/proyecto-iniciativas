@@ -3,6 +3,12 @@ import H from "@here/maps-api-for-javascript";
 
 const Map = ({ apikey, iniciativas }) => {
   console.log("iniciativas: ", iniciativas);
+  const newlocations = iniciativas.map((iniciativa) => ({
+    lat: iniciativa?.position?.latitud || 0,
+    lng: iniciativa?.position?.longitud || 0,
+  }));
+
+  console.log("newlocations: ", newlocations);
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
@@ -56,12 +62,6 @@ const Map = ({ apikey, iniciativas }) => {
         { lat: -31.7613, lng: -70.5263 }, // Santiago, Chile
         // Add other locations as needed
       ];
-      const newlocations = iniciativas.map((iniciativa) => ({
-        lat: iniciativa?.position?.latitud || 0,
-        lng: iniciativa?.position?.longitud || 0,
-      }));
-
-      console.log("newlocations: ", newlocations);
 
       setTimeout(() => {
         createResizableCircles(map.current, locations);
