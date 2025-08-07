@@ -108,7 +108,14 @@ const Map = ({ apikey, iniciativas }) => {
         function () {
           circleOutline.setStyle({ strokeColor: "rgb(255, 0, 0)" });
           const center = circle.getCenter();
-          setModalData({ visible: true, lat: center.lat, lng: center.lng });
+          setModalData({
+            visible: true,
+            lat: center.lat,
+            lng: center.lng,
+            nombre: location.nombreIniciativa,
+            pais: location.pais || "",
+            ciudad: location.ciudad || "",
+          });
           console.log("B idIniciativa: ", location.location.idIniciativa);
         },
         true
@@ -180,7 +187,11 @@ const Map = ({ apikey, iniciativas }) => {
             zIndex: "1000",
           }}
         >
-          <h4>Location Details</h4>
+          <h4>{modalData.nombre}</h4>
+          <p>
+            {modalData.ciudad} {modalData.pais}
+          </p>
+          <p></p>
           <p>Latitude: {modalData.lat}</p>
           <p>Longitude: {modalData.lng}</p>
           <button
