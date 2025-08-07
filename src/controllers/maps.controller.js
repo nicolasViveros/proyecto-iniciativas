@@ -23,7 +23,7 @@ export const getGeocodeData = async (req, res) => {
         apiKey
     );
 
-    console.log("res: mapa", response);
+    console.log("res: mapa", response.data);
 
     res.json(response.data);
   } catch (error) {
