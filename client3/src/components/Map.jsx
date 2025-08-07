@@ -118,6 +118,8 @@ const Map = ({ apikey, iniciativas }) => {
             nombre: location.nombreIniciativa,
             pais: location.pais || "",
             ciudad: location.ciudad || "",
+            institucionEncargada: location.institucionEncargada || "",
+            id: location.location.idIniciativa,
           });
           console.log("B idIniciativa: ", location.location.idIniciativa);
         },
@@ -190,25 +192,53 @@ const Map = ({ apikey, iniciativas }) => {
           style={{
             position: "absolute",
             top: "20px",
-            right: "20px",
-            backgroundColor: "white",
+            left: "20px",
             padding: "20px",
+            backgroundColor: "white",
             border: "1px solid black",
+            borderRadius: "10px",
+            boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
             zIndex: "1000",
+            "::after": {
+              content: "''",
+              position: "absolute",
+              bottom: "-15px", // Position triangle below the div
+              left: "20px", // Adjust to position correctly under the bubble
+              borderWidth: "10px",
+              borderStyle: "solid",
+              borderColor: "white transparent transparent transparent",
+            },
+            "::before": {
+              content: "''",
+              position: "absolute",
+              bottom: "-16px", // Slight offset for a shadow effect
+              left: "18px", // Align slightly with after to create a shadow
+              borderWidth: "10px",
+              borderStyle: "solid",
+              borderColor: "black transparent transparent transparent",
+            },
           }}
         >
-          <h4>{modalData.nombre}</h4>
+          <h3>{modalData.nombre}</h3>
+          <h4>{modalData.institucionEncargada}</h4>
           <p>
             {modalData.ciudad} {modalData.pais}
           </p>
-          <p></p>
-          <p>Latitude: {modalData.lat}</p>
-          <p>Longitude: {modalData.lng}</p>
-          <button
+          <p>
+            <a
+              href={`https://rumboalaequidad.org/iniciativa/${modalData.id}`}
+              target="_blank"
+            >
+              Ver Iniciativa
+            </a>
+          </p>
+          {/* <p>Latitude: {modalData.lat}</p>
+          <p>Longitude: {modalData.lng}</p> */}
+          {/* <button
             onClick={() => setModalData({ visible: false, lat: 0, lng: 0 })}
           >
             Close
-          </button>
+          </button> */}
         </div>
       )}
     </div>
