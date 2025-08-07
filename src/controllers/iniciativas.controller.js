@@ -1,4 +1,6 @@
 import Iniciativa from "../models/iniciativa.model.js";
+import Localizacion from "../models/localizacion.model.js";
+import { getGeocodeData } from "./maps.controller.js";
 
 
 export const getIniciativas = async (req, res) => {
@@ -46,6 +48,27 @@ export const deleteIniciativa = async (req, res) => {
   export const getIniciativasPorPais = async (req, res) => {
     try {
       const iniciativas = await Iniciativa.find({ pais: req.params.pais });
+      
+      iniciativas.map(async (iniciativa) => {
+        const location = await getGeocodeData(iniciativa.pais + '+' + iniciativa.ciudad); 
+        console.log(location);
+        
+        if(location) {
+          const localizacion = new Localizacion({
+          latitud: location.items[0].position.lat,
+          longitud: location.items[0].position.lng,
+          pais: iniciativa.pais,
+          ciudad: iniciativa.ciudad,
+          idIniciativa: iniciativa._id,
+        });
+        await localizacion.save();
+        }
+      });
+
+      
+     
+      
+
       console.log(iniciativas)
       if (!iniciativas) return res.status(404).json({ message: "iniciativa not found" });
       res.json(iniciativas);
@@ -53,4 +76,5 @@ export const deleteIniciativa = async (req, res) => {
       return res.status(404).json({ message: "iniciativa not found" });
     }
   };
+
 
