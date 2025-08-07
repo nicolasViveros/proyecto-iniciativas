@@ -103,82 +103,84 @@ const Map = ({ apikey }) => {
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
-      const circle = new H.map.Circle(location, 85000, {
-        style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 0 },
-      });
-      const circleOutline = new H.map.Polyline(
-        circle.getGeometry().getExterior(),
-        {
-          style: { lineWidth: 8, strokeColor: "rgba(243, 255, 5, 0)" },
-        }
-      );
-      const circleGroup = new H.map.Group({
-        volatility: true,
-        objects: [circle, circleOutline],
-      });
-
-      circleOutline
-        .getGeometry()
-        .pushPoint(circleOutline.getGeometry().extractPoint(0));
-
-      map.addObject(circleGroup);
-
-      // Add an event listener for circle tap
-      circleGroup.addEventListener(
-        "tap",
-        function () {
-          const center = circle.getCenter();
-          setModalData({ visible: true, lat: center.lat, lng: center.lng });
-        },
-        false
-      );
-
-      circleGroup.addEventListener(
-        "pointerenter",
-        function () {
-          circleOutline.setStyle({ strokeColor: "rgb(255, 0, 0)" });
-        },
-        true
-      );
-
-      circleGroup.addEventListener(
-        "pointerleave",
-        function () {
-          circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
-          document.body.style.cursor = "default";
-        },
-        true
-      );
-
-      circleGroup.addEventListener(
-        "pointermove",
-        function (evt) {
-          document.body.style.cursor =
-            evt.target instanceof H.map.Polyline ? "pointer" : "default";
-        },
-        true
-      );
-
-      circleGroup.addEventListener(
-        "drag",
-        function (evt) {
-          const pointer = evt.currentPointer;
-          const distanceFromCenter = circle
-            .getCenter()
-            .distance(map.screenToGeo(pointer.viewportX, pointer.viewportY));
-
-          if (evt.target instanceof H.map.Polyline) {
-            circle.setRadius(distanceFromCenter);
-
-            const outlineGeometry = circle.getGeometry().getExterior();
-            outlineGeometry.pushPoint(outlineGeometry.extractPoint(0));
-            circleOutline.setGeometry(outlineGeometry);
-
-            evt.stopPropagation();
+      if (location) {
+        const circle = new H.map.Circle(location, 85000, {
+          style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 0 },
+        });
+        const circleOutline = new H.map.Polyline(
+          circle.getGeometry().getExterior(),
+          {
+            style: { lineWidth: 8, strokeColor: "rgba(243, 255, 5, 0)" },
           }
-        },
-        true
-      );
+        );
+        const circleGroup = new H.map.Group({
+          volatility: true,
+          objects: [circle, circleOutline],
+        });
+
+        circleOutline
+          .getGeometry()
+          .pushPoint(circleOutline.getGeometry().extractPoint(0));
+
+        map.addObject(circleGroup);
+
+        // Add an event listener for circle tap
+        circleGroup.addEventListener(
+          "tap",
+          function () {
+            const center = circle.getCenter();
+            setModalData({ visible: true, lat: center.lat, lng: center.lng });
+          },
+          false
+        );
+
+        circleGroup.addEventListener(
+          "pointerenter",
+          function () {
+            circleOutline.setStyle({ strokeColor: "rgb(255, 0, 0)" });
+          },
+          true
+        );
+
+        circleGroup.addEventListener(
+          "pointerleave",
+          function () {
+            circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
+            document.body.style.cursor = "default";
+          },
+          true
+        );
+
+        circleGroup.addEventListener(
+          "pointermove",
+          function (evt) {
+            document.body.style.cursor =
+              evt.target instanceof H.map.Polyline ? "pointer" : "default";
+          },
+          true
+        );
+
+        circleGroup.addEventListener(
+          "drag",
+          function (evt) {
+            const pointer = evt.currentPointer;
+            const distanceFromCenter = circle
+              .getCenter()
+              .distance(map.screenToGeo(pointer.viewportX, pointer.viewportY));
+
+            if (evt.target instanceof H.map.Polyline) {
+              circle.setRadius(distanceFromCenter);
+
+              const outlineGeometry = circle.getGeometry().getExterior();
+              outlineGeometry.pushPoint(outlineGeometry.extractPoint(0));
+              circleOutline.setGeometry(outlineGeometry);
+
+              evt.stopPropagation();
+            }
+          },
+          true
+        );
+      }
     });
   }
 
