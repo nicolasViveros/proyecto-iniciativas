@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
-import { set } from "mongoose";
+import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 
 const Map = ({ apikey, iniciativas }) => {
   const mapRef = useRef(null);
@@ -225,12 +226,19 @@ const Map = ({ apikey, iniciativas }) => {
             {modalData.ciudad} {modalData.pais}
           </p>
           <p>
-            <a
+            {/* <a
               href={`https://rumboalaequidad.org/iniciativa/${modalData.id}`}
               target="_blank"
             >
               Ver Iniciativa
-            </a>
+            </a> */}
+            <Link
+              to={`/iniciativa/${modalData.id}`}
+              className="absolute bottom-1 right-1 flex hover:text-[#a49fc4] rounded-md"
+            >
+              <span className="ml-1">Revisar Iniciativa</span>
+              <FaEye className="text-2xl ml-1 mb-1 inline" />
+            </Link>
           </p>
           {/* <p>Latitude: {modalData.lat}</p>
           <p>Longitude: {modalData.lng}</p> */}
