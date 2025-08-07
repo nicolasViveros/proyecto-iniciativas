@@ -127,7 +127,14 @@ const Map = ({ apikey, iniciativas }) => {
           circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
           document.body.style.cursor = "default";
           const center = circle.getCenter();
-          setModalData({ visible: false, lat: center.lat, lng: center.lng });
+          setModalData({
+            visible: false,
+            lat: center.lat,
+            lng: center.lng,
+            nombre: location.nombreIniciativa,
+            pais: location.pais || "",
+            ciudad: location.ciudad || "",
+          });
           console.log("C idIniciativa: ", location.location.idIniciativa);
         },
         true
