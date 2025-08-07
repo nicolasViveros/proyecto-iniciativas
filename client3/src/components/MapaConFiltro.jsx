@@ -33,8 +33,11 @@ const MapaConFiltro = () => {
     getIniciativas().then((data) => {
       setAllIniciativas(data);
     });
-    console.log("allIniciativas:", allIniciativas);
   }, []);
+
+  useEffect(() => {
+    console.log("allIniciativas:", allIniciativas);
+  }, [allIniciativas]);
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
