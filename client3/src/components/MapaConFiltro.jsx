@@ -20,32 +20,16 @@ const regiones = {
 };
 
 const MapaConFiltro = () => {
-  const [iniciativas, setIniciativas] = useState([]);
-  const { getIniciativasPorPais, getIniciativas } = useIniciativas();
+  const [iniciativasFilter, setIniciativas] = useState([]);
+  const { getIniciativasPorPais, iniciativas } = useIniciativas();
 
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
 
-  const [allIniciativas, setAllIniciativas] = useState([]);
-
   useEffect(() => {
-    const fetchIniciativas = async () => {
-      try {
-        const data = await getIniciativas();
-        console.log("data: ", data); // This should log the fetched data
-        setAllIniciativas(data);
-      } catch (error) {
-        console.error("Failed to fetch iniciativas:", error);
-      }
-    };
-
-    fetchIniciativas();
-  }, []);
-
-  useEffect(() => {
-    console.log("allIniciativas:", allIniciativas);
-  }, [allIniciativas]);
+    console.log("iniciativas:", iniciativas);
+  }, [iniciativas]);
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
@@ -147,7 +131,7 @@ const MapaConFiltro = () => {
               </button>
             </div>
             <div className="p-4 text-sm py-2 space-y-2">
-              {iniciativas.map((iniciativa) => (
+              {iniciativasFilter.map((iniciativa) => (
                 <div key={iniciativa._id} className="card my-2">
                   <div className="card-body my-1">
                     <Link
