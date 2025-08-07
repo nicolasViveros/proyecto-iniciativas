@@ -59,8 +59,6 @@ export const getIniciativasPorPais = async (req, res) => {
       console.log(iniciativa.pais);
       console.log(iniciativa.ciudad);
 
-      console.log(location);
-
       const exists = await Localizacion.findOne({
         idIniciativa: iniciativa._id,
       });
