@@ -78,7 +78,7 @@ const Map = ({ apikey, iniciativas }) => {
       const circleOutline = new H.map.Polyline(
         circle.getGeometry().getExterior(),
         {
-          style: { lineWidth: 8, strokeColor: "rgba(243, 255, 5, 0)" },
+          style: { lineWidth: 10, strokeColor: "rgba(243, 255, 5, 0)" },
         }
       );
       const circleGroup = new H.map.Group({
@@ -98,6 +98,7 @@ const Map = ({ apikey, iniciativas }) => {
         function () {
           const center = circle.getCenter();
           setModalData({ visible: true, lat: center.lat, lng: center.lng });
+          console.log("idIniciativa: ", location.location.idIniciativa);
         },
         false
       );
