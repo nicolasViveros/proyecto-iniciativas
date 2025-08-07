@@ -1,29 +1,45 @@
 import React, { useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaAngleDown } from "react-icons/fa";
 import { LuCircleArrowLeft } from "react-icons/lu";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useIniciativas } from "../context/IniciativasContext";
 import { FaEye } from "react-icons/fa";
 
 const regiones = {
-  "Sur América": ["Argentina", "Brasil", "Bolivia", "Chile", "Colombia", "Ecuador", "Perú"],
+  "Sur América": [
+    "Argentina",
+    "Brasil",
+    "Bolivia",
+    "Chile",
+    "Colombia",
+    "Ecuador",
+    "Perú",
+  ],
   "Centro América": ["Costa Rica", "El Salvador", "México"],
-  "Internacional": ["Internacional"],
+  Internacional: ["Internacional"],
 };
 
 const MapaConFiltro = () => {
-
   const [iniciativas, setIniciativas] = useState([]);
-  const { getIniciativasPorPais } = useIniciativas();
+  const { getIniciativasPorPais, getIniciativas } = useIniciativas();
 
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
+
+  const [allIniciativas, setAllIniciativas] = useState([]);
+
+  getIniciativas().then((data) => {
+    setAllIniciativas(data);
+  });
+
+  console.log(allIniciativas);
+
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
   const handlePaisClick = (pais) => {
     setPaisSeleccionado(pais);
-    getIniciativasPorPais(pais).then(data => {
+    getIniciativasPorPais(pais).then((data) => {
       setIniciativas(data);
       setMostrarFiltro(false);
     });
@@ -65,7 +81,9 @@ const MapaConFiltro = () => {
                 <div key={region} className="mb-4 border-b border-[#D9D6E1]">
                   <button
                     className="flex justify-between items-center w-full text-lg font-semibold hover:underline"
-                    onClick={() => setRegionActiva(regionActiva === region ? null : region)}
+                    onClick={() =>
+                      setRegionActiva(regionActiva === region ? null : region)
+                    }
                   >
                     <span>{region}</span>
                     <FaAngleDown className="text-xl inline" />

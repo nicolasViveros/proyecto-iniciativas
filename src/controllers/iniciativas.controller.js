@@ -4,8 +4,18 @@ import { getGeocodeData } from "./maps.controller.js";
 
 export const getIniciativas = async (req, res) => {
   try {
+    const mixed = [];
     const iniciativas = await Iniciativa.find();
-    res.json(iniciativas);
+    map(iniciativas, async (iniciativa) => {
+      const location = await Localizacion.findOne({
+        idIniciativa: iniciativa._id,
+      });
+      mixed.push({
+        ...iniciativa,
+        location,
+      });
+    });
+    res.json(mixed);
   } catch (error) {
     return res.status(500).json({ message: "algo va mal" });
   }
