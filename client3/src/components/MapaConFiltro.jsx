@@ -46,7 +46,7 @@ const MapaConFiltro = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md  mx-auto">
       <div className="relative w-full h-150">
-        {iniciativas && (
+        {iniciativas.lenght > 0 && (
           <Map
             apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
             iniciativas={iniciativas}
