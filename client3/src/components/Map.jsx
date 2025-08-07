@@ -72,8 +72,8 @@ const Map = ({ apikey, iniciativas }) => {
         lat: location?.location?.latitud,
         lng: location?.location?.longitud,
       };
-      const circle = new H.map.Circle(position, 85000, {
-        style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 0 },
+      const circle = new H.map.Circle(position, 87000, {
+        style: { fillColor: "rgba(158, 0, 250, 0.9)", lineWidth: 0 },
       });
       const circleOutline = new H.map.Polyline(
         circle.getGeometry().getExterior(),
