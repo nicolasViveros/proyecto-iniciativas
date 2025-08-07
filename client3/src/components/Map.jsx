@@ -67,9 +67,10 @@ const Map = ({ apikey, iniciativas }) => {
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
       console.log("only location:", location);
+      if (!location.location) return;
       const position = {
-        lat: location.latitud,
-        lng: location.longitud,
+        lat: location?.location?.latitud,
+        lng: location?.location?.longitud,
       };
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 0 },
