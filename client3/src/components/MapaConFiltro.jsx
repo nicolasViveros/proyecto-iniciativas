@@ -30,10 +30,14 @@ const MapaConFiltro = () => {
   const [allIniciativas, setAllIniciativas] = useState([]);
 
   useEffect(() => {
-    getIniciativas().then((data) => {
-      console.log("data: ", data);
-      setAllIniciativas(data);
-    });
+    getIniciativas()
+      .then((data) => {
+        console.log("data: ", data); // Check if the data is as expected
+        setAllIniciativas(data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch iniciativas:", error);
+      });
   }, []);
 
   useEffect(() => {
