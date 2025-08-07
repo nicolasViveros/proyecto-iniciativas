@@ -6,16 +6,20 @@ export const getIniciativas = async (req, res) => {
   try {
     const mixed = [];
     const iniciativas = await Iniciativa.find();
-    map(iniciativas, async (iniciativa) => {
-      console.log("iniciativa: ", iniciativa);
-      const location = await Localizacion.findOne({
-        idIniciativa: iniciativa._id,
-      });
-      mixed.push({
-        ...iniciativa,
-        location,
-      });
-    });
+    const results = await Promise.all(
+      iniciativas.map(async (iniciativa) => {
+        console.log("iniciativa: ", iniciativa);
+        const location = await Localizacion.findOne({
+          idIniciativa: iniciativa._id,
+        });
+        return {
+          ...iniciativa._doc,
+          location,
+        };
+      })
+    );
+
+    mixed.push(...results);
     console.log("mixed: ", mixed);
     res.json(mixed);
   } catch (error) {
