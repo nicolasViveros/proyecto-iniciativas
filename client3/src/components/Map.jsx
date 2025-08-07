@@ -194,7 +194,7 @@ const Map = ({ apikey, iniciativas }) => {
             position: "absolute",
             top: "20px",
             left: "20px",
-            padding: "20px",
+            padding: "25px",
             backgroundColor: "white",
             border: "1px solid black",
             borderRadius: "10px",
