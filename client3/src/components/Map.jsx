@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
 
 const Map = ({ apikey, iniciativas }) => {
-  console.log("iniciativas: ", iniciativas);
-  const newlocations = iniciativas.map((iniciativa) => ({
-    lat: iniciativa?.position?.latitud || 0,
-    lng: iniciativa?.position?.longitud || 0,
-  }));
+  const newlocations = iniciativas.map((iniciativa) => {
+    console.log("iniciativa position: ", iniciativa.position); // Log each position
+    return {
+      lat: iniciativa?.position?.latitud || 0,
+      lng: iniciativa?.position?.longitud || 0,
+    };
+  });
 
   console.log("newlocations: ", newlocations);
   const mapRef = useRef(null);
