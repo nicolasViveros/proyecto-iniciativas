@@ -81,25 +81,25 @@ const Map = ({ apikey }) => {
     }
   }, [apikey, iniciativas]);
 
-  useEffect(() => {
-    if (map.current && iniciativas.length > 0) {
-      // Map the iniciativas to locations
-      const locations = iniciativas
-        .map((iniciativa) => {
-          if (iniciativa?.location?.latitud) {
-            return {
-              latitud: iniciativa.location.latitud,
-              longitud: iniciativa.location.longitud,
-            };
-          }
-          return undefined;
-        })
-        .filter((location) => location !== undefined);
+  // useEffect(() => {
+  //   if (map.current && iniciativas.length > 0) {
+  //     // Map the iniciativas to locations
+  //     const locations = iniciativas
+  //       .map((iniciativa) => {
+  //         if (iniciativa?.location?.latitud) {
+  //           return {
+  //             latitud: iniciativa.location.latitud,
+  //             longitud: iniciativa.location.longitud,
+  //           };
+  //         }
+  //         return undefined;
+  //       })
+  //       .filter((location) => location !== undefined);
 
-      console.log("antes de crear circulos: ", locations);
-      createResizableCircles(map.current, locations);
-    }
-  }, [iniciativas]);
+  //     console.log("antes de crear circulos: ", locations);
+  //     createResizableCircles(map.current, locations);
+  //   }
+  // }, [iniciativas]);
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
