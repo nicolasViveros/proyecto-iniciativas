@@ -72,8 +72,8 @@ const Map = ({ apikey, iniciativas }) => {
         lat: location?.location?.latitud,
         lng: location?.location?.longitud,
       };
-      const circle = new H.map.Circle(position, 87000, {
-        style: { fillColor: "rgba(158, 0, 250, 0.9)", lineWidth: 0 },
+      const circle = new H.map.Circle(position, 85000, {
+        style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
       });
       const circleOutline = new H.map.Polyline(
         circle.getGeometry().getExterior(),
@@ -107,6 +107,8 @@ const Map = ({ apikey, iniciativas }) => {
         "pointerenter",
         function () {
           circleOutline.setStyle({ strokeColor: "rgb(255, 0, 0)" });
+          const center = circle.getCenter();
+          setModalData({ visible: true, lat: center.lat, lng: center.lng });
           console.log("B idIniciativa: ", location.location.idIniciativa);
         },
         true
@@ -117,6 +119,8 @@ const Map = ({ apikey, iniciativas }) => {
         function () {
           circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
           document.body.style.cursor = "default";
+          const center = circle.getCenter();
+          setModalData({ visible: false, lat: center.lat, lng: center.lng });
           console.log("C idIniciativa: ", location.location.idIniciativa);
         },
         true
