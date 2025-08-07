@@ -200,6 +200,7 @@ const Map = ({ apikey, iniciativas }) => {
             borderRadius: "10px",
             boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
             zIndex: "1000",
+            maxWidth: "300px",
             "::after": {
               content: "''",
               position: "absolute",
@@ -226,12 +227,6 @@ const Map = ({ apikey, iniciativas }) => {
             {modalData.ciudad} {modalData.pais}
           </p>
           <p>
-            {/* <a
-              href={`https://rumboalaequidad.org/iniciativa/${modalData.id}`}
-              target="_blank"
-            >
-              Ver Iniciativa
-            </a> */}
             <Link
               to={`/iniciativa/${modalData.id}`}
               className="absolute bottom-1 right-1 flex hover:text-[#a49fc4] rounded-md"
