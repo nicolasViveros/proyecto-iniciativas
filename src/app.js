@@ -7,16 +7,28 @@ import multer from "multer";
 import authRoutes from "./routes/auth.routes.js";
 import tasksRoutes from "./routes/tasks.routes.js";
 import fichasRoutes from "./routes/fichas.routes.js";
+import mapsRoutes from "./routes/maps.routes.js";
 
 const app = express();
 
+const allowedOrigins = [
+  "https://rumboalaequidad.org",
+  "https://www.rumboalaequidad.org",
+];
+
 app.use(
   cors({
-    origin: "https://rumboalaequidad.org",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true, // Esto debe ser verdadero para permitir cookies
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
+
 app.use(morgan("dev"));
 //app.use(express.json());
 app.use(cookieParser());
@@ -27,6 +39,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api", authRoutes);
 app.use("/api", tasksRoutes);
 app.use("/api", fichasRoutes);
+app.use("/api", mapsRoutes);
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
