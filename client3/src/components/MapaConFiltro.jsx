@@ -36,15 +36,15 @@ const Map = ({ apikey }) => {
   }, []);
 
   useEffect(() => {
-    const locations = iniciativas.map((ini) => {
-      if (ini?.location?.latitud) {
-        return {
-          latitud: ini.location.latitud,
-          longitud: ini.location.longitud,
-          // Add any additional properties if needed
-        };
-      }
-    });
+    // const locations = iniciativas.map((ini) => {
+    //   if (ini?.location?.latitud) {
+    //     return {
+    //       latitud: ini.location.latitud,
+    //       longitud: ini.location.longitud,
+    //       // Add any additional properties if needed
+    //     };
+    //   }
+    // });
     if (!map.current) {
       platform.current = new H.service.Platform({ apikey });
       const defaultLayers = platform.current.createDefaultLayers({
@@ -76,10 +76,25 @@ const Map = ({ apikey }) => {
       //   marker.setIcon(new H.map.Icon("img/marker.png"));
       //   newMap.addObject(marker);
       // });
+      // console.log("antes de crear circulos: ", locations);
+      // createResizableCircles(map.current, locations);
+    }
+  }, [apikey, iniciativas]);
+
+  useEffect(() => {
+    if (map.current && iniciativas.length > 0) {
+      // Map the iniciativas to locations
+      const locations = iniciativas.map((iniciativa) => {
+        return {
+          latitud: iniciativa.location.latitud,
+          longitud: iniciativa.location.longitud,
+        };
+      });
+
       console.log("antes de crear circulos: ", locations);
       createResizableCircles(map.current, locations);
     }
-  }, [apikey, iniciativas]);
+  }, [iniciativas]);
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
