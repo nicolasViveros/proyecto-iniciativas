@@ -7,6 +7,7 @@ export const getIniciativas = async (req, res) => {
     const mixed = [];
     const iniciativas = await Iniciativa.find();
     map(iniciativas, async (iniciativa) => {
+      console.log("iniciativa: ", iniciativa);
       const location = await Localizacion.findOne({
         idIniciativa: iniciativa._id,
       });
@@ -15,6 +16,7 @@ export const getIniciativas = async (req, res) => {
         location,
       });
     });
+    console.log("mixed: ", mixed);
     res.json(mixed);
   } catch (error) {
     return res.status(500).json({ message: "algo va mal" });
