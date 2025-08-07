@@ -1,4 +1,4 @@
-import React, { useState, useAfterEffect } from "react";
+import React, { useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaAngleDown } from "react-icons/fa";
 import { LuCircleArrowLeft } from "react-icons/lu";
 import { Link } from "react-router-dom";
@@ -27,9 +27,7 @@ const MapaConFiltro = () => {
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
 
-  useAfterEffect(() => {
-    console.log("iniciativas:", iniciativas);
-  }, [iniciativas]);
+  console.log("iniciativas:", iniciativas);
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
