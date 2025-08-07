@@ -3,21 +3,6 @@ import H from "@here/maps-api-for-javascript";
 import { set } from "mongoose";
 
 const Map = ({ apikey, iniciativas }) => {
-  const newlocations = [];
-  for (let i = 0; i < iniciativas.length; i++) {
-    const iniciativa = iniciativas[i];
-    console.log("iniciativa position: ", iniciativa.position);
-    newlocations.push({
-      lat: iniciativa?.position?.latitud || 0,
-      lng: iniciativa?.position?.longitud || 0,
-    });
-  }
-
-  setTimeout(() => {
-    console.log("newlocations: ", newlocations);
-  }, 3000);
-
-  console.log("newlocations: ", newlocations);
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
@@ -73,14 +58,14 @@ const Map = ({ apikey, iniciativas }) => {
       ];
 
       setTimeout(() => {
-        createResizableCircles(map.current, locations);
+        createResizableCircles(map.current, iniciativas);
       }, 3000);
     }
   }, [apikey]);
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
-      const circle = new H.map.Circle(location, 85000, {
+      const circle = new H.map.Circle(location.location, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 0 },
       });
       const circleOutline = new H.map.Polyline(
