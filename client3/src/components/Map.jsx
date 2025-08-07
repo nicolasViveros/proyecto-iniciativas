@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
 
-const Map = ({ apikey }) => {
+const Map = ({ apikey }, iniciativas) => {
+  console.log("iniciativas: ", iniciativas);
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
