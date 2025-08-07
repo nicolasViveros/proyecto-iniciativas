@@ -46,6 +46,7 @@ export const deleteIniciativa = async (req, res) => {
   export const getIniciativasPorPais = async (req, res) => {
     try {
       const iniciativas = await Iniciativa.find({ pais: req.params.pais });
+      console.log(iniciativas)
       if (!iniciativas) return res.status(404).json({ message: "iniciativa not found" });
       res.json(iniciativas);
     } catch (error) {
