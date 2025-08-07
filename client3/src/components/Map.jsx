@@ -66,6 +66,7 @@ const Map = ({ apikey, iniciativas }) => {
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
+      console.log("only location:", location);
       const position = {
         lat: location.latitud,
         lng: location.longitud,
