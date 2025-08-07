@@ -33,7 +33,9 @@ const MapaConFiltro = () => {
   }, []);
 
   useEffect(() => {
-    console.log("iniciativas:", iniciativas);
+    if (iniciativas.length > 0) {
+      console.log("iniciativas:", iniciativas);
+    }
   }, [iniciativas]);
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
