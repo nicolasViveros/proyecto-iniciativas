@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
 import { Link } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaWindowClose } from "react-icons/fa";
 
 const Map = ({ apikey, iniciativas }) => {
   const mapRef = useRef(null);
@@ -237,11 +237,13 @@ const Map = ({ apikey, iniciativas }) => {
           </p>
           {/* <p>Latitude: {modalData.lat}</p>
           <p>Longitude: {modalData.lng}</p> */}
-          <button
+          <Link
+            to="#"
             onClick={() => setModalData({ visible: false, lat: 0, lng: 0 })}
+            className="absolute top-1 right-1 p-2 hover:text-[#a49fc4]"
           >
-            Cerrar
-          </button>
+            <FaWindowClose className="text-xl" />
+          </Link>
         </div>
       )}
     </div>
