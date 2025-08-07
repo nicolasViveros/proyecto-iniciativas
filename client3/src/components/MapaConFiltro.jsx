@@ -177,7 +177,7 @@ const MapaConFiltro = () => {
   );
 };
 
-const Map = ({ apikey, mapas }) => {
+const Map = ({ apikey, iniciativas }) => {
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
@@ -188,7 +188,7 @@ const Map = ({ apikey, mapas }) => {
   });
 
   useEffect(() => {
-    const locations = mapas.map((ini) => {
+    const locations = iniciativas.map((ini) => {
       console.log("dibujar iniciativa en el mapa:", ini);
       return {
         latitud: ini.location.latitud,
