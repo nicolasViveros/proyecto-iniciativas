@@ -200,7 +200,7 @@ const Map = ({ apikey, iniciativas }) => {
             borderRadius: "10px",
             boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
             zIndex: "1000",
-            maxWidth: "300px",
+            maxWidth: "450px",
             "::after": {
               content: "''",
               position: "absolute",
