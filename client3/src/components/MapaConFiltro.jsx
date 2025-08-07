@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight, FaAngleDown } from "react-icons/fa";
 import { LuCircleArrowLeft } from "react-icons/lu";
 import { Link } from "react-router-dom";
@@ -21,13 +21,20 @@ const regiones = {
 
 const MapaConFiltro = () => {
   const [iniciativasFilter, setIniciativas] = useState([]);
-  const { getIniciativasPorPais, iniciativas } = useIniciativas();
+  const { getIniciativasPorPais, iniciativas, getIniciativas } =
+    useIniciativas();
 
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
 
-  console.log("iniciativas:", iniciativas);
+  useEffect(() => {
+    getIniciativas();
+  }, []);
+
+  useEffect(() => {
+    console.log("iniciativas:", iniciativas);
+  }, [iniciativas]);
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
