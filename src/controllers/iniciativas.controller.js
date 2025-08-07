@@ -59,12 +59,21 @@ export const getIniciativasPorPais = async (req, res) => {
       console.log(iniciativa.pais);
       console.log(iniciativa.ciudad);
 
-      const location = await getGeocodeData(
-        iniciativa.pais + "+" + iniciativa.ciudad
-      );
       console.log(location);
 
-      if (location) {
+      const exists = await Localizacion.findOne({
+        idIniciativa: iniciativa._id,
+      });
+
+      let location = "";
+
+      if (!exists) {
+        location = await getGeocodeData(
+          iniciativa.pais + "+" + iniciativa.ciudad
+        );
+      }
+
+      if (location && !exists) {
         const localizacion = new Localizacion({
           latitud: location.items[0].position.lat,
           longitud: location.items[0].position.lng,
