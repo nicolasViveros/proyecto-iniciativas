@@ -58,6 +58,7 @@ const Map = ({ apikey, iniciativas }) => {
       ];
 
       setTimeout(() => {
+        console.log("iniciativas: ", iniciativas);
         createResizableCircles(map.current, iniciativas);
       }, 3000);
     }
