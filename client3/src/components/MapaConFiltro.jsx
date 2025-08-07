@@ -21,9 +21,9 @@ const regiones = {
 };
 
 const MapaConFiltro = () => {
-  const [iniciativasFilter, setIniciativas, iniciativas, getIniciativas] =
-    useState([]);
-  const { getIniciativasPorPais } = useIniciativas();
+  const [iniciativasFilter, setIniciativas] = useState([]);
+  const { getIniciativasPorPais, iniciativas, getIniciativas } =
+    useIniciativas();
 
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
