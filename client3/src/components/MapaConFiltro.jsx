@@ -22,22 +22,15 @@ const regiones = {
 
 const MapaConFiltro = () => {
   const [iniciativasFilter, setIniciativas] = useState([]);
-  const { getIniciativasPorPais, iniciativas, getIniciativas } =
-    useIniciativas();
+  const { getIniciativasPorPais } = useIniciativas();
 
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
 
-  useEffect(() => {
-    getIniciativas();
-  }, []);
-
-  useEffect(() => {
-    if (iniciativas.length > 0) {
-      //console.log("iniciativas:", iniciativas);
-    }
-  }, [iniciativas]);
+  // useEffect(() => {
+  //   getIniciativas();
+  // }, []);
 
   const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
 
@@ -52,12 +45,7 @@ const MapaConFiltro = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md  mx-auto">
       <div className="relative w-full h-150">
-        {iniciativas && (
-          <Map
-            apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
-            iniciativas={iniciativas}
-          />
-        )}
+        <Map apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"} />
 
         {!mostrarFiltro && !paisSeleccionado && (
           <Link
@@ -177,7 +165,7 @@ const MapaConFiltro = () => {
   );
 };
 
-const Map = ({ apikey, iniciativas }) => {
+const Map = ({ apikey }) => {
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
@@ -186,6 +174,11 @@ const Map = ({ apikey, iniciativas }) => {
     lat: 0,
     lng: 0,
   });
+  const { iniciativas, getIniciativas } = useIniciativas();
+
+  useEffect(() => {
+    getIniciativas();
+  }, []);
 
   useEffect(() => {
     const locations = iniciativas.map((ini) => {
