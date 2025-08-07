@@ -64,6 +64,7 @@ const Map = ({ apikey, iniciativas }) => {
       // });
 
       const locations = iniciativas.map((iniciativa) => {
+        console.log("dibujar iniciativa en el mapa:", iniciativa);
         return {
           latitud: iniciativa.location.latitud,
           longitud: iniciativa.location.longitud,
@@ -207,7 +208,7 @@ const MapaConFiltro = () => {
 
   useEffect(() => {
     if (iniciativas.length > 0) {
-      console.log("iniciativas:", iniciativas);
+      //console.log("iniciativas:", iniciativas);
     }
   }, [iniciativas]);
 
