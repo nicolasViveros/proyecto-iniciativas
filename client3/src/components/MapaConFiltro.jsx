@@ -48,7 +48,9 @@ const MapaConFiltro = () => {
       <div className="relative w-full h-150">
         <Map
           apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
-          iniciativas={iniciativas}
+          iniciativas={iniciativas.map((i) => {
+            i.location;
+          })}
         />
 
         {!mostrarFiltro && !paisSeleccionado && (
