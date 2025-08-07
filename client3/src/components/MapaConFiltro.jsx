@@ -85,10 +85,12 @@ const Map = ({ apikey }) => {
     if (map.current && iniciativas.length > 0) {
       // Map the iniciativas to locations
       const locations = iniciativas.map((iniciativa) => {
-        return {
-          latitud: iniciativa.location.latitud,
-          longitud: iniciativa.location.longitud,
-        };
+        if (iniciativa?.location?.latitud) {
+          return {
+            latitud: iniciativa.location.latitud,
+            longitud: iniciativa.location.longitud,
+          };
+        }
       });
 
       console.log("antes de crear circulos: ", locations);
