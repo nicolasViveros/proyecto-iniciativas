@@ -20,7 +20,7 @@ const regiones = {
   Internacional: ["Internacional"],
 };
 
-const Map = ({ apikey }) => {
+const Map = ({ apikey, iniciativas }) => {
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
@@ -52,26 +52,37 @@ const Map = ({ apikey }) => {
 
       map.current = newMap;
 
+      iniciativas.map((iniciativa) => {
+        const location = new H.geo.Point(
+          iniciativa.location.latitud,
+          iniciativa.location.longitud
+        );
+        const marker = new H.map.Marker(location);
+        marker.setData(iniciativa);
+        marker.setIcon(new H.map.Icon("img/marker.png"));
+        newMap.addObject(marker);
+      });
+
       const locations = [
-        { lat: -34.6037, lng: -58.3816 }, // Buenos Aires, Argentina
-        { lat: -12.0464, lng: -77.0428 }, // Lima, Peru
-        { lat: -33.4489, lng: -70.6693 }, // Santiago, Chile
-        { lat: -19.9167, lng: -43.9345 }, // Belo Horizonte, Brazil
-        { lat: -34.9011, lng: -56.1645 }, // Montevideo, Uruguay
-        { lat: 4.711, lng: -74.0721 }, // Bogota, Colombia
-        { lat: 6.2442, lng: -75.5812 }, // Medellin, Colombia
-        { lat: -23.5505, lng: -46.6333 }, // São Paulo, Brazil
-        { lat: -22.9068, lng: -43.1729 }, // Rio de Janeiro, Brazil
-        { lat: -0.2299, lng: -78.5249 }, // Quito, Ecuador
-        { lat: -12.0464, lng: -77.0428 }, // Lima, Peru
-        { lat: -15.8267, lng: -47.9218 }, // Brasilia, Brazil
-        { lat: -3.119, lng: -60.0217 }, // Manaus, Brazil
-        { lat: -16.5, lng: -68.15 }, // La Paz, Bolivia
-        { lat: -16.3988, lng: -71.5369 }, // Arequipa, Peru
-        { lat: -2.1704, lng: -79.9224 }, // Guayaquil, Ecuador
-        { lat: -0.1807, lng: -78.4678 }, // Quito, Ecuador
-        { lat: -3.7135, lng: -38.53 }, // Fortaleza, Brazil
-        { lat: -31.7613, lng: -70.5263 }, // Santiago, Chile
+        // { lat: -34.6037, lng: -58.3816 }, // Buenos Aires, Argentina
+        // { lat: -12.0464, lng: -77.0428 }, // Lima, Peru
+        // { lat: -33.4489, lng: -70.6693 }, // Santiago, Chile
+        // { lat: -19.9167, lng: -43.9345 }, // Belo Horizonte, Brazil
+        // { lat: -34.9011, lng: -56.1645 }, // Montevideo, Uruguay
+        // { lat: 4.711, lng: -74.0721 }, // Bogota, Colombia
+        // { lat: 6.2442, lng: -75.5812 }, // Medellin, Colombia
+        // { lat: -23.5505, lng: -46.6333 }, // São Paulo, Brazil
+        // { lat: -22.9068, lng: -43.1729 }, // Rio de Janeiro, Brazil
+        // { lat: -0.2299, lng: -78.5249 }, // Quito, Ecuador
+        // { lat: -12.0464, lng: -77.0428 }, // Lima, Peru
+        // { lat: -15.8267, lng: -47.9218 }, // Brasilia, Brazil
+        // { lat: -3.119, lng: -60.0217 }, // Manaus, Brazil
+        // { lat: -16.5, lng: -68.15 }, // La Paz, Bolivia
+        // { lat: -16.3988, lng: -71.5369 }, // Arequipa, Peru
+        // { lat: -2.1704, lng: -79.9224 }, // Guayaquil, Ecuador
+        // { lat: -0.1807, lng: -78.4678 }, // Quito, Ecuador
+        // { lat: -3.7135, lng: -38.53 }, // Fortaleza, Brazil
+        // { lat: -31.7613, lng: -70.5263 }, // Santiago, Chile
         // Add other locations as needed
       ];
 
@@ -228,7 +239,10 @@ const MapaConFiltro = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md  mx-auto">
       <div className="relative w-full h-150">
-        <Map apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"} />
+        <Map
+          apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
+          iniciativas={iniciativas}
+        />
 
         {!mostrarFiltro && !paisSeleccionado && (
           <Link
