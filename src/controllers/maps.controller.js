@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export const getGeocodeData = async (req, res) => {
-  const address = req.query.req || "";
+  const address = req || "";
   //   console.log("address: ", address);
   const apiKey = process.env.HERE_API_KEY;
   //   console.log("apiKey: ", apiKey);
