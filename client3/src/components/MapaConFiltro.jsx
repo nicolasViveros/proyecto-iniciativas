@@ -37,7 +37,6 @@ const Map = ({ apikey }) => {
 
   useEffect(() => {
     const locations = iniciativas.map((ini) => {
-      console.log("dibujar iniciativa en el mapa:", ini);
       if (ini?.location?.latitud) {
         return {
           latitud: ini.location.latitud,
@@ -77,7 +76,7 @@ const Map = ({ apikey }) => {
       //   marker.setIcon(new H.map.Icon("img/marker.png"));
       //   newMap.addObject(marker);
       // });
-
+      console.log("antes de crear circulos: ", locations);
       createResizableCircles(map.current, locations);
     }
   }, [apikey, iniciativas]);
