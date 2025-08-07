@@ -96,9 +96,9 @@ const Map = ({ apikey, iniciativas }) => {
       circleGroup.addEventListener(
         "tap",
         function () {
-          const center = circle.getCenter();
-          setModalData({ visible: true, lat: center.lat, lng: center.lng });
-          console.log("idIniciativa: ", location.location.idIniciativa);
+          //const center = circle.getCenter();
+          //setModalData({ visible: true, lat: center.lat, lng: center.lng });
+          console.log("A idIniciativa: ", location.location.idIniciativa);
         },
         false
       );
@@ -107,6 +107,7 @@ const Map = ({ apikey, iniciativas }) => {
         "pointerenter",
         function () {
           circleOutline.setStyle({ strokeColor: "rgb(255, 0, 0)" });
+          console.log("B idIniciativa: ", location.location.idIniciativa);
         },
         true
       );
@@ -116,6 +117,7 @@ const Map = ({ apikey, iniciativas }) => {
         function () {
           circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
           document.body.style.cursor = "default";
+          console.log("C idIniciativa: ", location.location.idIniciativa);
         },
         true
       );
