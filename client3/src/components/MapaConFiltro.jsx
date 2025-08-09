@@ -22,13 +22,12 @@ const regiones = {
 
 const MapaConFiltro = () => {
   const [iniciativasFilter, setIniciativas] = useState([]);
-  const { getIniciativasPorPais, getIniciativasPorCiudad, iniciativas, getIniciativas } =
+  const { getIniciativasPorPais, iniciativas, getIniciativas } =
     useIniciativas();
 
   const [mostrarFiltro, setMostrarFiltro] = useState(true);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
-  const [ciudadSeleccionado, setCiudadSeleccionado] = useState(null);
 
   useEffect(() => {
     getIniciativas();
@@ -39,13 +38,6 @@ const MapaConFiltro = () => {
   const handlePaisClick = (pais) => {
     setPaisSeleccionado(pais);
     getIniciativasPorPais(pais).then((data) => {
-      setIniciativas(data);
-      setMostrarFiltro(false);
-    });
-  };
-   const handleCiudadClick = (ciudad) => {
-    setCiudadSeleccionado(ciudad);
-    getIniciativasPorCiudad(ciudad).then((data) => {
       setIniciativas(data);
       setMostrarFiltro(false);
     });

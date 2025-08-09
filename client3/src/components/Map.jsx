@@ -3,7 +3,6 @@ import H from "@here/maps-api-for-javascript";
 import { Link } from "react-router-dom";
 import { FaEye, FaWindowClose } from "react-icons/fa";
 import { useIniciativas } from "../context/IniciativasContext";
-import { handleCiudadClick } from "../components/MapaConFiltro";
 
 const Map = ({ apikey, iniciativas }) => {
   const { getIniciativasPorCiudad } = useIniciativas();
@@ -90,11 +89,13 @@ const Map = ({ apikey, iniciativas }) => {
       map.addObject(circleGroup);
 
       circleGroup.addEventListener("tap", function () {
-       handleCiudadClick(location.ciudad);
+        window.open(
+          `https://rumboalaequidad.org/iniciativa/${location.location.idIniciativa}`
+        );
       }, false);
 
       circleGroup.addEventListener("pointerenter", () => {
-        // handlePointerEnter(location, circle);
+        handlePointerEnter(location, circle);
       }, true);
 
       circleGroup.addEventListener("pointerleave", () => {
