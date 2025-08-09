@@ -109,8 +109,7 @@ const Map = ({ apikey, iniciativas }) => {
       }, true);
     });
   }
- 
-  const [counter, setCounter] = useState(0);
+
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -137,15 +136,15 @@ const Map = ({ apikey, iniciativas }) => {
           }}
         >
           <h3>{modalData.city}</h3>
+          <p className="text-sm mb-3">
+            {`${modalData.initiatives.length} Iniciativas encontradas`}
+          </p>
           <div>
             {modalData.initiatives.map((initiative) => (
               <div key={initiative._id} className="card my-1">
-                 counter++;
-                 setCounter(counter);
-                 console.log(counter);
-                 <p>counter: {counter}</p>
+
                 <div className="card-body my-1 border-b border-[#D9D6E1]">
-                  
+
                   <Link
                     className="card-title cursor-pointer text-lg hover:underline flex mb-1"
                     to={`/iniciativa/${initiative._id}`}
