@@ -106,13 +106,19 @@ export const getIniciativasPorPais = async (req, res) => {
 export const getIniciativasPorCiudad = async (req, res) => {
   try {
     const iniciativas = await Iniciativa.find({ ciudad: req.params.ciudad });
+
     console.log(req.params.ciudad);
     console.log(iniciativas);
-    if (!iniciativas)
-      return res.status(404).json({ message: "iniciativa not found" });
+
+    // Check if initiatives were found
+    if (iniciativas.length === 0) {
+      return res.status(404).json({ message: "No initiatives found in the specified city" });
+    }
+
     res.json(iniciativas);
   } catch (error) {
-    return res.status(404).json({ message: "iniciativa not found" });
+    console.error("Error fetching initiatives: ", error); // Log the error for debugging
+    return res.status(500).json({ message: "An error occurred while fetching initiatives" });
   }
 };
 
