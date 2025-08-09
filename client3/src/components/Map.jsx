@@ -123,7 +123,6 @@ const Map = ({ apikey, iniciativas }) => {
       {modalData.visible && (
         <div
           style={{
-            position: "absolute",
             top: "20px",
             left: "20px",
             padding: "25px",
