@@ -123,7 +123,7 @@ const Map = ({ apikey, iniciativas }) => {
             id: location.location.idIniciativa,
           });
           console.log("B idIniciativa: ", location.location.idIniciativa);
-          console.log("ciudad iniciativa:", location.location.ciudad);
+          console.log("ciudad iniciativa:", location.ciudad);
         },
         true
       );
