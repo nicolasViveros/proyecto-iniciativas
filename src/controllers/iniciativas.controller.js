@@ -106,6 +106,7 @@ export const getIniciativasPorPais = async (req, res) => {
 export const getIniciativasPorCiudad = async (req, res) => {
   try {
     const iniciativas = await Iniciativa.find({ ciudad: req.params.ciudad });
+    console.log(req.params.ciudad);
     console.log(iniciativas);
     if (!iniciativas)
       return res.status(404).json({ message: "iniciativa not found" });
