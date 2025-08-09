@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
 import { Link } from "react-router-dom";
 import { FaEye, FaWindowClose } from "react-icons/fa";
+import { useIniciativas } from "../context/IniciativasContext";
 
 const Map = ({ apikey, iniciativas }) => {
+  const { getIniciativasPorCiudad } = useIniciativas();
   const mapRef = useRef(null);
   const map = useRef(null);
   const platform = useRef(null);
@@ -12,6 +14,20 @@ const Map = ({ apikey, iniciativas }) => {
     lat: 0,
     lng: 0,
   });
+
+  const handlePointerEnter = (location, circle) => {
+    circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" }); // Example style change on hover
+    getIniciativasPorCiudad(location.cityName).then(data => {
+      setModalData({
+        visible: true,
+        lat: circle.getCenter().lat,
+        lng: circle.getCenter().lng,
+        city: location.cityName,
+        initiatives: data,
+      });
+    });
+  };
+
 
   useEffect(() => {
     if (!map.current) {
@@ -63,7 +79,7 @@ const Map = ({ apikey, iniciativas }) => {
         createResizableCircles(map.current, iniciativas);
       }, 3000);
     }
-  }, [apikey]);
+  }, [apikey, getIniciativasPorCiudad]);
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
@@ -107,45 +123,16 @@ const Map = ({ apikey, iniciativas }) => {
         false
       );
 
-      circleGroup.addEventListener(
-        "pointerenter",
-        function () {
-          circleOutline.setStyle({ strokeColor: "rgb(255, 0, 0)" });
-          const center = circle.getCenter();
-          setModalData({
-            visible: true,
-            lat: center.lat,
-            lng: center.lng,
-            nombre: location.nombreIniciativa,
-            pais: location.pais || "",
-            ciudad: location.ciudad || "",
-            institucionEncargada: location.institucionEncargada || "",
-            id: location.location.idIniciativa,
-          });
-          console.log("B idIniciativa: ", location.location.idIniciativa);
-          console.log("ciudad iniciativa:", location.ciudad);
-        },
-        true
-      );
+      circleGroup.addEventListener("pointerenter", () => {
+        handlePointerEnter(location, circle);
+        console.log(location.ciudad)
+      }, true);
 
-      circleGroup.addEventListener(
-        "pointerleave",
-        function () {
-          circleOutline.setStyle({ strokeColor: "rgba(255, 0, 0, 0)" });
-          document.body.style.cursor = "default";
-          //const center = circle.getCenter();
-          // setModalData({
-          //   visible: false,
-          //   lat: center.lat,
-          //   lng: center.lng,
-          //   nombre: location.nombreIniciativa,
-          //   pais: location.pais || "",
-          //   ciudad: location.ciudad || "",
-          // });
-          // console.log("C idIniciativa: ", location.location.idIniciativa);
-        },
-        true
-      );
+      circleGroup.addEventListener("pointerleave", () => {
+        // Reset styling or hide the modal
+        circle.setStyle({ fillColor: "rgba(158, 0, 250, 0.7)" });
+        setModalData((prevData) => ({ ...prevData, visible: false }));
+      }, true);
 
       circleGroup.addEventListener(
         "pointermove",
@@ -201,43 +188,33 @@ const Map = ({ apikey, iniciativas }) => {
             borderRadius: "10px",
             boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
             zIndex: "1000",
-            maxWidth: "450px",
-            "::after": {
-              content: "''",
-              position: "absolute",
-              bottom: "-15px", // Position triangle below the div
-              left: "20px", // Adjust to position correctly under the bubble
-              borderWidth: "10px",
-              borderStyle: "solid",
-              borderColor: "white transparent transparent transparent",
-            },
-            "::before": {
-              content: "''",
-              position: "absolute",
-              bottom: "-16px", // Slight offset for a shadow effect
-              left: "18px", // Align slightly with after to create a shadow
-              borderWidth: "10px",
-              borderStyle: "solid",
-              borderColor: "black transparent transparent transparent",
-            },
+            maxWidth: "450px"
           }}
         >
-          <h3>{modalData.nombre}</h3>
-          <h4>{modalData.institucionEncargada}</h4>
-          <p>
-            {modalData.ciudad} {modalData.pais}
-          </p>
-          <p>
-            <Link
-              to={`/iniciativa/${modalData.id}`}
-              className="absolute bottom-1 right-1 flex hover:text-[#a49fc4] rounded-md"
-            >
-              <span className="ml-1">Revisar Iniciativa</span>
-              <FaEye className="text-2xl ml-1 mb-1 inline" />
-            </Link>
-          </p>
-          {/* <p>Latitude: {modalData.lat}</p>
-          <p>Longitude: {modalData.lng}</p> */}
+          <h3>{modalData.city}</h3>
+          <div>
+            {modalData.initiatives.map((initiative) => (
+              <div key={initiative._id} className="card my-2">
+                <div className="card-body my-1">
+                  <Link
+                    className="card-title cursor-pointer text-lg hover:underline flex mb-2"
+                    to={`/iniciativa/${initiative._id}`}
+                  >
+                    {initiative.nombreIniciativa}
+                  </Link>
+                  <p className="text-sm font-bold">{initiative.ciudad}</p>
+                  <p className="mt-1 mb-4 text-sm">{initiative.descripcionIniciativa}</p>
+                  <Link
+                    className="flex justify-end hover:text-[#a49fc4] rounded-md"
+                    to={`/iniciativa/${initiative._id}`}
+                  >
+                    <span className="ml-1">Revisar iniciativa</span>
+                    <FaEye className="text-2xl ml-1 mb-1 inline" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
           <Link
             to="#"
             onClick={() => setModalData({ visible: false, lat: 0, lng: 0 })}

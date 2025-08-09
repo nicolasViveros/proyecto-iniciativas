@@ -102,3 +102,25 @@ export const getIniciativasPorPais = async (req, res) => {
     return res.status(404).json({ message: "iniciativa not found" });
   }
 };
+
+export const getIniciativasPorCiudad = async (req, res) => {
+  try {
+    const iniciativas = await Iniciativa.find({ ciudad: req.params.ciudad });
+    console.log(iniciativas);
+    if (!iniciativas)
+      return res.status(404).json({ message: "iniciativa not found" });
+    res.json(iniciativas);
+  } catch (error) {
+    return res.status(404).json({ message: "iniciativa not found" });
+  }
+};
+
+export const createIniciativas = async (req, res) => {
+  try {
+    const iniciativa = new Iniciativa(req.body);
+    const result = await iniciativa.save();
+    res.json(result);
+  } catch (error) {
+    return res.status(404).json({ message: "iniciativa not found" });
+  }
+};  
