@@ -115,7 +115,7 @@ const Map = ({ apikey, iniciativas }) => {
       <div
         style={{
           width: "100%",
-          height: "100px",
+          height: "500px",
         }}
         ref={mapRef}
       />
