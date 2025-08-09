@@ -136,18 +136,18 @@ const Map = ({ apikey, iniciativas }) => {
           }}
         >
           <h3>{modalData.city}</h3>
-          <div className="h-full overflow-y-auto">
+          <div className="absolute h-full overflow-y-auto">
             {modalData.initiatives.map((initiative) => (
               <div key={initiative._id} className="card my-1">
-                <div className="card-body my-1">
+                <div className="card-body my-1 border-b border-[#D9D6E1]">
                   <Link
-                    className="card-title cursor-pointer text-lg hover:underline flex mb-2"
+                    className="card-title cursor-pointer text-lg hover:underline flex mb-1"
                     to={`/iniciativa/${initiative._id}`}
                   >
                     {initiative.nombreIniciativa}
                   </Link>
                   <p className="text-sm font-bold">{initiative.ciudad}</p>
-                  <p className="mt-1 mb-4 text-sm truncated-text">{initiative.descripcionIniciativa}</p>
+                  <p className="mt-1 mb-2 text-sm truncated-text">{initiative.descripcionIniciativa}</p>
                   <Link
                     className="flex justify-end hover:text-[#a49fc4] rounded-md"
                     to={`/iniciativa/${initiative._id}`}
