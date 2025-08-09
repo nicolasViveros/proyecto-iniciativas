@@ -136,7 +136,7 @@ const Map = ({ apikey, iniciativas }) => {
           }}
         >
           <h3>{modalData.city}</h3>
-          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
+          <div className=" h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
             {modalData.initiatives.map((initiative) => (
               <div key={initiative._id} className="card my-1">
                 <div className="card-body my-1">
