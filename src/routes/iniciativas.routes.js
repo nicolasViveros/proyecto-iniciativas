@@ -16,7 +16,7 @@ router.put('/iniciativas/:id', authRequired, updateIniciativa);
 
 router.get('/iniciativas/:pais', authRequired, getIniciativasPorPais);
 
-router.get('/iniciativas/:ciudad', authRequired, getIniciativasPorCiudad);
+router.get('/iniciativasPorCiudad/:ciudad', authRequired, getIniciativasPorCiudad);
  
 
 

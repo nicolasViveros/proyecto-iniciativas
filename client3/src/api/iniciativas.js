@@ -10,6 +10,6 @@ export const deleteIniciativaRequest = (id) => axios.delete(`/iniciativas/${id}`
 
 export const getIniciativasPorPaisRequest = (pais) => axios.get(`/iniciativas/${pais}`);
 
-export const getIniciativasPorCiudadRequest = (ciudad) => axios.get(`/iniciativas/${ciudad}`);
+export const getIniciativasPorCiudadRequest = (ciudad) => axios.get(`/iniciativasPorCiudad/${ciudad}`);
 
 export const createIniciativasRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);
