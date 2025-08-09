@@ -66,6 +66,7 @@ const Map = ({ apikey, iniciativas }) => {
       const position = {
         lat: location.location.latitud,
         lng: location.location.longitud,
+        ciudad: location.ciudad,
       };
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
