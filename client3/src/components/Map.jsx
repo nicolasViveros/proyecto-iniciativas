@@ -3,6 +3,7 @@ import H from "@here/maps-api-for-javascript";
 import { Link } from "react-router-dom";
 import { FaEye, FaWindowClose } from "react-icons/fa";
 import { useIniciativas } from "../context/IniciativasContext";
+import { handleCiudadClick } from "../components/MapaConFiltro";
 
 const Map = ({ apikey, iniciativas }) => {
   const { getIniciativasPorCiudad } = useIniciativas();
@@ -89,13 +90,11 @@ const Map = ({ apikey, iniciativas }) => {
       map.addObject(circleGroup);
 
       circleGroup.addEventListener("tap", function () {
-        window.open(
-          `https://rumboalaequidad.org/iniciativa/${location.location.idIniciativa}`
-        );
+       handleCiudadClick(location.ciudad);
       }, false);
 
       circleGroup.addEventListener("pointerenter", () => {
-        handlePointerEnter(location, circle);
+        // handlePointerEnter(location, circle);
       }, true);
 
       circleGroup.addEventListener("pointerleave", () => {
@@ -136,7 +135,7 @@ const Map = ({ apikey, iniciativas }) => {
           }}
         >
           <h3>{modalData.city}</h3>
-          <div className="">
+          <div>
             {modalData.initiatives.map((initiative) => (
               <div key={initiative._id} className="card my-1">
                 <div className="card-body my-1 border-b border-[#D9D6E1]">
