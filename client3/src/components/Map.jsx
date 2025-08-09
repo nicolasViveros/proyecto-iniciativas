@@ -19,7 +19,7 @@ const Map = ({ apikey, iniciativas }) => {
 
   const handlePointerEnter = (location, circle) => {
     circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" });
-    getIniciativasPorCiudad(location.cityName).then(data => {
+    getIniciativasPorCiudad(location.ciudad).then((data) => {
       setModalData({
         visible: true,
         lat: circle.getCenter().lat,
