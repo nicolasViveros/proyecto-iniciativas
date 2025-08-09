@@ -136,7 +136,7 @@ const Map = ({ apikey, iniciativas }) => {
           }}
         >
           <h3>{modalData.city}</h3>
-          <div>
+          <div className="flex flex-col">
             {modalData.initiatives.map((initiative) => (
               <div key={initiative._id} className="card my-2">
                 <div className="card-body my-1">
