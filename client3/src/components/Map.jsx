@@ -140,13 +140,12 @@ const Map = ({ apikey, iniciativas }) => {
             {`${modalData.initiatives.length} Iniciativas encontradas`}
           </p>
          
-                  <Link
+                  <button
                     className="flex justify-end hover:text-[#a49fc4] rounded-md"
-                    to={`/iniciativa/${initiative._id}`}
                   >
                     <span className="ml-1">Revisar iniciativa</span>
                     <FaEye className="text-2xl ml-1 mb-1 inline" />
-                  </Link>
+                  </button>
              
           <Link
             to="#"
