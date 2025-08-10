@@ -77,7 +77,7 @@ const MapaConFiltro = () => {
         {mostrarFiltro && !paisSeleccionado && !ciudadSeleccionado && (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 overflow-hidden z-10">
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
-              <h2 className="text-xl font-semibold">Iniciativas</h2>
+              <h2 className="text-xl font-semibold">Iniciativas en {ciudadSeleccionado}</h2>
               <button
                 onClick={toggleFiltro}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
