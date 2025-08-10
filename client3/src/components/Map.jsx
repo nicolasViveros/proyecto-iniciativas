@@ -24,7 +24,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         visible: true,
         lat: circle.getCenter().lat,
         lng: circle.getCenter().lng,
-        city: location.cityName,
+        city: location.ciudad,
         initiatives: data || [], // Default to empty array if no data
       });
     });
