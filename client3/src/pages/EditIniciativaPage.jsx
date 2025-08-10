@@ -24,16 +24,35 @@ function EditIniciativaPage() {
                     console.error("Error al cargar la iniciativa:", error);
                 }
             } else {
-                // Initializes an empty initiative for new creation
+                // Initializes an empty initiative with all fields set
                 setIniciativa({
                     nombreIniciativa: '',
                     tipoIniciativa: '',
-                    // Initialize other fields similarly
-                    links: [],
+                    fechaInicioTermino: '',
+                    pais: '',
+                    ciudad: '',
+                    alcance: '',
+                    tipoInstitucion: '',
+                    actoresInvolucrados: '',
+                    paginaWebInstitucion: '',
+                    objetivo: '',
+                    descripcionIniciativa: '',
+                    logrosResultados: '',
+                    institucionEncargada: '',
+                    grupoObjetivo: '',
+                    mujeresParticipantes: '',
+                    costoAnualUSD: '',
+                    ejecutor: '',
+                    pertinencia: '',
+                    categoria: '',
+                    justificacion: '',
+                    personaContacto: '',
+                    comentariosAdicionales: '',
+                    documentos: '',
+                    links: [''], // Start with one empty link
                 });
             }
         };
-    
         cargarIniciativa();
     }, [id]);
 
@@ -108,7 +127,7 @@ function EditIniciativaPage() {
                     <div><input
                         type="text"
                         name="nombreIniciativa"
-                        value={iniciativa.nombreIniciativa}
+                        value={iniciativa.nombreIniciativa || ''}
                         onChange={handleInputChange}
                         className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused" />
                     </div>
@@ -118,7 +137,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="tipoIniciativa"
-                            value={iniciativa.tipoIniciativa}
+                            value={iniciativa.tipoIniciativa || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -129,7 +148,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="fechaInicioTermino"
-                            value={iniciativa.fechaInicioTermino}
+                            value={iniciativa.fechaInicioTermino || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -140,7 +159,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="pais"
-                            value={iniciativa.pais}
+                            value={iniciativa.pais || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -151,7 +170,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="ciudad"
-                            value={iniciativa.ciudad}
+                            value={iniciativa.ciudad || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -162,7 +181,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="alcance"
-                            value={iniciativa.alcance}
+                            value={iniciativa.alcance || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -173,7 +192,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="tipoInstitucion"
-                            value={iniciativa.tipoInstitucion}
+                            value={iniciativa.tipoInstitucion || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -184,7 +203,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="actoresInvolucrados"
-                            value={iniciativa.actoresInvolucrados}
+                            value={iniciativa.actoresInvolucrados || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -195,7 +214,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="paginaWebInstitucion"
-                            value={iniciativa.paginaWebInstitucion}
+                            value={iniciativa.paginaWebInstitucion || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -205,7 +224,7 @@ function EditIniciativaPage() {
                     <div>
                         <textarea
                             name="objetivo"
-                            value={iniciativa.objetivo}
+                            value={iniciativa.objetivo || ''} 
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="4"
@@ -216,7 +235,7 @@ function EditIniciativaPage() {
                     <div>
                         <textarea
                             name="descripcionIniciativa"
-                            value={iniciativa.descripcionIniciativa}
+                            value={iniciativa.descripcionIniciativa || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="4"
@@ -227,7 +246,7 @@ function EditIniciativaPage() {
                     <div>
                         <textarea
                             name="logrosResultados"
-                            value={iniciativa.logrosResultados}
+                            value={iniciativa.logrosResultados || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="4"
@@ -239,7 +258,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="institucionEncargada"
-                            value={iniciativa.institucionEncargada}
+                            value={iniciativa.institucionEncargada  || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -250,7 +269,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="grupoObjetivo"
-                            value={iniciativa.grupoObjetivo}
+                            value={iniciativa.grupoObjetivo || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -261,7 +280,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="mujeresParticipantes"
-                            value={iniciativa.mujeresParticipantes}
+                            value={iniciativa.mujeresParticipantes || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -272,7 +291,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="costoAnualUSD"
-                            value={iniciativa.costoAnualUSD}
+                            value={iniciativa.costoAnualUSD || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -283,7 +302,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="ejecutor"
-                            value={iniciativa.ejecutor}
+                            value={iniciativa.ejecutor || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -294,7 +313,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="pertinencia"
-                            value={iniciativa.pertinencia}
+                            value={iniciativa.pertinencia || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -305,7 +324,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="categoria"
-                            value={iniciativa.categoria}
+                            value={iniciativa.categoria || ''} 
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -315,7 +334,7 @@ function EditIniciativaPage() {
                     <div>
                         <textarea
                             name="justificacion"
-                            value={iniciativa.justificacion}
+                            value={iniciativa.justificacion || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="4"
@@ -326,7 +345,7 @@ function EditIniciativaPage() {
                     <div>
                         <textarea
                             name="personaContacto"
-                            value={iniciativa.personaContacto}
+                            value={iniciativa.personaContacto || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="4"
@@ -338,7 +357,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="comentariosAdicionales"
-                            value={iniciativa.comentariosAdicionales}
+                            value={iniciativa.comentariosAdicionales || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -351,7 +370,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="documentos"
-                            value={iniciativa.documentos}
+                            value={iniciativa.documentos || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
