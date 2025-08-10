@@ -134,9 +134,9 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
             maxWidth: "450px"
           }}
         >
-          <h3>{modalData.city}</h3>
+          <h3>iniciativas en {modalData.city}</h3>
           <p className="text-sm mb-3">
-            {`${modalData.initiatives.length} Iniciativas encontradas`}
+            {`${modalData.initiatives.length} encontradas`}
           </p>
          
                   <button
