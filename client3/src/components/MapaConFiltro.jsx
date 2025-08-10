@@ -25,7 +25,7 @@ const MapaConFiltro = () => {
   const { getIniciativasPorPais, getIniciativasPorCiudad, iniciativas, getIniciativas } =
     useIniciativas();
 
-  const [mostrarFiltro, setMostrarFiltro] = useState(true);
+  const [mostrarFiltro, setMostrarFiltro] = useState(false);
   const [regionActiva, setRegionActiva] = useState(null);
   const [paisSeleccionado, setPaisSeleccionado] = useState(null);
 
