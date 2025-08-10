@@ -40,7 +40,7 @@ const MapaConFiltro = () => {
     setPaisSeleccionado(pais);
     getIniciativasPorPais(pais).then((data) => {
       setIniciativas(data);
-      setMostrarFiltro(false);
+      setMostrarFiltro(true);
     });
   };
 
