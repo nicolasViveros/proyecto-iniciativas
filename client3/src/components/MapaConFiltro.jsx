@@ -45,6 +45,7 @@ const MapaConFiltro = () => {
   };
 
   const handleCityClick = (city) => {
+    setPaisSeleccionado(city)
     getIniciativasPorCiudad(city).then((data) => {
       setIniciativas(data);
       setMostrarFiltro(true);
@@ -200,7 +201,7 @@ const MapaConFiltro = () => {
                 <LuCircleArrowLeft className="text-2xl inline hover:text-[#a49fc4]" />
               </button>
 
-              <h3 className="text-xl font-semibold">Iniciativas {ciudadSeleccionado}</h3>
+              <h3 className="text-xl font-semibold">Iniciativas {ciudadSeleccionad}</h3>
               <button
                 onClick={() => {
                   setIniciativas([]);
