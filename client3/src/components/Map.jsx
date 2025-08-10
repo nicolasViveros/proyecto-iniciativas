@@ -66,7 +66,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
       const position = {
         lat: location.location.latitud,
         lng: location.location.longitud,
-        city: location.ciudad,
+        city: location.location.ciudad,
       };
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
@@ -135,9 +135,9 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
             maxWidth: "450px"
           }}
         >
-          <h3>{modalData.city}</h3>
+          <h3>iniciativas en {modalData.city}</h3>
           <p className="text-sm mb-3">
-            {`${modalData.initiatives.length} Iniciativas encontradas`}
+            {`${modalData.initiatives.length}  encontradas`}
           </p>
          
                   <button
