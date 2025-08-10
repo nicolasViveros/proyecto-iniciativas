@@ -94,7 +94,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
       }, false);
 
       circleGroup.addEventListener("pointerenter", () => {
-        handlePointerEnter(location.ciudad, circle);
+        handlePointerEnter(location, circle);
       }, true);
 
       circleGroup.addEventListener("pointerleave", () => {
@@ -134,7 +134,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
             maxWidth: "450px"
           }}
         >
-          <h3>iniciativas en {modalData.city}</h3>
+          <h3>iniciativas en {location.ciudad}</h3>
           <p className="text-sm mb-3">
             {`${modalData.initiatives.length} encontradas`}
           </p>
