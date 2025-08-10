@@ -45,7 +45,7 @@ const MapaConFiltro = () => {
   };
 
   const handleCityClick = (city) => {
-    setPaisSeleccionado(city)
+    setCiudadSeleccionado(city)
     getIniciativasPorCiudad(city).then((data) => {
       setIniciativas(data);
       setMostrarFiltro(true);
