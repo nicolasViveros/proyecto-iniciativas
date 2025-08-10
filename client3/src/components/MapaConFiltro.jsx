@@ -117,23 +117,25 @@ const MapaConFiltro = () => {
           </div>
         )}
 
-        {!paisSeleccionado && iniciativasFilter.length > 0 && (
+        {paisSeleccionado ? (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
-              <button
+              <Link
                 onClick={() => {
-                  setIniciativas([]); // Clear initiatives to update state
+                  setPaisSeleccionado(null);
                   setMostrarFiltro(true);
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
               >
                 <LuCircleArrowLeft className="text-2xl inline hover:text-[#a49fc4]" />
-              </button>
+              </Link>
 
-              <h3 className="text-xl font-semibold">Iniciativas en la ciudad seleccionada</h3>
+              <h3 className="text-xl font-semibold">
+                Iniciativas en {paisSeleccionado}
+              </h3>
               <button
                 onClick={() => {
-                  setIniciativas([]);
+                  setPaisSeleccionado(null);
                   setMostrarFiltro(false);
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
@@ -152,7 +154,11 @@ const MapaConFiltro = () => {
                     >
                       {iniciativa.nombreIniciativa}
                     </Link>
-                    <p className="text-sm font-bold">{iniciativa.ciudad}</p>
+                    {iniciativa.ciudad ? (
+                      <p className="text-sm font-bold">{iniciativa.ciudad}</p>
+                    ) : (
+                      <p className="text-sm font-bold">{iniciativa.alcance}</p>
+                    )}
                     <span className="mt-1 mb-4 text-sm rounded truncated-text">
                       {iniciativa.descripcionIniciativa}
                     </span>
@@ -168,6 +174,16 @@ const MapaConFiltro = () => {
                 </div>
               ))}
             </div>
+          </div>
+        ) : (
+          <div className="p-4 text-sm py-2 space-y-2">
+            {iniciativasFilter.map((iniciativa) => (
+              <div key={iniciativa._id} className="card my-2">
+                <div className="card-body my-1">
+                  {/* Initiative display code */}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
