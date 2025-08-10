@@ -43,6 +43,14 @@ const MapaConFiltro = () => {
     });
   };
 
+  const handleCityClick = (city) => {
+    getIniciativasPorCiudad(city).then((data) => {
+      setIniciativas(data);
+      setMostrarFiltro(false);
+      setPaisSeleccionado(null); // To ensure no country filter is showing
+    });
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md  mx-auto">
       <div className="relative w-full h-150">
@@ -50,6 +58,7 @@ const MapaConFiltro = () => {
           <Map
             apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
             iniciativas={iniciativas}
+            onCitySelect={handleCityClick} // New prop for selecting a city
           />
         )}
 
@@ -107,7 +116,7 @@ const MapaConFiltro = () => {
           </div>
         )}
 
-        {paisSeleccionado && (
+{paisSeleccionado ? (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <Link
@@ -164,6 +173,16 @@ const MapaConFiltro = () => {
                 </div>
               ))}
             </div>
+          </div>
+        ) : (
+          <div className="p-4 text-sm py-2 space-y-2">
+            {iniciativasFilter.map((iniciativa) => (
+              <div key={iniciativa._id} className="card my-2">
+                <div className="card-body my-1">
+                  {/* Initiative display code */}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

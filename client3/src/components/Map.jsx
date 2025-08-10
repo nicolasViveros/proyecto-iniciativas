@@ -89,9 +89,9 @@ const Map = ({ apikey, iniciativas }) => {
       map.addObject(circleGroup);
 
       circleGroup.addEventListener("tap", function () {
-        window.open(
-          `https://rumboalaequidad.org/iniciativa/${location.location.idIniciativa}`
-        );
+        if (onCitySelect) {
+          onCitySelect(location.ciudad); // Trigger the callback with the city name
+        }
       }, false);
 
       circleGroup.addEventListener("pointerenter", () => {
