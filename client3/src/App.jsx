@@ -12,7 +12,6 @@ import IniciativasHomePage from "./pages/IniciativasHomePage";
 import IniciativaPage from "./pages/IniciativaPage";
 import EditIniciativaPage from "./pages/EditIniciativaPage";
 import IniciativasPage from "./pages/IniciativasPage";
-import IniciativaFormPage from "./pages/IniciativaFormPage";
 
 import ProtectedRoute from "./ProtectedRoute";
 import { FichaProvider } from "./context/FichasContext";
@@ -43,7 +42,7 @@ export function App() {
                     <Route path="/iniciativasHome" element={<IniciativasHomePage />} />
                     <Route path="/iniciativa/:id" element={<IniciativaPage />} />
                     <Route path="/iniciativas" element={<IniciativasPage />} />
-                    <Route path="/nueva-iniciativa" element={<IniciativaFormPage />} />
+                    <Route path="/nueva-iniciativa" element={<EditIniciativaPage />} />
                     <Route path="/iniciativa/:id/editar" element={<EditIniciativaPage />} />
                     <Route path="/menu" element={<MenuIntranet />} />
                     <Route path="/fichas" element={<FichasPage />} />
