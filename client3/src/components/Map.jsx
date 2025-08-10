@@ -94,7 +94,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
       }, false);
 
       circleGroup.addEventListener("pointerenter", () => {
-        handlePointerEnter(location, circle);
+        // handlePointerEnter(location, circle);
       }, true);
 
       circleGroup.addEventListener("pointerleave", () => {
