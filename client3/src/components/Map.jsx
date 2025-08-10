@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaEye, FaWindowClose } from "react-icons/fa";
 import { useIniciativas } from "../context/IniciativasContext";
 
-const Map = ({ apikey, iniciativas }) => {
+const Map = ({ apikey, iniciativas, onCitySelect }) => {
   const { getIniciativasPorCiudad } = useIniciativas();
   const mapRef = useRef(null);
   const map = useRef(null);
@@ -66,7 +66,6 @@ const Map = ({ apikey, iniciativas }) => {
       const position = {
         lat: location.location.latitud,
         lng: location.location.longitud,
-        ciudad: location.ciudad,
       };
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
@@ -90,7 +89,7 @@ const Map = ({ apikey, iniciativas }) => {
 
       circleGroup.addEventListener("tap", function () {
         if (onCitySelect) {
-          onCitySelect(location.ciudad); // Trigger the callback with the city name
+          onCitySelect(location.ciudad); // Call the function from the prop
         }
       }, false);
 
