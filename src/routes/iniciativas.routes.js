@@ -1,10 +1,10 @@
 import {Router} from 'express'  
-import {createIniciativas, getIniciativas, getIniciativa, deleteIniciativa, updateIniciativa, getIniciativasPorPais, getIniciativasPorCiudad } from '../controllers/iniciativas.controller.js';
+import {createIniciativa, getIniciativas, getIniciativa, deleteIniciativa, updateIniciativa, getIniciativasPorPais, getIniciativasPorCiudad } from '../controllers/iniciativas.controller.js';
 import { authRequired } from '../middlewares/validateToken.js';
 
 const router = Router();
 
-router.post('/iniciativas', authRequired, createIniciativas);
+router.post('/nueva-iniciativa', authRequired, createIniciativa);
 
 router.get('/iniciativas', authRequired, getIniciativas);
 

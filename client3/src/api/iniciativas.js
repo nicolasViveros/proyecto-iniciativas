@@ -12,4 +12,4 @@ export const getIniciativasPorPaisRequest = (pais) => axios.get(`/iniciativas/${
 
 export const getIniciativasPorCiudadRequest = (ciudad) => axios.get(`/iniciativasPorCiudad/${ciudad}`);
 
-export const createIniciativasRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);
+export const createIniciativaRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);

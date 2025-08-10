@@ -9,24 +9,32 @@ function EditIniciativaPage() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [iniciativa, setIniciativa] = useState(null);
-    const { getIniciativa } = useIniciativas();
+    const { getIniciativa , createIniciativa } = useIniciativas();
     const [isSaving, setIsSaving] = useState(false);
     const { updateIniciativa } = useIniciativas();
 
 
     useEffect(() => {
         const cargarIniciativa = async () => {
-            try {
-                const iniciativa = await getIniciativa(id);
-                setIniciativa(iniciativa);
-            } catch (error) {
-                console.error("Error al cargar la iniciativa:", error);
+            if (id) {
+                try {
+                    const iniciativa = await getIniciativa(id);
+                    setIniciativa(iniciativa);
+                } catch (error) {
+                    console.error("Error al cargar la iniciativa:", error);
+                }
+            } else {
+                // Initializes an empty initiative for new creation
+                setIniciativa({
+                    nombreIniciativa: '',
+                    tipoIniciativa: '',
+                    // Initialize other fields similarly
+                    links: [],
+                });
             }
         };
-
-        if (id) {
-            cargarIniciativa();
-        }
+    
+        cargarIniciativa();
     }, [id]);
 
     if (!iniciativa) {
@@ -59,17 +67,17 @@ function EditIniciativaPage() {
         }));
     };
     const handleSave = async () => {
-        // const validationError = validateFields();
-        // if (validationError) {
-        //     alert(validationError);
-        //     return;
-        // }
         setIsSaving(true);
         try {
-            await updateIniciativa(id, iniciativa);
+            if (id) {
+                await updateIniciativa(id, iniciativa);
+            } else {
+                // Call a function to create a new initiative
+                await createIniciativa(iniciativa);
+            }
             navigate('/iniciativas');
         } catch (error) {
-            console.error("Error al guardar la ficha:", error);
+            console.error("Error al guardar la iniciativa:", error);
         } finally {
             setIsSaving(false);
         }
@@ -192,7 +200,6 @@ function EditIniciativaPage() {
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
                     </div>
-
 
                     <div>Objetivo:</div>
                     <div>
@@ -381,15 +388,13 @@ function EditIniciativaPage() {
                         Agregar link +
                     </button>
 
-
-
                     <div className="flex col-span-2 justify-end">
                         <button
                             type="button"
                             onClick={handleSave}
                             className="bg-[#5d5593] text-white px-2 my-8 py-2 rounded hover:bg-[#a49fc4] justify-end"
                         >
-                            Guardar cambios
+                            Guardar
                         </button>
                     </div>
 

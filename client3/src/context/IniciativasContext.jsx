@@ -7,7 +7,7 @@ import {
     updateIniciativaRequest,
     getIniciativasPorPaisRequest,
     getIniciativasPorCiudadRequest,
-    createIniciativasRequest,
+    createIniciativaRequest,
 } from "../api/iniciativas";
 
 const IniciativaContext = createContext();
@@ -24,9 +24,9 @@ export const useIniciativas = () => {
 export function IniciativaProvider({ children }) {
     const [iniciativas, setIniciativas] = useState([])
 
-const createIniciativas = async (iniciativa) => {
+const createIniciativa = async (iniciativa) => {
         try {
-            const res = await createIniciativasRequest(iniciativa);
+            const res = await createIniciativaRequest(iniciativa);
             window.alert("Iniciativa creada con éxito");
             setIniciativas([...iniciativas, res.data]);
         } catch (error) {
@@ -102,7 +102,7 @@ const createIniciativas = async (iniciativa) => {
                 updateIniciativa,
                 getIniciativasPorPais,
                 getIniciativasPorCiudad,
-                createIniciativas,
+                createIniciativa,
             }}
         >
             {children}

@@ -122,7 +122,7 @@ export const getIniciativasPorCiudad = async (req, res) => {
   }
 };
 
-export const createIniciativas = async (req, res) => {
+export const createIniciativa = async (req, res) => {
   try {
     const iniciativa = new Iniciativa(req.body);
     const result = await iniciativa.save();
