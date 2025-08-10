@@ -96,12 +96,7 @@ function IniciativasPage() {
       >
         Nueva Iniciativa
       </Link>
-      <Link
-        to={`/iniciativa/${iniciativas._id}/editar`}
-        className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
-      >
-        Editar
-      </Link>
+     
     </div>
   )
 }
