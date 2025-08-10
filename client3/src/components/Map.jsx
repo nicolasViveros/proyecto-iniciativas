@@ -24,7 +24,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         visible: true,
         lat: circle.getCenter().lat,
         lng: circle.getCenter().lng,
-        city: location.ciudad,
+        city: location.cityName,
         initiatives: data || [], // Default to empty array if no data
       });
     });
@@ -134,9 +134,9 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
             maxWidth: "450px"
           }}
         >
-          <h3>iniciativas en {location.ciudad}</h3>
+          <h3>{modalData.city}</h3>
           <p className="text-sm mb-3">
-            {`${modalData.initiatives.length} encontradas`}
+            {`${modalData.initiatives.length} Iniciativas encontradas`}
           </p>
          
                   <button
