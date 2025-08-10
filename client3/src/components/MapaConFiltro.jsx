@@ -201,7 +201,7 @@ const MapaConFiltro = () => {
                 <LuCircleArrowLeft className="text-2xl inline hover:text-[#a49fc4]" />
               </button>
 
-              <h3 className="text-xl font-semibold">Iniciativas {ciudadSeleccionado}</h3>
+              <h3 className="text-xl font-semibold">Iniciativas {iniciativas.ciudad}</h3>
               <button
                 onClick={() => {
                   setIniciativas([]);
