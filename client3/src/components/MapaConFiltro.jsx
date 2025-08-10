@@ -46,21 +46,21 @@ const MapaConFiltro = () => {
   const handleCityClick = (city) => {
     getIniciativasPorCiudad(city).then((data) => {
       setIniciativas(data);
-      setMostrarFiltro(false);
+      setMostrarFiltro(true);
       setPaisSeleccionado(null); // To ensure no country filter is showing
     });
   };
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md mx-auto">
-    <div className="relative w-full h-150">
-      {iniciativas.length > 0 && (
-        <Map
-          apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
-          iniciativas={iniciativas}
-          onCitySelect={handleCityClick} // Pass the handler here
-        />
-      )}
+      <div className="relative w-full h-150">
+        {iniciativas.length > 0 && (
+          <Map
+            apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
+            iniciativas={iniciativas}
+            onCitySelect={handleCityClick} // Pass the handler here
+          />
+        )}
 
         {!mostrarFiltro && !paisSeleccionado && (
           <Link
@@ -116,7 +116,7 @@ const MapaConFiltro = () => {
           </div>
         )}
 
-{paisSeleccionado ? (
+        {paisSeleccionado ? (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <Link
