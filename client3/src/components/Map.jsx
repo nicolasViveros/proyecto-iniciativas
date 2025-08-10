@@ -27,6 +27,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         city: circle.getCenter().city,
         initiatives: data || [], // Default to empty array if no data
       });
+      console.log(modalData);
     });
   };
 
