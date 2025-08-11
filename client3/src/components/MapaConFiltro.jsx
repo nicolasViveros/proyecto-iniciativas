@@ -56,9 +56,6 @@ const MapaConFiltro = () => {
     getIniciativas();
   }, []);
 
- 
-
-
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md mx-auto">
       <div className="relative w-full h-150">
@@ -85,7 +82,11 @@ const MapaConFiltro = () => {
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">Iniciativas en {ciudadSeleccionado}</h2>
               <button
-                onClick={() => { setMostrarFiltro(false) }
+                onClick={() => {
+                  setMostrarFiltro(false),
+                    setCiudadSeleccionado(null),
+                    setPaisSeleccionado(null)
+                }
                 }
 
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
@@ -144,9 +145,9 @@ const MapaConFiltro = () => {
               </h3>
               <button
                 onClick={() => {
-                  setMostrarFiltro(false);
-                  setPaisSeleccionado(null);
-                  setCiudadSeleccionado(null);
+                  setMostrarFiltro(false),
+                  setCiudadSeleccionado(null),
+                  setPaisSeleccionado(null)
 
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
