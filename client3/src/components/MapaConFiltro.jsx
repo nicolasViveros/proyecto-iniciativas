@@ -219,7 +219,8 @@ const MapaConFiltro = () => {
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <button
                 onClick={() => {
-                  mostrarFiltroRegiones();
+                  setIniciativas([]); // Clear initiatives to update state
+                  mostrarFiltroRegiones
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
               >
