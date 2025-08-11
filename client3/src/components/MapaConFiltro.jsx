@@ -143,6 +143,7 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => {
                   setMostrarFiltro(false);
+                  setPaisSeleccionado(null);
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
@@ -209,6 +210,7 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => {
                   setMostrarFiltro(false);
+                  setCiudadSeleccionado(null);
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
