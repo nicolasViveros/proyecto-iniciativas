@@ -151,7 +151,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
           <Link
             to="#"
             onClick={() => setModalData({ visible: false, lat: 0, lng: 0, initiatives: [] })}
-            className="absolute top-1 right-1 p-2 hover:text-[#a49fc4]"
+            className="absolute top-1 right-1 p-1 hover:text-[#a49fc4]"
           >
             <FaWindowClose className="text-xl" />
           </Link>
