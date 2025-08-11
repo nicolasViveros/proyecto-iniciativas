@@ -44,13 +44,13 @@ function IniciativaPage() {
 
         {isAuthenticated ? (
           <div className="absolute top-4 right-4 ">
-            <button
+            <Link
               onClick={() => {
                 deleteIniciativa(iniciativa._id);
-              }} className="bg-[#5d5593] text-white px-4 py-1 mr-2 rounded hover:bg-[#a49fc4]"
+              }} className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
             >
               Eliminar
-            </button>
+            </Link>
             <Link
               to={`/iniciativa/${iniciativa._id}/editar`}
               className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
