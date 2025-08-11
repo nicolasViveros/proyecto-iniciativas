@@ -64,7 +64,7 @@ const MapaConFiltro = () => {
           />
         )}
 
-        {!mostrarFiltro (
+        {!mostrarFiltro && !paisSeleccionado && !ciudadSeleccionado && (
           <Link
             className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
             onClick={toggleFiltro}
@@ -74,7 +74,7 @@ const MapaConFiltro = () => {
           </Link>
         )}
 
-        {mostrarFiltro && !paisSeleccionado && !ciudadSeleccionado && (
+        {mostrarFiltro  && (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 overflow-hidden z-10">
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">Iniciativas en {iniciativas.ciudad}</h2>
