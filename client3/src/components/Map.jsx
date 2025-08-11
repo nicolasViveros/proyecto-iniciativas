@@ -3,8 +3,9 @@ import H from "@here/maps-api-for-javascript";
 import { Link } from "react-router-dom";
 import { FaEye, FaWindowClose } from "react-icons/fa";
 import { useIniciativas } from "../context/IniciativasContext";
+import { paisesCoordinates } from "../components/MapaConFiltro";
 
-const Map = ({ apikey, iniciativas, onCitySelect }) => {
+const Map = ({ apikey, iniciativas, onCitySelect, center }) => {
   const { getIniciativasPorCiudad } = useIniciativas();
   const mapRef = useRef(null);
   const map = useRef(null);
@@ -42,8 +43,8 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         mapRef.current,
         defaultLayers.vector.normal.map,
         {
-          zoom: 4,
-          center: { lat: -20, lng: -50 },
+          zoom: 4, // Set zoom level
+          center: center || paisesCoordinates["Argentina"], // Set map center
         }
       );
 
