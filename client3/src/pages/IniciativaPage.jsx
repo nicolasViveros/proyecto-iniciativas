@@ -43,11 +43,11 @@ function IniciativaPage() {
         <InitiativeCard iniciativa={iniciativa} />
 
         {isAuthenticated ? (
-          <div className="absolute top-4 right-4 ">
+          <div className="absolute top-4 right-4 gap-4">
             <button
               onClick={() => {
                 deleteIniciativa(iniciativa._id);
-              }} className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
+              }} className="bg-[#5d5593] text-white px-4 py-1 rounded hover:bg-[#a49fc4]"
             >
               Eliminar
             </button>
