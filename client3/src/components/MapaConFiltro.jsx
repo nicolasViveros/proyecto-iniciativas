@@ -89,10 +89,8 @@ const MapaConFiltro = () => {
         {!mostrarFiltro && !paisSeleccionado && !ciudadSeleccionado && (
           <Link
             className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
-            onClick={() => {
-              setIniciativas([]);
-              mostrarFiltroRegiones();
-            }}          >
+            onClick={mostrarFiltroRegiones}
+          >
             <FaAngleLeft className="text-xl inline" />
             <span className="ml-1">Mostrar filtro</span>
           </Link>
@@ -103,7 +101,7 @@ const MapaConFiltro = () => {
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">Iniciativas en {ciudadSeleccionado}</h2>
               <button
-                onClick={() => { mostrarFiltroRegiones, setMostrarFiltro(false) }
+                onClick={() => { setMostrarFiltro(false) }
                 }
 
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"

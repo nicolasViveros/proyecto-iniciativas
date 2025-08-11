@@ -69,6 +69,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         lng: location.location.longitud,
         city: location.location.ciudad,
       };
+      console.log(position.city);
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
       });
