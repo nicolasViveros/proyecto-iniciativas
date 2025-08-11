@@ -140,14 +140,6 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
           <p className="text-sm mb-3">
             {`${modalData.initiatives.length}  encontradas`}
           </p>
-         
-                  <button
-                    className="flex justify-end hover:text-[#a49fc4] rounded-md"
-                  >
-                    <span className="ml-1">Revisar iniciativa</span>
-                    <FaEye className="text-2xl ml-1 mb-1 inline" />
-                  </button>
-             
           <Link
             to="#"
             onClick={() => setModalData({ visible: false, lat: 0, lng: 0, initiatives: [] })}
