@@ -137,7 +137,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
           }}
         >
           <h3>Iniciativas en {modalData.city}</h3>
-          <p className="text-sm mb-3">
+          <p className="text-sm">
             {`${modalData.initiatives.length}  encontradas`}
           </p>
           <Link
