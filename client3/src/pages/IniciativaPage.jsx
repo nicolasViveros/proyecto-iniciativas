@@ -55,9 +55,10 @@ function IniciativaPage() {
   }
 
   const eliminaIniciativa = async () => {
-    setIsSaving(true);
     const userConfirmed = window.confirm("¿Está seguro de que desea eliminar esta iniciativa? Esta acción no se puede deshacer.");
-    if (!userConfirmed) {
+    if (userConfirmed) {
+      setIsSaving(true);
+
       try {
         await deleteIniciativa(id);
         navigate('/iniciativas');
