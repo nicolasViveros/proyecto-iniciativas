@@ -220,7 +220,6 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => {
                   mostrarFiltroRegiones();
-                  setIniciativas([]); // Clear initiatives to update state
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
               >
