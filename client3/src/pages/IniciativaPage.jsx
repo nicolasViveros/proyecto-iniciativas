@@ -56,45 +56,47 @@ function IniciativaPage() {
 
   const eliminaIniciativa = async () => {
     setIsSaving(true);
-    try {
-      await deleteIniciativa(id);
-      navigate('/iniciativas');
-    } catch (error) {
-      console.error("Error al eliminar la iniciativa:", error);
-    } finally {
-      setIsSaving(false);
-    }
-  };
+    const userConfirmed = window.confirm("¿Está seguro de que desea eliminar esta iniciativa? Esta acción no se puede deshacer.");
+    if (!userConfirmed) {
+      try {
+        await deleteIniciativa(id);
+        navigate('/iniciativas');
+      } catch (error) {
+        console.error("Error al eliminar la iniciativa:", error);
+      } finally {
+        setIsSaving(false);
+      }
+    };
 
-  return (
-    <div className="relative flex items-center justify-center min-h-screen">
-      <div className="min-h-screen bg-gray-100 p-4">
-        <InitiativeCard iniciativa={iniciativa} />
+    return (
+      <div className="relative flex items-center justify-center min-h-screen">
+        <div className="min-h-screen bg-gray-100 p-4">
+          <InitiativeCard iniciativa={iniciativa} />
 
-        {isAuthenticated ? (
-          <div className="absolute top-4 right-4 ">
-            <Link
-              onClick={eliminaIniciativa} 
-              className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
-            >
-              Eliminar
-            </Link>
-            <Link
-              to={`/iniciativa/${iniciativa._id}/editar`}
-              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
-            >
-              editar
-            </Link>
-          </div>
-        ) : (<div className="absolute top-4 right-4 ">
+          {isAuthenticated ? (
+            <div className="absolute top-4 right-4 ">
+              <Link
+                onClick={eliminaIniciativa}
+                className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
+              >
+                Eliminar
+              </Link>
+              <Link
+                to={`/iniciativa/${iniciativa._id}/editar`}
+                className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
+              >
+                editar
+              </Link>
+            </div>
+          ) : (<div className="absolute top-4 right-4 ">
 
-        </div>)}
+          </div>)}
+        </div>
       </div>
-    </div>
-  )
-}
+    )
+  }
 
-export default IniciativaPage
+  export default IniciativaPage
 
 
 
