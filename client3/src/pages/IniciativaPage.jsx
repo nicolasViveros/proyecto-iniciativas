@@ -5,12 +5,15 @@ import InitiativeCard from '../components/InitiativeCard'
 import LoadingSpinner from "../context/LoadingSpinner";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function IniciativaPage() {
   const { isAuthenticated } = useAuth();
   const { id } = useParams();
   const { getIniciativa, deleteIniciativa } = useIniciativas();
   const [iniciativa, setIniciativa] = useState(null);
+  const [isSaving, setIsSaving] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     // Función para cargar datos de la iniciativa
     const cargarIniciativa = async () => {
@@ -36,6 +39,32 @@ function IniciativaPage() {
 
     );
   }
+  if (isSaving) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
+        {/* {language === "es"
+            ? "Guardando postulación..."
+            : language === "en"
+              ? "Saving application..."
+              : "Salvando candidatura..."} */}
+        <LoadingSpinner />
+        {/* </div> */}
+      </div>
+    );
+  }
+
+  const eliminaIniciativa = async () => {
+    setIsSaving(true);
+    try {
+      await deleteIniciativa(id);
+      navigate('/iniciativas');
+    } catch (error) {
+      console.error("Error al eliminar la iniciativa:", error);
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
@@ -45,12 +74,8 @@ function IniciativaPage() {
         {isAuthenticated ? (
           <div className="absolute top-4 right-4 ">
             <Link
-              onClick={() => {
-                const userConfirmed = window.confirm("¿Está seguro de que desea eliminar esta iniciativa? Esta acción no se puede deshacer.");
-                if (!userConfirmed){
-                deleteIniciativa(iniciativa._id);
-              }
-              }} className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
+              onClick={eliminaIniciativa} 
+              className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
             >
               Eliminar
             </Link>
