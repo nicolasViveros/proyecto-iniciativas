@@ -79,7 +79,7 @@ const MapaConFiltro = () => {
         )}
 
         {mostrarFiltro && (
-          <div className="absolute top-0 right-0 h-auto bg-white shadow-lg w-104 overflow-hidden z-10">
+          <div className="absolute top-0 right-0 h-150 bg-white shadow-lg w-104 overflow-hidden z-10">
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">
                 {paisSeleccionado
