@@ -160,7 +160,8 @@ const MapaConFiltro = () => {
                 onClick={() => {
                   setPaisSeleccionado(null);
                   setMostrarFiltro(false);
-                  setCiudadSeleccionado(null);                  
+                  setCiudadSeleccionado(null);
+                  
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
@@ -224,7 +225,7 @@ const MapaConFiltro = () => {
                 <LuCircleArrowLeft className="text-2xl inline hover:text-[#a49fc4]" />
               </button>
 
-              <h3 className="text-xl font-semibold">Iniciativas {iniciativas.ciudad}</h3>
+              <h3 className="text-xl font-semibold">Iniciativas en {ciudadSeleccionado}</h3>
               <button
                 onClick={() => {
                   setIniciativas([]);
