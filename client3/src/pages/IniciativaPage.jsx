@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function IniciativaPage() {
   const { isAuthenticated } = useAuth();
   const { id } = useParams();
-  const { getIniciativa } = useIniciativas();
+  const { getIniciativa, deleteIniciativa } = useIniciativas();
   const [iniciativa, setIniciativa] = useState(null);
   useEffect(() => {
     // Función para cargar datos de la iniciativa
@@ -44,6 +44,13 @@ function IniciativaPage() {
 
         {isAuthenticated ? (
           <div className="absolute top-4 right-4 ">
+            <button
+              onClick={() => {
+                deleteIniciativa(iniciativa._id);
+              }} className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
+            >
+              Eliminar
+            </button>
             <Link
               to={`/iniciativa/${iniciativa._id}/editar`}
               className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"

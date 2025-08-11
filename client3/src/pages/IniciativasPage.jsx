@@ -88,20 +88,21 @@ function IniciativasPage() {
       <FichasFilter items={iniciativas} type="iniciativa" key={iniciativas._id} />
 
       {
-  isAuthenticated && (
-    <div className="absolute top-4 right-4 flex gap-x-2">
-      <Link
-        to="/nueva-iniciativa"
-        className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
-      >
-        Nueva Iniciativa
-      </Link>
-     
+        isAuthenticated && (
+          <div className="absolute top-4 right-4 flex gap-x-2">
+            <Link
+              to="/nueva-iniciativa"
+              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
+            >
+              Nueva Iniciativa
+            </Link>
+            
+
+          </div>
+        )
+      }
     </div>
-  )
-}
-    </div>
-    );
+  );
 
 }
 
