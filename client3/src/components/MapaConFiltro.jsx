@@ -56,24 +56,8 @@ const MapaConFiltro = () => {
     getIniciativas();
   }, []);
 
-  const toggleFiltro = () => setMostrarFiltro(!mostrarFiltro);
+ 
 
-  const handlePaisClick = (pais) => {
-    setPaisSeleccionado(pais);
-    getIniciativasPorPais(pais).then((data) => {
-      setIniciativas(data);
-      setMostrarFiltro(true);
-    });
-  };
-
-  const handleCityClick = (city) => {
-    setCiudadSeleccionado(city)
-    getIniciativasPorCiudad(city).then((data) => {
-      setIniciativas(data);
-      setMostrarFiltro(true);
-      setPaisSeleccionado(null); // To ensure no country filter is showing
-    });
-  };
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md mx-auto">
@@ -103,7 +87,6 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => { setMostrarFiltro(false) }
                 }
-
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
                 Ocultar
@@ -147,7 +130,6 @@ const MapaConFiltro = () => {
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <Link
                 onClick={() => {
-                  setIniciativas([]);
                   mostrarFiltroRegiones();
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
@@ -161,9 +143,6 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => {
                   setMostrarFiltro(false);
-                  setPaisSeleccionado(null);
-                  setCiudadSeleccionado(null);
-
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
@@ -219,7 +198,6 @@ const MapaConFiltro = () => {
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <button
                 onClick={() => {
-                  setIniciativas([]); // Clear initiatives to update state
                   mostrarFiltroRegiones
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
@@ -231,8 +209,6 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => {
                   setMostrarFiltro(false);
-                  setPaisSeleccionado(null);
-                  setCiudadSeleccionado(null);
                 }}
                 className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
               >
