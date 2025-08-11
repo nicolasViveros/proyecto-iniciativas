@@ -68,6 +68,8 @@ function IniciativaPage() {
         setIsSaving(false);
       }
     };
+  };
+
 
     return (
       <div className="relative flex items-center justify-center min-h-screen">
