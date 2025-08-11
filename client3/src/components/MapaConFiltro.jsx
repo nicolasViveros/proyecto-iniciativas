@@ -20,25 +20,11 @@ const regiones = {
   Internacional: ["Internacional"],
 };
 
-const paisesCoordinates = {
-  Argentina: { lat: -34.6037, lng: -58.3816 },
-  Brasil: { lat: -15.8267, lng: -47.9218 },
-  Bolivia: { lat: -16.4897, lng: -68.1193 },
-  Chile: { lat: -33.4489, lng: -70.6693 },
-  Colombia: { lat: 4.711, lng: -74.0721 },
-  Ecuador: { lat: -0.1807, lng: -78.4678 },
-  Perú: { lat: -12.0464, lng: -77.0428 },
-  "Costa Rica": { lat: 9.7489, lng: -83.7534 },
-  "El Salvador": { lat: 13.6929, lng: -89.2182 },
-  México: { lat: 19.4326, lng: -99.1332 },
-  Internacional: { lat: 0.0, lng: 0.0 }, // This is just a placeholder
-};
 
 const MapaConFiltro = () => {
   const [iniciativasFilter, setIniciativas] = useState([]);
   const { getIniciativasPorPais, getIniciativasPorCiudad, iniciativas, getIniciativas } =
     useIniciativas();
-  const [mapCenter, setMapCenter] = useState(null);
 
   const [mostrarFiltro, setMostrarFiltro] = useState(false);
   const [regionActiva, setRegionActiva] = useState(null);
@@ -52,7 +38,6 @@ const MapaConFiltro = () => {
   const cargarIniciativas = (tipo, value) => {
     if (tipo === "pais") {
       setPaisSeleccionado(value);
-      setMapCenter(paisesCoordinates[value]); // Set map center on country select
       getIniciativasPorPais(value).then((data) => {
         setIniciativas(data);
         setMostrarFiltro(true);
@@ -76,12 +61,11 @@ const MapaConFiltro = () => {
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md mx-auto">
       <div className="relative w-full h-150">
         {iniciativas.length > 0 && (
-         <Map
-         apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
-         iniciativas={iniciativas}
-         center={mapCenter} // Pass the new prop to the Map component
-         onCitySelect={(city) => cargarIniciativas("ciudad", city)}
-       />
+          <Map
+            apikey={"V-p2IrxC_hM0fzfISBie3C0opnL6iu2hxmsVZC56LQY"}
+            iniciativas={iniciativas}
+            onCitySelect={(city) => cargarIniciativas("ciudad", city)}
+          />
         )}
 
         {!mostrarFiltro && !paisSeleccionado && !ciudadSeleccionado && (

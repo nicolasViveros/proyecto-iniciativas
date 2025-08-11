@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import H from "@here/maps-api-for-javascript";
 import { Link } from "react-router-dom";
-import { FaWindowClose } from "react-icons/fa";
+import { FaEye, FaWindowClose } from "react-icons/fa";
 import { useIniciativas } from "../context/IniciativasContext";
 
-const Map = ({ apikey, iniciativas, onCitySelect, center }) => {
+const Map = ({ apikey, iniciativas, onCitySelect }) => {
   const { getIniciativasPorCiudad } = useIniciativas();
   const mapRef = useRef(null);
   const map = useRef(null);
@@ -27,6 +27,7 @@ const Map = ({ apikey, iniciativas, onCitySelect, center }) => {
         city: location.ciudad,
         initiatives: data || [], // Default to empty array if no data
       });
+      console.log(modalData);
     });
   };
 
@@ -37,33 +38,28 @@ const Map = ({ apikey, iniciativas, onCitySelect, center }) => {
       const defaultLayers = platform.current.createDefaultLayers({
         pois: true,
       });
-      map.current = new H.Map(
+      const newMap = new H.Map(
         mapRef.current,
         defaultLayers.vector.normal.map,
         {
           zoom: 4,
-          center: center || { lat: -34.6037, lng: -58.3816 }, // Default center, e.g., Argentina
+          center: { lat: -20, lng: -50 },
         }
       );
 
-      new H.mapevents.Behavior(new H.mapevents.MapEvents(map.current));
-      H.ui.UI.createDefault(map.current, defaultLayers);
+      const behavior = new H.mapevents.Behavior(
+        new H.mapevents.MapEvents(newMap)
+      );
+      const ui = H.ui.UI.createDefault(newMap, defaultLayers);
+
+      map.current = newMap;
+
+      setTimeout(() => {
+        console.log("iniciativas: ", iniciativas);
+        createResizableCircles(map.current, iniciativas);
+      }, 3000);
     }
-
-    // Update the map center when the `center` prop changes
-    if (center && map.current) {
-      map.current.setCenter(center);
-    }
-
-  }, [apikey, center, getIniciativasPorCiudad]);
-
-  useEffect(() => {
-    if (map.current && iniciativas) {
-      map.current.removeObjects(map.current.getObjects());
-      createResizableCircles(map.current, iniciativas);
-    }
-  }, [iniciativas]);
-
+  }, [apikey, getIniciativasPorCiudad]);
 
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
@@ -87,14 +83,15 @@ const Map = ({ apikey, iniciativas, onCitySelect, center }) => {
         objects: [circle, circleOutline],
       });
 
-      circleOutline.getGeometry()
+      circleOutline
+        .getGeometry()
         .pushPoint(circleOutline.getGeometry().extractPoint(0));
 
       map.addObject(circleGroup);
 
-      circleGroup.addEventListener("tap", () => {
+      circleGroup.addEventListener("tap", function () {
         if (onCitySelect) {
-          onCitySelect(location.ciudad);
+          onCitySelect(location.ciudad); // Call the function from the prop
         }
       }, false);
 
