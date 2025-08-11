@@ -54,6 +54,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
       map.current = newMap;
 
       setTimeout(() => {
+        // console.log("iniciativas: ", iniciativas);
         createResizableCircles(map.current, iniciativas);
       }, 3000);
     }

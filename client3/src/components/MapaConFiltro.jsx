@@ -79,7 +79,7 @@ const MapaConFiltro = () => {
         )}
 
         {mostrarFiltro && (
-          <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 overflow-hidden z-10">
+          <div className="absolute inset-0 bg-white shadow-lg z-10">
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">
                 {paisSeleccionado
@@ -99,8 +99,7 @@ const MapaConFiltro = () => {
                 <FaAngleRight className="text-xl inline" />
               </button>
             </div>
-
-            <div className="p-3 overflow-y-auto h-[calc(100%-40px)]">
+            <div className="p-3 overflow-y-auto h-full">
               {Object.entries(regiones).map(([region, paises]) => (
                 <div key={region} className="mb-4 border-b border-[#D9D6E1]">
                   <button
