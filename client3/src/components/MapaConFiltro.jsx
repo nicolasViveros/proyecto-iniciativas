@@ -136,9 +136,9 @@ const MapaConFiltro = () => {
               <button
                 onClick={() => {
                   setIniciativas([]);
-                  mostrarFiltroRegiones();
                   setPaisSeleccionado(null);
                   setCiudadSeleccionado(null);
+                  setMostrarFiltro(true); // Ensure the filter by regions is shown
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
               >
