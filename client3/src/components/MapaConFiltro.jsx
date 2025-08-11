@@ -147,8 +147,8 @@ const MapaConFiltro = () => {
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <Link
                 onClick={() => {
-                  mostrarFiltroRegiones();
                   setIniciativas([]);
+                  mostrarFiltroRegiones();
                 }}
                 className="text-xl font-semibold cursor-pointer hover:underline"
               >
