@@ -77,7 +77,7 @@ const MapaConFiltro = () => {
           </Link>
         )}
 
-        {mostrarFiltro && (
+        {/* {mostrarFiltro && (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 overflow-hidden z-10">
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">Iniciativas en 2</h2>
@@ -125,7 +125,7 @@ const MapaConFiltro = () => {
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
         {paisSeleccionado ? (
           <div className="absolute top-0 right-0 h-full bg-white shadow-lg w-104 z-20 overflow-y-auto">
