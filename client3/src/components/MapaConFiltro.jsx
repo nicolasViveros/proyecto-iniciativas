@@ -89,8 +89,10 @@ const MapaConFiltro = () => {
         {!mostrarFiltro && !paisSeleccionado && !ciudadSeleccionado && (
           <Link
             className="absolute top-0 right-0 mt-2 mr-2 bg-white border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4] z-10"
-            onClick={mostrarFiltroRegiones}
-          >
+            onClick={() => {
+              setIniciativas([]);
+              mostrarFiltroRegiones();
+            }}          >
             <FaAngleLeft className="text-xl inline" />
             <span className="ml-1">Mostrar filtro</span>
           </Link>
