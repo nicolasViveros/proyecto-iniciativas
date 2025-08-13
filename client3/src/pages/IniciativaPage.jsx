@@ -6,7 +6,7 @@ import LoadingSpinner from "../context/LoadingSpinner";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { getGeocodeData } from "../api/maps";
+import { getGeocodeData } from "./maps.controller.js";
 import Localizacion from "../models/localizacion.model";
 
 function IniciativaPage() {
