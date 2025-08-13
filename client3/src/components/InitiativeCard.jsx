@@ -21,7 +21,7 @@ const InitiativeCard = ({ iniciativa }) => {
   } = iniciativa;
 
   const navigate = useNavigate();
-
+  console.log(iniciativa.location)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
@@ -117,7 +117,7 @@ const InitiativeCard = ({ iniciativa }) => {
                 <span className="font-semibold">Sitio web de la institución:</span> <span>Sin información</span>
               </li>
             )}
-            console.log(iniciativa.location)
+            
             {/* <li>latitud: {location.latitud}</li>
             <li>longitud: {location.longitud}</li> */}
           </ul>
