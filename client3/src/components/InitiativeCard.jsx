@@ -32,13 +32,16 @@ const InitiativeCard = ({ iniciativa }) => {
       getLocationPorIniciativa(_id).then((data) => {
         console.log({data});
         setLocation(data);
-        console.log(location.latitud) 
       });
     }
   }, [_id]);
 
   const navigate = useNavigate();
  
+  console.log(location.latitud)
+  console.log(location.longitud)
+  console.log(location.ciudad)
+  console.log(location.pais)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
