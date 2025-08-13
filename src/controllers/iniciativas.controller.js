@@ -144,3 +144,33 @@ export const getLocationPorIniciativa = async (req, res) => {
     return res.status(404).json({ message: "location not found" });
   }
 };
+
+export const updateLocationPorIniciativa = async (req, res) => {
+  
+  const location = await getGeocodeData(
+    iniciativa.pais + "+" + iniciativa.ciudad
+  );
+  try {
+    const location = await Localizacion.findOneandUpdate(
+      {
+        idIniciativa: req.params.id,
+      },
+      {
+        $set: {
+          pais: req.body.pais,
+          ciudad: req.body.ciudad,
+          latitud: req.body.latitud,
+          longitud: req.body.longitud,
+        },
+      },
+      {
+        new: true,
+      }
+    );
+    if (!location)
+      return res.status(404).json({ message: "location not found" });
+    res.json(location);
+  } catch (error) {
+    return res.status(404).json({ message: "location not found" });
+  }
+};

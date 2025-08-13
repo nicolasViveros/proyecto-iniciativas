@@ -37,8 +37,7 @@ const InitiativeCard = ({ iniciativa }) => {
   }, [_id]);
 
   const navigate = useNavigate();
-  console.log(iniciativa._id)
-  console.log(location.longitud)
+ 
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">

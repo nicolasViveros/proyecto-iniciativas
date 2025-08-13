@@ -56,7 +56,19 @@ function IniciativaPage() {
   }
 
 const actualizaLocalizacion = async () => {
-  
+    const userConfirmed = window.confirm("¿Está seguro de que desea actualizar la localización? Esta acción no se puede deshacer.");
+    if (userConfirmed) {
+      setIsSaving(true);
+      try {
+        await updateLocationPorIniciativa(iniciativa);
+      }
+      catch (error) {
+        console.error("Error al actualizar la localización:", error);
+      }
+      finally {
+        setIsSaving(false);
+      }
+    };
 }
 
   const eliminaIniciativa = async () => {

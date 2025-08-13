@@ -1,5 +1,5 @@
 import {Router} from 'express'  
-import {createIniciativa, getLocationPorIniciativa, getIniciativas, getIniciativa, deleteIniciativa, updateIniciativa, getIniciativasPorPais, getIniciativasPorCiudad } from '../controllers/iniciativas.controller.js';
+import {createIniciativa, updateLocationPorIniciativa, getLocationPorIniciativa, getIniciativas, getIniciativa, deleteIniciativa, updateIniciativa, getIniciativasPorPais, getIniciativasPorCiudad } from '../controllers/iniciativas.controller.js';
 import { authRequired } from '../middlewares/validateToken.js';
 
 const router = Router();
@@ -19,6 +19,8 @@ router.get('/iniciativas/:pais', authRequired, getIniciativasPorPais);
 router.get('/iniciativasPorCiudad/:ciudad', authRequired, getIniciativasPorCiudad);
 
 router.get('/locationPorIniciativa/:id', authRequired, getLocationPorIniciativa);
+
+router.put('/locationPorIniciativa/:id', authRequired, updateLocationPorIniciativa);
  
 
 
