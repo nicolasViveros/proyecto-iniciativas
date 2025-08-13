@@ -139,9 +139,9 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         >
 
           {modalData.city === "Nacional" ? (
-            <h3>Iniciativas en {modalData.city}</h3>)
+            <h3>Iniciativas en  {modalData.pais} Nacional</h3>)
             :
-            (<h3>Iniciativas en  {modalData.pais} Nacional</h3>)
+            (<h3>Iniciativas en  {modalData.city} </h3>)
           }
           <p className="text-sm">
             {`${modalData.initiatives.length}  encontradas`}
