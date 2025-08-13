@@ -147,11 +147,11 @@ export const getLocationPorIniciativa = async (req, res) => {
 
 export const updateLocationPorIniciativa = async (req, res) => {
   
-  const location = await getGeocodeData(
-    iniciativa.pais + "+" + iniciativa.ciudad
+  const newLocation = await getGeocodeData(
+    req.body.pais + "+" + req.body.ciudad
   );
   try {
-    const location = await Localizacion.findOneandUpdate(
+    const location = await Localizacion.findOneAndUpdate(
       {
         idIniciativa: req.params.id,
       },
