@@ -146,17 +146,20 @@ export const getLocationPorIniciativa = async (req, res) => {
 };
 
 export const updateLocationPorIniciativa = async (req, res) => {
-
-  const iniciativa = await Iniciativa.findById(req.params.id);
-
-  const newLocation = await getGeocodeData(
-    iniciativa.pais + "+" + iniciativa.ciudad
-  );
   try {
+    const iniciativa = await Iniciativa.findById(req.params.id);
+
+    if (!iniciativa) {
+      return res.status(404).json({ message: "iniciativa not found" });
+    }
+
+    const newLocation = await getGeocodeData(`${iniciativa.pais},${iniciativa.ciudad}`);
+    if (!newLocation || !newLocation.items || newLocation.items.length === 0) {
+      return res.status(500).json({ message: "could not fetch geocode data" });
+    }
+
     const location = await Localizacion.findOneAndUpdate(
-      {
-        idIniciativa: req.params.id,
-      },
+      { idIniciativa: req.params.id },
       {
         $set: {
           pais: newLocation.items[0].address_components[0].short_name,
@@ -165,14 +168,16 @@ export const updateLocationPorIniciativa = async (req, res) => {
           longitud: newLocation.items[0].geometry.location.lng,
         },
       },
-      {
-        new: true,
-      }
+      { new: true }
     );
-    if (!location)
+
+    if (!location) {
       return res.status(404).json({ message: "location not found" });
-    res.json(newLocation);
+    }
+
+    res.json(location);
   } catch (error) {
-    return res.status(404).json({ message: "location not found" });
+    console.error("Error updating location: ", error); // Log para debug
+    return res.status(500).json({ message: "An error occurred while updating location" });
   }
 };
