@@ -1,12 +1,11 @@
 // src/components/InitiativeCard.jsx (o .js)
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from "react";
 import { useIniciativas } from "../context/IniciativasContext";
 
 const InitiativeCard = ({ iniciativa }) => {
   const {
-    id,
+    _id,
     tipoIniciativa,
     nombreIniciativa,
     fechaInicioTermino,
@@ -19,7 +18,6 @@ const InitiativeCard = ({ iniciativa }) => {
     tipoInstitucion,
     actoresInvolucrados,
     paginaWebInstitucion,
-    location,
   
   } = iniciativa;
 
@@ -38,8 +36,7 @@ const InitiativeCard = ({ iniciativa }) => {
   // }, [id]);
 
   const navigate = useNavigate();
-  console.log(iniciativa)
-  console.log(iniciativa.location)
+  console.log(iniciativa._id)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
