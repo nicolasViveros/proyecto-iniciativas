@@ -5,6 +5,7 @@ dotenv.config();
 export const getGeocodeData = async (address) => {
   const apiKey = process.env.HERE_API_KEY;
 
+  
   try {
     const response = await axios.get(
       `https://geocode.search.hereapi.com/v1/geocode?q=` +
