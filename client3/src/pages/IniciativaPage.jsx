@@ -19,7 +19,7 @@ function IniciativaPage() {
     const cargarIniciativa = async () => {
       try {
         const iniciativa = await getIniciativa(id);
-        console.log(iniciativa)
+        // console.log(iniciativa)
         setIniciativa(iniciativa);
       } catch (error) {
         console.error("Error al cargar la iniciativa:", error);
