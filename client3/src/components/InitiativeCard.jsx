@@ -32,6 +32,7 @@ const InitiativeCard = ({ iniciativa }) => {
       getLocationPorIniciativa(_id).then((data) => {
         console.log({data});
         setLocation(data);
+        console.log(location.latitud) 
       });
     }
   }, [_id]);
