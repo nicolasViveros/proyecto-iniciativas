@@ -130,7 +130,7 @@ export const createIniciativa = async (req, res) => {
   } catch (error) {
     return res.status(404).json({ message: "iniciativa not found" });
   }
-};  
+};
 
 export const getLocationPorIniciativa = async (req, res) => {
   try {
@@ -146,11 +146,12 @@ export const getLocationPorIniciativa = async (req, res) => {
 };
 
 export const updateLocationPorIniciativa = async (req, res) => {
-  
+
+  const iniciativa = await Iniciativa.findById(req.params.id);
+
   const newLocation = await getGeocodeData(
-    req.body.pais + "+" + req.body.ciudad
+    iniciativa.pais + "+" + iniciativa.ciudad
   );
-  console.log("nueva locacion: ", newLocation);
   try {
     const location = await Localizacion.findOneAndUpdate(
       {
@@ -158,10 +159,10 @@ export const updateLocationPorIniciativa = async (req, res) => {
       },
       {
         $set: {
-          pais: req.body.pais,
-          ciudad: req.body.ciudad,
-          latitud: req.body.latitud,
-          longitud: req.body.longitud,
+          pais: newLocation.items[0].address_components[0].short_name,
+          ciudad: newLocation.items[0].address_components[1].short_name,
+          latitud: newLocation.items[0].geometry.location.lat,
+          longitud: newLocation.items[0].geometry.location.lng,
         },
       },
       {

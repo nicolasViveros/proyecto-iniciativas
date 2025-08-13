@@ -64,7 +64,7 @@ const actualizaLocalizacion = async () => {
         console.log(location);
         console.log(id)
        
-        await updateLocationPorIniciativa(id, location);
+        await updateLocationPorIniciativa(id, location, iniciativa.pais || '' , iniciativa.ciudad || ''  );
       }
       catch (error) {
         console.error("Error al actualizar la localización:", error);
