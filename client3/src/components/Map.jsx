@@ -20,7 +20,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
 
   const handlePointerEnter = (location, circle) => {
     circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" });
-    {location.ciudad && (
+    
         getIniciativasPorCiudad(location.ciudad).then((data) => {
           setModalData({
             visible: true,
@@ -33,8 +33,6 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
           console.log("data: ", data);
           console.log(location)
         })
-      )
-    }
   };
 
 
