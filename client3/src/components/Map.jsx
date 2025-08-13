@@ -19,12 +19,12 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
 
   const handlePointerEnter = (location, circle) => {
     circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" });
-    getIniciativasPorCiudad(location.ciudad || " ").then((data) => {
+    getIniciativasPorCiudad(location.ciudad ).then((data) => {
       setModalData({
         visible: true,
         lat: circle.getCenter().lat,
         lng: circle.getCenter().lng,
-        city: location.ciudad,
+        city: location.ciudad || " ",
         initiatives: data || [], // Default to empty array if no data
       });
       console.log("data: ", data);
