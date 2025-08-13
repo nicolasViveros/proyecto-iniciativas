@@ -23,8 +23,6 @@ const InitiativeCard = ({ iniciativa }) => {
   } = iniciativa;
 
   const [location, setLocation] = useState(null);
-
-
   const { getLocationPorIniciativa } = useIniciativas();
 
   useEffect(() => {
