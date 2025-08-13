@@ -19,7 +19,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
 
   const handlePointerEnter = (location, circle) => {
     circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" });
-    getIniciativasPorCiudad(location.ciudad ).then((data) => {
+    getIniciativasPorCiudad(location.ciudad).then((data) => {
       setModalData({
         visible: true,
         lat: circle.getCenter().lat,
@@ -138,10 +138,11 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
           }}
         >
 
-          (modalData.city==="Nacional" ?(
+          {modalData.city === "Nacional" ? (
             <h3>Iniciativas en {modalData.city}</h3>)
             :
-            (<h3>Iniciativas en  {modalData.pais} Nacional</h3>))
+            (<h3>Iniciativas en  {modalData.pais} Nacional</h3>)
+          }
           <p className="text-sm">
             {`${modalData.initiatives.length}  encontradas`}
           </p>
