@@ -16,6 +16,8 @@ const InitiativeCard = ({ iniciativa }) => {
     tipoInstitucion,
     actoresInvolucrados,
     paginaWebInstitucion,
+    location,
+
   } = iniciativa;
 
   const navigate = useNavigate();
@@ -115,8 +117,8 @@ const InitiativeCard = ({ iniciativa }) => {
                 <span className="font-semibold">Sitio web de la institución:</span> <span>Sin información</span>
               </li>
             )}
-            <li>latitud: {iniciativa.location.latitud}</li>
-            <li>longitud: {iniciativa.location.longitud}</li>
+            <li>latitud: {location.latitud}</li>
+            <li>longitud: {location.longitud}</li>
           </ul>
         </div>
       </div>
