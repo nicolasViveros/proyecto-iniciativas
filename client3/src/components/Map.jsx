@@ -28,6 +28,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         initiatives: data || [], // Default to empty array if no data
       });
       console.log("data: ", data);
+      console.log(location)
     });
   };
 
