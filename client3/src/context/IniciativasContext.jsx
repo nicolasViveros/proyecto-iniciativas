@@ -8,6 +8,7 @@ import {
     getIniciativasPorPaisRequest,
     getIniciativasPorCiudadRequest,
     createIniciativaRequest,
+    getLocationPorIniciativaRequest,
 } from "../api/iniciativas";
 
 const IniciativaContext = createContext();
@@ -92,6 +93,15 @@ const createIniciativa = async (iniciativa) => {
         }
     };  
 
+    const getLocationPorIniciativa = async (id) => {
+        try {
+            const res = await getLocationPorIniciativaRequest(id);
+            return res.data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <IniciativaContext.Provider
             value={{
@@ -103,6 +113,7 @@ const createIniciativa = async (iniciativa) => {
                 getIniciativasPorPais,
                 getIniciativasPorCiudad,
                 createIniciativa,
+                getLocationPorIniciativa,
             }}
         >
             {children}

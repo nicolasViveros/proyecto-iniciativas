@@ -1,11 +1,12 @@
 // src/components/InitiativeCard.jsx (o .js)
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import Localizacion from "../models/localizacion.model";
+import { useEffect, useState } from "react";
+import { useIniciativas } from "../context/IniciativasContext";
 
 const InitiativeCard = ({ iniciativa }) => {
   const {
-    
+    id,
     tipoIniciativa,
     nombreIniciativa,
     fechaInicioTermino,
@@ -24,8 +25,20 @@ const InitiativeCard = ({ iniciativa }) => {
   //   idIniciativa: id,
   // });
 
+  const [location, setLocation] = useState(null);
+  const { getLocationPorIniciativa } = useIniciativas();
+
+  useEffect(() => {
+    if (id) {
+      getLocationPorIniciativa(id).then((data) => {
+        setLocation(data);
+      });
+    }
+  }, [id]);
+
   const navigate = useNavigate();
   console.log(iniciativa)
+  console.log(location)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
@@ -122,8 +135,8 @@ const InitiativeCard = ({ iniciativa }) => {
               </li>
             )}
             
-            {/* <li>latitud: {location.latitud}</li>
-            <li>longitud: {location.longitud}</li> */}
+            <li>latitud: {location.latitud}</li>
+            <li>longitud: {location.longitud}</li>
           </ul>
         </div>
       </div>
