@@ -183,7 +183,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
           ciudad: iniciativa.ciudad,
         },
       },
-      { new: true }
+      { new: false }
     );
 
     if (!location) {
