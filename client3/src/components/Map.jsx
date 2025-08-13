@@ -20,18 +20,21 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
 
   const handlePointerEnter = (location, circle) => {
     circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" });
-    getIniciativasPorCiudad(location.ciudad).then((data) => {
-      setModalData({
-        visible: true,
-        lat: circle.getCenter().lat,
-        lng: circle.getCenter().lng,
-        city: location.ciudad || " ",
-        pais: location.pais || " ",
-        initiatives: data || [], // Default to empty array if no data
-      });
-      console.log("data: ", data);
-      console.log(location)
-    });
+    {location.ciudad && (
+        getIniciativasPorCiudad(location.ciudad).then((data) => {
+          setModalData({
+            visible: true,
+            lat: circle.getCenter().lat,
+            lng: circle.getCenter().lng,
+            city: location.ciudad || " ",
+            pais: location.pais || " ",
+            initiatives: data || [], // Default to empty array if no data
+          });
+          console.log("data: ", data);
+          console.log(location)
+        })
+      )
+    }
   };
 
 
