@@ -1,11 +1,11 @@
 // src/components/InitiativeCard.jsx (o .js)
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Localizacion from "../models/localizacion.model";
+// import Localizacion from "../models/localizacion.model";
 
 const InitiativeCard = ({ iniciativa }) => {
   const {
-    id,
+    
     tipoIniciativa,
     nombreIniciativa,
     fechaInicioTermino,
