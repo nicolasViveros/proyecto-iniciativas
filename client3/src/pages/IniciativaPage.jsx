@@ -54,6 +54,11 @@ function IniciativaPage() {
     );
   }
 
+const actualizaLocalizacion = async () => {
+
+  
+}
+
   const eliminaIniciativa = async () => {
     const userConfirmed = window.confirm("¿Está seguro de que desea eliminar esta iniciativa? Esta acción no se puede deshacer.");
     if (userConfirmed) {

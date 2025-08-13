@@ -115,6 +115,8 @@ const InitiativeCard = ({ iniciativa }) => {
                 <span className="font-semibold">Sitio web de la institución:</span> <span>Sin información</span>
               </li>
             )}
+            <li>latitud: {iniciativa.location.latitud}</li>
+            <li>longitud: {iniciativa.location.longitud}</li>
           </ul>
         </div>
       </div>
