@@ -28,12 +28,13 @@ const InitiativeCard = ({ iniciativa }) => {
   const { getLocationPorIniciativa } = useIniciativas();
 
   useEffect(() => {
-    
+    if (_id) {
       getLocationPorIniciativa(_id).then((data) => {
+        console.log(data);
         setLocation(data);
       });
-    
-  }, []);
+    }
+  }, [_id]);
 
   const navigate = useNavigate();
   console.log(iniciativa._id)
