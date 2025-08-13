@@ -60,7 +60,7 @@ const actualizaLocalizacion = async () => {
     if (userConfirmed) {
       setIsSaving(true);
       try {
-        await updateLocationPorIniciativa(iniciativa);
+        await updateLocationPorIniciativa(id, location);
       }
       catch (error) {
         console.error("Error al actualizar la localización:", error);
