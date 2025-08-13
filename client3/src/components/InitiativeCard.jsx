@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useIniciativas } from "../context/IniciativasContext";
+import { useState, useEffect } from "react";
 
 const InitiativeCard = ({ iniciativa }) => {
   const {
@@ -21,22 +22,23 @@ const InitiativeCard = ({ iniciativa }) => {
   
   } = iniciativa;
 
-  // const exists = await Localizacion.findOne({
-  //   idIniciativa: id,
-  // });
+  const [location, setLocation] = useState(null);
+  const { getIniciativasPorCiudad } = useIniciativas();
+
 
   const { getLocationPorIniciativa } = useIniciativas();
 
-  // useEffect(() => {
-  //   if (id) {
-  //     getLocationPorIniciativa(id).then((data) => {
-  //       setLocation(data);
-  //     });
-  //   }
-  // }, [id]);
+  useEffect(() => {
+    if (id) {
+      getLocationPorIniciativa(id).then((data) => {
+        setLocation(data);
+      });
+    }
+  }, [id]);
 
   const navigate = useNavigate();
   console.log(iniciativa._id)
+  console.log(location.data)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
