@@ -150,7 +150,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
   const newLocation = await getGeocodeData(
     req.body.pais + "+" + req.body.ciudad
   );
-  console.log(newLocation)
+  console.log("nueva locacion: ", newLocation);
   try {
     const location = await Localizacion.findOneAndUpdate(
       {
