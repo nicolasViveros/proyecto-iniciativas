@@ -1,4 +1,3 @@
-import { ConnectionStates } from "mongoose";
 import Iniciativa from "../models/iniciativa.model.js";
 import Localizacion from "../models/localizacion.model.js";
 import { getGeocodeData } from "./maps.controller.js";
@@ -158,8 +157,8 @@ export const updateLocationPorIniciativa = async (req, res) => {
       return res.status(404).json({ message: "location not found" });
     }
 
-    const latitud = "";
-    const longitud = "";
+    let latitud = null;
+    let longitud = null;
 
     if (iniciativa.pais !== "Internacional") {
       const newLocation = await getGeocodeData(
@@ -184,7 +183,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
           ciudad: iniciativa.ciudad,
         },
       },
-      { new: false }
+      { new: true }
     );
 
     if (!location) {
