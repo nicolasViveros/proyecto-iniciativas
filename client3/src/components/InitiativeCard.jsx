@@ -1,9 +1,11 @@
 // src/components/InitiativeCard.jsx (o .js)
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Localizacion from "../models/localizacion.model";
 
 const InitiativeCard = ({ iniciativa }) => {
   const {
+    id,
     tipoIniciativa,
     nombreIniciativa,
     fechaInicioTermino,
@@ -16,9 +18,11 @@ const InitiativeCard = ({ iniciativa }) => {
     tipoInstitucion,
     actoresInvolucrados,
     paginaWebInstitucion,
-    location,
-
   } = iniciativa;
+
+  const exists = await Localizacion.findOne({
+    idIniciativa: id,
+  });
 
   const navigate = useNavigate();
   console.log(iniciativa)

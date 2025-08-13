@@ -20,3 +20,4 @@ export const getGeocodeData = async (address) => {
     throw new Error(error.message); // Throw an error to handle it where the function is called
   }
 };
+

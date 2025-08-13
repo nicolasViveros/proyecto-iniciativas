@@ -131,3 +131,16 @@ export const createIniciativa = async (req, res) => {
     return res.status(404).json({ message: "iniciativa not found" });
   }
 };  
+
+export const getLocationPorIniciativa = async (req, res) => {
+  try {
+    const location = await Localizacion.findOne({
+      idIniciativa: req.params.id,
+    });
+    if (!location)
+      return res.status(404).json({ message: "location not found" });
+    res.json(location);
+  } catch (error) {
+    return res.status(404).json({ message: "location not found" });
+  }
+};
