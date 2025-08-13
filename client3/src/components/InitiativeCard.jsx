@@ -20,9 +20,9 @@ const InitiativeCard = ({ iniciativa }) => {
     paginaWebInstitucion,
   } = iniciativa;
 
-  const exists = await Localizacion.findOne({
-    idIniciativa: id,
-  });
+  // const exists = await Localizacion.findOne({
+  //   idIniciativa: id,
+  // });
 
   const navigate = useNavigate();
   console.log(iniciativa)
