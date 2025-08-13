@@ -30,7 +30,7 @@ const InitiativeCard = ({ iniciativa }) => {
   useEffect(() => {
     if (_id) {
       getLocationPorIniciativa(_id).then((data) => {
-        console.log(data);
+        console.log({data});
         setLocation(data);
       });
     }
