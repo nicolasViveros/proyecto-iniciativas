@@ -149,30 +149,41 @@ export const updateLocationPorIniciativa = async (req, res) => {
   try {
     const iniciativa = await Iniciativa.findById(req.params.id);
 
-    if (iniciativa.pais === "" || iniciativa.ciudad === "") {
-      return res.status(404).json({ message: "location not found" });
-    }
-    
     if (!iniciativa) {
       return res.status(404).json({ message: "iniciativa not found" });
     }
 
-    const newLocation = await getGeocodeData(
-      iniciativa.pais + "+" + iniciativa.ciudad
-    );
+    if (iniciativa.pais === "" || iniciativa.ciudad === "") {
+      return res.status(404).json({ message: "location not found" });
+    }
+
+    let latitud = null;
+    let longitud = null;
+
+    if (iniciativa.pais !== "Internacional") {
+      const newLocation = await getGeocodeData(
+        `${iniciativa.pais}+${iniciativa.ciudad}`
+      );
+
+      if (!newLocation || !newLocation.items || newLocation.items.length === 0) {
+        return res.status(500).json({ message: "could not fetch geocode data" });
+      }
+
+      latitud = newLocation.items[0].position.lat;
+      longitud = newLocation.items[0].position.lng;
+    }
 
     const location = await Localizacion.findOneAndUpdate(
       { idIniciativa: req.params.id },
       {
         $set: {
-          latitud: newLocation.items[0].position.lat,
-          longitud: newLocation.items[0].position.lng,
+          latitud: latitud,
+          longitud: longitud,
           pais: iniciativa.pais,
           ciudad: iniciativa.ciudad,
-          idIniciativa: iniciativa._id,
         },
       },
-      { new: false }
+      { new: true }
     );
 
     if (!location) {
