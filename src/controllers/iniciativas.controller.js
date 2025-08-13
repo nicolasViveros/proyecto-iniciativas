@@ -149,6 +149,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
   
   const newLocation = await getGeocodeData(
     req.body.pais + "+" + req.body.ciudad
+    console.log(newLocation)
   );
   try {
     const location = await Localizacion.findOneAndUpdate(
@@ -169,7 +170,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
     );
     if (!location)
       return res.status(404).json({ message: "location not found" });
-    res.json(location);
+    res.json(newLocation);
   } catch (error) {
     return res.status(404).json({ message: "location not found" });
   }
