@@ -15,3 +15,5 @@ export const getIniciativasPorCiudadRequest = (ciudad) => axios.get(`/iniciativa
 export const createIniciativaRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);
 
 export const getLocationPorIniciativaRequest = (id) => axios.get(`/locationPorIniciativa/${id}`);
+
+export const updateLocationPorIniciativaRequest = (id, location) => axios.put(`/locationPorIniciativa/${id}`, location);

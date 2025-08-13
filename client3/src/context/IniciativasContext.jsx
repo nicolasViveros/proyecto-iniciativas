@@ -9,6 +9,7 @@ import {
     getIniciativasPorCiudadRequest,
     createIniciativaRequest,
     getLocationPorIniciativaRequest,
+    updateLocationPorIniciativaRequest,
 } from "../api/iniciativas";
 
 const IniciativaContext = createContext();
@@ -102,6 +103,16 @@ const createIniciativa = async (iniciativa) => {
         }
     };
 
+    const updateLocationPorIniciativa = async (id, location) => {
+        try {
+            await updateLocationPorIniciativaRequest(id, location);
+            window.alert("Localización actualizada con éxito");
+        } catch (error) {
+            console.log(error);
+            window.alert("Error al actualizar localización");
+        }
+    };
+
     return (
         <IniciativaContext.Provider
             value={{
@@ -114,6 +125,7 @@ const createIniciativa = async (iniciativa) => {
                 getIniciativasPorCiudad,
                 createIniciativa,
                 getLocationPorIniciativa,
+                updateLocationPorIniciativa,
             }}
         >
             {children}
