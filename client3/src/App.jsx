@@ -51,7 +51,6 @@ export function App() {
                     <Route path="/ficha/:id/editar" element={<EditFichaPage />} />
                     <Route path="/iniciativasPorPais/:pais" element={<IniciativasPage />} />
                     <Route path="/iniciativasPorCiudad/:ciudad" element={<IniciativasPage />} />
-                    <Route path="/locationPorIniciativa/:id" element={<IniciativasPage />} />
                   </Route>
                 </Routes>
 

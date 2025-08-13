@@ -8,4 +8,5 @@ const localizacionSchema = new mongoose.Schema({
   idIniciativa: { type: String, required: true, unique: true },
 });
 
+
 export default mongoose.model("Localizacion", localizacionSchema);
