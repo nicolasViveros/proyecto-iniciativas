@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 function IniciativaPage() {
   const { isAuthenticated } = useAuth();
   const { id } = useParams();
-  const { getIniciativa, deleteIniciativa , updateLocationPorIniciativa} = useIniciativas();
+  const { getIniciativa, deleteIniciativa , updateLocationPorIniciativa, getLocationPorIniciativa } = useIniciativas();
   const [iniciativa, setIniciativa] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
@@ -60,6 +60,7 @@ const actualizaLocalizacion = async () => {
     if (userConfirmed) {
       setIsSaving(true);
       try {
+        const location = await getLocationPorIniciativa(id);
         await updateLocationPorIniciativa(id, location);
       }
       catch (error) {
