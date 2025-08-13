@@ -152,7 +152,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
     if (iniciativa.pais === "" || iniciativa.ciudad === "") {
       return res.status(404).json({ message: "location not found" });
     }
-    if (iniciativa.pais === "Internacional" || iniciativa.ciudad === "") {
+    if (iniciativa.pais === "Internacional") {
       const location = await Localizacion.findOneAndUpdate(
         { idIniciativa: req.params.id },
         {
@@ -165,7 +165,8 @@ export const updateLocationPorIniciativa = async (req, res) => {
           },
         },
         { new: false }
-      );    }
+      );
+    }
     if (!iniciativa) {
       return res.status(404).json({ message: "iniciativa not found" });
     }
@@ -174,20 +175,22 @@ export const updateLocationPorIniciativa = async (req, res) => {
       iniciativa.pais + "+" + iniciativa.ciudad
     );
 
-    const location = await Localizacion.findOneAndUpdate(
-      { idIniciativa: req.params.id },
-      {
-        $set: {
-          latitud: newLocation.items[0].position.lat,
-          longitud: newLocation.items[0].position.lng,
-          pais: iniciativa.pais,
-          ciudad: iniciativa.ciudad,
-          idIniciativa: iniciativa._id,
+    if (iniciativa.ciudad === "") {
+      const location = await Localizacion.findOneAndUpdate(
+        { idIniciativa: req.params.id },
+        {
+          $set: {
+            latitud: newLocation.items[0].position.lat,
+            longitud: newLocation.items[0].position.lng,
+            pais: iniciativa.pais,
+            ciudad: iniciativa.ciudad,
+            idIniciativa: iniciativa._id,
+          },
         },
-      },
-      { new: false }
-    );
+        { new: false }
+      );
 
+    }
     if (!location) {
       return res.status(404).json({ message: "location not found" });
     }
