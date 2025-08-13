@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useIniciativas } from "../context/IniciativasContext";
 import { FaEye } from "react-icons/fa";
 import Map from "./Map";
+import Localizacion from "../models/localizacion.model";
 
 const regiones = {
   "Sur América": [
