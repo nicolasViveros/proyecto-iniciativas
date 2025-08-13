@@ -71,7 +71,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         lat: location.location.latitud,
         lng: location.location.longitud,
         city: location.location.ciudad,
-        
+        pais: location.location.pais,
       };
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
