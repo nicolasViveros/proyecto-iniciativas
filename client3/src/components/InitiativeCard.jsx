@@ -21,7 +21,7 @@ const InitiativeCard = ({ iniciativa }) => {
   } = iniciativa;
 
   const navigate = useNavigate();
-  console.log(iniciativa.location)
+  console.log(iniciativa)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
