@@ -25,6 +25,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         lat: circle.getCenter().lat,
         lng: circle.getCenter().lng,
         city: location.ciudad || " ",
+        pais: location.pais || " ",
         initiatives: data || [], // Default to empty array if no data
       });
       console.log("data: ", data);
@@ -139,7 +140,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         >
 
           {modalData.city === "Nacional" ? (
-            <h3>Iniciativas en  {modalData.pais} Nacional</h3>)
+            <h3>Iniciativas en {modalData.pais} Nacional</h3>)
             :
             (<h3>Iniciativas en  {modalData.city} </h3>)
           }
