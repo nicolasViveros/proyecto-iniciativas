@@ -23,18 +23,17 @@ const InitiativeCard = ({ iniciativa }) => {
   } = iniciativa;
 
   const [location, setLocation] = useState(null);
-  const { getIniciativasPorCiudad } = useIniciativas();
 
 
   const { getLocationPorIniciativa } = useIniciativas();
 
   useEffect(() => {
-    if (id) {
-      getLocationPorIniciativa(id).then((data) => {
+    if (_id) {
+      getLocationPorIniciativa(_id).then((data) => {
         setLocation(data);
       });
     }
-  }, [id]);
+  }, [_id]);
 
   const navigate = useNavigate();
   console.log(iniciativa._id)
