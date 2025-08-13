@@ -134,8 +134,8 @@ const InitiativeCard = ({ iniciativa }) => {
               </li>
             )}
             
-            {/* <li>latitud: {location?.latitud || "sin latitud"}</li>
-            <li>longitud: {location?.longitud || "sin longitud"}</li> */}
+            <li>latitud: {location?.latitud || "sin latitud"}</li>
+            <li>longitud: {location?.longitud || "sin longitud"}</li>
           </ul>
         </div>
       </div>

@@ -55,7 +55,7 @@ const MapaConFiltro = () => {
 
   useEffect(() => {
     getIniciativas();
-  }, [getIniciativas]);
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md mx-auto">
