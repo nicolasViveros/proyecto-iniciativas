@@ -149,11 +149,23 @@ export const updateLocationPorIniciativa = async (req, res) => {
   try {
     const iniciativa = await Iniciativa.findById(req.params.id);
 
-    
     if (!iniciativa) {
       return res.status(404).json({ message: "iniciativa not found" });
     }
-
+    if(iniciativa.pais ==="Internacional"){
+      const location = await Localizacion.findOneAndUpdate(
+        { idIniciativa: req.params.id },
+        {
+          $set: {
+            latitud: null,
+            longitud: null,
+          },
+        },
+        { new: false }
+      );
+      res.json(location);
+      return res.status(204).json({ message: "location set to null" });
+    }
     const newLocation = await getGeocodeData(
       iniciativa.pais + "+" + iniciativa.ciudad
     );
