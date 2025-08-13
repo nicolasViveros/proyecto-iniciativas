@@ -19,26 +19,27 @@ const InitiativeCard = ({ iniciativa }) => {
     tipoInstitucion,
     actoresInvolucrados,
     paginaWebInstitucion,
+    location,
+  
   } = iniciativa;
 
   // const exists = await Localizacion.findOne({
   //   idIniciativa: id,
   // });
 
-  const [location, setLocation] = useState(null);
   const { getLocationPorIniciativa } = useIniciativas();
 
-  useEffect(() => {
-    if (id) {
-      getLocationPorIniciativa(id).then((data) => {
-        setLocation(data);
-      });
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   if (id) {
+  //     getLocationPorIniciativa(id).then((data) => {
+  //       setLocation(data);
+  //     });
+  //   }
+  // }, [id]);
 
   const navigate = useNavigate();
   console.log(iniciativa)
-  console.log(location)
+  console.log(iniciativa.location)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
