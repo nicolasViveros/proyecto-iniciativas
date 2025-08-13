@@ -117,7 +117,7 @@ const InitiativeCard = ({ iniciativa }) => {
                 <span className="font-semibold">Sitio web de la institución:</span> <span>Sin información</span>
               </li>
             )}
-            console.log(iniciativa)
+            console.log(iniciativa.location)
             {/* <li>latitud: {location.latitud}</li>
             <li>longitud: {location.longitud}</li> */}
           </ul>
