@@ -157,8 +157,8 @@ export const updateLocationPorIniciativa = async (req, res) => {
       return res.status(404).json({ message: "location not found" });
     }
 
-    let latitud = null;
-    let longitud = null;
+    let latitud = "";
+    let longitud = "";
 
     if (iniciativa.pais !== "Internacional") {
       const newLocation = await getGeocodeData(
