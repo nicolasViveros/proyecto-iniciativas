@@ -135,8 +135,8 @@ const InitiativeCard = ({ iniciativa }) => {
               </li>
             )}
             
-            {/* <li>latitud: {location.latitud}</li>
-            <li>longitud: {location.longitud}</li> */}
+            <li>latitud: {location.latitud}</li>
+            <li>longitud: {location.longitud}</li>
           </ul>
         </div>
       </div>
