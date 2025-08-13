@@ -6,8 +6,6 @@ import LoadingSpinner from "../context/LoadingSpinner";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { getGeocodeData } from "./maps.controller";
-import Localizacion from "../models/localizacion.model";
 
 function IniciativaPage() {
   const { isAuthenticated } = useAuth();
@@ -16,7 +14,6 @@ function IniciativaPage() {
   const [iniciativa, setIniciativa] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
- 
   useEffect(() => {
     // Función para cargar datos de la iniciativa
     const cargarIniciativa = async () => {
@@ -57,31 +54,6 @@ function IniciativaPage() {
     );
   }
 
-  // const actualizaLocalizacion = async () => {
-  //     console.log(iniciativa.pais);
-  //     console.log(iniciativa.ciudad);
-  //     console.log(iniciativa._id);
-
-  //     const exists = await Localizacion.findOne({
-  //       idIniciativa: iniciativa._id,
-  //     });
-
-  //     if (!exists) {
-  //       const location = await getGeocodeData(
-  //         iniciativa.pais + "+" + iniciativa.ciudad
-  //       );
-  //       const localizacion = new Localizacion({
-  //         latitud: location.items[0].position.lat,
-  //         longitud: location.items[0].position.lng,
-  //         pais: iniciativa.pais,
-  //         ciudad: iniciativa.ciudad,
-  //         idIniciativa: iniciativa._id,
-  //       });
-  //       console.log( localizacion);
-  //       await localizacion.save();
-  //     }
-  //   }
-
   const eliminaIniciativa = async () => {
     const userConfirmed = window.confirm("¿Está seguro de que desea eliminar esta iniciativa? Esta acción no se puede deshacer.");
     if (userConfirmed) {
@@ -106,12 +78,6 @@ function IniciativaPage() {
 
           {isAuthenticated ? (
             <div className="absolute top-4 right-4 ">
-               <Link
-                // onClick={actualizaLocalizacion}
-                className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
-              >
-                Actualizar localización
-              </Link>
               <Link
                 onClick={eliminaIniciativa}
                 className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
