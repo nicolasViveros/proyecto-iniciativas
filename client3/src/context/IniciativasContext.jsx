@@ -112,7 +112,6 @@ const createIniciativa = async (iniciativa) => {
             window.alert("Error al actualizar localización");
         }
     };
-
     return (
         <IniciativaContext.Provider
             value={{

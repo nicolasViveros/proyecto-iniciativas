@@ -61,6 +61,10 @@ const actualizaLocalizacion = async () => {
       setIsSaving(true);
       try {
         const location = await getLocationPorIniciativa(id);
+        console.log(location?.latitud)
+        console.log(location?.longitud)
+        console.log(location?.ciudad)
+        console.log(location?.pais)
         await updateLocationPorIniciativa(id, location);
       }
       catch (error) {

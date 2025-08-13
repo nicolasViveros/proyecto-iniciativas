@@ -36,10 +36,10 @@ const InitiativeCard = ({ iniciativa }) => {
 
   const navigate = useNavigate();
  
-  console.log(location?.latitud)
-  console.log(location?.longitud)
-  console.log(location?.ciudad)
-  console.log(location?.pais)
+  // console.log(location?.latitud)
+  // console.log(location?.longitud)
+  // console.log(location?.ciudad)
+  // console.log(location?.pais)
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-50 rounded-lg shadow-xl overflow-hidden p-6 max-w-6xl mx-auto my-8">
