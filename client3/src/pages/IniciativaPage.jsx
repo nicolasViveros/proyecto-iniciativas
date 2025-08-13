@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 function IniciativaPage() {
   const { isAuthenticated } = useAuth();
   const { id } = useParams();
-  const { getIniciativa, deleteIniciativa } = useIniciativas();
+  const { getIniciativa, deleteIniciativa , updateLocationPorIniciativa} = useIniciativas();
   const [iniciativa, setIniciativa] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
@@ -96,7 +96,7 @@ const actualizaLocalizacion = async () => {
           {isAuthenticated ? (
             <div className="absolute top-4 right-4 ">
               <Link
-                // onClick={eliminaIniciativa}
+                onClick={actualizaLocalizacion}
                 className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
               >
                 Actualiza Localización
