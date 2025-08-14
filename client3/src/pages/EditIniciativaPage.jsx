@@ -94,7 +94,7 @@ function EditIniciativaPage() {
                 // Call a function to create a new initiative
                 await createIniciativa(iniciativa);
             }
-            navigate('/iniciativas');
+            navigate(`/iniciativa/${id}`); 
         } catch (error) {
             console.error("Error al guardar la iniciativa:", error);
         } finally {
