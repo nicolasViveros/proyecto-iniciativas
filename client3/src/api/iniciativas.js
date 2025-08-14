@@ -1,5 +1,7 @@
 import axios from "./axios";
 
+export const createIniciativaRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);
+
 export const getIniciativasRequest = () => axios.get("/iniciativas");
 
 export const getIniciativaRequest = (id) => axios.get(`/iniciativa/${id}`);
@@ -12,7 +14,6 @@ export const getIniciativasPorPaisRequest = (pais) => axios.get(`/iniciativas/${
 
 export const getIniciativasPorCiudadRequest = (ciudad) => axios.get(`/iniciativasPorCiudad/${ciudad}`);
 
-export const createIniciativaRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);
 
 export const getLocationPorIniciativaRequest = (id) => axios.get(`/locationPorIniciativa/${id}`);
 
