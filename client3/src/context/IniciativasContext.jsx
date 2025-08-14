@@ -26,9 +26,11 @@ export const useIniciativas = () => {
 export function IniciativaProvider({ children }) {
     const [iniciativas, setIniciativas] = useState([])
 
-const createIniciativa = async (iniciativa) => {
+    const createIniciativa = async (iniciativa) => {
         try {
             const res = await createIniciativaRequest(iniciativa);
+            console.log(iniciativa);
+            console.log(res.data);
             window.alert("Iniciativa creada con éxito");
             setIniciativas([...iniciativas, res.data]);
         } catch (error) {
@@ -92,7 +94,7 @@ const createIniciativa = async (iniciativa) => {
         } catch (error) {
             console.log(error);
         }
-    };  
+    };
 
     const getLocationPorIniciativa = async (id) => {
         try {
