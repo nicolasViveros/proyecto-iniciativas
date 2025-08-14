@@ -66,79 +66,54 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
   }, [apikey, getIniciativasPorCiudad]);
 
   function createResizableCircles(map, locations) {
-    const groupedByCountry = {};
-  
-    // Agrupar iniciativas "Nacional" por país
     locations.forEach((location) => {
       if (!location.location) return;
       
+      // Validar que latitud y longitud no sean null
       const { latitud, longitud, ciudad, pais } = location.location;
+      if (latitud === null || longitud === null) return;
   
-      // Si es "Nacional" y país no existe en el registro
-      if (ciudad === "Nacional") {
-        if (!groupedByCountry[pais]) {
-          groupedByCountry[pais] = { lat: latitud, lng: longitud, ciudades: [] };
+      const position = { lat: latitud, lng: longitud, city: ciudad, pais: pais };
+      const circle = new H.map.Circle(position, 85000, {
+        style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
+      });
+      const circleOutline = new H.map.Polyline(
+        circle.getGeometry().getExterior(),
+        {
+          style: { lineWidth: 10, strokeColor: "rgba(243, 255, 5, 0)" },
         }
-        groupedByCountry[pais].ciudades.push(location);
-      } else {
-        // Agregar puntos regulares con lat y lng definidos
-        if (latitud !== null && longitud !== null) {
-          addCircle(map, latitud, longitud, location);
+      );
+      const circleGroup = new H.map.Group({
+        volatility: true,
+        objects: [circle, circleOutline],
+      });
+  
+      circleOutline
+        .getGeometry()
+        .pushPoint(circleOutline.getGeometry().extractPoint(0));
+  
+      map.addObject(circleGroup);
+  
+      circleGroup.addEventListener("tap", function () {
+        if (onCitySelect) {
+          onCitySelect(ciudad); // Asegúrate de pasar la ciudad correcta
         }
-      }
+      }, false);
+  
+      circleGroup.addEventListener("pointerenter", () => {
+        handlePointerEnter(location, circle);
+      }, true);
+  
+      circleGroup.addEventListener("pointerleave", () => {
+        circle.setStyle({ fillColor: "rgba(158, 0, 250, 0.7)" });
+        setModalData((prevData) => ({ ...prevData, visible: false }));
+      }, true);
+  
+      circleGroup.addEventListener("pointermove", function (evt) {
+        document.body.style.cursor =
+          evt.target instanceof H.map.Polyline ? "pointer" : "default";
+      }, true);
     });
-  
-    // Añadir los círculos para cada país para las iniciativas "Nacional"
-    Object.keys(groupedByCountry).forEach((pais) => {
-      const { lat, lng, ciudades } = groupedByCountry[pais];
-      if (lat !== null && lng !== null) {
-        addCircle(map, lat, lng, { location: { pais, ciudad: "Nacional" }, iniciativas: ciudades });
-      }
-    });
-  }
-  
-  // Función auxiliar para agregar un círculo al mapa
-  function addCircle(map, latitud, longitud, location) {
-    const position = { lat: latitud, lng: longitud };
-    const circle = new H.map.Circle(position, 85000, {
-      style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
-    });
-    const circleOutline = new H.map.Polyline(
-      circle.getGeometry().getExterior(),
-      {
-        style: { lineWidth: 10, strokeColor: "rgba(243, 255, 5, 0)" },
-      }
-    );
-    const circleGroup = new H.map.Group({
-      volatility: true,
-      objects: [circle, circleOutline],
-    });
-  
-    circleOutline
-      .getGeometry()
-      .pushPoint(circleOutline.getGeometry().extractPoint(0));
-  
-    map.addObject(circleGroup);
-  
-    circleGroup.addEventListener("tap", function () {
-      if (onCitySelect) {
-        onCitySelect(location.location.ciudad); // Asegúrate de pasar la ciudad correcta
-      }
-    }, false);
-  
-    circleGroup.addEventListener("pointerenter", () => {
-      handlePointerEnter(location, circle);
-    }, true);
-  
-    circleGroup.addEventListener("pointerleave", () => {
-      circle.setStyle({ fillColor: "rgba(158, 0, 250, 0.7)" });
-      setModalData((prevData) => ({ ...prevData, visible: false }));
-    }, true);
-  
-    circleGroup.addEventListener("pointermove", function (evt) {
-      document.body.style.cursor =
-        evt.target instanceof H.map.Polyline ? "pointer" : "default";
-    }, true);
   }
 
   return (
