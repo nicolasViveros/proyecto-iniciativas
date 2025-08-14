@@ -32,80 +32,44 @@ export default function FichasFilter({ items, type = "ficha" }) {
               className={`px-4 py-2 rounded ${filtro === pais
                 ? "bg-[#5d5593] text-white font-bold"
                 : "bg-[#ebe9f6] font-bold hover:bg-[#5d5593] hover:text-white transition"
-                }`}
-            >
+                }`}>
               {pais}
             </button>
           ))}
         </div>
 
-        {type === "ficha" ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {fichasFiltradas.map((item) => (
-              <div
-                key={item._id}
-                className="border rounded-lg p-4 shadow hover:shadow-lg flex flex-col justify-between"
-              >
-                <div>
-                  <Link
-                    to={`/ficha/${item._id}`}
-                    className="text-lg hover:underline flex mb-2"
-                  >
-                    {item.name}
-                  </Link>
-                  {item.organizationName ? (
-                    <p className="text-sm font-bold">{item.organizationName}</p>
-                  ) : (
-                    <p className="text-sm font-bold">{item.country}</p>
-                  )}
-                  <span className="mt-1 mb-6 text-sm rounded truncated-text">
-                    {item.need}
-                  </span>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {fichasFiltradas.map((item) => (
+            <div
+              key={item._id}
+              className="border rounded-lg p-4 shadow hover:shadow-lg flex flex-col justify-between h-full"
+            >
+              <div>
                 <Link
-                  to={`/ficha/${item._id}`}
-                  className="absolute bottom-1 right-1 flex hover:text-[#a49fc4] rounded-md"
+                  to={`/${type === "ficha" ? "ficha" : "iniciativa"}/${item._id}`}
+                  className="text-lg hover:underline mb-2"
                 >
-                  <span className="ml-1">Revisar ficha</span>
-                  <FaEye className="text-2xl ml-1 mb-1 inline" />
+                  {type === "ficha" ? item.name : item.nombreIniciativa}
                 </Link>
+                {type === "ficha" ? (
+                  <p className="text-sm font-bold">{item.organizationName || item.country}</p>
+                ) : (
+                  <p className="text-sm font-bold">{item.ciudad || item.alcance}</p>
+                )}
+                <span className="mt-1 mb-6 text-sm rounded truncated-text">
+                  {type === "ficha" ? item.need : item.descripcionIniciativa}
+                </span>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {fichasFiltradas.map((item) => (
-              <div
-                key={item._id}
-                className="border rounded-lg p-4 shadow hover:shadow-lg flex flex-col justify-between"
+              <Link
+                to={`/${type === "ficha" ? "ficha" : "iniciativa"}/${item._id}`}
+                className="flex justify-end hover:text-[#a49fc4] rounded-md mt-4"
               >
-                <div>
-                  <Link
-                    to={`/iniciativa/${item._id}`}
-                    className="text-lg hover:underline flex mb-2"
-                  >
-                    {item.nombreIniciativa}
-                  </Link>
-                  {item.ciudad ? (
-                    <p className="text-sm font-bold">{item.ciudad}</p>
-                  ) : (
-                    <p className="text-sm font-bold">{item.alcance}</p>
-                  )}
-                  <span className="mt-1 mb-6 text-sm rounded truncated-text">
-                    {item.descripcionIniciativa}
-                  </span>
-                </div>
-                <Link
-                  to={`/iniciativa/${item._id}`}
-                  className="absolute bottom-1 right-1 flex hover:text-[#a49fc4] rounded-md"
-                >
-                  <span className="ml-1">Revisar iniciativa</span>
-                  <FaEye className="text-2xl ml-1 mb-1 inline" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        )}
+                <span className="ml-1">Revisar {type === "ficha" ? "ficha" : "iniciativa"}</span>
+                <FaEye className="text-2xl ml-1 mb-1 inline" />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
