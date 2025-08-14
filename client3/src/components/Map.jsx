@@ -119,7 +119,6 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
   return (
     <div style={{ position: "relative" }}>
       <div
-        className="hidden md:block" // Oculta en móviles y muestra en pantallas medianas y mayores
         style={{
           width: "100%",
           height: "500px",
@@ -129,6 +128,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
 
       {modalData.visible && (
         <div
+        className="hidden md:block" // Oculta en móviles y muestra en pantallas medianas y mayores
           style={{
             position: "absolute",
             top: "20px",
