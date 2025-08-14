@@ -154,7 +154,6 @@ export const updateLocationPorIniciativa = async (req, res) => {
     }
 
     if (iniciativa.pais === "Internacional") {
-      // Set location fields to null/empty for "Internacional" case
       const location = await Localizacion.findOneAndUpdate(
         { idIniciativa: req.params.id },
         {
@@ -168,17 +167,19 @@ export const updateLocationPorIniciativa = async (req, res) => {
       return res.json(location);
     }
 
+    // Preparar la consulta para obtener geocódigo
     let addressQuery = iniciativa.pais;
     if (iniciativa.ciudad !== "Nacional") {
       addressQuery += "+" + iniciativa.ciudad;
     }
 
-    // Fetching geolocation data
+    // Obtener datos de geocodigo
     const newLocation = await getGeocodeData(addressQuery);
     if (!newLocation || !newLocation.items || newLocation.items.length === 0) {
       return res.status(500).json({ message: "could not fetch geocode data" });
     }
 
+    // Actualizar ubicación
     const location = await Localizacion.findOneAndUpdate(
       { idIniciativa: req.params.id },
       {
