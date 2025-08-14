@@ -132,7 +132,7 @@ const MapaConFiltro = () => {
         )}
 
         {(paisSeleccionado || ciudadSeleccionado) && (
-          <div className="absolute top-0 right-0 h-125 bg-white shadow-lg w-auto sm:w-104 z-20 overflow-y-auto">
+          <div className="absolute top-0 right-0 h-125 bg-white shadow-lg w-fit sm:w-104 z-20 overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <button
                 onClick={() => {
