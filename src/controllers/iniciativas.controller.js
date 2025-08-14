@@ -168,7 +168,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
     }
     if (iniciativa.ciudad === "Nacional") {
       const newLocation = await getGeocodeData(
-        iniciativa.pais
+        "+" + iniciativa.pais
       );
     }else{
       const newLocation = await getGeocodeData(
