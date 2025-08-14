@@ -152,7 +152,9 @@ export const updateLocationPorIniciativa = async (req, res) => {
     if (!iniciativa) {
       return res.status(404).json({ message: "iniciativa not found" });
     }
+
     if (iniciativa.pais === "Internacional") {
+      // Set location fields to null/empty for "Internacional" case
       const location = await Localizacion.findOneAndUpdate(
         { idIniciativa: req.params.id },
         {
@@ -161,19 +163,20 @@ export const updateLocationPorIniciativa = async (req, res) => {
             longitud: null,
           },
         },
-        { new: false }
+        { new: true }
       );
-      res.json(location);
-      return res.status(204).json({ message: "location set to null" });
+      return res.json(location);
     }
-    if (iniciativa.ciudad === "Nacional") {
-      const newLocation = await getGeocodeData(
-        "+" + iniciativa.pais
-      );
-    }else{
-      const newLocation = await getGeocodeData(
-        iniciativa.pais + "+" + iniciativa.ciudad
-      );
+
+    let addressQuery = iniciativa.pais;
+    if (iniciativa.ciudad !== "Nacional") {
+      addressQuery += "+" + iniciativa.ciudad;
+    }
+
+    // Fetching geolocation data
+    const newLocation = await getGeocodeData(addressQuery);
+    if (!newLocation || !newLocation.items || newLocation.items.length === 0) {
+      return res.status(500).json({ message: "could not fetch geocode data" });
     }
 
     const location = await Localizacion.findOneAndUpdate(
@@ -184,10 +187,9 @@ export const updateLocationPorIniciativa = async (req, res) => {
           longitud: newLocation.items[0].position.lng,
           pais: iniciativa.pais,
           ciudad: iniciativa.ciudad,
-          idIniciativa: iniciativa._id,
         },
       },
-      { new: false }
+      { new: true }
     );
 
     if (!location) {
@@ -196,7 +198,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
 
     res.json(location);
   } catch (error) {
-    console.error("Error updating location: ", error); // Log para debug
+    console.error("Error updating location: ", error);
     return res.status(500).json({ message: "An error occurred while updating location" });
   }
 };
