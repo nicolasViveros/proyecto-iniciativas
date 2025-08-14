@@ -84,7 +84,6 @@ function IniciativasPage() {
   return (
 
     <div className="relative flex items-center justify-center min-h-screen">
-      <div className="min-h-screen bg-gray-100 p-4"></div>
       <FichasFilter items={iniciativas} type="iniciativa" key={iniciativas._id} />
 
       {
