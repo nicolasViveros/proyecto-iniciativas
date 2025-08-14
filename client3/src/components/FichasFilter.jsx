@@ -32,7 +32,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
               className={`px-4 py-2 rounded  ${filtro === pais
                 ? "bg-[#ebe9f6] font-bold"
                 : "bg-[#ebe9f6] font-bold"
-                } hover:bg-indigo-500 hover:text-white transition`}
+                } hover:bg-indigo-500 selection:bg-amber-400 hover:text-white transition`}
             >
               {pais}
             </button>
