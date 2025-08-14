@@ -2,6 +2,16 @@ import Iniciativa from "../models/iniciativa.model.js";
 import Localizacion from "../models/localizacion.model.js";
 import { getGeocodeData } from "./maps.controller.js";
 
+export const createIniciativa = async (req, res) => {
+  try {
+    const iniciativa = new Iniciativa(req.body);
+    const result = await iniciativa.save();
+    res.json(result);
+  } catch (error) {
+    return res.status(404).json({ message: "iniciativa not found" });
+  }
+};
+
 export const getIniciativas = async (req, res) => {
   try {
     const mixed = [];
@@ -119,16 +129,6 @@ export const getIniciativasPorCiudad = async (req, res) => {
   } catch (error) {
     console.error("Error fetching initiatives: ", error); // Log the error for debugging
     return res.status(500).json({ message: "An error occurred while fetching initiatives" });
-  }
-};
-
-export const createIniciativa = async (req, res) => {
-  try {
-    const iniciativa = new Iniciativa(req.body);
-    const result = await iniciativa.save();
-    res.json(result);
-  } catch (error) {
-    return res.status(404).json({ message: "iniciativa not found" });
   }
 };
 

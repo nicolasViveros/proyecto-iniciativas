@@ -9,7 +9,7 @@ function EditIniciativaPage() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [iniciativa, setIniciativa] = useState(null);
-    const { getIniciativa , createIniciativa } = useIniciativas();
+    const { getIniciativa, createIniciativa } = useIniciativas();
     const [isSaving, setIsSaving] = useState(false);
     const { updateIniciativa } = useIniciativas();
 
@@ -90,11 +90,15 @@ function EditIniciativaPage() {
         try {
             if (id) {
                 await updateIniciativa(id, iniciativa);
+                navigate(`/iniciativa/${id}`);
+
             } else {
                 // Call a function to create a new initiative
+                console.log("Iniciativa a crear:", iniciativa); // Añadir este log para depurar
+
                 await createIniciativa(iniciativa);
+                navigate(`/iniciativas`);
             }
-            navigate(`/iniciativa/${id}`); 
         } catch (error) {
             console.error("Error al guardar la iniciativa:", error);
         } finally {
@@ -224,7 +228,7 @@ function EditIniciativaPage() {
                     <div>
                         <textarea
                             name="objetivo"
-                            value={iniciativa.objetivo || ''} 
+                            value={iniciativa.objetivo || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                             rows="4"
@@ -258,7 +262,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="institucionEncargada"
-                            value={iniciativa.institucionEncargada  || ''}
+                            value={iniciativa.institucionEncargada || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
@@ -324,7 +328,7 @@ function EditIniciativaPage() {
                         <input
                             type="text"
                             name="categoria"
-                            value={iniciativa.categoria || ''} 
+                            value={iniciativa.categoria || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
