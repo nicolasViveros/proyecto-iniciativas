@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useIniciativas } from "../context/IniciativasContext";
 import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const InitiativeCard = ({ iniciativa }) => {
   const {
@@ -24,6 +25,7 @@ const InitiativeCard = ({ iniciativa }) => {
 
   const [location, setLocation] = useState(null);
   const { getLocationPorIniciativa } = useIniciativas();
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
       getLocationPorIniciativa(_id).then((data) => {
@@ -136,8 +138,10 @@ const InitiativeCard = ({ iniciativa }) => {
               </li>
             )}
             
-            {/* <li>latitud: {location?.latitud || "sin latitud"}</li>
-            <li>longitud: {location?.longitud || "sin longitud"}</li> */}
+            {isAuthenticated && (
+
+            <><li>latitud: {location?.latitud || "sin latitud"}</li><li>longitud: {location?.longitud || "sin longitud"}</li></>
+          )}
           </ul>
         </div>
       </div>
