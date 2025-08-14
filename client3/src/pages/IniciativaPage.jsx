@@ -91,41 +91,52 @@ function IniciativaPage() {
     };
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
       <div className="min-h-screen bg-gray-100 p-4">
         <InitiativeCard iniciativa={iniciativa} />
 
-        {isAuthenticated ? (
-          <div className="absolute top-4 right-4 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
-            <Link
-              onClick={actualizaLocalizacion}
-              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4] text-center"
+        {isAuthenticated && (
+          <div className="absolute top-4 right-4">
+            <button
+              onClick={toggleMenu}
+              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
             >
-              Actualiza Localización
-            </Link>
-            <Link
-              onClick={eliminaIniciativa}
-              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4] text-center"
-            >
-              Eliminar
-            </Link>
-            <Link
-              to={`/iniciativa/${iniciativa._id}/editar`}
-              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4] text-center"
-            >
-              Editar
-            </Link>
-          </div>
-        ) : (
-          <div className="absolute top-4 right-4 ">
-            {/* Espacio reservado en caso de que haya otros elementos condicionales a agregar */}
+              Menú
+            </button>
+            {menuOpen && (
+              <div className="mt-2 bg-white border rounded shadow-lg">
+                <Link
+                  onClick={actualizaLocalizacion}
+                  className="block px-4 py-2 text-[#5d5593] hover:bg-[#ebe9f6]"
+                >
+                  Actualiza Localización
+                </Link>
+                <Link
+                  onClick={eliminaIniciativa}
+                  className="block px-4 py-2 text-[#5d5593] hover:bg-[#ebe9f6]"
+                >
+                  Eliminar
+                </Link>
+                <Link
+                  to={`/iniciativa/${iniciativa._id}/editar`}
+                  className="block px-4 py-2 text-[#5d5593] hover:bg-[#ebe9f6]"
+                >
+                  Editar
+                </Link>
+              </div>
+            )}
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }
 
 export default IniciativaPage
