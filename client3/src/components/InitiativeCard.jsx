@@ -29,6 +29,8 @@ const InitiativeCard = ({ iniciativa }) => {
       getLocationPorIniciativa(_id).then((data) => {
         console.log({data});
         setLocation(data);
+        console.log(location?.longitud);
+        console.log(location?.latitud);
       });
   }, [_id]);
 
@@ -134,8 +136,8 @@ const InitiativeCard = ({ iniciativa }) => {
               </li>
             )}
             
-            <li>latitud: {location?.latitud || "sin latitud"}</li>
-            <li>longitud: {location?.longitud || "sin longitud"}</li>
+            {/* <li>latitud: {location?.latitud || "sin latitud"}</li>
+            <li>longitud: {location?.longitud || "sin longitud"}</li> */}
           </ul>
         </div>
       </div>
