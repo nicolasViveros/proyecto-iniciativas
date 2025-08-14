@@ -113,7 +113,7 @@ function IniciativaPage() {
               Menú
             </button>
             {menuOpen && (
-              <div className="mt-2 bg-white border rounded shadow-lg">
+              <div className="absolute right-0 mt-2 bg-white border rounded shadow-lg">
                 <Link
                   onClick={actualizaLocalizacion}
                   className="block px-4 py-2 text-[#5d5593] hover:bg-[#ebe9f6]"
