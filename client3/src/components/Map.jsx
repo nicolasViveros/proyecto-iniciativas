@@ -20,19 +20,19 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
 
   const handlePointerEnter = (location, circle) => {
     circle.setStyle({ fillColor: "rgba(255, 165, 0, 0.5)" });
-    
-        getIniciativasPorCiudad(location.ciudad).then((data) => {
-          setModalData({
-            visible: true,
-            lat: circle.getCenter().lat,
-            lng: circle.getCenter().lng,
-            city: location.ciudad || " ",
-            pais: location.pais || " ",
-            initiatives: data || [], // Default to empty array if no data
-          });
-          console.log("data: ", data);
-          console.log(location)
-        })
+
+    getIniciativasPorCiudad(location.ciudad).then((data) => {
+      setModalData({
+        visible: true,
+        lat: circle.getCenter().lat,
+        lng: circle.getCenter().lng,
+        city: location.ciudad || " ",
+        pais: location.pais || " ",
+        initiatives: data || [], // Default to empty array if no data
+      });
+      console.log("data: ", data);
+      console.log(location)
+    })
   };
 
 
@@ -68,11 +68,11 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
   function createResizableCircles(map, locations) {
     locations.forEach((location) => {
       if (!location.location) return;
-      
+
       // Validar que latitud y longitud no sean null
       const { latitud, longitud, ciudad, pais } = location.location;
       if (latitud === null || longitud === null) return;
-  
+
       const position = { lat: latitud, lng: longitud, city: ciudad, pais: pais };
       const circle = new H.map.Circle(position, 85000, {
         style: { fillColor: "rgba(158, 0, 250, 0.7)", lineWidth: 1 },
@@ -87,28 +87,28 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         volatility: true,
         objects: [circle, circleOutline],
       });
-  
+
       circleOutline
         .getGeometry()
         .pushPoint(circleOutline.getGeometry().extractPoint(0));
-  
+
       map.addObject(circleGroup);
-  
+
       circleGroup.addEventListener("tap", function () {
         if (onCitySelect) {
           onCitySelect(ciudad); // Asegúrate de pasar la ciudad correcta
         }
       }, false);
-  
+
       circleGroup.addEventListener("pointerenter", () => {
         handlePointerEnter(location, circle);
       }, true);
-  
+
       circleGroup.addEventListener("pointerleave", () => {
         circle.setStyle({ fillColor: "rgba(158, 0, 250, 0.7)" });
         setModalData((prevData) => ({ ...prevData, visible: false }));
       }, true);
-  
+
       circleGroup.addEventListener("pointermove", function (evt) {
         document.body.style.cursor =
           evt.target instanceof H.map.Polyline ? "pointer" : "default";
@@ -119,6 +119,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
   return (
     <div style={{ position: "relative" }}>
       <div
+        className="hidden md:block" // Oculta en móviles y muestra en pantallas medianas y mayores
         style={{
           width: "100%",
           height: "500px",

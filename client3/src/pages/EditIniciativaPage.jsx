@@ -94,8 +94,6 @@ function EditIniciativaPage() {
 
             } else {
                 // Call a function to create a new initiative
-                console.log("Iniciativa a crear:", iniciativa); // Añadir este log para depurar
-
                 await createIniciativa(iniciativa);
                 navigate(`/iniciativas`);
             }
