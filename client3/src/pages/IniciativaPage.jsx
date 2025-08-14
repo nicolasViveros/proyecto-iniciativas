@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 function IniciativaPage() {
   const { isAuthenticated } = useAuth();
   const { id } = useParams();
-  const { getIniciativa, deleteIniciativa , updateLocationPorIniciativa, getLocationPorIniciativa } = useIniciativas();
+  const { getIniciativa, deleteIniciativa, updateLocationPorIniciativa, getLocationPorIniciativa } = useIniciativas();
   const [iniciativa, setIniciativa] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ function IniciativaPage() {
     );
   }
 
-const actualizaLocalizacion = async () => {
+  const actualizaLocalizacion = async () => {
     const userConfirmed = window.confirm("¿Está seguro de que desea actualizar la localización? Esta acción no se puede deshacer.");
     if (userConfirmed) {
       setIsSaving(true);
@@ -63,8 +63,8 @@ const actualizaLocalizacion = async () => {
         const location = await getLocationPorIniciativa(id);
         console.log(location);
         console.log(id)
-       
-        await updateLocationPorIniciativa(id, location, iniciativa.pais || '' , iniciativa.ciudad || ''  );
+
+        await updateLocationPorIniciativa(id, location, iniciativa.pais || '', iniciativa.ciudad || '');
       }
       catch (error) {
         console.error("Error al actualizar la localización:", error);
@@ -73,7 +73,7 @@ const actualizaLocalizacion = async () => {
         setIsSaving(false);
       }
     };
-}
+  }
 
   const eliminaIniciativa = async () => {
     const userConfirmed = window.confirm("¿Está seguro de que desea eliminar esta iniciativa? Esta acción no se puede deshacer.");
@@ -92,41 +92,43 @@ const actualizaLocalizacion = async () => {
   };
 
 
-    return (
-      <div className="relative flex items-center justify-center min-h-screen">
-        <div className="min-h-screen bg-gray-100 p-4">
-          <InitiativeCard iniciativa={iniciativa} />
+  return (
+    <div className="relative flex items-center justify-center min-h-screen">
+      <div className="min-h-screen bg-gray-100 p-4">
+        <InitiativeCard iniciativa={iniciativa} />
 
-          {isAuthenticated ? (
-            <div className="absolute top-4 right-4 ">
-              <Link
-                onClick={actualizaLocalizacion}
-                className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
-              >
-                Actualiza Localización
-              </Link>
-              <Link
-                onClick={eliminaIniciativa}
-                className="bg-[#5d5593] text-white px-4 py-2 mr-2 rounded hover:bg-[#a49fc4]"
-              >
-                Eliminar
-              </Link>
-              <Link
-                to={`/iniciativa/${iniciativa._id}/editar`}
-                className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4]"
-              >
-                editar
-              </Link>
-            </div>
-          ) : (<div className="absolute top-4 right-4 ">
-
-          </div>)}
-        </div>
+        {isAuthenticated ? (
+          <div className="absolute top-4 right-4 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+            <Link
+              onClick={actualizaLocalizacion}
+              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4] text-center"
+            >
+              Actualiza Localización
+            </Link>
+            <Link
+              onClick={eliminaIniciativa}
+              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4] text-center"
+            >
+              Eliminar
+            </Link>
+            <Link
+              to={`/iniciativa/${iniciativa._id}/editar`}
+              className="bg-[#5d5593] text-white px-4 py-2 rounded hover:bg-[#a49fc4] text-center"
+            >
+              Editar
+            </Link>
+          </div>
+        ) : (
+          <div className="absolute top-4 right-4 ">
+            {/* Espacio reservado en caso de que haya otros elementos condicionales a agregar */}
+          </div>
+        )}
       </div>
-    )
-  }
+    </div>
+  )
+}
 
-  export default IniciativaPage
+export default IniciativaPage
 
 
 
