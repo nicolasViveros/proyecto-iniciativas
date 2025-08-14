@@ -30,7 +30,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
               key={pais}
               onClick={() => setFiltro(pais)}
               className={`px-4 py-2 rounded  ${filtro === pais
-                ? "bg-[#5d5593] font-bold"
+                ? "bg-[#5d5593] text-white font-bold"
                 : "bg-[#ebe9f6] font-bold"
                 } hover:bg-[#5d5593]  hover:text-white transition`}
             >
