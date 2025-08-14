@@ -79,7 +79,7 @@ const MapaConFiltro = () => {
         )}
 
         {mostrarFiltro && (
-          <div className="absolute top-0 right-0 h-125 bg-white shadow-lg w-104 overflow-hidden z-10">
+          <div className="absolute top-0 right-0 bg-white shadow-lg z-10 w-full md:w-104" style={{ maxWidth: "400px", minHeight: "100vh" }}>
             <div className="flex justify-between items-center p-2 border-b border-[#D9D6E1]">
               <h2 className="text-xl font-semibold">
                 {paisSeleccionado
@@ -132,7 +132,7 @@ const MapaConFiltro = () => {
         )}
 
         {(paisSeleccionado || ciudadSeleccionado) && (
-          <div className="absolute top-0 right-0 h-125 bg-white shadow-lg w-104 z-20 overflow-y-auto">
+          <div className="absolute top-0 right-0 bg-white shadow-lg z-10 w-full md:w-104" style={{ maxWidth: "400px", minHeight: "100vh" }}>
             <div className="flex justify-between items-center p-4 border-b border-[#D9D6E1]">
               <button
                 onClick={() => {
@@ -162,7 +162,7 @@ const MapaConFiltro = () => {
                 <FaAngleRight className="text-xl inline" />
               </button>
             </div>
-            <div className="p-4 text-sm py-2 space-y-2">
+            <div className="p-4 overflow-y-auto" style={{ maxHeight: "80vh" }}>
               {iniciativasFilter.map((iniciativa) => (
                 <div key={iniciativa._id} className="card my-2">
                   <div className="card-body my-1">
