@@ -37,8 +37,7 @@ export function IniciativaProvider({ children }) {
             console.log(error);
         }
     };
-
-
+    
     const getIniciativas = async () => {
         try {
             const res = await getIniciativasRequest()

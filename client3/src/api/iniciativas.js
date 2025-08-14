@@ -1,6 +1,6 @@
 import axios from "./axios";
 
-export const createIniciativaRequest = (iniciativa) => axios.post(`/iniciativas`, iniciativa);
+export const createIniciativaRequest = (iniciativa) => axios.post('/nueva-iniciativa', iniciativa);
 
 export const getIniciativasRequest = () => axios.get("/iniciativas");
 
