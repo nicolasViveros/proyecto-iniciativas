@@ -14,6 +14,12 @@ function IniciativaPage() {
   const [iniciativa, setIniciativa] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
   const navigate = useNavigate();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   useEffect(() => {
     // Función para cargar datos de la iniciativa
     const cargarIniciativa = async () => {
@@ -91,11 +97,7 @@ function IniciativaPage() {
     };
   };
 
-  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
