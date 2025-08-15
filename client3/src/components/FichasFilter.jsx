@@ -21,7 +21,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
     <div className="flex flex-col items-center md:flex-row justify-between bg-white p-4 sm:p-8 rounded-xl w-full max-w-6xl mx-auto">
       <div className="py-10 px-1 sm:p-6 w-full">
         <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">
-          Filtrar {type === "ficha" ? "Fichas" : "Iniciativas"} por País
+          Filtrar {type === "ficha" ? "Postulaciones" : "Iniciativas"} por País
         </h2>
 
         <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
@@ -64,7 +64,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
                 to={`/${type === "ficha" ? "ficha" : "iniciativa"}/${item._id}`}
                 className="flex justify-end hover:text-[#a49fc4] rounded-md mt-4"
               >
-                <span className="ml-1">Revisar {type === "ficha" ? "ficha" : "iniciativa"}</span>
+                <span className="ml-1">Revisar {type === "ficha" ? "postulación" : "iniciativa"}</span>
                 <FaEye className="text-2xl ml-1 mb-1 inline" />
               </Link>
             </div>
