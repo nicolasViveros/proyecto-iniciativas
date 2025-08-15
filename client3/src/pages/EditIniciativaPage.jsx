@@ -4,6 +4,8 @@ import { useIniciativas } from '../context/IniciativasContext';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowCircleLeft } from "react-icons/fa";
 import LoadingSpinner from "../context/LoadingSpinner";
+import Localizacion from "../models/localizacion.model.js";
+import { getGeocodeData } from "./maps.controller.js";
 
 function EditIniciativaPage() {
     const navigate = useNavigate();
@@ -85,6 +87,21 @@ function EditIniciativaPage() {
     const handleBack = () => {
         navigate('/iniciativas'); // vuelve al listado de fichas
     };
+
+    const obtenerLocalizacion = async (pais, ciudad) => {
+        const location = await getGeocodeData(
+            pais + "+" + ciudad
+          );
+          const localizacion = new Localizacion({
+            latitud: location.items[0].position.lat,
+            longitud: location.items[0].position.lng,
+            pais: iniciativa.pais,
+            ciudad: iniciativa.ciudad,
+            idIniciativa: iniciativa._id,
+          });
+          await localizacion.save();
+    };
+
     const handleInputChange = (e) => {
         let { name, value } = e.target;
 
@@ -111,6 +128,12 @@ function EditIniciativaPage() {
             } else {
                 await createIniciativa(iniciativa);
                 navigate(`/iniciativas`);
+                try {
+                    await obtenerLocalizacion(iniciativa.pais, iniciativa.ciudad);
+                    console.log("Localización guardada");
+                } catch (error) {
+                    console.error("Error al obtener la localización:", error);
+                }
             }
         } catch (error) {
             console.error("Error al guardar la iniciativa:", error);
