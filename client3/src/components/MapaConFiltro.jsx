@@ -58,7 +58,7 @@ const MapaConFiltro = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl shadow-md mx-full">
+    <div className="flex flex-col md:flex-row items-center justify-between bg-white  rounded-xl shadow-md mx-full">
       <div className="relative w-full h-150">
         {iniciativas.length > 0 && (
           <Map
