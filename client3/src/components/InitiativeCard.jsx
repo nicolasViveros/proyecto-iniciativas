@@ -29,10 +29,10 @@ const InitiativeCard = ({ iniciativa }) => {
 
   useEffect(() => {
       getLocationPorIniciativa(_id).then((data) => {
-        console.log({data});
+        // console.log({data});
         setLocation(data);
-        console.log(location?.longitud || "");
-        console.log(location?.latitud || "");
+        // console.log(location?.longitud || "");
+        // console.log(location?.latitud || "");
       });
   }, [_id]);
 
