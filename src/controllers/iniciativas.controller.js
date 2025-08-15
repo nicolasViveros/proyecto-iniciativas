@@ -17,7 +17,7 @@ export const createIniciativa = async (req, res) => {
       idIniciativa: iniciativa._id,
     });
     await localizacion.save();
-    console.log("localizacion:",localizacion);
+    console.log("localizacion guardada!:",localizacion);
     res.json(result);
   } catch (error) {
     return res.status(404).json({ message: "iniciativa not found" });
