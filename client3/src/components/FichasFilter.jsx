@@ -57,7 +57,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
                   <p className="text-sm font-bold">{item.pais + " - " + item.ciudad || item.alcance}</p>
                 )}
                 <span className="mt-1 mb-6 text-sm rounded truncated-text">
-                  {type === "ficha" ? item.need : item.descripcionIniciativa}
+                  {type === "ficha" ? item.organizationName : item.descripcionIniciativa}
                 </span>
               </div>
               <Link
