@@ -30,7 +30,7 @@ export const getIniciativas = async (req, res) => {
     const iniciativas = await Iniciativa.find();
     const results = await Promise.all(
       iniciativas.map(async (iniciativa) => {
-        console.log("iniciativa: ", iniciativa);
+        // console.log("iniciativa: ", iniciativa);
         const location = await Localizacion.findOne({
           idIniciativa: iniciativa._id,
         });
