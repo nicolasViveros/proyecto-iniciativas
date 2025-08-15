@@ -18,7 +18,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
     filtro === "Todos" ? items : items.filter((item) => getCountry(item) === filtro);
 
   return (
-    <div className="flex flex-col items-center md:flex-row justify-between bg-white p-4 sm:p-8 rounded-xl shadow-md w-full max-w-6xl mx-auto">
+    <div className="flex flex-col items-center md:flex-row justify-between bg-white p-4 sm:p-8 rounded-xl w-full max-w-6xl mx-auto">
       <div className="py-10 px-1 sm:p-6 w-full">
         <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">
           Filtrar {type === "ficha" ? "Fichas" : "Iniciativas"} por País
