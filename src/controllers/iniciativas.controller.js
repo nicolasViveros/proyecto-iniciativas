@@ -42,7 +42,7 @@ export const getIniciativas = async (req, res) => {
     );
 
     mixed.push(...results);
-    console.log("mixed: ", mixed);
+    // console.log("mixed: ", mixed);
     res.json(mixed);
   } catch (error) {
     return res.status(500).json({ message: "algo va mal" });
