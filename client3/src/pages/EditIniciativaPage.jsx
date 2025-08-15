@@ -88,7 +88,7 @@ function EditIniciativaPage() {
     const handleInputChange = (e) => {
         let { name, value } = e.target;
 
-        if (name === 'pais') {
+        if (name === 'pais' ) {
             value = capitalizeWords(value);
         }
         setIniciativa((prevIniciativa) => ({
@@ -140,7 +140,7 @@ function EditIniciativaPage() {
             <div className="max-w-3xl w-full px-2 py-12 sm:py-10 sm:px-4 rounded-md">
                 <h1 className="text-3xl text-center font-bold mb-4">{iniciativa.nombreIniciativa}</h1>
                 <div className="container grid grid-cols-2 mx-auto p-2">
-                    <div>Nombre iniciativa:</div>
+                    <div>Nombre iniciativa: *</div>
                     <div><input
                         type="text"
                         name="nombreIniciativa"
@@ -171,7 +171,7 @@ function EditIniciativaPage() {
                         />
                     </div>
 
-                    <div>Pais:</div>
+                    <div>Pais: *</div>
                     <div>
                         <input
                             type="text"
@@ -182,7 +182,7 @@ function EditIniciativaPage() {
                         />
                     </div>
 
-                    <div>Ciudad:</div>
+                    <div>Ciudad: *</div>
                     <div>
                         <input
                             type="text"
