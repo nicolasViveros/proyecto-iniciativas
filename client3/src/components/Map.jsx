@@ -30,8 +30,8 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
         pais: location.pais || " ",
         initiatives: data || [], // Default to empty array if no data
       });
-      console.log("data: ", data);
-      console.log(location)
+      // console.log("data: ", data);
+      // console.log(location)
     })
   };
 
@@ -59,7 +59,7 @@ const Map = ({ apikey, iniciativas, onCitySelect }) => {
       map.current = newMap;
 
       setTimeout(() => {
-        console.log("iniciativas: ", iniciativas);
+        // console.log("iniciativas: ", iniciativas);
         createResizableCircles(map.current, iniciativas);
       }, 3000);
     }
