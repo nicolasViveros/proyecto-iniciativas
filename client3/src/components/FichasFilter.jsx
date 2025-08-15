@@ -52,7 +52,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
                   {type === "ficha" ? item.name : item.nombreIniciativa}
                 </Link>
                 {type === "ficha" ? (
-                  <p className="text-sm font-bold">{item.country && item.city}</p>
+                  <p className="text-sm font-bold">{item.country + " - " + item.organizationName}</p>
                 ) : (
                   <p className="text-sm font-bold">{item.ciudad || item.alcance}</p>
                 )}
