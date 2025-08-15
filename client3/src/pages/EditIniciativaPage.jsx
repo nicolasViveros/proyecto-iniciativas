@@ -74,12 +74,23 @@ function EditIniciativaPage() {
             {/* </div> */}
         </div>;
     }
+    const capitalizeWords = (str) => {
+        return str
+            .toLowerCase()
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    };
 
     const handleBack = () => {
         navigate('/iniciativas'); // vuelve al listado de fichas
     };
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        let { name, value } = e.target;
+
+        if (name === 'pais') {
+            value = capitalizeWords(value);
+        }
         setIniciativa((prevIniciativa) => ({
             ...prevIniciativa,
             [name]: value,
