@@ -6,6 +6,18 @@ export const createIniciativa = async (req, res) => {
   try {
     const iniciativa = new Iniciativa(req.body);
     const result = await iniciativa.save();
+    const location = await getGeocodeData(
+      iniciativa.pais + "+" + iniciativa.ciudad
+    );
+    const localizacion = new Localizacion({
+      latitud: location.items[0].position.lat,
+      longitud: location.items[0].position.lng,
+      pais: iniciativa.pais,
+      ciudad: iniciativa.ciudad,
+      idIniciativa: iniciativa._id,
+    });
+    await localizacion.save();
+    console.log("localizacion creada!");
     res.json(result);
   } catch (error) {
     return res.status(404).json({ message: "iniciativa not found" });
