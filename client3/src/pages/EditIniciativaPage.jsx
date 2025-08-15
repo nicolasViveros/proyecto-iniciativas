@@ -86,14 +86,18 @@ function EditIniciativaPage() {
         }));
     };
     const handleSave = async () => {
+        // Implementación de validación
+        if (!iniciativa.nombreIniciativa.trim() || !iniciativa.pais.trim() || !iniciativa.ciudad.trim()) {
+            alert("Los campos 'Nombre Iniciativa', 'País' y 'Ciudad' son obligatorios.");
+            return;
+        }
+    
         setIsSaving(true);
         try {
             if (id) {
                 await updateIniciativa(id, iniciativa);
                 navigate(`/iniciativa/${id}`);
-
             } else {
-                // Call a function to create a new initiative
                 await createIniciativa(iniciativa);
                 navigate(`/iniciativas`);
             }
