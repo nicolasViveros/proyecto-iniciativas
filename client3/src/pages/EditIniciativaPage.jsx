@@ -88,7 +88,7 @@ function EditIniciativaPage() {
     const handleInputChange = (e) => {
         let { name, value } = e.target;
 
-        if (name === 'pais') {
+        if (name === 'pais' || name === 'ciudad') {
             value = capitalizeWords(value);
         }
         setIniciativa((prevIniciativa) => ({
