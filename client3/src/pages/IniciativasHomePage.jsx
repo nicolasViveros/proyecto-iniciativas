@@ -6,7 +6,7 @@ function IniciativasHomePage() {
   
 
     return (
-        <div >
+        <div className='gap-2'>
             <BannerIniciativas />
             <MapaConFiltro />
         </div>
