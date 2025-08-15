@@ -10,8 +10,8 @@ const BannerIniciativas = () => {
           Conoce las <span className=" font-bold">iniciativas de género en el transporte</span> de todo el mundo
         </h2>
         <p>
-          Explora el mapa, filtra por temas y descubre qué pasa en tu región.<br />
-          Puedes postular nuevas iniciativas del 30 de junio al 15 de agosto.
+          Explora el mapa, filtra por regiones y descubre qué pasa en tu país y o ciudad.<br />
+          Puedes postular nuevas iniciativas del 25 de julio al 25 de agosto.
         </p>
         <div className="flex space-x-4 pt-2">
           <button className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]">
