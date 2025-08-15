@@ -58,7 +58,7 @@ const MapaConFiltro = () => {
   }, []);
 
   return (
-    <div className=" bg-white px-2 sm:px-8 rounded-xl shadow-md mx-full">
+    <div className=" bg-white px-2 sm:px-8 rounded-xl shadow-md mx-auto">
       <div className="relative w-full h-150">
         {iniciativas.length > 0 && (
           <Map
