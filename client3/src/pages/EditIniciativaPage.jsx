@@ -88,7 +88,7 @@ function EditIniciativaPage() {
     const handleInputChange = (e) => {
         let { name, value } = e.target;
 
-        if (name === 'pais' ) {
+        if (name === 'pais') {
             value = capitalizeWords(value);
         }
         setIniciativa((prevIniciativa) => ({
@@ -102,7 +102,7 @@ function EditIniciativaPage() {
             alert("Los campos 'Nombre Iniciativa', 'País' y 'Ciudad' son obligatorios.");
             return;
         }
-    
+
         setIsSaving(true);
         try {
             if (id) {
@@ -149,28 +149,6 @@ function EditIniciativaPage() {
                         className="w-full border border-gray-300  px-4 py-2 rounded-md mb-1 input-focused" />
                     </div>
 
-                    <div>Tipo de Iniciativa:</div>
-                    <div>
-                        <input
-                            type="text"
-                            name="tipoIniciativa"
-                            value={iniciativa.tipoIniciativa || ''}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                        />
-                    </div>
-
-                    <div>Fecha de Inicio/Término:</div>
-                    <div>
-                        <input
-                            type="text"
-                            name="fechaInicioTermino"
-                            value={iniciativa.fechaInicioTermino || ''}
-                            onChange={handleInputChange}
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                        />
-                    </div>
-
                     <div>Pais: *</div>
                     <div>
                         <input
@@ -188,6 +166,28 @@ function EditIniciativaPage() {
                             type="text"
                             name="ciudad"
                             value={iniciativa.ciudad || ''}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        />
+                    </div>
+
+                    <div>Tipo de Iniciativa:</div>
+                    <div>
+                        <input
+                            type="text"
+                            name="tipoIniciativa"
+                            value={iniciativa.tipoIniciativa || ''}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        />
+                    </div>
+
+                    <div>Fecha de Inicio/Término:</div>
+                    <div>
+                        <input
+                            type="text"
+                            name="fechaInicioTermino"
+                            value={iniciativa.fechaInicioTermino || ''}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
