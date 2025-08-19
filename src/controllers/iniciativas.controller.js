@@ -165,7 +165,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
       return res.status(404).json({ message: "iniciativa not found" });
     }
 
-    if (iniciativa.pais === "Internacional") {
+    if (iniciativa.pais === "Internacional" || iniciativa.ciudad === "Nacional") {
       const location = await Localizacion.findOneAndUpdate(
         { idIniciativa: req.params.id },
         {
