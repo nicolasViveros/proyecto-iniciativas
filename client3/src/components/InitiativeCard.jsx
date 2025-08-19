@@ -138,10 +138,10 @@ const InitiativeCard = ({ iniciativa }) => {
               </li>
             )}
             
-            {/* {isAuthenticated && (
+            {isAuthenticated && (
 
             <><li>latitud: {location?.latitud || "sin latitud"}</li><li>longitud: {location?.longitud || "sin longitud"}</li></>
-          )} */}
+          )}
           </ul>
         </div>
       </div>
