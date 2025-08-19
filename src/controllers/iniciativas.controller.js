@@ -165,8 +165,7 @@ export const updateLocationPorIniciativa = async (req, res) => {
       return res.status(404).json({ message: "iniciativa not found" });
     }
 
-    // Si la ciudad es "Nacional" o el pais es "Internacional"
-    if (iniciativa.ciudad === "Nacional" || iniciativa.pais === "Internacional") {
+    if (iniciativa.ciudad === "Nacional" || iniciativa.pais === "Internacional" ) {
       const location = await Localizacion.findOneAndUpdate(
         { idIniciativa: req.params.id },
         {
@@ -179,9 +178,13 @@ export const updateLocationPorIniciativa = async (req, res) => {
       );
       return res.json(location);
     }
+  
 
     // Preparar la consulta para obtener geocódigo
-    const addressQuery = `${iniciativa.pais}+${iniciativa.ciudad}`;
+    let addressQuery = iniciativa.pais;
+    if (iniciativa.ciudad !== "Nacional") {
+      addressQuery += "+" + iniciativa.ciudad;
+    }
 
     // Obtener datos de geocodigo
     const newLocation = await getGeocodeData(addressQuery);
