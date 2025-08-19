@@ -1,7 +1,11 @@
-// src/components/Banner.jsx
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 
+
 const BannerIniciativas = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-xl  mx-2">
       {/* Texto */}
@@ -14,7 +18,7 @@ const BannerIniciativas = () => {
           Puedes postular nuevas iniciativas del 25 de julio al 25 de agosto.
         </p>
         <div className="flex space-x-4 pt-2">
-          <button className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]">
+          <button onClick={() => navigate("/nueva-ficha")} className="bg-[#5d5593] text-white px-4 py-3 rounded-xl hover:bg-[#a49fc4]">
             Postular iniciativa
           </button>
           <button className="border border-[#5d5593] text-[#5d5593] px-4 py-2 rounded-xl hover:bg-[#a49fc4]">
