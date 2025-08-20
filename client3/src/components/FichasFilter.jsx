@@ -47,22 +47,23 @@ export default function FichasFilter({ items, type = "ficha" }) {
         </div>
 
         {type === "ficha" && (
-
-          <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+          <div>
             <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">
-              Filtrar {type === "ficha" ? "Postulaciones" : "Iniciativas"} por Categoría
+              Filtrar {type === "ficha" ? "Postulaciones" : "Iniciativas"} por País
             </h2>
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setCategoryFilter(category)}
-                className={`px-4 py-2 rounded ${categoryFilter === category
-                  ? "bg-[#5d5593] text-white font-bold"
-                  : "bg-[#ebe9f6] font-bold hover:bg-[#5d5593] hover:text-white transition"
-                  }`}>
-                {category}
-              </button>
-            ))}
+            <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setCategoryFilter(category)}
+                  className={`px-4 py-2 rounded ${categoryFilter === category
+                    ? "bg-[#5d5593] text-white font-bold"
+                    : "bg-[#ebe9f6] font-bold hover:bg-[#5d5593] hover:text-white transition"
+                    }`}>
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
