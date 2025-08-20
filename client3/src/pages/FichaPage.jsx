@@ -205,10 +205,12 @@ const FichaPage = () => {
               </div>
             ))}
           </div>
-          <p className="border-b border-[#D9D6E1] pb-1">
+          <div className="col-span-2 border-b border-[#D9D6E1] pb-1">
+          <p >
             <strong>Categoría del proyecto:</strong>{" "}
           </p>
           <p>{ficha.category}</p>
+          </div>
 
           <p>
             <strong>Necesidad/Problemática:</strong>{" "}
