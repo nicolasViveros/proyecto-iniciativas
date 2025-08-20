@@ -418,6 +418,8 @@ function EditFichaPage() {
                         </button>
                     </div>
 
+                    <div className="col-span-2 border-y border-[#D9D6E1] pb-1" ></div>
+
                     <div>Necesidad/Problemática:</div>
                     <div>
                         <textarea
