@@ -20,7 +20,7 @@ export default function FichasFilter({ items, type = "ficha" }) {
     return ["Todos", ...uniqueCategories];
   }, [items]);
 
-  const fichasFiltradas = items.filter(item => 
+  const fichasFiltradas = items.filter(item =>
     (filtro === "Todos" || getCountry(item) === filtro) &&
     (categoryFilter === "Todos" || item.category === categoryFilter)
   );
@@ -47,7 +47,11 @@ export default function FichasFilter({ items, type = "ficha" }) {
         </div>
 
         {type === "ficha" && (
+
           <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">
+              Filtrar por Categoría
+            </h2>
             {categories.map((category) => (
               <button
                 key={category}
