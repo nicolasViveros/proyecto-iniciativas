@@ -211,6 +211,10 @@ const FichaPage = () => {
           <p className="col-span-2 border-b border-[#D9D6E1] pb-1">
             {ficha.need}
           </p>
+          <p>
+            <strong>Categoría:</strong>{" "}
+          </p>
+          <p>{ficha.category}</p>
 
           <p>
             <strong>Objetivos del Proyecto:</strong>{" "}
