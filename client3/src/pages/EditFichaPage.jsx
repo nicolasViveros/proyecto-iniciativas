@@ -421,12 +421,12 @@ function EditFichaPage() {
                     {/* LINEA DE DIVISION */}
                     <div className="col-span-2 border-y border-[#D9D6E1] pb-1" ></div>
 
-                    <div>Registro Legal:</div>
+                    <div>Categoría del proyecto:</div>
                     <div>
                         <input
                             type="text"
-                            name="registrationId"
-                            value={ficha.registrationId}
+                            name="category"
+                            value={ficha.category}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
