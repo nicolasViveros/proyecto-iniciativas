@@ -418,6 +418,39 @@ function EditFichaPage() {
                         </button>
                     </div>
 
+                    {/* //LINEA DE DIVISIONES */}
+                    <div className="col-span-2 border-y border-[#D9D6E1] pb-1" ></div>
+
+
+                    <div>Categoria del proyecto:</div>
+                    <div>
+                        <input
+                            type="text"
+                            name="category"
+                            value={ficha.category}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        />
+                    </div>
+
+                    <div>Necesidad/Problemática:</div>
+                    <div>
+                        <textarea
+                            name="need"
+                            value={ficha.need}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                            rows="3"
+                        ></textarea>
+                    <div>
+                        <input
+                            type="text"
+                            name="city"
+                            value={ficha.city}
+                            onChange={handleInputChange}
+                            className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
+                        />
+                    </div>
                     <div>Necesidad/Problemática:</div>
                     <div>
                         <textarea
