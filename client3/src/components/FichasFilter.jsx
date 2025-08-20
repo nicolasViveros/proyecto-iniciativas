@@ -49,11 +49,9 @@ export default function FichasFilter({ items, type = "ficha" }) {
         {type === "ficha" && (
 
           <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
-            <div>
-              <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">
-                Filtrar por Categoría
-              </h2>
-            </div>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center md:text-left">
+              Filtrar {type === "ficha" ? "Postulaciones" : "Iniciativas"} por Categoría
+            </h2>
             {categories.map((category) => (
               <button
                 key={category}
