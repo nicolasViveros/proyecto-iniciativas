@@ -151,16 +151,16 @@ function EditFichaPage() {
     if (!ficha) {
         return <div className=" flex items-center justify-center min-h-screen">
             {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
-                Cargando ficha...
-                <LoadingSpinner />
+            Cargando ficha...
+            <LoadingSpinner />
             {/* </div> */}
         </div>;
     }
     if (isSaving) {
         return <div className="flex items-center justify-center min-h-screen">
             {/* <div className="max-w-3xl w-full rounded-md justify-center items-center"> */}
-                Guardando ficha...
-                <LoadingSpinner />
+            Guardando ficha...
+            <LoadingSpinner />
             {/* </div> */}
         </div>;
     }
@@ -362,7 +362,7 @@ function EditFichaPage() {
                             </label>
                         ))}
                     </div>
-                    
+
 
                     <div className='col-span-2 font-bold'>Equipo Responsable:</div>
 
@@ -423,13 +423,15 @@ function EditFichaPage() {
 
                     <div>Categoría del proyecto:</div>
                     <div>
-                        <input
-                            type="text"
+                        <select
                             name="category"
                             value={ficha.category}
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
-                        />
+                        >
+                            <option value="Instituciones públicas y Empresas privadas">Instituciones públicas y Empresas privadas</option>
+                            <option value="Organizaciones de la sociedad civil y Entidades académicas">Organizaciones de la sociedad civil y Entidades académicas</option>
+                        </select>
                     </div>
 
                     <div>Necesidad/Problemática:</div>
