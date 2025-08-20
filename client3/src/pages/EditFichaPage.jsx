@@ -487,7 +487,7 @@ function EditFichaPage() {
                         ></textarea>
                     </div>
 
-                    {ficha.category === 'Operador/Regulador' && (
+                    {ficha.category === 'Instituciones públicas y Empresas privadas' && (
                         <>
                             <div>Innovación:</div>
                             <div>
@@ -512,9 +512,9 @@ function EditFichaPage() {
                             </div>
                         </>
                     )}
-                    {ficha.category === 'ONG/Academia' && (
+                    {ficha.category === 'Organizaciones de la sociedad civil y Entidades académicas' && (
                         <>
-                            <div>Metodología:</div>
+                            <div>Innovación:</div>
                             <div>
                                 <textarea
                                     name="methodology"
@@ -525,7 +525,7 @@ function EditFichaPage() {
                                 ></textarea>
                             </div>
 
-                            <div>Resultados:</div>
+                            <div>Impacto:</div>
                             <div>
                                 <textarea
                                     name="outcomes"
