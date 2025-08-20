@@ -423,7 +423,7 @@ function EditFichaPage() {
 
 
                     <div>Categoria del proyecto:</div>
-                    <div>
+                    {/* <div>
                         <input
                             type="text"
                             name="category"
@@ -431,7 +431,7 @@ function EditFichaPage() {
                             onChange={handleInputChange}
                             className="w-full border border-gray-300 px-4 py-2 rounded-md mb-1 input-focused"
                         />
-                    </div>
+                    </div> */}
 
                     <div>Necesidad/Problemática:</div>
                     <div>
