@@ -250,7 +250,7 @@ const FichaPage = () => {
             {ficha.resultsObtained}
           </p>
 
-          {ficha.category === "Operador/Regulador" && (
+          {ficha.category === "Instituciones públicas y Empresas privadas" && (
             <>
               <p>
                 <strong>Innovación:</strong>{" "}
@@ -267,17 +267,17 @@ const FichaPage = () => {
               </p>
             </>
           )}
-          {ficha.category === "ONG/Academia" && (
+          {ficha.category === "Organizaciones de la sociedad civil y Entidades académicas" && (
             <>
               <p>
-                <strong>Metodología:</strong>{" "}
+                <strong>Innovación:</strong>{" "}
               </p>
               <p className="col-span-2 border-b border-[#D9D6E1] pb-1">
                 {ficha.methodology}
               </p>
 
               <p>
-                <strong>Resultados:</strong>{" "}
+                <strong>Impacto:</strong>{" "}
               </p>
               <p className="col-span-2 border-b border-[#D9D6E1] pb-1">
                 {ficha.outcomes}
