@@ -4,6 +4,7 @@ import { FaEye } from "react-icons/fa";
 
 export default function FichasFilter({ items, type = "ficha" }) {
   const [filtro, setFiltro] = useState("Todos");
+  const [categoryFilter, setCategoryFilter] = useState("Todos");
 
   const getCountry = (item) => {
     return type === "iniciativa" ? item.pais : item.country;
@@ -14,8 +15,15 @@ export default function FichasFilter({ items, type = "ficha" }) {
     return ["Todos", ...uniqueCountries];
   }, [items, type]);
 
-  const fichasFiltradas =
-    filtro === "Todos" ? items : items.filter((item) => getCountry(item) === filtro);
+  const categories = useMemo(() => {
+    const uniqueCategories = new Set(items.map((item) => item.category));
+    return ["Todos", ...uniqueCategories];
+  }, [items]);
+
+  const fichasFiltradas = items.filter(item => 
+    (filtro === "Todos" || getCountry(item) === filtro) &&
+    (categoryFilter === "Todos" || item.category === categoryFilter)
+  );
 
   return (
     <div className="flex flex-col items-center md:flex-row justify-between bg-white p-4 sm:p-8 rounded-xl w-full max-w-6xl mx-auto">
@@ -37,6 +45,22 @@ export default function FichasFilter({ items, type = "ficha" }) {
             </button>
           ))}
         </div>
+
+        {type === "ficha" && (
+          <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setCategoryFilter(category)}
+                className={`px-4 py-2 rounded ${categoryFilter === category
+                  ? "bg-[#5d5593] text-white font-bold"
+                  : "bg-[#ebe9f6] font-bold hover:bg-[#5d5593] hover:text-white transition"
+                  }`}>
+                {category}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {fichasFiltradas.map((item) => (
