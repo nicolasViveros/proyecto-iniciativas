@@ -419,7 +419,7 @@ function EditFichaPage() {
                     </div>
 
                     {/* LINEA DE DIVISION */}
-                    <div className="col-span-2 border-y border-[#D9D6E1] pb-3" ></div>
+                    <div className="col-span-2 border-y border-[#D9D6E1] pb-3 mb-3" ></div>
 
                     <div>Categoría del proyecto:</div>
                     <div>
